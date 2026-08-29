@@ -268,11 +268,11 @@ StartTitleLoading()
 		}
 
 		CFileIndexTable	FIT;
-		std::ifstream indexFile(g_pFileDef->getProperty("FILE_SPRITEINDEX_UI").c_str(), ios::binary);
+		std::ifstream indexFile(g_pFileDef->getProperty("FILE_SPRITEINDEX_UI").c_str(), ios::binary); // Data\\Image\\UI.spki
 		FIT.LoadFromFile( indexFile );
 		indexFile.close();
 
-		std::ifstream spkFile(g_pFileDef->getProperty("FILE_SPRITE_UI").c_str(), ios::binary);
+		std::ifstream spkFile(g_pFileDef->getProperty("FILE_SPRITE_UI").c_str(), ios::binary);// Data\\Image\\UI.spk
 		if(g_MyFull)
 			spkFile.seekg( FIT[5] );
 		else

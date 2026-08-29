@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	CSpriteSurface_Adapter.cpp
 
@@ -34,7 +34,7 @@
 #define SPRITE_ADAPTER_DEBUG 0
 #endif
 
-// 백엔드 스프라이트 생명주기 추적 활성화
+// 백엔드 스프라이트 생명주기 추적 활성화 
 #ifndef SPRITE_ADAPTER_DEBUG_LIFECYCLE
 #define SPRITE_ADAPTER_DEBUG_LIFECYCLE 0
 #endif
