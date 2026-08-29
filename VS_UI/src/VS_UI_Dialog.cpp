@@ -899,11 +899,12 @@ void C_VS_UI_DIALOG::SetMessage(char ** sz_msg, UINT line_count, SETMESSAGE_MODE
 		if (sz_msg[i] == NULL)
 			continue;
 
-		std::vector<std::string> wrapped = textService.WrapText(sz_msg[i], msgStyle, m_client_rect.w);
+		std::vector<std::string> wrapped = textService.WrapText(sz_msg[i], msgStyle, m_client_rect.w);		
 		for (size_t w = 0; w < wrapped.size(); ++w)
 		{
 			m_vs_msg.push_back(wrapped[w]);
 		}
+
 	}
 
 	if(!m_vs_msg.empty()) 

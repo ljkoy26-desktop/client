@@ -24,11 +24,12 @@
 #include "CDirectInput.h"
 
 #ifdef PLATFORM_WINDOWS
-// VS_UI_widget.h's gpC_Imm-as-macro stub (expanding to &gpC_Imm_instance)
-// is #ifndef PLATFORM_WINDOWS only - on Windows it #include's the real
-// CImm.h instead, which only declares `extern CImm *gpC_Imm;` (see
-// CImm.h). Nothing ever defined it here, so it was an unresolved external
-// symbol (LNK2001) in every one of the many files that reference it.
+
+// VS_UI_widget.h의 gpC_Imm 매크로 스텁(&gpC_Imm_instance로 확장됨)
+// #ifndef PLATFORM_WINDOWS만 해당 - Windows에서는 실제 CImm.h를 #include합니다.
+// CImm.h에는 `extern CImm *gpC_Imm;`만 선언되어 있습니다(참조:
+// CImm.h). 여기서는 아무것도 정의되지 않았으므로, 이를 참조하는 여러 파일 모두에서 해결되지 않은 외부 심볼(LNK2001)이었습니다.
+
 CImm *gpC_Imm = NULL;
 #else
 // On non-Windows platforms, undefine the macro and use a proper variable

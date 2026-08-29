@@ -191,9 +191,11 @@ public:
 		outMetrics.height = maxy - miny;
 		outMetrics.advance = advance;
 		outMetrics.bearingX = minx;
-		// bearingY is the distance from baseline to top of glyph
-		// miny is usually negative (distance above baseline)
-		// ascent is the distance from baseline to top of font bounding box
+
+		// bearingY는 기준선에서 글리프 상단까지의 거리입니다.
+		// miny는 일반적으로 음수입니다(기준선 위쪽 거리).
+		// ascent는 기준선에서 글꼴 경계 상자 상단까지의 거리입니다.
+		
 		outMetrics.bearingY = TTF_FontAscent(ttf) + miny;
 		return true;
 	}

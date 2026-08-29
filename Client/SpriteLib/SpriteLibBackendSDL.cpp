@@ -368,20 +368,20 @@ size_t spritectl_get_sprite_data(spritectl_sprite_t sprite, void* buffer, size_t
 	return sprite->data_size;
 }
 
-/* ============================================================================
- * Blitting Functions
- * ============================================================================ */
+/* ================================================================================
+* 블리팅 함수
+* ================================================================================= */
 
 /**
- * RLE-based sprite rendering - mimics original DirectX BltClipWidth
- *
- * This function directly processes RLE data and writes only non-transparent
- * pixels to the destination surface, exactly like the original DirectX implementation.
- *
- * Key difference from SDL blitting:
- * - Transparent pixels are SKIPPED, not blended
- * - This means the destination surface's original content shows through
- */
+* RLE 기반 스프라이트 렌더링 - 원래 DirectX의 BltClipWidth 함수를 모방합니다.
+* 이 함수는 RLE 데이터를 직접 처리하고 투명하지 않은 픽셀만 대상 표면에 씁니다.
+
+이는 원래 DirectX 구현과 정확히 동일합니다.
+*
+* SDL 블리팅과의 주요 차이점:
+* - 투명 픽셀은 블렌딩되지 않고 건너뛰어집니다.
+* - 즉, 대상 표면의 원래 콘텐츠가 그대로 나타납니다.
+*/
 int spritectl_blt_sprite_rle(spritectl_surface_t dest, int x, int y,
                               spritectl_sprite_t sprite, int flags, int alpha) {
 	if (!dest || !sprite || !sprite->has_rle || !sprite->scanline_rle) {

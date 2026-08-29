@@ -326,11 +326,11 @@ std::vector<std::string> TextService::WrapText(const std::string& text, const Te
 		}
 
 		if (maxWidth > 0 && lineWidth + metrics.advance > maxWidth && !line.empty()) {
-			// lastBreakIndex may have just been set to line.size() on this very
-			// iteration (codepoint == ' ' above, before the space is appended
-			// below), so lastBreakIndex + lastBreakSkip can exceed line.size()
-			// here - substr() would throw std::out_of_range in that case, so
-			// treat it the same as "no break point recorded".
+
+			// lastBreakIndex는 바로 이 반복에서 line.size()로 설정되었을 수 있습니다.
+			// 따라서 lastBreakIndex + lastBreakSkip이 line.size()를 초과할 수 있습니다.
+			// 이 경우 substr()은 std::out_of_range 예외를 발생시키므로,
+			// "중단점이 기록되지 않음"과 동일하게 처리합니다.
 			if (lastBreakIndex >= 0 && lastBreakIndex + lastBreakSkip <= static_cast<int>(line.size())) {
 				lines.push_back(line.substr(0, lastBreakIndex));
 				line = line.substr(lastBreakIndex + lastBreakSkip);
