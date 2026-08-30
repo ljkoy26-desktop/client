@@ -383,7 +383,7 @@ size_t spritectl_get_sprite_data(spritectl_sprite_t sprite, void* buffer, size_t
 * - 즉, 대상 표면의 원래 콘텐츠가 그대로 나타납니다.
 */
 int spritectl_blt_sprite_rle(spritectl_surface_t dest, int x, int y,
-                              spritectl_sprite_t sprite, int flags, int alpha) {
+	spritectl_sprite_t sprite, int flags, int alpha) {
 	if (!dest || !sprite || !sprite->has_rle || !sprite->scanline_rle) {
 		return -1;
 	}
@@ -411,8 +411,10 @@ int spritectl_blt_sprite_rle(spritectl_surface_t dest, int x, int y,
 	int clip_right = (x + sprite->width > dest_width) ? dest_width - x : sprite->width;
 	int clip_bottom = (y + sprite->height > dest_height) ? dest_height - y : sprite->height;
 
-	if (clip_left >= clip_right || clip_top >= clip_bottom) {
-		if (SDL_MUSTLOCK(sdl_surface)) {
+	if (clip_left >= clip_right || clip_top >= clip_bottom) 
+	{
+		if (SDL_MUSTLOCK(sdl_surface)) 
+		{
 			SDL_UnlockSurface(sdl_surface);
 		}
 		return 0;  /* 완전히 클리핑되었지만 에러는 아니다 */
@@ -420,15 +422,18 @@ int spritectl_blt_sprite_rle(spritectl_surface_t dest, int x, int y,
 
 	/* 디버그: 첫 호출 시 서피스 정보를 출력한다 */
 	static int debug_printed = 0;
-	if (debug_printed < 3) {
+	if (debug_printed < 3) 
+	{
 		fprintf(stderr, "[RLE BLT] sprite=%dx%d, pos=(%d,%d), surface=%dx%d, bpp=%d, pitch=%d, stride=%d\n",
-		        sprite->width, sprite->height, x, y, dest_width, dest_height, dest_bytes_per_pixel, dest_pitch, dest_stride);
+			sprite->width, sprite->height, x, y, dest_width, dest_height, dest_bytes_per_pixel, dest_pitch, dest_stride);
 		debug_printed++;
 	}
 
 	/* 각 스캔라인을 처리한다 */
-	for (int sy = clip_top; sy < clip_bottom; sy++) {
-		if (!sprite->scanline_rle[sy] || sprite->scanline_lens[sy] == 0) {
+	for (int sy = clip_top; sy < clip_bottom; sy++)
+	{
+		if (!sprite->scanline_rle[sy] || sprite->scanline_lens[sy] == 0)
+		{
 			continue;  /* 비어있는 스캔라인 */
 		}
 
@@ -441,25 +446,30 @@ int spritectl_blt_sprite_rle(spritectl_surface_t dest, int x, int y,
 		int rle_index = 0;
 
 		/* RLE 데이터를 검증한다 */
-		if (rle_data_size < 1) {
-			if (debug_printed < 3) {
+		if (rle_data_size < 1)
+		{
+			if (debug_printed < 3)
+			{
 				fprintf(stderr, "[RLE BLT] Invalid RLE data size: %d at scanline %d\n", rle_data_size, sy);
 			}
 			continue;
 		}
 
 		int seg_count = rle_data[rle_index++];
-		if (rle_index + seg_count * 2 > rle_data_size) {
-			if (debug_printed < 3) {
+		if (rle_index + seg_count * 2 > rle_data_size)
+		{
+			if (debug_printed < 3)
+			{
 				fprintf(stderr, "[RLE BLT] RLE data corruption: seg_count=%d, size=%d at scanline %d\n",
-				        seg_count, rle_data_size, sy);
+					seg_count, rle_data_size, sy);
 			}
 			continue;
 		}
 
 		int sx = 0;
 
-		for (int seg = 0; seg < seg_count; seg++) {
+		for (int seg = 0; seg < seg_count; seg++)
+		{
 			int trans_count = rle_data[rle_index++];
 			int color_count = rle_data[rle_index++];
 
@@ -467,18 +477,22 @@ int spritectl_blt_sprite_rle(spritectl_surface_t dest, int x, int y,
 			sx += trans_count;
 
 			/* 안전 처리: 스프라이트 너비를 넘어섰다면 이 세그먼트 전체를 건너뛴다 */
-			if (sx >= sprite->width) {
+			if (sx >= sprite->width)
+			{
 				rle_index += color_count;  /* 이 세그먼트의 색상 픽셀을 모두 건너뛴다 */
 				continue;  /* 다음 세그먼트로 이동한다 */
 			}
 
 			/* 색상 픽셀을 복사한다 */
-			for (int c = 0; c < color_count && sx < sprite->width; c++) {
+			for (int c = 0; c < color_count && sx < sprite->width; c++)
+			{
 				/* RLE 데이터 범위를 넘어 읽으려는지 확인한다 */
-				if (rle_index >= rle_data_size) {
-					if (debug_printed < 3) {
+				if (rle_index >= rle_data_size)
+				{
+					if (debug_printed < 3)
+					{
 						fprintf(stderr, "[RLE BLT] RLE data overrun: rle_index=%d, size=%d, sx=%d\n",
-						        rle_index, rle_data_size, sx);
+							rle_index, rle_data_size, sx);
 					}
 					break;
 				}
@@ -489,13 +503,18 @@ int spritectl_blt_sprite_rle(spritectl_surface_t dest, int x, int y,
 
 					/* 실제 대상 위치를 계산한다 */
 					int dest_x = x + sx;
-					if (dest_x >= 0 && dest_x < dest_stride) {
+					if (dest_x >= 0 && dest_x < dest_stride)
+					{
 						/* 대상 포맷에 따라 픽셀을 쓴다 */
-						if (dest_bytes_per_pixel == 2) {
+
+						if (dest_bytes_per_pixel == 2)
+						{
 							/* RGB565 대상 - 직접 쓴다 */
 							uint16_t* dest_row_16 = (uint16_t*)dest_row_bytes;
 							dest_row_16[dest_x] = pixel;
-						} else if (dest_bytes_per_pixel == 4) {
+						}
+						else if (dest_bytes_per_pixel == 4)
+						{
 							/* RGBA32 대상 - RGB565를 RGBA32로 변환한다 */
 							uint8_t r, g, b;
 							spritectl_565_to_rgb(pixel, &r, &g, &b);
@@ -515,16 +534,22 @@ int spritectl_blt_sprite_rle(spritectl_surface_t dest, int x, int y,
 								uint8_t blend_b = (b * alpha + dest_b * (255 - alpha)) / 255;
 
 								dest_row_32[dest_x] = (255 << 24) | (blend_b << 16) | (blend_g << 8) | blend_r;
-							} else {
+							}
+							else
+							{
 								/* 불투명하게 쓴다 */
 								dest_row_32[dest_x] = (255 << 24) | (b << 16) | (g << 8) | r;
 							}
-						} else if (debug_printed < 3) {
+						}
+						else if (debug_printed < 3)
+						{
 							fprintf(stderr, "[RLE BLT] Unsupported dest BPP: %d\n", dest_bytes_per_pixel);
 						}
-					} else if (debug_printed < 3) {
+					}
+					else if (debug_printed < 3)
+					{
 						fprintf(stderr, "[RLE BLT] OUT OF BOUNDS: dest_x=%d, stride=%d, sx=%d, x=%d\n",
-						        dest_x, dest_stride, sx, x);
+							dest_x, dest_stride, sx, x);
 					}
 				}
 
@@ -535,7 +560,8 @@ int spritectl_blt_sprite_rle(spritectl_surface_t dest, int x, int y,
 	}
 
 	/* 대상 서피스 잠금을 해제한다 */
-	if (SDL_MUSTLOCK(sdl_surface)) {
+	if (SDL_MUSTLOCK(sdl_surface))
+	{
 		SDL_UnlockSurface(sdl_surface);
 	}
 

@@ -397,62 +397,55 @@ MTopView::Init()
 	int num = 30;  // Default number of effect textures
 	DEBUG_ADD("[TextureMemory] Using default value for SDL2");
 
-	//num = 20;
-
-	// 재설정.. - -;
-	//g_pClientConfig->MAX_TEXTUREPART_EFFECT				= num*3/2;
-	//g_pClientConfig->MAX_TEXTUREPART_CREATURESHADOW		= num*3;
-	//g_pClientConfig->MAX_TEXTUREPART_IMAGEOBJECTSHADOW	= num;
-	//g_pClientConfig->MAX_TEXTUREPART_ADDON_SHADOW			= 240 + num*7;
-
 	//------------------------------------------------------------------------
 	// 캐릭터 그림자를 무조건 검게 출력한다고 했을 때의 계산
 	//------------------------------------------------------------------------
-	g_pClientConfig->MAX_TEXTUREPART_EFFECT				= num*2;	//num*10;
-	g_pClientConfig->MAX_TEXTUREPART_SCREENEFFECT		= num*5;		//num*10;
-	g_pClientConfig->MAX_TEXTUREPART_CREATURESHADOW		= 1;//num*3;
-	g_pClientConfig->MAX_TEXTUREPART_IMAGEOBJECTSHADOW	= num*2;
-	g_pClientConfig->MAX_TEXTUREPART_ADDON_SHADOW		= 1;//240 + num*7;
+	g_pClientConfig->MAX_TEXTUREPART_EFFECT = num * 2;
+	g_pClientConfig->MAX_TEXTUREPART_SCREENEFFECT = num * 5;
+	g_pClientConfig->MAX_TEXTUREPART_CREATURESHADOW = 1;
+	g_pClientConfig->MAX_TEXTUREPART_IMAGEOBJECTSHADOW = num * 2;
+	g_pClientConfig->MAX_TEXTUREPART_ADDON_SHADOW = 1;
 
 	LOG_INFO("[MTopView::TexturePart] AlphaEffect = %d", g_pClientConfig->MAX_TEXTUREPART_EFFECT);
 	LOG_INFO("[MTopView::TexturePart] ScreenEffect = %d", g_pClientConfig->MAX_TEXTUREPART_SCREENEFFECT);
 	LOG_INFO("[MTopView::TexturePart] CreatureShadow = %d", g_pClientConfig->MAX_TEXTUREPART_CREATURESHADOW);
 	LOG_INFO("[MTopView::TexturePart] ImageObjectShadow = %d", g_pClientConfig->MAX_TEXTUREPART_IMAGEOBJECTSHADOW);
-	LOG_INFO("[MTopView::TexturePart] AddonShadow = %d", g_pClientConfig->MAX_TEXTUREPART_ADDON_SHADOW);	
+	LOG_INFO("[MTopView::TexturePart] AddonShadow = %d", g_pClientConfig->MAX_TEXTUREPART_ADDON_SHADOW);
 
-	if (InitSurfaces() &&
-		InitColors() &&
-//		Init3DBoxSurface() &&
-		InitSprites() &&
-		InitFilters() &&
-		InitCreatureFrames() &&
-		InitImageFrames() &&
-		InitAnimationFrames() &&
-		InitEffectFrames() &&
-		InitFonts())
-	{
-		//------------------------------------------
-		// 적절한 Texture Memory 계산
-		//------------------------------------------
-		#ifdef OUTPUT_DEBUG
-			DDSCAPS2 ddsCaps2;
-			DWORD dwTotal;
-			DWORD dwFree;
-			ZeroMemory(&ddsCaps2, sizeof(ddsCaps2)); 
-			ddsCaps2.dwCaps = DDSCAPS_TEXTURE; 
-			HRESULT hr = CSDLGraphics::GetDD()->GetAvailableVidMem(&ddsCaps2, &dwTotal, &dwFree);
+	//------------------------------------------
+	// 각 모듈 초기화 (Guard Clauses)
+	//------------------------------------------
+	if (!InitSurfaces()) return false;
+	if (!InitColors()) return false;
+	//	if (!Init3DBoxSurface()) return false;
+	if (!InitSprites()) return false;
+	if (!InitFilters()) return false;
+	if (!InitCreatureFrames()) return false;
+	if (!InitImageFrames()) return false;
+	if (!InitAnimationFrames()) return false;
+	if (!InitEffectFrames()) return false;
+	if (!InitFonts()) return false;
 
-			DEBUG_ADD_FORMAT("[TextureMemory] After Init View = %d/%d", dwFree, dwTotal);			
-		#endif
+	//------------------------------------------
+	// 모든 초기화 성공 시 처리
+	//------------------------------------------
 
-		m_bInit = true;
+#ifdef OUTPUT_DEBUG
+	DDSCAPS2 ddsCaps2;
+	DWORD dwTotal;
+	DWORD dwFree;
+	ZeroMemory(&ddsCaps2, sizeof(ddsCaps2));
+	ddsCaps2.dwCaps = DDSCAPS_TEXTURE;
+	HRESULT hr = CSDLGraphics::GetDD()->GetAvailableVidMem(&ddsCaps2, &dwTotal, &dwFree);
 
-		PrecalculateAdvancementClassCreatureFrames();
+	DEBUG_ADD_FORMAT("[TextureMemory] After Init View = %d/%d", dwFree, dwTotal);
+#endif
 
-		return true;
-	}
+	m_bInit = true;
 
-	return false;
+	PrecalculateAdvancementClassCreatureFrames();
+
+	return true;
 }
 
 //----------------------------------------------------------------------
