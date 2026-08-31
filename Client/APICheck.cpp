@@ -125,7 +125,7 @@ BOOL APICheck::CheckApi()
 	{
 		g_ppProceAddress[i]= (DWORD)GetProcAddress(LoadLibrary(g_szCheckDLL[i*2]),g_szCheckDLL[i*2+1]);
 		memcpy(&code,&g_ppProceAddress[i],1);
-		if (code == 0xB9 || code == 0xE9)   // 해킹检测
+		if (code == 0xB9 || code == 0xE9)   // 해킹감지
 		{
 			::ExitProcess(0);
 		}

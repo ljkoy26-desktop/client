@@ -418,7 +418,7 @@ MTopView::Init()
 	if (!InitSurfaces()) return false;
 	if (!InitColors()) return false;
 	//	if (!Init3DBoxSurface()) return false;
-	if (!InitSprites()) return false;
+	if (!InitSprites()) return false; 
 	if (!InitFilters()) return false;
 	if (!InitCreatureFrames()) return false;
 	if (!InitImageFrames()) return false;
