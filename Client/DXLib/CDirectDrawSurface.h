@@ -1,8 +1,8 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	CDirectDrawSurface.h
 
-	DirectX class library component.
+	DirectX 클래스 라이브러리 컴포넌트.
 
 	1999.12.28. sigi, KJTINC
 
@@ -54,7 +54,7 @@ public :
 	CDirectDrawSurface();
 	~CDirectDrawSurface();
 
-	// text out for debugging.
+	// 디버깅용 텍스트 출력.
 	void	GDI_Text(int x, int y, const char *str, COLORREF fcolor, 
 																 COLORREF bcolor = 0, 
 																 bool option = true);
@@ -62,7 +62,7 @@ public :
 
 
 	//------------------------------------------------------------
-	// Gamma
+	// 감마
 	//------------------------------------------------------------
 	void			GammaBox555(RECT* pRect, int p);
 	void			GammaBox565(RECT* pRect, int p);
@@ -78,7 +78,7 @@ public :
 	}
 
 	//------------------------------------------------------------
-	// Init
+	// 초기화
 	//------------------------------------------------------------
 	bool	InitBacksurface();	
 	bool	InitOffsurface(int wWidth, int wHeight, DWORD dwCaps = 0);	
@@ -87,24 +87,24 @@ public :
 	bool	InitTextureSurfaceFromBMP(LPCSTR szBitmap, DWORD dwCaps = 0);
 
 	//------------------------------------------------------------
-	// Load bitmap from File
+	// 파일에서 비트맵 로드
 	//------------------------------------------------------------
 	bool	ReLoadBMP(LPCSTR szBitmap);		
 	bool	SaveToBMP(const char* szFilename);
 
 	//------------------------------------------------------------
-	// Restore Lost Surface
+	// 손실된 서페이스 복원
 	//------------------------------------------------------------
 	bool	Restore();
 
 	//------------------------------------------------------------
-	// Set Transparency color
+	// 투명 색상 설정
 	// `Blt할 때 반드시 해줘야 한다.
 	//------------------------------------------------------------
 	void	SetTransparency(DWORD dwValue);
 
 	//------------------------------------------------------------
-	// Blt
+	// 블리팅(Blt)
 	//------------------------------------------------------------
 	void	Blt(POINT* pPoint, CDirectDrawSurface* SourceSurface, RECT*  pRect);
 	void	BltNoColorkey(POINT* pPoint, CDirectDrawSurface* SourceSurface, RECT*  pRect);
@@ -114,20 +114,20 @@ public :
 	void	BltPrimarySurface(POINT* pPoint, RECT* pRect);
 
 	//------------------------------------------------------------
-	// DirectDraw 제공 Drawing 함수들...
+	// DirectDraw가 제공하는 그리기 함수들...
 	//------------------------------------------------------------
 	void	FillSurface(WORD color);
 	void	FillRect(RECT* rect, WORD Color);
 		
 	//------------------------------------------------------------
-	// Get
+	// 조회
 	//------------------------------------------------------------
 	inline void *	GetSurfacePointer() { return m_ddsd.lpSurface; }
 	inline long		GetSurfacePitch() { return m_ddsd.lPitch; }
 	inline LPDIRECTDRAWSURFACE7 &	GetSurface() { return m_pDDSurface; } const
 	inline DDSURFACEDESC2 * GetDDSD() { return &m_ddsd; }
-	inline int		GetWidth() const	{ return m_Width; } // no const...
-	inline int		GetHeight() const	{ return m_Height; } // no const...
+	inline int		GetWidth() const	{ return m_Width; } // const 아님...
+	inline int		GetHeight() const	{ return m_Height; } // const 아님...
 
 	//------------------------------------------------------------
 	// Clip 영역
@@ -146,10 +146,10 @@ public :
 	inline void		SetClip(RECT* pRect)			{ SetClipLeftTop(pRect->left, pRect->top); SetClipRightBottom(pRect->right, pRect->bottom); }
 	inline void		SetClipNULL()					{ m_ClipLeft=0; m_ClipTop=0; m_ClipRight=m_Width; m_ClipBottom=m_Height; }
 
-	inline int		GetClipRight() const			{ return m_ClipRight; } // no const...
-	inline int		GetClipBottom() const			{ return m_ClipBottom; } // no const...
-	inline int		GetClipLeft() const				{ return m_ClipLeft; } // no const...
-	inline int		GetClipTop() const				{ return m_ClipTop; } // no const...	
+	inline int		GetClipRight() const			{ return m_ClipRight; } // const 아님...
+	inline int		GetClipBottom() const			{ return m_ClipBottom; } // const 아님...
+	inline int		GetClipLeft() const				{ return m_ClipLeft; } // const 아님...
+	inline int		GetClipTop() const				{ return m_ClipTop; } // const 아님...
 	
 	
 	//*/
@@ -159,7 +159,7 @@ public :
 	//
 
 	//------------------------------------------------------------
-	// Lock / Unlock
+	// 잠금 / 해제
 	//------------------------------------------------------------		
 	bool		Lock();
 	bool		Unlock();
@@ -170,9 +170,9 @@ public :
 	//void	LockDW(DWORD*& lpSurface, WORD& lPitch);
 	//void	LockQW(QWORD*& lpSurface, WORD& lPitch);
 
-	//------------------------------------------------------------		
-	// operator
-	//------------------------------------------------------------		
+	//------------------------------------------------------------
+	// 연산자
+	//------------------------------------------------------------
 	operator const LPDIRECTDRAWSURFACE7&()	{ return m_pDDSurface; }
 	
 	// class 내부에서 쓰는 함수
@@ -198,7 +198,7 @@ protected :
 	int					m_ClipLeft;
 	int					m_ClipTop;
 
-	// Surface descriptor (used by Lock/Unlock)
+	// 서페이스 디스크립터 (Lock/Unlock에서 사용)
 	DDSURFACEDESC2		m_ddsd;
 
 	static	void		(*s_GammaFunction)(void *pDest, int len, int p);

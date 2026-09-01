@@ -1,20 +1,20 @@
-//-----------------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------------
 // CDirectSoundStream.cpp
 //
-// SDL2 Implementation (Cross-platform)
-// Windows DirectSoundStream implementation removed - using SDL2_mixer on all platforms
-// NOTE: This class is deprecated. Use Mix_PlayChannel() from SDL_mixer for streaming audio.
+// SDL2 구현 (크로스플랫폼)
+// Windows DirectSoundStream 구현은 제거됨 - 모든 플랫폼에서 SDL2_mixer를 사용한다
+// 참고: 이 클래스는 더 이상 사용되지 않는다(deprecated). 스트리밍 오디오에는 SDL_mixer의 Mix_PlayChannel()을 사용하라.
 //-----------------------------------------------------------------------------
 
 #include "CDirectSoundStream.h"
 
-// Define E_FAIL for compatibility (Windows HRESULT value)
+// 호환성을 위해 E_FAIL을 정의한다 (Windows HRESULT 값)
 #ifndef E_FAIL
 #define E_FAIL 0x80004005L
 #endif
 
 //-----------------------------------------------------------------------------
-// Constructor/Destructor
+// 생성자/소멸자
 //-----------------------------------------------------------------------------
 
 CSDLStream::CSDLStream()
@@ -34,45 +34,45 @@ CSDLStream::CSDLStream()
 
 CSDLStream::~CSDLStream()
 {
-	// Stub - SDL mixer is managed elsewhere
+	// 스텁 - SDL mixer는 다른 곳에서 관리된다
 }
 
 //-----------------------------------------------------------------------------
-// Stream Operations
+// 스트림 연산
 //-----------------------------------------------------------------------------
 
 void CSDLStream::Release()
 {
-	// Not implemented - use Mix_FreeChunk() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_FreeChunk()를 대신 사용하라
 }
 
 void CSDLStream::Load(LPSTR filename)
 {
-	// Not implemented - use Mix_LoadWAV() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_LoadWAV()를 대신 사용하라
 	(void)filename;
 }
 
 void CSDLStream::Play(BOOL bLooped)
 {
-	// Not implemented - use Mix_PlayChannel() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_PlayChannel()을 대신 사용하라
 	(void)bLooped;
 }
 
 void CSDLStream::Stop()
 {
-	// Not implemented - use Mix_HaltChannel() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_HaltChannel()을 대신 사용하라
 }
 
 BOOL CSDLStream::FillBuffer(BOOL bLooped)
 {
-	// Not implemented - SDL_mixer handles buffering automatically
+	// 구현되지 않음 - SDL_mixer가 버퍼링을 자동으로 처리한다
 	(void)bLooped;
 	return FALSE;
 }
 
 BOOL CSDLStream::ReadStream(BOOL bLooped, VOID* pbBuffer, DWORD dwBufferLength)
 {
-	// Not implemented - SDL_mixer handles streaming automatically
+	// 구현되지 않음 - SDL_mixer가 스트리밍을 자동으로 처리한다
 	(void)bLooped;
 	(void)pbBuffer;
 	(void)dwBufferLength;
@@ -81,14 +81,14 @@ BOOL CSDLStream::ReadStream(BOOL bLooped, VOID* pbBuffer, DWORD dwBufferLength)
 
 BOOL CSDLStream::Reset()
 {
-	// Not implemented - SDL_mixer handles position automatically
+	// 구현되지 않음 - SDL_mixer가 위치를 자동으로 처리한다
 	return FALSE;
 }
 
 HRESULT CSDLStream::WaveReadFile(HMMIO hmmioIn, UINT cbRead, BYTE* pbDest,
 	MMCKINFO* pckIn, UINT* cbActualRead)
 {
-	// Not implemented - Windows multimedia API only
+	// 구현되지 않음 - Windows 멀티미디어 API 전용
 	(void)hmmioIn;
 	(void)cbRead;
 	(void)pbDest;
@@ -98,40 +98,40 @@ HRESULT CSDLStream::WaveReadFile(HMMIO hmmioIn, UINT cbRead, BYTE* pbDest,
 }
 
 //-----------------------------------------------------------------------------
-// Notification and Updates
+// 알림 및 갱신
 //-----------------------------------------------------------------------------
 
 BOOL CSDLStream::HandleNotification(BOOL bLooped)
 {
-	// Not implemented - SDL_mixer doesn't use notification events
+	// 구현되지 않음 - SDL_mixer는 알림 이벤트를 사용하지 않는다
 	(void)bLooped;
 	return FALSE;
 }
 
 BOOL CSDLStream::UpdateProgress()
 {
-	// Not implemented - SDL_mixer handles position tracking
+	// 구현되지 않음 - SDL_mixer가 위치 추적을 처리한다
 	return FALSE;
 }
 
 BOOL CSDLStream::RestoreBuffers(BOOL bLooped)
 {
-	// Not implemented - SDL_mixer handles buffer restoration
+	// 구현되지 않음 - SDL_mixer가 버퍼 복원을 처리한다
 	(void)bLooped;
 	return FALSE;
 }
 
 void CSDLStream::Update()
 {
-	// Not implemented - SDL_mixer handles updates automatically
+	// 구현되지 않음 - SDL_mixer가 갱신을 자동으로 처리한다
 }
 
 //-----------------------------------------------------------------------------
-// Volume Control
+// 볼륨 제어
 //-----------------------------------------------------------------------------
 
 void CSDLStream::SetVolumeLimit(LONG volume)
 {
-	// Not implemented - use Mix_Volume() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_Volume()을 대신 사용하라
 	m_MaxVolume = volume;
 }

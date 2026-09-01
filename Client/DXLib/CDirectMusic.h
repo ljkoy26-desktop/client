@@ -1,15 +1,15 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // CSDLMusic.h
 //----------------------------------------------------------------------
 
 #ifndef __CSDLMUSIC_H__
 #define __CSDLMUSIC_H__
 
-/* Platform-independent includes (SDL2 backend on all platforms) */
+/* 플랫폼 독립적인 include (모든 플랫폼에서 SDL2 백엔드 사용) */
 #include "../../basic/Platform.h"
 
-/* Forward declarations for DirectMusic types (opaque pointers) */
-/* The actual implementation uses SDL_mixer for all platforms */
+/* DirectMusic 타입에 대한 전방 선언 (불투명 포인터) */
+/* 실제 구현은 모든 플랫폼에서 SDL_mixer를 사용한다 */
 struct IDirectMusic;
 struct IDirectMusicPerformance;
 struct IDirectMusicPort;
@@ -17,14 +17,14 @@ struct IDirectMusicLoader;
 struct IDirectMusicSegment;
 struct IDirectMusicSegmentState;
 
-/* DirectMusic type definitions */
+/* DirectMusic 타입 정의 */
 typedef long MUSIC_TIME;
 typedef long long REFERENCE_TIME;
 
 typedef enum DIRECTMUSIC_TYPE
 {
-	DIRECTMUSIC_TYPE_HW,	// hardware midi
-	DIRECTMUSIC_TYPE_SW		// microsoft software synthesizer
+	DIRECTMUSIC_TYPE_HW,	// 하드웨어 미디
+	DIRECTMUSIC_TYPE_SW		// 마이크로소프트 소프트웨어 신디사이저
 };
 
 class CSDLMusic {
@@ -33,14 +33,14 @@ class CSDLMusic {
 		~CSDLMusic();
 
 		//-----------------------------------------------------------
-		// Init / Release
+		// 초기화 / 해제
 		//-----------------------------------------------------------
 		bool		Init(HWND hWnd, DIRECTMUSIC_TYPE type=DIRECTMUSIC_TYPE_SW);
 		void		Release();
 
 
 		//-----------------------------------------------------------
-		// Play / Stop		Pause / Resume
+		// 재생 / 정지		일시정지 / 재개
 		//-----------------------------------------------------------
 		bool		Play(const char* filename, WORD repeat=0xFFFF);
 		void		Stop();
@@ -48,7 +48,7 @@ class CSDLMusic {
 		void		Resume();
 
 		//-----------------------------------------------------------
-		// Tempo
+		// 템포
 		//-----------------------------------------------------------
 		int			GetCurrentTempo() const		{ return m_CurrentTempo; }
 		int			GetOriginalTempo() const	{ return m_OriginalTempo; }
@@ -56,7 +56,7 @@ class CSDLMusic {
 		void		SetCurrentTempo(int t);
 
 		//-----------------------------------------------------------
-		// Volume
+		// 볼륨
 		//-----------------------------------------------------------
 		//void		AddVolume(long hdec);
 		//void		SubVolume(long hdec);
@@ -69,12 +69,12 @@ class CSDLMusic {
 		bool		IsPlay() const		{ return m_bInit && m_bPlay; }
 		bool		IsPause() const		{ return m_bInit && m_bLoad && !m_bPlay; }
 
-		// port type
+		// 포트 타입
 		bool		IsSoftwareSynth() const	{ return m_bInit && m_bSoftwareSynth; }
 
 	protected :
 		//-----------------------------------------------------------
-		// Protected Functions
+		// Protected 함수
 		//-----------------------------------------------------------
 		bool		CreatePerformance();
 		bool		CreatePort(DIRECTMUSIC_TYPE type);
@@ -100,7 +100,7 @@ class CSDLMusic {
 		bool						m_bLoad;	// 화일이 Load되었는가?
 		bool						m_bPlay;	// 연주 중인가?
 
-		int							m_OriginalTempo;	// original 템포
+		int							m_OriginalTempo;	// 원본 템포
 		int							m_CurrentTempo;		// 현재 템포
 		//long						m_MasterVolume;
 };

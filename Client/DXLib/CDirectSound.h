@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // CDirectSound.h
 //----------------------------------------------------------------------
 
@@ -7,14 +7,14 @@
 
 #pragma warning(disable:4786)
 
-/* Platform-independent includes (SDL2 backend on all platforms) */
+/* 플랫폼 독립적인 include (모든 플랫폼에서 SDL2 백엔드 사용) */
 #include "../../basic/Platform.h"
 #include "../../basic/AudioTypes.h"
 #include <list>
 #include <cstring>
 
-/* Forward declarations for DirectSound types (opaque pointers) */
-/* The actual implementation uses SDL_mixer for all platforms */
+/* DirectSound 타입에 대한 전방 선언 (불투명 포인터) */
+/* 실제 구현은 모든 플랫폼에서 SDL_mixer를 사용한다 */
 typedef struct IDirectSound* LPDIRECTSOUND;
 #ifndef LPDIRECTSOUNDBUFFER
 typedef struct IDirectSoundBuffer* LPDIRECTSOUNDBUFFER;
@@ -29,7 +29,7 @@ class CSDLAudio
 		~CSDLAudio();
 
 		//---------------------------------------------------------
-		// Init / Release
+		// 초기화 / 해제
 		//---------------------------------------------------------
 		bool					Init(HWND);									// 초기화
 		void					Release();									// 제거
@@ -38,7 +38,7 @@ class CSDLAudio
 	bool					IsInit() const;
 
 		//---------------------------------------------------------
-		// Load / Release / Duplicate
+		// 로드 / 해제 / 복사
 		//---------------------------------------------------------
 		LPDIRECTSOUNDBUFFER		LoadWav(LPSTR filename);					// 화일 로드(*,wav)
 		LPDIRECTSOUNDBUFFER		CreateBuffer(LPVOID sdat, DWORD size, DWORD caps, LPWAVEFORMATEX wfx);
@@ -46,7 +46,7 @@ class CSDLAudio
 		LPDIRECTSOUNDBUFFER		DuplicateSoundBuffer(LPDIRECTSOUNDBUFFER, bool bAutoRelease=true);	// 사운드 버퍼 복사	
 
 		//---------------------------------------------------------
-		// Play / Stop
+		// 재생 / 정지
 		//---------------------------------------------------------
 		bool					IsPlay(LPDIRECTSOUNDBUFFER) const;								// 연주중인가?
 		bool					NewPlay(LPDIRECTSOUNDBUFFER, bool bLoop=false);	// 사운드 플레이(처음부터 다시 시작)
@@ -55,20 +55,20 @@ class CSDLAudio
 		void					ReleaseTerminatedDuplicateBuffer();
 
 		//---------------------------------------------------------
-		// Mute
+		// 음소거
 		//---------------------------------------------------------
 		bool					IsMute() const;
 		void					SetMute();
 		void					UnSetMute();
 
 		//---------------------------------------------------------
-		// Frequency
+		// 주파수
 		//---------------------------------------------------------
 		bool					AddFrequency(LPDIRECTSOUNDBUFFER, int);		// 주파수 올리기				
 		bool					SubFrequency(LPDIRECTSOUNDBUFFER, int);		// 주파수 내리기				
 	
 		//---------------------------------------------------------
-		// Volume
+		// 볼륨
 		//---------------------------------------------------------
 		bool					SetMaxVolume(LPDIRECTSOUNDBUFFER buffer);
 		bool					AddVolume(LPDIRECTSOUNDBUFFER, int);		// 볼륨 높임
@@ -82,8 +82,8 @@ class CSDLAudio
 		//---------------------------------------------------------
 		bool					RightPan(LPDIRECTSOUNDBUFFER, int);			// 오른쪽 팬
 		bool					LeftPan(LPDIRECTSOUNDBUFFER, int);			// 왼쪽 팬
-		bool					CenterToRightPan(LPDIRECTSOUNDBUFFER, int);			// center부터 오른쪽 팬
-		bool					CenterToLeftPan(LPDIRECTSOUNDBUFFER, int);			// center부터 왼쪽 팬
+		bool					CenterToRightPan(LPDIRECTSOUNDBUFFER, int);			// 가운데부터 오른쪽 팬
+		bool					CenterToLeftPan(LPDIRECTSOUNDBUFFER, int);			// 가운데부터 왼쪽 팬
 		bool					CenterPan(LPDIRECTSOUNDBUFFER);				// 가운데 팬
 		bool					ChangePan(LPDIRECTSOUNDBUFFER buffer, int pan);	// -10000 ~ 10000
 

@@ -1,9 +1,9 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	DXLibBackend.h
 
-	DXLib platform backend abstraction.
-	Defines the interface for both Windows DirectInput/DirectSound and SDL backends.
+	DXLib 플랫폼 백엔드 추상화.
+	Windows DirectInput/DirectSound와 SDL 백엔드 양쪽에 대한 인터페이스를 정의한다.
 
 	2025.01.14
 
@@ -19,374 +19,374 @@ extern "C" {
 #endif
 
 /* ============================================================================
- * Backend Selection
+ * 백엔드 선택
  * ============================================================================ */
 
-/* Backend type selection */
+/* 백엔드 종류 선택 */
 #ifdef PLATFORM_WINDOWS
 	#ifndef DXLIB_USE_SDL_BACKEND
-		#define DXLIB_BACKEND_WINDOWS  /* Use native Windows APIs */
+		#define DXLIB_BACKEND_WINDOWS  /* 네이티브 Windows API를 사용한다 */
 	#else
-		#define DXLIB_BACKEND_SDL      /* Use SDL2 */
+		#define DXLIB_BACKEND_SDL      /* SDL2를 사용한다 */
 	#endif
 #else
-	/* Non-Windows platforms must use SDL backend */
+	/* Windows가 아닌 플랫폼은 반드시 SDL 백엔드를 사용해야 한다 */
 	#define DXLIB_BACKEND_SDL
 #endif
 
 /* ============================================================================
- * Input Backend Interface
+ * 입력 백엔드 인터페이스
  * ============================================================================ */
 
 /**
- * Initialize input backend
- * @param window_handle Native window handle (HWND on Windows, SDL_Window* on SDL)
- * @return 0 on success, non-zero on failure
+ * 입력 백엔드를 초기화한다
+ * @param window_handle 네이티브 창 핸들 (Windows에서는 HWND, SDL에서는 SDL_Window*)
+ * @return 성공 시 0, 실패 시 0이 아닌 값
  */
 int dxlib_input_init(void* window_handle);
 
 /**
- * Release input backend
+ * 입력 백엔드를 해제한다
  */
 void dxlib_input_release(void);
 
 /**
- * Update input state (poll for new events)
- * Call this once per frame
+ * 입력 상태를 갱신한다 (새 이벤트를 폴링한다)
+ * 프레임마다 한 번씩 호출한다
  */
 void dxlib_input_update(void);
 
 /**
- * Check if a key is down
- * @param dik_key DirectInput key code (DIK_*)
- * @return 1 if key is down, 0 otherwise
+ * 키가 눌려 있는지 확인한다
+ * @param dik_key DirectInput 키 코드 (DIK_*)
+ * @return 눌려 있으면 1, 아니면 0
  */
 int dxlib_input_key_down(int dik_key);
 
 /**
- * Get mouse position
- * @param x Output X coordinate
- * @param y Output Y coordinate
+ * 마우스 위치를 가져온다
+ * @param x 출력 X 좌표
+ * @param y 출력 Y 좌표
  */
 void dxlib_input_get_mouse_pos(int* x, int* y);
 
 /**
- * Get mouse wheel position
- * @return Wheel position (z-coordinate)
+ * 마우스 휠 위치를 가져온다
+ * @return 휠 위치 (z 좌표)
  */
 int dxlib_input_get_mouse_wheel(void);
 
 /**
- * Check mouse button states
- * @param left Output: left button state (1=down, 0=up)
- * @param right Output: right button state
- * @param center Output: center button state
+ * 마우스 버튼 상태를 확인한다
+ * @param left 출력: 왼쪽 버튼 상태 (1=눌림, 0=뗌)
+ * @param right 출력: 오른쪽 버튼 상태
+ * @param center 출력: 가운데 버튼 상태
  */
 void dxlib_input_get_mouse_buttons(int* left, int* right, int* center);
 
 /**
- * Set mouse position (for relative movement)
- * @param x X coordinate
- * @param y Y coordinate
+ * 마우스 위치를 설정한다 (상대 이동을 위함)
+ * @param x X 좌표
+ * @param y Y 좌표
  */
 void dxlib_input_set_mouse_pos(int x, int y);
 
 /**
- * Text input event callback
- * @param text UTF-8 encoded text input (one or more characters)
- * @param window_coords Window coordinates array [x, y] for cursor position
+ * 텍스트 입력 이벤트 콜백
+ * @param text UTF-8로 인코딩된 입력 텍스트 (한 글자 이상)
+ * @param window_coords 커서 위치를 위한 창 좌표 배열 [x, y]
  */
 typedef void (*dxlib_textinput_callback)(const char* text, int* window_coords);
 
 /**
- * Set text input event receiver callback
- * @param callback Function to call when text is entered
+ * 텍스트 입력 이벤트 수신 콜백을 설정한다
+ * @param callback 텍스트가 입력될 때 호출할 함수
  */
 void dxlib_input_set_textinput_callback(dxlib_textinput_callback callback);
 
 /**
- * Text editing event callback (for IME composition)
- * @param text UTF-8 encoded text being composed
- * @param start Start position of composition text
- * @param length Length of composition text
- * @param window_coords Window coordinates array [x, y] for cursor position
+ * 텍스트 편집 이벤트 콜백 (IME 조합용)
+ * @param text 조합 중인 UTF-8 인코딩 텍스트
+ * @param start 조합 텍스트의 시작 위치
+ * @param length 조합 텍스트의 길이
+ * @param window_coords 커서 위치를 위한 창 좌표 배열 [x, y]
  */
 typedef void (*dxlib_textediting_callback)(const char* text, int start, int length, int* window_coords);
 
 /**
- * Set text editing event receiver callback
- * @param callback Function to call when text is being composed (IME)
+ * 텍스트 편집 이벤트 수신 콜백을 설정한다
+ * @param callback 텍스트가 조합 중일 때(IME) 호출할 함수
  */
 void dxlib_input_set_textediting_callback(dxlib_textediting_callback callback);
 
 /**
- * Start text input (enables SDL_TEXTINPUT events)
+ * 텍스트 입력을 시작한다 (SDL_TEXTINPUT 이벤트를 활성화한다)
  */
 void dxlib_input_start_text(void);
 
 /**
- * Stop text input (disables SDL_TEXTINPUT events)
+ * 텍스트 입력을 중지한다 (SDL_TEXTINPUT 이벤트를 비활성화한다)
  */
 void dxlib_input_stop_text(void);
 
 /* ============================================================================
- * Sound Backend Interface
+ * 사운드 백엔드 인터페이스
  * ============================================================================ */
 
 /**
- * Sound buffer handle (opaque)
+ * 사운드 버퍼 핸들 (불투명 타입)
  */
 typedef struct dxlib_sound_buffer* dxlib_sound_t;
 
 /**
- * Initialize sound backend
- * @param window_handle Native window handle
- * @return 0 on success, non-zero on failure
+ * 사운드 백엔드를 초기화한다
+ * @param window_handle 네이티브 창 핸들
+ * @return 성공 시 0, 실패 시 0이 아닌 값
  */
 int dxlib_sound_init(void* window_handle);
 
 /**
- * Release sound backend
+ * 사운드 백엔드를 해제한다
  */
 void dxlib_sound_release(void);
 
 /**
- * Load WAV file into memory
- * @param filename Path to WAV file
- * @return Sound handle or NULL on failure
+ * WAV 파일을 메모리로 로드한다
+ * @param filename WAV 파일 경로
+ * @return 사운드 핸들, 실패 시 NULL
  */
 dxlib_sound_t dxlib_sound_load_wav(const char* filename);
 
 /**
- * Create sound buffer from raw data
- * @param data Raw audio data
- * @param size Data size in bytes
- * @param channels Number of channels (1=mono, 2=stereo)
- * @param sample_rate Sample rate in Hz
- * @param bits_per_sample Bits per sample (8 or 16)
- * @return Sound handle or NULL on failure
+ * 원본 데이터로부터 사운드 버퍼를 생성한다
+ * @param data 원본 오디오 데이터
+ * @param size 데이터 크기 (바이트)
+ * @param channels 채널 수 (1=모노, 2=스테레오)
+ * @param sample_rate 샘플링 레이트 (Hz)
+ * @param bits_per_sample 샘플당 비트 수 (8 또는 16)
+ * @return 사운드 핸들, 실패 시 NULL
  */
 dxlib_sound_t dxlib_sound_create_buffer(const void* data, int size,
                                        int channels, int sample_rate,
                                        int bits_per_sample);
 
 /**
- * Release sound buffer
- * @param sound Sound handle
+ * 사운드 버퍼를 해제한다
+ * @param sound 사운드 핸들
  */
 void dxlib_sound_free(dxlib_sound_t sound);
 
 /**
- * Play sound
- * @param sound Sound handle
- * @param loop Loop continuously (1) or play once (0)
- * @return 0 on success, non-zero on failure
+ * 사운드를 재생한다
+ * @param sound 사운드 핸들
+ * @param loop 반복 재생(1) 또는 한 번만 재생(0)
+ * @return 성공 시 0, 실패 시 0이 아닌 값
  */
 int dxlib_sound_play(dxlib_sound_t sound, int loop);
 
 /**
- * Stop sound
- * @param sound Sound handle
- * @return 0 on success, non-zero on failure
+ * 사운드를 정지한다
+ * @param sound 사운드 핸들
+ * @return 성공 시 0, 실패 시 0이 아닌 값
  */
 int dxlib_sound_stop(dxlib_sound_t sound);
 
 /**
- * Check if sound is playing
- * @param sound Sound handle
- * @return 1 if playing, 0 otherwise
+ * 사운드가 재생 중인지 확인한다
+ * @param sound 사운드 핸들
+ * @return 재생 중이면 1, 아니면 0
  */
 int dxlib_sound_is_playing(dxlib_sound_t sound);
 
 /**
- * Set sound volume
- * @param sound Sound handle
- * @param volume Volume level (0-100, where 100 is max)
- * @return 0 on success, non-zero on failure
+ * 사운드 볼륨을 설정한다
+ * @param sound 사운드 핸들
+ * @param volume 볼륨 레벨 (0-100, 100이 최대)
+ * @return 성공 시 0, 실패 시 0이 아닌 값
  */
 int dxlib_sound_set_volume(dxlib_sound_t sound, int volume);
 
 /**
- * Set sound pan (stereo positioning)
- * @param sound Sound handle
- * @param pan Pan value (-100 to 100, where -100=left, 0=center, 100=right)
- * @return 0 on success, non-zero on failure
+ * 사운드 팬(스테레오 위치)을 설정한다
+ * @param sound 사운드 핸들
+ * @param pan 팬 값 (-100 ~ 100, -100=왼쪽, 0=가운데, 100=오른쪽)
+ * @return 성공 시 0, 실패 시 0이 아닌 값
  */
 int dxlib_sound_set_pan(dxlib_sound_t sound, int pan);
 
 /**
- * Set sound frequency (playback speed)
- * @param sound Sound handle
- * @param frequency Frequency in Hz (0 = original frequency)
- * @return 0 on success, non-zero on failure
+ * 사운드 주파수(재생 속도)를 설정한다
+ * @param sound 사운드 핸들
+ * @param frequency 주파수 (Hz, 0 = 원래 주파수)
+ * @return 성공 시 0, 실패 시 0이 아닌 값
  */
 int dxlib_sound_set_frequency(dxlib_sound_t sound, int frequency);
 
 /**
- * Duplicate sound buffer (for simultaneous playback)
- * @param sound Source sound handle
- * @return Duplicate sound handle or NULL on failure
+ * 사운드 버퍼를 복제한다 (동시 재생을 위함)
+ * @param sound 원본 사운드 핸들
+ * @return 복제된 사운드 핸들, 실패 시 NULL
  */
 dxlib_sound_t dxlib_sound_duplicate(dxlib_sound_t sound);
 
 /* ============================================================================
- * Music Backend Interface
+ * 음악 백엔드 인터페이스
  * ============================================================================ */
 
 /**
- * Initialize music backend
- * @param window_handle Native window handle
- * @return 0 on success, non-zero on failure
+ * 음악 백엔드를 초기화한다
+ * @param window_handle 네이티브 창 핸들
+ * @return 성공 시 0, 실패 시 0이 아닌 값
  */
 int dxlib_music_init(void* window_handle);
 
 /**
- * Release music backend
+ * 음악 백엔드를 해제한다
  */
 void dxlib_music_release(void);
 
 /**
- * Load music file
- * @param filename Path to music file (MIDI, MP3, OGG, etc.)
- * @return 0 on success, non-zero on failure
+ * 음악 파일을 로드한다
+ * @param filename 음악 파일 경로 (MIDI, MP3, OGG 등)
+ * @return 성공 시 0, 실패 시 0이 아닌 값
  */
 int dxlib_music_load(const char* filename);
 
 /**
- * Free current music
+ * 현재 음악을 해제한다
  */
 void dxlib_music_free(void);
 
 /**
- * Play music
- * @param loop Loop continuously (1) or play once (0)
- * @return 0 on success, non-zero on failure
+ * 음악을 재생한다
+ * @param loop 반복 재생(1) 또는 한 번만 재생(0)
+ * @return 성공 시 0, 실패 시 0이 아닌 값
  */
 int dxlib_music_play(int loop);
 
 /**
- * Stop music
+ * 음악을 정지한다
  */
 void dxlib_music_stop(void);
 
 /**
- * Pause music
+ * 음악을 일시정지한다
  */
 void dxlib_music_pause(void);
 
 /**
- * Resume music
+ * 음악을 재개한다
  */
 void dxlib_music_resume(void);
 
 /**
- * Check if music is playing
- * @return 1 if playing, 0 otherwise
+ * 음악이 재생 중인지 확인한다
+ * @return 재생 중이면 1, 아니면 0
  */
 int dxlib_music_is_playing(void);
 
 /**
- * Check if music is paused
- * @return 1 if paused, 0 otherwise
+ * 음악이 일시정지 상태인지 확인한다
+ * @return 일시정지 상태면 1, 아니면 0
  */
 int dxlib_music_is_paused(void);
 
 /**
- * Set music volume
- * @param volume Volume level (0-100)
- * @return 0 on success, non-zero on failure
+ * 음악 볼륨을 설정한다
+ * @param volume 볼륨 레벨 (0-100)
+ * @return 성공 시 0, 실패 시 0이 아닌 값
  */
 int dxlib_music_set_volume(int volume);
 
 /**
- * Set music tempo (playback speed)
- * @param tempo Tempo multiplier (1.0 = normal, 0.5 = half speed, 2.0 = double speed)
- * @return 0 on success, non-zero on failure
+ * 음악 템포(재생 속도)를 설정한다
+ * @param tempo 템포 배율 (1.0 = 보통, 0.5 = 절반 속도, 2.0 = 두 배 속도)
+ * @return 성공 시 0, 실패 시 0이 아닌 값
  */
 int dxlib_music_set_tempo(float tempo);
 
 /* ============================================================================
- * Stream Backend Interface (for long audio files)
+ * 스트림 백엔드 인터페이스 (긴 오디오 파일용)
  * ============================================================================ */
 
 /**
- * Stream handle (opaque)
+ * 스트림 핸들 (불투명 타입)
  */
 typedef struct dxlib_stream* dxlib_stream_t;
 
 /**
- * Initialize stream backend
- * @param window_handle Native window handle
- * @return 0 on success, non-zero on failure
+ * 스트림 백엔드를 초기화한다
+ * @param window_handle 네이티브 창 핸들
+ * @return 성공 시 0, 실패 시 0이 아닌 값
  */
 int dxlib_stream_init(void* window_handle);
 
 /**
- * Release stream backend
+ * 스트림 백엔드를 해제한다
  */
 void dxlib_stream_release(void);
 
 /**
- * Load audio file for streaming
- * @param filename Path to audio file
- * @return Stream handle or NULL on failure
+ * 스트리밍용 오디오 파일을 로드한다
+ * @param filename 오디오 파일 경로
+ * @return 스트림 핸들, 실패 시 NULL
  */
 dxlib_stream_t dxlib_stream_load(const char* filename);
 
 /**
- * Free stream
- * @param stream Stream handle
+ * 스트림을 해제한다
+ * @param stream 스트림 핸들
  */
 void dxlib_stream_free(dxlib_stream_t stream);
 
 /**
- * Play stream
- * @param stream Stream handle
- * @param loop Loop continuously
- * @return 0 on success, non-zero on failure
+ * 스트림을 재생한다
+ * @param stream 스트림 핸들
+ * @param loop 반복 재생 여부
+ * @return 성공 시 0, 실패 시 0이 아닌 값
  */
 int dxlib_stream_play(dxlib_stream_t stream, int loop);
 
 /**
- * Stop stream
- * @param stream Stream handle
+ * 스트림을 정지한다
+ * @param stream 스트림 핸들
  */
 void dxlib_stream_stop(dxlib_stream_t stream);
 
 /**
- * Update stream (call regularly to refill buffers)
- * @param stream Stream handle
- * @return 0 on success, non-zero on failure
+ * 스트림을 갱신한다 (버퍼를 다시 채우기 위해 주기적으로 호출)
+ * @param stream 스트림 핸들
+ * @return 성공 시 0, 실패 시 0이 아닌 값
  */
 int dxlib_stream_update(dxlib_stream_t stream);
 
 /**
- * Set stream volume
- * @param stream Stream handle
- * @param volume Volume level (0-100)
- * @return 0 on success, non-zero on failure
+ * 스트림 볼륨을 설정한다
+ * @param stream 스트림 핸들
+ * @param volume 볼륨 레벨 (0-100)
+ * @return 성공 시 0, 실패 시 0이 아닌 값
  */
 int dxlib_stream_set_volume(dxlib_stream_t stream, int volume);
 
 /**
- * Check if stream is playing
- * @param stream Stream handle
- * @return 1 if playing, 0 otherwise
+ * 스트림이 재생 중인지 확인한다
+ * @param stream 스트림 핸들
+ * @return 재생 중이면 1, 아니면 0
  */
 int dxlib_stream_is_playing(dxlib_stream_t stream);
 
 /* ============================================================================
- * Backend Information
+ * 백엔드 정보
  * ============================================================================ */
 
 /**
- * Get backend name
- * @return Backend name string ("DirectInput/DirectSound" or "SDL2")
+ * 백엔드 이름을 가져온다
+ * @return 백엔드 이름 문자열 ("DirectInput/DirectSound" 또는 "SDL2")
  */
 const char* dxlib_get_backend_name(void);
 
 /**
- * Get backend capabilities flags
+ * 백엔드 기능 플래그를 가져온다
  */
 #define DXLIB_CAP_INPUT           0x01
 #define DXLIB_CAP_SOUND           0x02

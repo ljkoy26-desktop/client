@@ -1,20 +1,20 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // CDirectSound.cpp
 //
-// SDL2 Implementation (Cross-platform)
-// Windows DirectSound implementation removed - using SDL2_mixer on all platforms
-// NOTE: This class is deprecated. Use SDL_mixer functions directly instead.
+// SDL2 구현 (크로스플랫폼)
+// Windows DirectSound 구현은 제거됨 - 모든 플랫폼에서 SDL2_mixer를 사용한다
+// 참고: 이 클래스는 더 이상 사용되지 않는다(deprecated). SDL_mixer 함수를 직접 사용하라.
 //----------------------------------------------------------------------
 
 #include "CDirectSound.h"
 
 //-----------------------------------------------------------------------------
-// Global instance
+// 전역 인스턴스
 //-----------------------------------------------------------------------------
 CSDLAudio g_SDLAudio;
 
 //-----------------------------------------------------------------------------
-// Constructor/Destructor
+// 생성자/소멸자
 //-----------------------------------------------------------------------------
 
 CSDLAudio::CSDLAudio()
@@ -27,23 +27,23 @@ CSDLAudio::CSDLAudio()
 
 CSDLAudio::~CSDLAudio()
 {
-	// Stub - SDL mixer is managed elsewhere
+	// 스텁 - SDL mixer는 다른 곳에서 관리된다
 }
 
 //-----------------------------------------------------------------------------
-// Initialization
+// 초기화
 //-----------------------------------------------------------------------------
 
 bool CSDLAudio::Init(HWND hwnd)
 {
-	// Not implemented - use Mix_OpenAudio() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_OpenAudio()를 대신 사용하라
 	(void)hwnd;
 	return false;
 }
 
 void CSDLAudio::Release()
 {
-	// Not implemented - use Mix_CloseAudio() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_CloseAudio()를 대신 사용하라
 }
 
 bool CSDLAudio::IsInit() const
@@ -52,7 +52,7 @@ bool CSDLAudio::IsInit() const
 }
 
 //-----------------------------------------------------------------------------
-// Mute Control
+// 음소거 제어
 //-----------------------------------------------------------------------------
 
 bool CSDLAudio::IsMute() const
@@ -71,7 +71,7 @@ void CSDLAudio::UnSetMute()
 }
 
 //-----------------------------------------------------------------------------
-// Volume Control
+// 볼륨 제어
 //-----------------------------------------------------------------------------
 
 LONG CSDLAudio::GetVolumeLimit() const
@@ -86,14 +86,14 @@ void CSDLAudio::SetVolumeLimit(LONG volume)
 
 bool CSDLAudio::SetMaxVolume(LPDIRECTSOUNDBUFFER buffer)
 {
-	// Not implemented - use Mix_Volume() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_Volume()을 대신 사용하라
 	(void)buffer;
 	return false;
 }
 
 bool CSDLAudio::AddVolume(LPDIRECTSOUNDBUFFER buffer, int step)
 {
-	// Not implemented - use Mix_Volume() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_Volume()을 대신 사용하라
 	(void)buffer;
 	(void)step;
 	return false;
@@ -101,7 +101,7 @@ bool CSDLAudio::AddVolume(LPDIRECTSOUNDBUFFER buffer, int step)
 
 bool CSDLAudio::SubVolume(LPDIRECTSOUNDBUFFER buffer, int step)
 {
-	// Not implemented - use Mix_Volume() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_Volume()을 대신 사용하라
 	(void)buffer;
 	(void)step;
 	return false;
@@ -109,19 +109,19 @@ bool CSDLAudio::SubVolume(LPDIRECTSOUNDBUFFER buffer, int step)
 
 bool CSDLAudio::SubVolumeFromMax(LPDIRECTSOUNDBUFFER buffer, int step)
 {
-	// Not implemented - use Mix_Volume() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_Volume()을 대신 사용하라
 	(void)buffer;
 	(void)step;
 	return false;
 }
 
 //-----------------------------------------------------------------------------
-// Frequency Control
+// 주파수 제어
 //-----------------------------------------------------------------------------
 
 bool CSDLAudio::AddFrequency(LPDIRECTSOUNDBUFFER buffer, int step)
 {
-	// Not implemented - SDL_mixer doesn't support real-time frequency changes
+	// 구현되지 않음 - SDL_mixer는 실시간 주파수 변경을 지원하지 않는다
 	(void)buffer;
 	(void)step;
 	return false;
@@ -129,19 +129,19 @@ bool CSDLAudio::AddFrequency(LPDIRECTSOUNDBUFFER buffer, int step)
 
 bool CSDLAudio::SubFrequency(LPDIRECTSOUNDBUFFER buffer, int step)
 {
-	// Not implemented - SDL_mixer doesn't support real-time frequency changes
+	// 구현되지 않음 - SDL_mixer는 실시간 주파수 변경을 지원하지 않는다
 	(void)buffer;
 	(void)step;
 	return false;
 }
 
 //-----------------------------------------------------------------------------
-// Pan Control
+// 팬 제어
 //-----------------------------------------------------------------------------
 
 bool CSDLAudio::RightPan(LPDIRECTSOUNDBUFFER buffer, int step)
 {
-	// Not implemented - SDL_mixer doesn't support real-time panning
+	// 구현되지 않음 - SDL_mixer는 실시간 패닝을 지원하지 않는다
 	(void)buffer;
 	(void)step;
 	return false;
@@ -149,7 +149,7 @@ bool CSDLAudio::RightPan(LPDIRECTSOUNDBUFFER buffer, int step)
 
 bool CSDLAudio::LeftPan(LPDIRECTSOUNDBUFFER buffer, int step)
 {
-	// Not implemented - SDL_mixer doesn't support real-time panning
+	// 구현되지 않음 - SDL_mixer는 실시간 패닝을 지원하지 않는다
 	(void)buffer;
 	(void)step;
 	return false;
@@ -157,7 +157,7 @@ bool CSDLAudio::LeftPan(LPDIRECTSOUNDBUFFER buffer, int step)
 
 bool CSDLAudio::CenterToRightPan(LPDIRECTSOUNDBUFFER buffer, int step)
 {
-	// Not implemented - SDL_mixer doesn't support real-time panning
+	// 구현되지 않음 - SDL_mixer는 실시간 패닝을 지원하지 않는다
 	(void)buffer;
 	(void)step;
 	return false;
@@ -165,7 +165,7 @@ bool CSDLAudio::CenterToRightPan(LPDIRECTSOUNDBUFFER buffer, int step)
 
 bool CSDLAudio::CenterToLeftPan(LPDIRECTSOUNDBUFFER buffer, int step)
 {
-	// Not implemented - SDL_mixer doesn't support real-time panning
+	// 구현되지 않음 - SDL_mixer는 실시간 패닝을 지원하지 않는다
 	(void)buffer;
 	(void)step;
 	return false;
@@ -173,33 +173,33 @@ bool CSDLAudio::CenterToLeftPan(LPDIRECTSOUNDBUFFER buffer, int step)
 
 bool CSDLAudio::CenterPan(LPDIRECTSOUNDBUFFER buffer)
 {
-	// Not implemented - SDL_mixer doesn't support real-time panning
+	// 구현되지 않음 - SDL_mixer는 실시간 패닝을 지원하지 않는다
 	(void)buffer;
 	return false;
 }
 
 bool CSDLAudio::ChangePan(LPDIRECTSOUNDBUFFER buffer, int pan)
 {
-	// Not implemented - SDL_mixer doesn't support real-time panning
+	// 구현되지 않음 - SDL_mixer는 실시간 패닝을 지원하지 않는다
 	(void)buffer;
 	(void)pan;
 	return false;
 }
 
 //-----------------------------------------------------------------------------
-// Sound Buffer Operations
+// 사운드 버퍼 연산
 //-----------------------------------------------------------------------------
 
 LPDIRECTSOUNDBUFFER CSDLAudio::LoadWav(LPSTR filename)
 {
-	// Not implemented - use Mix_LoadWAV() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_LoadWAV()를 대신 사용하라
 	(void)filename;
 	return NULL;
 }
 
 LPDIRECTSOUNDBUFFER CSDLAudio::CreateBuffer(LPVOID sdat, DWORD size, DWORD caps, LPWAVEFORMATEX wfx)
 {
-	// Not implemented - use SDL_mixer sound functions instead
+	// 구현되지 않음 - SDL_mixer 사운드 함수를 대신 사용하라
 	(void)sdat;
 	(void)size;
 	(void)caps;
@@ -209,13 +209,13 @@ LPDIRECTSOUNDBUFFER CSDLAudio::CreateBuffer(LPVOID sdat, DWORD size, DWORD caps,
 
 void CSDLAudio::Release(LPDIRECTSOUNDBUFFER buffer)
 {
-	// Not implemented - use Mix_FreeChunk() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_FreeChunk()를 대신 사용하라
 	(void)buffer;
 }
 
 LPDIRECTSOUNDBUFFER CSDLAudio::DuplicateSoundBuffer(LPDIRECTSOUNDBUFFER buffer, bool bAutoRelease)
 {
-	// Not implemented - SDL_mixer doesn't need buffer duplication
+	// 구현되지 않음 - SDL_mixer는 버퍼 복제가 필요 없다
 	(void)buffer;
 	(void)bAutoRelease;
 	return NULL;
@@ -223,28 +223,28 @@ LPDIRECTSOUNDBUFFER CSDLAudio::DuplicateSoundBuffer(LPDIRECTSOUNDBUFFER buffer, 
 
 void CSDLAudio::ReleaseDuplicateBuffer()
 {
-	// Not implemented - not needed with SDL_mixer
+	// 구현되지 않음 - SDL_mixer에서는 필요 없다
 }
 
 void CSDLAudio::ReleaseTerminatedDuplicateBuffer()
 {
-	// Not implemented - not needed with SDL_mixer
+	// 구현되지 않음 - SDL_mixer에서는 필요 없다
 }
 
 //-----------------------------------------------------------------------------
-// Playback Control
+// 재생 제어
 //-----------------------------------------------------------------------------
 
 bool CSDLAudio::IsPlay(LPDIRECTSOUNDBUFFER buffer) const
 {
-	// Not implemented - use Mix_Playing() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_Playing()을 대신 사용하라
 	(void)buffer;
 	return false;
 }
 
 bool CSDLAudio::NewPlay(LPDIRECTSOUNDBUFFER buffer, bool loop)
 {
-	// Not implemented - use Mix_PlayChannel() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_PlayChannel()을 대신 사용하라
 	(void)buffer;
 	(void)loop;
 	return false;
@@ -252,7 +252,7 @@ bool CSDLAudio::NewPlay(LPDIRECTSOUNDBUFFER buffer, bool loop)
 
 bool CSDLAudio::Play(LPDIRECTSOUNDBUFFER buffer, bool loop, bool duplicate)
 {
-	// Not implemented - use Mix_PlayChannel() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_PlayChannel()을 대신 사용하라
 	(void)buffer;
 	(void)loop;
 	(void)duplicate;
@@ -261,13 +261,13 @@ bool CSDLAudio::Play(LPDIRECTSOUNDBUFFER buffer, bool loop, bool duplicate)
 
 bool CSDLAudio::Stop(LPDIRECTSOUNDBUFFER buffer)
 {
-	// Not implemented - use Mix_HaltChannel() from SDL_mixer instead
+	// 구현되지 않음 - SDL_mixer의 Mix_HaltChannel()을 대신 사용하라
 	(void)buffer;
 	return false;
 }
 
 //-----------------------------------------------------------------------------
-// DirectSound Access
+// DirectSound 접근
 //-----------------------------------------------------------------------------
 
 LPDIRECTSOUND CSDLAudio::GetDS() const
@@ -276,12 +276,12 @@ LPDIRECTSOUND CSDLAudio::GetDS() const
 }
 
 //-----------------------------------------------------------------------------
-// Error Handling
+// 오류 처리
 //-----------------------------------------------------------------------------
 
 bool CSDLAudio::DirectSoundFailed(const char* str)
 {
-	// Not implemented - log error to console instead
+	// 구현되지 않음 - 대신 콘솔에 오류를 기록하라
 	(void)str;
 	return false;
 }

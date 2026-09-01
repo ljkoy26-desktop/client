@@ -1,9 +1,9 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	DXLibBackendSDL.cpp
 
-	SDL2 backend implementation for DXLib.
-	Provides SDL2-based input and audio for cross-platform support.
+	DXLib를 위한 SDL2 백엔드 구현.
+	크로스플랫폼 지원을 위해 SDL2 기반 입력과 오디오를 제공한다.
 
 	2025.01.14
 
@@ -11,7 +11,7 @@
 
 #define DXLIB_BACKEND_SDL_IMPL
 
-/* Include CDirectInput.h first to get DIK constants */
+/* DIK 상수를 얻기 위해 CDirectInput.h를 가장 먼저 include한다 */
 #include "CDirectInput.h"
 #include "DXLibBackend.h"
 
@@ -22,15 +22,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* Include input focus manager */
+/* 입력 포커스 관리자를 include한다 */
 #include "../../VS_UI/src/InputFocusManager.h"
 
-/* For MP3/OGG support */
+/* MP3/OGG 지원을 위함 */
 #ifdef SDL_MIXER_MAJOR_VERSION
 	#include <SDL_mixer.h>
 #endif
 
-/* Fallback: If DIK constants are not defined, define them here */
+/* 대체: DIK 상수가 정의되어 있지 않으면 여기서 정의한다 */
 #ifndef DIK_ESCAPE
 	#define DIK_ESCAPE          0x01
 	#define DIK_1               0x02
@@ -163,13 +163,13 @@
 	#define DIK_LWIN            0xDB
 	#define DIK_RWIN            0xDC
 	#define DIK_APPS            0xDD
-	/* ALT key aliases (DirectInput uses LMENU/RMENU) */
+	/* ALT 키 별칭 (DirectInput은 LMENU/RMENU를 사용) */
 	#define DIK_LALT            DIK_LMENU
 	#define DIK_RALT            DIK_RMENU
 #endif
 
 /* ============================================================================
- * Internal State
+ * 내부 상태
  * ============================================================================ */
 
 static int g_input_initialized = 0;
@@ -177,27 +177,27 @@ static int g_sound_initialized = 0;
 static int g_music_initialized = 0;
 static int g_stream_initialized = 0;
 
-/* Input state */
+/* 입력 상태 */
 static Uint8 g_key_state[SDL_NUM_SCANCODES];
 static int g_mouse_x = 0;
 static int g_mouse_y = 0;
 static int g_mouse_wheel = 0;
 static int g_mouse_buttons[3] = {0, 0, 0};
 
-/* Text input callback */
+/* 텍스트 입력 콜백 */
 static dxlib_textinput_callback g_textinput_callback = NULL;
 
-/* Text editing callback */
+/* 텍스트 편집 콜백 */
 static dxlib_textediting_callback g_textediting_callback = NULL;
 
-/* Legacy global mouse coordinates (used by CWaitUIUpdate) */
+/* 레거시 전역 마우스 좌표 (CWaitUIUpdate에서 사용) */
 extern int g_x, g_y;
 
-/* Global game state. On non-Windows this is defined in SDLMain.cpp (the
-   main loop that reads it); SDLMain.cpp is compiled out on Windows (it's
-   the macOS/Linux entry point), so define it here instead - this file
-   (dxlib) is built on every platform, and nothing else provides it for
-   PLATFORM_WINDOWS. */
+/* 전역 게임 상태. Windows가 아닌 환경에서는 이를 읽는 메인 루프가 있는
+   SDLMain.cpp에서 정의된다; SDLMain.cpp는 Windows에서는 컴파일 대상에서
+   제외되므로(macOS/Linux 진입점이기 때문) 대신 여기서 정의한다 - 이
+   파일(dxlib)은 모든 플랫폼에서 빌드되며, PLATFORM_WINDOWS를 위해
+   이를 제공하는 다른 곳이 없다. */
 #ifdef PLATFORM_WINDOWS
 bool g_bRunning = true;
 #else
@@ -205,16 +205,16 @@ extern bool g_bRunning;
 #endif
 extern BOOL g_bActiveApp;
 
-/* DIK to SDL scancode mapping table */
+/* DIK를 SDL 스캔코드로 매핑하는 테이블 */
 static SDL_Scancode g_dik_to_scancode[256] = {SDL_SCANCODE_UNKNOWN};
 
 /* ============================================================================
- * Input Backend Implementation
+ * 입력 백엔드 구현
  * ============================================================================ */
 
 static void init_key_mapping(void) {
-	/* Initialize DirectInput key code to SDL scancode mapping */
-	/* Alphabet */
+	/* DirectInput 키 코드를 SDL 스캔코드로 매핑하도록 초기화한다 */
+	/* 알파벳 */
 	g_dik_to_scancode[DIK_A] = SDL_SCANCODE_A;
 	g_dik_to_scancode[DIK_B] = SDL_SCANCODE_B;
 	g_dik_to_scancode[DIK_C] = SDL_SCANCODE_C;
@@ -242,7 +242,7 @@ static void init_key_mapping(void) {
 	g_dik_to_scancode[DIK_Y] = SDL_SCANCODE_Y;
 	g_dik_to_scancode[DIK_Z] = SDL_SCANCODE_Z;
 
-	/* Numbers */
+	/* 숫자 */
 	g_dik_to_scancode[DIK_0] = SDL_SCANCODE_0;
 	g_dik_to_scancode[DIK_1] = SDL_SCANCODE_1;
 	g_dik_to_scancode[DIK_2] = SDL_SCANCODE_2;
@@ -254,7 +254,7 @@ static void init_key_mapping(void) {
 	g_dik_to_scancode[DIK_8] = SDL_SCANCODE_8;
 	g_dik_to_scancode[DIK_9] = SDL_SCANCODE_9;
 
-	/* Function keys */
+	/* 기능 키 */
 	g_dik_to_scancode[DIK_F1] = SDL_SCANCODE_F1;
 	g_dik_to_scancode[DIK_F2] = SDL_SCANCODE_F2;
 	g_dik_to_scancode[DIK_F3] = SDL_SCANCODE_F3;
@@ -268,7 +268,7 @@ static void init_key_mapping(void) {
 	g_dik_to_scancode[DIK_F11] = SDL_SCANCODE_F11;
 	g_dik_to_scancode[DIK_F12] = SDL_SCANCODE_F12;
 
-	/* Special keys */
+	/* 특수 키 */
 	g_dik_to_scancode[DIK_ESCAPE] = SDL_SCANCODE_ESCAPE;
 	g_dik_to_scancode[DIK_TAB] = SDL_SCANCODE_TAB;
 	g_dik_to_scancode[DIK_RETURN] = SDL_SCANCODE_RETURN;
@@ -284,7 +284,7 @@ static void init_key_mapping(void) {
 	g_dik_to_scancode[DIK_NUMLOCK] = SDL_SCANCODE_NUMLOCKCLEAR;
 	g_dik_to_scancode[DIK_SCROLL] = SDL_SCANCODE_SCROLLLOCK;
 
-	/* Arrow keys */
+	/* 방향키 */
 	g_dik_to_scancode[DIK_UP] = SDL_SCANCODE_UP;
 	g_dik_to_scancode[DIK_DOWN] = SDL_SCANCODE_DOWN;
 	g_dik_to_scancode[DIK_LEFT] = SDL_SCANCODE_LEFT;
@@ -296,7 +296,7 @@ static void init_key_mapping(void) {
 	g_dik_to_scancode[DIK_INSERT] = SDL_SCANCODE_INSERT;
 	g_dik_to_scancode[DIK_DELETE] = SDL_SCANCODE_DELETE;
 
-	/* Symbols */
+	/* 기호 */
 	g_dik_to_scancode[DIK_EQUALS] = SDL_SCANCODE_EQUALS;
 	g_dik_to_scancode[DIK_MINUS] = SDL_SCANCODE_MINUS;
 	g_dik_to_scancode[DIK_LBRACKET] = SDL_SCANCODE_LEFTBRACKET;
@@ -309,7 +309,7 @@ static void init_key_mapping(void) {
 	g_dik_to_scancode[DIK_PERIOD] = SDL_SCANCODE_PERIOD;
 	g_dik_to_scancode[DIK_SLASH] = SDL_SCANCODE_SLASH;
 
-	/* Keypad */
+	/* 숫자패드 */
 	g_dik_to_scancode[DIK_NUMPAD0] = SDL_SCANCODE_KP_0;
 	g_dik_to_scancode[DIK_NUMPAD1] = SDL_SCANCODE_KP_1;
 	g_dik_to_scancode[DIK_NUMPAD2] = SDL_SCANCODE_KP_2;
@@ -331,7 +331,7 @@ static void init_key_mapping(void) {
 int dxlib_input_init(void* window_handle) {
 	if (g_input_initialized) return 0;
 
-	/* Initialize SDL subsystems (if not already initialized) */
+	/* SDL 서브시스템을 초기화한다 (아직 초기화되지 않았다면) */
 	if (SDL_WasInit(0) == 0) {
 		if (SDL_Init(0) < 0) {
 			fprintf(stderr, "SDL_Init failed: %s\n", SDL_GetError());
@@ -339,10 +339,10 @@ int dxlib_input_init(void* window_handle) {
 		}
 	}
 
-	/* Initialize key mapping */
+	/* 키 매핑을 초기화한다 */
 	init_key_mapping();
 
-	/* Initialize keyboard state */
+	/* 키보드 상태를 초기화한다 */
 	int num_keys;
 	const Uint8* state = SDL_GetKeyboardState(&num_keys);
 	memcpy(g_key_state, state, sizeof(g_key_state));
@@ -365,7 +365,7 @@ void dxlib_input_update(void) {
 		return;
 	}
 
-	/* Update SDL events */
+	/* SDL 이벤트를 갱신한다 */
 	SDL_Event event;
 	while (SDL_PollEvent(&event)) {
 		switch (event.type) {
@@ -377,18 +377,18 @@ void dxlib_input_update(void) {
 				if (event.window.event == SDL_WINDOWEVENT_FOCUS_GAINED) {
 					g_bActiveApp = TRUE;
 				} else if (event.window.event == SDL_WINDOWEVENT_FOCUS_LOST) {
-					// Don't deactivate - keep game running in background
+					// 비활성화하지 않는다 - 백그라운드에서도 게임을 계속 실행한다
 					// g_bActiveApp = FALSE;
 				}
 				break;
 
 			case SDL_KEYDOWN:
-				/* Handle control keys for text input */
+				/* 텍스트 입력을 위한 제어 키를 처리한다 */
 				if (g_GetInputFocusManager().HasFocus()) {
 					SDL_Keycode key = event.key.keysym.sym;
 					unsigned int vk_code = 0;
 
-					// Map SDL key codes to Windows virtual key codes
+					// SDL 키 코드를 Windows 가상 키 코드로 매핑한다
 					switch (key) {
 					case SDLK_BACKSPACE:	vk_code = 0x08; break; // VK_BACK
 					case SDLK_TAB:		vk_code = 0x09; break; // VK_TAB
@@ -405,29 +405,29 @@ void dxlib_input_update(void) {
 
 					if (vk_code != 0) {
 						g_GetInputFocusManager().HandleKeyDown(vk_code);
-						// Don't break here - let keyboard state update below
-						// This ensures dxlib_input_key_down() works correctly
+						// 여기서 break하지 않는다 - 아래에서 키보드 상태가 갱신되도록 한다
+						// 이는 dxlib_input_key_down()이 올바르게 동작하도록 보장한다
 					}
 				}
-				/* Fall through to update keyboard state */
-				/* IMPORTANT: Keyboard state MUST be updated even when InputFocusManager has focus */
+				/* 키보드 상태 갱신으로 fall through한다 */
+				/* 중요: InputFocusManager가 포커스를 가지고 있어도 키보드 상태는 반드시 갱신되어야 한다 */
 
 			case SDL_KEYUP:
-				/* Keyboard state is updated by SDL_GetKeyboardState below */
-				/* No additional handling needed */
+				/* 키보드 상태는 아래의 SDL_GetKeyboardState에 의해 갱신된다 */
+				/* 추가 처리가 필요 없다 */
 				break;
 
 			case SDL_MOUSEMOTION:
 				g_mouse_x = event.motion.x;
 				g_mouse_y = event.motion.y;
-				// Also update global g_x and g_y for legacy code
+				// 레거시 코드를 위해 전역 g_x, g_y도 갱신한다
 				g_x = event.motion.x;
 				g_y = event.motion.y;
 				break;
 
 			case SDL_MOUSEBUTTONDOWN:
 			case SDL_MOUSEBUTTONUP:
-				// Update global g_x and g_y for legacy code
+				// 레거시 코드를 위해 전역 g_x, g_y도 갱신한다
 				g_x = event.button.x;
 				g_y = event.button.y;
 
@@ -445,9 +445,9 @@ void dxlib_input_update(void) {
 				break;
 
 			case SDL_TEXTINPUT:
-				/* Handle text input for IME and text entry */
+				/* IME 및 텍스트 입력을 처리한다 */
 				{
-					// Route to InputFocusManager instead of callback
+					// 콜백 대신 InputFocusManager로 전달한다
 					if (event.text.text[0] != '\0') {
 						g_GetInputFocusManager().HandleTextInput(event.text.text);
 					}
@@ -455,9 +455,9 @@ void dxlib_input_update(void) {
 				break;
 
 			case SDL_TEXTEDITING:
-				/* Handle IME composition (text editing in progress) */
+				/* IME 조합을 처리한다 (텍스트 편집이 진행 중) */
 				{
-					// Route to InputFocusManager instead of callback
+					// 콜백 대신 InputFocusManager로 전달한다
 					g_GetInputFocusManager().HandleTextEditing(event.edit.text,
 					                                         event.edit.start,
 					                                         event.edit.length);
@@ -466,13 +466,13 @@ void dxlib_input_update(void) {
 		}
 	}
 
-	/* Update keyboard state */
+	/* 키보드 상태를 갱신한다 */
 	const Uint8* state = SDL_GetKeyboardState(NULL);
 
-	/* Update mouse position from SDL (as fallback if no events received) */
+	/* 이벤트가 없을 경우를 대비해 SDL에서 마우스 위치를 갱신한다 */
 	SDL_GetMouseState(&g_mouse_x, &g_mouse_y);
 
-	/* Also update global g_x, g_y for legacy code (IMPORTANT!) */
+	/* 레거시 코드를 위해 전역 g_x, g_y도 갱신한다 (중요!) */
 	g_x = g_mouse_x;
 	g_y = g_mouse_y;
 }
@@ -525,7 +525,7 @@ void dxlib_input_stop_text(void) {
 }
 
 /* ============================================================================
- * Sound Backend Implementation (SDL_mixer)
+ * 사운드 백엔드 구현 (SDL_mixer)
  * ============================================================================ */
 
 #ifdef SDL_MIXER_MAJOR_VERSION
@@ -543,13 +543,13 @@ static int g_max_volume = 100;
 int dxlib_sound_init(void* window_handle) {
 	if (g_sound_initialized) return 0;
 
-	/* Initialize SDL_mixer */
+	/* SDL_mixer를 초기화한다 */
 	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024) < 0) {
 		fprintf(stderr, "Mix_OpenAudio failed: %s\n", Mix_GetError());
 		return 1;
 	}
 
-	/* Allocate channels */
+	/* 채널을 할당한다 */
 	Mix_AllocateChannels(32);
 
 	g_sound_initialized = 1;
@@ -592,11 +592,11 @@ dxlib_sound_t dxlib_sound_create_buffer(const void* data, int size,
                                        int bits_per_sample) {
 	if (!g_sound_initialized) return NULL;
 
-	/* Convert raw data to SDL_RWops */
+	/* 원본 데이터를 SDL_RWops로 변환한다 */
 	SDL_RWops* rw = SDL_RWFromConstMem(data, size);
 	if (!rw) return NULL;
 
-	Mix_Chunk* chunk = Mix_LoadWAV_RW(rw, 1); /* 1 = auto-free */
+	Mix_Chunk* chunk = Mix_LoadWAV_RW(rw, 1); /* 1 = 자동 해제 */
 	if (!chunk) return NULL;
 
 	struct dxlib_sound_buffer* sound = (struct dxlib_sound_buffer*)malloc(sizeof(struct dxlib_sound_buffer));
@@ -628,7 +628,7 @@ void dxlib_sound_free(dxlib_sound_t sound) {
 int dxlib_sound_play(dxlib_sound_t sound, int loop) {
 	if (!sound || !sound->chunk) return 1;
 
-	int loops = loop ? -1 : 0; /* -1 = infinite loop */
+	int loops = loop ? -1 : 0; /* -1 = 무한 반복 */
 	sound->channel = Mix_PlayChannel(-1, sound->chunk, loops);
 	sound->playing = (sound->channel >= 0);
 
@@ -656,7 +656,7 @@ int dxlib_sound_set_volume(dxlib_sound_t sound, int volume) {
 	if (!sound) return 1;
 
 	sound->volume = volume;
-	int mix_volume = (volume * 128) / 100; /* Convert to SDL_mixer range */
+	int mix_volume = (volume * 128) / 100; /* SDL_mixer 범위로 변환한다 */
 
 	if (sound->channel >= 0) {
 		Mix_Volume(sound->channel, mix_volume);
@@ -668,17 +668,17 @@ int dxlib_sound_set_volume(dxlib_sound_t sound, int volume) {
 int dxlib_sound_set_pan(dxlib_sound_t sound, int pan) {
 	if (!sound) return 1;
 
-	/* SDL_mixer doesn't support panning directly on channels */
-	/* This would require using Mix_SetPosition (which is not always available) */
-	/* For now, just store the pan value */
+	/* SDL_mixer는 채널에서 직접적인 패닝을 지원하지 않는다 */
+	/* 이를 위해서는 Mix_SetPosition을 사용해야 하는데(항상 사용 가능한 것은 아님) */
+	/* 지금은 팬 값만 저장해 둔다 */
 	sound->pan = pan;
 
 	return 0;
 }
 
 int dxlib_sound_set_frequency(dxlib_sound_t sound, int frequency) {
-	/* SDL_mixer doesn't support changing frequency */
-	/* This would require recreating the chunk with resampled data */
+	/* SDL_mixer는 주파수 변경을 지원하지 않는다 */
+	/* 이를 위해서는 리샘플링된 데이터로 청크를 다시 생성해야 한다 */
 	return 1;
 }
 
@@ -688,7 +688,7 @@ dxlib_sound_t dxlib_sound_duplicate(dxlib_sound_t sound) {
 	struct dxlib_sound_buffer* duplicate = (struct dxlib_sound_buffer*)malloc(sizeof(struct dxlib_sound_buffer));
 	if (!duplicate) return NULL;
 
-	/* Reference the same chunk */
+	/* 동일한 청크를 참조한다 */
 	duplicate->chunk = sound->chunk;
 	duplicate->channel = -1;
 	duplicate->volume = sound->volume;
@@ -700,7 +700,7 @@ dxlib_sound_t dxlib_sound_duplicate(dxlib_sound_t sound) {
 
 #else /* !SDL_MIXER_MAJOR_VERSION */
 
-/* SDL_mixer not available - stub implementation */
+/* SDL_mixer를 사용할 수 없음 - 스텁 구현 */
 int dxlib_sound_init(void* window_handle) { return 1; }
 void dxlib_sound_release(void) {}
 dxlib_sound_t dxlib_sound_load_wav(const char* filename) { return NULL; }
@@ -716,7 +716,7 @@ dxlib_sound_t dxlib_sound_duplicate(dxlib_sound_t sound) { return NULL; }
 #endif /* SDL_MIXER_MAJOR_VERSION */
 
 /* ============================================================================
- * Music Backend Implementation (SDL_mixer)
+ * 음악 백엔드 구현 (SDL_mixer)
  * ============================================================================ */
 
 #ifdef SDL_MIXER_MAJOR_VERSION
@@ -729,7 +729,7 @@ static int g_music_volume = 100;
 int dxlib_music_init(void* window_handle) {
 	if (g_music_initialized) return 0;
 
-	/* SDL_mixer should already be initialized by dxlib_sound_init */
+	/* SDL_mixer는 dxlib_sound_init에 의해 이미 초기화되어 있어야 한다 */
 	if (!g_sound_initialized) {
 		if (dxlib_sound_init(window_handle) != 0) {
 			return 1;
@@ -753,7 +753,7 @@ void dxlib_music_release(void) {
 int dxlib_music_load(const char* filename) {
 	if (!g_music_initialized) return 1;
 
-	/* Free previous music */
+	/* 이전 음악을 해제한다 */
 	if (g_current_music) {
 		Mix_FreeMusic(g_current_music);
 		g_current_music = NULL;
@@ -781,7 +781,7 @@ void dxlib_music_free(void) {
 int dxlib_music_play(int loop) {
 	if (!g_current_music) return 1;
 
-	int loops = loop ? -1 : 0; /* -1 = infinite loop */
+	int loops = loop ? -1 : 0; /* -1 = 무한 반복 */
 	if (Mix_PlayMusic(g_current_music, loops) < 0) {
 		return 1;
 	}
@@ -828,13 +828,13 @@ int dxlib_music_set_volume(int volume) {
 }
 
 int dxlib_music_set_tempo(float tempo) {
-	/* SDL_mixer doesn't support tempo changes */
+	/* SDL_mixer는 템포 변경을 지원하지 않는다 */
 	return 1;
 }
 
 #else /* !SDL_MIXER_MAJOR_VERSION */
 
-/* SDL_mixer not available - stub implementation */
+/* SDL_mixer를 사용할 수 없음 - 스텁 구현 */
 int dxlib_music_init(void* window_handle) { return 1; }
 void dxlib_music_release(void) {}
 int dxlib_music_load(const char* filename) { return 1; }
@@ -851,7 +851,7 @@ int dxlib_music_set_tempo(float tempo) { return 1; }
 #endif /* SDL_MIXER_MAJOR_VERSION */
 
 /* ============================================================================
- * Stream Backend (uses music backend)
+ * 스트림 백엔드 (음악 백엔드를 사용)
  * ============================================================================ */
 
 int dxlib_stream_init(void* window_handle) {
@@ -863,8 +863,8 @@ void dxlib_stream_release(void) {
 }
 
 dxlib_stream_t dxlib_stream_load(const char* filename) {
-	/* For simplicity, streams use the music backend */
-	return (dxlib_stream_t)1; /* Non-null value */
+	/* 단순화를 위해 스트림은 음악 백엔드를 사용한다 */
+	return (dxlib_stream_t)1; /* null이 아닌 값 */
 }
 
 void dxlib_stream_free(dxlib_stream_t stream) {
@@ -880,7 +880,7 @@ void dxlib_stream_stop(dxlib_stream_t stream) {
 }
 
 int dxlib_stream_update(dxlib_stream_t stream) {
-	/* SDL_mixer handles streaming automatically */
+	/* SDL_mixer가 스트리밍을 자동으로 처리한다 */
 	return 0;
 }
 
@@ -893,7 +893,7 @@ int dxlib_stream_is_playing(dxlib_stream_t stream) {
 }
 
 /* ============================================================================
- * Backend Information
+ * 백엔드 정보
  * ============================================================================ */
 
 const char* dxlib_get_backend_name(void) {

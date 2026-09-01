@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // CDirectSoundStream.h
 //----------------------------------------------------------------------
 // 우헤헤..
@@ -11,17 +11,17 @@
 
 #define NUM_PLAY_NOTIFICATIONS  16
 
-/* Platform-independent includes (SDL2 backend on all platforms) */
+/* 플랫폼 독립적인 include (모든 플랫폼에서 SDL2 백엔드 사용) */
 #include "../../basic/Platform.h"
 #include "../../basic/AudioTypes.h"
 
-/* Forward declarations for DirectSound types (opaque pointers) */
-/* The actual implementation uses SDL_mixer for all platforms */
+/* DirectSound 타입에 대한 전방 선언 (불투명 포인터) */
+/* 실제 구현은 모든 플랫폼에서 SDL_mixer를 사용한다 */
 struct IDirectSound;
 struct IDirectSoundBuffer;
 struct IDirectSoundNotify;
 
-/* Type definitions */
+/* 타입 정의 */
 #ifndef LPDIRECTSOUNDBUFFER
 typedef struct IDirectSoundBuffer* LPDIRECTSOUNDBUFFER;
 #endif
@@ -83,10 +83,10 @@ class CSDLStream {
 		BOOL					m_bFoundEnd;
 
 		// 가장 최근에 load한 Wav에 대한 정보
-		WAVEFORMATEX			m_wavefmt;        // Pointer to WAVEFORMATEX structure
-		HMMIO					m_hmmioIn;     // MM I/O handle for the WAVE
-		MMCKINFO				m_ckIn;        // Multimedia RIFF chunk
-		MMCKINFO				m_ckInRiff;    // Use in opening a WAVE file
+		WAVEFORMATEX			m_wavefmt;        // WAVEFORMATEX 구조체에 대한 포인터
+		HMMIO					m_hmmioIn;     // WAVE에 대한 MM I/O 핸들
+		MMCKINFO				m_ckIn;        // 멀티미디어 RIFF 청크
+		MMCKINFO				m_ckInRiff;    // WAVE 파일을 열 때 사용
 
 		LONG					m_MaxVolume;		// 현재의 최대 소리 크기
 };

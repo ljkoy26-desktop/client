@@ -1,22 +1,22 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // CDirectDraw.cpp
 //
-// SDL2 Implementation (Cross-platform)
-// Windows DirectX implementation removed - using SDL2 on all platforms
-// NOTE: Static member definitions are in CDirectDraw_StaticMembers.cpp
+// SDL2 구현 (크로스플랫폼)
+// Windows DirectX 구현은 제거됨 - 모든 플랫폼에서 SDL2를 사용한다
+// 참고: 정적 멤버 정의는 CDirectDraw_StaticMembers.cpp에 있다
 //----------------------------------------------------------------------
 
 #include "CDirectDraw.h"
-// spritectl_init() only; CSDLGraphics::Flip() (which needs the full
-// CSpriteSurface definition) is implemented in Client/CSDLGraphicsFlip.cpp
-// instead, since this file is compiled into the standalone dxlib library
-// (no /IClient, no SPRITELIB_BACKEND_SDL) and can't safely pull in
-// SpriteLib/CSpriteSurface.h the way DarkEden.exe's own sources can.
+// spritectl_init()만을 위함; CSDLGraphics::Flip()(전체 CSpriteSurface 정의가
+// 필요함)은 대신 Client/CSDLGraphicsFlip.cpp에 구현되어 있다. 이 파일은
+// 독립적인 dxlib 라이브러리로 컴파일되므로(/IClient 없음, SPRITELIB_BACKEND_SDL
+// 없음) DarkEden.exe 자체 소스처럼 SpriteLib/CSpriteSurface.h를 안전하게
+// 끌어올 수 없기 때문이다.
 #include "../SpriteLib/SpriteLibBackend.h"
 
 //-----------------------------------------------------------------------------
-// Static member initialization for DirectDraw objects
-// Note: These are opaque pointers/stubs for SDL2 backend
+// DirectDraw 객체를 위한 정적 멤버 초기화
+// 참고: SDL2 백엔드를 위한 불투명 포인터/스텁이다
 //-----------------------------------------------------------------------------
 LPDIRECTDRAW7					CSDLGraphics::m_pDD					= NULL;
 LPDIRECTDRAWSURFACE7			CSDLGraphics::m_pDDSPrimary			= NULL;
@@ -45,10 +45,10 @@ RECT								CSDLGraphics::m_rcWindow;
 RECT								CSDLGraphics::m_rcScreen;
 RECT								CSDLGraphics::m_rcViewport;
 
-// Note: Color mask static members are defined in CDirectDraw_StaticMembers.cpp
+// 참고: 색상 마스크 정적 멤버는 CDirectDraw_StaticMembers.cpp에 정의되어 있다
 
 //-----------------------------------------------------------------------------
-// Constructor/Destructor (stub - not implemented)
+// 생성자/소멸자 (스텁 - 구현되지 않음)
 //-----------------------------------------------------------------------------
 CSDLGraphics::CSDLGraphics()
 {
@@ -61,9 +61,9 @@ CSDLGraphics::~CSDLGraphics()
 //-----------------------------------------------------------------------------
 // Init
 //
-// hWnd is a real native window already created by CreateWindowEx() before
-// this is called; SDL_CreateWindowFrom() wraps it instead of creating a new
-// window, so SDL renders into the same window Win32 message handling uses.
+// hWnd는 이 함수가 호출되기 전에 CreateWindowEx()로 이미 생성된 실제
+// 네이티브 창이다; SDL_CreateWindowFrom()은 새 창을 만드는 대신 이를
+// 감싸므로, SDL은 Win32 메시지 처리가 사용하는 것과 동일한 창에 렌더링한다.
 //-----------------------------------------------------------------------------
 void CSDLGraphics::Init(HWND hWnd, WORD width, WORD height, SCREENMODE mode, bool bUseHAL, bool bUseIME)
 {
@@ -97,8 +97,8 @@ void CSDLGraphics::Init(HWND hWnd, WORD width, WORD height, SCREENMODE mode, boo
 	m_bFullscreen = (mode == FULLSCREEN);
 }
 
-// CSDLGraphics::Flip() is defined in Client/CSDLGraphicsFlip.cpp (see comment
-// on the SpriteLibBackend.h include above for why it isn't here).
+// CSDLGraphics::Flip()은 Client/CSDLGraphicsFlip.cpp에 정의되어 있다
+// (여기 없는 이유는 위 SpriteLibBackend.h include에 대한 주석 참고).
 
 //-----------------------------------------------------------------------------
 // ReleaseAll
@@ -113,8 +113,8 @@ void CSDLGraphics::ReleaseAll()
 
 	if (m_pSDLWindow != NULL)
 	{
-		// SDL_CreateWindowFrom() wraps an externally-owned native window, so
-		// destroying it here only releases SDL's wrapper, not hWnd itself.
+		// SDL_CreateWindowFrom()은 외부에서 소유한 네이티브 창을 감싸므로,
+		// 여기서 파괴해도 SDL의 래퍼만 해제될 뿐 hWnd 자체는 해제되지 않는다.
 		SDL_DestroyWindow(m_pSDLWindow);
 		m_pSDLWindow = NULL;
 	}
@@ -125,7 +125,7 @@ void CSDLGraphics::ReleaseAll()
 //-----------------------------------------------------------------------------
 void CSDLGraphics::InitMask(bool b565)
 {
-	// 5:6:5 format for SDL2
+	// SDL2를 위한 5:6:5 포맷
 	s_wMASK_SHIFT[0] = 11;
 	s_wMASK_SHIFT[1] = 5;
 	s_wMASK_SHIFT[2] = 0;
@@ -177,51 +177,51 @@ void CSDLGraphics::InitMask(bool b565)
 	s_dwMASK_RGB_COUNT[4] = 0;
 	s_dwMASK_RGB_COUNT[5] = 0;
 
-	(void)b565;  // Parameter kept for compatibility
+	(void)b565;  // 호환성을 위해 파라미터를 유지한다
 }
 
 //-----------------------------------------------------------------------------
-// Bitmask methods for SDL2
+// SDL2를 위한 비트마스크 메서드
 //-----------------------------------------------------------------------------
 
 int CSDLGraphics::Get_Count_Rbit()
 {
-	// For 5:6:5 format, R uses 5 bits
+	// 5:6:5 포맷에서 R은 5비트를 사용한다
 	return 5;
 }
 
 int CSDLGraphics::Get_Count_Gbit()
 {
-	// For 5:6:5 format, G uses 6 bits
+	// 5:6:5 포맷에서 G는 6비트를 사용한다
 	return 6;
 }
 
 int CSDLGraphics::Get_Count_Bbit()
 {
-	// For 5:6:5 format, B uses 5 bits
+	// 5:6:5 포맷에서 B는 5비트를 사용한다
 	return 5;
 }
 
 DWORD CSDLGraphics::Get_R_Bitmask()
 {
-	// 5:6:5 format: R is at bits 11-15
+	// 5:6:5 포맷: R은 11-15비트
 	return 0xF800;
 }
 
 DWORD CSDLGraphics::Get_G_Bitmask()
 {
-	// 5:6:5 format: G is at bits 5-10
+	// 5:6:5 포맷: G는 5-10비트
 	return 0x07E0;
 }
 
 DWORD CSDLGraphics::Get_B_Bitmask()
 {
-	// 5:6:5 format: B is at bits 0-4
+	// 5:6:5 포맷: B는 0-4비트
 	return 0x001F;
 }
 
 DWORD CSDLGraphics::Get_BPP()
 {
-	// SDL2 typically uses 16-bit color
+	// SDL2는 일반적으로 16비트 색상을 사용한다
 	return 16;
 }

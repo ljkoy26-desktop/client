@@ -1,20 +1,20 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // CDirectDrawSurface.cpp
 //
-// SDL2 Implementation (Cross-platform)
-// Windows DirectDraw implementation removed - using SDL2 on all platforms
-// NOTE: This class is deprecated. Use SDL_Surface directly instead.
+// SDL2 구현 (크로스플랫폼)
+// Windows DirectDraw 구현은 제거됨 - 모든 플랫폼에서 SDL2를 사용한다
+// 참고: 이 클래스는 더 이상 사용되지 않는다(deprecated). SDL_Surface를 직접 사용하라.
 //----------------------------------------------------------------------
 
 #include "CDirectDrawSurface.h"
 
 //-----------------------------------------------------------------------------
-// Static member initialization for SDL2
+// SDL2를 위한 정적 멤버 초기화
 //-----------------------------------------------------------------------------
 void (*CDirectDrawSurface::s_GammaFunction)(void *pDest, int len, int p) = nullptr;
 
 //-----------------------------------------------------------------------------
-// Constructor/Destructor
+// 생성자/소멸자
 //-----------------------------------------------------------------------------
 
 CDirectDrawSurface::CDirectDrawSurface()
@@ -32,16 +32,16 @@ CDirectDrawSurface::CDirectDrawSurface()
 
 CDirectDrawSurface::~CDirectDrawSurface()
 {
-	// Stub - SDL surfaces are managed elsewhere
+	// 스텁 - SDL 서페이스는 다른 곳에서 관리된다
 }
 
 //-----------------------------------------------------------------------------
-// Surface Initialization (Stubs - deprecated)
+// 서페이스 초기화 (스텁 - 더 이상 사용되지 않음)
 //-----------------------------------------------------------------------------
 
 bool CDirectDrawSurface::InitBacksurface()
 {
-	// Not implemented - use SDL surfaces directly
+	// 구현되지 않음 - SDL 서페이스를 직접 사용하라
 	return false;
 }
 
@@ -57,7 +57,7 @@ bool CDirectDrawSurface::InitOffsurface(int wWidth, int wHeight, DWORD dwCaps)
 
 bool CDirectDrawSurface::InitTextureSurface(int wWidth, int wHeight, DWORD dwCaps, const LPDDPIXELFORMAT pDDPF)
 {
-	// Not implemented - use SDL textures directly
+	// 구현되지 않음 - SDL 텍스처를 직접 사용하라
 	(void)wWidth;
 	(void)wHeight;
 	(void)dwCaps;
@@ -67,7 +67,7 @@ bool CDirectDrawSurface::InitTextureSurface(int wWidth, int wHeight, DWORD dwCap
 
 bool CDirectDrawSurface::InitTextureSurfaceFromBMP(LPCSTR szBitmap, DWORD dwCaps)
 {
-	// Not implemented - use SDL_image to load BMPs
+	// 구현되지 않음 - BMP 로드에는 SDL_image를 사용하라
 	(void)szBitmap;
 	(void)dwCaps;
 	return false;
@@ -75,7 +75,7 @@ bool CDirectDrawSurface::InitTextureSurfaceFromBMP(LPCSTR szBitmap, DWORD dwCaps
 
 bool CDirectDrawSurface::InitFromBMP(LPCSTR szBitmap, DWORD dwCaps)
 {
-	// Not implemented - use SDL_image to load BMPs
+	// 구현되지 않음 - BMP 로드에는 SDL_image를 사용하라
 	(void)szBitmap;
 	(void)dwCaps;
 	return false;
@@ -83,50 +83,50 @@ bool CDirectDrawSurface::InitFromBMP(LPCSTR szBitmap, DWORD dwCaps)
 
 bool CDirectDrawSurface::ReLoadBMP(LPCSTR szBitmap)
 {
-	// Not implemented
+	// 구현되지 않음
 	(void)szBitmap;
 	return false;
 }
 
 bool CDirectDrawSurface::Restore()
 {
-	// Not implemented - SDL surfaces don't need restore
+	// 구현되지 않음 - SDL 서페이스는 복원이 필요 없다
 	return false;
 }
 
 //-----------------------------------------------------------------------------
-// Surface Operations (Stubs - deprecated)
+// 서페이스 연산 (스텁 - 더 이상 사용되지 않음)
 //-----------------------------------------------------------------------------
 
 void CDirectDrawSurface::SetTransparency(DWORD dwValue)
 {
-	// Not implemented - use SDL blend modes instead
+	// 구현되지 않음 - SDL 블렌드 모드를 대신 사용하라
 	(void)dwValue;
 }
 
 void CDirectDrawSurface::FillSurface(WORD color)
 {
-	// Not implemented - use SDL_FillRect instead
+	// 구현되지 않음 - SDL_FillRect를 대신 사용하라
 	(void)color;
 }
 
 void CDirectDrawSurface::FillRect(RECT* pRect, WORD color)
 {
-	// Not implemented - use SDL_FillRect instead
+	// 구현되지 않음 - SDL_FillRect를 대신 사용하라
 	(void)pRect;
 	(void)color;
 }
 
 //-----------------------------------------------------------------------------
-// Lock/Unlock (Minimal stub for compatibility)
+// Lock/Unlock (호환성을 위한 최소한의 스텁)
 //-----------------------------------------------------------------------------
 
 bool CDirectDrawSurface::Lock()
 {
 	ZeroMemory(&m_ddsd, sizeof(m_ddsd));
 	m_ddsd.dwSize = sizeof(m_ddsd);
-	m_ddsd.lPitch = m_Width * 2;  // Assume 16-bit color
-	m_ddsd.lpSurface = nullptr;  // No actual surface memory
+	m_ddsd.lPitch = m_Width * 2;  // 16비트 색상으로 가정한다
+	m_ddsd.lpSurface = nullptr;  // 실제 서페이스 메모리 없음
 	m_bLock = true;
 	return true;
 }
@@ -139,19 +139,19 @@ bool CDirectDrawSurface::Unlock()
 
 void CDirectDrawSurface::LockW(WORD*& lpSurface, WORD& lPitch)
 {
-	// Stub - no actual surface to lock
+	// 스텁 - 잠글 실제 서페이스가 없음
 	lpSurface = nullptr;
 	lPitch = m_Width * 2;
 	m_bLock = true;
 }
 
 //-----------------------------------------------------------------------------
-// Blitting (Stubs - deprecated)
+// 블리팅 (스텁 - 더 이상 사용되지 않음)
 //-----------------------------------------------------------------------------
 
 void CDirectDrawSurface::Blt(POINT* pPoint, CDirectDrawSurface* SourceSurface, RECT* pRect)
 {
-	// Not implemented - use SDL_BlitSurface instead
+	// 구현되지 않음 - SDL_BlitSurface를 대신 사용하라
 	(void)pPoint;
 	(void)SourceSurface;
 	(void)pRect;
@@ -159,7 +159,7 @@ void CDirectDrawSurface::Blt(POINT* pPoint, CDirectDrawSurface* SourceSurface, R
 
 void CDirectDrawSurface::BltNoColorkey(POINT* pPoint, CDirectDrawSurface* SourceSurface, RECT* pRect)
 {
-	// Not implemented - use SDL_BlitSurface instead
+	// 구현되지 않음 - SDL_BlitSurface를 대신 사용하라
 	(void)pPoint;
 	(void)SourceSurface;
 	(void)pRect;
@@ -167,7 +167,7 @@ void CDirectDrawSurface::BltNoColorkey(POINT* pPoint, CDirectDrawSurface* Source
 
 void CDirectDrawSurface::Blt(RECT* pDestRect, CDirectDrawSurface* SourceSurface, RECT* pSourceRect)
 {
-	// Not implemented - use SDL_BlitSurface instead
+	// 구현되지 않음 - SDL_BlitSurface를 대신 사용하라
 	(void)pDestRect;
 	(void)SourceSurface;
 	(void)pSourceRect;
@@ -175,32 +175,32 @@ void CDirectDrawSurface::Blt(RECT* pDestRect, CDirectDrawSurface* SourceSurface,
 
 void CDirectDrawSurface::BltPrimarySurface(POINT* pPoint, RECT* pRect)
 {
-	// Not implemented
+	// 구현되지 않음
 	(void)pPoint;
 	(void)pRect;
 }
 
 //-----------------------------------------------------------------------------
-// Gamma Correction (Not implemented - use shader effects instead)
+// 감마 보정 (구현되지 않음 - 셰이더 효과를 대신 사용하라)
 //-----------------------------------------------------------------------------
 
 void CDirectDrawSurface::GammaBox555(RECT* pRect, int p)
 {
-	// Not implemented - use SDL2 shader effects
+	// 구현되지 않음 - SDL2 셰이더 효과를 사용하라
 	(void)pRect;
 	(void)p;
 }
 
 void CDirectDrawSurface::GammaBox565(RECT* pRect, int p)
 {
-	// Not implemented - use SDL2 shader effects
+	// 구현되지 않음 - SDL2 셰이더 효과를 사용하라
 	(void)pRect;
 	(void)p;
 }
 
 void CDirectDrawSurface::Gamma4Pixel565(void *pDest, int len, int p)
 {
-	// Not implemented - use SDL2 shader effects
+	// 구현되지 않음 - SDL2 셰이더 효과를 사용하라
 	(void)pDest;
 	(void)len;
 	(void)p;
@@ -208,19 +208,19 @@ void CDirectDrawSurface::Gamma4Pixel565(void *pDest, int len, int p)
 
 void CDirectDrawSurface::Gamma4Pixel555(void *pDest, int len, int p)
 {
-	// Not implemented - use SDL2 shader effects
+	// 구현되지 않음 - SDL2 셰이더 효과를 사용하라
 	(void)pDest;
 	(void)len;
 	(void)p;
 }
 
 //-----------------------------------------------------------------------------
-// GDI Text (Not implemented - use SDL2 text rendering instead)
+// GDI 텍스트 (구현되지 않음 - SDL2 텍스트 렌더링을 대신 사용하라)
 //-----------------------------------------------------------------------------
 
 void CDirectDrawSurface::ShowFPS(int x, int y, COLORREF fcolor, COLORREF bcolor)
 {
-	// Not implemented - use SDL2 text rendering
+	// 구현되지 않음 - SDL2 텍스트 렌더링을 사용하라
 	(void)x;
 	(void)y;
 	(void)fcolor;
@@ -229,7 +229,7 @@ void CDirectDrawSurface::ShowFPS(int x, int y, COLORREF fcolor, COLORREF bcolor)
 
 void CDirectDrawSurface::GDI_Text(int x, int y, const char *str, COLORREF fcolor, COLORREF bcolor, bool option)
 {
-	// Not implemented - use SDL2 text rendering
+	// 구현되지 않음 - SDL2 텍스트 렌더링을 사용하라
 	(void)x;
 	(void)y;
 	(void)str;
@@ -239,19 +239,19 @@ void CDirectDrawSurface::GDI_Text(int x, int y, const char *str, COLORREF fcolor
 }
 
 //-----------------------------------------------------------------------------
-// BMP Save/Load (Not implemented - use SDL_image instead)
+// BMP 저장/로드 (구현되지 않음 - SDL_image를 대신 사용하라)
 //-----------------------------------------------------------------------------
 
 bool CDirectDrawSurface::SaveToBMP(const char* szFilename)
 {
-	// Not implemented - use SDL_image PNG/BMP saving
+	// 구현되지 않음 - SDL_image의 PNG/BMP 저장 기능을 사용하라
 	(void)szFilename;
 	return false;
 }
 
 bool CDirectDrawSurface::CopyBitmap(HBITMAP hbm, int x, int y, int dx, int dy)
 {
-	// Not implemented - Windows GDI only
+	// 구현되지 않음 - Windows GDI 전용
 	(void)hbm;
 	(void)x;
 	(void)y;
