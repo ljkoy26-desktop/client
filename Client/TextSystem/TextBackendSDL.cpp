@@ -1,4 +1,4 @@
-#include "TextBackend.h"
+ï»¿#include "TextBackend.h"
 
 #include <unordered_map>
 #include <vector>
@@ -95,17 +95,17 @@ public:
 #ifdef _WIN32
 
 
-			// À§ÀÇ °æ·Î Áß ¾î´À °Íµµ Data/Font¿¡ Æ÷ÇÔµÇÁö ¾Ê½À´Ï´Ù(ÆùÆ®°¡ °ÔÀÓ µ¥ÀÌÅÍ¿¡ ÀüÇô Æ÷ÇÔµÇÁö ¾Ê½À´Ï´Ù.
-			// SPRITELIB_BACKEND_README ÂüÁ¶ - ¾Æ·¡ÀÇ macOS Àü¿ë /System/Library/Fonts ´ëÃ¼ °æ·Î ÂüÁ¶). µû¶ó¼­
-			// Windows¿¡¼­´Â ¸ğµç AcquireFont() È£ÃâÀÌ À§ÀÇ ¸ğµç °æ·Î¸¦ °ÅÄ¡Áö¸¸ ½ÇÆĞÇÕ´Ï´Ù.
-			// TextService::m_initialized´Â ¿µ¿øÈ÷ false·Î À¯ÁöµÇ°í,
-			// EnsureInitialized()(DrawLine/MeasureText µîÀÇ ½ÃÀÛ ºÎºĞ¿¡¼­ È£ÃâµÊ)´Â ¸ğµç ÅØ½ºÆ® È£ÃâÀ» ¾Æ¹« ÀÛ¾÷µµ ¼öÇàÇÏÁö ¾Ê´Â Á¶¿ëÇÑ ¹«ÀÛ¾÷À¸·Î ¸¸µé¾ú½À´Ï´Ù. °ÔÀÓ ÅØ½ºÆ®°¡ ¾îµğ¿¡µµ ±×·ÁÁöÁö ¾Ê¾Ò½À´Ï´Ù.
-			// ÀÌ ´ëÈ­ »óÀÚ»Ó¸¸ ¾Æ´Ï¶ó ¾îµğ¿¡µµ Ç¥½ÃµÇÁö ¾Ê¾Ò½À´Ï´Ù.
-			// µû¶ó¼­ ¸ğµç Windows ¼³Ä¡¿¡ Æ÷ÇÔµÈ ÆùÆ®·Î ´ëÃ¼ÇÕ´Ï´Ù.
-			// Malgun GothicÀº ±¤¹üÀ§ÇÑ
-			// ÇÑ±Û+Áß±¹¾î+¶óÆ¾¾î Áö¿ø(ÀÌ Å¬¶óÀÌ¾ğÆ®ÀÇ ÅØ½ºÆ®´Â ÇÑ±¹¾î °³¹ß ¹®ÀÚ¿­°ú Áß±¹¾î °ÔÀÓ ¹®ÀÚ¿­ Å×ÀÌºí µ¥ÀÌÅÍ¸¦ È¥ÇÕÇÏ¿© »ç¿ëÇÔ), Microsoft
-			// YaHei´Â °£Ã¼ Áß±¹¾î¸¦ Àü¹®ÀûÀ¸·Î Áö¿øÇÏ¸ç, ArialÀº
-			// ÃÖÈÄÀÇ ¼ö´ÜÀ¸·Î ¶óÆ¾¾î¸¸ Áö¿øÇÏ´Â ´ëÃ¼ ÆùÆ®ÀÔ´Ï´Ù.
+			// ìœ„ì˜ ê²½ë¡œ ì¤‘ ì–´ëŠ ê²ƒë„ Data/Fontì— í¬í•¨ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤(í°íŠ¸ê°€ ê²Œì„ ë°ì´í„°ì— ì „í˜€ í¬í•¨ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
+			// SPRITELIB_BACKEND_README ì°¸ì¡° - ì•„ë˜ì˜ macOS ì „ìš© /System/Library/Fonts ëŒ€ì²´ ê²½ë¡œ ì°¸ì¡°). ë”°ë¼ì„œ
+			// Windowsì—ì„œëŠ” ëª¨ë“  AcquireFont() í˜¸ì¶œì´ ìœ„ì˜ ëª¨ë“  ê²½ë¡œë¥¼ ê±°ì¹˜ì§€ë§Œ ì‹¤íŒ¨í•©ë‹ˆë‹¤.
+			// TextService::m_initializedëŠ” ì˜ì›íˆ falseë¡œ ìœ ì§€ë˜ê³ ,
+			// EnsureInitialized()(DrawLine/MeasureText ë“±ì˜ ì‹œì‘ ë¶€ë¶„ì—ì„œ í˜¸ì¶œë¨)ëŠ” ëª¨ë“  í…ìŠ¤íŠ¸ í˜¸ì¶œì„ ì•„ë¬´ ì‘ì—…ë„ ìˆ˜í–‰í•˜ì§€ ì•ŠëŠ” ì¡°ìš©í•œ ë¬´ì‘ì—…ìœ¼ë¡œ ë§Œë“¤ì—ˆìŠµë‹ˆë‹¤. ê²Œì„ í…ìŠ¤íŠ¸ê°€ ì–´ë””ì—ë„ ê·¸ë ¤ì§€ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.
+			// ì´ ëŒ€í™” ìƒìë¿ë§Œ ì•„ë‹ˆë¼ ì–´ë””ì—ë„ í‘œì‹œë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.
+			// ë”°ë¼ì„œ ëª¨ë“  Windows ì„¤ì¹˜ì— í¬í•¨ëœ í°íŠ¸ë¡œ ëŒ€ì²´í•©ë‹ˆë‹¤.
+			// Malgun Gothicì€ ê´‘ë²”ìœ„í•œ
+			// í•œê¸€+ì¤‘êµ­ì–´+ë¼í‹´ì–´ ì§€ì›(ì´ í´ë¼ì´ì–¸íŠ¸ì˜ í…ìŠ¤íŠ¸ëŠ” í•œêµ­ì–´ ê°œë°œ ë¬¸ìì—´ê³¼ ì¤‘êµ­ì–´ ê²Œì„ ë¬¸ìì—´ í…Œì´ë¸” ë°ì´í„°ë¥¼ í˜¼í•©í•˜ì—¬ ì‚¬ìš©í•¨), Microsoft
+			// YaHeiëŠ” ê°„ì²´ ì¤‘êµ­ì–´ë¥¼ ì „ë¬¸ì ìœ¼ë¡œ ì§€ì›í•˜ë©°, Arialì€
+			// ìµœí›„ì˜ ìˆ˜ë‹¨ìœ¼ë¡œ ë¼í‹´ì–´ë§Œ ì§€ì›í•˜ëŠ” ëŒ€ì²´ í°íŠ¸ì…ë‹ˆë‹¤.
 
 
 			"C:\\Windows\\Fonts\\malgun.ttf",
@@ -173,7 +173,7 @@ public:
 		}
 
 		if (!ok) {
-			// Fallback: approximate metrics using rendered surface
+			// ëŒ€ì²´ ë°©ë²•: ë Œë”ë§ëœ ì„œí”¼ìŠ¤ë¥¼ ì´ìš©í•´ ë©”íŠ¸ë¦­ì„ ê·¼ì‚¬í•©ë‹ˆë‹¤
 			std::string utf8 = EncodeUtf8(codepoint);
 			SDL_Color white = {255, 255, 255, 255};
 			SDL_Surface* surf = TTF_RenderUTF8_Blended(ttf, utf8.c_str(), white);
@@ -181,8 +181,8 @@ public:
 				return false;
 			minx = 0;
 			maxx = surf->w;
-			miny = -TTF_FontAscent(ttf);  // Assume top-aligned
-			maxy = TTF_FontDescent(ttf);  // Assume baseline at bottom
+			miny = -TTF_FontAscent(ttf);  // ìƒë‹¨ ì •ë ¬ë¡œ ê°€ì •í•©ë‹ˆë‹¤
+			maxy = TTF_FontDescent(ttf);  // ê¸°ì¤€ì„ ì´ í•˜ë‹¨ì— ìˆë‹¤ê³  ê°€ì •í•©ë‹ˆë‹¤
 			advance = surf->w;
 			SDL_FreeSurface(surf);
 		}
@@ -192,10 +192,10 @@ public:
 		outMetrics.advance = advance;
 		outMetrics.bearingX = minx;
 
-		// bearingY´Â ±âÁØ¼±¿¡¼­ ±Û¸®ÇÁ »ó´Ü±îÁöÀÇ °Å¸®ÀÔ´Ï´Ù.
-		// miny´Â ÀÏ¹İÀûÀ¸·Î À½¼öÀÔ´Ï´Ù(±âÁØ¼± À§ÂÊ °Å¸®).
-		// ascent´Â ±âÁØ¼±¿¡¼­ ±Û²Ã °æ°è »óÀÚ »ó´Ü±îÁöÀÇ °Å¸®ÀÔ´Ï´Ù.
-		
+		// bearingYëŠ” ê¸°ì¤€ì„ ì—ì„œ ê¸€ë¦¬í”„ ìƒë‹¨ê¹Œì§€ì˜ ê±°ë¦¬ì…ë‹ˆë‹¤.
+		// minyëŠ” ì¼ë°˜ì ìœ¼ë¡œ ìŒìˆ˜ì…ë‹ˆë‹¤(ê¸°ì¤€ì„  ìœ„ìª½ ê±°ë¦¬).
+		// ascentëŠ” ê¸°ì¤€ì„ ì—ì„œ ê¸€ê¼´ ê²½ê³„ ìƒì ìƒë‹¨ê¹Œì§€ì˜ ê±°ë¦¬ì…ë‹ˆë‹¤.
+
 		outMetrics.bearingY = TTF_FontAscent(ttf) + miny;
 		return true;
 	}
@@ -220,7 +220,7 @@ public:
 			return &it->second;
 		}
 
-		// Get glyph metrics first
+		// ë¨¼ì € ê¸€ë¦¬í”„ ë©”íŠ¸ë¦­ì„ ê°€ì ¸ì˜µë‹ˆë‹¤
 		int minx = 0, maxx = 0, miny = 0, maxy = 0, advance = 0;
 		bool hasMetrics = false;
 
@@ -230,7 +230,7 @@ public:
 			}
 		}
 
-		// Render the glyph
+		// ê¸€ë¦¬í”„ë¥¼ ë Œë”ë§í•©ë‹ˆë‹¤
 		std::string utf8 = EncodeUtf8(codepoint);
 		SDL_Color sdlColor = {color.r, color.g, color.b, color.a};
 		SDL_Surface* surface = TTF_RenderUTF8_Blended(ttf, utf8.c_str(), sdlColor);
@@ -254,20 +254,20 @@ public:
 			metrics.height = maxy - miny;
 			metrics.advance = advance;
 			metrics.bearingX = minx;
-			// bearingY is distance from baseline to TOP of rendered glyph surface
-			// The rendered surface includes the full glyph, so its top is at baseline - miny
-			// Therefore bearingY should be: ascent - (surface_top_relative_to_baseline)
-			// Since miny is negative (above baseline), surface_top = baseline - miny = baseline + |miny|
-			// So bearingY = ascent + miny
+			// bearingYëŠ” ê¸°ì¤€ì„ ì—ì„œ ë Œë”ë§ëœ ê¸€ë¦¬í”„ ì„œí”¼ìŠ¤ ìƒë‹¨ê¹Œì§€ì˜ ê±°ë¦¬ì…ë‹ˆë‹¤
+			// ë Œë”ë§ëœ ì„œí”¼ìŠ¤ëŠ” ê¸€ë¦¬í”„ ì „ì²´ë¥¼ í¬í•¨í•˜ë¯€ë¡œ, ê·¸ ìƒë‹¨ì€ baseline - miny ìœ„ì¹˜ì— ìˆìŠµë‹ˆë‹¤
+			// ë”°ë¼ì„œ bearingYëŠ” ascent - (ê¸°ì¤€ì„  ê¸°ì¤€ ì„œí”¼ìŠ¤ ìƒë‹¨ ìœ„ì¹˜)ê°€ ë˜ì–´ì•¼ í•©ë‹ˆë‹¤
+			// minyëŠ” ìŒìˆ˜ì´ë¯€ë¡œ(ê¸°ì¤€ì„ ë³´ë‹¤ ìœ„ìª½), surface_top = baseline - miny = baseline + |miny|ì…ë‹ˆë‹¤
+			// ê·¸ëŸ¬ë¯€ë¡œ bearingY = ascent + miny ì…ë‹ˆë‹¤
 			metrics.bearingY = ascent + miny;
 		} else {
-			// Fallback: approximate metrics from surface
+			// ëŒ€ì²´ ë°©ë²•: ì„œí”¼ìŠ¤ë¡œë¶€í„° ë©”íŠ¸ë¦­ì„ ê·¼ì‚¬í•©ë‹ˆë‹¤
 			int ascent = TTF_FontAscent(ttf);
 			metrics.width = rgbaSurface->w;
 			metrics.height = rgbaSurface->h;
 			metrics.advance = rgbaSurface->w;
 			metrics.bearingX = 0;
-			metrics.bearingY = ascent;  // Assume top-aligned
+			metrics.bearingY = ascent;  // ìƒë‹¨ ì •ë ¬ë¡œ ê°€ì •í•©ë‹ˆë‹¤
 		}
 		glyph.metrics = metrics;
 

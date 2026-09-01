@@ -1,4 +1,4 @@
-#include "TextService.h"
+﻿#include "TextService.h"
 
 #include <algorithm>
 #include <cstring>
@@ -10,12 +10,12 @@
 #include "SpriteLib/CSpriteSurface.h"
 #include "RenderTargetSpriteSurface.h"
 
-// Global surface pointer from Client
+// Client에서 제공하는 전역 서피스 포인터
 extern CSpriteSurface* g_pLast;
 
 namespace TextSystem {
 
-// Forward declaration of SDL backend factory
+// SDL 백엔드 팩토리 전방 선언
 TextBackend* CreateSDLTextBackend();
 
 static bool IsValidUtf8(const char* data, size_t len)
@@ -86,7 +86,7 @@ static std::string ConvertEncoding(const std::string& input, const char* fromEnc
 #endif
 }
 
-// Public static method for encoding normalization
+// 인코딩 정규화를 위한 공개 정적 메서드
 std::string TextService::NormalizeText(const std::string& text)
 {
 	if (text.empty())
@@ -95,7 +95,7 @@ std::string TextService::NormalizeText(const std::string& text)
 	if (IsValidUtf8(text.c_str(), text.size()))
 		return text;
 
-	// Try common encodings: Korean first, then Chinese, then fallback
+	// 흔히 쓰이는 인코딩을 순서대로 시도합니다: 한국어 우선, 그다음 중국어, 마지막으로 대체
 	const char* encodings[] = {"CP949", "EUC-KR", "GBK", "GB2312", "BIG5", NULL};
 	for (int i = 0; encodings[i] != NULL; ++i) {
 		std::string converted = ConvertEncoding(text, encodings[i]);
@@ -110,7 +110,7 @@ static uint32_t Utf8Decode(const char* s, int maxLen, int* outLen)
 {
 	if (maxLen < 1) {
 		*outLen = 0;
-		return 0xFFFD; // Replacement character for empty input
+		return 0xFFFD; // 입력이 비어있을 때의 대체 문자
 	}
 
 	unsigned char c = static_cast<unsigned char>(*s);
@@ -121,21 +121,21 @@ static uint32_t Utf8Decode(const char* s, int maxLen, int* outLen)
 		return c;
 	}
 
-	// 2-byte sequence (0xC0-0xDF)
+	// 2바이트 시퀀스 (0xC0-0xDF)
 	if ((c >> 5) == 0x6) {
 		if (maxLen < 2) {
 			*outLen = 1;
-			return 0xFFFD; // Truncated sequence
+			return 0xFFFD; // 잘린 시퀀스
 		}
 		*outLen = 2;
 		return ((c & 0x1F) << 6) | (static_cast<unsigned char>(s[1]) & 0x3F);
 	}
 
-	// 3-byte sequence (0xE0-0xEF)
+	// 3바이트 시퀀스 (0xE0-0xEF)
 	if ((c >> 4) == 0xE) {
 		if (maxLen < 3) {
 			*outLen = 1;
-			return 0xFFFD; // Truncated sequence
+			return 0xFFFD; // 잘린 시퀀스
 		}
 		*outLen = 3;
 		return ((c & 0x0F) << 12) |
@@ -143,11 +143,11 @@ static uint32_t Utf8Decode(const char* s, int maxLen, int* outLen)
 			(static_cast<unsigned char>(s[2]) & 0x3F);
 	}
 
-	// 4-byte sequence (0xF0-0xF7)
+	// 4바이트 시퀀스 (0xF0-0xF7)
 	if ((c >> 3) == 0x1E) {
 		if (maxLen < 4) {
 			*outLen = 1;
-			return 0xFFFD; // Truncated sequence
+			return 0xFFFD; // 잘린 시퀀스
 		}
 		*outLen = 4;
 		return ((c & 0x07) << 18) |
@@ -156,7 +156,7 @@ static uint32_t Utf8Decode(const char* s, int maxLen, int* outLen)
 			(static_cast<unsigned char>(s[3]) & 0x3F);
 	}
 
-	// Invalid UTF-8 lead byte
+	// 잘못된 UTF-8 리드 바이트
 	*outLen = 1;
 	return 0xFFFD;
 }
@@ -246,7 +246,7 @@ int TextService::MeasureLineWidth(const std::string& text, FontHandle font)
 	while (*p && remaining > 0) {
 		int len = 0;
 		uint32_t codepoint = Utf8Decode(p, remaining, &len);
-		if (len == 0) break; // Safety: no data left
+		if (len == 0) break; // 안전 장치: 남은 데이터 없음
 		p += len;
 		remaining -= len;
 
@@ -300,7 +300,7 @@ std::vector<std::string> TextService::WrapText(const std::string& text, const Te
 	while (*p && remaining > 0) {
 		int len = 0;
 		uint32_t codepoint = Utf8Decode(p, remaining, &len);
-		if (len == 0) break; // Safety: no data left
+		if (len == 0) break; // 안전 장치: 남은 데이터 없음
 
 		if (codepoint == '\n') {
 			lines.push_back(line);
@@ -327,10 +327,10 @@ std::vector<std::string> TextService::WrapText(const std::string& text, const Te
 
 		if (maxWidth > 0 && lineWidth + metrics.advance > maxWidth && !line.empty()) {
 
-			// lastBreakIndex�� �ٷ� �� �ݺ����� line.size()�� �����Ǿ��� �� �ֽ��ϴ�.
-			// ���� lastBreakIndex + lastBreakSkip�� line.size()�� �ʰ��� �� �ֽ��ϴ�.
-			// �� ��� substr()�� std::out_of_range ���ܸ� �߻���Ű�Ƿ�,
-			// "�ߴ����� ��ϵ��� ����"�� �����ϰ� ó���մϴ�.
+			// lastBreakIndex는 바로 이 반복에서 line.size()로 설정되었을 수 있습니다.
+			// 따라서 lastBreakIndex + lastBreakSkip이 line.size()를 초과할 수 있습니다.
+			// 이 경우 substr()은 std::out_of_range 예외를 발생시키므로,
+			// "중단점이 기록되지 않음"과 동일하게 처리합니다.
 			if (lastBreakIndex >= 0 && lastBreakIndex + lastBreakSkip <= static_cast<int>(line.size())) {
 				lines.push_back(line.substr(0, lastBreakIndex));
 				line = line.substr(lastBreakIndex + lastBreakSkip);
@@ -384,7 +384,7 @@ void TextService::DrawLine(RenderTarget& target, const std::string& text,
 	while (*p && remaining > 0) {
 		int len = 0;
 		uint32_t codepoint = Utf8Decode(p, remaining, &len);
-		if (len == 0) break; // Safety: no data left
+		if (len == 0) break; // 안전 장치: 남은 데이터 없음
 		p += len;
 		remaining -= len;
 
@@ -394,21 +394,21 @@ void TextService::DrawLine(RenderTarget& target, const std::string& text,
 
 		const Glyph* glyph = m_backend->GetGlyph(style.font, codepoint, style.color);
 		if (glyph) {
-			// Calculate draw position
-			// y is the baseline position
-			// bearingY is the distance from baseline to the top of the glyph
-			// The rendered glyph surface starts at (baseline - ascent - miny)
-			// So we need to offset by: y - (ascent + miny - bearingY)
-			// But since bearingY = ascent + miny, this simplifies to: y
+			// 그리기 위치를 계산합니다
+			// y는 기준선(baseline) 위치입니다
+			// bearingY는 기준선에서 글리프 상단까지의 거리입니다
+			// 렌더링된 글리프 서피스는 (baseline - ascent - miny) 위치에서 시작합니다
+			// 따라서 y - (ascent + miny - bearingY) 만큼 오프셋을 적용해야 합니다
+			// 하지만 bearingY = ascent + miny 이므로, 이는 결국 y로 단순화됩니다
 			//
-			// Actually, TTF_RenderUTF8_Blended returns a surface that:
-			// - Has origin (0,0) at the glyph's bounding box top-left
-			// - The baseline is at position (-miny) within the surface
+			// 실제로 TTF_RenderUTF8_Blended가 반환하는 서피스는 다음과 같은 특성을 가집니다:
+			// - 원점(0,0)이 글리프 바운딩 박스의 좌측 상단에 위치합니다
+			// - 기준선은 서피스 내에서 (-miny) 위치에 있습니다
 			//
-			// So if we want to draw at baseline position y:
-			// - We need to offset the surface so the baseline aligns
+			// 따라서 기준선 위치 y에 그리려면:
+			// - 기준선이 맞춰지도록 서피스에 오프셋을 적용해야 합니다
 			// - drawY = y - (-miny) = y + miny
-			// - But miny is negative, so: drawY = y - ascent + bearingY
+			// - 하지만 miny는 음수이므로: drawY = y - ascent + bearingY
 
 			int drawY = y - ascent + metrics.bearingY;
 			m_backend->DrawGlyph(target, *glyph, penX + metrics.bearingX, drawY, style.color.a);
@@ -444,27 +444,27 @@ void TextService::DrawLines(RenderTarget& target, const std::vector<std::string>
 
 void TextService::RenderText(int x, int y, const std::string& text)
 {
-	// Simple text rendering API for compatibility with SDL_RenderText
-	// Renders white text at the specified position using the global surface
+	// SDL_RenderText와의 호환성을 위한 간단한 텍스트 렌더링 API
+	// 전역 서피스를 사용해 지정된 위치에 흰색 텍스트를 렌더링합니다
 
 	auto& service = Get();
 
-	// Get global surface reference (from SpriteLib)
+	// 전역 서피스 참조를 가져옵니다(SpriteLib에서 제공)
 	if (!::g_pLast || !::g_pLast->GetBackendSurface())
 		return;
 
-	// Create render target from global surface
+	// 전역 서피스로부터 렌더 타겟을 생성합니다
 	SpriteSurfaceRenderTarget target(::g_pLast);
 
-	// Use default style with white color
+	// 흰색을 적용한 기본 스타일을 사용합니다
 	TextStyle style = service.GetDefaultStyle();
-	// Override color to white
+	// 색상을 흰색으로 재설정합니다
 	style.color.r = 255;
 	style.color.g = 255;
 	style.color.b = 255;
 	style.color.a = 255;
 
-	// Draw the text
+	// 텍스트를 그립니다
 	service.DrawLine(target, text, x, y, 0, style);
 }
 
