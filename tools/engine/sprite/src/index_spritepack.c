@@ -1,18 +1,18 @@
-/**
+﻿/**
  * @file index_spritepack.c
- * @brief IndexedSpritePack implementation
+ * @brief IndexedSpritePack 구현부
  * 
- * Requirements: 1.1, 1.2, 1.3
+ * 요구사항: 1.1, 1.2, 1.3
  * 
- * File format:
+ * 파일 포맷:
  * 
- * .ispk (pack file):
- *   [size: 2 bytes] - Number of sprites
- *   [sprite data...] - Sequential sprite data
+ * .ispk (팩 파일):
+ *   [size: 2 바이트] - 스프라이트 개수
+ *   [스프라이트 데이터...] - 순차적 스프라이트 데이터
  * 
- * .ispki (index file):
- *   [size: 2 bytes] - Number of sprites
- *   [offset: 4 bytes] × size - File offsets for each sprite
+ * .ispki (인덱스 파일):
+ *   [size: 2 바이트] - 스프라이트 개수
+ *   [offset: 4 바이트] × size - 각 스프라이트의 파일 오프셋
  */
 
 #include "index_spritepack.h"
@@ -20,7 +20,7 @@
 #include <string.h>
 
 /* ============================================================================
- * Initialization and Cleanup
+ * 초기화 및 정리
  * ============================================================================ */
 
 void index_spritepack_init(IndexSpritePack* pack) {
@@ -38,7 +38,7 @@ void index_spritepack_init(IndexSpritePack* pack) {
 void index_spritepack_release(IndexSpritePack* pack) {
     if (!pack) return;
     
-    /* Release all sprites */
+    /* 모든 스프라이트 해제 */
     if (pack->sprites) {
         for (int i = 0; i < pack->size; i++) {
             index_sprite_release(&pack->sprites[i]);
@@ -47,19 +47,19 @@ void index_spritepack_release(IndexSpritePack* pack) {
         pack->sprites = NULL;
     }
     
-    /* Close lazy load file */
+    /* 지연 로딩 파일 닫기 */
     if (pack->pack_file) {
         fclose(pack->pack_file);
         pack->pack_file = NULL;
     }
     
-    /* Free file index */
+    /* 파일 인덱스 해제 */
     if (pack->file_index) {
         free(pack->file_index);
         pack->file_index = NULL;
     }
     
-    /* Free filename */
+    /* 파일 이름 해제 */
     if (pack->filename) {
         free(pack->filename);
         pack->filename = NULL;
@@ -75,7 +75,7 @@ uint16_t index_spritepack_get_size(const IndexSpritePack* pack) {
 }
 
 /* ============================================================================
- * Sprite Access
+ * 스프라이트 접근
  * ============================================================================ */
 
 IndexSprite* index_spritepack_get(IndexSpritePack* pack, uint16_t index) {
@@ -83,17 +83,17 @@ IndexSprite* index_spritepack_get(IndexSpritePack* pack, uint16_t index) {
         return NULL;
     }
     
-    /* If lazy loading and sprite not yet loaded */
+    /* 지연 로딩 중이며 스프라이트가 아직 로드되지 않은 경우 */
     if (pack->is_lazy_load && !index_sprite_is_init(&pack->sprites[index])) {
         if (pack->pack_file && pack->file_index) {
-            /* Seek to sprite position */
+            /* 스프라이트 위치로 탐색 */
             fseek(pack->pack_file, pack->file_index[index], SEEK_SET);
             
-            /* Load sprite */
+            /* 스프라이트 로드 */
             if (index_sprite_load_from_file(&pack->sprites[index], pack->pack_file)) {
                 pack->loaded_count++;
                 
-                /* If all sprites loaded, close file and free resources */
+                /* 모든 스프라이트가 로드되었으면 파일 닫고 리소스 해제 */
                 if (pack->loaded_count >= pack->size) {
                     pack->is_lazy_load = 0;
                     fclose(pack->pack_file);
@@ -109,16 +109,16 @@ IndexSprite* index_spritepack_get(IndexSpritePack* pack, uint16_t index) {
 }
 
 /* ============================================================================
- * File Loading
+ * 파일 로딩
  * ============================================================================ */
 
 int index_spritepack_load_from_file(IndexSpritePack* pack, FILE* file) {
     if (!pack || !file) return 0;
     
-    /* Release any existing data */
+    /* 기존 데이터가 있으면 해제 */
     index_spritepack_release(pack);
     
-    /* Read sprite count */
+    /* 스프라이트 개수 읽기 */
     if (fread(&pack->size, 2, 1, file) != 1) {
         return 0;
     }
@@ -127,22 +127,22 @@ int index_spritepack_load_from_file(IndexSpritePack* pack, FILE* file) {
         return 1;
     }
     
-    /* Allocate sprite array */
+    /* 스프라이트 배열 할당 */
     pack->sprites = (IndexSprite*)malloc(pack->size * sizeof(IndexSprite));
     if (!pack->sprites) {
         pack->size = 0;
         return 0;
     }
     
-    /* Initialize all sprites */
+    /* 모든 스프라이트 초기화 */
     for (int i = 0; i < pack->size; i++) {
         index_sprite_init(&pack->sprites[i]);
     }
     
-    /* Load all sprites */
+    /* 모든 스프라이트 로드 */
     for (int i = 0; i < pack->size; i++) {
         if (!index_sprite_load_from_file(&pack->sprites[i], file)) {
-            /* Continue loading even if one sprite fails */
+            /* 한 스프라이트가 실패해도 계속 로드 진행 */
         }
     }
     
@@ -164,10 +164,10 @@ int index_spritepack_load(IndexSpritePack* pack, const char* filename) {
 int index_spritepack_load_lazy(IndexSpritePack* pack, const char* filename) {
     if (!pack || !filename) return 0;
     
-    /* Release any existing data */
+    /* 기존 데이터가 있으면 해제 */
     index_spritepack_release(pack);
     
-    /* Build index filename (.ispki) */
+    /* 인덱스 파일명 생성 (.ispki) */
     size_t len = strlen(filename);
     char* indexFilename = (char*)malloc(len + 2);
     if (!indexFilename) return 0;
@@ -175,14 +175,14 @@ int index_spritepack_load_lazy(IndexSpritePack* pack, const char* filename) {
     strcpy(indexFilename, filename);
     strcat(indexFilename, "i");
     
-    /* Open index file */
+    /* 인덱스 파일 열기 */
     FILE* indexFile = fopen(indexFilename, "rb");
     if (!indexFile) {
         free(indexFilename);
         return 0;
     }
     
-    /* Read sprite count from index file */
+    /* 인덱스 파일에서 스프라이트 개수 읽기 */
     if (fread(&pack->size, 2, 1, indexFile) != 1) {
         fclose(indexFile);
         free(indexFilename);
@@ -195,7 +195,7 @@ int index_spritepack_load_lazy(IndexSpritePack* pack, const char* filename) {
         return 1;
     }
     
-    /* Allocate sprite array */
+    /* 스프라이트 배열 할당 */
     pack->sprites = (IndexSprite*)malloc(pack->size * sizeof(IndexSprite));
     if (!pack->sprites) {
         fclose(indexFile);
@@ -204,12 +204,12 @@ int index_spritepack_load_lazy(IndexSpritePack* pack, const char* filename) {
         return 0;
     }
     
-    /* Initialize all sprites */
+    /* 모든 스프라이트 초기화 */
     for (int i = 0; i < pack->size; i++) {
         index_sprite_init(&pack->sprites[i]);
     }
     
-    /* Allocate and read file index */
+    /* 파일 인덱스 할당 및 읽기 */
     pack->file_index = (int32_t*)malloc(pack->size * sizeof(int32_t));
     if (!pack->file_index) {
         free(pack->sprites);
@@ -235,7 +235,7 @@ int index_spritepack_load_lazy(IndexSpritePack* pack, const char* filename) {
     
     fclose(indexFile);
     
-    /* Open pack file for lazy loading */
+    /* 지연 로딩을 위해 팩 파일 열기 */
     pack->pack_file = fopen(filename, "rb");
     if (!pack->pack_file) {
         free(pack->file_index);
@@ -247,7 +247,7 @@ int index_spritepack_load_lazy(IndexSpritePack* pack, const char* filename) {
         return 0;
     }
     
-    /* Skip the size header in pack file */
+    /* 팩 파일의 크기 헤더 건너뛰기 */
     uint16_t packSize;
     if (fread(&packSize, 2, 1, pack->pack_file) != 1) {
         fclose(pack->pack_file);
@@ -261,7 +261,7 @@ int index_spritepack_load_lazy(IndexSpritePack* pack, const char* filename) {
         return 0;
     }
     
-    /* Store filename for reference */
+    /* 참조용 파일 이름 저장 */
     pack->filename = (char*)malloc(len + 1);
     if (pack->filename) {
         strcpy(pack->filename, filename);
@@ -277,12 +277,12 @@ int index_spritepack_load_lazy(IndexSpritePack* pack, const char* filename) {
 int index_spritepack_load_part(IndexSpritePack* pack, int first, int last) {
     if (!pack || !pack->sprites) return 0;
     
-    /* Clamp range */
+    /* 범위 보정 */
     if (first < 0) first = 0;
     if (last >= pack->size) last = pack->size - 1;
     if (first > last) return 0;
     
-    /* Load each sprite in range */
+    /* 범위 내의 각 스프라이트 로드 */
     for (int i = first; i <= last; i++) {
         index_spritepack_get(pack, (uint16_t)i);
     }
@@ -293,12 +293,12 @@ int index_spritepack_load_part(IndexSpritePack* pack, int first, int last) {
 int index_spritepack_release_part(IndexSpritePack* pack, int first, int last) {
     if (!pack || !pack->sprites) return 0;
     
-    /* Clamp range */
+    /* 범위 보정 */
     if (first < 0) first = 0;
     if (last >= pack->size) last = pack->size - 1;
     if (first > last) return 0;
     
-    /* Release each sprite in range */
+    /* 범위 내의 각 스프라이트 해제 */
     for (int i = first; i <= last; i++) {
         index_sprite_release(&pack->sprites[i]);
     }

@@ -1,8 +1,8 @@
-/**
+﻿/**
  * @file frame.c
- * @brief Frame structures implementation (Pure C)
+ * @brief Frame 구조체 구현부 (순수 C)
  *
- * Requirements: 3.4, 3.5
+ * 요구사항: 3.4, 3.5
  */
 
 #include "frame.h"
@@ -10,7 +10,7 @@
 #include <string.h>
 
 /* ============================================================================
- * Frame Functions
+ * Frame 함수
  * ============================================================================ */
 
 void frame_init(Frame* frame, TYPE_SPRITEID sprite_id, int16_t cx, int16_t cy)
@@ -26,17 +26,17 @@ int frame_save(const Frame* frame, FILE* file)
 {
     if (frame == NULL || file == NULL) return 0;
 
-    /* Write sprite_id (2 bytes) */
+    /* sprite_id 쓰기 (2바이트) */
     if (fwrite(&frame->sprite_id, sizeof(TYPE_SPRITEID), 1, file) != 1) {
         return 0;
     }
 
-    /* Write cx (2 bytes) */
+    /* cx 쓰기 (2바이트) */
     if (fwrite(&frame->cx, sizeof(int16_t), 1, file) != 1) {
         return 0;
     }
 
-    /* Write cy (2 bytes) */
+    /* cy 쓰기 (2바이트) */
     if (fwrite(&frame->cy, sizeof(int16_t), 1, file) != 1) {
         return 0;
     }
@@ -48,17 +48,17 @@ int frame_load(Frame* frame, FILE* file)
 {
     if (frame == NULL || file == NULL) return 0;
 
-    /* Read sprite_id (2 bytes) */
+    /* sprite_id 읽기 (2바이트) */
     if (fread(&frame->sprite_id, sizeof(TYPE_SPRITEID), 1, file) != 1) {
         return 0;
     }
 
-    /* Read cx (2 bytes) */
+    /* cx 읽기 (2바이트) */
     if (fread(&frame->cx, sizeof(int16_t), 1, file) != 1) {
         return 0;
     }
 
-    /* Read cy (2 bytes) */
+    /* cy 읽기 (2바이트) */
     if (fread(&frame->cy, sizeof(int16_t), 1, file) != 1) {
         return 0;
     }
@@ -67,7 +67,7 @@ int frame_load(Frame* frame, FILE* file)
 }
 
 /* ============================================================================
- * FrameArray Functions
+ * FrameArray 함수
  * ============================================================================ */
 
 void frame_array_init(FrameArray* arr)
@@ -102,13 +102,13 @@ int frame_array_save(const FrameArray* arr, FILE* file)
 {
     if (arr == NULL || file == NULL) return 0;
 
-    /* Write size as uint16_t (compatible with original format) */
+    /* size를 uint16_t로 쓴다 (원본 포맷과 호환) */
     uint16_t size = (uint16_t)vecLen(arr);
     if (fwrite(&size, sizeof(uint16_t), 1, file) != 1) {
         return 0;
     }
 
-    /* Write each frame */
+    /* 각 frame을 쓴다 */
     for (int i = 0; i < vecLen(arr); i++) {
         Frame* frame = vecRef((FrameArray*)arr, i);
         if (!frame_save(frame, file)) {
@@ -123,23 +123,23 @@ int frame_array_load(FrameArray* arr, FILE* file)
 {
     if (arr == NULL || file == NULL) return 0;
 
-    /* Initialize array */
+    /* 배열 초기화 */
     frame_array_init(arr);
 
-    /* Read size as uint16_t */
+    /* size를 uint16_t로 읽는다 */
     uint16_t size;
     if (fread(&size, sizeof(uint16_t), 1, file) != 1) {
         return 0;
     }
 
     if (size == 0) {
-        return 1;  /* Empty array is valid */
+        return 1;  /* 빈 배열도 유효하다 */
     }
 
-    /* Pre-allocate */
+    /* 미리 할당 */
     vecInit(arr, size);
 
-    /* Read each frame */
+    /* 각 frame을 읽는다 */
     for (uint16_t i = 0; i < size; i++) {
         Frame frame;
         if (!frame_load(&frame, file)) {
@@ -153,7 +153,7 @@ int frame_array_load(FrameArray* arr, FILE* file)
 }
 
 /* ============================================================================
- * DirectionArray Functions
+ * DirectionArray 함수
  * ============================================================================ */
 
 void direction_array_init(DirectionArray* arr)
@@ -168,7 +168,7 @@ void direction_array_free(DirectionArray* arr)
 {
     if (arr == NULL) return;
 
-    /* Free each nested FrameArray */
+    /* 중첩된 각 FrameArray를 해제한다 */
     for (int i = 0; i < vecLen(arr); i++) {
         FrameArray* fa = vecRef(arr, i);
         frame_array_free(fa);
@@ -195,13 +195,13 @@ int direction_array_save(const DirectionArray* arr, FILE* file)
 {
     if (arr == NULL || file == NULL) return 0;
 
-    /* Write size as uint8_t (compatible with original format) */
+    /* size를 uint8_t로 쓴다 (원본 포맷과 호환) */
     uint8_t size = (uint8_t)vecLen(arr);
     if (fwrite(&size, sizeof(uint8_t), 1, file) != 1) {
         return 0;
     }
 
-    /* Write each FrameArray */
+    /* 각 FrameArray를 쓴다 */
     for (int i = 0; i < vecLen(arr); i++) {
         FrameArray* fa = vecRef((DirectionArray*)arr, i);
         if (!frame_array_save(fa, file)) {
@@ -216,23 +216,23 @@ int direction_array_load(DirectionArray* arr, FILE* file)
 {
     if (arr == NULL || file == NULL) return 0;
 
-    /* Initialize array */
+    /* 배열 초기화 */
     direction_array_init(arr);
 
-    /* Read size as uint8_t */
+    /* size를 uint8_t로 읽는다 */
     uint8_t size;
     if (fread(&size, sizeof(uint8_t), 1, file) != 1) {
         return 0;
     }
 
     if (size == 0) {
-        return 1;  /* Empty array is valid */
+        return 1;  /* 빈 배열도 유효하다 */
     }
 
-    /* Pre-allocate */
+    /* 미리 할당 */
     vecInit(arr, size);
 
-    /* Read each FrameArray */
+    /* 각 FrameArray를 읽는다 */
     for (uint8_t i = 0; i < size; i++) {
         FrameArray fa;
         if (!frame_array_load(&fa, file)) {
@@ -246,7 +246,7 @@ int direction_array_load(DirectionArray* arr, FILE* file)
 }
 
 /* ============================================================================
- * ActionArray Functions
+ * ActionArray 함수
  * ============================================================================ */
 
 void action_array_init(ActionArray* arr)
@@ -261,7 +261,7 @@ void action_array_free(ActionArray* arr)
 {
     if (arr == NULL) return;
 
-    /* Free each nested DirectionArray */
+    /* 중첩된 각 DirectionArray를 해제한다 */
     for (int i = 0; i < vecLen(arr); i++) {
         DirectionArray* da = vecRef(arr, i);
         direction_array_free(da);
@@ -288,13 +288,13 @@ int action_array_save(const ActionArray* arr, FILE* file)
 {
     if (arr == NULL || file == NULL) return 0;
 
-    /* Write size as uint8_t (compatible with original format) */
+    /* size를 uint8_t로 쓴다 (원본 포맷과 호환) */
     uint8_t size = (uint8_t)vecLen(arr);
     if (fwrite(&size, sizeof(uint8_t), 1, file) != 1) {
         return 0;
     }
 
-    /* Write each DirectionArray */
+    /* 각 DirectionArray를 쓴다 */
     for (int i = 0; i < vecLen(arr); i++) {
         DirectionArray* da = vecRef((ActionArray*)arr, i);
         if (!direction_array_save(da, file)) {
@@ -309,23 +309,23 @@ int action_array_load(ActionArray* arr, FILE* file)
 {
     if (arr == NULL || file == NULL) return 0;
 
-    /* Initialize array */
+    /* 배열 초기화 */
     action_array_init(arr);
 
-    /* Read size as uint8_t */
+    /* size를 uint8_t로 읽는다 */
     uint8_t size;
     if (fread(&size, sizeof(uint8_t), 1, file) != 1) {
         return 0;
     }
 
     if (size == 0) {
-        return 1;  /* Empty array is valid */
+        return 1;  /* 빈 배열도 유효하다 */
     }
 
-    /* Pre-allocate */
+    /* 미리 할당 */
     vecInit(arr, size);
 
-    /* Read each DirectionArray */
+    /* 각 DirectionArray를 읽는다 */
     for (uint8_t i = 0; i < size; i++) {
         DirectionArray da;
         if (!direction_array_load(&da, file)) {

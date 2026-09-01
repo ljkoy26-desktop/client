@@ -1,8 +1,8 @@
-/**
+﻿/**
  * @file animation.c
- * @brief Animation frame and object management implementation
- * 
- * Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 3.1, 3.2, 3.3, 3.5, 3.6, 6.1, 6.2
+ * @brief 애니메이션 프레임 및 오브젝트 관리 구현부
+ *
+ * 요구사항: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 3.1, 3.2, 3.3, 3.5, 3.6, 6.1, 6.2
  */
 
 #include "animation.h"
@@ -10,7 +10,7 @@
 #include <string.h>
 
 /* ============================================================================
- * Animation Frame Implementation
+ * 애니메이션 프레임 구현부
  * ============================================================================ */
 
 void anim_frame_init(AnimFrame* frame, uint8_t blt_type) {
@@ -63,7 +63,7 @@ uint8_t anim_frame_get(const AnimFrame* frame) {
 }
 
 /* ============================================================================
- * Animation Object Implementation
+ * 애니메이션 오브젝트 구현부
  * ============================================================================ */
 
 void anim_object_init(AnimObject* obj) {
@@ -125,7 +125,7 @@ void anim_object_set_direction(AnimObject* obj, uint8_t dir) {
 }
 
 /* ============================================================================
- * Animation Rendering Implementation
+ * 애니메이션 렌더링 구현부
  * ============================================================================ */
 
 void anim_set_blend_mode(SDL_Texture* texture, BltType blt_type) {
@@ -148,20 +148,20 @@ void anim_set_blend_mode(SDL_Texture* texture, BltType blt_type) {
             
         case BLT_SHADOW:
             SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
-            /* Darken the texture for shadow effect */
+            /* 그림자 효과를 위해 텍스처를 어둡게 만든다 */
             SDL_SetTextureColorMod(texture, 0, 0, 0);
             SDL_SetTextureAlphaMod(texture, 128);
             break;
-            
+
         case BLT_SCREEN:
-            /* Screen blend approximated with additive blending */
+            /* 스크린 블렌드를 가산 블렌딩으로 근사한다 */
             SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_ADD);
             SDL_SetTextureColorMod(texture, 255, 255, 255);
             SDL_SetTextureAlphaMod(texture, 255);
             break;
-            
+
         default:
-            /* Default to normal blending */
+            /* 기본값은 일반 블렌딩 */
             SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
             SDL_SetTextureColorMod(texture, 255, 255, 255);
             SDL_SetTextureAlphaMod(texture, 255);
@@ -201,32 +201,32 @@ int anim_render_blt(SDL_Renderer* renderer,
         return -1;
     }
     
-    /* Get current sprite ID */
+    /* 현재 스프라이트 ID를 가져온다 */
     sprite_id = anim_object_get_sprite(obj);
     if (sprite_id == SPRITEID_NULL) {
         return -1;
     }
-    
-    /* Check if sprite exists in pack */
+
+    /* 팩에 스프라이트가 존재하는지 확인한다 */
     if (sprite_id >= pack->count) {
         return -1;
     }
-    
-    /* Use cache if provided, otherwise use local decoded sprite */
+
+    /* 캐시가 제공되면 사용하고, 아니면 로컬 디코딩된 스프라이트를 사용한다 */
     decoded = cache ? cache : &local_decoded;
-    
-    /* Load and decode sprite if not using cache or cache is empty */
+
+    /* 캐시를 사용하지 않거나 캐시가 비어있으면 스프라이트를 로드하고 디코딩한다 */
     if (!cache || cache->pixels == NULL) {
         sprite = spritepack_get(pack, sprite_id);
         if (sprite == NULL || !sprite->is_valid) {
             return -1;
         }
-        
+
         if (sprite_decode(sprite, decoded, colorkey) != 0) {
             return -1;
         }
-        
-        /* Create texture */
+
+        /* 텍스처 생성 */
         if (decoded_sprite_create_texture(decoded, renderer) != 0) {
             if (!cache) {
                 decoded_sprite_free(decoded);
@@ -234,22 +234,22 @@ int anim_render_blt(SDL_Renderer* renderer,
             return -1;
         }
     }
-    
-    /* Set blend mode */
+
+    /* 블렌드 모드 설정 */
     anim_set_blend_mode(decoded->texture, blt_type);
-    
-    /* Calculate destination rectangle */
+
+    /* 대상 사각형 계산 */
     dst_rect.x = obj->pixel_x;
     dst_rect.y = obj->pixel_y;
     dst_rect.w = (int)(decoded->width * zoom);
     dst_rect.h = (int)(decoded->height * zoom);
-    
-    /* Render */
+
+    /* 렌더링 */
     if (SDL_RenderCopy(renderer, decoded->texture, NULL, &dst_rect) != 0) {
         result = -1;
     }
-    
-    /* Clean up local decoded sprite if not using cache */
+
+    /* 캐시를 사용하지 않으면 로컬 디코딩된 스프라이트를 정리한다 */
     if (!cache) {
         decoded_sprite_free(decoded);
     }

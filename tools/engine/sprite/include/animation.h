@@ -1,8 +1,8 @@
-/**
+﻿/**
  * @file animation.h
- * @brief Animation frame and object management
+ * @brief 애니메이션 프레임 및 오브젝트 관리
  * 
- * Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 3.1, 3.2, 3.3, 3.5, 3.6, 6.1, 6.2
+ * 요구사항: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 3.1, 3.2, 3.3, 3.5, 3.6, 6.1, 6.2
  */
 
 #ifndef ANIMATION_H
@@ -19,193 +19,193 @@ extern "C" {
 #endif
 
 /* ============================================================================
- * Animation Frame Structure
- * Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6
+ * 애니메이션 프레임 구조체
+ * 요구사항: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6
  * ============================================================================ */
 
 /**
- * Animation frame state
+ * 애니메이션 프레임 상태
  * 
- * Manages frame progression for animations, supporting both manual
- * frame advancement and loop-based frame calculation.
+ * 애니메이션의 프레임 진행을 관리하며, 수동 프레임 진행 및
+ * 루프 기반 프레임 계산을 모두 지원합니다.
  */
 typedef struct AnimFrame {
-    FrameID frame_id;       /**< Frame group identifier (Req 2.2) */
-    uint8_t current_frame;  /**< Current frame index (Req 2.1) */
-    uint8_t max_frame;      /**< Maximum frame count (Req 2.1) */
-    uint8_t blt_type;       /**< Rendering type (BltType) (Req 2.6) */
-    uint8_t loop;           /**< Loop mode flag (Req 2.5) */
+    FrameID frame_id;       /**< 프레임 그룹 식별자 (요구사항 2.2) */
+    uint8_t current_frame;  /**< 현재 프레임 인덱스 (요구사항 2.1) */
+    uint8_t max_frame;      /**< 최대 프레임 수 (요구사항 2.1) */
+    uint8_t blt_type;       /**< 렌더링 타입 (BltType) (요구사항 2.6) */
+    uint8_t loop;           /**< 루프 모드 플래그 (요구사항 2.5) */
 } AnimFrame;
 
 /**
- * Initialize animation frame with default values
+ * 애니메이션 프레임을 기본값으로 초기화
  * 
- * @param frame Pointer to AnimFrame structure
- * @param blt_type Initial rendering type (BltType)
+ * @param frame AnimFrame 구조체 포인터
+ * @param blt_type 초기 렌더링 타입 (BltType)
  * 
- * Requirements: 2.1, 2.6
+ * 요구사항: 2.1, 2.6
  */
 void anim_frame_init(AnimFrame* frame, uint8_t blt_type);
 
 /**
- * Set frame sequence parameters
+ * 프레임 시퀀스 파라미터 설정
  * 
- * @param frame Pointer to AnimFrame structure
- * @param id Frame group identifier
- * @param max_frame Maximum number of frames in sequence
+ * @param frame AnimFrame 구조체 포인터
+ * @param id 프레임 그룹 식별자
+ * @param max_frame 시퀀스 내 최대 프레임 수
  * 
- * Requirements: 2.1, 2.2
+ * 요구사항: 2.1, 2.2
  */
 void anim_frame_set(AnimFrame* frame, FrameID id, uint8_t max_frame);
 
 /**
- * Advance to next frame
+ * 다음 프레임으로 진행
  * 
- * Increments current_frame by 1. When current_frame reaches max_frame,
- * it wraps back to 0.
+ * current_frame을 1 증가시킵니다. current_frame이 max_frame에 도달하면
+ * 0으로 다시 순환합니다.
  * 
- * @param frame Pointer to AnimFrame structure
+ * @param frame AnimFrame 구조체 포인터
  * 
- * Requirements: 2.3, 2.4
+ * 요구사항: 2.3, 2.4
  */
 void anim_frame_next(AnimFrame* frame);
 
 /**
- * Advance frame in loop mode
+ * 루프 모드에서 프레임 진행
  * 
- * In loop mode, the current frame is calculated as (loop_counter % max_frame).
- * This allows multiple animations to stay synchronized.
+ * 루프 모드에서는 현재 프레임이 (loop_counter % max_frame)으로 계산됩니다.
+ * 이를 통해 여러 애니메이션이 동기화된 상태를 유지할 수 있습니다.
  * 
- * @param frame Pointer to AnimFrame structure
- * @param loop_counter Global loop counter value
+ * @param frame AnimFrame 구조체 포인터
+ * @param loop_counter 전역 루프 카운터 값
  * 
- * Requirements: 2.5
+ * 요구사항: 2.5
  */
 void anim_frame_next_loop(AnimFrame* frame, uint32_t loop_counter);
 
 /**
- * Get current frame index
+ * 현재 프레임 인덱스 반환
  * 
- * @param frame Pointer to AnimFrame structure
- * @return Current frame index
+ * @param frame AnimFrame 구조체 포인터
+ * @return 현재 프레임 인덱스
  * 
- * Requirements: 2.1
+ * 요구사항: 2.1
  */
 uint8_t anim_frame_get(const AnimFrame* frame);
 
 /* ============================================================================
- * Animation Object Structure
- * Requirements: 3.1, 3.2, 3.3, 3.5, 3.6, 6.1, 6.2
+ * 애니메이션 오브젝트 구조체
+ * 요구사항: 3.1, 3.2, 3.3, 3.5, 3.6, 6.1, 6.2
  * ============================================================================ */
 
 /**
- * Animation object
+ * 애니메이션 오브젝트
  * 
- * Combines sprite data with frame management for rendering animated
- * game objects. Supports 8-directional animations.
+ * 스프라이트 데이터와 프레임 관리를 결합하여 애니메이션 게임 오브젝트를 렌더링합니다.
+ * 8방향 애니메이션을 지원합니다.
  */
 typedef struct AnimObject {
-    AnimFrame frame;        /**< Frame management data (Req 3.4) */
-    SpriteID sprite_id;     /**< Base sprite ID (Req 3.1) */
-    int pixel_x;            /**< X position in pixels (Req 3.2) */
-    int pixel_y;            /**< Y position in pixels (Req 3.2) */
-    uint8_t direction;      /**< Direction (0-7) (Req 3.3, 6.1) */
-    uint8_t transparent;    /**< Transparency flag (Req 3.6) */
+    AnimFrame frame;        /**< 프레임 관리 데이터 (요구사항 3.4) */
+    SpriteID sprite_id;     /**< 기본 스프라이트 ID (요구사항 3.1) */
+    int pixel_x;            /**< X 픽셀 위치 (요구사항 3.2) */
+    int pixel_y;            /**< Y 픽셀 위치 (요구사항 3.2) */
+    uint8_t direction;      /**< 방향 (0-7) (요구사항 3.3, 6.1) */
+    uint8_t transparent;    /**< 투명도 플래그 (요구사항 3.6) */
 } AnimObject;
 
 /**
- * Initialize animation object with default values
+ * 애니메이션 오브젝트를 기본값으로 초기화
  * 
- * @param obj Pointer to AnimObject structure
+ * @param obj AnimObject 구조체 포인터
  * 
- * Requirements: 3.1, 3.2, 3.3, 3.6
+ * 요구사항: 3.1, 3.2, 3.3, 3.6
  */
 void anim_object_init(AnimObject* obj);
 
 /**
- * Set animation object properties
+ * 애니메이션 오브젝트 속성 설정
  * 
- * @param obj Pointer to AnimObject structure
- * @param sprite_id Base sprite ID
- * @param px X pixel position
- * @param py Y pixel position
- * @param direction Direction (0-7, automatically wrapped)
- * @param trans Transparency flag
+ * @param obj AnimObject 구조체 포인터
+ * @param sprite_id 기본 스프라이트 ID
+ * @param px X 픽셀 위치
+ * @param py Y 픽셀 위치
+ * @param direction 방향 (0-7, 자동 순환 범위 조정)
+ * @param trans 투명도 플래그
  * 
- * Requirements: 3.1, 3.2, 3.3, 3.6, 6.1
+ * 요구사항: 3.1, 3.2, 3.3, 3.6, 6.1
  */
 void anim_object_set(AnimObject* obj, SpriteID sprite_id, 
                      int px, int py, uint8_t direction, uint8_t trans);
 
 /**
- * Set frame sequence for animation
+ * 애니메이션의 프레임 시퀀스 설정
  * 
- * @param obj Pointer to AnimObject structure
- * @param frame_id Frame group identifier
- * @param max_frame Maximum number of frames
+ * @param obj AnimObject 구조체 포인터
+ * @param frame_id 프레임 그룹 식별자
+ * @param max_frame 최대 프레임 수
  * 
- * Requirements: 3.4
+ * 요구사항: 3.4
  */
 void anim_object_set_frame(AnimObject* obj, FrameID frame_id, uint8_t max_frame);
 
 /**
- * Advance animation frame
+ * 애니메이션 프레임 진행
  * 
- * @param obj Pointer to AnimObject structure
+ * @param obj AnimObject 구조체 포인터
  * 
- * Requirements: 3.5
+ * 요구사항: 3.5
  */
 void anim_object_next_frame(AnimObject* obj);
 
 /**
- * Get current sprite ID
+ * 현재 스프라이트 ID 반환
  * 
- * Calculates the actual sprite index from base sprite_id + current frame.
+ * 기본 sprite_id + 현재 프레임으로부터 실제 스프라이트 인덱스를 계산합니다.
  * 
- * @param obj Pointer to AnimObject structure
- * @return Current sprite ID (base + frame offset)
+ * @param obj AnimObject 구조체 포인터
+ * @return 현재 스프라이트 ID (기본 ID + 프레임 오프셋)
  * 
- * Requirements: 3.5
+ * 요구사항: 3.5
  */
 SpriteID anim_object_get_sprite(const AnimObject* obj);
 
 /**
- * Set direction
+ * 방향 설정
  * 
- * @param obj Pointer to AnimObject structure
- * @param dir Direction value (automatically wrapped to 0-7)
+ * @param obj AnimObject 구조체 포인터
+ * @param dir 방향 값 (0-7로 자동 래핑됨)
  * 
- * Requirements: 6.1, 6.2
+ * 요구사항: 6.1, 6.2
  */
 void anim_object_set_direction(AnimObject* obj, uint8_t dir);
 
 /* ============================================================================
- * Animation Rendering Functions
- * Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6
+ * 애니메이션 렌더링 함수
+ * 요구사항: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6
  * ============================================================================ */
 
 /**
- * Set SDL blend mode based on BltType
+ * BltType에 따라 SDL 블렌드 모드 설정
  * 
- * @param texture SDL texture to set blend mode on
- * @param blt_type Rendering type
+ * @param texture 블렌드 모드를 설정할 SDL 텍스처
+ * @param blt_type 렌더링 타입
  * 
- * Requirements: 4.2, 4.3, 4.4, 4.5
+ * 요구사항: 4.2, 4.3, 4.4, 4.5
  */
 void anim_set_blend_mode(SDL_Texture* texture, BltType blt_type);
 
 /**
- * Render animation object to screen
+ * 애니메이션 오브젝트를 화면에 렌더링
  * 
- * @param renderer SDL renderer
- * @param obj Animation object to render
- * @param pack SpritePack containing sprites
- * @param cache Optional sprite cache (can be NULL)
- * @param colorkey Transparent color key
- * @param zoom Zoom factor (1.0 = normal size)
- * @return 0 on success, negative on error
+ * @param renderer SDL 렌더러
+ * @param obj 렌더링할 애니메이션 오브젝트
+ * @param pack 스프라이트가 포함된 SpritePack
+ * @param cache 선택적 스프라이트 캐시 (NULL 가능)
+ * @param colorkey 투명 컬러키
+ * @param zoom 확대/축소 비율 (1.0 = 기본 크기)
+ * @return 성공 시 0, 실패 시 음수
  * 
- * Requirements: 4.1, 4.6
+ * 요구사항: 4.1, 4.6
  */
 int anim_render(SDL_Renderer* renderer, 
                 const AnimObject* obj,
@@ -215,18 +215,18 @@ int anim_render(SDL_Renderer* renderer,
                 float zoom);
 
 /**
- * Render with specific blend mode
+ * 특정 블렌드 모드로 렌더링
  * 
- * @param renderer SDL renderer
- * @param obj Animation object to render
- * @param pack SpritePack containing sprites
- * @param cache Optional sprite cache (can be NULL)
- * @param colorkey Transparent color key
- * @param zoom Zoom factor
- * @param blt_type Rendering type to use
- * @return 0 on success, negative on error
+ * @param renderer SDL 렌더러
+ * @param obj 렌더링할 애니메이션 오브젝트
+ * @param pack 스프라이트가 포함된 SpritePack
+ * @param cache 선택적 스프라이트 캐시 (NULL 가능)
+ * @param colorkey 투명 컬러키
+ * @param zoom 확대/축소 비율
+ * @param blt_type 사용할 렌더링 타입
+ * @return 성공 시 0, 실패 시 음수
  * 
- * Requirements: 4.2, 4.3, 4.4, 4.5
+ * 요구사항: 4.2, 4.3, 4.4, 4.5
  */
 int anim_render_blt(SDL_Renderer* renderer,
                     const AnimObject* obj,

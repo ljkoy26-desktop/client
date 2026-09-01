@@ -1,12 +1,12 @@
-/**
+﻿/**
  * @file frame.h
- * @brief Frame structures for animation data (Pure C implementation)
+ * @brief 애니메이션 데이터를 위한 프레임 구조체 (순수 C 구현)
  *
- * Requirements: 3.4, 3.5
+ * 요구사항: 3.4, 3.5
  *
- * Frame stores a single animation frame's data:
- * - sprite_id: Index into SpritePack
- * - cx, cy: Coordinate offsets for rendering
+ * Frame은 단일 애니메이션 프레임 데이터를 저장합니다:
+ * - sprite_id: SpritePack 내의 인덱스
+ * - cx, cy: 렌더링 좌표 오프셋
  */
 
 #ifndef FRAME_H
@@ -21,235 +21,235 @@ extern "C" {
 #endif
 
 /* ============================================================================
- * Type Definitions
+ * 타입 정의
  * ============================================================================ */
 
 /**
- * Sprite ID type - identifies a sprite within a SpritePack
+ * 스프라이트 ID 타입 - SpritePack 내의 스프라이트를 식별
  */
 typedef uint16_t TYPE_SPRITEID;
 
 /**
- * Frame ID type - identifies a frame within a FramePack
+ * 프레임 ID 타입 - FramePack 내의 프레임을 식별
  */
 typedef uint16_t TYPE_FRAMEID;
 
 /**
- * Null/invalid sprite ID marker
+ * 무효/Null 스프라이트 ID 마커
  */
 #define SPRITEID_NULL   0xFFFF
 
 /**
- * Null/invalid frame ID marker
+ * 무효/Null 프레임 ID 마커
  */
 #define FRAMEID_NULL    0xFFFF
 
 /* ============================================================================
- * Frame Structure
+ * Frame 구조체
  * ============================================================================ */
 
 /**
- * Frame structure - stores single frame data
+ * Frame 구조체 - 단일 프레임 데이터 저장
  *
- * Each frame contains:
- * - sprite_id: Index into SpritePack (0-65535)
- * - cx, cy: Coordinate offsets for rendering position
+ * 각 프레임의 구성:
+ * - sprite_id: SpritePack 내의 인덱스 (0-65535)
+ * - cx, cy: 렌더링 위치 좌표 오프셋
  */
 typedef struct {
-    TYPE_SPRITEID sprite_id;    /**< Sprite index (0-65535) */
-    int16_t cx;                 /**< X coordinate offset */
-    int16_t cy;                 /**< Y coordinate offset */
+    TYPE_SPRITEID sprite_id;    /**< 스프라이트 인덱스 (0-65535) */
+    int16_t cx;                 /**< X 좌표 오프셋 */
+    int16_t cy;                 /**< Y 좌표 오프셋 */
 } Frame;
 
 /* ============================================================================
- * Frame Array Types using vector.h
+ * vector.h를 사용하는 Frame 배열 타입들
  * ============================================================================ */
 
 /**
- * FrameArray: Array of frames for a single direction
- * Indexed by frame number
+ * FrameArray: 단일 방향에 대한 프레임 배열
+ * 프레임 번호로 인덱싱됨
  */
 typedef vector(Frame) FrameArray;
 
 /**
- * DirectionArray: Array of frame arrays for all directions
- * Indexed by direction (0-7)
+ * DirectionArray: 모든 방향에 대한 프레임 배열의 배열
+ * 방향(0-7)으로 인덱싱됨
  */
 typedef vector(FrameArray) DirectionArray;
 
 /**
- * ActionArray: Array of direction arrays for all actions
- * Indexed by action type (STAND, WALK, RUN, etc.)
+ * ActionArray: 모든 동작에 대한 방향 배열의 배열
+ * 동작 타입(STAND, WALK, RUN 등)으로 인덱싱됨
  */
 typedef vector(DirectionArray) ActionArray;
 
 /* ============================================================================
- * Frame Functions
+ * Frame 함수
  * ============================================================================ */
 
 /**
- * Initialize a frame with values
- * @param frame Pointer to frame
- * @param sprite_id Sprite index
- * @param cx X coordinate offset
- * @param cy Y coordinate offset
+ * Frame 초기화
+ * @param frame Frame 포인터
+ * @param sprite_id 스프라이트 인덱스
+ * @param cx X 좌표 오프셋
+ * @param cy Y 좌표 오프셋
  */
 void frame_init(Frame* frame, TYPE_SPRITEID sprite_id, int16_t cx, int16_t cy);
 
 /**
- * Save frame to file
- * @param frame Pointer to frame
- * @param file FILE pointer to write to
- * @return 1 on success, 0 on failure
+ * Frame을 파일에 저장
+ * @param frame Frame 포인터
+ * @param file 저장할 FILE 포인터
+ * @return 성공 시 1, 실패 시 0
  */
 int frame_save(const Frame* frame, FILE* file);
 
 /**
- * Load frame from file
- * @param frame Pointer to frame
- * @param file FILE pointer to read from
- * @return 1 on success, 0 on failure
+ * 파일에서 Frame 로드
+ * @param frame Frame 포인터
+ * @param file 읽어올 FILE 포인터
+ * @return 성공 시 1, 실패 시 0
  */
 int frame_load(Frame* frame, FILE* file);
 
 /* ============================================================================
- * FrameArray Functions
+ * FrameArray 함수
  * ============================================================================ */
 
 /**
- * Initialize a FrameArray
- * @param arr Pointer to FrameArray
+ * FrameArray 초기화
+ * @param arr FrameArray 포인터
  */
 void frame_array_init(FrameArray* arr);
 
 /**
- * Release a FrameArray
- * @param arr Pointer to FrameArray
+ * FrameArray 메모리 해제
+ * @param arr FrameArray 포인터
  */
 void frame_array_free(FrameArray* arr);
 
 /**
- * Get size of FrameArray
- * @param arr Pointer to FrameArray
- * @return Number of frames
+ * FrameArray 크기 반환
+ * @param arr FrameArray 포인터
+ * @return 프레임 개수
  */
 int frame_array_size(const FrameArray* arr);
 
 /**
- * Get frame at index
- * @param arr Pointer to FrameArray
- * @param index Frame index
- * @return Pointer to frame, or NULL if invalid index
+ * 특정 인덱스의 Frame 반환
+ * @param arr FrameArray 포인터
+ * @param index 프레임 인덱스
+ * @return Frame 포인터, 유효하지 않은 인덱스인 경우 NULL
  */
 Frame* frame_array_get(const FrameArray* arr, int index);
 
 /**
- * Save FrameArray to file
- * @param arr Pointer to FrameArray
- * @param file FILE pointer
- * @return 1 on success, 0 on failure
+ * FrameArray를 파일에 저장
+ * @param arr FrameArray 포인터
+ * @param file FILE 포인터
+ * @return 성공 시 1, 실패 시 0
  */
 int frame_array_save(const FrameArray* arr, FILE* file);
 
 /**
- * Load FrameArray from file
- * @param arr Pointer to FrameArray
- * @param file FILE pointer
- * @return 1 on success, 0 on failure
+ * 파일에서 FrameArray 로드
+ * @param arr FrameArray 포인터
+ * @param file FILE 포인터
+ * @return 성공 시 1, 실패 시 0
  */
 int frame_array_load(FrameArray* arr, FILE* file);
 
 /* ============================================================================
- * DirectionArray Functions
+ * DirectionArray 함수
  * ============================================================================ */
 
 /**
- * Initialize a DirectionArray
- * @param arr Pointer to DirectionArray
+ * DirectionArray 초기화
+ * @param arr DirectionArray 포인터
  */
 void direction_array_init(DirectionArray* arr);
 
 /**
- * Release a DirectionArray (and all nested FrameArrays)
- * @param arr Pointer to DirectionArray
+ * DirectionArray 메모리 해제 (모든 중첩 FrameArray 포함)
+ * @param arr DirectionArray 포인터
  */
 void direction_array_free(DirectionArray* arr);
 
 /**
- * Get size of DirectionArray
- * @param arr Pointer to DirectionArray
- * @return Number of directions
+ * DirectionArray 크기 반환
+ * @param arr DirectionArray 포인터
+ * @return 방향 개수
  */
 int direction_array_size(const DirectionArray* arr);
 
 /**
- * Get FrameArray at direction index
- * @param arr Pointer to DirectionArray
- * @param index Direction index (0-7)
- * @return Pointer to FrameArray, or NULL if invalid index
+ * 특정 방향 인덱스의 FrameArray 반환
+ * @param arr DirectionArray 포인터
+ * @param index 방향 인덱스 (0-7)
+ * @return FrameArray 포인터, 유효하지 않은 인덱스인 경우 NULL
  */
 FrameArray* direction_array_get(DirectionArray* arr, int index);
 
 /**
- * Save DirectionArray to file
- * @param arr Pointer to DirectionArray
- * @param file FILE pointer
- * @return 1 on success, 0 on failure
+ * DirectionArray를 파일에 저장
+ * @param arr DirectionArray 포인터
+ * @param file FILE 포인터
+ * @return 성공 시 1, 실패 시 0
  */
 int direction_array_save(const DirectionArray* arr, FILE* file);
 
 /**
- * Load DirectionArray from file
- * @param arr Pointer to DirectionArray
- * @param file FILE pointer
- * @return 1 on success, 0 on failure
+ * 파일에서 DirectionArray 로드
+ * @param arr DirectionArray 포인터
+ * @param file FILE 포인터
+ * @return 성공 시 1, 실패 시 0
  */
 int direction_array_load(DirectionArray* arr, FILE* file);
 
 /* ============================================================================
- * ActionArray Functions
+ * ActionArray 함수
  * ============================================================================ */
 
 /**
- * Initialize an ActionArray
- * @param arr Pointer to ActionArray
+ * ActionArray 초기화
+ * @param arr ActionArray 포인터
  */
 void action_array_init(ActionArray* arr);
 
 /**
- * Release an ActionArray (and all nested arrays)
- * @param arr Pointer to ActionArray
+ * ActionArray 메모리 해제 (모든 중첩 배열 포함)
+ * @param arr ActionArray 포인터
  */
 void action_array_free(ActionArray* arr);
 
 /**
- * Get size of ActionArray
- * @param arr Pointer to ActionArray
- * @return Number of actions
+ * ActionArray 크기 반환
+ * @param arr ActionArray 포인터
+ * @return 동작 개수
  */
 int action_array_size(const ActionArray* arr);
 
 /**
- * Get DirectionArray at action index
- * @param arr Pointer to ActionArray
- * @param index Action index
- * @return Pointer to DirectionArray, or NULL if invalid index
+ * 특정 동작 인덱스의 DirectionArray 반환
+ * @param arr ActionArray 포인터
+ * @param index 동작 인덱스
+ * @return DirectionArray 포인터, 유효하지 않은 인덱스인 경우 NULL
  */
 DirectionArray* action_array_get(ActionArray* arr, int index);
 
 /**
- * Save ActionArray to file
- * @param arr Pointer to ActionArray
- * @param file FILE pointer
- * @return 1 on success, 0 on failure
+ * ActionArray를 파일에 저장
+ * @param arr ActionArray 포인터
+ * @param file FILE 포인터
+ * @return 성공 시 1, 실패 시 0
  */
 int action_array_save(const ActionArray* arr, FILE* file);
 
 /**
- * Load ActionArray from file
- * @param arr Pointer to ActionArray
- * @param file FILE pointer
- * @return 1 on success, 0 on failure
+ * 파일에서 ActionArray 로드
+ * @param arr ActionArray 포인터
+ * @param file FILE 포인터
+ * @return 성공 시 1, 실패 시 0
  */
 int action_array_load(ActionArray* arr, FILE* file);
 

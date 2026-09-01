@@ -1,8 +1,8 @@
-/**
+﻿/**
  * @file zone.c
- * @brief Zone (map) file parsing implementation
+ * @brief Zone (맵) 파일 파싱 구현부
  * 
- * Based on original MZone.cpp, ZoneFileHeader.cpp, MSector.cpp
+ * 원본 MZone.cpp, ZoneFileHeader.cpp, MSector.cpp 기반
  */
 
 #include "zone.h"
@@ -10,7 +10,8 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdarg.h>
-/* Debug logging */
+
+/* 디버그 로깅 */
 static int g_zone_debug = 0;
 static void zdbg(FILE* f, const char* fmt, ...) {
     if (!g_zone_debug) return;
@@ -27,7 +28,7 @@ void zone_set_debug(int enable) {
 }
 
 /* ============================================================================
- * Internal helpers - Little-endian reads
+ * 내부 헬퍼 - 리틀 엔디언 읽기
  * ============================================================================ */
 
 static int read_u8(FILE* f, uint8_t* out) {
@@ -59,7 +60,7 @@ static int read_i32_le(FILE* f, int32_t* out) {
 }
 
 /**
- * Read MString format: 4-byte length + string data (no null terminator in file)
+ * MString 포맷 읽기: 4바이트 길이 + 문자열 데이터 (파일 내 null 종단자 없음)
  */
 static int read_mstring(FILE* f, char* out, size_t max_len) {
     uint32_t len;
@@ -71,7 +72,7 @@ static int read_mstring(FILE* f, char* out, size_t max_len) {
     }
     
     if (len >= max_len) {
-        /* String too long, skip it */
+        /* 문자열이 너무 길면 건너뛰기 */
         fseek(f, (long)len, SEEK_CUR);
         out[0] = '\0';
         return 0;
@@ -83,40 +84,40 @@ static int read_mstring(FILE* f, char* out, size_t max_len) {
 }
 
 /* ============================================================================
- * Zone Header Loading
+ * Zone 헤더 로딩
  * ============================================================================ */
 
 static Error* load_zone_header(FILE* f, ZoneHeader* header) {
     memset(header, 0, sizeof(ZoneHeader));
     
-    /* Read version string (MString format) */
+    /* 버전 문자열 읽기 (MString 포맷) */
     if (read_mstring(f, header->version, ZONE_VERSION_LEN + 1) != 0) {
         return_err_code(ZONE_ERR_IO);
     }
     
-    /* Validate version */
+    /* 버전 검증 */
     if (strcmp(header->version, ZONE_VERSION_STRING) != 0) {
         return_err_code(ZONE_ERR_VERSION);
     }
     
-    /* Read zone ID */
+    /* Zone ID 읽기 */
     if (read_u16_le(f, &header->zone_id) != 0) return_err_code(ZONE_ERR_IO);
     
-    /* Read zone group ID */
+    /* Zone 그룹 ID 읽기 */
     if (read_u16_le(f, &header->zone_group_id) != 0) return_err_code(ZONE_ERR_IO);
     
-    /* Read zone name */
+    /* Zone 이름 읽기 */
     if (read_mstring(f, header->zone_name, ZONE_MAX_NAME_LEN) != 0) {
         return_err_code(ZONE_ERR_IO);
     }
     
-    /* Read zone type */
+    /* Zone 유형 읽기 */
     if (read_u8(f, &header->zone_type) != 0) return_err_code(ZONE_ERR_IO);
     
-    /* Read zone level */
+    /* Zone 레벨 읽기 */
     if (read_u8(f, &header->zone_level) != 0) return_err_code(ZONE_ERR_IO);
     
-    /* Read description */
+    /* 설명 읽기 */
     if (read_mstring(f, header->description, ZONE_MAX_DESC_LEN) != 0) {
         return_err_code(ZONE_ERR_IO);
     }
@@ -125,7 +126,7 @@ static Error* load_zone_header(FILE* f, ZoneHeader* header) {
 }
 
 /* ============================================================================
- * Sector Loading
+ * 섹터 로딩
  * ============================================================================ */
 
 static Error*
@@ -147,7 +148,7 @@ load_sectors(FILE* f, Zone* zone) {
 }
 
 /* ============================================================================
- * ImageObject Loading
+ * ImageObject 로딩
  * ============================================================================ */
 
 static void free_image_object(ImageObject* obj) {
@@ -158,25 +159,25 @@ static void free_image_object(ImageObject* obj) {
 }
 
 static Error* load_image_object_base(FILE* f, ImageObject* obj, uint8_t type_first_byte) {
-    /* In original format, object type byte appears twice:
-       - Once before object record (used to choose class)
-       - Again at the start of MObject::SaveToFile
-       Consume and validate the second byte here. */
+    /* 원본 포맷에서는 오브젝트 타입 바이트가 두 번 나타납니다:
+       - 오브젝트 레코드 전(클래스 선택용)에 한 번
+       - MObject::SaveToFile 시작 시 다시 한 번
+       여기서 두 번째 바이트를 읽고 검증합니다. */
     uint8_t inner_type;
     if (read_u8(f, &inner_type) != 0) return_err_code(ZONE_ERR_IO);
-    /* Accept mismatch but continue to avoid hard failure on variant files */
+    /* 변형 파일에서 치명적 실패를 방지하기 위해 불일치를 허용하되 계속 진행 */
     (void)type_first_byte;
     if (g_zone_debug && inner_type != type_first_byte) {
         zdbg(f, "warn: inner_type(%u) != outer_type(%u)", inner_type, type_first_byte);
     }
 
-    /* Read base MObject fields: ID (4), sector X (2), sector Y (2) */
+    /* 기본 MObject 필드 읽기: ID (4), 섹터 X (2), 섹터 Y (2) */
     if (read_u32_le(f, &obj->id) != 0) return_err_code(ZONE_ERR_IO);
     if (read_u16_le(f, &obj->sector_x) != 0) return_err_code(ZONE_ERR_IO);
     if (read_u16_le(f, &obj->sector_y) != 0) return_err_code(ZONE_ERR_IO);
     zdbg(f, "MObject: id=%u sx=%u sy=%u", obj->id, obj->sector_x, obj->sector_y);
 
-    /* Read MImageObject fields */
+    /* MImageObject 필드 읽기 */
     if (read_u32_le(f, &obj->image_object_id) != 0) return_err_code(ZONE_ERR_IO);
     if (read_u16_le(f, &obj->sprite_id) != 0) return_err_code(ZONE_ERR_IO);
     if (read_i32_le(f, &obj->pixel_x) != 0) return_err_code(ZONE_ERR_IO);
@@ -192,7 +193,7 @@ static Error* load_image_object_base(FILE* f, ImageObject* obj, uint8_t type_fir
 }
 
 static Error* load_image_object_positions(FILE* f, ImageObject* obj) {
-    /* Original IMAGEOBJECT_POSITION_LIST uses 2-byte size (WORD) */
+    /* 원본 IMAGEOBJECT_POSITION_LIST는 2바이트 크기(WORD)를 사용 */
     uint16_t count16;
     if (read_u16_le(f, &count16) != 0) return_err_code(ZONE_ERR_IO);
     obj->position_count = count16;
@@ -207,40 +208,40 @@ static Error* load_image_object_positions(FILE* f, ImageObject* obj) {
                                                   sizeof(ImageObjectPosition));
     if (!obj->positions) return_err_code(ZONE_ERR_NOMEM);
 
-        uint32_t log_head = 16;
-        uint32_t log_tail = 8;
-        if (!g_zone_debug) { log_head = 0; log_tail = 0; }
-        if (log_head > obj->position_count) log_head = obj->position_count;
+    uint32_t log_head = 16;
+    uint32_t log_tail = 8;
+    if (!g_zone_debug) { log_head = 0; log_tail = 0; }
+    if (log_head > obj->position_count) log_head = obj->position_count;
     for (uint32_t i = 0; i < obj->position_count; i++) {
         if (read_u16_le(f, &obj->positions[i].x) != 0) return_err_code(ZONE_ERR_IO);
         if (read_u16_le(f, &obj->positions[i].y) != 0) return_err_code(ZONE_ERR_IO);
-            if (g_zone_debug) {
-                if (i < log_head) {
-                    zdbg(f, "  pos[%u]=(%u,%u)", i, obj->positions[i].x, obj->positions[i].y);
-                } else if (i >= obj->position_count - log_tail) {
-                    zdbg(f, "  pos[%u]=(%u,%u)", i, obj->positions[i].x, obj->positions[i].y);
-                }
+        if (g_zone_debug) {
+            if (i < log_head) {
+                zdbg(f, "  pos[%u]=(%u,%u)", i, obj->positions[i].x, obj->positions[i].y);
+            } else if (i >= obj->position_count - log_tail) {
+                zdbg(f, "  pos[%u]=(%u,%u)", i, obj->positions[i].x, obj->positions[i].y);
             }
+        }
     }
 
     return NULL;
 }
 
 static Error* load_image_object(FILE* f, ImageObject* obj) {
-    /* Read leading object type byte */
+    /* 선행 오브젝트 타입 바이트 읽기 */
     uint8_t type_first;
     if (read_u8(f, &type_first) != 0) return_err_code(ZONE_ERR_IO);
     obj->type = type_first;
     zdbg(f, "Object type=%u (outer)", obj->type);
 
-    /* Load base data (consumes inner type + base fields) */
+    /* 기본 데이터 로드 (내부 타입 및 기본 필드 소비) */
     Error* err = load_image_object_base(f, obj, type_first);
     if (err != NULL) return_err_wrap(err);
 
-    /* Load type-specific data to match original binary */
+    /* 원본 바이너리와 일치하도록 타입별 특화 데이터 로드 */
     switch (obj->type) {
         case OBJECT_TYPE_SHADOWOBJECT:
-            /* Shadow object does not have extra serialized fields in original */
+            /* 그림자 오브젝트는 원본에서 추가 직렬화 필드가 없음 */
             obj->extra.shadow.reserved = 0;
             zdbg(f, "ShadowObject: no extra fields");
             break;
@@ -254,7 +255,7 @@ static Error* load_image_object(FILE* f, ImageObject* obj) {
                 return_err_code(ZONE_ERR_IO);
             zdbg(f, "Animation: frame_id=%u max_frame=%u", obj->extra.animation.frame_id, obj->extra.animation.max_frame);
 
-            /* MAnimationObject additional fields */
+            /* MAnimationObject 추가 필드 */
             if (read_u8(f, &obj->extra.animation.blt_type) != 0)
                 return_err_code(ZONE_ERR_IO);
             if (read_u8(f, &obj->extra.animation.direction) != 0)
@@ -287,7 +288,7 @@ static Error* load_image_object(FILE* f, ImageObject* obj) {
 
         case OBJECT_TYPE_INTERACTIONOBJECT:
         {
-            /* Interaction object base is animation + one extra type field */
+            /* 상호작용 오브젝트의 기본은 애니메이션 + 1개의 추가 타입 필드 */
             if (read_u16_le(f, &obj->extra.animation.frame_id) != 0)
                 return_err_code(ZONE_ERR_IO);
             if (read_u8(f, &obj->extra.animation.max_frame) != 0)
@@ -319,7 +320,7 @@ static Error* load_image_object(FILE* f, ImageObject* obj) {
 
         case OBJECT_TYPE_IMAGEOBJECT:
         default:
-            /* No extra data */
+            /* 추가 데이터 없음 */
             break;
     }
 
@@ -345,13 +346,13 @@ load_image_objects(FILE* f, Zone* zone) {
     for (int32_t i = 0; i < count; i++) {
         ImageObject* obj = &zone->image_objects[i];
         zdbg(f, "-- Object[%d] begin --", i);
-        /* Load object data */
+        /* 오브젝트 데이터 로드 */
         Error *err = load_image_object(f, obj);
         if (err != NULL) return_err_wrap(err);
         zdbg(f, "Object[%d]: type=%u id=%u imgID=%u sprite=%u px=%d py=%d vp=%u anim=%u trans=0x%02X",
              i, obj->type, obj->id, obj->image_object_id, obj->sprite_id,
              obj->pixel_x, obj->pixel_y, obj->viewpoint, obj->is_animation, obj->trans_flags);
-        /* Load position list */
+        /* 위치 목록 로드 */
         err = load_image_object_positions(f, obj);
         if (err != NULL) return_err_wrap(err);
         zdbg(f, "Object[%d]: positions_loaded=%u", i, obj->position_count);
@@ -362,7 +363,7 @@ load_image_objects(FILE* f, Zone* zone) {
 }
 
 /* ============================================================================
- * Public API
+ * 공개 API
  * ============================================================================ */
 
 Error* zone_load(const char* path, Zone* zone) {
@@ -384,14 +385,14 @@ Error* zone_load_from_file(FILE* f, Zone* zone) {
     
     memset(zone, 0, sizeof(Zone));
     
-    /* Load header */
+    /* 헤더 로드 */
     Error *err = load_zone_header(f, &zone->header);
     if (err != NULL) {
         zone_free(zone);
         return_err_wrap(err);
     }
     
-    /* Read file positions (for tile and image object data) */
+    /* 파일 위치 읽기 (타일 및 이미지 오브젝트 데이터용) */
     uint32_t fp_tile, fp_image_object;
     if (read_u32_le(f, &fp_tile) != 0) {
         zone_free(zone);
@@ -404,7 +405,7 @@ Error* zone_load_from_file(FILE* f, Zone* zone) {
     zone->fp_tile = (long)fp_tile;
     zone->fp_image_object = (long)fp_image_object;
     
-    /* Read zone dimensions */
+    /* Zone 크기 읽기 */
     if (read_u16_le(f, &zone->width) != 0) {
         zone_free(zone);
         return_err_code(ZONE_ERR_IO);
@@ -419,14 +420,14 @@ Error* zone_load_from_file(FILE* f, Zone* zone) {
         return_err_code(ZONE_ERR_FORMAT);
     }
     
-    /* Load sectors */
+    /* 섹터 로드 */
     err = load_sectors(f, zone);
     if (err != NULL) {
         zone_free(zone);
         return_err_wrap(err);
     }
     
-    /* Load image objects */
+    /* 이미지 오브젝트 로드 */
     err = load_image_objects(f, zone);
     if (err != NULL) {
         zone_free(zone);
@@ -499,11 +500,11 @@ bool zone_can_walk_underground(const Zone* zone, uint16_t x, uint16_t y) {
 const char* zone_strerror(ZoneError err) {
     switch (err) {
         case ZONE_OK: return "OK";
-        case ZONE_ERR_IO: return "I/O error";
-        case ZONE_ERR_FORMAT: return "Invalid format";
-        case ZONE_ERR_VERSION: return "Unsupported version";
-        case ZONE_ERR_NOMEM: return "Out of memory";
-        case ZONE_ERR_PARAM: return "Invalid parameter";
-        default: return "Unknown error";
+        case ZONE_ERR_IO: return "입출력(I/O) 오류";
+        case ZONE_ERR_FORMAT: return "유효하지 않은 포맷";
+        case ZONE_ERR_VERSION: return "지원되지 않는 버전";
+        case ZONE_ERR_NOMEM: return "메모리 부족";
+        case ZONE_ERR_PARAM: return "유효하지 않은 매개변수";
+        default: return "알 수 없는 오류";
     }
 }

@@ -1,17 +1,16 @@
-/**
+﻿/**
  * @file ui_surface.c
- * @brief SDL2 surface wrapper implementation
+ * @brief SDL2 서피스 래퍼 구현부
  * 
- * Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8
+ * 요구사항: 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8
  */
-
 
 #include "ui_surface.h"
 #include <SDL.h>
 #include <string.h>
 
 /**
- * UI Surface structure - wraps SDL_Texture for UI rendering
+ * UI Surface 구조체 - UI 렌더링을 위해 SDL_Texture를 래핑
  */
 struct UI_Surface {
     SDL_Renderer* renderer;
@@ -19,13 +18,12 @@ struct UI_Surface {
     int width;
     int height;
     int pitch;
-    void* pixels;       /* Valid only when locked */
+    void* pixels;       /* 잠겨 있을 때만 유효함 */
     int locked;
 };
 
-
 /* ============================================================================
- * Lifecycle
+ * 라이프사이클 (생성/소멸)
  * ============================================================================ */
 
 int ui_surface_init(UI_Surface* surface, SDL_Renderer* renderer, int width, int height) {
@@ -38,7 +36,7 @@ int ui_surface_init(UI_Surface* surface, SDL_Renderer* renderer, int width, int 
     surface->width = width;
     surface->height = height;
 
-    /* Create streaming texture for lockable pixel access */
+    /* 잠금 가능한 픽셀 접근을 위한 스트리밍 텍스처 생성 */
     surface->texture = SDL_CreateTexture(
         renderer,
         SDL_PIXELFORMAT_RGBA8888,
@@ -51,7 +49,7 @@ int ui_surface_init(UI_Surface* surface, SDL_Renderer* renderer, int width, int 
         return -2;
     }
 
-    /* Enable alpha blending on the texture */
+    /* 텍스처의 알파 블렌딩 활성화 */
     SDL_SetTextureBlendMode(surface->texture, SDL_BLENDMODE_BLEND);
 
     return 0;
@@ -84,7 +82,7 @@ void ui_surface_free(UI_Surface* surface) {
 }
 
 /* ============================================================================
- * Lock/Unlock for pixel access
+ * 픽셀 접근을 위한 Lock/Unlock
  * ============================================================================ */
 
 int ui_surface_lock(UI_Surface* surface) {
@@ -93,13 +91,12 @@ int ui_surface_lock(UI_Surface* surface) {
     }
 
     if (surface->locked) {
-        return -2; /* Already locked */
+        return -2; /* 이미 잠김 */
     }
 
     int ret = SDL_LockTexture(surface->texture, NULL, &surface->pixels, &surface->pitch);
     if (ret != 0) {
-        // printf("DEBUG: SDL_LockTexture failed: %s\n", SDL_GetError());
-        // Return success for render targets to allow hardware rendering flow
+        /* 렌더 타겟에 대해 하드웨어 렌더링 흐름을 허용하기 위해 성공 반환 */
         surface->locked = 1;
         return 0;
     }
@@ -114,10 +111,10 @@ int ui_surface_unlock(UI_Surface* surface) {
     }
 
     if (!surface->locked) {
-        return -2; /* Not locked */
+        return -2; /* 잠겨있지 않음 */
     }
 
-    // Only unlock if we actually locked (pixels is not null) or if we are pretending
+    /* 실제로 잠긴 경우(pixels가 유효한 경우)에만 언락 */
     if (surface->pixels) {
         SDL_UnlockTexture(surface->texture);
         surface->pixels = NULL;
@@ -125,15 +122,13 @@ int ui_surface_unlock(UI_Surface* surface) {
     surface->locked = 0;
     return 0;
 }
-// ... (skip) ...
-
 
 int ui_surface_is_locked(UI_Surface* surface) {
     return surface ? surface->locked : 0;
 }
 
 /* ============================================================================
- * Helper: Set render target to surface texture
+ * 헬퍼: 렌더 타겟을 서피스 텍스처로 설정
  * ============================================================================ */
 
 static int set_render_target(UI_Surface* surface) {
@@ -150,7 +145,7 @@ static void restore_render_target(UI_Surface* surface) {
 }
 
 /* ============================================================================
- * Primitive drawing
+ * 기본 도형 그리기 (Primitives)
  * ============================================================================ */
 
 void ui_surface_fill_rect(UI_Surface* surface, UI_Rect* rect, uint32_t color) {
@@ -292,11 +287,8 @@ void ui_surface_blit_surface(UI_Surface* dst, const UI_Rect* dst_rect,
 }
 
 /* ============================================================================
- * Sprite blitting
+ * 스프라이트 블릿 (Sprite blitting)
  * ============================================================================ */
-
-// (merged above)
-
 
 void ui_surface_blit_sprite(UI_Surface* surface, int x, int y, DecodedSprite* sprite) {
     if (!surface || !surface->renderer || !surface->texture || !sprite || !sprite->texture) {
@@ -324,7 +316,7 @@ void ui_surface_blit_sprite_alpha(UI_Surface* surface, int x, int y, DecodedSpri
     SDL_SetTextureAlphaMod(sprite->texture, alpha);
     SDL_Rect dst = { x, y, sprite->width, sprite->height };
     SDL_RenderCopy(surface->renderer, sprite->texture, NULL, &dst);
-    SDL_SetTextureAlphaMod(sprite->texture, 255); /* Reset */
+    SDL_SetTextureAlphaMod(sprite->texture, 255); /* 리셋 */
     restore_render_target(surface);
 }
 
@@ -344,7 +336,7 @@ void ui_surface_blit_sprite_color(UI_Surface* surface, int x, int y, DecodedSpri
     SDL_SetTextureColorMod(sprite->texture, r, g, b);
     SDL_Rect dst = { x, y, sprite->width, sprite->height };
     SDL_RenderCopy(surface->renderer, sprite->texture, NULL, &dst);
-    SDL_SetTextureColorMod(sprite->texture, 255, 255, 255); /* Reset */
+    SDL_SetTextureColorMod(sprite->texture, 255, 255, 255); /* 리셋 */
     restore_render_target(surface);
 }
 
@@ -357,17 +349,17 @@ void ui_surface_blit_sprite_darkness(UI_Surface* surface, int x, int y, DecodedS
         return;
     }
 
-    /* Darkness: 0=normal, 255=black. Convert to color mod. */
+    /* 어두움: 0=보통, 255=검정. 컬러 모드로 변환. */
     uint8_t brightness = 255 - darkness;
     SDL_SetTextureColorMod(sprite->texture, brightness, brightness, brightness);
     SDL_Rect dst = { x, y, sprite->width, sprite->height };
     SDL_RenderCopy(surface->renderer, sprite->texture, NULL, &dst);
-    SDL_SetTextureColorMod(sprite->texture, 255, 255, 255); /* Reset */
+    SDL_SetTextureColorMod(sprite->texture, 255, 255, 255); /* 리셋 */
     restore_render_target(surface);
 }
 
 /* ============================================================================
- * Accessors
+ * 접근자 (Accessors)
  * ============================================================================ */
 
 SDL_Texture* ui_surface_get_texture(UI_Surface* surface) {

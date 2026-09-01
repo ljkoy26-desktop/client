@@ -1,17 +1,17 @@
-/**
+﻿/**
  * @file color.c
- * @brief RGB565/RGB555 to RGBA32 color conversion implementation
- * 
- * RGB565 format (16-bit):
- *   Bits 15-11: Red (5 bits)
- *   Bits 10-5:  Green (6 bits)
- *   Bits 4-0:   Blue (5 bits)
- * 
- * RGB555 format (16-bit):
- *   Bit 15:     Unused
- *   Bits 14-10: Red (5 bits)
- *   Bits 9-5:   Green (5 bits)
- *   Bits 4-0:   Blue (5 bits)
+ * @brief RGB565/RGB555 -> RGBA32 색상 변환 구현부
+ *
+ * RGB565 포맷 (16비트):
+ *   비트 15-11: Red (5비트)
+ *   비트 10-5:  Green (6비트)
+ *   비트 4-0:   Blue (5비트)
+ *
+ * RGB555 포맷 (16비트):
+ *   비트 15:     사용 안 함
+ *   비트 14-10: Red (5비트)
+ *   비트 9-5:   Green (5비트)
+ *   비트 4-0:   Blue (5비트)
  */
 
 #include "color.h"
@@ -19,50 +19,50 @@
 RGBA32 rgb565_to_rgba32(uint16_t color, uint16_t colorkey) {
     RGBA32 result;
     
-    /* Extract RGB565 components
-     * Red:   bits 11-15 (5 bits)
-     * Green: bits 5-10  (6 bits)
-     * Blue:  bits 0-4   (5 bits)
+    /* RGB565 성분 추출
+     * Red:   비트 11-15 (5비트)
+     * Green: 비트 5-10  (6비트)
+     * Blue:  비트 0-4   (5비트)
      */
-    uint8_t r5 = (color >> 11) & 0x1F;  /* 5 bits */
-    uint8_t g6 = (color >> 5) & 0x3F;   /* 6 bits */
-    uint8_t b5 = color & 0x1F;          /* 5 bits */
-    
-    /* Scale to 8-bit range
-     * 5-bit to 8-bit: value * 255 / 31
-     * 6-bit to 8-bit: value * 255 / 63
+    uint8_t r5 = (color >> 11) & 0x1F;  /* 5비트 */
+    uint8_t g6 = (color >> 5) & 0x3F;   /* 6비트 */
+    uint8_t b5 = color & 0x1F;          /* 5비트 */
+
+    /* 8비트 범위로 스케일링
+     * 5비트 -> 8비트: value * 255 / 31
+     * 6비트 -> 8비트: value * 255 / 63
      */
     result.r = (r5 * 255) / 31;
     result.g = (g6 * 255) / 63;
     result.b = (b5 * 255) / 31;
-    
-    /* Set alpha based on colorkey comparison */
+
+    /* colorkey와 비교해서 alpha 설정 */
     result.a = (color == colorkey) ? 0 : 255;
-    
+
     return result;
 }
 
 RGBA32 rgb555_to_rgba32(uint16_t color, uint16_t colorkey) {
     RGBA32 result;
-    
-    /* Extract RGB555 components
-     * Red:   bits 10-14 (5 bits)
-     * Green: bits 5-9   (5 bits)
-     * Blue:  bits 0-4   (5 bits)
-     * Bit 15 is unused
+
+    /* RGB555 성분 추출
+     * Red:   비트 10-14 (5비트)
+     * Green: 비트 5-9   (5비트)
+     * Blue:  비트 0-4   (5비트)
+     * 비트 15는 사용하지 않음
      */
-    uint8_t r5 = (color >> 10) & 0x1F;  /* 5 bits */
-    uint8_t g5 = (color >> 5) & 0x1F;   /* 5 bits */
-    uint8_t b5 = color & 0x1F;          /* 5 bits */
-    
-    /* Scale to 8-bit range
-     * 5-bit to 8-bit: value * 255 / 31
+    uint8_t r5 = (color >> 10) & 0x1F;  /* 5비트 */
+    uint8_t g5 = (color >> 5) & 0x1F;   /* 5비트 */
+    uint8_t b5 = color & 0x1F;          /* 5비트 */
+
+    /* 8비트 범위로 스케일링
+     * 5비트 -> 8비트: value * 255 / 31
      */
     result.r = (r5 * 255) / 31;
     result.g = (g5 * 255) / 31;
     result.b = (b5 * 255) / 31;
-    
-    /* Set alpha based on colorkey comparison */
+
+    /* colorkey와 비교해서 alpha 설정 */
     result.a = (color == colorkey) ? 0 : 255;
     
     return result;
@@ -76,7 +76,7 @@ void rgb565_to_rgba32_batch(const uint16_t* src, uint32_t* dst,
     
     for (int i = 0; i < count; i++) {
         RGBA32 rgba = rgb565_to_rgba32(src[i], colorkey);
-        /* Pack RGBA32 into uint32_t (RGBA order) */
+        /* RGBA32를 uint32_t로 묶는다 (RGBA 순서) */
         dst[i] = ((uint32_t)rgba.r) |
                  ((uint32_t)rgba.g << 8) |
                  ((uint32_t)rgba.b << 16) |

@@ -1,20 +1,20 @@
-/**
+﻿/**
  * @file shadow_sprite.c
- * @brief ShadowSprite implementation
+ * @brief ShadowSprite 구현부
  * 
- * Requirements: 2.3, 2.4
+ * 요구사항: 2.3, 2.4
  * 
- * ShadowSprite file format (per scanline):
- *   [len: 2 bytes] - Length of scanline data in WORDs
- *   [data: len*2 bytes] - Scanline data
+ * ShadowSprite 파일 포맷 (스캔라인당):
+ *   [len: 2 바이트] - WORD 단위의 스캔라인 데이터 길이
+ *   [data: len*2 바이트] - 스캔라인 데이터
  * 
- * Scanline data format:
- *   [count] - Number of (trans, shadow) pairs
- *   For each pair:
- *     [transCount] - Transparent pixel count
- *     [shadowCount] - Shadow pixel count
+ * 스캔라인 데이터 포맷:
+ *   [count] - (trans, shadow) 쌍의 개수
+ *   각 쌍별:
+ *     [transCount] - 투명 픽셀 수
+ *     [shadowCount] - 그림자 픽셀 수
  * 
- * Shadow rendering darkens destination pixels rather than copying colors.
+ * 그림자 렌더링은 색상을 직접 복사하지 않고 대상 픽셀을 어둡게 처리합니다.
  */
 
 #include "shadow_sprite.h"
@@ -23,7 +23,7 @@
 #include <string.h>
 
 /* ============================================================================
- * Initialization and Cleanup
+ * 초기화 및 정리
  * ============================================================================ */
 
 void shadow_sprite_init(ShadowSprite* sprite) {
@@ -66,42 +66,42 @@ uint16_t shadow_sprite_get_height(const ShadowSprite* sprite) {
 }
 
 /* ============================================================================
- * File I/O
+ * 파일 입출력
  * ============================================================================ */
 
 int shadow_sprite_load_from_file(ShadowSprite* sprite, FILE* file) {
     if (!sprite || !file) return 0;
     
-    /* Release any existing data */
+    /* 기존 데이터가 있으면 해제 */
     shadow_sprite_release(sprite);
     
-    /* Read width and height */
+    /* 너비 및 높이 읽기 */
     if (fread(&sprite->width, 2, 1, file) != 1) return 0;
     if (fread(&sprite->height, 2, 1, file) != 1) return 0;
     
-    /* Handle empty sprite */
+    /* 빈 스프라이트 처리 */
     if (sprite->width == 0 || sprite->height == 0) {
         sprite->is_init = 1;
         return 1;
     }
     
-    /* Allocate scanline pointers */
+    /* 스캔라인 포인터 배열 할당 */
     sprite->pixels = (uint16_t**)malloc(sprite->height * sizeof(uint16_t*));
     if (!sprite->pixels) return 0;
     
     memset(sprite->pixels, 0, sprite->height * sizeof(uint16_t*));
     
-    /* Read each scanline */
+    /* 각 스캔라인 읽기 */
     for (int i = 0; i < sprite->height; i++) {
         uint16_t len;
         
-        /* Read scanline length (in WORDs) */
+        /* 스캔라인 길이 읽기 (WORD 단위) */
         if (fread(&len, 2, 1, file) != 1) {
             shadow_sprite_release(sprite);
             return 0;
         }
         
-        /* Allocate and read scanline data */
+        /* 스캔라인 데이터 할당 및 읽기 */
         sprite->pixels[i] = (uint16_t*)malloc(len * sizeof(uint16_t));
         if (!sprite->pixels[i]) {
             shadow_sprite_release(sprite);
@@ -119,7 +119,7 @@ int shadow_sprite_load_from_file(ShadowSprite* sprite, FILE* file) {
 }
 
 /* ============================================================================
- * Rendering Functions
+ * 렌더링 함수
  * ============================================================================ */
 
 void shadow_sprite_blt(const ShadowSprite* sprite, uint16_t* dest, uint16_t pitch) {
@@ -133,19 +133,19 @@ void shadow_sprite_blt(const ShadowSprite* sprite, uint16_t* dest, uint16_t pitc
         pPixels = sprite->pixels[i];
         pDestTemp = dest;
         
-        /* Number of (trans, shadow) pairs */
+        /* (trans, shadow) 쌍의 개수 */
         count = *pPixels++;
         
         if (count > 0) {
             int j = count;
             do {
-                /* Skip transparent pixels */
+                /* 투명 픽셀 건너뛰기 */
                 pDestTemp += *pPixels++;
                 
-                /* Shadow pixel count */
+                /* 그림자 픽셀 수 */
                 shadowCount = *pPixels++;
                 
-                /* Set shadow pixels to black */
+                /* 그림자 픽셀을 검은색으로 설정 */
                 memset(pDestTemp, 0, shadowCount * sizeof(uint16_t));
                 
                 pDestTemp += shadowCount;
@@ -166,8 +166,8 @@ void shadow_sprite_blt_darkness(const ShadowSprite* sprite, uint16_t* dest,
     uint16_t* pDestTemp;
     uint16_t* pPixels;
     
-    /* Mask for shifting RGB565 values */
-    /* After right shift, we need to mask out bits that wrapped around */
+    /* RGB565 값 시프트를 위한 마스크 */
+    /* 우측 시프트 후 래핑된 비트를 마스킹 처리해야 함 */
     uint16_t mask;
     switch (darkBits) {
         case 0: mask = 0xFFFF; break;
@@ -182,19 +182,19 @@ void shadow_sprite_blt_darkness(const ShadowSprite* sprite, uint16_t* dest,
         pPixels = sprite->pixels[i];
         pDestTemp = dest;
         
-        /* Number of (trans, shadow) pairs */
+        /* (trans, shadow) 쌍의 개수 */
         count = *pPixels++;
         
         if (count > 0) {
             int j = count;
             do {
-                /* Skip transparent pixels */
+                /* 투명 픽셀 건너뛰기 */
                 pDestTemp += *pPixels++;
                 
-                /* Shadow pixel count */
+                /* 그림자 픽셀 수 */
                 shadowCount = *pPixels++;
                 
-                /* Darken destination pixels */
+                /* 대상 픽셀 어둡게 처리 */
                 for (int k = 0; k < shadowCount; k++) {
                     *pDestTemp = (*pDestTemp >> darkBits) & mask;
                     pDestTemp++;
@@ -219,35 +219,35 @@ void shadow_sprite_blt_alpha(const ShadowSprite* sprite, uint16_t* dest,
         pPixels = sprite->pixels[i];
         pDestTemp = dest;
         
-        /* Number of (trans, shadow) pairs */
+        /* (trans, shadow) 쌍의 개수 */
         count = *pPixels++;
         
         if (count > 0) {
             int j = count;
             do {
-                /* Skip transparent pixels */
+                /* 투명 픽셀 건너뛰기 */
                 pDestTemp += *pPixels++;
                 
-                /* Shadow pixel count */
+                /* 그림자 픽셀 수 */
                 shadowCount = *pPixels++;
                 
-                /* Alpha blend shadow (black) with destination */
+                /* 대상과 그림자(검은색) 알파 블렌딩 */
                 for (int k = 0; k < shadowCount; k++) {
                     uint16_t dstColor = *pDestTemp;
                     
-                    /* Extract RGB components (RGB565) */
+                    /* RGB 성분 추출 (RGB565) */
                     int r = (dstColor >> 11) & 0x1F;
                     int g = (dstColor >> 5) & 0x3F;
                     int b = dstColor & 0x1F;
                     
-                    /* Blend with black (shadow color is 0,0,0) */
+                    /* 검은색과 블렌딩 (그림자 색상은 0,0,0) */
                     /* result = src * alpha + dst * (1-alpha) */
-                    /* Since src is black, result = dst * invAlpha / 255 */
+                    /* src가 검은색이므로 result = dst * invAlpha / 255 */
                     r = (r * invAlpha) / 255;
                     g = (g * invAlpha) / 255;
                     b = (b * invAlpha) / 255;
                     
-                    /* Pack back to RGB565 */
+                    /* RGB565로 다시 패킹 */
                     *pDestTemp = (uint16_t)((r << 11) | (g << 5) | b);
                     pDestTemp++;
                 }
@@ -259,11 +259,11 @@ void shadow_sprite_blt_alpha(const ShadowSprite* sprite, uint16_t* dest,
 }
 
 /* ============================================================================
- * SDL Rendering Functions
+ * SDL 렌더링 함수
  * ============================================================================ */
 
 /**
- * Decode ShadowSprite to RGBA32 pixel buffer
+ * ShadowSprite를 RGBA32 픽셀 버퍼로 디코딩
  */
 static uint32_t* shadow_sprite_decode_rgba(const ShadowSprite* sprite, uint8_t alpha) {
     if (!sprite || !sprite->is_init || !sprite->pixels) return NULL;
@@ -272,10 +272,10 @@ static uint32_t* shadow_sprite_decode_rgba(const ShadowSprite* sprite, uint8_t a
     uint32_t* pixels = (uint32_t*)malloc(sprite->width * sprite->height * sizeof(uint32_t));
     if (!pixels) return NULL;
     
-    /* Initialize to fully transparent */
+    /* 완전 투명으로 초기화 */
     memset(pixels, 0, sprite->width * sprite->height * sizeof(uint32_t));
     
-    /* Shadow color: black with specified alpha */
+    /* 그림자 색상: 지정된 알파를 가진 검은색 */
     uint32_t shadowColor = (uint32_t)alpha << 24;  /* RGBA: 0, 0, 0, alpha */
     
     for (int y = 0; y < sprite->height; y++) {
@@ -286,12 +286,12 @@ static uint32_t* shadow_sprite_decode_rgba(const ShadowSprite* sprite, uint8_t a
         int count = *pPixels++;
         
         for (int j = 0; j < count && x < sprite->width; j++) {
-            /* Skip transparent pixels */
+            /* 투명 픽셀 건너뛰기 */
             int transCount = *pPixels++;
             x += transCount;
             pDest += transCount;
             
-            /* Shadow pixels */
+            /* 그림자 픽셀 */
             int shadowCount = *pPixels++;
             for (int k = 0; k < shadowCount && x < sprite->width; k++) {
                 *pDest++ = shadowColor;
@@ -330,7 +330,7 @@ SDL_Texture* shadow_sprite_create_texture(const ShadowSprite* sprite,
 
 int shadow_sprite_render(const ShadowSprite* sprite, SDL_Renderer* renderer,
                          int x, int y) {
-    return shadow_sprite_render_alpha(sprite, renderer, x, y, 128);  /* Default 50% alpha */
+    return shadow_sprite_render_alpha(sprite, renderer, x, y, 128);  /* 기본 50% 알파 */
 }
 
 int shadow_sprite_render_alpha(const ShadowSprite* sprite, SDL_Renderer* renderer,

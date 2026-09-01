@@ -1,19 +1,19 @@
-/**
+﻿/**
  * @file sdl_framework.c
- * @brief SDL2 game framework implementation
+ * @brief SDL2 게임 프레임워크 구현부
  *
- * Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6
+ * 요구사항: 1.1, 1.2, 1.3, 1.4, 1.5, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6
  */
 
 #include "sdl_framework.h"
 #include <stdio.h>
 
 /**
- * Initialize the SDL framework
- * Req 1.1: Initialize SDL2 with video subsystem
- * Req 1.2: Create window with configurable dimensions
- * Req 1.3: Create hardware-accelerated renderer
- * Req 1.4: Return error code and log on failure
+ * SDL 프레임워크 초기화
+ * 요구사항 1.1: 비디오 서브시스템을 포함하여 SDL2 초기화
+ * 요구사항 1.2: 설정 가능한 크기로 창 생성
+ * 요구사항 1.3: 하드웨어 가속 렌더러 생성
+ * 요구사항 1.4: 실패 시 에러 코드 반환 및 로깅
  */
 int sdl_framework_init(SDLFramework* fw, const SDLFrameworkConfig* config) {
     if (!fw || !config) {
@@ -21,19 +21,19 @@ int sdl_framework_init(SDLFramework* fw, const SDLFrameworkConfig* config) {
         return -1;
     }
 
-    /* Initialize framework state */
+    /* 프레임워크 상태 초기화 */
     fw->window = NULL;
     fw->renderer = NULL;
     fw->running = 0;
     fw->frame_delay = 0;
 
-    /* Req 1.1: Initialize SDL2 with video subsystem */
+    /* 요구사항 1.1: 비디오 서브시스템을 포함하여 SDL2 초기화 */
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
         fprintf(stderr, "Error: SDL_Init failed: %s\n", SDL_GetError());
         return -1;
     }
 
-    /* Req 1.2: Create window with configurable width and height */
+    /* 요구사항 1.2: 설정 가능한 너비와 높이로 창 생성 */
     fw->window = SDL_CreateWindow(
         config->window_title ? config->window_title : "SDL Framework",
         SDL_WINDOWPOS_CENTERED,
@@ -49,7 +49,7 @@ int sdl_framework_init(SDLFramework* fw, const SDLFrameworkConfig* config) {
         return -2;
     }
 
-    /* Req 1.3: Create hardware-accelerated renderer */
+    /* 요구사항 1.3: 하드웨어 가속 렌더러 생성 */
     fw->renderer = SDL_CreateRenderer(
         fw->window,
         -1,
@@ -64,22 +64,22 @@ int sdl_framework_init(SDLFramework* fw, const SDLFrameworkConfig* config) {
         return -3;
     }
 
-    /* Req 2.6: Support configurable target frame rate */
+    /* 요구사항 2.6: 설정 가능한 목표 프레임 레이트 지원 */
     if (config->target_fps > 0) {
         fw->frame_delay = 1000 / config->target_fps;
     } else {
-        fw->frame_delay = 16; /* Default ~60 FPS */
+        fw->frame_delay = 16; /* 기본값 약 60 FPS */
     }
 
-    /* Req 2.1: Set running flag for main loop */
+    /* 요구사항 2.1: 메인 루프를 위한 실행 중 플래그 설정 */
     fw->running = 1;
 
     return 0;
 }
 
 /**
- * Release all SDL resources
- * Req 1.5: Properly release all SDL resources on exit
+ * 모든 SDL 리소스 해제
+ * 요구사항 1.5: 종료 시 모든 SDL 리소스를 올바르게 해제
  */
 void sdl_framework_cleanup(SDLFramework* fw) {
     if (!fw) {
@@ -102,20 +102,20 @@ void sdl_framework_cleanup(SDLFramework* fw) {
 }
 
 /**
- * Process pending SDL events
- * Req 2.2: Process all pending SDL events
- * Req 2.3: Set flag to exit on quit event
+ * 대기 중인 SDL 이벤트 처리
+ * 요구사항 2.2: 대기 중인 모든 SDL 이벤트 처리
+ * 요구사항 2.3: quit 이벤트 발생 시 종료 플래그 설정
  *
- * @return 1 if there's an event to process, 0 if no more events
+ * @return 처리할 이벤트가 있으면 1, 없으면 0
  */
 int sdl_framework_poll_events(SDLFramework* fw, SDL_Event* event) {
     if (!fw || !event) {
         return 0;
     }
 
-    /* Req 2.2: Process pending SDL events */
+    /* 요구사항 2.2: 대기 중인 SDL 이벤트 처리 */
     if (SDL_PollEvent(event)) {
-        /* Req 2.3: Set flag to exit on quit event */
+        /* 요구사항 2.3: quit 이벤트 발생 시 종료 플래그 설정 */
         if (event->type == SDL_QUIT) {
             fw->running = 0;
         }
@@ -126,37 +126,37 @@ int sdl_framework_poll_events(SDLFramework* fw, SDL_Event* event) {
 }
 
 /**
- * Begin frame rendering
- * Req 2.4: Clear the render target at frame start
+ * 프레임 렌더링 시작
+ * 요구사항 2.4: 프레임 시작 시 렌더 타겟 지우기
  */
 void sdl_framework_begin_frame(SDLFramework* fw) {
     if (!fw || !fw->renderer) {
         return;
     }
 
-    /* Set clear color to black */
+    /* 지우기 색상을 흰색으로 설정 */
     SDL_SetRenderDrawColor(fw->renderer, 255, 255, 255, 255);
 
-    /* Req 2.4: Clear the render target */
+    /* 요구사항 2.4: 렌더 타겟 지우기 */
     SDL_RenderClear(fw->renderer);
 }
 
 /**
- * End frame rendering
- * Req 2.5: Present rendered content to screen
+ * 프레임 렌더링 종료
+ * 요구사항 2.5: 렌더링된 내용을 화면에 표시
  */
 void sdl_framework_end_frame(SDLFramework* fw) {
     if (!fw || !fw->renderer) {
         return;
     }
 
-    /* Req 2.5: Present the rendered content */
+    /* 요구사항 2.5: 렌더링된 내용 표시 */
     SDL_RenderPresent(fw->renderer);
 }
 
 /**
- * Frame rate control delay
- * Req 2.6: Support configurable target frame rate
+ * 프레임 레이트 제어 지연
+ * 요구사항 2.6: 설정 가능한 목표 프레임 레이트 지원
  */
 void sdl_framework_delay(SDLFramework* fw, uint32_t frame_start) {
     if (!fw) {

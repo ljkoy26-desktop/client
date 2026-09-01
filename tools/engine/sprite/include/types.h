@@ -1,8 +1,8 @@
-/**
+﻿/**
  * @file types.h
- * @brief Shared type definitions for Dark Eden SDL library
+ * @brief Dark Eden SDL 라이브러리를 위한 공용 타입 정의
  * 
- * Requirements: 2.6, 3.3, 6.1
+ * 요구사항: 2.6, 3.3, 6.1
  */
 
 #ifndef TYPES_H
@@ -15,76 +15,76 @@ extern "C" {
 #endif
 
 /* ============================================================================
- * Sprite and Frame IDs
+ * 스프라이트 및 프레임 ID
  * ============================================================================ */
 
 /**
- * Sprite ID type - identifies a sprite within a SpritePack
+ * 스프라이트 ID 타입 - SpritePack 내의 스프라이트를 식별
  */
 typedef uint16_t SpriteID;
 
 /**
- * Frame ID type - identifies an animation frame group
+ * 프레임 ID 타입 - 애니메이션 프레임 그룹을 식별
  */
 typedef uint16_t FrameID;
 
 /**
- * Null/invalid sprite ID marker
+ * 무효/Null 스프라이트 ID 마커
  */
 #define SPRITEID_NULL   0xFFFF
 
 /**
- * Null/invalid frame ID marker
+ * 무효/Null 프레임 ID 마커
  */
 #define FRAMEID_NULL    0xFFFF
 
 /* ============================================================================
- * Direction Enumeration
- * Requirement 6.1: Support 8 directions (0-7)
+ * 방향 열거형
+ * 요구사항 6.1: 8방향(0-7) 지원
  * ============================================================================ */
 
 /**
- * Direction enumeration for 8-directional animations
- * Values correspond to the original Dark Eden client direction system
+ * 8방향 애니메이션을 위한 방향 열거형
+ * 값은 기존 Dark Eden 클라이언트 방향 시스템에 대응됩니다.
  */
 typedef enum Direction {
-    DIR_LEFT = 0,       /**< Left direction */
-    DIR_LEFTDOWN,       /**< Left-down diagonal */
-    DIR_DOWN,           /**< Down direction */
-    DIR_RIGHTDOWN,      /**< Right-down diagonal */
-    DIR_RIGHT,          /**< Right direction */
-    DIR_RIGHTUP,        /**< Right-up diagonal */
-    DIR_UP,             /**< Up direction */
-    DIR_LEFTUP,         /**< Left-up diagonal */
-    DIR_MAX             /**< Number of directions (8) */
+    DIR_LEFT = 0,       /**< 좌측 방향 */
+    DIR_LEFTDOWN,       /**< 좌하단 대각선 방향 */
+    DIR_DOWN,           /**< 하단 방향 */
+    DIR_RIGHTDOWN,      /**< 우하단 대각선 방향 */
+    DIR_RIGHT,          /**< 우측 방향 */
+    DIR_RIGHTUP,        /**< 우상단 대각선 방향 */
+    DIR_UP,             /**< 상단 방향 */
+    DIR_LEFTUP,         /**< 좌상단 대각선 방향 */
+    DIR_MAX             /**< 방향 총 개수 (8) */
 } Direction;
 
 /* ============================================================================
- * BltType Enumeration
- * Requirement 2.6: Store BltType for rendering mode selection
+ * BltType 열거형
+ * 요구사항 2.6: 렌더링 모드 선택을 위한 BltType 저장
  * ============================================================================ */
 
 /**
- * Blit type enumeration for different rendering modes
+ * 다양한 렌더링 모드를 위한 블릿 타입 열거형
  * 
- * BLT_NORMAL: Standard alpha blending (SDL_BLENDMODE_BLEND)
- * BLT_EFFECT: Additive blending for glow effects (SDL_BLENDMODE_ADD)
- * BLT_SHADOW: Shadow effect with darkened, semi-transparent rendering
- * BLT_SCREEN: Screen blend effect (approximated with SDL_BLENDMODE_ADD)
+ * BLT_NORMAL: 표준 알파 블렌딩 (SDL_BLENDMODE_BLEND)
+ * BLT_EFFECT: 발광 효과를 위한 가산 블렌딩 (SDL_BLENDMODE_ADD)
+ * BLT_SHADOW: 어둡고 반투명하게 렌더링하는 그림자 효과
+ * BLT_SCREEN: 스크린 블렌드 효과 (SDL_BLENDMODE_ADD로 근사)
  */
 typedef enum BltType {
-    BLT_NORMAL = 0,     /**< Standard alpha blending */
-    BLT_EFFECT,         /**< Additive blending for effects */
-    BLT_SHADOW,         /**< Shadow rendering mode */
-    BLT_SCREEN          /**< Screen blend mode */
+    BLT_NORMAL = 0,     /**< 표준 알파 블렌딩 */
+    BLT_EFFECT,         /**< 이펙트용 가산 블렌딩 */
+    BLT_SHADOW,         /**< 그림자 렌더링 모드 */
+    BLT_SCREEN          /**< 스크린 블렌드 모드 */
 } BltType;
 
 /* ============================================================================
- * Default Values
+ * 기본값
  * ============================================================================ */
 
 /**
- * Default colorkey value for transparency (RGB565 value 0)
+ * 투명 처리를 위한 기본 컬러키 값 (RGB565 값 0)
  */
 #define DEFAULT_COLORKEY 0
 

@@ -1,4 +1,4 @@
-#ifndef STR_H_
+﻿#ifndef STR_H_
 #define STR_H_
 
 #include <stddef.h>
@@ -35,7 +35,7 @@ strBuf strCat(strBuf to, str from);
 strBuf strAppend(strBuf to, char c);
 strBuf strShrink(strBuf to, unsigned int n);
 
-/* ================= implementation ================= */
+/* ================= 구현부 ================= */
 
 #ifdef STR_IMPLEMENTATION
 

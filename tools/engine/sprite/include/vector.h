@@ -1,4 +1,4 @@
-#ifndef C_VECTOR_H
+﻿#ifndef C_VECTOR_H
 #define C_VECTOR_H
 
 #include <stdio.h>
@@ -77,9 +77,9 @@ _vector_free(Vector *v) {
 	_vector_free(&(ptr)->v)
 
 /*
- * Clang 会对 GNU 扩展关键字（如 typeof）给出 -Wlanguage-extension-token 警告。
- * 这些宏为了保持简洁的调用方式使用了 typeof。为避免污染全局编译设置，
- * 在本头文件内局部关闭该警告，仅包裹宏定义区域。
+ * Clang은 typeof와 같은 GNU 확장 키워드에 대해 -Wlanguage-extension-token 경고를 발생시킵니다.
+ * 이 매크로들은 간결한 호출 방식을 유지하기 위해 typeof를 사용합니다. 전역 컴파일 설정을 오염시키지 않기 위해
+ * 본 헤더 파일 내에서 해당 경고를 국소적으로 비활성화하고 매크로 정의 영역만 감쌉니다.
  */
 #if defined(__clang__)
 #pragma clang diagnostic push

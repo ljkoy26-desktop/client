@@ -1,13 +1,13 @@
-/**
+﻿/**
  * @file zone.h
- * @brief Zone (map) file parsing for Dark Eden
+ * @brief Dark Eden용 Zone (맵) 파일 파싱
  * 
- * Parses .map zone files containing:
- * - Zone header (version, ID, name, type, etc.)
- * - Sector grid (tile sprite IDs, properties, light)
- * - ImageObjects (buildings, decorations)
+ * 다음 항목을 포함하는 .map zone 파일을 파싱합니다:
+ * - Zone 헤더 (버전, ID, 이름, 유형 등)
+ * - 섹터 그리드 (타일 스프라이트 ID, 속성, 조명)
+ * - ImageObject (건물, 장식물 등)
  * 
- * Based on original MZone.cpp implementation.
+ * 원본 MZone.cpp 구현을 기반으로 합니다.
  */
 
 #ifndef ZONE_H
@@ -23,7 +23,7 @@ extern "C" {
 #endif
 
 /* ============================================================================
- * Constants
+ * 상수 정의
  * ============================================================================ */
 
 #define ZONE_VERSION_STRING "=MAP_2000_05_10="
@@ -32,7 +32,7 @@ extern "C" {
 #define ZONE_MAX_NAME_LEN   256
 #define ZONE_MAX_DESC_LEN   1024
 
-/* Sector property flags (from MSector.h) */
+/* 섹터 속성 플래그 (MSector.h 참조) */
 #define SECTOR_BLOCK_UNDERGROUND    0x01
 #define SECTOR_BLOCK_GROUND         0x02
 #define SECTOR_BLOCK_FLYING         0x04
@@ -43,7 +43,7 @@ extern "C" {
 #define SECTOR_FLYING_CREATURE      0x40
 #define SECTOR_PORTAL               0x80
 
-/* Zone types */
+/* Zone 유형 */
 typedef enum ZoneType {
     ZONE_TYPE_NORMAL = 0,
     ZONE_TYPE_SLAYER_GUILD,
@@ -55,9 +55,9 @@ typedef enum ZoneType {
     ZONE_TYPE_RANDOMAP
 } ZoneType;
 
-/* ImageObject types (match MObject::OBJECT_TYPE numeric values) */
+/* ImageObject 유형 (MObject::OBJECT_TYPE 숫자 값과 일치) */
 typedef enum ImageObjectType {
-    OBJECT_TYPE_OBJECT = 0,              /* Base */
+    OBJECT_TYPE_OBJECT = 0,              /* 기본 */
     OBJECT_TYPE_CREATURE = 1,
     OBJECT_TYPE_ITEM = 2,
     OBJECT_TYPE_IMAGEOBJECT = 3,
@@ -69,7 +69,7 @@ typedef enum ImageObjectType {
     OBJECT_TYPE_EFFECT = 9
 } ImageObjectType;
 
-/* Error codes */
+/* 에러 코드 */
 typedef enum ZoneError {
     ZONE_OK = 0,
     ZONE_ERR_IO = -1,
@@ -80,33 +80,33 @@ typedef enum ZoneError {
 } ZoneError;
 
 /* ============================================================================
- * Data Structures
+ * 데이터 구조체
  * ============================================================================ */
 
 /**
- * Zone file header information
+ * Zone 파일 헤더 정보
  */
 typedef struct ZoneHeader {
-    char version[ZONE_VERSION_LEN + 1];  /* Version string */
+    char version[ZONE_VERSION_LEN + 1];  /* 버전 문자열 */
     uint16_t zone_id;                     /* Zone ID */
-    uint16_t zone_group_id;               /* Zone group ID */
-    char zone_name[ZONE_MAX_NAME_LEN];    /* Zone name */
-    uint8_t zone_type;                    /* Zone type (ZoneType enum) */
-    uint8_t zone_level;                   /* Zone level (1-10) */
-    char description[ZONE_MAX_DESC_LEN];  /* Zone description */
+    uint16_t zone_group_id;               /* Zone 그룹 ID */
+    char zone_name[ZONE_MAX_NAME_LEN];    /* Zone 이름 */
+    uint8_t zone_type;                    /* Zone 유형 (ZoneType 열거형) */
+    uint8_t zone_level;                   /* Zone 레벨 (1-10) */
+    char description[ZONE_MAX_DESC_LEN];  /* Zone 설명 */
 } ZoneHeader;
 
 /**
- * Single sector (tile) data
+ * 단일 섹터 (타일) 데이터
  */
 typedef struct Sector {
-    uint16_t sprite_id;   /* Tile sprite ID (0xFFFF = empty) */
-    uint8_t property;     /* Property flags */
-    uint8_t light;        /* Light level */
+    uint16_t sprite_id;   /* 타일 스프라이트 ID (0xFFFF = 비어있음) */
+    uint8_t property;     /* 속성 플래그 */
+    uint8_t light;        /* 조명 레벨 */
 } Sector;
 
 /**
- * ImageObject position in sector grid
+ * 섹터 그리드 내의 ImageObject 위치
  */
 typedef struct ImageObjectPosition {
     uint16_t x;
@@ -114,36 +114,36 @@ typedef struct ImageObjectPosition {
 } ImageObjectPosition;
 
 /**
- * ImageObject data
+ * ImageObject 데이터
  */
 typedef struct ImageObject {
     uint8_t type;                  /* ImageObjectType */
-    uint32_t id;                   /* Instance Object ID (MObject::m_ID) */
-    uint16_t sector_x;             /* Sector X (MObject::m_X) */
-    uint16_t sector_y;             /* Sector Y (MObject::m_Y) */
-    uint32_t image_object_id;      /* Image class ID (MImageObject::m_ImageObjectID) */
-    uint16_t sprite_id;            /* Sprite ID */
-    int32_t pixel_x;               /* Pixel X position */
-    int32_t pixel_y;               /* Pixel Y position */
-    uint16_t viewpoint;            /* Viewpoint (SIZE_SECTORPOSITION) */
+    uint32_t id;                   /* 인스턴스 오브젝트 ID (MObject::m_ID) */
+    uint16_t sector_x;             /* 섹터 X (MObject::m_X) */
+    uint16_t sector_y;             /* 섹터 Y (MObject::m_Y) */
+    uint32_t image_object_id;      /* 이미지 클래스 ID (MImageObject::m_ImageObjectID) */
+    uint16_t sprite_id;            /* 스프라이트 ID */
+    int32_t pixel_x;               /* 픽셀 X 위치 */
+    int32_t pixel_y;               /* 픽셀 Y 위치 */
+    uint16_t viewpoint;            /* 시점 (SIZE_SECTORPOSITION) */
     uint8_t is_animation;          /* MImageObject::m_bAnimation */
-    uint8_t trans_flags;           /* MImageObject::m_bTrans (bit flags) */
+    uint8_t trans_flags;           /* MImageObject::m_bTrans (비트 플래그) */
     
-    /* Position list - sectors this object occupies */
+    /* 위치 목록 - 이 오브젝트가 차지하는 섹터들 */
     uint32_t position_count;
     ImageObjectPosition* positions;
     
-    /* Type-specific data */
+    /* 유형별 특화 데이터 */
     union {
         struct {
-            /* Original shadow object has no extra binary fields */
+            /* 원본 그림자 오브젝트에는 추가 바이너리 필드가 없음 */
             uint16_t reserved;
         } shadow;
         struct {
-            /* Map stores frame_id (TYPE_FRAMEID, 2 bytes) and max_frame (1 byte) */
+            /* Map 파일에 저장된 frame_id (TYPE_FRAMEID, 2바이트) 및 max_frame (1바이트) */
             uint16_t frame_id;
             uint8_t  max_frame;
-            /* Optional runtime fields from MAnimationObject */
+            /* MAnimationObject의 선택적 런타임 필드 */
             uint8_t  blt_type;
             uint8_t  direction;
             uint8_t  sound_frame;
@@ -161,102 +161,102 @@ typedef struct ImageObject {
 } ImageObject;
 
 /**
- * Complete zone data
+ * 전체 Zone 데이터
  */
 typedef struct Zone {
     ZoneHeader header;
     
-    uint16_t width;               /* Zone width in sectors */
-    uint16_t height;              /* Zone height in sectors */
+    uint16_t width;               /* 섹터 단위 Zone 너비 */
+    uint16_t height;              /* 섹터 단위 Zone 높이 */
     
-    Sector* sectors;              /* Sector grid (height * width) */
+    Sector* sectors;              /* 섹터 그리드 (height * width) */
     
     uint32_t image_object_count;
     ImageObject* image_objects;
     
-    /* File positions for lazy loading */
-    long fp_tile;                 /* File position of tile data */
-    long fp_image_object;         /* File position of image objects */
+    /* 지연 로딩을 위한 파일 위치 */
+    long fp_tile;                 /* 타일 데이터 파일 오프셋 */
+    long fp_image_object;         /* 이미지 오브젝트 파일 오프셋 */
 } Zone;
 
 /* ============================================================================
- * API Functions
+ * API 함수 선언
  * ============================================================================ */
 
 /**
- * Load zone from file path
- * @param path Path to .map file
- * @param zone Pointer to Zone structure to fill
- * @return ZONE_OK on success, error code on failure
+ * 파일 경로에서 Zone 로드
+ * @param path .map 파일 경로
+ * @param zone 채워 넣을 Zone 구조체 포인터
+ * @return 성공 시 ZONE_OK, 실패 시 에러 코드
  */
 Error* zone_load(const char* path, Zone* zone);
 
 /**
- * Load zone from file stream
- * @param file Open file stream
- * @param zone Pointer to Zone structure to fill
- * @return ZONE_OK on success, error code on failure
+ * 파일 스트림에서 Zone 로드
+ * @param file 열려 있는 파일 스트림
+ * @param zone 채워 넣을 Zone 구조체 포인터
+ * @return 성공 시 ZONE_OK, 실패 시 에러 코드
  */
 Error* zone_load_from_file(FILE* file, Zone* zone);
 
 /**
- * Load only zone header (fast, no sector data)
- * @param path Path to .map file
- * @param header Pointer to ZoneHeader to fill
- * @return ZONE_OK on success, error code on failure
+ * Zone 헤더만 로드 (섹터 데이터 제외, 고속)
+ * @param path .map 파일 경로
+ * @param header 채워 넣을 ZoneHeader 포인터
+ * @return 성공 시 ZONE_OK, 실패 시 에러 코드
  */
 Error* zone_load_header(const char* path, ZoneHeader* header);
 
 /**
- * Free zone resources
- * @param zone Pointer to Zone structure
+ * Zone 리소스 해제
+ * @param zone Zone 구조체 포인터
  */
 void zone_free(Zone* zone);
 
 /**
- * Get sector at position
- * @param zone Zone pointer
- * @param x X coordinate
- * @param y Y coordinate
- * @return Pointer to sector, or NULL if out of bounds
+ * 특정 위치의 섹터 반환
+ * @param zone Zone 포인터
+ * @param x X 좌표
+ * @param y Y 좌표
+ * @return 섹터 포인터, 범위를 벗어난 경우 NULL
  */
 const Sector* zone_get_sector(const Zone* zone, uint16_t x, uint16_t y);
 
 /**
- * Check if position is walkable for ground creatures
- * @param zone Zone pointer
- * @param x X coordinate
- * @param y Y coordinate
- * @return true if walkable
+ * 지상 크리처가 이동 가능한 위치인지 확인
+ * @param zone Zone 포인터
+ * @param x X 좌표
+ * @param y Y 좌표
+ * @return 이동 가능하면 true
  */
 bool zone_can_walk_ground(const Zone* zone, uint16_t x, uint16_t y);
 
 /**
- * Check if position is walkable for flying creatures
- * @param zone Zone pointer
- * @param x X coordinate
- * @param y Y coordinate
- * @return true if walkable
+ * 비행 크리처가 이동 가능한 위치인지 확인
+ * @param zone Zone 포인터
+ * @param x X 좌표
+ * @param y Y 좌표
+ * @return 이동 가능하면 true
  */
 bool zone_can_walk_flying(const Zone* zone, uint16_t x, uint16_t y);
 
 /**
- * Check if position is walkable for underground creatures
- * @param zone Zone pointer
- * @param x X coordinate
- * @param y Y coordinate
- * @return true if walkable
+ * 지하 크리처가 이동 가능한 위치인지 확인
+ * @param zone Zone 포인터
+ * @param x X 좌표
+ * @param y Y 좌표
+ * @return 이동 가능하면 true
  */
 bool zone_can_walk_underground(const Zone* zone, uint16_t x, uint16_t y);
 
 /**
- * Get error string
- * @param err Error code
- * @return Human-readable error string
+ * 에러 문자열 반환
+ * @param err 에러 코드
+ * @return 사람이 읽을 수 있는 에러 설명 문자열
  */
 const char* zone_strerror(ZoneError err);
 
-/** Enable or disable verbose debug logging inside parser */
+/** 파서 내부의 상세 디버그 로깅 활성화 또는 비활성화 */
 void zone_set_debug(int enable);
 
 #ifdef __cplusplus

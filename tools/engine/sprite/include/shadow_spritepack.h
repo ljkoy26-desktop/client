@@ -1,12 +1,11 @@
-/**
+﻿/**
  * @file shadow_spritepack.h
- * @brief ShadowSpritePack for loading .sspk files
+ * @brief .sspk 파일 로드를 위한 ShadowSpritePack
  * 
- * Requirements: 2.1, 2.2
+ * 요구사항: 2.1, 2.2
  * 
- * ShadowSpritePack manages a collection of ShadowSprites loaded from
- * .sspk (pack) and .sspki (index) files. Supports both full loading
- * and lazy (on-demand) loading.
+ * ShadowSpritePack은 .sspk(팩) 및 .sspki(인덱스) 파일에서 로드된 ShadowSprite 컬렉션을 관리합니다.
+ * 전체 로드와 지연(온디맨드) 로드를 모두 지원합니다.
  */
 
 #ifndef SHADOW_SPRITEPACK_H
@@ -21,112 +20,112 @@ extern "C" {
 #endif
 
 /* ============================================================================
- * ShadowSpritePack Structure
+ * ShadowSpritePack 구조체
  * ============================================================================ */
 
 /**
- * ShadowSpritePack structure
+ * ShadowSpritePack 구조체
  * 
- * Manages a collection of ShadowSprites with support for lazy loading.
+ * 지연 로딩을 지원하는 ShadowSprite 컬렉션을 관리합니다.
  */
 typedef struct {
-    ShadowSprite* sprites;   /**< Array of sprites */
-    uint16_t size;           /**< Number of sprites in pack */
-    int is_lazy_load;        /**< Whether lazy loading is enabled */
-    uint16_t loaded_count;   /**< Number of sprites loaded (for lazy loading) */
-    FILE* pack_file;         /**< File handle for lazy loading */
-    int32_t* file_index;     /**< File offsets for each sprite */
-    char* filename;          /**< Pack filename (for reference) */
+    ShadowSprite* sprites;   /**< 스프라이트 배열 */
+    uint16_t size;           /**< 팩 내 스프라이트 개수 */
+    int is_lazy_load;        /**< 지연 로딩 활성화 여부 */
+    uint16_t loaded_count;   /**< 로드된 스프라이트 개수 (지연 로딩용) */
+    FILE* pack_file;         /**< 지연 로딩용 파일 핸들 */
+    int32_t* file_index;     /**< 각 스프라이트의 파일 오프셋 */
+    char* filename;          /**< 팩 파일 이름 (참조용) */
 } ShadowSpritePack;
 
 /* ============================================================================
- * Functions
+ * 함수 선언
  * ============================================================================ */
 
 /**
- * Initialize a ShadowSpritePack structure
+ * ShadowSpritePack 구조체 초기화
  * 
- * @param pack Pointer to ShadowSpritePack
+ * @param pack ShadowSpritePack 포인터
  */
 void shadow_spritepack_init(ShadowSpritePack* pack);
 
 /**
- * Release ShadowSpritePack resources
+ * ShadowSpritePack 리소스 해제
  * 
- * @param pack Pointer to ShadowSpritePack
+ * @param pack ShadowSpritePack 포인터
  */
 void shadow_spritepack_release(ShadowSpritePack* pack);
 
 /**
- * Get number of sprites in pack
+ * 팩 내 스프라이트 개수 반환
  * 
- * @param pack Pointer to ShadowSpritePack
- * @return Number of sprites
+ * @param pack ShadowSpritePack 포인터
+ * @return 스프라이트 개수
  */
 uint16_t shadow_spritepack_get_size(const ShadowSpritePack* pack);
 
 /**
- * Get sprite by index (triggers load if lazy loading)
+ * 인덱스로 스프라이트 반환 (지연 로딩인 경우 로드 트리거)
  * 
- * @param pack Pointer to ShadowSpritePack
- * @param index Sprite index
- * @return Pointer to ShadowSprite, or NULL if invalid index
+ * @param pack ShadowSpritePack 포인터
+ * @param index 스프라이트 인덱스
+ * @return ShadowSprite 포인터, 유효하지 않은 인덱스인 경우 NULL
  * 
- * Requirements: 2.2
+ * 요구사항: 2.2
  */
 ShadowSprite* shadow_spritepack_get(ShadowSpritePack* pack, uint16_t index);
 
 /**
- * Load ShadowSpritePack from file (full load)
+ * 파일 경로에서 ShadowSpritePack 로드 (전체 로드)
  * 
- * @param pack Pointer to ShadowSpritePack
- * @param filename Path to .sspk file
- * @return 1 on success, 0 on failure
+ * @param pack ShadowSpritePack 포인터
+ * @param filename .sspk 파일 경로
+ * @return 성공 시 1, 실패 시 0
  * 
- * Requirements: 2.1
+ * 요구사항: 2.1
  */
 int shadow_spritepack_load(ShadowSpritePack* pack, const char* filename);
 
 /**
- * Load ShadowSpritePack from file stream (full load)
+ * 파일 스트림에서 ShadowSpritePack 로드 (전체 로드)
  * 
- * @param pack Pointer to ShadowSpritePack
- * @param file File handle
- * @return 1 on success, 0 on failure
+ * @param pack ShadowSpritePack 포인터
+ * @param file 파일 핸들
+ * @return 성공 시 1, 실패 시 0
  */
 int shadow_spritepack_load_from_file(ShadowSpritePack* pack, FILE* file);
 
 /**
- * Load ShadowSpritePack with lazy loading (requires index file)
+ * 지연 로딩 방식으로 ShadowSpritePack 로드 (인덱스 파일 필요)
  * 
- * Sprites are loaded on-demand when accessed via shadow_spritepack_get().
- * The index file (.sspki) must exist alongside the pack file.
+ * shadow_spritepack_get()을 통해 접근할 때 온디맨드로 스프라이트를 로드합니다.
+ * 팩 파일과 동일한 위치에 인덱스 파일(.sspki)이 존재해야 합니다.
  * 
- * @param pack Pointer to ShadowSpritePack
- * @param filename Path to .sspk file
- * @return 1 on success, 0 on failure
+ * @param pack ShadowSpritePack 포인터
+ * @param filename .sspk 파일 경로
+ * @return 성공 시 1, 실패 시 0
  * 
- * Requirements: 2.1, 2.2
+ * 요구사항: 2.1, 2.2
  */
 int shadow_spritepack_load_lazy(ShadowSpritePack* pack, const char* filename);
 
 /**
- * Load a range of sprites (for partial loading)
+ * 특정 범위의 스프라이트 로드 (부분 로딩용)
  * 
- * @param pack Pointer to ShadowSpritePack
- * @param first First sprite index
- * @param last Last sprite index (inclusive)
- * @return 1 on success, 0 on failure
+ * @param pack ShadowSpritePack 포인터
+ * @param first 시작 스프라이트 인덱스
+ * @param last 끝 스프라이트 인덱스 (포함)
+ * @return 성공 시 1, 실패 시 0
  */
 int shadow_spritepack_load_part(ShadowSpritePack* pack, int first, int last);
 
 /**
- * Release a range of sprites (to free memory)
+ * 특정 범위의 스프라이트 해제 (메모리 절약용)
  * 
- * @param pack Pointer to ShadowSpritePack
- * @param first First sprite index
- * @param last Last sprite index (inclusive)
- * @return 1 on success, 0 on failure
+ * @param pack ShadowSpritePack 포인터
+ * @param first 시작 스프라이트 인덱스
+ * @param last 끝 스프라이트 인덱스 (포함)
+ * @return 성공 시 1, 실패 시 0
  */
 int shadow_spritepack_release_part(ShadowSpritePack* pack, int first, int last);
 

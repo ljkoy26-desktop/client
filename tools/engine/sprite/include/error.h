@@ -1,4 +1,4 @@
-#ifndef SIMPLE_ERROR_H
+﻿#ifndef SIMPLE_ERROR_H
 #define SIMPLE_ERROR_H
 
 #ifndef ERR_STACK_MAX
@@ -8,13 +8,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/* 单个错误帧 */
+/* 단일 에러 프레임 */
 typedef struct {
     const char *func;
     const char *file;
     int line;
 } ErrFrame;
 
+/* 에러 정보 구조체 */
 typedef struct {
     int code;
     char *msg;

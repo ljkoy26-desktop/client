@@ -1,14 +1,14 @@
-/**
+﻿/**
  * @file framepack.h
- * @brief FramePack structures for animation data (Pure C implementation)
+ * @brief 애니메이션 데이터를 위한 FramePack 구조체 (순수 C 구현)
  * 
- * Requirements: 3.1, 3.2, 3.3
+ * 요구사항: 3.1, 3.2, 3.3
  * 
- * FramePack stores animation frame data for different entity types:
+ * FramePack은 다양한 엔티티 유형에 대한 애니메이션 프레임 데이터를 저장합니다:
  * - CreatureFramePack: [CreatureType][Action][Direction][Frame] -> Frame
- * - DirectionFramePack: [Type][Direction][Frame] -> Frame (for effects)
- * - AnimationFramePack: [Type][Frame] -> Frame (for simple animations)
- * - ImageFramePack: [Type] -> Frame (for static images)
+ * - DirectionFramePack: [Type][Direction][Frame] -> Frame (이펙트용)
+ * - AnimationFramePack: [Type][Frame] -> Frame (단순 애니메이션용)
+ * - ImageFramePack: [Type] -> Frame (정적 이미지용)
  */
 
 #ifndef FRAMEPACK_H
@@ -26,92 +26,92 @@ extern "C" {
  * CreatureFramePack - [CreatureType][Action][Direction][Frame]
  * ============================================================================ */
 
-typedef struct CreatureFramePack {
 /**
- * CreatureFramePack structure
+ * CreatureFramePack 구조체
  * 
- * Stores animation frame data for all creature types.
- * Structure: [CreatureType][Action][Direction][Frame] -> Frame
+ * 모든 크리처 유형에 대한 애니메이션 프레임 데이터를 저장합니다.
+ * 구조: [CreatureType][Action][Direction][Frame] -> Frame
  */
-    vector(ActionArray) creatures;  /**< Array of ActionArrays, one per creature type */
+typedef struct CreatureFramePack {
+    vector(ActionArray) creatures;  /**< 크리처 유형별 ActionArray 배열 */
 } CreatureFramePack;
 
 /**
- * Initialize a CreatureFramePack
- * @param pack Pointer to CreatureFramePack
+ * CreatureFramePack 초기화
+ * @param pack CreatureFramePack 포인터
  */
 void creature_framepack_init(CreatureFramePack* pack);
 
 /**
- * Release a CreatureFramePack (and all nested arrays)
- * @param pack Pointer to CreatureFramePack
+ * CreatureFramePack 메모리 해제 (모든 중첩 배열 포함)
+ * @param pack CreatureFramePack 포인터
  */
 void creature_framepack_free(CreatureFramePack* pack);
 
 /**
- * Get number of creature types
- * @param pack Pointer to CreatureFramePack
- * @return Number of creature types
+ * 크리처 유형 개수 반환
+ * @param pack CreatureFramePack 포인터
+ * @return 크리처 유형 개수
  */
 int creature_framepack_size(const CreatureFramePack* pack);
 
 /**
- * Get ActionArray for a creature type
- * @param pack Pointer to CreatureFramePack
- * @param creature_type Creature type index
- * @return Pointer to ActionArray, or NULL if invalid index
+ * 특정 크리처 유형의 ActionArray 반환
+ * @param pack CreatureFramePack 포인터
+ * @param creature_type 크리처 유형 인덱스
+ * @return ActionArray 포인터, 유효하지 않은 인덱스인 경우 NULL
  */
 ActionArray* creature_framepack_get(CreatureFramePack* pack, int creature_type);
 
 /**
- * Get a specific frame
- * @param pack Pointer to CreatureFramePack
- * @param creature_type Creature type index
- * @param action Action index
- * @param direction Direction index (0-7)
- * @param frame_idx Frame index
- * @return Pointer to Frame, or NULL if invalid indices
+ * 특정 프레임 반환
+ * @param pack CreatureFramePack 포인터
+ * @param creature_type 크리처 유형 인덱스
+ * @param action 동작 인덱스
+ * @param direction 방향 인덱스 (0-7)
+ * @param frame_idx 프레임 인덱스
+ * @return Frame 포인터, 유효하지 않은 인덱스인 경우 NULL
  */
 Frame* creature_framepack_get_frame(CreatureFramePack* pack, 
                                     int creature_type, int action, 
                                     int direction, int frame_idx);
 
 /**
- * Load CreatureFramePack from file
- * @param pack Pointer to CreatureFramePack
- * @param filename Path to .cfpk file
- * @return 1 on success, 0 on failure
+ * 파일 경로에서 CreatureFramePack 로드
+ * @param pack CreatureFramePack 포인터
+ * @param filename .cfpk 파일 경로
+ * @return 성공 시 1, 실패 시 0
  */
 int creature_framepack_load(CreatureFramePack* pack, const char* filename);
 
 /**
- * Load CreatureFramePack from file stream
- * @param pack Pointer to CreatureFramePack
- * @param file FILE pointer
- * @return 1 on success, 0 on failure
+ * 파일 스트림에서 CreatureFramePack 로드
+ * @param pack CreatureFramePack 포인터
+ * @param file FILE 포인터
+ * @return 성공 시 1, 실패 시 0
  */
 int creature_framepack_load_from_file(CreatureFramePack* pack, FILE* file);
 
 /**
- * Save CreatureFramePack to file
- * @param pack Pointer to CreatureFramePack
- * @param filename Path to output file
- * @return 1 on success, 0 on failure
+ * CreatureFramePack을 파일 경로에 저장
+ * @param pack CreatureFramePack 포인터
+ * @param filename 출력 파일 경로
+ * @return 성공 시 1, 실패 시 0
  */
 int creature_framepack_save(const CreatureFramePack* pack, const char* filename);
 
 /**
- * Save CreatureFramePack to file stream
- * @param pack Pointer to CreatureFramePack
- * @param file FILE pointer
- * @return 1 on success, 0 on failure
+ * CreatureFramePack을 파일 스트림에 저장
+ * @param pack CreatureFramePack 포인터
+ * @param file FILE 포인터
+ * @return 성공 시 1, 실패 시 0
  */
 int creature_framepack_save_to_file(const CreatureFramePack* pack, FILE* file);
 
 /**
- * Output frame pack information to a text file (for debugging)
- * @param pack Pointer to CreatureFramePack
- * @param filename Path to output file
+ * 디버깅을 위해 FramePack 정보를 텍스트 파일로 출력
+ * @param pack CreatureFramePack 포인터
+ * @param filename 출력 파일 경로
  */
 void creature_framepack_info_to_file(const CreatureFramePack* pack, const char* filename);
 
@@ -120,56 +120,56 @@ void creature_framepack_info_to_file(const CreatureFramePack* pack, const char* 
  * ============================================================================ */
 
 /**
- * DirectionFramePack structure
+ * DirectionFramePack 구조체
  * 
- * Stores animation frame data with direction support.
- * Structure: [Type][Direction][Frame] -> Frame
- * Used for effects and other directional animations.
+ * 방향 지원이 있는 애니메이션 프레임 데이터를 저장합니다.
+ * 구조: [Type][Direction][Frame] -> Frame
+ * 이펙트 및 기타 방향성 애니메이션에 사용됩니다.
  */
 typedef struct {
-    vector(DirectionArray) types;  /**< Array of DirectionArrays */
+    vector(DirectionArray) types;  /**< DirectionArray 배열 */
 } DirectionFramePack;
 
 /**
- * Initialize a DirectionFramePack
- * @param pack Pointer to DirectionFramePack
+ * DirectionFramePack 초기화
+ * @param pack DirectionFramePack 포인터
  */
 void direction_framepack_init(DirectionFramePack* pack);
 
 /**
- * Release a DirectionFramePack
- * @param pack Pointer to DirectionFramePack
+ * DirectionFramePack 메모리 해제
+ * @param pack DirectionFramePack 포인터
  */
 void direction_framepack_free(DirectionFramePack* pack);
 
 /**
- * Get number of types
- * @param pack Pointer to DirectionFramePack
- * @return Number of types
+ * 유형 개수 반환
+ * @param pack DirectionFramePack 포인터
+ * @return 유형 개수
  */
 int direction_framepack_size(const DirectionFramePack* pack);
 
 /**
- * Get DirectionArray for a type
- * @param pack Pointer to DirectionFramePack
- * @param type_idx Type index
- * @return Pointer to DirectionArray, or NULL if invalid index
+ * 특정 유형의 DirectionArray 반환
+ * @param pack DirectionFramePack 포인터
+ * @param type_idx 유형 인덱스
+ * @return DirectionArray 포인터, 유효하지 않은 인덱스인 경우 NULL
  */
 DirectionArray* direction_framepack_get(DirectionFramePack* pack, int type_idx);
 
 /**
- * Load DirectionFramePack from file
- * @param pack Pointer to DirectionFramePack
- * @param filename Path to file
- * @return 1 on success, 0 on failure
+ * 파일에서 DirectionFramePack 로드
+ * @param pack DirectionFramePack 포인터
+ * @param filename 파일 경로
+ * @return 성공 시 1, 실패 시 0
  */
 int direction_framepack_load(DirectionFramePack* pack, const char* filename);
 
 /**
- * Load DirectionFramePack from file stream
- * @param pack Pointer to DirectionFramePack
- * @param file FILE pointer
- * @return 1 on success, 0 on failure
+ * 파일 스트림에서 DirectionFramePack 로드
+ * @param pack DirectionFramePack 포인터
+ * @param file FILE 포인터
+ * @return 성공 시 1, 실패 시 0
  */
 int direction_framepack_load_from_file(DirectionFramePack* pack, FILE* file);
 
@@ -178,55 +178,55 @@ int direction_framepack_load_from_file(DirectionFramePack* pack, FILE* file);
  * ============================================================================ */
 
 /**
- * AnimationFramePack structure
+ * AnimationFramePack 구조체
  * 
- * Stores simple animation frame data without direction.
- * Structure: [Type][Frame] -> Frame
+ * 방향 구분이 없는 단순 애니메이션 프레임 데이터를 저장합니다.
+ * 구조: [Type][Frame] -> Frame
  */
 typedef struct {
-    vector(FrameArray) types;  /**< Array of FrameArrays */
+    vector(FrameArray) types;  /**< FrameArray 배열 */
 } AnimationFramePack;
 
 /**
- * Initialize an AnimationFramePack
- * @param pack Pointer to AnimationFramePack
+ * AnimationFramePack 초기화
+ * @param pack AnimationFramePack 포인터
  */
 void animation_framepack_init(AnimationFramePack* pack);
 
 /**
- * Release an AnimationFramePack
- * @param pack Pointer to AnimationFramePack
+ * AnimationFramePack 메모리 해제
+ * @param pack AnimationFramePack 포인터
  */
 void animation_framepack_free(AnimationFramePack* pack);
 
 /**
- * Get number of types
- * @param pack Pointer to AnimationFramePack
- * @return Number of types
+ * 유형 개수 반환
+ * @param pack AnimationFramePack 포인터
+ * @return 유형 개수
  */
 int animation_framepack_size(const AnimationFramePack* pack);
 
 /**
- * Get FrameArray for a type
- * @param pack Pointer to AnimationFramePack
- * @param type_idx Type index
- * @return Pointer to FrameArray, or NULL if invalid index
+ * 특정 유형의 FrameArray 반환
+ * @param pack AnimationFramePack 포인터
+ * @param type_idx 유형 인덱스
+ * @return FrameArray 포인터, 유효하지 않은 인덱스인 경우 NULL
  */
 FrameArray* animation_framepack_get(AnimationFramePack* pack, int type_idx);
 
 /**
- * Load AnimationFramePack from file
- * @param pack Pointer to AnimationFramePack
- * @param filename Path to file
- * @return 1 on success, 0 on failure
+ * 파일에서 AnimationFramePack 로드
+ * @param pack AnimationFramePack 포인터
+ * @param filename 파일 경로
+ * @return 성공 시 1, 실패 시 0
  */
 int animation_framepack_load(AnimationFramePack* pack, const char* filename);
 
 /**
- * Load AnimationFramePack from file stream
- * @param pack Pointer to AnimationFramePack
- * @param file FILE pointer
- * @return 1 on success, 0 on failure
+ * 파일 스트림에서 AnimationFramePack 로드
+ * @param pack AnimationFramePack 포인터
+ * @param file FILE 포인터
+ * @return 성공 시 1, 실패 시 0
  */
 int animation_framepack_load_from_file(AnimationFramePack* pack, FILE* file);
 
@@ -235,55 +235,55 @@ int animation_framepack_load_from_file(AnimationFramePack* pack, FILE* file);
  * ============================================================================ */
 
 /**
- * ImageFramePack structure
+ * ImageFramePack 구조체
  * 
- * Stores single frame per type (for static images).
- * Structure: [Type] -> Frame
+ * 유형당 단일 프레임을 저장합니다 (정적 이미지용).
+ * 구조: [Type] -> Frame
  */
 typedef struct {
-    vector(Frame) frames;  /**< Array of Frames */
+    vector(Frame) frames;  /**< Frame 배열 */
 } ImageFramePack;
 
 /**
- * Initialize an ImageFramePack
- * @param pack Pointer to ImageFramePack
+ * ImageFramePack 초기화
+ * @param pack ImageFramePack 포인터
  */
 void image_framepack_init(ImageFramePack* pack);
 
 /**
- * Release an ImageFramePack
- * @param pack Pointer to ImageFramePack
+ * ImageFramePack 메모리 해제
+ * @param pack ImageFramePack 포인터
  */
 void image_framepack_free(ImageFramePack* pack);
 
 /**
- * Get number of frames
- * @param pack Pointer to ImageFramePack
- * @return Number of frames
+ * 프레임 개수 반환
+ * @param pack ImageFramePack 포인터
+ * @return 프레임 개수
  */
 int image_framepack_size(const ImageFramePack* pack);
 
 /**
- * Get Frame at index
- * @param pack Pointer to ImageFramePack
- * @param index Frame index
- * @return Pointer to Frame, or NULL if invalid index
+ * 특정 인덱스의 Frame 반환
+ * @param pack ImageFramePack 포인터
+ * @param index 프레임 인덱스
+ * @return Frame 포인터, 유효하지 않은 인덱스인 경우 NULL
  */
 Frame* image_framepack_get(ImageFramePack* pack, int index);
 
 /**
- * Load ImageFramePack from file
- * @param pack Pointer to ImageFramePack
- * @param filename Path to file
- * @return 1 on success, 0 on failure
+ * 파일에서 ImageFramePack 로드
+ * @param pack ImageFramePack 포인터
+ * @param filename 파일 경로
+ * @return 성공 시 1, 실패 시 0
  */
 int image_framepack_load(ImageFramePack* pack, const char* filename);
 
 /**
- * Load ImageFramePack from file stream
- * @param pack Pointer to ImageFramePack
- * @param file FILE pointer
- * @return 1 on success, 0 on failure
+ * 파일 스트림에서 ImageFramePack 로드
+ * @param pack ImageFramePack 포인터
+ * @param file FILE 포인터
+ * @return 성공 시 1, 실패 시 0
  */
 int image_framepack_load_from_file(ImageFramePack* pack, FILE* file);
 

@@ -1,19 +1,19 @@
-/**
+﻿/**
  * @file index_sprite.c
- * @brief IndexedSprite implementation
- * 
- * Requirements: 1.4, 1.5, 1.6
- * 
- * IndexedSprite uses a compressed scanline format:
- * 
- * Per scanline:
- *   [transPairCount] - Number of (trans, index, normal) groups
- *   For each group:
- *     [transCount]   - Number of transparent pixels
- *     [indexCount]   - Number of indexed pixels
- *     [indexData...] - Index data (setNumber<<8 | gradation) × indexCount
- *     [normalCount]  - Number of normal (direct color) pixels
- *     [normalData...] - RGB565 colors × normalCount
+ * @brief IndexedSprite 구현부
+ *
+ * 요구사항: 1.4, 1.5, 1.6
+ *
+ * IndexedSprite는 압축된 scanline 포맷을 사용한다:
+ *
+ * scanline마다:
+ *   [transPairCount] - (trans, index, normal) 그룹의 개수
+ *   각 그룹마다:
+ *     [transCount]   - 투명 픽셀의 개수
+ *     [indexCount]   - 인덱스 픽셀의 개수
+ *     [indexData...] - 인덱스 데이터 (setNumber<<8 | gradation) × indexCount개
+ *     [normalCount]  - 일반(직접 색상) 픽셀의 개수
+ *     [normalData...] - RGB565 색상 × normalCount개
  */
 
 #include "index_sprite.h"
@@ -22,7 +22,7 @@
 #include <string.h>
 
 /* ============================================================================
- * Initialization and Cleanup
+ * 초기화 및 정리
  * ============================================================================ */
 
 void index_sprite_init(IndexSprite* sprite) {
@@ -65,42 +65,42 @@ uint16_t index_sprite_get_height(const IndexSprite* sprite) {
 }
 
 /* ============================================================================
- * File I/O
+ * 파일 입출력
  * ============================================================================ */
 
 int index_sprite_load_from_file(IndexSprite* sprite, FILE* file) {
     if (!sprite || !file) return 0;
-    
-    /* Release any existing data */
+
+    /* 기존 데이터가 있으면 해제한다 */
     index_sprite_release(sprite);
-    
-    /* Read width and height */
+
+    /* width, height 읽기 */
     if (fread(&sprite->width, 2, 1, file) != 1) return 0;
     if (fread(&sprite->height, 2, 1, file) != 1) return 0;
-    
-    /* Handle empty sprite */
+
+    /* 빈 스프라이트 처리 */
     if (sprite->width == 0 || sprite->height == 0) {
         sprite->is_init = 1;
         return 1;
     }
-    
-    /* Allocate scanline pointers */
+
+    /* scanline 포인터 배열 할당 */
     sprite->pixels = (uint16_t**)malloc(sprite->height * sizeof(uint16_t*));
     if (!sprite->pixels) return 0;
-    
+
     memset(sprite->pixels, 0, sprite->height * sizeof(uint16_t*));
-    
-    /* Read each scanline */
+
+    /* 각 scanline을 읽는다 */
     for (int i = 0; i < sprite->height; i++) {
         uint16_t len;
-        
-        /* Read scanline length */
+
+        /* scanline 길이 읽기 */
         if (fread(&len, 2, 1, file) != 1) {
             index_sprite_release(sprite);
             return 0;
         }
-        
-        /* Allocate and read scanline data */
+
+        /* scanline 데이터 할당 및 읽기 */
         sprite->pixels[i] = (uint16_t*)malloc(len * sizeof(uint16_t));
         if (!sprite->pixels[i]) {
             index_sprite_release(sprite);
@@ -118,7 +118,7 @@ int index_sprite_load_from_file(IndexSprite* sprite, FILE* file) {
 }
 
 /* ============================================================================
- * Rendering Functions
+ * 렌더링 함수
  * ============================================================================ */
 
 void index_sprite_blt(const IndexSprite* sprite, uint16_t* dest, uint16_t pitch) {
@@ -129,7 +129,7 @@ void index_sprite_blt(const IndexSprite* sprite, uint16_t* dest, uint16_t pitch)
     uint16_t* pDestTemp;
     uint16_t* pPixels;
     
-    /* Render from bottom to top (original behavior) */
+    /* 아래에서 위로 렌더링 (원래 동작) */
     int rectBottom = sprite->height;
     
     if (rectBottom > 0) {
@@ -140,19 +140,19 @@ void index_sprite_blt(const IndexSprite* sprite, uint16_t* dest, uint16_t pitch)
             pPixels = sprite->pixels[i];
             pDestTemp = dest;
             
-            /* Number of (trans, index, normal) groups */
+            /* (trans, index, normal) 그룹 수 */
             transPair = *pPixels++;
             
             if (transPair > 0) {
                 int j = transPair;
                 do {
-                    /* Skip transparent pixels */
+                    /* 투명 픽셀 건너뛰기 */
                     pDestTemp += *pPixels++;
                     
-                    /* Index pixel count */
+                    /* 인덱스 픽셀 수 */
                     indexCount = *pPixels++;
                     
-                    /* Render indexed pixels */
+                    /* 인덱스 픽셀 렌더링 */
                     if (indexCount > 0) {
                         int k = indexCount;
                         do {
@@ -160,16 +160,16 @@ void index_sprite_blt(const IndexSprite* sprite, uint16_t* dest, uint16_t pitch)
                             colorGradation = (*pPixels & 0xFF);
                             pPixels++;
                             
-                            /* Look up color from ColorSet table */
+                            /* ColorSet 테이블에서 색상 조회 */
                             *pDestTemp = g_ColorSet[g_IndexValue[colorSet]][colorGradation];
                             pDestTemp++;
                         } while (--k);
                     }
                     
-                    /* Normal (direct color) pixel count */
+                    /* 일반(직접 색상) 픽셀 수 */
                     colorCount = *pPixels++;
                     
-                    /* Copy direct colors */
+                    /* 직접 색상 복사 */
                     memcpy(pDestTemp, pPixels, colorCount * 2);
                     
                     pDestTemp += colorCount;
@@ -216,7 +216,7 @@ void index_sprite_blt_colorset(const IndexSprite* sprite, uint16_t* dest,
                             colorGradation = (*pPixels & 0xFF);
                             pPixels++;
                             
-                            /* Use specified colorSet for all indexed pixels */
+                            /* 모든 인덱스 픽셀에 지정된 colorSet 사용 */
                             *pDestTemp = g_ColorSet[colorSet][colorGradation];
                             pDestTemp++;
                         } while (--k);
@@ -269,7 +269,7 @@ void index_sprite_blt_darkness(const IndexSprite* sprite, uint16_t* dest,
                             colorGradation = (*pPixels & 0xFF);
                             pPixels++;
                             
-                            /* Use darkness-adjusted color */
+                            /* 어두움이 적용된 색상 사용 */
                             *pDestTemp = g_ColorSetDarkness[darkBits][g_IndexValue[colorSet]][colorGradation];
                             pDestTemp++;
                         } while (--k);
@@ -277,7 +277,7 @@ void index_sprite_blt_darkness(const IndexSprite* sprite, uint16_t* dest,
                     
                     colorCount = *pPixels++;
                     
-                    /* Apply darkness to direct colors */
+                    /* 직접 색상에 어두움 적용 */
                     for (int l = 0; l < colorCount; l++) {
                         uint16_t color = pPixels[l];
                         int r = (colorset_get_red(color) >> darkBits);
@@ -332,7 +332,7 @@ void index_sprite_blt_alpha(const IndexSprite* sprite, uint16_t* dest,
                             uint16_t srcColor = g_ColorSet[g_IndexValue[colorSet]][colorGradation];
                             uint16_t dstColor = *pDestTemp;
                             
-                            /* Alpha blend */
+                            /* 알파 블렌딩 */
                             int sr = colorset_get_red(srcColor);
                             int sg = colorset_get_green(srcColor);
                             int sb = colorset_get_blue(srcColor);
@@ -414,7 +414,7 @@ void index_sprite_blt_effect(const IndexSprite* sprite, uint16_t* dest,
                             uint16_t srcColor = g_ColorSet[g_IndexValue[colorSet]][colorGradation];
                             uint16_t dstColor = *pDestTemp;
                             
-                            /* Additive blend */
+                            /* 가산 블렌딩 */
                             int r = colorset_get_red(srcColor) + colorset_get_red(dstColor);
                             int g = colorset_get_green(srcColor) + colorset_get_green(dstColor);
                             int b = colorset_get_blue(srcColor) + colorset_get_blue(dstColor);
@@ -454,11 +454,11 @@ void index_sprite_blt_effect(const IndexSprite* sprite, uint16_t* dest,
 }
 
 /* ============================================================================
- * SDL Rendering Functions
+ * SDL 렌더링 함수
  * ============================================================================ */
 
 /**
- * Decode IndexSprite to RGBA32 pixel buffer
+ * IndexSprite를 RGBA32 픽셀 버퍼로 디코딩
  */
 static uint32_t* index_sprite_decode_rgba(const IndexSprite* sprite, uint16_t colorSetOverride) {
     if (!sprite || !sprite->is_init || !sprite->pixels) return NULL;
@@ -467,7 +467,7 @@ static uint32_t* index_sprite_decode_rgba(const IndexSprite* sprite, uint16_t co
     uint32_t* pixels = (uint32_t*)malloc(sprite->width * sprite->height * sizeof(uint32_t));
     if (!pixels) return NULL;
     
-    /* Initialize to transparent */
+    /* 투명으로 초기화 */
     memset(pixels, 0, sprite->width * sprite->height * sizeof(uint32_t));
     
     int useOverride = (colorSetOverride < MAX_COLORSET);
@@ -480,12 +480,12 @@ static uint32_t* index_sprite_decode_rgba(const IndexSprite* sprite, uint16_t co
         int transPair = *pPixels++;
         
         for (int j = 0; j < transPair && x < sprite->width; j++) {
-            /* Skip transparent pixels */
+            /* 투명 픽셀 건너뛰기 */
             int transCount = *pPixels++;
             x += transCount;
             pDest += transCount;
             
-            /* Index pixels */
+            /* 인덱스 픽셀 */
             int indexCount = *pPixels++;
             for (int k = 0; k < indexCount && x < sprite->width; k++) {
                 int colorSet = (*pPixels >> 8) & 0xFF;
@@ -499,7 +499,7 @@ static uint32_t* index_sprite_decode_rgba(const IndexSprite* sprite, uint16_t co
                     rgb565 = g_ColorSet[g_IndexValue[colorSet]][colorGradation];
                 }
                 
-                /* Convert RGB565 to RGBA32 */
+                /* RGB565를 RGBA32로 변환 */
                 RGBA32 rgba = rgb565_to_rgba32(rgb565, 0);
                 *pDest++ = ((uint32_t)rgba.r) |
                           ((uint32_t)rgba.g << 8) |
@@ -508,7 +508,7 @@ static uint32_t* index_sprite_decode_rgba(const IndexSprite* sprite, uint16_t co
                 x++;
             }
             
-            /* Normal (direct color) pixels */
+            /* 일반(직접 색상) 픽셀 */
             int colorCount = *pPixels++;
             for (int l = 0; l < colorCount && x < sprite->width; l++) {
                 uint16_t rgb565 = pPixels[l];
