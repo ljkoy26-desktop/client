@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	BasicException.h
 
@@ -19,11 +19,11 @@ enum EXCEPTION_CODE
 {
 	INVALID_EXCEPTION_CODE,
 
-	MEM_ALLOC,		// memory allocation failed.
-	FILE_OPEN,		// file open failed.
-	FILE_LOAD,		// file load failed.
-	FAILED_JOB,		// job failed.
-	NULL_REF,		// null referenced.
+	MEM_ALLOC,		// 메모리 할당 실패.
+	FILE_OPEN,		// 파일 열기 실패.
+	FILE_LOAD,		// 파일 로드 실패.
+	FAILED_JOB,		// 작업 실패.
+	NULL_REF,		// null 참조.
 };
 
 void g_SetNewHandler();

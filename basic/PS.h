@@ -2,7 +2,7 @@
 
 	PS.h
 
-	Platform Solution master header file.
+	Platform Solution 마스터 헤더 파일.
 
 	2000.10.11. KJTINC
 

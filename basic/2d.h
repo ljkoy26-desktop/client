@@ -2,10 +2,10 @@
 #define __2D__
 
 #include "Typedef.h"
-/* Do not include the real <DDraw.h>: this project no longer uses real
-   DirectDraw, and no type declared in this file needs it. Pulling it in
-   redefines DDPIXELFORMAT/DDSCAPS2/... (SDL stand-ins used elsewhere)
-   with incompatible types. */
+/* 실제 <DDraw.h>는 include하지 않는다: 이 프로젝트는 더 이상 실제
+   DirectDraw를 사용하지 않으며, 이 파일에 선언된 어떤 타입도 이를
+   필요로 하지 않는다. 이를 끌어오면 다른 곳에서 사용 중인 SDL 대체 타입인
+   DDPIXELFORMAT/DDSCAPS2 등이 호환되지 않는 타입으로 재정의된다. */
 #include "DLL.h"
 
 /*-----------------------------------------------------------------------------

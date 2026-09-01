@@ -1,15 +1,15 @@
-/*----------------------------------------------------------------------------
+﻿/*----------------------------------------------------------------------------
 
 	GL_import.cpp
 
-	Definitions for GL_import function pointers on non-Windows platforms.
-	These are declared as extern in GL_import.h and defined here.
+	Windows가 아닌 플랫폼을 위한 GL_import 함수 포인터 정의.
+	GL_import.h에서 extern으로 선언되고 여기서 정의된다.
 
 -----------------------------------------------------------------------------*/
 
 #include "GL_import.h"
 
-// Function pointer definitions for non-Windows platforms
+// Windows가 아닌 플랫폼을 위한 함수 포인터 정의
 #ifndef PLATFORM_WINDOWS
 
 void (*Bltz)(const S_SURFACEINFO *, const S_SURFACEINFO *, const S_RECT *, const S_RECT *) = NULL;

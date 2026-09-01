@@ -2,7 +2,7 @@
 
 	Basics.h
 
-	BasicS master header file.
+	BasicS 마스터 헤더 파일.
 
 	2000.8.25. KJTINC
 

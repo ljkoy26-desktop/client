@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	TGA.h
 
@@ -15,24 +15,24 @@
 #include "DLL.h"
 
 //----------------------------------------------------------------------------
-// Tga head
+// Tga 헤더
 //----------------------------------------------------------------------------
 struct S_TGAHEAD
 {
 	BYTE idsize;
-	BYTE colormaptype;  // is palette?
+	BYTE colormaptype;  // 팔레트 사용 여부
 	BYTE imagetype;
 
 	//
-	// WORD colormapstart; 
+	// WORD colormapstart;
 	// WORD colormaplength
 	//
-	// `*to ignore VC word align!!!
+	// *VC의 word align을 피하기 위함!!!
 	//
-	//WORD colormapstart; 
+	//WORD colormapstart;
 	BYTE colormapstart1;
 	BYTE colormapstart2;
-	//WORD colormaplength; // *to ignore VC word align!!!
+	//WORD colormaplength; // *VC의 word align을 피하기 위함!!!
 	BYTE colormaplength1;
 	BYTE colormaplength2;
 
@@ -41,12 +41,12 @@ struct S_TGAHEAD
 	WORD ystart;
 	WORD width;
 	WORD height;
-	BYTE bpp;   // bit per pixel
+	BYTE bpp;   // 픽셀당 비트 수
 	BYTE descriptor;
 };
 
 //-----------------------------------------------------------------------------
-// TGA class
+// TGA 클래스
 //
 //-----------------------------------------------------------------------------
 class DllClass Tga
@@ -69,9 +69,9 @@ public:
 	~Tga();
 
 	//
-	// Getting the image info
+	// 이미지 정보 조회
 	//
-	// Old version: bool	Get_TGA_ImageInfo(char *sz_filename, S_PICINFO *picinfo);
+	// 이전 버전: bool	Get_TGA_ImageInfo(char *sz_filename, S_PICINFO *picinfo);
 	//
 	int	Width() const { return m_head.width; }
 	int	Height() const { return m_head.height; }
@@ -79,20 +79,20 @@ public:
 	const char * Filename() const { return m_sz_filename; }
 
 	//
-	// Loading TGA file
+	// TGA 파일 로드
 	//
 	bool	Load(const char * sz_filename);
 	bool	LoadButNoConvertTo565(const char * sz_filename);
 
 	//
-	// Blitting
+	// 블리팅(Blitting)
 	//
 	void	Bltz(const S_SURFACEINFO * p_dest_surface, int x, int y);
 	void	CkBltz(const S_SURFACEINFO * p_dest_surface, int x, int y);
 	void	SetColorkey(int colorkey);
 
 	//
-	// Getting...
+	// 값 조회...
 	//
 	bool	GetSurfaceInfo(S_SURFACEINFO &surfaceinfo) const;
 };

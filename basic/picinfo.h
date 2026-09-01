@@ -1,16 +1,16 @@
-#ifndef __PICINFO_H__
+﻿#ifndef __PICINFO_H__
 #define __PICINFO_H__
 
 /*-----------------------------------------------------------------------------
-  Picture file info
+  그림 파일 정보
 -----------------------------------------------------------------------------*/
 typedef struct
 {
-	BYTE *	p_data;    // pointer to a real image data uncompressed
+	BYTE *	p_data;    // 압축되지 않은 실제 이미지 데이터에 대한 포인터
 	int		width;
 	int		height;
-   int		bpp;        // bit per pixel
-   char *	filename;  // loaded filename included file extension name
+   int		bpp;        // 픽셀당 비트 수
+   char *	filename;  // 확장자를 포함한 로드된 파일 이름
 
 } S_PICINFO;
 

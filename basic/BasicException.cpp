@@ -1,16 +1,16 @@
-#include "BasicException.h"
+﻿#include "BasicException.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 void g_SetNewHandler()
 {
-	// Set new handler for memory allocation failures
-	// For SDL backend, this is a stub
+	// 메모리 할당 실패에 대한 new 핸들러를 설정한다
+	// SDL 백엔드에서는 스텁으로 동작한다
 }
 
 void g_BasicException(EXCEPTION_CODE code, char* sz_error, char* file, unsigned long line)
 {
-	// Basic exception handler
+	// 기본 예외 처리기
 	if (sz_error == NULL)
 	{
 		switch (code)
@@ -40,11 +40,11 @@ void g_BasicException(EXCEPTION_CODE code, char* sz_error, char* file, unsigned 
 		fprintf(stderr, "Error: %s at %s:%lu\n", sz_error, file, line);
 	}
 
-	// In debug mode, assert
+	// 디버그 모드에서는 assert 처리한다
 	#ifdef _DEBUG
 	assert(false);
 	#else
-	// In release mode, exit
+	// 릴리즈 모드에서는 종료한다
 	exit(1);
 	#endif
 }

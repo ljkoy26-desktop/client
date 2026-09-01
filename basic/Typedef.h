@@ -1,19 +1,19 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	Typedef.h
 
-	General type definition.
-	Now includes platform abstraction layer for cross-platform support.
+	일반적인 타입 정의.
+	크로스플랫폼 지원을 위한 플랫폼 추상화 계층을 포함한다.
 
 	Original: 19971226. KJTINC
-	Updated: 2025.01.14 - Added Platform.h include
+	갱신: 2025.01.14 - Platform.h include 추가
 
 -----------------------------------------------------------------------------*/
 
 #ifndef __TYPEDEF_H__
 #define __TYPEDEF_H__
 
-/* Include platform abstraction first */
+/* 플랫폼 추상화 계층을 가장 먼저 include한다 */
 #include "Platform.h"
 
 #endif

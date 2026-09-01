@@ -1,24 +1,24 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	ColorDraw.cpp
 
-	Implementation file for ColorDraw class.
+	ColorDraw 클래스의 구현 파일.
 
-	2025.02.04 - Extracted from CDirectDraw to eliminate SpriteLib->DXLib dependency
+	2025.02.04 - SpriteLib->DXLib 의존성을 제거하기 위해 CDirectDraw에서 분리됨
 
 -----------------------------------------------------------------------------*/
 
 #include "ColorDraw.h"
 
 //----------------------------------------------------------------------
-// Static member definitions (same as CDirectDraw)
+// 정적 멤버 정의 (CDirectDraw와 동일)
 //----------------------------------------------------------------------
 BYTE ColorDraw::s_bSHIFT_R = 11;
 BYTE ColorDraw::s_bSHIFT_G = 5;
 BYTE ColorDraw::s_bSHIFT_B = 0;
 BYTE ColorDraw::s_bSHIFT_A = 0;
 
-// For 4:4:4:4 ARGB format
+// ARGB 4:4:4:4 포맷을 위함
 BYTE ColorDraw::s_bSHIFT4_R = 12;
 BYTE ColorDraw::s_bSHIFT4_G = 8;
 BYTE ColorDraw::s_bSHIFT4_B = 4;
@@ -50,12 +50,12 @@ WORD ColorDraw::WHITE = 0xFFFF;
 bool ColorDraw::s_bUseIMEHandle = false;
 
 //----------------------------------------------------------------------
-// InitMask - Initialize color masks for RGB 5:6:5 format
-// This is the SAME logic as CSDLGraphics::InitMask
+// InitMask - RGB 5:6:5 포맷을 위한 색상 마스크를 초기화한다
+// CSDLGraphics::InitMask와 동일한 로직이다
 //----------------------------------------------------------------------
 void ColorDraw::InitMask(bool b565)
 {
-	// For SDL2 RGB 5:6:5 format
+	// SDL2 RGB 5:6:5 포맷을 위함
 	s_wMASK_SHIFT[0] = 11;
 	s_wMASK_SHIFT[1] = 5;
 	s_wMASK_SHIFT[2] = 0;
@@ -89,7 +89,7 @@ void ColorDraw::InitMask(bool b565)
 	s_qwMASK_RGB[4] = 0;
 	s_qwMASK_RGB[5] = 0;
 
-	// CRITICAL: These values MUST stay at (11, 5, 0) for RGB 5:6:5 format
+	// 중요: 이 값들은 RGB 5:6:5 포맷을 위해 반드시 (11, 5, 0)을 유지해야 한다
 	s_bSHIFT_R = 11;
 	s_bSHIFT_G = 5;
 	s_bSHIFT_B = 0;
@@ -108,5 +108,5 @@ void ColorDraw::InitMask(bool b565)
 	s_dwMASK_RGB_COUNT[4] = 0;
 	s_dwMASK_RGB_COUNT[5] = 0;
 
-	(void)b565;  // Parameter kept for compatibility
+	(void)b565;  // 호환성을 위해 파라미터를 유지한다
 }

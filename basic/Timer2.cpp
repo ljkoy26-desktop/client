@@ -1,8 +1,8 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	Timer2.cpp
 
-	Timer version 2 implementation.
+	타이머 버전 2 구현.
 
 	2000.6.15. KJTINC
 
@@ -13,12 +13,12 @@
 #include <cstdlib>
 
 //----------------------------------------------------------------------------
-// Global instance
+// 전역 인스턴스
 //----------------------------------------------------------------------------
 C_TIMER2		gC_timer2;
 
 //----------------------------------------------------------------------------
-// Constructor
+// 생성자
 //----------------------------------------------------------------------------
 C_TIMER2::C_TIMER2()
 {
@@ -28,7 +28,7 @@ C_TIMER2::C_TIMER2()
 }
 
 //----------------------------------------------------------------------------
-// Destructor
+// 소멸자
 //----------------------------------------------------------------------------
 C_TIMER2::~C_TIMER2()
 {
@@ -41,15 +41,15 @@ C_TIMER2::~C_TIMER2()
 }
 
 //----------------------------------------------------------------------------
-// Add - Add a new timer
+// Add - 새 타이머를 추가한다
 //----------------------------------------------------------------------------
 timer_id_t
 C_TIMER2::Add(DWORD dw_millisec, void (*fp_proc)(void))
 {
-	// Check if we need to expand the queue
+	// 큐를 확장해야 하는지 확인한다
 	if (m_id_generator >= m_timer_queue.size)
 	{
-		// Expand by 8 timers at a time
+		// 한 번에 8개씩 타이머를 확장한다
 		int new_size = m_timer_queue.size + 8;
 		S_TIMERUNIT* new_queue = (S_TIMERUNIT*)realloc(m_timer_queue.pS_timerunit,
 														new_size * sizeof(S_TIMERUNIT));
@@ -58,7 +58,7 @@ C_TIMER2::Add(DWORD dw_millisec, void (*fp_proc)(void))
 			return INVALID_TID;
 		}
 
-		// Initialize new entries
+		// 새 항목들을 초기화한다
 		for (int i = m_timer_queue.size; i < new_size; i++)
 		{
 			new_queue[i].tid = INVALID_TID;
@@ -69,22 +69,22 @@ C_TIMER2::Add(DWORD dw_millisec, void (*fp_proc)(void))
 		m_timer_queue.size = new_size;
 	}
 
-	// Find a slot using the id generator
+	// id 생성기를 사용해 슬롯을 찾는다
 	timer_id_t tid = m_id_generator++;
 	S_TIMERUNIT* pUnit = &m_timer_queue.pS_timerunit[tid];
 
-	// Initialize the timer unit
+	// 타이머 유닛을 초기화한다
 	pUnit->tid = tid;
 	pUnit->fp_proc = fp_proc;
 	pUnit->dw_millisec = dw_millisec;
 	pUnit->dw_prev_tickcount = GetTickCount();
-	pUnit->bl_pause = 1; // Start paused
+	pUnit->bl_pause = 1; // 일시정지 상태로 시작
 
 	return tid;
 }
 
 //----------------------------------------------------------------------------
-// Delete - Delete a timer
+// Delete - 타이머를 삭제한다
 //----------------------------------------------------------------------------
 bool
 C_TIMER2::Delete(timer_id_t &tid)
@@ -100,7 +100,7 @@ C_TIMER2::Delete(timer_id_t &tid)
 		return false;
 	}
 
-	// Mark as deleted
+	// 삭제된 것으로 표시한다
 	pUnit->tid = INVALID_TID;
 	pUnit->fp_proc = NULL;
 	tid = INVALID_TID;
@@ -109,7 +109,7 @@ C_TIMER2::Delete(timer_id_t &tid)
 }
 
 //----------------------------------------------------------------------------
-// Execute - Execute all active timers
+// Execute - 활성화된 모든 타이머를 실행한다
 //----------------------------------------------------------------------------
 void
 C_TIMER2::Execute()
@@ -120,29 +120,29 @@ C_TIMER2::Execute()
 	{
 		S_TIMERUNIT* pUnit = &m_timer_queue.pS_timerunit[i];
 
-		// Skip invalid or paused timers
+		// 유효하지 않거나 일시정지된 타이머는 건너뛴다
 		if (pUnit->tid == INVALID_TID || pUnit->bl_pause)
 		{
 			continue;
 		}
 
-		// Check if timer has elapsed
+		// 타이머 시간이 경과했는지 확인한다
 		if (dw_current_tickcount - pUnit->dw_prev_tickcount >= pUnit->dw_millisec)
 		{
-			// Execute the timer callback
+			// 타이머 콜백을 실행한다
 			if (pUnit->fp_proc != NULL)
 			{
 				Execute(pUnit);
 			}
 
-			// Update the previous tick count
+			// 이전 틱 카운트를 갱신한다
 			pUnit->dw_prev_tickcount = dw_current_tickcount;
 		}
 	}
 }
 
 //----------------------------------------------------------------------------
-// Execute - Execute a single timer unit (private)
+// Execute - 단일 타이머 유닛을 실행한다 (private)
 //----------------------------------------------------------------------------
 void
 C_TIMER2::Execute(S_TIMERUNIT *pS_timerunit)
@@ -154,7 +154,7 @@ C_TIMER2::Execute(S_TIMERUNIT *pS_timerunit)
 }
 
 //----------------------------------------------------------------------------
-// Refresh - Reset a timer's tick count
+// Refresh - 타이머의 틱 카운트를 초기화한다
 //----------------------------------------------------------------------------
 void
 C_TIMER2::Refresh(timer_id_t tid)
@@ -172,7 +172,7 @@ C_TIMER2::Refresh(timer_id_t tid)
 }
 
 //----------------------------------------------------------------------------
-// Pause - Pause a timer
+// Pause - 타이머를 일시정지한다
 //----------------------------------------------------------------------------
 void
 C_TIMER2::Pause(timer_id_t tid)
@@ -190,7 +190,7 @@ C_TIMER2::Pause(timer_id_t tid)
 }
 
 //----------------------------------------------------------------------------
-// Continue - Resume a paused timer
+// Continue - 일시정지된 타이머를 재개한다
 //----------------------------------------------------------------------------
 void
 C_TIMER2::Continue(timer_id_t tid)
@@ -209,7 +209,7 @@ C_TIMER2::Continue(timer_id_t tid)
 }
 
 //----------------------------------------------------------------------------
-// ResetSpeed - Change a timer's interval
+// ResetSpeed - 타이머의 주기를 변경한다
 //----------------------------------------------------------------------------
 void
 C_TIMER2::ResetSpeed(timer_id_t tid, DWORD millisec)

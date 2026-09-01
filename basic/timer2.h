@@ -1,8 +1,8 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	Timer2.h
 
-	Timer version 2.
+	타이머 버전 2.
 
 	2000.6.15. KJTINC
 
@@ -19,7 +19,7 @@ typedef long timer_id_t;
 #define INVALID_INDEX					-1
 
 //----------------------------------------------------------------------------
-// Class Timer - Timer Manager.
+// Timer 클래스 - 타이머 관리자.
 //----------------------------------------------------------------------------
 class C_TIMER2
 {
@@ -28,7 +28,7 @@ private:
 	//
 	struct S_TIMERUNIT
 	{
-		DWORD				bl_pause; // being paused ?
+		DWORD				bl_pause; // 일시정지 상태인가?
 		DWORD				dw_prev_tickcount;
 		DWORD				dw_millisec;
 
@@ -37,11 +37,11 @@ private:
 		//
 		//
 		timer_id_t		tid;
-		void				(*fp_proc)(void);	// method to execute
+		void				(*fp_proc)(void);	// 실행할 메서드
 	};
 
 	//
-	// Timer queue
+	// 타이머 큐
 	//
 	struct S_TIMERQUEUE
 	{

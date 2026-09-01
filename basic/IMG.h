@@ -1,8 +1,8 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	IMG.h
 
-	Private Image data.
+	비공개 이미지 데이터.
 
 	2000.4.21. KJTINC
 
@@ -16,7 +16,7 @@
 #include "DLL.h"
 
 /*-----------------------------------------------------------------------------
-  Class IMG
+  IMG 클래스
 -----------------------------------------------------------------------------*/
 class DllClass C_IMG
 {
@@ -24,7 +24,7 @@ private:
 	BYTE *						m_p_data;
 	char *						m_sz_filename;
 
-	// IMG header
+	// IMG 헤더
 	struct S_IMGHEAD
 	{
 		WORD		bpp;
@@ -42,7 +42,7 @@ public:
 	bool	Load(char * filename);
 	//bool	LoadIMG(S_PICINFO &picinfo);
 
-	// Getting...
+	// 값 조회...
 	int	Width() const { return m_head.width; }
 	int	Height() const { return m_head.height; }
 	int	BPP() const { return m_head.bpp; }

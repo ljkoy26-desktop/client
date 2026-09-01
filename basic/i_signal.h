@@ -1,8 +1,8 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	i_signal.h
 
-	input signal.
+	입력 신호.
 
 	19980806. KJTINC	
 
@@ -12,7 +12,7 @@
 #define __I_SIGNAL_H__
 
 //
-// keyboard scan code
+// 키보드 스캔 코드
 // 2000.12.01.
 //
 #define SCANCODE_TILDE					41
@@ -35,12 +35,12 @@
 #define SCANCODE_RBRACKET				0x1B
 #define SCANCODE_SEMICOLON				0x27
 #define SCANCODE_APOSTROPHE				0x28
-#define SCANCODE_GRAVE					0x29    /* accent grave */
+#define SCANCODE_GRAVE					0x29    /* 억음부호(accent grave) */
 #define SCANCODE_LSHIFT					0x2A
 #define SCANCODE_BACKSLASH				0x2B
 #define SCANCODE_COMMA					0x33
-#define SCANCODE_PERIOD					0x34    /* . on main keyboard */
-#define SCANCODE_SLASH					0x35    /* / on main keyboard */
+#define SCANCODE_PERIOD					0x34    /* 메인 키보드의 . */
+#define SCANCODE_SLASH					0x35    /* 메인 키보드의 / */
 
 #define SCANCODE_A						30
 #define SCANCODE_B						48
@@ -86,7 +86,7 @@ typedef enum
 } E_INPUT_TYPE;
 
 /*-----------------------------------------------------------------------------
-  KEYBOARD SIGNAL DEFINES
+  키보드 시그널 정의
 -----------------------------------------------------------------------------*/
 typedef enum
 {
@@ -125,11 +125,11 @@ typedef enum
 } E_KEYBOARD;
 
 /*-----------------------------------------------------------------------------
-  MOUSE SIGNAL DEFINES
+  마우스 시그널 정의
 -----------------------------------------------------------------------------*/
 typedef enum
 {
-	// wheel!
+	// 휠!
 	M_WHEEL_UP,
 	M_WHEEL_DOWN,
 
