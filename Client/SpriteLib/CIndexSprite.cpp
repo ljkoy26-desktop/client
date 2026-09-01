@@ -3637,67 +3637,54 @@ CIndexSprite::BltAlphaClipLeft(WORD *pDest, WORD pitch, RECT* pRect, BYTE alpha)
 //----------------------------------------------------------------------
 // Blt Darkness Clip Right
 //----------------------------------------------------------------------
-void		
-CIndexSprite::BltAlphaClipRight(WORD *pDest, WORD pitch, RECT* pRect, BYTE alpha)
+
+void CIndexSprite::BltAlphaClipRight(WORD* pDest, WORD pitch, RECT* pRect, BYTE alpha)
 {
 	CSpriteSurface::s_Value1 = alpha;
 
-	WORD	*pPixels,
-			*pDestTemp;
+	WORD* pPixels,
+		* pDestTemp;
 
 	//--------------------------------------------
 	// pRect만큼의 점을 출력한다.
 	//--------------------------------------------
 	int	count,
-			transCount, 
-			indexCount,
-			colorCount,
-			index;
+		transCount,
+		indexCount,
+		colorCount,
+		index;
 
-	register int	i;
-	register int	j;
-	register int	k;
+	int	j, k; // register 키워드 제거 (i는 for문 내부에서 선언)
 
 	int colorSet, colorGradation;
 
 	int rectBottom = pRect->bottom;
 	int rectRight = pRect->right;
-	for (int i=pRect->top; i<rectBottom; i++)
+	for (int i = pRect->top; i < rectBottom; i++)
 	{
 		pPixels = m_Pixels[i];
-		pDestTemp = pDest;		
+		pDestTemp = pDest;
 
 		// (투명수,색깔수,색깔들)의 반복 수
-		count = *pPixels++;		
+		count = *pPixels++;
 
 		// 한 줄 출력		
 		index = 0;
-			
-		//---------------------------------------------
-		// 각 줄마다 Clipping을 해줘야 하는데...		
-		// OOOOOOOOOOOOOOxxxxx 이런 경우이다.
-		//---------------------------------------------
-		// OOOOOOOOOOOOOO까지만 출력해주면 된다.
-		//---------------------------------------------		
+
 		if (count > 0)
 		{
 			j = count;
 			do {
 				transCount = *pPixels++;		// 투명색 수			
 				indexCount = *pPixels++;		// 투명 아닌 색 수			
-						
+
 				// 투명색만큼 index증가
 				index += transCount;
-				
-				// 출력하고 있다가 오른쪽부분부터 출력하지 말아야 할 경우가 있다.
-				// 현재 출력하는 줄은 모두 출력한 것이므로 break해야 한다.
-
-				// 투명색까지 출력하는것만으로 더 이상 출력할 필요가 없을 경우
 
 				//---------------------------------------------
 				// index색까지 오른쪽 끝까지 도달했을 경우
 				//---------------------------------------------			
-				if (index+indexCount > rectRight)
+				if (index + indexCount > rectRight)
 				{
 					// 투명색만으로 더 출력할 필요가 없을 때
 					if (index > rectRight)
@@ -3717,16 +3704,16 @@ CIndexSprite::BltAlphaClipRight(WORD *pDest, WORD pitch, RECT* pRect, BYTE alpha
 						{
 							k = indexCount;
 							do {
-								colorSet		= (*pPixels >> 8) & 0xFF;	// set
-								colorGradation	= (*pPixels & 0xFF);			// gradation
+								colorSet = (*pPixels >> 8) & 0xFF;	// set
+								colorGradation = (*pPixels & 0xFF);			// gradation
 								pPixels++;
 
 								// s_IndexValue와 관련된 색을 선택해서 출력한다.				
-								*pDestTemp		= CSpriteSurface::memcpyAlpha1Pixel(*pDestTemp, ColorSet[s_IndexValue[colorSet]][colorGradation]);
-								pDestTemp ++;
+								*pDestTemp = CSpriteSurface::memcpyAlpha1Pixel(*pDestTemp, ColorSet[s_IndexValue[colorSet]][colorGradation]);
+								pDestTemp++;
 							} while (--k);
-						}						
-						
+						}
+
 						break;
 					}
 				}
@@ -3737,23 +3724,22 @@ CIndexSprite::BltAlphaClipRight(WORD *pDest, WORD pitch, RECT* pRect, BYTE alpha
 				//-------------------------
 				// index색 모두 출력
 				//-------------------------
-				// indexCount수만큼 index색들을 출력한다.
 				if (indexCount > 0)
 				{
 					k = indexCount;
 					do {
-						colorSet		= (*pPixels >> 8) & 0xFF;	// set
-						colorGradation	= (*pPixels & 0xFF);			// gradation
+						colorSet = (*pPixels >> 8) & 0xFF;	// set
+						colorGradation = (*pPixels & 0xFF);			// gradation
 						pPixels++;
 
 						// s_IndexValue와 관련된 색을 선택해서 출력한다.				
-						*pDestTemp		= CSpriteSurface::memcpyAlpha1Pixel(*pDestTemp, ColorSet[s_IndexValue[colorSet]][colorGradation]);
-						pDestTemp ++;
+						*pDestTemp = CSpriteSurface::memcpyAlpha1Pixel(*pDestTemp, ColorSet[s_IndexValue[colorSet]][colorGradation]);
+						pDestTemp++;
 					} while (--k);
-				}		
+				}
 				// 출력한 indexCount만큼 index증가
 				index += indexCount;
-				
+
 
 				// Normal 색깔 수
 				colorCount = *pPixels++;
@@ -3761,24 +3747,24 @@ CIndexSprite::BltAlphaClipRight(WORD *pDest, WORD pitch, RECT* pRect, BYTE alpha
 				//---------------------------------------------
 				// normal색까지 오른쪽 끝까지 도달했을 경우
 				//---------------------------------------------			
-				if (index+colorCount > rectRight)
+				if (index + colorCount > rectRight)
 				{
 					// 투명이 아닌 색들을 Surface에 출력한다.
 					CSpriteSurface::memcpyAlpha(pDestTemp, pPixels, rectRight - index);
-					break;			
-				}			
-				
+					break;
+				}
+
 				//--------------------
 				// normal색 모두 출력
 				//--------------------
 				CSpriteSurface::memcpyAlpha(pDestTemp, pPixels, colorCount);
 
 				pDestTemp += colorCount;
-				pPixels += colorCount;			
+				pPixels += colorCount;
 				index += colorCount;
 			} while (--j);
 		}
-		
+
 		pDest = (WORD*)((BYTE*)pDest + pitch);
 	}
 }
@@ -6603,43 +6589,33 @@ CIndexSprite::BltEffectClipWidth(WORD* pDest, WORD pitch, RECT* pRect)
 //----------------------------------------------------------------------
 // pRect->top, rectBottom만큼만 출력한다.
 //----------------------------------------------------------------------
-void
-CIndexSprite::BltEffectClipHeight(WORD *pDest, WORD pitch, RECT* pRect)
+void CIndexSprite::BltEffectClipHeight(WORD* pDest, WORD pitch, RECT* pRect)
 {
-	int	count,
-			indexCount,
-			colorCount;
+	int count, indexCount, colorCount;
+	WORD* pDestTemp, * pPixels;
+	int j; // register 제거
 
-	WORD	*pDestTemp,
-			*pPixels;
-
-
-	register int  i;
-	register int  j;
-//	register int  k;
-
-	//int colorSet, colorGradation;
 	int rectBottom = pRect->bottom;
-	for (int i=pRect->top; i<rectBottom; i++)
-	{			
-		pPixels		= m_Pixels[i];
-		pDestTemp	= pDest;
+	for (int i = pRect->top; i < rectBottom; i++)
+	{
+		pPixels = m_Pixels[i];
+		pDestTemp = pDest;
 
 		// (투명수,색깔수,색깔들)의 반복 수		
-		count	= *pPixels++;		
+		count = *pPixels++;
 
 		// 한 줄 출력
 		if (count > 0)
 		{
 			j = count;
-			do {		
+			do {
 				pDestTemp += *pPixels++;		// 투명색만큼 건너 뛴다.
 				indexCount = *pPixels++;	// Index반복 수
 
 				// indexCount수만큼 index색들을 출력한다.
 				if (indexCount > 0)
 				{
-					memcpyEffect( pDestTemp, pPixels, indexCount );
+					memcpyEffect(pDestTemp, pPixels, indexCount);
 
 					pDestTemp += indexCount;
 					pPixels += indexCount;
@@ -6647,14 +6623,14 @@ CIndexSprite::BltEffectClipHeight(WORD *pDest, WORD pitch, RECT* pRect)
 
 				// Normal 색깔 수
 				colorCount = *pPixels++;
-				
+
 				if (colorCount > 0)
 				{
 					CSpriteSurface::memcpyEffect(pDestTemp, pPixels, colorCount);
 				}
-				
-				pDestTemp	+= colorCount;
-				pPixels		+= colorCount;
+
+				pDestTemp += colorCount;
+				pPixels += colorCount;
 			} while (--j);
 		}
 
