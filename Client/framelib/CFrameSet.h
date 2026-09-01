@@ -139,7 +139,7 @@ CFrameSet<Type>::LoadFromFile(std::ifstream& indexFile, std::ifstream& packFile)
 	indexFile.read((char*)&count, SIZE_FRAMEID);
 
 
-	int32_t* pIndex = new int32_t [count];	// file position (32-bit)
+	int32_t* pIndex = new int32_t [count];	// 파일 위치(32비트)
 
 	//------------------------------------------------------
 	// FrameSet IndexFile을 모두 읽어들인다.
