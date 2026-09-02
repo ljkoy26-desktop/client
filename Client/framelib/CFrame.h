@@ -48,42 +48,42 @@ class CFrame {
 		//~CFrame() {}
 
 		//---------------------------------------------------------------
-		// set
+		// 설정
 		//---------------------------------------------------------------
-		void	Set(TYPE_SPRITEID spriteID, short cx, short cy);		
+		void	Set(TYPE_SPRITEID spriteID, short cx, short cy);
 
 		//---------------------------------------------------------------
-		// file I/O
+		// 파일 입출력
 		//---------------------------------------------------------------
 		void	SaveToFile(std::ofstream& file);
 		void	LoadFromFile(std::ifstream& file);
 
 		//---------------------------------------------------------------
-		// get		
+		// 조회
 		//---------------------------------------------------------------
 		TYPE_SPRITEID	GetSpriteID()	const	{ return m_SpriteID; }
 		short	GetCX()		const		{ return m_cX; }
 		short	GetCY()		const		{ return m_cY; }
 
 		//---------------------------------------------------------------
-		// assign
+		// 대입
 		//---------------------------------------------------------------
 		void	operator = (const CFrame& frame);
 
 
 		//---------------------------------------------------------------
-		// flag
+		// 플래그
 		//---------------------------------------------------------------
 		//void	UnSetAll()			{ m_fEffect = 0; }
 		//BYTE	GetEffectFlag()		{ return m_fEffect; }
 
-		// set flag
+		// 플래그 설정
 		//void	SetMirror()			{ m_fEffect |= FLAG_FRAME_MIRROR; }
 
-		// unset flag
+		// 플래그 해제
 		//void	UnSetMirror()		{ m_fEffect &= ~FLAG_FRAME_MIRROR; }
 
-		// is flag set?
+		// 플래그가 설정되었는가?
 		//bool	IsMirror()			{ return m_fEffect & FLAG_FRAME_MIRROR; }
 
 
@@ -120,17 +120,17 @@ class CEffectFrame : public CFrame {
 		void	UnSetBackground()			{ m_bBackground = false; }
 
 		//---------------------------------------------------------------
-		// File I/O
+		// 파일 입출력
 		//---------------------------------------------------------------
 		void	SaveToFile(std::ofstream& file);
 		void	LoadFromFile(std::ifstream& file);
 
-		// Get
+		// 조회
 		char	GetLight() const		{ return m_Light; }		
 		bool	IsBackground() const	{ return m_bBackground; }
 
 		//---------------------------------------------------------------
-		// assign
+		// 대입
 		//---------------------------------------------------------------
 		void	operator = (const CEffectFrame& frame);
 
@@ -144,27 +144,27 @@ class CEffectFrame : public CFrame {
 
 //----------------------------------------------------------------------
 //
-// Frame Array  data type 정의
+// Frame Array 데이터 타입 정의
 //
 //----------------------------------------------------------------------
 
-// FrameArray
+// 프레임 배열
 typedef	TArray<CFrame, WORD>					FRAME_ARRAY;
 
-// Direction FrameArray	
+// 방향 프레임 배열
 typedef	TArray<FRAME_ARRAY, BYTE>				DIRECTION_FRAME_ARRAY;
 
-// Action FrameArray
+// 액션 프레임 배열
 typedef	TArray<DIRECTION_FRAME_ARRAY, BYTE>		ACTION_FRAME_ARRAY;
 
 
 //----------------------------------------------------------------------
-// Effect Frame
+// 이펙트 프레임
 //----------------------------------------------------------------------
-// FrameArray
+// 프레임 배열
 typedef	TArray<CEffectFrame, WORD>					EFFECTFRAME_ARRAY;
 
-// Direction FrameArray	
+// 방향 프레임 배열
 typedef	TArray<EFFECTFRAME_ARRAY, BYTE>				DIRECTION_EFFECTFRAME_ARRAY;
 
 

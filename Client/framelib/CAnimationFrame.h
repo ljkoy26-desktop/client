@@ -1,7 +1,7 @@
 //----------------------------------------------------------------------
 // CAnimationFrame.h
 //----------------------------------------------------------------------
-// Frame이 바뀌면서 Animation이 되는 것에 대한 class
+// Frame이 바뀌면서 Animation이 되는 것에 대한 클래스
 //----------------------------------------------------------------------
 //
 // 어떤 FramePack에서의 Frame ID와 
@@ -9,7 +9,7 @@
 //
 //----------------------------------------------------------------------
 //
-// [ File I/O ]
+// [ 파일 입출력 ]
 //
 // Frame ID만 저장된다. MaxFrame은 바뀔 수 있으므로 실행 시에 값을 결정한다.
 // CurrentFrame은 늘 0부터 시작된다.
@@ -49,7 +49,7 @@ class CAnimationFrame {
 		void			NextFrame()		 		{ if (++m_CurrentFrame==m_MaxFrame) m_CurrentFrame=0; }
 
 		//--------------------------------------------------------
-		// file I/O
+		// 파일 입출력
 		//--------------------------------------------------------
 		void	SaveToFile(std::ofstream& file);
 		void	LoadFromFile(std::ifstream& file);
@@ -70,8 +70,8 @@ class CAnimationFrame {
 		TYPE_FRAMEID		m_FrameID;
 
 		// Animation Frame을 위한 정보
-		BYTE				m_CurrentFrame;	// Current Frame
-		BYTE				m_MaxFrame;		// Max Frame
+		BYTE				m_CurrentFrame;	// 현재 프레임
+		BYTE				m_MaxFrame;		// 최대 프레임
 	
 		// 출력 방식
 		BYTE				m_BltType;

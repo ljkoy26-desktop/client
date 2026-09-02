@@ -28,12 +28,12 @@ class CFramePack : public TArray<Type, TYPE_FRAMEID> {
 		~CFramePack();
 
 		//--------------------------------------------------------
-		// File I/O
+		// 파일 입출력
 		//--------------------------------------------------------
 		bool		SaveToFile(std::ofstream& packFile, std::ofstream& indexFile);
 
 	protected :
-		// Bring base class members into scope
+		// 기반 클래스 멤버를 스코프로 가져온다
 		using TArray<Type, TYPE_FRAMEID>::m_Size;
 		using TArray<Type, TYPE_FRAMEID>::m_pData;
 		using TArray<Type, TYPE_FRAMEID>::s_SIZEOF_SizeType;
@@ -48,7 +48,7 @@ class CFramePack : public TArray<Type, TYPE_FRAMEID> {
 
 //----------------------------------------------------------------------
 //
-// constructor/destructor
+// 생성자/소멸자
 //
 //----------------------------------------------------------------------
 template <class Type>
@@ -63,12 +63,12 @@ CFramePack<Type>::~CFramePack()
 
 //----------------------------------------------------------------------
 //
-// member functions
+// 멤버 함수
 //
 //----------------------------------------------------------------------
 
 //----------------------------------------------------------------------
-// Save To File
+// 파일로 저장
 //----------------------------------------------------------------------
 // CreatureFramePack File을 저장하고
 // CreatureFramePack IndexFile도 저장해야 한다.

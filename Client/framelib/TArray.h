@@ -2,7 +2,7 @@
 // TArray.h
 //----------------------------------------------------------------------
 //
-// Template Array class
+// 템플릿 배열 클래스
 //
 //----------------------------------------------------------------------
 //
@@ -33,25 +33,25 @@ class TArray {
 		~TArray();
 
 		//--------------------------------------------------------
-		// Init / Release
+		// 초기화 / 해제
 		//--------------------------------------------------------
 		void		Init(SizeType size);
 		void		Release();
 	
 
 		//--------------------------------------------------------
-		// Get Size
+		// 크기 얻기
 		//--------------------------------------------------------
 		SizeType	GetSize() const				{ return m_Size; }
 	
 		//--------------------------------------------------------
-		// File I/O
+		// 파일 입출력
 		//--------------------------------------------------------
 		bool		SaveToFile(std::ofstream& file);
 		bool		LoadFromFile(std::ifstream& file);
 
 		//--------------------------------------------------------
-		// Operator overloading
+		// 연산자 오버로딩
 		//--------------------------------------------------------
 		DataType&	operator [] (SizeType n)		{ return m_pData[n]; }
 		const DataType&	operator [] (SizeType n) const	{ return m_pData[n]; }
@@ -74,7 +74,7 @@ class TArray {
 
 //----------------------------------------------------------------------
 //
-// Initialize static data member
+// 정적 데이터 멤버 초기화
 //
 //----------------------------------------------------------------------
 template <class DataType, class SizeType>
@@ -83,7 +83,7 @@ BYTE	TArray<DataType, SizeType>::s_SIZEOF_SizeType = sizeof(SizeType);
 
 //----------------------------------------------------------------------
 //
-// constructor/destructor
+// 생성자/소멸자
 //
 //----------------------------------------------------------------------
 template <class DataType, class SizeType> 
@@ -103,15 +103,15 @@ TArray<DataType, SizeType>::~TArray()
 
 //----------------------------------------------------------------------
 //
-// member functions
+// 멤버 함수
 //
 //----------------------------------------------------------------------
 
 //----------------------------------------------------------------------
-// Init
+// 초기화
 //----------------------------------------------------------------------
-template <class DataType, class SizeType> 
-void	
+template <class DataType, class SizeType>
+void
 TArray<DataType, SizeType>::Init(SizeType size)
 {
 	// 일단 해제
@@ -124,10 +124,10 @@ TArray<DataType, SizeType>::Init(SizeType size)
 }
 
 //----------------------------------------------------------------------
-// Release
+// 해제
 //----------------------------------------------------------------------
-template <class DataType, class SizeType> 
-void	
+template <class DataType, class SizeType>
+void
 TArray<DataType, SizeType>::Release()
 {
 	if (m_pData!=NULL)
@@ -140,7 +140,7 @@ TArray<DataType, SizeType>::Release()
 }
 
 //----------------------------------------------------------------------
-// Add Array to *this
+// *this에 Array 추가
 //----------------------------------------------------------------------
 // 두 Array에 존재하는 data의 개수를 더한만큼의 
 // memory를 *this에 다시 잡고 copy~~
@@ -191,7 +191,7 @@ TArray<DataType, SizeType>::operator += (const TArray<DataType, SizeType>& array
 
 
 //----------------------------------------------------------------------
-// Save To File
+// 파일로 저장
 //----------------------------------------------------------------------
 template <class DataType, class SizeType> 
 bool
@@ -211,7 +211,7 @@ TArray<DataType, SizeType>::SaveToFile(std::ofstream& file)
 }
 
 //----------------------------------------------------------------------
-// Load From File
+// 파일에서 로드
 //----------------------------------------------------------------------
 template <class DataType, class SizeType> 
 bool
@@ -232,7 +232,7 @@ TArray<DataType, SizeType>::LoadFromFile(std::ifstream& file)
 }
 
 //----------------------------------------------------------------------
-// assign
+// 대입
 //----------------------------------------------------------------------
 template <class DataType, class SizeType> 
 void	
