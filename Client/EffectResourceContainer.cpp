@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // EffectResourceContainer.cpp
 //----------------------------------------------------------------------
 #include "Client_PCH.h"
@@ -7,7 +7,7 @@
 #include <stdio.h>
 
 //----------------------------------------------------------------------
-// Constructor/Destructor
+// 생성자/소멸자
 //----------------------------------------------------------------------
 EffectResourceContainer::EffectResourceContainer()
 	: m_loaded(false)
@@ -16,11 +16,11 @@ EffectResourceContainer::EffectResourceContainer()
 
 EffectResourceContainer::~EffectResourceContainer()
 {
-	// Resources will be automatically released (RAII)
+	// 리소스는 자동으로 해제됨 (RAII)
 }
 
 //----------------------------------------------------------------------
-// Load - Load all Effect resources
+// Load - 이펙트 리소스 전체 로드
 //----------------------------------------------------------------------
 bool EffectResourceContainer::Load(const char* basePath)
 {
@@ -31,19 +31,19 @@ bool EffectResourceContainer::Load(const char* basePath)
 
 	std::cout << "[EffectResourceContainer] Loading resources from: " << basePath << std::endl;
 
-	// 1. Load Frame Pack
+	// 1. 프레임 팩 로드
 	if (!LoadFramePacks(basePath)) {
 		std::cerr << "[EffectResourceContainer] Failed to load frame packs" << std::endl;
 		return false;
 	}
 
-	// 2. Load Sprite Pack
+	// 2. 스프라이트 팩 로드
 	if (!LoadSpritePacks(basePath)) {
 		std::cerr << "[EffectResourceContainer] Failed to load sprite packs" << std::endl;
 		return false;
 	}
 
-	// 3. Load Palette Pack
+	// 3. 팔레트 팩 로드
 	if (!LoadPalettePacks(basePath)) {
 		std::cerr << "[EffectResourceContainer] Failed to load palette packs" << std::endl;
 		return false;
@@ -55,14 +55,14 @@ bool EffectResourceContainer::Load(const char* basePath)
 }
 
 //----------------------------------------------------------------------
-// LoadFramePacks - Load frame animation packs
+// LoadFramePacks - 프레임 애니메이션 팩 로드
 //----------------------------------------------------------------------
 bool EffectResourceContainer::LoadFramePacks(const char* basePath)
 {
 	char path[256];
 	std::ifstream file;
 
-	// Normal Effect Frame Pack
+	// 일반 이펙트 프레임 팩
 	snprintf(path, sizeof(path), "%sNormalEffect.efpk", basePath);
 	file.open(path, std::ios::binary);
 	if (file.is_open()) {
@@ -74,8 +74,8 @@ bool EffectResourceContainer::LoadFramePacks(const char* basePath)
 		std::cerr << "  Warning: Failed to open " << path << std::endl;
 	}
 
-	// Alpha Effect Frame Pack
-	// Try multiple filename variants
+	// 알파 이펙트 프레임 팩
+	// 여러 파일명 변형 시도
 	bool alphaLoaded = false;
 	const char* alphaFilenames[] = {"Effect.efpk", "effect.efpk", "EffectAlpha.efpk"};
 	for (int i = 0; i < 3; i++) {
@@ -94,7 +94,7 @@ bool EffectResourceContainer::LoadFramePacks(const char* basePath)
 		std::cerr << "  Warning: Failed to open any Alpha Effect FPK" << std::endl;
 	}
 
-	// Shadow Effect Frame Pack
+	// 그림자 이펙트 프레임 팩
 	snprintf(path, sizeof(path), "%sShadowEffect.efpk", basePath);
 	file.open(path, std::ios::binary);
 	if (file.is_open()) {
@@ -106,7 +106,7 @@ bool EffectResourceContainer::LoadFramePacks(const char* basePath)
 		std::cerr << "  Warning: Failed to open " << path << std::endl;
 	}
 
-	// Screen Effect Frame Pack
+	// 화면 이펙트 프레임 팩
 	snprintf(path, sizeof(path), "%sEffectScreen.efpk", basePath);
 	file.open(path, std::ios::binary);
 	if (file.is_open()) {
@@ -122,14 +122,14 @@ bool EffectResourceContainer::LoadFramePacks(const char* basePath)
 }
 
 //----------------------------------------------------------------------
-// LoadSpritePacks - Load sprite packs
+// LoadSpritePacks - 스프라이트 팩 로드
 //----------------------------------------------------------------------
 bool EffectResourceContainer::LoadSpritePacks(const char* basePath)
 {
 	char path[256];
 	std::ifstream file;
 
-	// Normal Effect Sprite Pack
+	// 일반 이펙트 스프라이트 팩
 	snprintf(path, sizeof(path), "%sEffect.spk", basePath);
 	file.open(path, std::ios::binary);
 	if (file.is_open()) {
@@ -141,7 +141,7 @@ bool EffectResourceContainer::LoadSpritePacks(const char* basePath)
 		std::cerr << "  Warning: Failed to open " << path << std::endl;
 	}
 
-	// Alpha Effect Sprite Pack
+	// 알파 이펙트 스프라이트 팩
 	bool alphaSpkLoaded = false;
 	const char* alphaSpkFilenames[] = {"Effect.aspk", "effect.aspk"};
 	for (int i = 0; i < 2; i++) {
@@ -160,7 +160,7 @@ bool EffectResourceContainer::LoadSpritePacks(const char* basePath)
 		std::cerr << "  Warning: Failed to open any Alpha Effect SPK" << std::endl;
 	}
 
-	// Shadow Effect Sprite Pack
+	// 그림자 이펙트 스프라이트 팩
 	snprintf(path, sizeof(path), "%sEffect.sspk", basePath);
 	file.open(path, std::ios::binary);
 	if (file.is_open()) {
@@ -172,7 +172,7 @@ bool EffectResourceContainer::LoadSpritePacks(const char* basePath)
 		std::cerr << "  Warning: Failed to open " << path << std::endl;
 	}
 
-	// Screen Effect Sprite Pack
+	// 화면 이펙트 스프라이트 팩
 	snprintf(path, sizeof(path), "%sEffectScreen.spk", basePath);
 	file.open(path, std::ios::binary);
 	if (file.is_open()) {
@@ -188,14 +188,14 @@ bool EffectResourceContainer::LoadSpritePacks(const char* basePath)
 }
 
 //----------------------------------------------------------------------
-// LoadPalettePacks - Load palette packs
+// LoadPalettePacks - 팔레트 팩 로드
 //----------------------------------------------------------------------
 bool EffectResourceContainer::LoadPalettePacks(const char* basePath)
 {
 	char path[256];
 	std::ifstream file;
 
-	// Alpha Effect Palette Pack
+	// 알파 이펙트 팔레트 팩
 	bool alphaPpkLoaded = false;
 	const char* alphaPpkFilenames[] = {"Effect.ppk", "effect.ppk", "EffectAlpha.ppk"};
 	for (int i = 0; i < 3; i++) {
@@ -214,7 +214,7 @@ bool EffectResourceContainer::LoadPalettePacks(const char* basePath)
 		std::cerr << "  Warning: Failed to open any Alpha Effect PPK" << std::endl;
 	}
 
-	// Screen Effect Palette Pack
+	// 화면 이펙트 팔레트 팩
 	snprintf(path, sizeof(path), "%sEffectScreen.ppk", basePath);
 	file.open(path, std::ios::binary);
 	if (file.is_open()) {
@@ -230,7 +230,7 @@ bool EffectResourceContainer::LoadPalettePacks(const char* basePath)
 }
 
 //----------------------------------------------------------------------
-// GetFramePack - Get corresponding Frame Pack
+// GetFramePack - 해당하는 프레임 팩 반환
 //----------------------------------------------------------------------
 CEffectFramePack* EffectResourceContainer::GetFramePack(BLT_TYPE bltType)
 {
@@ -250,7 +250,7 @@ CEffectFramePack* EffectResourceContainer::GetFramePack(BLT_TYPE bltType)
 }
 
 //----------------------------------------------------------------------
-// GetEffectFrame - Safely get Effect frame (with boundary checking)
+// GetEffectFrame - 이펙트 프레임 안전 반환 (경계 검사 포함)
 //----------------------------------------------------------------------
 CEffectFrame* EffectResourceContainer::GetEffectFrame(BLT_TYPE bltType, TYPE_FRAMEID type,
 													   BYTE direction, BYTE frame)
@@ -260,19 +260,19 @@ CEffectFrame* EffectResourceContainer::GetEffectFrame(BLT_TYPE bltType, TYPE_FRA
 		return nullptr;
 	}
 
-	// Boundary check
+	// 경계 검사
 	if (type >= pack->GetSize()) {
-		// Silent failure to avoid log flooding
+		// 로그 넘침 방지를 위해 무음 실패
 		return nullptr;
 	}
 
-	// Get direction array
+	// 방향 배열 가져오기
 	auto& directionArray = (*pack)[type];
 	if (direction >= directionArray.GetSize()) {
 		return nullptr;
 	}
 
-	// Get frame array
+	// 프레임 배열 가져오기
 	auto& frameArray = directionArray[direction];
 	if (frame >= frameArray.GetSize()) {
 		return nullptr;
@@ -282,8 +282,8 @@ CEffectFrame* EffectResourceContainer::GetEffectFrame(BLT_TYPE bltType, TYPE_FRA
 }
 
 //----------------------------------------------------------------------
-// GetSprite - Safely get Sprite (with boundary checking)
-// Note: BLT_SCREEN returns CSpritePal*, others return CSprite*
+// GetSprite - 스프라이트 안전 반환 (경계 검사 포함)
+// 참고: BLT_SCREEN은 CSpritePal*를 반환하고 나머지는 CSprite*를 반환한다
 //----------------------------------------------------------------------
 void* EffectResourceContainer::GetSprite(BLT_TYPE bltType, int spriteID)
 {
@@ -307,7 +307,7 @@ void* EffectResourceContainer::GetSprite(BLT_TYPE bltType, int spriteID)
 			break;
 
 		case BLT_EFFECT:
-			// BLT_EFFECT uses Alpha Sprite, need to use GetAlphaSprite
+			// BLT_EFFECT는 알파 스프라이트를 사용하므로 GetAlphaSprite를 사용해야 한다
 			std::cerr << "[EffectResourceContainer] BLT_EFFECT should use GetAlphaSprite" << std::endl;
 			return nullptr;
 
@@ -319,7 +319,7 @@ void* EffectResourceContainer::GetSprite(BLT_TYPE bltType, int spriteID)
 }
 
 //----------------------------------------------------------------------
-// GetAlphaSprite - Get Alpha Sprite (for BLT_EFFECT)
+// GetAlphaSprite - 알파 스프라이트 반환 (BLT_EFFECT용)
 //----------------------------------------------------------------------
 CAlphaSpritePal* EffectResourceContainer::GetAlphaSprite(int spriteID)
 {
@@ -330,7 +330,7 @@ CAlphaSpritePal* EffectResourceContainer::GetAlphaSprite(int spriteID)
 }
 
 //----------------------------------------------------------------------
-// GetShadowSprite - Get Shadow Sprite (for BLT_SHADOW)
+// GetShadowSprite - 그림자 스프라이트 반환 (BLT_SHADOW용)
 //----------------------------------------------------------------------
 CShadowSprite* EffectResourceContainer::GetShadowSprite(int spriteID)
 {
@@ -341,8 +341,8 @@ CShadowSprite* EffectResourceContainer::GetShadowSprite(int spriteID)
 }
 
 //----------------------------------------------------------------------
-// GetPalette - Safely get Palette (with boundary checking)
-// Returns single MPalette pointer
+// GetPalette - 팔레트 안전 반환 (경계 검사 포함)
+// 단일 MPalette 포인터를 반환한다
 //----------------------------------------------------------------------
 MPalette* EffectResourceContainer::GetPalette(BLT_TYPE bltType, TYPE_FRAMEID type)
 {
@@ -360,7 +360,7 @@ MPalette* EffectResourceContainer::GetPalette(BLT_TYPE bltType, TYPE_FRAMEID typ
 			break;
 
 		default:
-			// BLT_NORMAL and BLT_SHADOW don't need Palette
+			// BLT_NORMAL과 BLT_SHADOW는 팔레트가 필요 없다
 			return nullptr;
 	}
 

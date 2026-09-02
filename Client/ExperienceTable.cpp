@@ -1,11 +1,11 @@
-//---------------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------------
 // ExperienceTable.cpp
 //---------------------------------------------------------------------------------
 #include "Client_PCH.h"
 #include "ExperienceTable.h"
 
 //---------------------------------------------------------------------------------
-// Global
+// 전역 변수
 //---------------------------------------------------------------------------------
 ExperienceTable* g_pExperienceTable = NULL;
 
@@ -15,7 +15,7 @@ ExperienceTable* g_pExperienceTable = NULL;
 //
 //---------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------
-// constructor / destructor
+// 생성자/소멸자
 //---------------------------------------------------------------------------------
 ExperienceTable::ExperienceTable()
 {
@@ -67,7 +67,7 @@ ExperienceTable::LoadFromFileSTR(std::ifstream& file)
 }
 
 //---------------------------------------------------------------------------------
-// Load From File DEX
+// DEX 파일에서 로드
 //---------------------------------------------------------------------------------
 void		
 ExperienceTable::LoadFromFileDEX(std::ifstream& file)
@@ -88,7 +88,7 @@ ExperienceTable::LoadFromFileDEX(std::ifstream& file)
 }
 
 //---------------------------------------------------------------------------------
-// Load From File INT
+// INT 파일에서 로드
 //---------------------------------------------------------------------------------
 void		
 ExperienceTable::LoadFromFileINT(std::ifstream& file)
@@ -109,7 +109,7 @@ ExperienceTable::LoadFromFileINT(std::ifstream& file)
 }
 
 //---------------------------------------------------------------------------------
-// Load From File Vampire
+// 뱀파이어 파일에서 로드
 //---------------------------------------------------------------------------------
 void		
 ExperienceTable::LoadFromFileVampire(std::ifstream& file)
@@ -130,7 +130,7 @@ ExperienceTable::LoadFromFileVampire(std::ifstream& file)
 }
 
 //---------------------------------------------------------------------------------
-// Load From File Ousters
+// 아우스터스 파일에서 로드
 //---------------------------------------------------------------------------------
 void		
 ExperienceTable::LoadFromFileOusters(std::ifstream& file)
@@ -151,7 +151,7 @@ ExperienceTable::LoadFromFileOusters(std::ifstream& file)
 }
 
 //---------------------------------------------------------------------------------
-// Load From File Slayer Rank
+// 슬레이어 랭크 파일에서 로드
 //---------------------------------------------------------------------------------
 void		
 ExperienceTable::LoadFromFileSlayerRank(std::ifstream& file)
@@ -172,7 +172,7 @@ ExperienceTable::LoadFromFileSlayerRank(std::ifstream& file)
 }
 
 //---------------------------------------------------------------------------------
-// Load From File Vampire Rank
+// 뱀파이어 랭크 파일에서 로드
 //---------------------------------------------------------------------------------
 void		
 ExperienceTable::LoadFromFileVampireRank(std::ifstream& file)
@@ -193,7 +193,7 @@ ExperienceTable::LoadFromFileVampireRank(std::ifstream& file)
 }
 
 //---------------------------------------------------------------------------------
-// Load From File Ousters Rank
+// 아우스터스 랭크 파일에서 로드
 //---------------------------------------------------------------------------------
 void		
 ExperienceTable::LoadFromFileOustersRank(std::ifstream& file)
@@ -214,7 +214,7 @@ ExperienceTable::LoadFromFileOustersRank(std::ifstream& file)
 }
 
 //---------------------------------------------------------------------------------
-// Load From File Ousters Rank
+// 아우스터스 랭크 파일에서 로드
 //---------------------------------------------------------------------------------
 void		
 ExperienceTable::LoadFromFilePetExp(std::ifstream& file)
@@ -255,7 +255,7 @@ ExperienceTable::LoadFromFileAdvanceMent(std::ifstream& file)
 
 
 //---------------------------------------------------------------------------------
-// Get STR Info
+// STR 정보 반환
 //---------------------------------------------------------------------------------
 const ExpInfo&		
 ExperienceTable::GetSTRInfo(int level) const
@@ -264,7 +264,7 @@ ExperienceTable::GetSTRInfo(int level) const
 }
 
 //---------------------------------------------------------------------------------
-// Get DEX Info
+// DEX 정보 반환
 //---------------------------------------------------------------------------------
 const ExpInfo&		
 ExperienceTable::GetDEXInfo(int level) const
@@ -273,7 +273,7 @@ ExperienceTable::GetDEXInfo(int level) const
 }
 
 //---------------------------------------------------------------------------------
-// Get INT Info
+// INT 정보 반환
 //---------------------------------------------------------------------------------
 const ExpInfo&		
 ExperienceTable::GetINTInfo(int level) const
@@ -282,7 +282,7 @@ ExperienceTable::GetINTInfo(int level) const
 }
 
 //---------------------------------------------------------------------------------
-// Get Vampire Info
+// 뱀파이어 정보 반환
 //---------------------------------------------------------------------------------
 const ExpInfo&		
 ExperienceTable::GetVampireInfo(int level) const
@@ -291,7 +291,7 @@ ExperienceTable::GetVampireInfo(int level) const
 }
 
 //---------------------------------------------------------------------------------
-// Get Ousters Info
+// 아우스터스 정보 반환
 //---------------------------------------------------------------------------------
 const ExpInfo&		
 ExperienceTable::GetOustersInfo(int level) const
@@ -300,7 +300,7 @@ ExperienceTable::GetOustersInfo(int level) const
 }
 
 //---------------------------------------------------------------------------------
-// Get SlayerRank Info
+// 슬레이어 랭크 정보 반환
 //---------------------------------------------------------------------------------
 const ExpInfo&		
 ExperienceTable::GetRankInfo(int level, Race_t race) const
@@ -324,7 +324,7 @@ ExperienceTable::GetRankInfo(int level, Race_t race) const
 }
 
 //---------------------------------------------------------------------------------
-// Get SlayerRank Info
+// 슬레이어 랭크 정보 반환
 //---------------------------------------------------------------------------------
 const ExpInfo&		
 ExperienceTable::GetSlayerRankInfo(int level) const
@@ -333,7 +333,7 @@ ExperienceTable::GetSlayerRankInfo(int level) const
 }
 
 //---------------------------------------------------------------------------------
-// Get VampireRank Info
+// 뱀파이어 랭크 정보 반환
 //---------------------------------------------------------------------------------
 const ExpInfo&		
 ExperienceTable::GetVampireRankInfo(int level) const
@@ -342,7 +342,7 @@ ExperienceTable::GetVampireRankInfo(int level) const
 }
 
 //---------------------------------------------------------------------------------
-// Get OustersRank Info
+// 아우스터스 랭크 정보 반환
 //---------------------------------------------------------------------------------
 const ExpInfo&		
 ExperienceTable::GetOustersRankInfo(int level) const
@@ -351,7 +351,7 @@ ExperienceTable::GetOustersRankInfo(int level) const
 }
 
 //---------------------------------------------------------------------------------
-// Get OustersRank Info
+// 아우스터스 랭크 정보 반환
 //---------------------------------------------------------------------------------
 const ExpInfo&		
 ExperienceTable::GetPetExp(int level) const
@@ -361,7 +361,7 @@ ExperienceTable::GetPetExp(int level) const
 
 
 //---------------------------------------------------------------------------------
-// Get advanceMent Info
+// 어드밴스먼트 정보 반환
 //---------------------------------------------------------------------------------
 const ExpInfo&		
 ExperienceTable::GetAdvanceMent(int level) const

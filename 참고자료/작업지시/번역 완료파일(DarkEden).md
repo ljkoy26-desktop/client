@@ -61,6 +61,21 @@
 
 ---
 
+---
+
+## 3차 번역 완료 (2026-09-02)
+
+아래 파일들은 영어 주석을 한글로 번역 완료 (vcxproj 줄 468~471 대상):
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/EffectResourceContainer.cpp` | 생성자/소멸자, Load/LoadFramePacks/LoadSpritePacks/LoadPalettePacks/GetFramePack/GetEffectFrame/GetSprite/GetAlphaSprite/GetShadowSprite/GetPalette 섹션 헤더 및 인라인 주석 |
+| `Client/ExpInfo.cpp` | (번역 불필요 - 영어 설명 주석 없음) |
+| `Client/ExperienceTable.cpp` | 전역 변수, 생성자/소멸자, Load From File 시리즈, Get Info 시리즈 섹션 헤더 |
+| `Client/FameInfo.cpp` | (번역 불필요 - 영어 설명 주석 없음) |
+
+---
+
 ## 다음 번역 대상 (vcxproj 기준 이후 파일들)
 
-vcxproj 줄 468 이후 파일들은 미번역 상태.
+vcxproj 줄 472 이후 파일들은 미번역 상태.
