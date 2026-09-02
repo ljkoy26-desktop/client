@@ -76,6 +76,22 @@
 
 ---
 
+---
+
+## 4차 번역 완료 (2026-09-02)
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/GAME1024.cpp` | 파일 헤더, 생성자/소멸자 섹션 헤더 |
+| `Client/GAME1024.h` | 파일 헤더 |
+| `Client/GameFunctions.cpp` | 파일 헤더, 전역 변수, 각 함수 섹션 헤더, 스텁 구현 주석 전체 |
+| `Client/GameHelpers.cpp` | 파일 헤더, 전방 선언, 열거형, 함수 그룹 섹션 헤더 전체 |
+| `Client/GameHelpers.h` | 파일 헤더, 전방 선언, 열거형, 함수 그룹 섹션 헤더 전체 |
+| `Client/GameInit.cpp` | 포함 파일, MMSystem/macOS/g_bEnable3DHAL 설명, SDL 관련 주석, 로깅/프로파일러/초기화 섹션 헤더, 스레드 관련 주석 |
+| `Client/GameInitInfo.cpp` | 포함 파일, Platform.h 중요 주석, MMSystem 주석, 초기화 함수 섹션 헤더, 쉐도우 복사본/디버그 주석 |
+
+---
+
 ## 다음 번역 대상 (vcxproj 기준 이후 파일들)
 
 vcxproj 줄 472 이후 파일들은 미번역 상태.

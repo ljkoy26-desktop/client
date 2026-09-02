@@ -1,5 +1,5 @@
-//----------------------------------------------------------------------
-// GameFunctions.cpp - macOS implementation of missing game functions
+﻿//----------------------------------------------------------------------
+// GameFunctions.cpp - 누락된 게임 함수의 macOS 구현
 //----------------------------------------------------------------------
 #include "../Client_PCH.h"
 #include <stdio.h>
@@ -8,30 +8,30 @@
 #include <stdarg.h>
 
 //----------------------------------------------------------------------
-// Global Variables
+// 전역 변수
 //----------------------------------------------------------------------
 static bool g_bGoreLevel = false;
 static int g_nWeather = 0;
 static int g_nWeatherLevel = 0;
 
 //----------------------------------------------------------------------
-// Player Initialization
+// 플레이어 초기화
 //----------------------------------------------------------------------
 void InitPlayer(int race, int sex, int zoneID)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Pet Info
+// 펫 정보
 //----------------------------------------------------------------------
 void SetPetInfo(void* pPetInfo, unsigned int ownerID)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Weather
+// 날씨
 //----------------------------------------------------------------------
 void SetWeather(int weather, int level)
 {
@@ -40,131 +40,131 @@ void SetWeather(int weather, int level)
 }
 
 //----------------------------------------------------------------------
-// Gear Info
+// 장비 정보
 //----------------------------------------------------------------------
 void SetGearInfo(void* pGearInfo, void* pBibleInfo)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Extra Info
+// 추가 정보
 //----------------------------------------------------------------------
 void SetExtraInfo(void* pExtraInfo)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Effect Info
+// 이펙트 정보
 //----------------------------------------------------------------------
 void SetEffectInfo(void* pCreature, void* pEffectInfo, int effectID)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Inventory Info
+// 인벤토리 정보
 //----------------------------------------------------------------------
 void SetInventoryInfo(void* pInventoryInfo)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// PC Slayer Info
+// PC 슬레이어 정보
 //----------------------------------------------------------------------
 void SetPCSlayerInfo(void* pInfo)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// PC Vampire Info
+// PC 뱀파이어 정보
 //----------------------------------------------------------------------
 void SetPCVampireInfo(void* pVampInfo)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// PC Ousters Info
+// PC 아우스터스 정보
 //----------------------------------------------------------------------
 void SetPCOustersInfo(void* pOustInfo)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Load Creature
+// 크리처 로드
 //----------------------------------------------------------------------
 void LoadCreature(int creatureID)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Load Zone
+// 존 로드
 //----------------------------------------------------------------------
 void LoadZone(int zoneID)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Load Zone Info
+// 존 정보 로드
 //----------------------------------------------------------------------
 void LoadZoneInfo(int zoneID)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Move Zone
+// 존 이동
 //----------------------------------------------------------------------
 void MoveZone(int zoneID)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Add Item to Zone
+// 존에 아이템 추가
 //----------------------------------------------------------------------
 void AddItemToZone(void* pItem, int zoneID)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Fake Creature
+// 페이크 크리처
 //----------------------------------------------------------------------
 void NewFakeCreature(void* pCreature, int X, int Y)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Portal
+// 포털
 //----------------------------------------------------------------------
 void ComeFromPortal(void* pCreature)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void MoveIntoPortal(void* pCreature)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void AddVampirePortal(int zoneID, const char* pName, unsigned short X, unsigned short Y,
                       unsigned long ownerID, int clanID, unsigned short portalID,
                       unsigned short portalType, bool bVisible)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Gore Level
+// 고어 레벨
 //----------------------------------------------------------------------
 void SetGoreLevel(bool bEnable)
 {
@@ -172,107 +172,107 @@ void SetGoreLevel(bool bEnable)
 }
 
 //----------------------------------------------------------------------
-// Fade Effect
+// 페이드 이펙트
 //----------------------------------------------------------------------
 void SetFadeStart(char flag, char R, char G, char B, char R2, char G2, unsigned short duration)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Lightning
+// 번개
 //----------------------------------------------------------------------
 void SetLightning(unsigned long color)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Dragon Tornado (note: spelling "Torando" is intentional from original code)
+// 드래곤 토네이도 (원본 코드의 오타 "Torando"는 의도적)
 //----------------------------------------------------------------------
 void SetDragonTorando(int type, unsigned long color, int count, int delay)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// GDR Effect
+// GDR 이펙트
 //----------------------------------------------------------------------
 void Add_GDR_Effect(int effectID, bool bEnable)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Wild Wolf
+// 야생 늑대
 //----------------------------------------------------------------------
 void Add_Wild_Wolf(void* pOwner, void* pTarget, bool bAdd)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Rocket Launcher (note: spelling "Runcher" is intentional)
+// 로켓 런처 (원본 코드의 오타 "Runcher"는 의도적)
 //----------------------------------------------------------------------
 void Add_RocketRuncher(void* pOwner, void* pTarget)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Skills
+// 스킬
 //----------------------------------------------------------------------
 void SkillIllendue(void* pOwner, void* pTarget, int level)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void SkillBlazeWalk(void* pOwner, void* pTarget, int count, unsigned char dir)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void SkillShadowDancing(void* pOwner, void* pTarget, int level)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void SkillCrossCounter(void* pOwner, void* pTarget, int level)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void SkillToSector(unsigned short skillType, unsigned short X, unsigned short Y,
                    int count, unsigned long delay, void* pResult)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void AddOustersElemental(void* pCreature, int elementalType, int count)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void Add_Race_SlayerMonster(void* pMonster)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void Add_Race_OustersMonster(void* pMonster)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Status Modify
+// 상태 수정
 //----------------------------------------------------------------------
 void AffectModifyInfo(void* pStatus, void* pModifyInfo)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Check Activate
+// 활성화 확인
 //----------------------------------------------------------------------
 bool CheckActivate(int skillID)
 {
@@ -280,11 +280,11 @@ bool CheckActivate(int skillID)
 }
 
 //----------------------------------------------------------------------
-// Action Result
+// 액션 결과
 //----------------------------------------------------------------------
 void CreateActionResultNode(void* pCreature, int type, unsigned char count)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void ExecuteActionInfoFromMainNode(unsigned short skillType, unsigned short X, unsigned short Y,
@@ -294,11 +294,11 @@ void ExecuteActionInfoFromMainNode(unsigned short skillType, unsigned short X, u
                                     void* pResult, bool bContinue,
                                     int continueX, int continueY)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Bomb/Mine Action
+// 폭탄/지뢰 액션
 //----------------------------------------------------------------------
 void* GetBombActionInfo(int bombID)
 {
@@ -311,7 +311,7 @@ void* GetMineActionInfo(int mineID)
 }
 
 //----------------------------------------------------------------------
-// Creature Type
+// 크리처 타입
 //----------------------------------------------------------------------
 int GetVampireCreatureType(int level, bool bFemale, int rank)
 {
@@ -324,7 +324,7 @@ int GetOustersCreatureType(int level)
 }
 
 //----------------------------------------------------------------------
-// Direction
+// 방향
 //----------------------------------------------------------------------
 unsigned char GetNextTileByDirection(int currentX, int currentY, unsigned char dir)
 {
@@ -337,7 +337,7 @@ int GetDirectionToPosition(int fromX, int fromY, int toX, int toY)
 }
 
 //----------------------------------------------------------------------
-// Item Position
+// 아이템 위치
 //----------------------------------------------------------------------
 bool GetMakeItemFitPosition(void* pItem, int itemClass, int maxWidth, POINT& pt)
 {
@@ -345,7 +345,7 @@ bool GetMakeItemFitPosition(void* pItem, int itemClass, int maxWidth, POINT& pt)
 }
 
 //----------------------------------------------------------------------
-// Check Item for Skill Icon
+// 스킬 아이콘용 아이템 확인
 //----------------------------------------------------------------------
 bool CheckItemForSkillIcon(const void* pItem)
 {
@@ -353,7 +353,7 @@ bool CheckItemForSkillIcon(const void* pItem)
 }
 
 //----------------------------------------------------------------------
-// Conversion Functions
+// 변환 함수
 //----------------------------------------------------------------------
 int ConvertAlignment(int alignment)
 {
@@ -376,7 +376,7 @@ int ConvertMillisecondToFrame(unsigned long ms)
 }
 
 //----------------------------------------------------------------------
-// Time Functions
+// 시간 함수
 //----------------------------------------------------------------------
 bool CheckTime()
 {
@@ -394,221 +394,221 @@ bool CheckMacScreenMode()
 }
 
 //----------------------------------------------------------------------
-// Addon Functions
+// 어드온 함수
 //----------------------------------------------------------------------
 void SetAddonToSlayer(void* pWear, const void* pInfo)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void SetAddonToSlayer(void* pWear, int addonID)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void SetAddonToOusters(void* pWear, const void* pInfo)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Blood Bible
+// 블러드 바이블
 //----------------------------------------------------------------------
 void SetBloodBibleSlot(void* pInfo)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Flag
+// 플래그
 //----------------------------------------------------------------------
 void SetFlagTo(bool bFlag)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Server Group Name
+// 서버 그룹명
 //----------------------------------------------------------------------
 void SetServerGroupName(const char* pName)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Mode
+// 모드
 //----------------------------------------------------------------------
-// SetMode() is implemented in GameMain.cpp - this stub removed to avoid duplicate symbol
+// SetMode()는 GameMain.cpp에 구현됨 - 중복 심볼 방지를 위해 스텁 제거
 // void SetMode(int mode)
 // {
-//     // Stub implementation
+//     // 스텁 구현
 // }
 
 //----------------------------------------------------------------------
-// Packet Item Table
+// 패킷 아이템 테이블
 //----------------------------------------------------------------------
 void InitPacketItemTable()
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void ReleasePacketItemTable()
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Release Useless Creature SPK
+// 불필요한 크리처 SPK 해제
 //----------------------------------------------------------------------
 void ReleaseUselessCreatureSPKExcept(void* list)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Save Last Selected Character
+// 마지막 선택 캐릭터 저장
 //----------------------------------------------------------------------
 void SaveLastSelectedCharacter(int index)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Use Item
+// 아이템 사용
 //----------------------------------------------------------------------
 void UseItemOK()
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Use Skill Card
+// 스킬 카드 사용
 //----------------------------------------------------------------------
 void UseSkillCardOK(unsigned char cardSlot)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Play Music
+// 음악 재생
 //----------------------------------------------------------------------
 void PlayMusicCurrentZone()
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Play Sound
+// 사운드 재생
 //----------------------------------------------------------------------
 void PlaySound(unsigned short soundID, bool bLoop, int volume, int pan)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void PlaySound(unsigned short soundID)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void PlaySoundForce(unsigned short soundID)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void StopSound(unsigned short soundID)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Error Popup
+// 오류 팝업
 //----------------------------------------------------------------------
 void PopupErrorMessage(ErrorID errorID)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Release Game Object
+// 게임 오브젝트 해제
 //----------------------------------------------------------------------
 void ReleaseGameObject()
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Update Disconnected
+// 연결 끊김 업데이트
 //----------------------------------------------------------------------
 void UpdateDisconnected()
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Bug/Crash Report
+// 버그/크래시 보고
 //----------------------------------------------------------------------
 void SendBugReport(const char* pFormat, ...)
 {
     va_list args;
     va_start(args, pFormat);
-    // Stub: would normally send to server
+    // 스텁: 실제로는 서버에 전송
     va_end(args);
 }
 
 void SendCrashReport()
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Netmarble Clipboard
+// 넷마블 클립보드
 //----------------------------------------------------------------------
 bool GetNMClipData(char* pBuffer, unsigned int bufferSize, const char* pURL, bool bUseHTML)
 {
     return false;
 }
 
-// GameGuard anti-cheat integration removed (SDL2) - nProtect stub no longer needed
+// GameGuard 안티치트 연동 제거됨(SDL2) - nProtect 스텁 더 이상 불필요
 #ifdef PLATFORM_MACOS
 extern int _NPGAMEMON_SUCCESS;
 #endif
 
 void SendUserIDToGameMonA(const char* pUserID)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void Send_nProtect_Auth(unsigned long authCode)
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Screen Shot
+// 스크린샷
 //----------------------------------------------------------------------
 void MakeScreenShot()
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 //----------------------------------------------------------------------
-// Mac Address
+// 맥 주소
 //----------------------------------------------------------------------
 bool GetMacAddressFromNetBIOS(unsigned char* pMac)
 {
-    // Stub: return false on macOS
+    // 스텁: macOS에서 false 반환
     return false;
 }
 
 //----------------------------------------------------------------------
-// Update Socket
+// 소켓 업데이트
 //----------------------------------------------------------------------
 void UpdateSocketInput()
 {
-    // Stub implementation
+    // 스텁 구현
 }
 
 void UpdateSocketOutput()
 {
-    // Stub implementation
+    // 스텁 구현
 }

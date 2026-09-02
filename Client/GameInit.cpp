@@ -1,19 +1,19 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 // GameInit.cpp
 //---------------------------------------------------------------------------
 // 게임 관련 부분(주로 시스템 쪽)의 초기화 / Release
 //---------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-// Include files
+// 포함 파일
 //-----------------------------------------------------------------------------
 #include "Client_PCH.h"
 #ifdef PLATFORM_WINDOWS
-// <MMSystem.h> not included: no real MM_ symbols are used in this file, and
-// including it conflicts with basic/Platform.h's timeGetTime()/GetTickCount()
-// macros (see basic/Platform.h).
+// <MMSystem.h> 미포함: 이 파일에서 실제 MM_ 심볼이 사용되지 않으며,
+// basic/Platform.h의 timeGetTime()/GetTickCount() 매크로와 충돌한다
+// (basic/Platform.h 참고).
 #else
-// macOS: BSD sockets headers for network functions
+// macOS: 네트워크 함수용 BSD 소켓 헤더
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netdb.h>
@@ -107,8 +107,8 @@ extern RECT g_GameRect;
 // ToT SafeDelete 도 없고..ToT 2003.5.11 by sonee
 
 extern int					g_Dimension ;
-// g_bEnable3DHAL was originally defined in VS_UI_Title.cpp when _LIB is not defined
-// Now that VS_UI is built with _LIB defined, we need to define it here
+// g_bEnable3DHAL은 원래 _LIB 미정의 시 VS_UI_Title.cpp에 정의되었다
+// VS_UI가 _LIB 정의 상태로 빌드되므로 여기에 정의해야 한다
 BOOL g_bEnable3DHAL = FALSE;
 
 //----------------------------------------------------------------------
@@ -619,8 +619,8 @@ InitVolume()
 	// Debug Message
 	DEBUG_ADD("[ InitGame ]  Volume");
 
-	// Volume control is now handled by SDL_mixer
-	// No Windows mixer support needed
+	// 볼륨 제어는 이제 SDL_mixer가 담당
+	// Windows 믹서 지원 불필요
 
 	return TRUE;
 }
@@ -677,10 +677,9 @@ InitSurface()
 		delete g_pBack;
 	}
 	g_pBack = new CSpriteSurface;
-	// g_pBack is the final present-to-screen buffer (see SDLMain.cpp's
-	// g_pBack->Blt(&origin, g_pLast, NULL) frame flip). It must match
-	// g_pLast's size (g_GameRect), not a hardcoded 800x600, or any mode
-	// larger than 800x600 (e.g. 1024x768) gets cropped on screen.
+	// g_pBack는 화면에 최종 출력되는 버퍼 (SDLMain.cpp의 g_pBack->Blt(&origin, g_pLast, NULL) 프레임 플립 참고).
+	// g_pLast의 크기(g_GameRect)와 일치해야 하며, 800x600 고정값이 아니어야 한다.
+	// 800x600보다 큰 모드(예: 1024x768)에서 화면이 잘리지 않도록 하기 위함.
 	g_pBack->Init(g_GameRect.right, g_GameRect.bottom);
 
 	//--------------------------------------------------------
@@ -726,7 +725,7 @@ InitSurface()
 			delete g_pLast;
 		}
 		g_pLast = new CSpriteSurface;
-		// SDL2: Unified offscreen surface initialization (always system memory)
+		// SDL2: 통합 오프스크린 서피스 초기화 (항상 시스템 메모리)
 		g_pLast->InitOffsurface(g_GameRect.right, g_GameRect.bottom);
 		g_pLast->SetTransparency( 0 );
 		g_pLast->FillSurface( CSDLGraphics::Color(30,30,30) );
@@ -748,16 +747,13 @@ InitSurface()
 	//--------------------------------------------------------	
 	DEBUG_ADD("[ InitGame ]  Surface - InitializeGL");
 
-	// InitializeGL() (basic/GL_import.h) - see 참고자료/작업필요stub.md.
-	// __declspec(dllimport) against gl.lib, a VC6-era prebuilt x86-only
-	// library with no source anywhere in this project (same as CImm's
-	// IFC22.lib and CAVI's MCI driver) - can't link on x64. The rest of
-	// GL_import's interface (rectangle()/GL_RGB()/Convert24RGBto16()/
-	// Get_ColorkeyColor()) already has no live callers in the current
-	// build (rectangle() has local SDL-era replacements in
-	// GameHelpers.cpp/RenderingFunctions.cpp; Convert24RGBto16()'s only
-	// caller, VS_UI/WinMain.cpp, is excluded on Windows), so this call is
-	// safe to drop rather than needing a stub function to keep around.
+	// InitializeGL() (basic/GL_import.h) - 참고자료/작업필요stub.md 참고.
+	// gl.lib(VC6 시대 x86 전용 프리빌드 라이브러리, 프로젝트 내 소스 없음,
+	// CImm의 IFC22.lib 및 CAVI의 MCI 드라이버와 동일)에 대한 __declspec(dllimport)로
+	// x64에서 링크 불가. GL_import 인터페이스의 나머지 부분은 현재 빌드에서 실제
+	// 호출자가 없으므로(rectangle()은 SDL 대체 구현 존재, Convert24RGBto16()의
+	// 유일한 호출자 VS_UI/WinMain.cpp는 Windows에서 제외됨)
+	// 스텁 함수 없이 제거해도 안전하다.
 
 	DEBUG_ADD("[ InitGame ]  Surface - Initialize Font");
 	DEBUG_ADD("[ InitGame ]  Surface - UI");
@@ -980,8 +976,8 @@ InitSound()
 		//-----------------------------------------------------------
 		// RAM 체크해서.. 적당하게 잡아준다.
 		//-----------------------------------------------------------
-		// SDL2: Unified - use default sound part count for all platforms
-		// DirectDraw memory status not available in SDL2
+		// SDL2: 통합 - 모든 플랫폼에서 기본 사운드 파트 수 사용
+		// SDL2에서는 DirectDraw 메모리 상태 사용 불가
 		g_pClientConfig->MAX_SOUNDPART = 100;
 
 		// ( 전체 개수, 메모리 허용 개수 )
@@ -1097,7 +1093,7 @@ InitMusic()
 #else
 	if( g_SDLAudio.IsInit() )
 	{
-		// SDL backend stub - OGG streaming not implemented
+		// SDL 백엔드 스텁 - OGG 스트리밍 미구현
 		if( g_pSoundBufferForOGG == NULL )
 		{
 			// g_pSoundBufferForOGG = new CDirectSoundBuffer(g_hWnd, SOUND_STEREO, SOUND_44K, SOUND_16BIT);
@@ -1208,7 +1204,7 @@ InitDraw()
 		{
 			DEBUG_ADD("[ InitGame ]  Init 3D");
 
-			// CDirect3D::Init() removed (SDL2) - SDL2 always uses hardware acceleration
+			// CDirect3D::Init() 제거됨(SDL2) - SDL2는 항상 하드웨어 가속 사용
 			g_bEnable3DHAL = TRUE;
 			g_bHALAvailable = true;
 
@@ -1269,7 +1265,7 @@ InitDraw()
 #ifndef PLATFORM_WINDOWS
 	//--------------------------------------------------------
 	//
-	// SDL Backend - DirectX not available
+	// SDL 백엔드 - DirectX 사용 불가
 	//
 	//--------------------------------------------------------
 	DEBUG_ADD("[ InitGame ]  SDL backend - no DirectX initialization");
@@ -1320,7 +1316,7 @@ InitDraw()
 }
 
 //-----------------------------------------------------------------------------
-// LoadingThreadProc
+// 로딩 스레드 프로시저
 //-----------------------------------------------------------------------------
 LONG
 LoadingThreadProc(LPVOID lpParameter)
@@ -1334,7 +1330,7 @@ LoadingThreadProc(LPVOID lpParameter)
 }
 
 //-----------------------------------------------------------------------------
-// Init Thread
+// 스레드 초기화
 //-----------------------------------------------------------------------------
 BOOL
 InitThread()
@@ -1450,15 +1446,15 @@ BOOL
 InitGame()
 {
 	//---------------------------------------------------------------------
-	// Initialize logging system first (before everything else)
+	// 로깅 시스템 먼저 초기화 (다른 모든 것보다 먼저)
 	//---------------------------------------------------------------------
 	log_init();
 
-	// Always enable console output and INFO level logging
-	// This ensures DEBUG_ADD macros and panic messages are visible
+	// 항상 콘솔 출력 및 INFO 레벨 로깅 활성화
+	// DEBUG_ADD 매크로 및 패닉 메시지가 보이도록 보장
 	log_set_console_output(true);
 
-// Conditional compilation: Remove DEBUG logs in Release builds
+// 조건부 컴파일: Release 빌드에서 DEBUG 로그 제거
 #ifdef _DEBUG
 	log_set_level(LOG_LEVEL_DEBUG);
 #else
@@ -1469,7 +1465,7 @@ InitGame()
 	g_pFileDef->load("Data/Info/FileDef.inf");
 
 	//---------------------------------------------------------------------
-	// Profiler
+	// 프로파일러
 	//---------------------------------------------------------------------
 	#ifdef OUTPUT_DEBUG
 		if (g_pProfiler!=NULL)
@@ -1483,17 +1479,17 @@ InitGame()
 	#endif
 
 	//---------------------------------------------------------------------
-	// MathTable
+	// 수학 테이블
 	//---------------------------------------------------------------------
 	MathTable::FCreateSines();
 
 	//---------------------------------------------------------------------
-	// Effect Orbit Table
+	// 이펙트 궤도 테이블
 	//---------------------------------------------------------------------
 	MAttachOrbitEffect::InitOrbitPosition();
 
 	//---------------------------------------------------------------------
-	// Init 
+	// 초기화
 	//---------------------------------------------------------------------
 	if (g_pGameStringTable==NULL)
 	{
@@ -1631,11 +1627,11 @@ InitGame()
 	DEBUG_ADD("---------------[   InitGame   ]---------------");
 
 	//----------------------------------------------------------------------
-	// Socket initialization (mingw socket on Windows, BSD sockets on Unix)
+	// 소켓 초기화 (Windows에서는 mingw 소켓, Unix에서는 BSD 소켓)
 	//----------------------------------------------------------------------
 	DEBUG_ADD("[ InitGame ]  Socket - Socket initialized");
 
-	// Note: mingw socket (POSIX-compatible) doesn't need WSAStartup like WinSock
+	// 참고: mingw 소켓(POSIX 호환)은 WinSock과 달리 WSAStartup이 필요 없다
 
 //	#ifdef _DEBUG
 //		bool bMerge = false;
@@ -1665,8 +1661,8 @@ InitGame()
 
 	// InitThread() // 2001.8.20 주석처리 - 로딩 Thread사용 안함
 
-	// GameObject must be initialized before Surface
-	// because gC_vs_ui.Init() in InitSurface() depends on g_pMoneyManager
+	// InitSurface()의 gC_vs_ui.Init()이 g_pMoneyManager에 의존하므로
+	// Surface보다 먼저 GameObject를 초기화해야 한다
 	if (!InitGameObject()) return false;
 	if (!InitSurface()) return false;
 
@@ -2647,7 +2643,7 @@ void ReleaseAllObjects()
 	CSDLGraphics::ReleaseAll();
 
 	//---------------------------------------------------------------------
-	// Profiler
+	// 프로파일러
 	//---------------------------------------------------------------------
 	DEBUG_ADD("[Release] Profiler");
 	SAFE_DELETE( g_pProfiler );	

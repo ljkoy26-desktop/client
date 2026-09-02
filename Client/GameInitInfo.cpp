@@ -1,15 +1,15 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 // GameInitInfo.cpp
 //---------------------------------------------------------------------------
 // Information Table에 대한 초기화를 한다.
 //---------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-// Include files
+// 포함 파일
 //-----------------------------------------------------------------------------
 
-// IMPORTANT: Include Platform.h BEFORE PCH to get correct CRITICAL_SECTION size
-// This prevents incomplete type issues with ProfileManager
+// 중요: 올바른 CRITICAL_SECTION 크기를 위해 PCH보다 먼저 Platform.h를 포함
+// ProfileManager의 불완전 타입 문제 방지
 #ifdef PLATFORM_WINDOWS
 	#include <Windows.h>
 #else
@@ -17,9 +17,9 @@
 #endif
 
 #include "Client_PCH.h"
-// <MMSystem.h> not included: no real MM_ symbols are used in this file, and
-// including it conflicts with basic/Platform.h's timeGetTime()/GetTickCount()
-// macros (see basic/Platform.h).
+// <MMSystem.h> 미포함: 이 파일에서 실제 MM_ 심볼이 사용되지 않으며,
+// basic/Platform.h의 timeGetTime()/GetTickCount() 매크로와 충돌한다
+// (basic/Platform.h 참고).
 #include "DebugLog.h"
 #include <algorithm>
 //#include "MFileDef.h"
@@ -66,7 +66,7 @@
 
 
 //-----------------------------------------------------------------------------
-// Init Config
+// 클라이언트 설정 초기화
 //-----------------------------------------------------------------------------
 BOOL
 InitClientConfig()
@@ -106,7 +106,7 @@ InitClientConfig()
 }
 
 //-----------------------------------------------------------------------------
-// Init Config
+// 사용자 옵션 초기화
 //-----------------------------------------------------------------------------
 BOOL
 InitUserOption()
@@ -147,7 +147,7 @@ InitUserOption()
 }
 
 //-----------------------------------------------------------------------------
-// Init Infomation
+// 정보 테이블 초기화
 //-----------------------------------------------------------------------------
 BOOL		
 InitInfomation()
@@ -275,7 +275,7 @@ InitInfomation()
 	{
 		g_pEffectSpriteTypeTable = new EFFECTSPRITETYPE_TABLE;
 #ifdef __SANITIZE_ADDRESS__
-		// Update shadow copies for corruption detection
+		// 손상 감지를 위해 쉐도우 복사본 업데이트
 		extern EFFECTSPRITETYPE_TABLE* g_pEffectSpriteTypeTable_shadow;
 		extern EFFECTSPRITETYPE_TABLE::TYPE* g_pEffectSpriteTypeTable_m_pTypeInfo_shadow;
 		g_pEffectSpriteTypeTable_shadow = g_pEffectSpriteTypeTable;
@@ -307,7 +307,7 @@ InitInfomation()
 	{
 		g_pEffectSpriteTypeTable = new EFFECTSPRITETYPE_TABLE;
 #ifdef __SANITIZE_ADDRESS__
-		// Update shadow copies for corruption detection
+		// 손상 감지를 위해 쉐도우 복사본 업데이트
 		extern EFFECTSPRITETYPE_TABLE* g_pEffectSpriteTypeTable_shadow;
 		extern EFFECTSPRITETYPE_TABLE::TYPE* g_pEffectSpriteTypeTable_m_pTypeInfo_shadow;
 		g_pEffectSpriteTypeTable_shadow = g_pEffectSpriteTypeTable;
@@ -836,7 +836,7 @@ InitInfomation()
 	(*g_pEffectSpriteTypeTable).LoadFromFile(effectSpriteTypeTable2);
 	effectSpriteTypeTable2.close();
 
-	// DEBUG: Verify table loaded correctly
+	// 디버그: 테이블 정상 로드 확인
 	int tableSize = (*g_pEffectSpriteTypeTable).GetSize();
 	LOG_INFO("[DEBUG] EffectSpriteType table loaded: m_Size=%d", tableSize);
 
@@ -846,7 +846,7 @@ InitInfomation()
 		return FALSE;
 	}
 
-	// DEBUG: Print some sample entries
+	// 디버그: 샘플 항목 출력
 	LOG_INFO("[DEBUG] First few entries:");
 	int sampleCount = (tableSize < 10) ? tableSize : 10;
 	for (int i = 0; i < sampleCount; i++) {
@@ -856,9 +856,9 @@ InitInfomation()
 	}
 
 #ifdef __SANITIZE_ADDRESS__
-	// CRITICAL FIX: Update shadow copies after LoadFromFile reallocates m_pTypeInfo
-	// LoadFromFile calls Init() which reallocates the internal array
-	// Without updating shadows, corruption detection gives false positives
+	// 중요 수정: LoadFromFile이 m_pTypeInfo를 재할당한 후 쉐도우 복사본 업데이트
+	// LoadFromFile이 Init()를 호출하여 내부 배열을 재할당한다
+	// 쉐도우를 업데이트하지 않으면 손상 감지에서 거짓 양성이 발생한다
 	extern EFFECTSPRITETYPE_TABLE* g_pEffectSpriteTypeTable_shadow;
 	extern EFFECTSPRITETYPE_TABLE::TYPE* g_pEffectSpriteTypeTable_m_pTypeInfo_shadow;
 	g_pEffectSpriteTypeTable_shadow = g_pEffectSpriteTypeTable;

@@ -1,20 +1,20 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // GameHelpers.cpp
 //
-// Stub implementations for game helper functions
-// These are placeholder implementations for macOS/Linux compatibility
+// 게임 헬퍼 함수 스텁 구현
+// macOS/Linux 호환성을 위한 플레이스홀더 구현
 //----------------------------------------------------------------------
 
 #include "Client_PCH.h"
 
-// Forward declarations for incomplete types
+// 불완전 타입 전방 선언
 class MCreature;
 class MItem;
 class MStatus;
 class MActionResult;
 template<typename T> class COrderedList;
 
-// Packet info forward declarations
+// 패킷 정보 전방 선언
 struct PetInfo;
 struct GearInfo;
 struct ExtraInfo;
@@ -31,7 +31,7 @@ struct GCAddMonster;
 struct GCAddItemToZone;
 struct PrintInfo;
 
-// Client mode enum
+// 클라이언트 모드 열거형
 enum CLIENT_MODE {
 	CLIENT_MODE_WINDOW,
 	CLIENT_MODE_FULLSCREEN,
@@ -39,22 +39,22 @@ enum CLIENT_MODE {
 	CLIENT_MODE_FULLSCREEN_1024
 };
 
-// Note: DWORD, WORD, BYTE, etc. are defined in Platform.h
-// No need to redefine them here
+// 참고: DWORD, WORD, BYTE 등은 Platform.h에 정의되어 있다
+// 여기서 재정의할 필요 없음
 
-// Forward declarations only - types are defined in Platform.h
+// 전방 선언만 - 타입은 Platform.h에 정의됨
 struct Rect;
 
-// MCreatureWear forward declaration
+// MCreatureWear 전방 선언
 class MCreatureWear;
 
-// Item class enum placeholder
+// 아이템 클래스 열거형 플레이스홀더
 enum ITEM_CLASS { ITEM_CLASS_MAX = 0 };
 
-// _NPGAMEMON_SUCCESS is defined in nProtectStub.cpp
+// _NPGAMEMON_SUCCESS는 nProtectStub.cpp에 정의되어 있다
 extern int _NPGAMEMON_SUCCESS;
 
-// Pet and Info functions
+// 펫 및 정보 함수
 void SetPetInfo(PetInfo* pInfo, unsigned int flag)
 {
 	(void)pInfo; (void)flag;
@@ -85,7 +85,7 @@ void SetEffectInfo(MCreature* pCreature, EffectInfo* pInfo, int count)
 	(void)pCreature; (void)pInfo; (void)count;
 }
 
-// Player info functions
+// 플레이어 정보 함수
 void SetPCSlayerInfo(PCSlayerInfo2* pInfo)
 {
 	(void)pInfo;
@@ -101,7 +101,7 @@ void SetPCVampireInfo(PCVampireInfo2* pInfo)
 	(void)pInfo;
 }
 
-// Addon functions
+// 어드온 함수
 void SetAddonToSlayer(MCreatureWear* pWear, int value)
 {
 	(void)pWear; (void)value;
@@ -122,7 +122,7 @@ void AddOustersElemental(MCreature* pCreature, int type, int value)
 	(void)pCreature; (void)value; (void)type;
 }
 
-// Creature functions
+// 크리처 함수
 void NewFakeCreature(MCreature* pCreature, int type, int flag)
 {
 	(void)pCreature; (void)type; (void)flag;
@@ -163,7 +163,7 @@ void AddItemToZone(GCAddItemToZone* pPacket, int layer)
 	(void)pPacket; (void)layer;
 }
 
-// Skill functions
+// 스킬 함수
 void SkillToSector(WORD type, WORD x, WORD y, int dir, DWORD flag, MActionResult* pResult)
 {
 	(void)type; (void)x; (void)y; (void)dir; (void)flag; (void)pResult;
@@ -189,7 +189,7 @@ void SkillBlazeWalk(MCreature* pCreature, MCreature* pTarget, int type, BYTE fla
 	(void)pCreature; (void)pTarget; (void)type; (void)flag;
 }
 
-// Action and result functions
+// 액션 및 결과 함수
 void ExecuteActionInfoFromMainNode(WORD type1, WORD type2, WORD type3, int val1, int val2,
 	UINT flag, WORD x1, WORD y1, int dir, DWORD flag2, MActionResult* pResult,
 	bool bFlag, int param1, int param2)
@@ -204,7 +204,7 @@ void CreateActionResultNode(MCreature* pCreature, int type, BYTE flag)
 	(void)pCreature; (void)type; (void)flag;
 }
 
-// Status functions
+// 상태 함수
 void AffectModifyInfo(MStatus* pStatus, ModifyInfo* pInfo)
 {
 	(void)pStatus; (void)pInfo;
@@ -215,7 +215,7 @@ void ReleaseUselessCreatureSPKExcept(const COrderedList<int>& list)
 	(void)list;
 }
 
-// Utility functions
+// 유틸리티 함수
 void CheckItemForSkillIcon(const MItem* pItem)
 {
 	(void)pItem;
@@ -227,8 +227,8 @@ bool GetMakeItemFitPosition(MItem* pItem, ITEM_CLASS cls, int type, tagPOINT& po
 	return false;
 }
 
-// Mode and display functions
-// SetMode() is implemented in GameMain.cpp - this stub removed to avoid duplicate symbol
+// 모드 및 표시 함수
+// SetMode()는 GameMain.cpp에 구현됨 - 중복 심볼 방지를 위해 스텁 제거
 // void SetMode(CLIENT_MODE mode)
 // {
 // 	(void)mode;
@@ -239,7 +239,7 @@ void SetFadeStart(char r, char g, char b, BYTE r2, BYTE g2, BYTE b2, WORD speed)
 	(void)r; (void)g; (void)b; (void)r2; (void)g2; (void)b2; (void)speed;
 }
 
-// Print functions
+// 출력 함수
 void g_Print(int x, int y, const char* str, PrintInfo* pInfo)
 {
 	(void)x; (void)y; (void)str; (void)pInfo;
@@ -260,10 +260,10 @@ void g_PrintColorStrShadow(int x, int y, const char* str, PrintInfo& info, DWORD
 	(void)x; (void)y; (void)str; (void)info; (void)color1; (void)color2;
 }
 
-// g_BasicException is defined in BasicException.cpp
-// g_SetNewHandler is defined in BasicException.cpp
+// g_BasicException은 BasicException.cpp에 정의되어 있다
+// g_SetNewHandler는 BasicException.cpp에 정의되어 있다
 
-// Drawing functions
+// 그리기 함수
 void FillRect(S_SURFACEINFO* pInfo, Rect* pRect, int color)
 {
 	(void)pInfo; (void)pRect; (void)color;
