@@ -87,9 +87,9 @@ APPEND_PATCH_NODE::Append(const char* orgFilename) const
 }
 
 //-----------------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //-----------------------------------------------------------------------------
-void		
+void
 APPEND_PATCH_NODE::SaveToFile(std::ofstream& file)
 {
 	appendFilename.SaveToFile( file );
@@ -101,9 +101,9 @@ APPEND_PATCH_NODE::SaveToFile(std::ofstream& file)
 }
 
 //-----------------------------------------------------------------------------
-// Load From File
+// 파일에서 로드
 //-----------------------------------------------------------------------------
-void		
+void
 APPEND_PATCH_NODE::LoadFromFile(std::ifstream& file)
 {
 	appendFilename.LoadFromFile( file );
@@ -135,7 +135,7 @@ AppendPatch::~AppendPatch()
 }
 
 //-----------------------------------------------------------------------------
-// Release
+// 해제
 //-----------------------------------------------------------------------------
 void
 AppendPatch::Release()
@@ -159,7 +159,7 @@ AppendPatch::Release()
 }
 
 //-----------------------------------------------------------------------------
-// Set OriginalInfo
+// 원본 정보 설정
 //-----------------------------------------------------------------------------
 void		
 AppendPatch::SetOriginalInfo(const char* orgFilename, long orgFilesize, WORD orgSpkSize)
@@ -171,9 +171,9 @@ AppendPatch::SetOriginalInfo(const char* orgFilename, long orgFilesize, WORD org
 }
 
 //-----------------------------------------------------------------------------
-// Set FinalInfo
+// 최종 정보 설정
 //-----------------------------------------------------------------------------
-void		
+void
 AppendPatch::SetFinalInfo(long finalFilesize, WORD finalSpkSize)
 {
 	m_finalFilesize = finalFilesize;
@@ -181,7 +181,7 @@ AppendPatch::SetFinalInfo(long finalFilesize, WORD finalSpkSize)
 }
 
 //-----------------------------------------------------------------------------
-// Set FinalInfo
+// 최종 정보 설정 (파일에서 읽기)
 //-----------------------------------------------------------------------------
 // currentFilename에서 정보를 읽어들인다.
 //-----------------------------------------------------------------------------
@@ -208,9 +208,9 @@ AppendPatch::SetFinalInfo(const char* currentFilename)
 }
 
 //-----------------------------------------------------------------------------
-// Add AppendInfo
+// 추가 정보 등록
 //-----------------------------------------------------------------------------
-void		
+void
 AppendPatch::AddAppendInfo(const char* appendFilename, long appendFilesize, WORD appSpkSize)
 {
 	long previousFilesize;
@@ -248,7 +248,7 @@ AppendPatch::AddAppendInfo(const char* appendFilename, long appendFilesize, WORD
 }
 
 //-----------------------------------------------------------------------------
-// Add AppendInfo
+// 추가 정보 등록 (파일 경로 기반)
 //-----------------------------------------------------------------------------
 // currentFilename은 현재 화일의 위치이다.
 // appendPatch를 할 위치는 m_orgFilename을 참고해야 한다.
@@ -339,7 +339,7 @@ AppendPatch::AddAppendInfo(const char* currentFilename)
 }
 
 //-----------------------------------------------------------------------------
-// Execute Patch
+// 패치 실행
 //-----------------------------------------------------------------------------
 bool
 AppendPatch::ExecutePatch() const
@@ -362,7 +362,7 @@ AppendPatch::ExecutePatch() const
 }
 
 //-----------------------------------------------------------------------------
-// Check FinalInfo
+// 최종 정보 확인
 //-----------------------------------------------------------------------------
 bool
 AppendPatch::CheckFinalInfo() const
@@ -394,7 +394,7 @@ AppendPatch::CheckFinalInfo() const
 }
 
 //-----------------------------------------------------------------------------
-// Calculate FinalInfo 
+// 최종 정보 계산 및 검증
 //-----------------------------------------------------------------------------
 // 계산상으로 맞는지 체크한다.
 //-----------------------------------------------------------------------------
@@ -410,7 +410,7 @@ AppendPatch::CalculateFinalInfo() const
 	{
 		APPEND_PATCH_NODE* pNode = *iNode;
 
-		totalFilesize += pNode->appendFilesize - 2;	// -2 for spkNum
+		totalFilesize += pNode->appendFilesize - 2;	// 스프라이트 개수 2바이트 제외
 		totalSpkSize += pNode->appSpkSize;
 		
 		iNode++;
@@ -426,9 +426,9 @@ AppendPatch::CalculateFinalInfo() const
 }
 
 //-----------------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //-----------------------------------------------------------------------------
-void		
+void
 AppendPatch::SaveToFile(std::ofstream& file)
 {	
 	m_orgFilename.SaveToFile( file );
@@ -453,9 +453,9 @@ AppendPatch::SaveToFile(std::ofstream& file)
 }
 
 //-----------------------------------------------------------------------------
-// Load From File
+// 파일에서 로드
 //-----------------------------------------------------------------------------
-void		
+void
 AppendPatch::LoadFromFile(std::ifstream& file)
 {
 	Release();
@@ -481,7 +481,7 @@ AppendPatch::LoadFromFile(std::ifstream& file)
 
 
 //-----------------------------------------------------------------------------
-// GetAllSize
+// 전체 크기 반환
 //-----------------------------------------------------------------------------
 int
 AppendPatchTable::GetAllSize() const

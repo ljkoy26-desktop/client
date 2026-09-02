@@ -11,7 +11,7 @@
 
 #define __LOGGING__
 
-// Platform-specific includes
+// 플랫폼별 포함 파일
 #ifdef PLATFORM_WINDOWS
 	#include <io.h>
 	#include <fcntl.h>
@@ -20,7 +20,7 @@
 	#include <fcntl.h>
 #endif
 
-// Platform-specific I/O functions
+// 플랫폼별 I/O 함수
 #ifdef PLATFORM_WINDOWS
 	#define PLATFORM_WRITE(fd, buf, len)	_write(fd, buf, len)
 	#define PLATFORM_OPEN	_open
@@ -33,7 +33,7 @@
 	#define PLATFORM_LSEEK	lseek
 #endif
 
-// Platform-specific file flags
+// 플랫폼별 파일 플래그
 #ifndef PLATFORM_WINDOWS
 	#define _O_WRONLY    O_WRONLY
 	#define _O_TEXT      0

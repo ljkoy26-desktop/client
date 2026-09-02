@@ -271,17 +271,16 @@
 ////	g_SDLAudio.SetVolumeLimit(volume);
 //}
 
-/* __USE_MP3__ (SoundSetting.h) is permanently disabled, so every caller of
-   CMP3 (GameInit.cpp/GameMain.cpp/GameUI.cpp/UIMessageManager.cpp) already
-   skips the code paths that would actually construct/Open/Play a real CMP3
-   instance - only null-guarded Stop()/SetVolume() calls on a permanently-NULL
-   g_pMP3 remain reachable. So this class's real Win32 MCI implementation
-   below is unreachable code, and building it needs the real <MMSystem.h>
-   this project's basic/Platform.h deliberately never includes (it
-   macro-redirects timeGetTime()/GetTickCount() to platform_get_ticks()
-   instead - including the real header here conflicts with that, see
-   Platform.h). Build against the already-working stub in the #else branch
-   on all platforms, including Windows, until __USE_MP3__ is ever enabled. */
+/* __USE_MP3__(SoundSetting.h)는 영구적으로 비활성화되어 있으므로,
+   CMP3를 호출하는 모든 곳(GameInit.cpp/GameMain.cpp/GameUI.cpp/UIMessageManager.cpp)은
+   실제 CMP3 인스턴스를 생성/Open/Play하는 코드 경로를 이미 건너뛴다.
+   영구적으로 NULL인 g_pMP3에 대한 null 검사가 있는 Stop()/SetVolume() 호출만
+   실제로 도달 가능하다. 따라서 아래의 실제 Win32 MCI 구현은 도달 불가능한 코드이며,
+   빌드하려면 실제 <MMSystem.h>가 필요하지만 이 프로젝트의 basic/Platform.h는
+   의도적으로 포함하지 않는다(timeGetTime()/GetTickCount()를 platform_get_ticks()로
+   매크로 리다이렉트하므로 실제 헤더를 포함하면 충돌 발생 - Platform.h 참조).
+   __USE_MP3__가 활성화될 때까지 Windows를 포함한 모든 플랫폼에서
+   이미 동작 중인 #else 브랜치의 스텁으로 빌드한다. */
 #if defined(PLATFORM_WINDOWS) && defined(__USE_MP3__)
 
 CMP3::CMP3(LPCSTR lpcszFileName)
@@ -627,8 +626,8 @@ void CMP3::SetVolume(DWORD dwVolume)
 	return;
 }
 #else
-// Non-Windows platforms: Stub implementation
-// MP3 playback not implemented - would need SDL_mixer or similar
+// 비-Windows 플랫폼: 스텁 구현
+// MP3 재생 미구현 - SDL_mixer 등이 필요함
 
 CMP3::CMP3(LPCSTR lpcszFileName)
 {

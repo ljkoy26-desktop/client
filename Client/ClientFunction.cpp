@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 // ClientFunction.cpp
 //---------------------------------------------------------------------------
 #include "Client_PCH.h"
@@ -6,7 +6,7 @@
 #include "SkillDef.h"
 #include "MItemOptionTable.h"
 
-// Forward declarations (common to all builds)
+// 전방 선언 (모든 빌드에서 공통)
 extern RECT g_GameRect;
 
 #ifdef __GAME_CLIENT__
@@ -20,8 +20,8 @@ extern RECT g_GameRect;
 	#include "UIFunction.h"
 	#include "DebugInfo.h"
 	#include "MPlayer.h"
-	#include "SpriteLib/SpriteLibBackend.h"  // For spritectl API
-	#include "../VS_UI/src/header/VS_UI_Base.h"  // For gpC_base
+	#include "SpriteLib/SpriteLibBackend.h"  // spritectl API 사용을 위해
+	#include "../VS_UI/src/header/VS_UI_Base.h"  // gpC_base 사용을 위해
 	
 	extern MScreenEffectManager* g_pInventoryEffectManager;
 
@@ -70,13 +70,13 @@ InitSound()
 }
 
 //-----------------------------------------------------------------------------
-// UnInit Sound
+// 사운드 정리
 //-----------------------------------------------------------------------------
 void
 UnInitSound()
 {
 	//-------------------------------------
-	// UnInit DirectSound
+	// DirectSound 정리
 	//-------------------------------------
 	g_pSoundManager->Release();	
 
@@ -84,7 +84,7 @@ UnInitSound()
 }
 
 	//---------------------------------------------------------------------------
-	// PlaySound
+	// 사운드 재생
 	//---------------------------------------------------------------------------
 	// Client가 아닌 경우에 사용..
 	//---------------------------------------------------------------------------	
@@ -160,7 +160,7 @@ UnInitSound()
 	}
 #else
 	//---------------------------------------------------------------------------
-	// Get Whisper ID
+	// 귓속말 ID 반환
 	//---------------------------------------------------------------------------
 	const char*
 	GetWhisperID()
@@ -198,7 +198,7 @@ DrawInventoryEffect()
 		// 현재 inventory의 첫 좌표			
 		POINT point = UI_GetInventoryPosition();
 		
-		// TODO: [SDL_BACKEND] DrawInventoryEffect not implemented for SDL backend
+		// TODO: [SDL_BACKEND] DrawInventoryEffect가 SDL 백엔드에서 미구현
 		// g_pTopView->DrawInventoryEffect(&point);
 
 	#endif
@@ -468,25 +468,25 @@ DrawAlphaBox(RECT* pRect, BYTE r, BYTE g, BYTE b, BYTE alpha)
 			gpC_base->m_p_DDSurface_back->Unlock();
 		}
 #else
-		// SDL backend implementation for __GAME_CLIENT__
-		// Need to use spritectl API directly since Lock() is a stub in SDL backend
+		// __GAME_CLIENT__용 SDL 백엔드 구현
+		// SDL 백엔드에서 Lock()이 스텁이므로 spritectl API를 직접 사용
 
-		// Get the SDL surface
+		// SDL 서피스 가져오기
 		spritectl_surface_t sdl_surface = (spritectl_surface_t)gpC_base->m_p_DDSurface_back->GetBackendSurface();
 		if (!sdl_surface || sdl_surface == SPRITECTL_INVALID_SURFACE) {
-			return;  // Invalid surface
+			return;  // 유효하지 않은 서피스
 		}
 
-		// Lock the surface to get pixel access
+		// 픽셀 접근을 위해 서피스 잠금
 		spritectl_surface_info_t surface_info;
 		if (spritectl_lock_surface(sdl_surface, &surface_info) != 0) {
-			return;  // Failed to lock
+			return;  // 잠금 실패
 		}
 
-		// Check if color is black (0,0,0) -> use gamma correction like Windows version
+		// 색상이 검정(0,0,0)이면 Windows 버전처럼 감마 보정 사용
 		WORD color = CSDLGraphics::Color(r, g, b);
 
-		// Calculate clipping
+		// 클리핑 계산
 		int startX = (pRect->left > 0) ? pRect->left : 0;
 		int endX = (pRect->right < surface_info.width) ? pRect->right : surface_info.width;
 		int startY = (pRect->top > 0) ? pRect->top : 0;
@@ -494,11 +494,11 @@ DrawAlphaBox(RECT* pRect, BYTE r, BYTE g, BYTE b, BYTE alpha)
 
 		if (color == 0)
 		{
-			// Black color: use gamma correction (darken existing pixels)
-			// Same algorithm as Windows GammaBox565
+			// 검정색: 감마 보정으로 기존 픽셀을 어둡게 처리
+			// Windows GammaBox565와 동일한 알고리즘
 
-			// Gamma correction: multiply by reverseAlpha then shift right by 5
-			// This darkens the area
+			// 감마 보정: reverseAlpha를 곱한 뒤 5비트 오른쪽 시프트
+			// 해당 영역을 어둡게 만듦
 			for (int y = startY; y < endY; y++)
 			{
 				WORD* pDest = (WORD*)((BYTE*)surface_info.pixels + y * surface_info.pitch) + startX;
@@ -506,19 +506,19 @@ DrawAlphaBox(RECT* pRect, BYTE r, BYTE g, BYTE b, BYTE alpha)
 				{
 					WORD pixel = *pDest;
 
-					// RGB565 format: RRRR RGGG GGGB BBBB
-					// Apply gamma correction separately to each channel
+					// RGB565 형식: RRRR RGGG GGGB BBBB
+					// 각 채널에 개별적으로 감마 보정 적용
 					WORD r = (pixel >> 11) & 0x1F;
 					WORD g = (pixel >> 5) & 0x3F;
 					WORD b = pixel & 0x1F;
 
-					// Multiply by reverseAlpha and shift right by 5
-					// This is equivalent to: value = value * reverseAlpha / 32
+					// reverseAlpha를 곱하고 5비트 오른쪽 시프트
+					// 이는 value = value * reverseAlpha / 32와 동일
 					r = (r * reverseAlpha) >> 5;
 					g = (g * reverseAlpha) >> 5;
 					b = (b * reverseAlpha) >> 5;
 
-					// Clamp and recombine
+					// 범위 제한 및 채널 재조합
 					if (r > 31) r = 31;
 					if (g > 63) g = 63;
 					if (b > 31) b = 31;
@@ -529,27 +529,27 @@ DrawAlphaBox(RECT* pRect, BYTE r, BYTE g, BYTE b, BYTE alpha)
 		}
 		else
 		{
-			// Non-black color: use alpha blending
+			// 비검정색: 알파 블렌딩 사용
 			BYTE r565 = (color >> 11) & 0x1F;  // 5-bit red
 			BYTE g565 = (color >> 5) & 0x3F;   // 6-bit green
 			BYTE b565 = color & 0x1F;          // 5-bit blue
 
-			// Convert alpha from 5-bit (0-31) to 8-bit (0-255)
+			// 알파값을 5비트(0-31)에서 8비트(0-255)로 변환
 			BYTE alpha8 = (31 - reverseAlpha) * 255 / 31;
 
-			// Draw alpha-blended rectangle
+			// 알파 블렌딩된 사각형 그리기
 			for (int y = startY; y < endY; y++)
 			{
 				WORD* pDest = (WORD*)((BYTE*)surface_info.pixels + y * surface_info.pitch) + startX;
 				for (int x = startX; x < endX; x++)
 				{
-					// Get destination pixel
+					// 대상 픽셀 가져오기
 					WORD destPixel = *pDest;
 					BYTE destR = (destPixel >> 11) & 0x1F;
 					BYTE destG = (destPixel >> 5) & 0x3F;
 					BYTE destB = destPixel & 0x1F;
 
-					// Alpha blend: src * alpha + dest * (1 - alpha)
+					// 알파 블렌딩: src * alpha + dest * (1 - alpha)
 					BYTE srcR = r565;
 					BYTE srcG = g565;
 					BYTE srcB = b565;
@@ -558,7 +558,7 @@ DrawAlphaBox(RECT* pRect, BYTE r, BYTE g, BYTE b, BYTE alpha)
 					BYTE resultG = (srcG * alpha8 + destG * (255 - alpha8)) / 255;
 					BYTE resultB = (srcB * alpha8 + destB * (255 - alpha8)) / 255;
 
-					// Clamp to valid range
+					// 유효 범위로 제한
 					if (resultR > 31) resultR = 31;
 					if (resultG > 63) resultG = 63;
 					if (resultB > 31) resultB = 31;

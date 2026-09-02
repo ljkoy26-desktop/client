@@ -11,9 +11,9 @@
 //-----------------------------------------------------------------------------
 #ifdef PLATFORM_WINDOWS
 #include <Windows.h>
-// <MMSystem.h> not included: this file only uses timeGetTime()/GetTickCount(),
-// which basic/Platform.h already routes through platform_get_ticks(); including
-// the real header here conflicts with that macro (see basic/Platform.h).
+// <MMSystem.h> 미포함: 이 파일은 timeGetTime()/GetTickCount()만 사용하며,
+// basic/Platform.h에서 이미 platform_get_ticks()로 라우팅하고 있다.
+// 실제 헤더를 포함하면 해당 매크로와 충돌 발생(basic/Platform.h 참조).
 #else
 #include "../../basic/Platform.h"
 #endif
@@ -41,7 +41,7 @@ extern BOOL g_MyFull;
 extern RECT g_GameRect;
 extern int	g_TitleSpriteAlpha;
 
-// Global
+// 전역 변수
 CWaitUIUpdate*	g_pCWaitUIUpdate = NULL;
 
 
@@ -55,7 +55,7 @@ extern DWORD g_double_click_time;
 #endif
 
 //-----------------------------------------------------------------------------
-// Init
+// 초기화
 //-----------------------------------------------------------------------------
 void
 CWaitUIUpdate::Init()
@@ -69,7 +69,7 @@ CWaitUIUpdate::Init()
 	// text input 처리 (SDL2 only)
 	dxlib_input_set_textinput_callback(SDLTextInputEvent);
 	dxlib_input_set_textediting_callback(SDLTextEditingEvent);
-	dxlib_input_start_text();  // Enable SDL text input
+	dxlib_input_start_text();  // SDL 텍스트 입력 활성화
 	printf("DEBUG: SDL text input enabled, callback set to %p\n", (void*)SDLTextInputEvent);
 	fflush(stdout);
 }
@@ -82,12 +82,12 @@ CWaitUIUpdate::DXKeyboardEvent(CSDLInput::E_KEYBOARD_EVENT event, DWORD key)
 {
 		if (event==CSDLInput::KEYDOWN)
 		{
-			// Convert DIK scan codes to VK virtual key codes for control keys
-			// These keys need WM_KEYDOWN messages for text editing to work
+			// 제어키에 대해 DIK 스캔 코드를 VK 가상 키 코드로 변환
+			// 텍스트 편집이 동작하려면 이 키들은 WM_KEYDOWN 메시지가 필요함
 			UINT vk_key = 0;
 			bool is_control_key = false;
 
-			// DIK constants that might not be defined in all build configurations
+			// 일부 빌드 설정에서 정의되지 않을 수 있는 DIK 상수
 			enum {
 				DIK_CONST_BACK = 0x0E,
 				DIK_CONST_DELETE = 0xD3,
@@ -173,8 +173,8 @@ void CWaitUIUpdate::SDLTextInputEvent(const char* text, int* window_coords)
 {
 	static int debug_count = 0;
 
-	// Send WM_TEXTINPUT with the full UTF-8 text
-	// The LineEditor will handle UTF-8 to UTF-32 conversion internally
+	// 전체 UTF-8 텍스트와 함께 WM_TEXTINPUT 전송
+	// LineEditor 내부에서 UTF-8→UTF-32 변환을 처리함
 	if (text == NULL || text[0] == '\0') {
 		return;
 	}
@@ -184,7 +184,7 @@ void CWaitUIUpdate::SDLTextInputEvent(const char* text, int* window_coords)
 //		debug_count++;
 //	}
 
-	// Send WM_TEXTINPUT message with text pointer as extra parameter
+	// 텍스트 포인터를 추가 파라미터로 WM_TEXTINPUT 메시지 전송
 	gC_vs_ui.KeyboardControl(WM_TEXTINPUT, 0, (long)text);
 }
 
@@ -196,16 +196,16 @@ void CWaitUIUpdate::SDLTextEditingEvent(const char* text, int start, int length,
 {
 	static int debug_count = 0;
 
-	// Send WM_TEXTEDITING for IME composition
+	// IME 조합을 위해 WM_TEXTEDITING 전송
 	if (debug_count < 10) {
 		printf("DEBUG SDLTextEditingEvent: text='%s', start=%d, length=%d, coords=[%d,%d]\n",
 		       text ? text : "(null)", start, length, window_coords[0], window_coords[1]);
 		debug_count++;
 	}
 
-	// Send WM_TEXTEDITING message with start and length parameters
-	// Note: The actual composition text would need to be passed separately
-	// For now, we just send the start and length information
+	// start 및 length 파라미터와 함께 WM_TEXTEDITING 메시지 전송
+	// 참고: 실제 조합 텍스트는 별도로 전달해야 함
+	// 현재는 start와 length 정보만 전송
 	gC_vs_ui.KeyboardControl(WM_TEXTEDITING, start, length);
 }
 
@@ -312,8 +312,8 @@ CWaitUIUpdate::Update()
 		//------------------------------------------
 		// Input
 		//------------------------------------------
-		// Always call UpdateInput and ProcessInput for all modes (including main menu)
-		// SDL2 backend needs to process events every frame
+		// 메인 메뉴 포함 모든 모드에서 UpdateInput/ProcessInput 항상 호출
+		// SDL2 백엔드는 매 프레임 이벤트 처리가 필요함
 		UpdateInput();
 		ProcessInput();
 

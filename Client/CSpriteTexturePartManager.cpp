@@ -2,7 +2,7 @@
 // CSpriteTexturePartManager.cpp
 //----------------------------------------------------------------------
 #include "Client_PCH.h"
-// DX3D.h and CDirect3D.h removed (SDL2) - Direct3D has been replaced with SDL2
+// DX3D.h 및 CDirect3D.h 제거됨(SDL2) - Direct3D가 SDL2로 대체됨
 #include "CFileIndexTable.h"
 #include "CSpriteTexturePartManager.h"
 
@@ -18,7 +18,7 @@
 
 //----------------------------------------------------------------------
 //
-// contructor/destructor
+// 생성자/소멸자
 //
 //----------------------------------------------------------------------
 //CSpriteTexturePartManager::CSpriteTexturePartManager(CAlphaSpritePack* pSPK, WORD partSize)
@@ -43,7 +43,7 @@ CSpriteTexturePartManager::~CSpriteTexturePartManager()
 
 //----------------------------------------------------------------------
 //
-// member functions
+// 멤버 함수
 //
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------

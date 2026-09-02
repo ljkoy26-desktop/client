@@ -2,14 +2,14 @@
 
 	CGHandlersStub.cpp
 
-	Stub implementations for CG (Client to Game) packet handlers.
-	These are needed because the actual handler implementations are server-side.
+	CG(클라이언트→게임) 패킷 핸들러의 스텁 구현.
+	실제 핸들러 구현은 서버 측에 있으므로 이 스텁이 필요하다.
 
 -----------------------------------------------------------------------------*/
 
 #include "Client_PCH.h"
 
-// Include packet headers to get handler class declarations
+// 핸들러 클래스 선언을 위한 패킷 헤더 포함
 #include "Packet/Cpackets/CGBuyStoreItem.h"
 #include "Packet/Cpackets/CGConnectSetKey.h"
 #include "Packet/Cpackets/CGDisplayItem.h"
@@ -25,7 +25,7 @@
 #include "Packet/Cpackets/CGUndisplayItem.h"
 #include "Packet/Cpackets/CGWithdrawPet.h"
 
-// Stub implementations for store-related handlers
+// 상점 관련 핸들러 스텁 구현
 void CGBuyStoreItemHandler::execute(CGBuyStoreItem* pPacket, Player* pPlayer) throw(ProtocolException, Error) {}
 void CGConnectSetKeyHandler::execute(CGConnectSetKey* pPacket, Player* pPlayer) throw(ProtocolException, Error) {}
 void CGDisplayItemHandler::execute(CGDisplayItem* pPacket, Player* pPlayer) throw(ProtocolException, Error) {}

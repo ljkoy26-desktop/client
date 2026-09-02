@@ -135,7 +135,7 @@ BOOL APICheck::CheckApi()
 }
 
 #else
-// Non-Windows platforms: WinSock/API check not applicable
+// 비-Windows 플랫폼: WinSock/API 검사 해당 없음
 #include <cstring>
 
 BOOL APICheck::GetWsAddr()
@@ -150,7 +150,7 @@ BOOL APICheck::CheckApi()
 
 void APICheck::init()
 {
-	// Empty on non-Windows
+	// 비-Windows에서는 빈 구현
 }
 
 #endif

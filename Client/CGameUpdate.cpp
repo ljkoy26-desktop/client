@@ -13,9 +13,9 @@
 //-----------------------------------------------------------------------------
 #ifdef PLATFORM_WINDOWS
 #include <Windows.h>
-// <MMSystem.h> not included: this file only uses timeGetTime()/GetTickCount(),
-// which basic/Platform.h already routes through platform_get_ticks(); including
-// the real header here conflicts with that macro (see basic/Platform.h).
+// <MMSystem.h> 미포함: 이 파일은 timeGetTime()/GetTickCount()만 사용하며,
+// basic/Platform.h에서 이미 platform_get_ticks()로 라우팅하고 있다.
+// 실제 헤더를 포함하면 해당 매크로와 충돌 발생(basic/Platform.h 참조).
 #else
 #include "../../basic/Platform.h"
 #endif
@@ -51,7 +51,7 @@
 #include "COGGSTREAM.H"
 #include "SystemAvailabilities.h"
 #include "MWarManager.H"
-// EXECryptor and ThemidaSDK includes removed (SDL2) - Copy protection no longer needed
+// EXECryptor 및 ThemidaSDK 포함 제거됨(SDL2) - 복사 방지 기능 더 이상 불필요
 #include "packet/Cpackets/CGVerifyTime.h"
 
 #ifdef OUTPUT_DEBUG
@@ -76,7 +76,7 @@
 	int gtx_dest = 2;
 #endif
 
-// Global
+// 전역 변수
 CGameUpdate*		g_pCGameUpdate = NULL;
 
 bool g_bPreviousMove = false;

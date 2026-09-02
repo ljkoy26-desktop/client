@@ -1,7 +1,7 @@
 ﻿#include "Client_PCH.h"
 #define __NPROTECT__
-// EXECryptor include removed (SDL2) - Copy protection no longer needed
-/* add by sonic 2006.9.14 start 增加对WPE屏蔽*/
+// EXECryptor 포함 제거됨(SDL2) - 복사 방지 기능 더 이상 불필요
+/* add by sonic 2006.9.14 start WPE 차단 기능 추가 */
 #include "APICheck.h"
 APICheck _APICheck;
 /* ***************************************** */
@@ -41,7 +41,7 @@ APICheck _APICheck;
 
 //
 //-----------------------------------------------------------------------------
-// Include files
+// 포함 파일
 //-----------------------------------------------------------------------------
 #ifdef PLATFORM_WINDOWS
 #include <Windows.h>
@@ -85,7 +85,7 @@ APICheck _APICheck;
 #include "Packet/Gpackets/GCSystemMessage.h"
 #endif
 
-// REMOVED: nProtect anti-cheat code (SDL migration - no longer needed)
+// 제거됨: nProtect 안티치트 코드(SDL 마이그레이션 - 더 이상 불필요)
 
 //yckou
 #include "DebugKit.h"
@@ -120,10 +120,10 @@ int  g_nGameVersion = 0;
 CMessageStringTable g_MessageStringTable;
 #endif
 //-----------------------------------------------------------------------------
-// Global
+// 전역 변수
 //-----------------------------------------------------------------------------
 
-// REMOVED: nProtect anti-cheat code (SDL migration - no longer needed)
+// 제거됨: nProtect 안티치트 코드(SDL 마이그레이션 - 더 이상 불필요)
 HWND				g_hWnd;
 HINSTANCE			g_hInstance;
 int					g_x=400;
@@ -148,10 +148,10 @@ int					g_FrameRate			= 0;
 bool				g_bGoodFPS			= true;
 const int			g_FrameGood			= 15;
 
-// Execute Program --> bActiveApp
-// minimize | anotherWnd click--> !ActiveGame
-BOOL				g_bActiveApp			= FALSE; // Is application active?
-BOOL				g_bActiveGame			= FALSE; // Is Game Active?
+// 프로그램 실행 --> bActiveApp
+// 최소화 | 다른 창 클릭 --> !ActiveGame
+BOOL				g_bActiveApp			= FALSE; // 애플리케이션 활성 상태?
+BOOL				g_bActiveGame			= FALSE; // 게임 활성 상태?
 BOOL				g_bNeedUpdate			= FALSE; // update해야되나?
 
 DWORD				g_double_click_time = 0;
@@ -220,7 +220,7 @@ BYTE g_macAddress[6];
 extern void CheckMacScreenMode();
 extern BOOL GetMacAddressFromSock();
 extern BOOL InitDebugInfo();
-// add by Sonic 2006.9.26 检测1024 * 768版本全局变量
+// add by Sonic 2006.9.26 1024x768 버전 전역 변수
 BOOL g_MyFull=TRUE;
 RECT g_GameRect={799,599,800,600};
 LONG	g_SECTOR_WIDTH           =16 ;
@@ -242,7 +242,7 @@ LONG	g_TILE_X_HALF = 24;
 LONG	g_TILE_Y_HALF = 12;
 // end
 //-----------------------------------------------------------------------------
-// define function
+// 매크로 함수 정의
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 // addFile을 읽어서 originalFile의 끝에 붙인다.
@@ -267,7 +267,7 @@ LONG	g_TILE_Y_HALF = 12;
 				}										\
 			}											\
 		}
-//随机字符串
+// 무작위 문자열 생성
 void get_rand_str(char s[],int number);
 void get_rand_str(char s[],int number)
 {
@@ -361,7 +361,7 @@ ParsingRealServer(const char* pCommandLine, int Dimention, REALSERVER_INFO &info
 } 
 //-----------------------------------------------------------------------------
 // Name: InitFail()
-// Desc: This function is called if an initialization function fails
+// Desc: 초기화 함수 실패 시 호출되는 함수
 //-----------------------------------------------------------------------------
 HRESULT InitFail(LPCTSTR szError,...)
 {
@@ -809,7 +809,7 @@ CheckDXVersion()
  
 //-----------------------------------------------------------------------------
 // Name: WindowProc()
-// Desc: The Main Window Procedure
+// Desc: 메인 윈도우 프로시저
 //-----------------------------------------------------------------------------
 long FAR PASCAL WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
@@ -817,7 +817,7 @@ long FAR PASCAL WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam
 
     switch (message)
     {
-// REMOVED: nProtect anti-cheat code (SDL migration - no longer needed)
+// 제거됨: nProtect 안티치트 코드(SDL 마이그레이션 - 더 이상 불필요)
 
 		//---------------------------------------------------------------
 		//
@@ -873,7 +873,7 @@ long FAR PASCAL WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam
 		// 
 		//---------------------------------------------------------------
 		case WM_SYSCOMMAND:
-            // Prevent moving/sizing and power loss in fullscreen mode
+            // 전체화면 모드에서 이동/크기변경/전원 손실 방지
             switch( wParam )
             {
 				case SC_HOTKEY:
@@ -953,7 +953,7 @@ long FAR PASCAL WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam
 					DEBUG_ADD("[WM_ACTIVATEAPP]");
 			#endif
 
-            // Pause if minimized or not the top window
+            // 최소화되거나 최상위 창이 아닐 경우 일시 정지
 			//WORD fActive = LOWORD(wParam);
 			//WORD fMinimized = (BOOL) HIWORD(wParam); 
             //g_bActiveGame = (fActive == WA_ACTIVE) || (fActive == WA_CLICKACTIVE);
@@ -1015,13 +1015,13 @@ long FAR PASCAL WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam
 		//
 		//---------------------------------------------------------------
         case WM_DESTROY:
-            // Clean up and close the app            
+            // 정리 작업 후 앱 종료
             PostQuitMessage(0);
         return 0L;
 
 		case WM_GETMINMAXINFO:
 		{
-            // Fix the size of the window to 640x480 (client size)
+            // 윈도우 크기를 640x480(클라이언트 크기)으로 고정
             MINMAXINFO* pMinMax = (MINMAXINFO *)lParam;
 			// add by Sonic 2006.9.26
 			//if(g_MyFull)
@@ -1094,12 +1094,12 @@ long FAR PASCAL WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam
 			}
 
 			gC_vs_ui.KeyboardControl(message, wParam, lParam);
-            // Handle any non-accelerated key commands
+            // 액셀러레이터 없는 키 명령 처리
 
 			switch (wParam)
 			{
 				//-----------------------------------------------
-				// Screen Shot
+				// 스크린 샷
 				//-----------------------------------------------
 				case VK_SCROLL :	
 					#ifdef OUTPUT_DEBUG
@@ -1117,7 +1117,7 @@ long FAR PASCAL WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam
 				//		return 0L;
 
 				//-----------------------------------------------
-				// Toggle Music
+				// 음악 토글
 				//-----------------------------------------------
 				/*
 				case VK_F3 :
@@ -1653,19 +1653,19 @@ color
 
 //-----------------------------------------------------------------------------
 // Name: InitApp()
-// Desc: Do work required for every instance of the application:
-//          Create the window, initialize data
+// Desc: 애플리케이션의 모든 인스턴스에 필요한 작업 수행:
+//          윈도우 생성 및 데이터 초기화
 //-----------------------------------------------------------------------------
 BOOL
 InitApp(int nCmdShow)
 {
 	WNDCLASS                    wc;
-	//生成随机类名,窗口标题
+	// 무작위 클래스 이름 및 윈도우 제목 생성
 	//char rnd_PROGRAM_NAME[50];
 	//char rnd_PROGRAM_TITLE[50];
 	//get_rand_str(rnd_PROGRAM_NAME,5);
 	//get_rand_str(rnd_PROGRAM_TITLE,5);
-    // Set up and register window class
+    // 윈도우 클래스 설정 및 등록
     wc.style = CS_HREDRAW | CS_VREDRAW | CS_DBLCLKS;
     wc.lpfnWndProc = (WNDPROC)WindowProc;
     wc.cbClsExtra = 0;
@@ -1679,7 +1679,7 @@ InitApp(int nCmdShow)
     //wc.lpszClassName = PROGRAM_NAME;
     RegisterClass(&wc);
 	
-	// Calculate the proper size for the window given a client of 640x480
+	// 클라이언트 크기 640x480에 맞는 윈도우 크기 계산
     int cx,cy;	
 	DWORD style = 0;
 	DWORD exStyle = 0;
@@ -1741,8 +1741,8 @@ InitApp(int nCmdShow)
 			cy = g_GameRect.bottom + GetSystemMetrics(SM_CYSIZEFRAME)*2+GetSystemMetrics(SM_CYMENU);
 		//}
 	}
-	//增加随机类名窗口名标题
-	// Create a window
+	// 무작위 클래스명/윈도우명/제목 추가
+	// 윈도우 생성
 	/*
     g_hWnd = CreateWindowEx(exStyle,//0,
                           PROGRAM_NAME,
@@ -1767,7 +1767,7 @@ InitApp(int nCmdShow)
         return FALSE;
 	}
 
-// REMOVED: nProtect anti-cheat code (SDL migration - no longer needed)
+// 제거됨: nProtect 안티치트 코드(SDL 마이그레이션 - 더 이상 불필요)
 
 	//
     //ShowWindow(g_hWnd, nCmdShow);

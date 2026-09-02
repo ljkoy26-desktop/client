@@ -83,7 +83,7 @@ Bit_Reserve::~Bit_Reserve ()
 	delete [] buf;
 }
 
-/*read N bit from the bit stream */
+/* 비트 스트림에서 N비트를 읽는다 */
 unsigned int Bit_Reserve::hgetbits(int N)
 {
  unsigned int val=0;
@@ -100,8 +100,7 @@ unsigned int Bit_Reserve::hgetbits(int N)
 	}
 
 	k = ((unsigned int)j < buf_bit_idx) ? j : buf_bit_idx;
-   /* BUFSIZE = 4096 = 2^12, so buf_byte_idx%BUFSIZE ==
-      buf_byte_idx & 0xfff */
+   /* BUFSIZE = 4096 = 2^12이므로, buf_byte_idx%BUFSIZE == buf_byte_idx & 0xfff */
    tmp = buf[buf_byte_idx & 0xfff] & putmask[buf_bit_idx];
    buf_bit_idx -= k;
 	tmp = tmp >> buf_bit_idx;
@@ -111,7 +110,7 @@ unsigned int Bit_Reserve::hgetbits(int N)
  return(val);
 }
 
-/*write 8 bits into the bit stream */
+/* 비트 스트림에 8비트를 쓴다 */
 void Bit_Reserve::hputbuf(unsigned int val)
 {
   buf[offset & 0xfff] = val;

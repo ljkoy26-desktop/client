@@ -578,7 +578,7 @@ ClientConfig::LoadFromFile(const char* filename)
 		file.read((char*)&COLOR_HP_BAR_BG_G, 1);
 		file.read((char*)&COLOR_HP_BAR_BG_B, 1);
 	} else {
-		// 如果配置文件中没有这些值，使用默认值
+		// 설정 파일에 해당 값이 없으면 기본값 사용
 		COLOR_HP_BAR_BG_R = 8;
 		COLOR_HP_BAR_BG_G = 8;
 		COLOR_HP_BAR_BG_B = 8;

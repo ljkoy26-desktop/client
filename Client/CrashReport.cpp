@@ -1,4 +1,4 @@
-/********************************************************************
+﻿/********************************************************************
 	created:	2003/12/01
 	created:	1:12:2003   12:15
 	filename: 	D:\study\smodulelib\CrashReport.cpp
@@ -24,7 +24,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // GetExceptionDescription
 //
-// Translate the exception code into something human readable
+// 예외 코드를 사람이 읽기 쉬운 형태로 변환
 static const TCHAR *GetExceptionDescription(DWORD ExceptionCode)
 {
 	struct ExceptionNames
@@ -104,15 +104,14 @@ static const TCHAR *GetExceptionDescription(DWORD ExceptionCode)
 	return "an Unknown exception type";
 }
 
-// ADDRESS64/KDHELP64/STACKFRAME64 and the PREAD_PROCESS_MEMORY_ROUTINE64/
+// ADDRESS64/KDHELP64/STACKFRAME64 및 PREAD_PROCESS_MEMORY_ROUTINE64/
 // PFUNCTION_TABLE_ACCESS_ROUTINE64/PGET_MODULE_BASE_ROUTINE64/
-// PTRANSLATE_ADDRESS_ROUTINE64 typedefs used to be hand-rolled here because
-// the VC6-era Platform SDK didn't ship them. The Windows 10 SDK's
-// <imagehlp.h> (pulled in via <Windows.h> above) already declares all of
-// these identically, so redefining them is just a duplicate (error C2011).
+// PTRANSLATE_ADDRESS_ROUTINE64 typedef는 VC6 시대 Platform SDK에 포함되지 않아
+// 직접 정의했었다. 현재 Windows 10 SDK의 <imagehlp.h>(<Windows.h>를 통해 포함)에서
+// 이미 동일하게 선언되어 있으므로 재정의하면 중복 오류(C2011)가 발생한다.
 
-// StackWalk64()
-typedef BOOL (__stdcall *tSW)( 
+// StackWalk64() 함수 포인터 타입 정의
+typedef BOOL (__stdcall *tSW)(
   DWORD MachineType, 
   HANDLE hProcess,
   HANDLE hThread, 
@@ -124,11 +123,11 @@ typedef BOOL (__stdcall *tSW)(
   PTRANSLATE_ADDRESS_ROUTINE64 TranslateAddress );
 tSW pSW = NULL;
 
-// SymFunctionTableAccess64()
+// SymFunctionTableAccess64() 함수 포인터 타입 정의
 typedef PVOID (__stdcall *tSFTA)( HANDLE hProcess, DWORD64 AddrBase );
 tSFTA pSFTA = NULL;
 
-// SymGetModuleBase64()
+// SymGetModuleBase64() 함수 포인터 타입 정의
 typedef DWORD64 (__stdcall *tSGMB)( IN HANDLE hProcess, IN DWORD64 dwAddr );
 tSGMB pSGMB = NULL;
 
@@ -183,14 +182,13 @@ LONG __stdcall RecordExceptionInfo( _EXCEPTION_POINTERS* pExp )
 	}
 	cr.SetVersion(version);
 
-	// print out operating system
+	// 운영체제 정보 출력
 	strcpy(szTemp, "");
 	GetWinVersion(szTemp);
 	cr.SetOS(szTemp);
 
-	// Eip/Ebp are the x86 CONTEXT register names; on x64 the equivalent
-	// fields are Rip/Rbp (64-bit). wsprintf doesn't reliably support
-	// 64-bit arguments, so use sprintf here instead.
+	// Eip/Ebp는 x86 CONTEXT 레지스터 이름이며, x64에서는 Rip/Rbp(64비트)를 사용.
+	// wsprintf는 64비트 인수를 안정적으로 지원하지 않으므로 sprintf를 사용.
 	sprintf(szTemp, "0x%016llx", Context->Rip);
 	cr.SetAddress(szTemp);
 
@@ -200,8 +198,8 @@ LONG __stdcall RecordExceptionInfo( _EXCEPTION_POINTERS* pExp )
 	std::string callStack;
 
 	int frameNum;
-	// StackWalk64's frame-walking logic depends on the machine type
-	// matching the actual CONTEXT layout (Rip/Rbp here, not Eip/Ebp).
+	// StackWalk64의 프레임 탐색 로직은 머신 타입이
+	// 실제 CONTEXT 레이아웃(여기서는 Rip/Rbp, Eip/Ebp 아님)과 일치해야 함.
 	DWORD imageType = IMAGE_FILE_MACHINE_AMD64;
 
 	HANDLE hThread;
@@ -231,8 +229,8 @@ LONG __stdcall RecordExceptionInfo( _EXCEPTION_POINTERS* pExp )
 					if ( ! pSW( imageType, hSWProcess, hThread, &s, NULL, NULL, pSFTA, pSGMB, NULL ) )
 						break;
 
-					// AddrPC.Offset is DWORD64 - wsprintf doesn't reliably
-					// support 64-bit arguments, so use sprintf here instead.
+					// AddrPC.Offset은 DWORD64이므로 wsprintf는 64비트 인수를
+					// 안정적으로 지원하지 않아 sprintf를 사용.
 					sprintf(szTemp, "0x%016llx", s.AddrPC.Offset);
 					callStack += ' ';
 					callStack += szTemp;
@@ -250,12 +248,12 @@ LONG __stdcall RecordExceptionInfo( _EXCEPTION_POINTERS* pExp )
 	return EXCEPTION_EXECUTE_HANDLER;
 }
 #else
-// Stub implementation for non-Windows platforms
+// 비-Windows 플랫폼용 스텁 구현
 LONG __stdcall RecordExceptionInfo( struct _EXCEPTION_POINTERS* pExp )
 {
-    // Crash reporting not implemented on non-Windows platforms
-    // Just return to continue execution
-    (void)pExp;  // Suppress unused parameter warning
+    // 비-Windows 플랫폼에서 크래시 리포트 미구현
+    // 실행 계속을 위해 반환
+    (void)pExp;  // 미사용 파라미터 경고 억제
     return 0;
 }
 #endif // PLATFORM_WINDOWS

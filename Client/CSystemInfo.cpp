@@ -26,14 +26,12 @@
 #pragma warning( disable : 4035 )		// disable 시켜버리자-_-;
 #pragma warning( disable: 4800 ) //'int' : forcing value to bool 'true' or 'false' (performance warning)
 
-// The original VC6/x86 implementations below used inline __asm (raw RDTSC/
-// CPUID opcodes, __try/__except around them to catch illegal-instruction
-// faults on pre-Pentium CPUs). MSVC's x64 compiler has no inline assembler
-// at all (error C4235), and CPUID/RDTSC have been unconditionally present
-// on every CPU capable of running x64 code since the architecture's
-// inception, so this is rewritten with the equivalent __cpuid/__rdtsc
-// compiler intrinsics (<intrin.h>) and the illegal-instruction handling
-// dropped as moot on x64.
+// 아래의 원래 VC6/x86 구현은 인라인 __asm(생 RDTSC/CPUID 명령코드,
+// Pentium 이전 CPU에서의 불법 명령 오류를 잡기 위한 __try/__except 포함)을 사용했다.
+// MSVC의 x64 컴파일러는 인라인 어셈블러를 전혀 지원하지 않으며(오류 C4235),
+// CPUID/RDTSC는 x64 아키텍처가 시작된 이후 x64 코드를 실행 가능한 모든 CPU에서
+// 무조건 존재하므로, 이를 동등한 __cpuid/__rdtsc 컴파일러 내장 함수(<intrin.h>)로
+// 재작성하고 x64에서는 불필요한 불법 명령 처리를 제거했다.
 inline unsigned __int64 theCycleCount(void)
 {
 	return __rdtsc();
@@ -72,22 +70,21 @@ long CSystemInfo::GetCpuClock()
 // --------------------------------------------------------------------------
 bool CSystemInfo::CheckMMXTechnology()
 {
-	// See the comment above cpuid()/theCycleCount(): CPUID and the MMX
-	// register state (EMMS) are unconditionally present on x86-64, so the
-	// original __try/__except probing for their absence is dropped.
+	// 위의 cpuid()/theCycleCount() 주석 참조: CPUID와 MMX 레지스터 상태(EMMS)는
+	// x86-64에서 무조건 존재하므로, 원래의 __try/__except 탐색 코드는 제거했다.
 	int info[4];
-	__cpuid(info, 1);      // 0 = vendor string, 1 = version info, 2 = cache info
+	__cpuid(info, 1);      // 0 = 벤더 문자열, 1 = 버전 정보, 2 = 캐시 정보
 	DWORD RegEDX = (DWORD)info[3];
 
-	return (RegEDX & 0x800000) != 0;   // bit 23 is set for MMX technology
+	return (RegEDX & 0x800000) != 0;   // 비트 23이 설정되면 MMX 기술 지원
 }
 
 
 // --------------------------------------------------------------------------
-// x86-64 mandates SSE/SSE2 support in hardware (part of the base ABI), so
-// these always return true on any CPU capable of running this x64 build -
-// see the comment above cpuid()/theCycleCount() for why the original
-// __asm/CPUID/__try probing code (VC6, 32-bit only) no longer applies.
+// x86-64는 하드웨어 SSE/SSE2 지원을 기본 ABI의 일부로 요구하므로,
+// 이 x64 빌드를 실행 가능한 모든 CPU에서 항상 true를 반환한다.
+// 원래의 __asm/CPUID/__try 탐색 코드(VC6, 32비트 전용)가
+// 더 이상 적용되지 않는 이유는 위의 cpuid()/theCycleCount() 주석을 참조.
 bool CSystemInfo::CheckSSETechnology(void)
 {
 	return true;
@@ -102,87 +99,87 @@ bool CSystemInfo::CheckSSE2Technology()
 bool CSystemInfo::Check3DNowTechnology()
 {
 	int info[4];
-	__cpuid(info, (int)0x80000000);        // highest supported AMD extended function
+	__cpuid(info, (int)0x80000000);        // AMD 확장 함수 최대 지원 번호
 	unsigned long RegEAX = (unsigned long)info[0];
 
 	if (RegEAX <= 0x80000000UL)
 	{
-		return false;                       // no AMD extended CPUID functions
+		return false;                       // AMD 확장 CPUID 함수 없음
 	}
 
 	__cpuid(info, (int)0x80000001);
-	return ((unsigned long)info[3] >> 31) != 0;    // bit 31 of edx: 3DNow support
+	return ((unsigned long)info[3] >> 31) != 0;    // edx의 비트 31: 3DNow 지원
 }
 
-// Returns non-zero if Hyper-Threading Technology is supported on the processors and zero if not.  This does not mean that
-// Hyper-Threading Technology is necessarily enabled.
+// 프로세서가 하이퍼-스레딩 기술을 지원하면 true, 그렇지 않으면 false 반환.
+// 이 함수가 true를 반환해도 하이퍼-스레딩이 실제로 활성화되어 있다는 의미는 아니다.
 bool CSystemInfo::CheckHyperThreadTechnology()
 {
-	const unsigned int HT_BIT		 = 0x10000000;  // EDX[28] - Bit 28 set indicates Hyper-Threading Technology is supported in hardware.
-	const unsigned int FAMILY_ID     = 0x0f00;      // EAX[11:8] - Bit 11 thru 8 contains family processor id
-	const unsigned int EXT_FAMILY_ID = 0x0f00000;	// EAX[23:20] - Bit 23 thru 20 contains extended family  processor id
-	const unsigned int PENTIUM4_ID   = 0x0f00;		// Pentium 4 family processor id
+	const unsigned int HT_BIT		 = 0x10000000;  // EDX[28] - 비트 28이 설정되면 하이퍼-스레딩 하드웨어 지원
+	const unsigned int FAMILY_ID     = 0x0f00;      // EAX[11:8] - 비트 11~8: 프로세서 패밀리 ID
+	const unsigned int EXT_FAMILY_ID = 0x0f00000;	// EAX[23:20] - 비트 23~20: 확장 패밀리 프로세서 ID
+	const unsigned int PENTIUM4_ID   = 0x0f00;		// 펜티엄 4 패밀리 프로세서 ID
 
 	unsigned long unused,
-				  reg_eax = 0, 
+				  reg_eax = 0,
 				  reg_edx = 0,
 				  vendor_id[3] = {0, 0, 0};
 
-	// verify cpuid instruction is supported
-	if( !cpuid(0,unused, vendor_id[0],vendor_id[2],vendor_id[1]) 
+	// cpuid 명령 지원 여부 확인
+	if( !cpuid(0,unused, vendor_id[0],vendor_id[2],vendor_id[1])
 	 || !cpuid(1,reg_eax,unused,unused,reg_edx) )
 	 return false;
 
-	//  Check to see if this is a Pentium 4 or later processor
+	// 펜티엄 4 이상 프로세서인지 확인
 	if (((reg_eax & FAMILY_ID) ==  PENTIUM4_ID) || (reg_eax & EXT_FAMILY_ID))
 		if (vendor_id[0] == 'uneG' && vendor_id[1] == 'Ieni' && vendor_id[2] == 'letn')
-			return (reg_edx & HT_BIT) != 0;	// Genuine Intel Processor with Hyper-Threading Technology
+			return (reg_edx & HT_BIT) != 0;	// 하이퍼-스레딩을 지원하는 정품 인텔 프로세서
 
-	return false;  // This is not a genuine Intel processor.
+	return false;  // 정품 인텔 프로세서가 아님
 }
 #else
-// Non-Windows platforms (macOS/Linux) - Stub implementations
+// 비-Windows 플랫폼(macOS/Linux) - 스텁 구현
 
 inline uint64_t theCycleCount(void)
 {
-    // Stub implementation - return 0
+    // 스텁 구현 - 0 반환
     return 0;
 }
 
 static bool cpuid(unsigned long function, unsigned long& out_eax, unsigned long& out_ebx, unsigned long& out_ecx, unsigned long& out_edx)
 {
-    // Stub implementation - assume no special CPU features
+    // 스텁 구현 - 특별한 CPU 기능 없다고 가정
     out_eax = out_ebx = out_ecx = out_edx = 0;
     return false;
 }
 
 long CSystemInfo::GetCpuClock()
 {
-    // Stub implementation - return a reasonable default
-    return 2000; // Assume 2 GHz
+    // 스텁 구현 - 기본값 반환
+    return 2000; // 2GHz로 가정
 }
 
 bool CSystemInfo::CheckMMXTechnology()
 {
-    // Stub implementation - assume MMX is available on modern systems
+    // 스텁 구현 - 현대 시스템에서 MMX 사용 가능으로 가정
     return true;
 }
 
 bool CSystemInfo::CheckSSETechnology()
 {
-    // Stub implementation - assume SSE is available on modern systems
+    // 스텁 구현 - 현대 시스템에서 SSE 사용 가능으로 가정
     return true;
 }
 
 bool CSystemInfo::CheckSSE2Technology()
 {
-    // Stub implementation - assume SSE2 is available on modern systems
+    // 스텁 구현 - 현대 시스템에서 SSE2 사용 가능으로 가정
     return true;
 }
 
 bool CSystemInfo::CheckHyperThreadTechnology()
 {
-    // Stub implementation - assume no hyperthreading
+    // 스텁 구현 - 하이퍼-스레딩 없다고 가정
     return false;
 }
 

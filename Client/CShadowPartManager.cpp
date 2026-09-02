@@ -2,8 +2,8 @@
 // CShadowPartManager.cpp
 //----------------------------------------------------------------------
 #include "Client_PCH.h"
-// DX3D.h and CDirect3D.h removed (SDL2) - Direct3D has been replaced with SDL2
-#include "DXLib/CDirectDraw.h"  // For LPDDPIXELFORMAT
+// DX3D.h 및 CDirect3D.h 제거됨(SDL2) - Direct3D가 SDL2로 대체됨
+#include "DXLib/CDirectDraw.h"  // LPDDPIXELFORMAT 사용을 위해
 #include "CFileIndexTable.h"
 #include "CShadowPartManager.h"
 #include "MGameTime.h"
@@ -624,7 +624,7 @@ CShadowPartManager::GetTexture(TYPE_SPRITEID id)
 		// 이전에 출력할 Texture Size가 정해져 있지 않은 경우
 		//-----------------------------------------------------------
 
-			// SDL Migration: IsTexturePow2() always returns false in SDL2
+			// SDL 마이그레이션: IsTexturePow2()는 SDL2에서 항상 false 반환
 		if (m_pWidth[id]==0 || m_pHeight[id]==0)
 		{
 			spWidth = pSprite->GetWidth();
@@ -643,7 +643,7 @@ CShadowPartManager::GetTexture(TYPE_SPRITEID id)
 				width = width * pSprite->GetWidth() / spWidth;
 				height = height * pSprite->GetHeight() / spHeight;		
 
-				// SDL Migration: IsTextureSquareOnly() always returns false in SDL2
+				// SDL 마이그레이션: IsTextureSquareOnly()는 SDL2에서 항상 false 반환
 			}
 			else
 			{

@@ -18,7 +18,7 @@ COGGSTREAM::~COGGSTREAM()
 
 bool COGGSTREAM::streamLoad(FILE* file, tag_position_set* pos)
 {
-	// OGG stream loading - not implemented for SDL backend
+	// OGG 스트림 로딩 - SDL 백엔드에서 미구현
 	(void)file; (void)pos;
 	return false;
 }

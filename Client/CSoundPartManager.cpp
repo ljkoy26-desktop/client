@@ -28,7 +28,7 @@ CSoundPartManager::Release()
 	}
 
 	//---------------------------------------------------
-	// base class release
+	// 기반 클래스 해제
 	//---------------------------------------------------
 	CPartManager<WORD, BYTE, LPDIRECTSOUNDBUFFER>::Release();
 }
