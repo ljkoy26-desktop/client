@@ -5,6 +5,19 @@ import locale
 # 검사 대상 확장자 정의 (대소문자 구분 없음)
 TARGET_EXTENSIONS = ('.cpp', '.h')
 
+def get_file_size_str(file_path):
+    """파일 크기를 읽기 쉬운 단위(B, KB, MB)로 변환"""
+    try:
+        size_bytes = os.path.getsize(file_path)
+        if size_bytes < 1024:
+            return f"{size_bytes} B"
+        elif size_bytes < 1024 * 1024:
+            return f"{size_bytes / 1024:.1f} KB"
+        else:
+            return f"{size_bytes / (1024 * 1024):.2f} MB"
+    except Exception:
+        return "N/A"
+
 def get_file_encoding(file_path):
     try:
         with open(file_path, 'rb') as f:
@@ -74,7 +87,7 @@ def scan_directory(target_dir=".", output_file="check_encoding_result.md"):
     
     for root, _, files in os.walk(target_dir):
         for file in files:
-            # .cpp, .h 확장자 파일만 필터링 (대소문자 무시)
+            # .cpp, .h 확장자 파일만 필터링
             if not file.lower().endswith(TARGET_EXTENSIONS):
                 continue
 
@@ -85,7 +98,9 @@ def scan_directory(target_dir=".", output_file="check_encoding_result.md"):
                 continue
                 
             encoding = get_file_encoding(file_path)
-            results.append((encoding, file_path))
+            file_size = get_file_size_str(file_path)
+            
+            results.append((encoding, file_size, file_path))
             file_count += 1
 
     # UTF-8 인코딩으로 마크다운 결과 파일 저장
@@ -94,12 +109,12 @@ def scan_directory(target_dir=".", output_file="check_encoding_result.md"):
         f.write(f"- **Target Directory:** `{abs_root}`\n")
         f.write(f"- **Target Extensions:** `{', '.join(TARGET_EXTENSIONS)}`\n")
         f.write(f"- **Total Files Checked:** {file_count}\n\n")
-        f.write("| ENCODING | FILE PATH |\n")
-        f.write("| :--- | :--- |\n")
+        f.write("| ENCODING | FILE SIZE | FILE PATH |\n")
+        f.write("| :--- | :--- | :--- |\n")
         
-        for encoding, path in results:
+        for encoding, size, path in results:
             safe_path = path.replace("|", "\\|")
-            f.write(f"| {encoding} | `{safe_path}` |\n")
+            f.write(f"| {encoding} | {size} | `{safe_path}` |\n")
 
     print(f"Done! Saved {file_count} file results to '{output_file}'.")
 

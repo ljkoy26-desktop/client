@@ -4,2319 +4,2319 @@
 - **Target Extensions:** `.cpp, .h`
 - **Total Files Checked:** 2314
 
-| ENCODING | FILE PATH |
-| :--- | :--- |
-| UTF-8 BOM | `.\basic\2d.h` |
-| UTF-8 BOM | `.\basic\AudioTypes.h` |
-| UTF-8 BOM | `.\basic\BasicData.cpp` |
-| UTF-8 BOM | `.\basic\BasicData.h` |
-| UTF-8 BOM | `.\basic\BasicException.cpp` |
-| UTF-8 BOM | `.\basic\BasicException.h` |
-| UTF-8 BOM | `.\basic\BasicMemory.h` |
-| UTF-8 | `.\basic\Basics.h` |
-| UTF-8 BOM | `.\basic\ColorDraw.cpp` |
-| UTF-8 BOM | `.\basic\ColorDraw.h` |
-| UTF-8 BOM | `.\basic\Directory.cpp` |
-| UTF-8 BOM | `.\basic\Directory.h` |
-| UTF-8 BOM | `.\basic\DLL.h` |
-| UTF-8 BOM | `.\basic\GL_import.cpp` |
-| UTF-8 BOM | `.\basic\GL_import.h` |
-| UTF-8 BOM | `.\basic\IMG.h` |
-| UTF-8 BOM | `.\basic\InputCodes.h` |
-| UTF-8 BOM | `.\basic\i_signal.h` |
-| UTF-8 BOM | `.\basic\picinfo.h` |
-| UTF-8 BOM | `.\basic\Platform.h` |
-| UTF-8 BOM | `.\basic\PlatformSDL.cpp` |
-| UTF-8 BOM | `.\basic\PlatformUtil.h` |
-| UTF-8 | `.\basic\PS.h` |
-| UTF-8 BOM | `.\basic\TGA.h` |
-| UTF-8 BOM | `.\basic\Timer2.cpp` |
-| UTF-8 BOM | `.\basic\timer2.h` |
-| UTF-8 BOM | `.\basic\Typedef.h` |
-| UTF-8 | `.\build\CMakeFiles\4.4.0-rc3\CompilerIdCXX\CMakeCXXCompilerId.cpp` |
-| UTF-8 | `.\build\vs2019\CMakeFiles\4.4.0-rc3\CompilerIdCXX\CMakeCXXCompilerId.cpp` |
-| UTF-8 | `.\Client\ActionFunctions.cpp` |
-| UTF-8 | `.\Client\AddonDef.h` |
-| UTF-8 | `.\Client\APICheck.cpp` |
-| UTF-8 | `.\Client\APICheck.h` |
-| UTF-8 | `.\Client\AppendPatchInfo.cpp` |
-| UTF-8 | `.\Client\AppendPatchInfo.h` |
-| UTF-8 | `.\Client\BIT_RES.CPP` |
-| UTF-8 | `.\Client\BIT_RES.H` |
-| UTF-8 | `.\Client\BloodBibleSignInfo.cpp` |
-| UTF-8 | `.\Client\BloodBibleSignInfo.h` |
-| UTF-8 | `.\Client\CAvi.cpp` |
-| UTF-8 | `.\Client\CAvi.h` |
-| UTF-8 | `.\Client\CDataTable.h` |
-| UTF-8 | `.\Client\CDirectDrawSurface.h` |
-| UTF-8 | `.\Client\CDirectInput.h` |
-| UTF-8 | `.\Client\CDirectMusic.h` |
-| UTF-8 | `.\Client\CDirectSetup.h` |
-| UTF-8 | `.\Client\CDirectSound.h` |
-| UTF-8 | `.\Client\CDirectSoundStream.h` |
-| UTF-8 BOM | `.\Client\CGameUpdate.cpp` |
-| UTF-8 | `.\Client\CGameUpdate.h` |
-| UTF-8 | `.\Client\CGHandlersStub.cpp` |
-| UTF-8 | `.\Client\CJpeg.h` |
-| UTF-8 BOM | `.\Client\Client.cpp` |
-| UTF-8 | `.\Client\Client.h` |
-| UTF-8 | `.\Client\ClientConfig.cpp` |
-| UTF-8 | `.\Client\ClientConfig.h` |
-| UTF-8 | `.\Client\ClientDef.h` |
-| UTF-8 | `.\Client\ClientFunction.cpp` |
-| UTF-8 | `.\Client\ClientFunction.h` |
-| UTF-8 | `.\Client\ClientTimeFunctions.cpp` |
-| UTF-8 | `.\Client\Client_PCH.cpp` |
-| UTF-8 | `.\Client\Client_PCH.h` |
-| UTF-8 | `.\Client\CMessageArray.cpp` |
-| UTF-8 | `.\Client\CMessageArray.h` |
-| UTF-8 | `.\Client\CMP3.cpp` |
-| UTF-8 | `.\Client\CMP3.h` |
-| UTF-8 | `.\Client\CNormalSpriteTexturePartManager.cpp` |
-| UTF-8 | `.\Client\COGGSTREAM.CPP` |
-| UTF-8 | `.\Client\COGGSTREAM.H` |
-| UTF-8 | `.\Client\common.h` |
-| UTF-8 | `.\Client\COpeningUpdate.cpp` |
-| UTF-8 | `.\Client\COpeningUpdate.h` |
-| UTF-8 BOM | `.\Client\COrderedList.h` |
-| UTF-8 | `.\Client\CPartManager.h` |
-| UTF-8 | `.\Client\CPositionList.h` |
-| UTF-8 BOM | `.\Client\CrashReport.cpp` |
-| UTF-8 | `.\Client\CrashReport.h` |
-| UTF-8 | `.\Client\CSDLGraphicsFlip.cpp` |
-| UTF-8 | `.\Client\CServerInformation.cpp` |
-| UTF-8 | `.\Client\CServerInformation.h` |
-| UTF-8 | `.\Client\CShadowPartManager.cpp` |
-| UTF-8 | `.\Client\CShadowPartManager.h` |
-| UTF-8 | `.\Client\CSoundPartManager.cpp` |
-| UTF-8 | `.\Client\CSoundPartManager.h` |
-| UTF-8 | `.\Client\CSpritePal.cpp` |
-| UTF-8 | `.\Client\CSpritePal.h` |
-| UTF-8 | `.\Client\CSpriteTexturePartManager.cpp` |
-| UTF-8 | `.\Client\CSpriteTexturePartManager.h` |
-| UTF-8 | `.\Client\CSystemInfo.cpp` |
-| UTF-8 | `.\Client\CSystemInfo.h` |
-| UTF-8 | `.\Client\CTexturePartManager.cpp` |
-| UTF-8 | `.\Client\CTexturePartManager.h` |
-| UTF-8 | `.\Client\CToken.cpp` |
-| UTF-8 | `.\Client\CToken.h` |
-| UTF-8 | `.\Client\CTypeMap.h` |
-| UTF-8 | `.\Client\CTypeMap2.h` |
-| UTF-8 BOM | `.\Client\CTypeTable.h` |
-| UTF-8 | `.\Client\CUsingColorSetTable.cpp` |
-| UTF-8 | `.\Client\CUsingColorSetTable.h` |
-| UTF-8 | `.\Client\CWaitPacketUpdate.cpp` |
-| UTF-8 | `.\Client\CWaitPacketUpdate.h` |
-| UTF-8 | `.\Client\CWaitUIUpdate.cpp` |
-| UTF-8 | `.\Client\CWaitUIUpdate.h` |
-| UTF-8 | `.\Client\DebugInfo.cpp` |
-| UTF-8 | `.\Client\DebugInfo.h` |
-| UTF-8 | `.\Client\DebugKit.cpp` |
-| UTF-8 | `.\Client\DebugKit.h` |
-| UTF-8 BOM | `.\Client\DebugLog.cpp` |
-| UTF-8 | `.\Client\DebugLog.h` |
-| UTF-8 | `.\Client\deflate.h` |
-| UTF-8 | `.\Client\DirectXLib_PCH.cpp` |
-| UTF-8 | `.\Client\DirectXLib_PCH.h` |
-| UTF-8 | `.\Client\DllInfo.h` |
-| UTF-8 | `.\Client\DrawCreatureDivineGuidance.cpp` |
-| UTF-8 | `.\Client\DrawCreatureEffect.cpp` |
-| UTF-8 | `.\Client\DrawCreatureShadow.cpp` |
-| UTF-8 | `.\Client\DrawItemNameNode.h` |
-| UTF-8 | `.\Client\DrawTextNode.h` |
-| UTF-8 | `.\Client\DrawTypeDef.h` |
-| UTF-8 | `.\Client\DXLib.h` |
-| UTF-8 | `.\Client\EffectResourceContainer.cpp` |
-| UTF-8 | `.\Client\EffectResourceContainer.h` |
-| UTF-8 BOM | `.\Client\EffectSpriteTypeDef.h` |
-| UTF-8 | `.\Client\EffectSpriteTypeHelper.h` |
-| UTF-8 | `.\Client\ExperienceTable.cpp` |
-| UTF-8 | `.\Client\ExperienceTable.h` |
-| UTF-8 | `.\Client\ExpInfo.cpp` |
-| UTF-8 | `.\Client\ExpInfo.h` |
-| UTF-8 | `.\Client\FameInfo.cpp` |
-| UTF-8 | `.\Client\FameInfo.h` |
-| UTF-8 | `.\Client\GAME1024.cpp` |
-| UTF-8 | `.\Client\GAME1024.h` |
-| UTF-8 | `.\Client\GameFunctions.cpp` |
-| UTF-8 | `.\Client\GameHelpers.cpp` |
-| UTF-8 | `.\Client\GameHelpers.h` |
-| UTF-8 | `.\Client\GameInit.cpp` |
-| UTF-8 | `.\Client\GameInitInfo.cpp` |
-| UTF-8 BOM | `.\Client\GameMain.cpp` |
-| UTF-8 | `.\Client\GameObject.h` |
-| UTF-8 | `.\Client\GamePacketFunctions.cpp` |
-| UTF-8 | `.\Client\GameUI.cpp` |
-| UTF-8 | `.\Client\GCNotifyWin.cpp` |
-| UTF-8 | `.\Client\GCNotifyWin.h` |
-| UTF-8 | `.\Client\GCNotifyWinHandler.cpp` |
-| UTF-8 | `.\Client\GetWinVer.cpp` |
-| UTF-8 | `.\Client\GetWinVer.h` |
-| UTF-8 | `.\Client\Globals.cpp` |
-| UTF-8 | `.\Client\GlobalVariables.cpp` |
-| UTF-8 | `.\Client\GuildInfo.cpp` |
-| UTF-8 | `.\Client\GuildInfo.h` |
-| UTF-8 | `.\Client\GuildMemberInfo.cpp` |
-| UTF-8 | `.\Client\GuildMemberInfo.h` |
-| UTF-8 | `.\Client\header.cpp` |
-| UTF-8 | `.\Client\header.h` |
-| UTF-8 | `.\Client\heckSystem.cpp` |
-| UTF-8 | `.\Client\heckSystem.h` |
-| UTF-8 | `.\Client\huffman.cpp` |
-| UTF-8 | `.\Client\huffman.h` |
-| UTF-8 | `.\Client\infblock.h` |
-| UTF-8 | `.\Client\infcodes.h` |
-| UTF-8 | `.\Client\inffast.h` |
-| UTF-8 | `.\Client\inffixed.h` |
-| UTF-8 | `.\Client\inftrees.h` |
-| UTF-8 | `.\Client\infutil.h` |
-| UTF-8 | `.\Client\InputService.h` |
-| UTF-8 | `.\Client\ItemClassDef.h` |
-| UTF-8 | `.\Client\l3types.h` |
-| UTF-8 | `.\Client\LeakMemoryDumper.cpp` |
-| UTF-8 | `.\Client\LeakMemoryDumper.h` |
-| UTF-8 | `.\Client\MActionInfoTable.cpp` |
-| UTF-8 | `.\Client\MActionInfoTable.h` |
-| UTF-8 | `.\Client\MActionResult.cpp` |
-| UTF-8 | `.\Client\MActionResult.h` |
-| UTF-8 | `.\Client\MActionResultDef.h` |
-| UTF-8 | `.\Client\MAnimationObject.cpp` |
-| UTF-8 | `.\Client\MAnimationObject.h` |
-| UTF-8 | `.\Client\MAroundZoneEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MAroundZoneEffectGenerator.h` |
-| UTF-8 | `.\Client\MathTable.cpp` |
-| UTF-8 | `.\Client\MathTable.h` |
-| UTF-8 | `.\Client\MAttachCreatureEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MAttachCreatureEffectGenerator.h` |
-| UTF-8 | `.\Client\MAttachCreatureEffectGroundGenerator.cpp` |
-| UTF-8 | `.\Client\MAttachCreatureEffectGroundGenerator.h` |
-| UTF-8 | `.\Client\MAttachCreatureOrbitEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MAttachCreatureOrbitEffectGenerator.h` |
-| UTF-8 | `.\Client\MAttachEffect.cpp` |
-| UTF-8 | `.\Client\MAttachEffect.h` |
-| UTF-8 | `.\Client\MAttachOrbitEffect.cpp` |
-| UTF-8 | `.\Client\MAttachOrbitEffect.h` |
-| UTF-8 BOM | `.\Client\MAttachZoneAroundEffectGenerator.CPP` |
-| UTF-8 | `.\Client\MAttachZoneAroundEffectGenerator.h` |
-| UTF-8 | `.\Client\MAttachZoneEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MAttachZoneEffectGenerator.h` |
-| UTF-8 | `.\Client\MAttachZoneSelectableEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MAttachZoneSelectableEffectGenerator.h` |
-| UTF-8 | `.\Client\MAttackCreatureEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MAttackCreatureEffectGenerator.h` |
-| UTF-8 | `.\Client\MAttackCreatureHomingEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MAttackCreatureHomingEffectGenerator.h` |
-| UTF-8 | `.\Client\MAttackCreatureParabolaEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MAttackCreatureParabolaEffectGenerator.h` |
-| UTF-8 | `.\Client\MAttackZoneBombEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MAttackZoneBombEffectGenerator.h` |
-| UTF-8 | `.\Client\MAttackZoneEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MAttackZoneEffectGenerator.h` |
-| UTF-8 | `.\Client\MAttackZoneParabolaEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MAttackZoneParabolaEffectGenerator.h` |
-| UTF-8 | `.\Client\MAttackZoneRectEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MAttackZoneRectEffectGenerator.h` |
-| UTF-8 | `.\Client\MBloodyBreakerEffectGenerator.CPP` |
-| UTF-8 | `.\Client\MBloodyBreakerEffectGenerator.h` |
-| UTF-8 | `.\Client\MBloodyWallEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MBloodyWallEffectGenerator.h` |
-| UTF-8 | `.\Client\MBloodyWaveEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MBloodyWaveEffectGenerator.h` |
-| UTF-8 | `.\Client\MChaseEffect.cpp` |
-| UTF-8 | `.\Client\MChaseEffect.h` |
-| UTF-8 | `.\Client\MChatManager.cpp` |
-| UTF-8 | `.\Client\MChatManager.h` |
-| UTF-8 | `.\Client\MCompareManager.cpp` |
-| UTF-8 | `.\Client\MCompareManager.h` |
-| UTF-8 | `.\Client\MCrashReportManager.cpp` |
-| UTF-8 | `.\Client\MCrashReportManager.h` |
-| UTF-8 BOM | `.\Client\MCreature.cpp` |
-| UTF-8 | `.\Client\MCreature.h` |
-| UTF-8 | `.\Client\MCreatureSpriteTable.cpp` |
-| UTF-8 | `.\Client\MCreatureSpriteTable.h` |
-| UTF-8 | `.\Client\MCreatureTable.cpp` |
-| UTF-8 | `.\Client\MCreatureTable.h` |
-| UTF-8 | `.\Client\MCreatureWear.cpp` |
-| UTF-8 | `.\Client\MCreatureWear.h` |
-| UTF-8 BOM | `.\Client\md5.cpp` |
-| UTF-8 | `.\Client\md5.h` |
-| UTF-8 | `.\Client\MEffect.cpp` |
-| UTF-8 | `.\Client\MEffect.h` |
-| UTF-8 | `.\Client\MEffectGenerator.h` |
-| UTF-8 | `.\Client\MEffectGeneratorDef.h` |
-| UTF-8 | `.\Client\MEffectGeneratorTable.cpp` |
-| UTF-8 | `.\Client\MEffectGeneratorTable.h` |
-| UTF-8 | `.\Client\MEffectManager.cpp` |
-| UTF-8 | `.\Client\MEffectManager.h` |
-| UTF-8 | `.\Client\MEffectSpriteTypeTable.cpp` |
-| UTF-8 | `.\Client\MEffectSpriteTypeTable.h` |
-| UTF-8 BOM | `.\Client\MEffectStatusDef.h` |
-| UTF-8 | `.\Client\MEffectStatusTable.cpp` |
-| UTF-8 | `.\Client\MEffectStatusTable.h` |
-| UTF-8 | `.\Client\MEffectTarget.cpp` |
-| UTF-8 | `.\Client\MEffectTarget.h` |
-| UTF-8 | `.\Client\MemoryPool.cpp` |
-| UTF-8 | `.\Client\MemoryPool.h` |
-| UTF-8 | `.\Client\MEventManager.cpp` |
-| UTF-8 | `.\Client\MEventManager.h` |
-| UTF-8 | `.\Client\MFakeCreature.cpp` |
-| UTF-8 | `.\Client\MFakeCreature.h` |
-| UTF-8 | `.\Client\MFallingEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MFallingEffectGenerator.h` |
-| UTF-8 | `.\Client\MFileDef.h` |
-| UTF-8 | `.\Client\MFirePiecingEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MFirePiecingEffectGenerator.h` |
-| UTF-8 | `.\Client\MFollowPathEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MFollowPathEffectGenerator.h` |
-| UTF-8 | `.\Client\MFunctionManager.cpp` |
-| UTF-8 | `.\Client\MFunctionManager.h` |
-| UTF-8 | `.\Client\MGameDef.h` |
-| UTF-8 BOM | `.\Client\MGameStringTable.cpp` |
-| UTF-8 BOM | `.\Client\MGameStringTable.h` |
-| UTF-8 | `.\Client\MGameTime.cpp` |
-| UTF-8 | `.\Client\MGameTime.h` |
-| UTF-8 | `.\Client\MGridItemManager.cpp` |
-| UTF-8 | `.\Client\MGridItemManager.h` |
-| UTF-8 | `.\Client\MGuidanceEffect.cpp` |
-| UTF-8 | `.\Client\MGuidanceEffect.h` |
-| UTF-8 | `.\Client\MGuildInfoMapper.cpp` |
-| UTF-8 | `.\Client\MGuildInfoMapper.h` |
-| UTF-8 | `.\Client\MGuildMarkManager.cpp` |
-| UTF-8 BOM | `.\Client\MGuildMarkManager.h` |
-| UTF-8 | `.\Client\MGuildType.h` |
-| UTF-8 | `.\Client\MHelicopterManager.cpp` |
-| UTF-8 | `.\Client\MHelicopterManager.h` |
-| UTF-8 | `.\Client\MHelpDef.h` |
-| UTF-8 | `.\Client\MHelpDisplayer.cpp` |
-| UTF-8 | `.\Client\MHelpDisplayer.h` |
-| UTF-8 | `.\Client\MHelpManager.cpp` |
-| UTF-8 | `.\Client\MHelpManager.h` |
-| UTF-8 BOM | `.\Client\MHelpMessageManager.cpp` |
-| UTF-8 | `.\Client\MHelpMessageManager.h` |
-| UTF-8 | `.\Client\MHelpStringTable.cpp` |
-| UTF-8 | `.\Client\MHelpStringTable.h` |
-| UTF-8 | `.\Client\MHomingEffect.cpp` |
-| UTF-8 | `.\Client\MHomingEffect.h` |
-| UTF-8 | `.\Client\MImageObject.cpp` |
-| UTF-8 | `.\Client\MImageObject.h` |
-| UTF-8 | `.\Client\MInteractionObject.cpp` |
-| UTF-8 | `.\Client\MInteractionObject.h` |
-| UTF-8 | `.\Client\MInteractionObjectTable.cpp` |
-| UTF-8 | `.\Client\MInteractionObjectTable.h` |
-| UTF-8 | `.\Client\MInternetConnection.cpp` |
-| UTF-8 | `.\Client\MInternetConnection.h` |
-| UTF-8 | `.\Client\MinTr.h` |
-| UTF-8 | `.\Client\MInventory.cpp` |
-| UTF-8 | `.\Client\MInventory.h` |
-| UTF-8 | `.\Client\MissingGlobals.cpp` |
-| UTF-8 BOM | `.\Client\MItem.cpp` |
-| UTF-8 | `.\Client\MItem.h` |
-| UTF-8 | `.\Client\MItemFinder.h` |
-| UTF-8 | `.\Client\MItemManager.cpp` |
-| UTF-8 | `.\Client\MItemManager.h` |
-| UTF-8 | `.\Client\MItemOptionTable.cpp` |
-| UTF-8 | `.\Client\MItemOptionTable.h` |
-| UTF-8 BOM | `.\Client\MItemTable.cpp` |
-| UTF-8 | `.\Client\MItemTable.h` |
-| UTF-8 BOM | `.\Client\MitemTableInit.cpp` |
-| UTF-8 BOM | `.\Client\MitemTableinit2.cpp` |
-| UTF-8 | `.\Client\MItemTable_bak-2007-5-7.cpp` |
-| UTF-8 | `.\Client\MJusticeAttackManager.cpp` |
-| UTF-8 | `.\Client\MJusticeAttackManager.h` |
-| UTF-8 | `.\Client\MLevelNameTable.cpp` |
-| UTF-8 | `.\Client\MLevelNameTable.h` |
-| UTF-8 | `.\Client\MLinearEffect.cpp` |
-| UTF-8 | `.\Client\MLinearEffect.h` |
-| UTF-8 | `.\Client\MLoadingSPKWorkNode.cpp` |
-| UTF-8 | `.\Client\MLoadingSPKWorkNode.h` |
-| UTF-8 | `.\Client\MMeteorDropEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MMeteorDropEffectGenerator.h` |
-| UTF-8 | `.\Client\MMoneyManager.cpp` |
-| UTF-8 | `.\Client\MMoneyManager.h` |
-| UTF-8 | `.\Client\MMonsterKillQuestInfo.cpp` |
-| UTF-8 | `.\Client\MMonsterKillQuestInfo.h` |
-| UTF-8 | `.\Client\MMovingEffect.cpp` |
-| UTF-8 | `.\Client\MMovingEffect.h` |
-| UTF-8 | `.\Client\MMultipleFallingEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MMultipleFallingEffectGenerator.h` |
-| UTF-8 | `.\Client\MMusic.cpp` |
-| UTF-8 | `.\Client\MMusic.h` |
-| UTF-8 | `.\Client\MMusicTable.cpp` |
-| UTF-8 | `.\Client\MMusicTable.h` |
-| UTF-8 | `.\Client\MNPC.cpp` |
-| UTF-8 | `.\Client\MNPC.h` |
-| UTF-8 | `.\Client\MNPCScriptTable.cpp` |
-| UTF-8 | `.\Client\MNPCScriptTable.h` |
-| UTF-8 | `.\Client\MNPCTable.cpp` |
-| UTF-8 | `.\Client\MNPCTable.h` |
-| UTF-8 | `.\Client\MObject.cpp` |
-| UTF-8 | `.\Client\MObject.h` |
-| UTF-8 | `.\Client\MObjectSelector.cpp` |
-| UTF-8 | `.\Client\MObjectSelector.h` |
-| UTF-8 | `.\Client\ModifyStatusManager.cpp` |
-| UTF-8 | `.\Client\ModifyStatusManager.h` |
-| UTF-8 | `.\Client\MonsterNameTable.cpp` |
-| UTF-8 | `.\Client\MonsterNameTable.h` |
-| UTF-8 | `.\Client\MOustersGear.cpp` |
-| UTF-8 | `.\Client\MOustersGear.h` |
-| UTF-8 | `.\Client\mp3.cpp` |
-| UTF-8 | `.\Client\mp3.h` |
-| UTF-8 | `.\Client\MParabolaEffect.cpp` |
-| UTF-8 | `.\Client\MParabolaEffect.h` |
-| UTF-8 | `.\Client\MParty.cpp` |
-| UTF-8 | `.\Client\MParty.h` |
-| UTF-8 | `.\Client\MPlayer.cpp` |
-| UTF-8 | `.\Client\MPlayer.h` |
-| UTF-8 | `.\Client\MPlayerGear.cpp` |
-| UTF-8 | `.\Client\MPlayerGear.h` |
-| UTF-8 | `.\Client\MPlayingWithFireEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MPlayingWithFireEffectGenerator.h` |
-| UTF-8 | `.\Client\MPortal.cpp` |
-| UTF-8 | `.\Client\MPortal.h` |
-| UTF-8 | `.\Client\MPriceManager.cpp` |
-| UTF-8 | `.\Client\MPriceManager.h` |
-| UTF-8 | `.\Client\MQuestInfo.cpp` |
-| UTF-8 | `.\Client\MQuestInfo.h` |
-| UTF-8 | `.\Client\MQuickSlot.cpp` |
-| UTF-8 | `.\Client\MQuickSlot.h` |
-| UTF-8 | `.\Client\MRequestMode.cpp` |
-| UTF-8 | `.\Client\MRequestMode.h` |
-| UTF-8 | `.\Client\MRippleZoneEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MRippleZoneEffectGenerator.h` |
-| UTF-8 | `.\Client\MRippleZonePixelEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MRippleZonePixelEffectGenerator.h` |
-| UTF-8 | `.\Client\MRippleZoneWideEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MRippleZoneWideEffectGenerator.h` |
-| UTF-8 | `.\Client\MRisingEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MRisingEffectGenerator.h` |
-| UTF-8 | `.\Client\MScreenEffect.cpp` |
-| UTF-8 | `.\Client\MScreenEffect.h` |
-| UTF-8 | `.\Client\MScreenEffectManager.cpp` |
-| UTF-8 | `.\Client\MScreenEffectManager.h` |
-| UTF-8 | `.\Client\MSector.cpp` |
-| UTF-8 | `.\Client\MSector.h` |
-| UTF-8 | `.\Client\MSectorInfo.h` |
-| UTF-8 | `.\Client\MShadowAnimationObject.cpp` |
-| UTF-8 | `.\Client\MShadowAnimationObject.h` |
-| UTF-8 | `.\Client\MShadowObject.cpp` |
-| UTF-8 | `.\Client\MShadowObject.h` |
-| UTF-8 | `.\Client\MShop.cpp` |
-| UTF-8 | `.\Client\MShop.h` |
-| UTF-8 | `.\Client\MShopShelf.cpp` |
-| UTF-8 | `.\Client\MShopShelf.h` |
-| UTF-8 | `.\Client\MShopTemplate.cpp` |
-| UTF-8 | `.\Client\MShopTemplateTable.h` |
-| UTF-8 BOM | `.\Client\MSkillInfoTable.cpp` |
-| UTF-8 | `.\Client\MSkillManager.cpp` |
-| UTF-8 | `.\Client\MSkillManager.h` |
-| UTF-8 | `.\Client\MSkipEffect.cpp` |
-| UTF-8 | `.\Client\MSkipEffect.h` |
-| UTF-8 | `.\Client\MSkipEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MSkipEffectGenerator.h` |
-| UTF-8 | `.\Client\MSlayerGear.cpp` |
-| UTF-8 | `.\Client\MSlayerGear.h` |
-| UTF-8 | `.\Client\MSlotItemManager.cpp` |
-| UTF-8 | `.\Client\MSlotItemManager.h` |
-| UTF-8 | `.\Client\MSortedItemManager.cpp` |
-| UTF-8 | `.\Client\MSortedItemManager.h` |
-| UTF-8 | `.\Client\MSoundTable.cpp` |
-| UTF-8 | `.\Client\MSoundTable.h` |
-| UTF-8 | `.\Client\MSpreadOutEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MSpreadOutEffectGenerator.h` |
-| UTF-8 | `.\Client\MStatus.cpp` |
-| UTF-8 | `.\Client\MStatus.h` |
-| UTF-8 | `.\Client\MStatusManager.cpp` |
-| UTF-8 | `.\Client\MStatusManager.h` |
-| UTF-8 | `.\Client\MStopInventoryEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MStopInventoryEffectGenerator.h` |
-| UTF-8 | `.\Client\MStopZoneCrossEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MStopZoneCrossEffectGenerator.h` |
-| UTF-8 | `.\Client\MStopZoneEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MStopZoneEffectGenerator.h` |
-| UTF-8 | `.\Client\MStopZoneEmptyCrossEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MStopZoneEmptyCrossEffectGenerator.h` |
-| UTF-8 | `.\Client\MStopZoneEmptyHorizontalEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MStopZoneEmptyHorizontalWallEffectGenerator.h` |
-| UTF-8 | `.\Client\MStopZoneEmptyRectEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MStopZoneEmptyRectEffectGenerator.h` |
-| UTF-8 | `.\Client\MStopZoneEmptyVerticalEffectGenerator.h` |
-| UTF-8 | `.\Client\MStopZoneEmptyVerticalWallEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MStopZoneMultipleEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MStopZoneMultipleEffectGenerator.h` |
-| UTF-8 | `.\Client\MStopZoneRandomEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MStopZoneRandomEffectGenerator.h` |
-| UTF-8 | `.\Client\MStopZoneRectEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MStopZoneRectEffectGenerator.h` |
-| UTF-8 | `.\Client\MStopZoneRhombusEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MStopZoneRhombusEffectGenerator.h` |
-| UTF-8 | `.\Client\MStopZoneSelectableEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MStopZoneSelectableEffectGenerator.h` |
-| UTF-8 | `.\Client\MStopZoneWallEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MStopZoneWallEffectGenerator.h` |
-| UTF-8 | `.\Client\MStopZoneXEffectGenerator.cpp` |
-| UTF-8 | `.\Client\MStopZoneXEffectGenerator.h` |
-| UTF-8 | `.\Client\MStorage.cpp` |
-| UTF-8 | `.\Client\MStorage.h` |
-| UTF-8 | `.\Client\MString.cpp` |
-| UTF-8 | `.\Client\MString.h` |
-| UTF-8 | `.\Client\MStringArray.cpp` |
-| UTF-8 | `.\Client\MStringArray.h` |
-| UTF-8 | `.\Client\MStringList.cpp` |
-| UTF-8 | `.\Client\MStringList.h` |
-| UTF-8 | `.\Client\MStringMap.cpp` |
-| UTF-8 | `.\Client\MStringMap.h` |
-| UTF-8 | `.\Client\MTestDef.cpp` |
-| UTF-8 | `.\Client\MTestDef.h` |
-| UTF-8 BOM | `.\Client\MTimeItemManager.CPP` |
-| UTF-8 | `.\Client\MTimeItemManager.h` |
-| UTF-8 BOM | `.\Client\MTopView.cpp` |
-| UTF-8 | `.\Client\MTopView.h` |
-| UTF-8 | `.\Client\MTopViewDraw.cpp` |
-| UTF-8 | `.\Client\MTopviewExceptionProc.cpp` |
-| UTF-8 | `.\Client\MTradeManager.cpp` |
-| UTF-8 | `.\Client\MTradeManager.h` |
-| UTF-8 | `.\Client\MTypeDef.h` |
-| UTF-8 | `.\Client\MusicDef.h` |
-| UTF-8 | `.\Client\MVampireGear.cpp` |
-| UTF-8 | `.\Client\MVampireGear.h` |
-| UTF-8 | `.\Client\MViewDef.h` |
-| UTF-8 BOM | `.\Client\MWarManager.CPP` |
-| UTF-8 BOM | `.\Client\MWarManager.H` |
-| UTF-8 | `.\Client\MWeather.cpp` |
-| UTF-8 | `.\Client\MWeather.h` |
-| UTF-8 | `.\Client\MWorkNode.cpp` |
-| UTF-8 | `.\Client\MWorkNode.h` |
-| UTF-8 | `.\Client\MWorkThread.cpp` |
-| UTF-8 | `.\Client\MWorkThread.h` |
-| UTF-8 | `.\Client\mytest.h` |
-| UTF-8 | `.\Client\MZLib_PCH.cpp` |
-| UTF-8 | `.\Client\MZLib_PCH.h` |
-| UTF-8 | `.\Client\MZone.cpp` |
-| UTF-8 | `.\Client\MZone.h` |
-| UTF-8 | `.\Client\MZoneDef.h` |
-| UTF-8 | `.\Client\MZoneInfo.h` |
-| UTF-8 | `.\Client\MZoneSound.cpp` |
-| UTF-8 | `.\Client\MZoneSound.h` |
-| UTF-8 | `.\Client\MZoneSoundManager.cpp` |
-| UTF-8 | `.\Client\MZoneSoundManager.h` |
-| UTF-8 | `.\Client\MZoneTable.cpp` |
-| UTF-8 | `.\Client\MZoneTable.h` |
-| UTF-8 | `.\Client\MZoneTileProvider.cpp` |
-| UTF-8 | `.\Client\MZoneTileProvider.h` |
-| UTF-8 | `.\Client\Netmarble.cpp` |
-| UTF-8 | `.\Client\NicknameInfo.cpp` |
-| UTF-8 | `.\Client\NicknameInfo.h` |
-| UTF-8 | `.\Client\NMCrypt.h` |
-| UTF-8 | `.\Client\npfgmsdk.h` |
-| UTF-8 | `.\Client\PacketDef.h` |
-| UTF-8 | `.\Client\PacketFunction.cpp` |
-| UTF-8 | `.\Client\PacketFunction.h` |
-| UTF-8 | `.\Client\PacketFunction2.h` |
-| UTF-8 | `.\Client\PackFileManager.cpp` |
-| UTF-8 | `.\Client\PackFileManager.h` |
-| UTF-8 | `.\Client\PCConfigTable.cpp` |
-| UTF-8 | `.\Client\PCConfigTable.h` |
-| UTF-8 | `.\Client\ProfileManager.cpp` |
-| UTF-8 | `.\Client\ProfileManager.h` |
-| UTF-8 | `.\Client\Profiler.cpp` |
-| UTF-8 | `.\Client\Profiler.h` |
-| UTF-8 | `.\Client\RaceType.h` |
-| UTF-8 | `.\Client\RankBonusDef.h` |
-| UTF-8 | `.\Client\RankBonusTable.cpp` |
-| UTF-8 | `.\Client\RankBonusTable.h` |
-| UTF-8 | `.\Client\reader.cpp` |
-| UTF-8 | `.\Client\reader.h` |
-| UTF-8 BOM | `.\Client\RenderingFunctions.cpp` |
-| UTF-8 | `.\Client\RequestFileManager.cpp` |
-| UTF-8 | `.\Client\RequestFileManager.h` |
-| UTF-8 | `.\Client\RequestFunction.cpp` |
-| UTF-8 | `.\Client\RequestFunction.h` |
-| UTF-8 | `.\Client\RequestUserManager.cpp` |
-| UTF-8 | `.\Client\RequestUserManager.h` |
-| UTF-8 | `.\Client\resource.h` |
-| UTF-8 | `.\Client\SDLMain.cpp` |
-| UTF-8 | `.\Client\SectorSoundInfo.cpp` |
-| UTF-8 | `.\Client\SectorSoundInfo.h` |
-| UTF-8 | `.\Client\ServerInfo.h` |
-| UTF-8 | `.\Client\ServerInfoFileParser.cpp` |
-| UTF-8 | `.\Client\ServerInfoFileParser.h` |
-| UTF-8 | `.\Client\ShowTimeChecker.cpp` |
-| UTF-8 | `.\Client\ShowTimeChecker.h` |
-| UTF-8 | `.\Client\ShrineInfoManager.cpp` |
-| UTF-8 | `.\Client\ShrineInfoManager.h` |
-| UTF-8 | `.\Client\SizeOfObjects.cpp` |
-| UTF-8 | `.\Client\SkillDef.cpp` |
-| UTF-8 BOM | `.\Client\SkillDef.h` |
-| UTF-8 | `.\Client\soundbuf.cpp` |
-| UTF-8 | `.\Client\soundbuf.h` |
-| UTF-8 | `.\Client\SoundDef.h` |
-| UTF-8 | `.\Client\SoundNode.cpp` |
-| UTF-8 | `.\Client\SoundNode.h` |
-| UTF-8 | `.\Client\SoundSetting.h` |
-| UTF-8 | `.\Client\SpriteIDDef.h` |
-| UTF-8 | `.\Client\StdAfx.cpp` |
-| UTF-8 | `.\Client\StdAfx.h` |
-| UTF-8 | `.\Client\StoreInfo.cpp` |
-| UTF-8 | `.\Client\StoreInfo.h` |
-| UTF-8 | `.\Client\subdecoder.cpp` |
-| UTF-8 | `.\Client\synfilt.cpp` |
-| UTF-8 | `.\Client\SystemAvailabilities.cpp` |
-| UTF-8 | `.\Client\SystemAvailabilities.h` |
-| UTF-8 | `.\Client\TalkBox.cpp` |
-| UTF-8 | `.\Client\TalkBox.h` |
-| UTF-8 | `.\Client\TempInformation.cpp` |
-| UTF-8 | `.\Client\TempInformation.h` |
-| UTF-8 | `.\Client\TileRenderer.cpp` |
-| UTF-8 | `.\Client\TileRenderer.h` |
-| UTF-8 | `.\Client\trees.h` |
-| UTF-8 | `.\Client\UIDialog.cpp` |
-| UTF-8 | `.\Client\UIDialog.h` |
-| UTF-8 | `.\Client\UIFunction.h` |
-| UTF-8 BOM | `.\Client\UIMessageManager.cpp` |
-| UTF-8 | `.\Client\UIMessageManager.h` |
-| UTF-8 | `.\Client\UIUtilityFunctions.cpp` |
-| UTF-8 | `.\Client\UserInformation.cpp` |
-| UTF-8 | `.\Client\UserInformation.h` |
-| UTF-8 | `.\Client\UserOption.cpp` |
-| UTF-8 | `.\Client\UserOption.h` |
-| UTF-8 BOM | `.\Client\UtilityFunction.cpp` |
-| UTF-8 | `.\Client\UtilityFunction.h` |
-| UTF-8 | `.\Client\WavePackFileManager.cpp` |
-| UTF-8 | `.\Client\WavePackFileManager.h` |
-| UTF-8 | `.\Client\WhisperManager.cpp` |
-| UTF-8 | `.\Client\WhisperManager.h` |
-| UTF-8 | `.\Client\zconf.h` |
-| UTF-8 | `.\Client\zlib.h` |
-| UTF-8 | `.\Client\ZoneFileHeader.cpp` |
-| UTF-8 | `.\Client\ZoneFileHeader.h` |
-| UTF-8 | `.\Client\zutil.h` |
-| UTF-8 | `.\Client\DXLib\BIT_RES.CPP` |
-| UTF-8 | `.\Client\DXLib\BIT_RES.H` |
-| UTF-8 BOM | `.\Client\DXLib\CDirectDraw.cpp` |
-| UTF-8 BOM | `.\Client\DXLib\CDirectDraw.h` |
-| UTF-8 BOM | `.\Client\DXLib\CDirectDrawSurface.cpp` |
-| UTF-8 BOM | `.\Client\DXLib\CDirectDrawSurface.h` |
-| UTF-8 BOM | `.\Client\DXLib\CDirectDraw_StaticMembers.cpp` |
-| UTF-8 | `.\Client\DXLib\CDirectInput.cpp` |
-| UTF-8 BOM | `.\Client\DXLib\CDirectInput.h` |
-| UTF-8 BOM | `.\Client\DXLib\CDirectInput_Adapter.cpp` |
-| UTF-8 BOM | `.\Client\DXLib\CDirectMusic.cpp` |
-| UTF-8 BOM | `.\Client\DXLib\CDirectMusic.h` |
-| UTF-8 | `.\Client\DXLib\CDirectMusic_Adapter.cpp` |
-| UTF-8 | `.\Client\DXLib\CDirectSetup.h` |
-| UTF-8 | `.\Client\DXLib\CDirectSetupGetVersion.cpp` |
-| UTF-8 BOM | `.\Client\DXLib\CDirectSound.cpp` |
-| UTF-8 BOM | `.\Client\DXLib\CDirectSound.h` |
-| UTF-8 BOM | `.\Client\DXLib\CDirectSoundStream.cpp` |
-| UTF-8 BOM | `.\Client\DXLib\CDirectSoundStream.h` |
-| UTF-8 | `.\Client\DXLib\CDirectSoundStream_Adapter.cpp` |
-| UTF-8 | `.\Client\DXLib\CDirectSound_Adapter.cpp` |
-| UTF-8 | `.\Client\DXLib\codec.h` |
-| UTF-8 | `.\Client\DXLib\common.h` |
-| UTF-8 | `.\Client\DXLib\config_types.h` |
-| UTF-8 | `.\Client\DXLib\DXLib.h` |
-| UTF-8 BOM | `.\Client\DXLib\DXLibBackend.h` |
-| UTF-8 BOM | `.\Client\DXLib\DXLibBackendSDL.cpp` |
-| UTF-8 | `.\Client\DXLib\header.cpp` |
-| UTF-8 | `.\Client\DXLib\header.h` |
-| UTF-8 | `.\Client\DXLib\huffman.cpp` |
-| UTF-8 | `.\Client\DXLib\huffman.h` |
-| UTF-8 | `.\Client\DXLib\l3types.h` |
-| UTF-8 | `.\Client\DXLib\mp3.cpp` |
-| UTF-8 | `.\Client\DXLib\mp3.h` |
-| UTF-8 | `.\Client\DXLib\ogg.h` |
-| UTF-8 | `.\Client\DXLib\os_types.h` |
-| UTF-8 | `.\Client\DXLib\reader.cpp` |
-| UTF-8 | `.\Client\DXLib\reader.h` |
-| UTF-8 | `.\Client\DXLib\soundbuf.cpp` |
-| UTF-8 | `.\Client\DXLib\soundbuf.h` |
-| UTF-8 | `.\Client\DXLib\subdecoder.cpp` |
-| UTF-8 | `.\Client\DXLib\synfilt.cpp` |
-| UTF-8 | `.\Client\DXLib\vorbisenc.h` |
-| UTF-8 | `.\Client\DXLib\vorbisfile.h` |
-| UTF-8 | `.\Client\framelib\CAnimationFrame.cpp` |
-| UTF-8 | `.\Client\framelib\CAnimationFrame.h` |
-| UTF-8 | `.\Client\framelib\CAnimationFrameSetManager.cpp` |
-| UTF-8 | `.\Client\framelib\CAnimationFrameSetManager.h` |
-| UTF-8 | `.\Client\framelib\CCreatureFrameSetManager.cpp` |
-| UTF-8 | `.\Client\framelib\CCreatureFrameSetManager.h` |
-| UTF-8 | `.\Client\framelib\CFrame.cpp` |
-| UTF-8 | `.\Client\framelib\CFrame.h` |
-| UTF-8 | `.\Client\framelib\CFramePack.cpp` |
-| UTF-8 | `.\Client\framelib\CFramePack.h` |
-| UTF-8 | `.\Client\framelib\CFrameSet.h` |
-| UTF-8 | `.\Client\framelib\CFrameSetManager.cpp` |
-| UTF-8 | `.\Client\framelib\CFrameSetManager.h` |
-| UTF-8 | `.\Client\framelib\DrawTypeDef.h` |
-| UTF-8 | `.\Client\framelib\FR.h` |
-| UTF-8 | `.\Client\framelib\Frame_PCH.cpp` |
-| UTF-8 | `.\Client\framelib\Frame_PCH.h` |
-| UTF-8 | `.\Client\framelib\TArray.h` |
-| UTF-8 | `.\Client\JpegLib\JCONFIG.H` |
-| UTF-8 | `.\Client\JpegLib\JERROR.H` |
-| UTF-8 | `.\Client\JpegLib\JMORECFG.H` |
-| UTF-8 | `.\Client\JpegLib\JPEGINT.H` |
-| UTF-8 | `.\Client\JpegLib\JPEGLIB.H` |
-| UTF-8 | `.\Client\OtherClass\RequestClientPacketFactoryManager.cpp` |
-| UTF-8 | `.\Client\OtherClass\RequestClientPacketFactoryManager.h` |
-| UTF-8 | `.\Client\OtherClass\RequestServerPacketFactoryManager.cpp` |
-| UTF-8 | `.\Client\OtherClass\RequestServerPacketFactoryManager.h` |
-| UTF-8 | `.\Client\Packet\Assert1.h` |
-| UTF-8 BOM | `.\Client\Packet\ClientCommunicationManager.cpp` |
-| UTF-8 | `.\Client\Packet\ClientCommunicationManager.h` |
-| UTF-8 | `.\Client\Packet\ClientPlayer.cpp` |
-| UTF-8 | `.\Client\Packet\ClientPlayer.h` |
-| UTF-8 | `.\Client\Packet\Datagram.cpp` |
-| UTF-8 | `.\Client\Packet\Datagram.h` |
-| UTF-8 | `.\Client\Packet\DatagramPacket.h` |
-| UTF-8 | `.\Client\Packet\DatagramSocket.cpp` |
-| UTF-8 | `.\Client\Packet\DatagramSocket.h` |
-| UTF-8 | `.\Client\Packet\EffectInfo.cpp` |
-| UTF-8 | `.\Client\Packet\EffectInfo.h` |
-| UTF-8 | `.\Client\Packet\Encrypter.cpp` |
-| UTF-8 | `.\Client\Packet\Encrypter.h` |
-| UTF-8 | `.\Client\Packet\EncryptUtility.h` |
-| UTF-8 | `.\Client\Packet\Exception.cpp` |
-| UTF-8 BOM | `.\Client\Packet\Exception.h` |
-| UTF-8 | `.\Client\Packet\ExtraInfo.cpp` |
-| UTF-8 | `.\Client\Packet\ExtraInfo.h` |
-| UTF-8 | `.\Client\Packet\ExtraSlotInfo.cpp` |
-| UTF-8 | `.\Client\Packet\ExtraSlotInfo.h` |
-| UTF-8 BOM | `.\Client\Packet\GameTime.cpp` |
-| UTF-8 | `.\Client\Packet\GameTime.h` |
-| UTF-8 | `.\Client\Packet\GearInfo.cpp` |
-| UTF-8 | `.\Client\Packet\GearInfo.h` |
-| UTF-8 | `.\Client\Packet\GearSlotInfo.cpp` |
-| UTF-8 | `.\Client\Packet\GearSlotInfo.h` |
-| UTF-8 | `.\Client\Packet\GuildWarInfo.cpp` |
-| UTF-8 | `.\Client\Packet\GuildWarInfo.h` |
-| UTF-8 | `.\Client\Packet\InventoryInfo.cpp` |
-| UTF-8 | `.\Client\Packet\InventoryInfo.h` |
-| UTF-8 | `.\Client\Packet\InventorySlotInfo.cpp` |
-| UTF-8 | `.\Client\Packet\InventorySlotInfo.h` |
-| UTF-8 | `.\Client\Packet\LevelWarInfo.cpp` |
-| UTF-8 | `.\Client\Packet\LevelWarInfo.h` |
-| UTF-8 | `.\Client\Packet\ModifyInfo.cpp` |
-| UTF-8 | `.\Client\Packet\ModifyInfo.h` |
-| UTF-8 | `.\Client\Packet\NPCInfo.cpp` |
-| UTF-8 | `.\Client\Packet\NPCInfo.h` |
-| UTF-8 | `.\Client\Packet\OustersSkillInfo.cpp` |
-| UTF-8 | `.\Client\Packet\OustersSkillInfo.h` |
-| UTF-8 | `.\Client\Packet\Packet.h` |
-| UTF-8 | `.\Client\Packet\PacketAssert.cpp` |
-| UTF-8 | `.\Client\Packet\PacketAssert.h` |
-| UTF-8 | `.\Client\Packet\PacketFactory.h` |
-| UTF-8 | `.\Client\Packet\PacketFactoryManager.cpp` |
-| UTF-8 | `.\Client\Packet\PacketFactoryManager.h` |
-| UTF-8 | `.\Client\Packet\PacketFileAPI.cpp` |
-| UTF-8 | `.\Client\Packet\PacketFileAPI.h` |
-| UTF-8 | `.\Client\Packet\PacketIDSet.cpp` |
-| UTF-8 | `.\Client\Packet\PacketIDSet.h` |
-| UTF-8 | `.\Client\Packet\PacketValidator.cpp` |
-| UTF-8 | `.\Client\Packet\PacketValidator.h` |
-| UTF-8 | `.\Client\Packet\PCInfo.h` |
-| UTF-8 | `.\Client\Packet\PCItemInfo.cpp` |
-| UTF-8 | `.\Client\Packet\PCItemInfo.h` |
-| UTF-8 | `.\Client\Packet\PCOustersInfo.cpp` |
-| UTF-8 | `.\Client\Packet\PCOustersInfo.h` |
-| UTF-8 | `.\Client\Packet\PCOustersInfo2.cpp` |
-| UTF-8 | `.\Client\Packet\PCOustersInfo2.h` |
-| UTF-8 | `.\Client\Packet\PCOustersInfo3.cpp` |
-| UTF-8 | `.\Client\Packet\PCOustersInfo3.h` |
-| UTF-8 | `.\Client\Packet\PCSkillInfo.h` |
-| UTF-8 | `.\Client\Packet\PCSlayerInfo.cpp` |
-| UTF-8 | `.\Client\Packet\PCSlayerInfo.h` |
-| UTF-8 | `.\Client\Packet\PCSlayerInfo2.cpp` |
-| UTF-8 | `.\Client\Packet\PCSlayerInfo2.h` |
-| UTF-8 | `.\Client\Packet\PCSlayerInfo3.cpp` |
-| UTF-8 | `.\Client\Packet\PCSlayerInfo3.h` |
-| UTF-8 | `.\Client\Packet\PCVampireInfo.cpp` |
-| UTF-8 | `.\Client\Packet\PCVampireInfo.h` |
-| UTF-8 | `.\Client\Packet\PCVampireInfo2.cpp` |
-| UTF-8 | `.\Client\Packet\PCVampireInfo2.h` |
-| UTF-8 | `.\Client\Packet\PCVampireInfo3.cpp` |
-| UTF-8 | `.\Client\Packet\PCVampireInfo3.h` |
-| UTF-8 | `.\Client\Packet\PetInfo.cpp` |
-| UTF-8 | `.\Client\Packet\PetInfo.h` |
-| UTF-8 | `.\Client\Packet\Player.cpp` |
-| UTF-8 BOM | `.\Client\Packet\Player.h` |
-| UTF-8 | `.\Client\Packet\PlayerInfo.h` |
-| UTF-8 BOM | `.\Client\Packet\PlayerStatus.h` |
-| UTF-8 | `.\Client\Packet\Properties.cpp` |
-| UTF-8 | `.\Client\Packet\Properties.h` |
-| UTF-8 | `.\Client\Packet\QuestStatusInfo.cpp` |
-| UTF-8 | `.\Client\Packet\QuestStatusInfo.h` |
-| UTF-8 | `.\Client\Packet\RaceWarInfo.cpp` |
-| UTF-8 | `.\Client\Packet\RaceWarInfo.h` |
-| UTF-8 | `.\Client\Packet\RequestClientPlayer.cpp` |
-| UTF-8 | `.\Client\Packet\RequestClientPlayer.h` |
-| UTF-8 | `.\Client\Packet\RequestClientPlayerManager.cpp` |
-| UTF-8 | `.\Client\Packet\RequestClientPlayerManager.h` |
-| UTF-8 | `.\Client\Packet\RequestServerPlayer.cpp` |
-| UTF-8 | `.\Client\Packet\RequestServerPlayer.h` |
-| UTF-8 | `.\Client\Packet\RequestServerPlayerManager.cpp` |
-| UTF-8 | `.\Client\Packet\RequestServerPlayerManager.h` |
-| UTF-8 | `.\Client\Packet\RideMotorcycleInfo.cpp` |
-| UTF-8 | `.\Client\Packet\RideMotorcycleInfo.h` |
-| UTF-8 | `.\Client\Packet\RideMotorcycleSlotInfo.cpp` |
-| UTF-8 | `.\Client\Packet\RideMotorcycleSlotInfo.h` |
-| UTF-8 | `.\Client\Packet\ScriptParameter.cpp` |
-| UTF-8 | `.\Client\Packet\ScriptParameter.h` |
-| UTF-8 | `.\Client\Packet\ServerGroupInfo.cpp` |
-| UTF-8 | `.\Client\Packet\ServerGroupInfo.h` |
-| UTF-8 | `.\Client\Packet\ServerSocket.cpp` |
-| UTF-8 | `.\Client\Packet\ServerSocket.h` |
-| UTF-8 | `.\Client\Packet\SlayerSkillInfo.cpp` |
-| UTF-8 | `.\Client\Packet\SlayerSkillInfo.h` |
-| UTF-8 | `.\Client\Packet\Socket.cpp` |
-| UTF-8 | `.\Client\Packet\Socket.h` |
-| UTF-8 | `.\Client\Packet\SocketAPI.cpp` |
-| UTF-8 | `.\Client\Packet\SocketAPI.h` |
-| UTF-8 | `.\Client\Packet\SocketEncryptInputStream.cpp` |
-| UTF-8 | `.\Client\Packet\SocketEncryptInputStream.h` |
-| UTF-8 | `.\Client\Packet\SocketEncryptOutputStream.cpp` |
-| UTF-8 | `.\Client\Packet\SocketEncryptOutputStream.h` |
-| UTF-8 BOM | `.\Client\Packet\SocketImpl.cpp` |
-| UTF-8 | `.\Client\Packet\SocketImpl.h` |
-| UTF-8 | `.\Client\Packet\SocketInputStream.cpp` |
-| UTF-8 | `.\Client\Packet\SocketInputStream.h` |
-| UTF-8 | `.\Client\Packet\SocketOutputStream.cpp` |
-| UTF-8 | `.\Client\Packet\SocketOutputStream.h` |
-| UTF-8 | `.\Client\Packet\StringStream.cpp` |
-| UTF-8 | `.\Client\Packet\StringStream.h` |
-| UTF-8 | `.\Client\Packet\SubItemInfo.cpp` |
-| UTF-8 | `.\Client\Packet\SubItemInfo.h` |
-| UTF-8 | `.\Client\Packet\SubOustersSkillInfo.cpp` |
-| UTF-8 | `.\Client\Packet\SubOustersSkillInfo.h` |
-| UTF-8 | `.\Client\Packet\SubServerInfo.cpp` |
-| UTF-8 | `.\Client\Packet\SubServerInfo.h` |
-| UTF-8 | `.\Client\Packet\SubSlayerSkillInfo.cpp` |
-| UTF-8 | `.\Client\Packet\SubSlayerSkillInfo.h` |
-| UTF-8 | `.\Client\Packet\SubVampireSkillInfo.cpp` |
-| UTF-8 | `.\Client\Packet\SubVampireSkillInfo.h` |
-| UTF-8 | `.\Client\Packet\TextInfo.cpp` |
-| UTF-8 | `.\Client\Packet\TextInfo.h` |
-| UTF-8 | `.\Client\Packet\Types.h` |
-| UTF-8 | `.\Client\Packet\ValueList.h` |
-| UTF-8 | `.\Client\Packet\VampireSkillInfo.cpp` |
-| UTF-8 | `.\Client\Packet\VampireSkillInfo.h` |
-| UTF-8 | `.\Client\Packet\WarInfo.cpp` |
-| UTF-8 | `.\Client\Packet\WarInfo.h` |
-| UTF-8 | `.\Client\Packet\WorldInfo.cpp` |
-| UTF-8 | `.\Client\Packet\WorldInfo.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAbsorbSoul.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAbsorbSoul.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAcceptUnion.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAcceptUnion.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAcceptUnionHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddGearToMouse.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddGearToMouse.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddInventoryToMouse.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddInventoryToMouse.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddItemToCodeSheet.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddItemToCodeSheet.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddItemToCodeSheetHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddItemToItem.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddItemToItem.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddMouseToGear.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddMouseToGear.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddMouseToInventory.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddMouseToInventory.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddMouseToQuickSlot.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddMouseToQuickSlot.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddMouseToZone.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddMouseToZone.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddQuickSlotToMouse.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddQuickSlotToMouse.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddSMSAddress.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddSMSAddress.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddZoneToInventory.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddZoneToInventory.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddZoneToMouse.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAddZoneToMouse.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAppointSubmaster.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAppointSubmaster.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAppointSubmasterHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAttack.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAttack.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAuthKey.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAuthKey.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGAuthKeyHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGBloodDrain.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGBloodDrain.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGBuyStoreItem.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGBuyStoreItem.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGBuyStoreItemHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGCastingSkill.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGCastingSkill.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGConnect.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGConnect.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGConnectSetKey.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGConnectSetKey.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGConnectSetKeyHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGCrashReport.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGCrashReport.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDeleteSMSAddress.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDeleteSMSAddress.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDenyUnion.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDenyUnion.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDenyUnionHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDepositPet.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDepositPet.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDepositPetHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDialUp.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDialUp.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDisplayItem.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDisplayItem.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDisplayItemHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDissectionCorpse.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDissectionCorpse.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDonationMoney.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDonationMoney.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDonationMoneyHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDownSkill.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDownSkill.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDownSkillHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDropMoney.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGDropMoney.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGExchangeBuy.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGExchangeBuy.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGExchangeList.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGExchangeList.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGExpelGuild.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGExpelGuild.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGExpelGuildHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGFailQuest.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGFailQuest.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGFailQuestHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGGetEventItem.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGGetEventItem.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGGetOffMotorCycle.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGGetOffMotorCycle.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGGlobalChat.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGGlobalChat.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGGQuestAccept.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGGQuestAccept.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGGQuestCancel.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGGQuestCancel.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGGuildChat.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGGuildChat.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGJoinGuild.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGJoinGuild.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGLearnSkill.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGLearnSkill.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGLogout.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGLogout.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGLotterySelect.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGLotterySelect.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGLotterySelectHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGMakeItem.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGMakeItem.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGMixItem.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGMixItem.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGMixItemHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGModifyGuildIntro.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGModifyGuildIntro.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGModifyGuildMember.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGModifyGuildMember.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGModifyGuildMemberIntro.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGModifyGuildMemberIntro.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGModifyNickname.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGModifyNickname.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGModifyTaxRatio.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGModifyTaxRatio.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGMouseToStash.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGMouseToStash.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGMove.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGMove.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGNPCAskAnswer.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGNPCAskAnswer.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGNPCTalk.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGNPCTalk.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPartyInvite.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPartyInvite.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPartyLeave.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPartyLeave.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPartyPosition.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPartyPosition.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPartySay.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPartySay.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPetGamble.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPetGamble.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPhoneDisconnect.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPhoneDisconnect.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPhoneSay.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPhoneSay.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPickupMoney.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPickupMoney.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPortCheck.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGPortCheck.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGQuitUnion.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGQuitUnion.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGQuitUnionAccept.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGQuitUnionAccept.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGQuitUnionAcceptHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGQuitUnionDeny.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGQuitUnionDeny.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGQuitUnionDenyHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGQuitUnionHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRangerSay.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRangerSay.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRangerSayHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGReady.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGReady.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRegistGuild.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRegistGuild.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRelicToObject.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRelicToObject.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGReloadFromInventory.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGReloadFromInventory.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGReloadFromQuickSlot.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGReloadFromQuickSlot.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestGuildList.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestGuildList.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestGuildListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestGuildMemberList.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestGuildMemberList.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestInfo.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestIP.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestIP.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestNewbieItem.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestNewbieItem.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestPowerPoint.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestPowerPoint.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestRepair.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestRepair.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestStoreInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestStoreInfo.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestStoreInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestUnion.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestUnion.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestUnionHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestUnionInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestUnionInfo.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRequestUnionInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGResurrect.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGResurrect.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRideMotorCycle.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGRideMotorCycle.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSay.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSay.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectBloodBible.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectBloodBible.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectBloodBibleHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectGuild.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectGuild.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectGuildMember.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectGuildMember.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectNickname.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectNickname.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectPortal.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectPortal.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectQuest.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectQuest.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectQuestHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectRankBonus.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectRankBonus.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectRegenZone.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectRegenZone.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectRegenZoneHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectTileEffect.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectTileEffect.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectWayPoint.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSelectWayPoint.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSetSlayerHotKey.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSetSlayerHotKey.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSetVampireHotKey.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSetVampireHotKey.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGShopRequestBuy.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGShopRequestBuy.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGShopRequestList.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGShopRequestList.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGShopRequestSell.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGShopRequestSell.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSilverCoating.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSilverCoating.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSkillToInventory.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSkillToInventory.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSkillToNamed.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSkillToNamed.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSkillToObject.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSkillToObject.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSkillToSelf.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSkillToSelf.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSkillToTile.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSkillToTile.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSMSAddressList.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSMSAddressList.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSMSSend.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSMSSend.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStashDeposit.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStashDeposit.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStashList.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStashList.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStashRequestBuy.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStashRequestBuy.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStashToMouse.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStashToMouse.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStashWithdraw.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStashWithdraw.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStoreClose.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStoreClose.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStoreCloseHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStoreOpen.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStoreOpen.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStoreOpenHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStoreSign.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStoreSign.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGStoreSignHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSubmitScore.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSubmitScore.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGSubmitScoreHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTakeOutGood.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTakeOutGood.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTakeOutGoodHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTameMonster.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTameMonster.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGThrowBomb.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGThrowBomb.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGThrowItem.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGThrowItem.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTradeAddItem.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTradeAddItem.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTradeFinish.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTradeFinish.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTradeMoney.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTradeMoney.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTradePrepare.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTradePrepare.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTradeRemoveItem.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTradeRemoveItem.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTryJoinGuild.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTryJoinGuild.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTypeStringList.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGTypeStringList.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUnburrow.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUnburrow.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUndisplayItem.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUndisplayItem.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUndisplayItemHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUntransform.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUntransform.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUseBonusPoint.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUseBonusPoint.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUseItemFromGear.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUseItemFromGear.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUseItemFromGQuestInventory.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUseItemFromGQuestInventory.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUseItemFromGQuestInventoryHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUseItemFromInventory.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUseItemFromInventory.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUseMessageItemFromInventory.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUseMessageItemFromInventory.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUsePotionFromInventory.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUsePotionFromInventory.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUsePotionFromQuickSlot.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUsePotionFromQuickSlot.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUsePowerPoint.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGUsePowerPoint.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGVerifyTime.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGVerifyTime.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGVisible.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGVisible.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGWhisper.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGWhisper.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGWithdrawPet.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGWithdrawPet.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGWithdrawPetHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGWithdrawTax.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGWithdrawTax.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CGWithdrawTaxHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLChangeServer.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLChangeServer.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLCreatePC.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLCreatePC.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLDeletePC.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLDeletePC.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLGetPCList.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLGetPCList.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLGetServerList.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLGetServerList.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLGetWorldList.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLGetWorldList.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLLogin.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLLogin.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLLogout.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLLogout.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLQueryCharacterName.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLQueryCharacterName.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLQueryPlayerID.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLQueryPlayerID.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLReconnectLogin.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLReconnectLogin.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLRegisterPlayer.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLRegisterPlayer.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLSelectPC.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLSelectPC.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLSelectServer.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLSelectServer.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLSelectWorld.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLSelectWorld.h` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLVersionCheck.cpp` |
-| UTF-8 | `.\Client\Packet\Cpackets\CLVersionCheck.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\BloodBibleBonusInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\BloodBibleBonusInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCActiveGuildList.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCActiveGuildList.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCActiveGuildListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddBat.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddBat.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddBatHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddBurrowingCreature.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddBurrowingCreature.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddBurrowingCreatureHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddEffect.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddEffect.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddEffectHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddEffectToTile.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddEffectToTile.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddEffectToTileHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddGearToInventory.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddGearToInventory.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddGearToInventoryHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddGearToZone.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddGearToZone.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddGearToZoneHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddHelicopter.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddHelicopter.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddHelicopterHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddInjuriousCreature.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddInjuriousCreature.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddInjuriousCreatureHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddInstalledMineToZone.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddInstalledMineToZone.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddInstalledMineToZoneHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddItemToInventory.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddItemToInventory.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddItemToItemVerify.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddItemToItemVerify.h` |
-| UTF-8 BOM | `.\Client\Packet\Gpackets\GCAddItemToItemVerifyHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddItemToZone.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddItemToZone.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddMonster.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddMonster.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddMonsterCorpse.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddMonsterCorpse.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddMonsterCorpseHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddMonsterFromBurrowing.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddMonsterFromBurrowing.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddMonsterFromBurrowingHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddMonsterFromTransformation.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddMonsterFromTransformation.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddMonsterFromTransformationHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddMonsterHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddNewItemToZone.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddNewItemToZone.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddNewItemToZoneHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddNickname.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddNickname.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddNicknameHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddNPC.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddNPC.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddNPCHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddOusters.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddOusters.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddOustersCorpse.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddOustersCorpse.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddOustersCorpseHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddOustersHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddressListVerify.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddressListVerify.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddressListVerifyHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddSlayer.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddSlayer.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddSlayerCorpse.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddSlayerCorpse.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddSlayerCorpseHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddSlayerHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddStoreItem.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddStoreItem.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddStoreItemHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddVampire.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddVampire.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddVampireCorpse.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddVampireCorpse.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddVampireCorpseHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddVampireFromBurrowing.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddVampireFromBurrowing.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddVampireFromBurrowingHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddVampireFromTransformation.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddVampireFromTransformation.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddVampireFromTransformationHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddVampireHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddVampirePortal.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddVampirePortal.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddVampirePortalHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddWolf.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddWolf.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAddWolfHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttack.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttack.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackArmsOK1.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackArmsOK1.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackArmsOK1Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackArmsOK2.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackArmsOK2.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackArmsOK2Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackArmsOK3.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackArmsOK3.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackArmsOK3Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackArmsOK4.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackArmsOK4.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackArmsOK4Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackArmsOK5.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackArmsOK5.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackArmsOK5Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackMeleeOK1.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackMeleeOK1.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackMeleeOK1Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackMeleeOK2.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackMeleeOK2.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackMeleeOK2Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackMeleeOK3.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackMeleeOK3.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAttackMeleeOK3Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAuthKey.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAuthKey.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCAuthKeyHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodBibleList.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodBibleList.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodBibleListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodBibleSignInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodBibleSignInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodBibleSignInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodBibleStatus.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodBibleStatus.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodBibleStatusHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodDrainOK1.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodDrainOK1.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodDrainOK1Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodDrainOK2.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodDrainOK2.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodDrainOK2Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodDrainOK3.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodDrainOK3.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCBloodDrainOK3Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCannotAdd.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCannotAdd.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCannotAddHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCannotUse.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCannotUse.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCannotUseHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCastingSkill.cpp` |
-| UTF-8 BOM | `.\Client\Packet\Gpackets\GCCastingSkill.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCastingSkillHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCChangeDarkLight.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCChangeDarkLight.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCChangeDarkLightHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCChangeInventoryItemNum.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCChangeInventoryItemNum.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCChangeShape.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCChangeShape.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCChangeShapeHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCChangeWeather.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCChangeWeather.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCChangeWeatherHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCreateItem.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCreateItem.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCreateItemHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCreatureDied.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCreatureDied.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCreatureDiedHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCrossCounterOK1.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCrossCounterOK1.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCrossCounterOK1Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCrossCounterOK2.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCrossCounterOK2.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCrossCounterOK2Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCrossCounterOK3.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCrossCounterOK3.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCCrossCounterOK3Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDeleteandPickUpOK.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDeleteandPickUpOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDeleteandPickUpOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDeleteEffectFromTile.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDeleteEffectFromTile.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDeleteEffectFromTileHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDeleteInventoryItem.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDeleteInventoryItem.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDeleteInventoryItemHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDeleteObject.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDeleteObject.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDeleteObjectHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDisconnect.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDisconnect.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDisconnectHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDownSkillFailed.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDownSkillFailed.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDownSkillFailedHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDownSkillOK.cpp` |
-| UTF-8 BOM | `.\Client\Packet\Gpackets\GCDownSkillOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDownSkillOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDropItemToZone.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDropItemToZone.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCDropItemToZoneHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCEnterVampirePortal.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCEnterVampirePortal.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCEnterVampirePortalHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCExchangeList.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCExchangeList.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCExecuteElement.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCExecuteElement.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCExecuteElementHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCFakeMove.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCFakeMove.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCFakeMoveHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCFastMove.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCFastMove.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCFastMoveHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCFlagWarStatus.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCFlagWarStatus.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCFlagWarStatusHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCFriendChatting.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCFriendChatting.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCFriendChattingHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGetDamage.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGetDamage.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGetDamageHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGetOffMotorCycle.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGetOffMotorCycle.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGetOffMotorCycleFailed.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGetOffMotorCycleFailed.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGetOffMotorCycleFailedHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGetOffMotorCycleHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGetOffMotorCycleOK.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGetOffMotorCycleOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGetOffMotorCycleOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGlobalChat.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGlobalChat.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGlobalChatHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGoodsList.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGoodsList.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGoodsListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGQuestInventory.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGQuestInventory.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGQuestInventoryHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGQuestStatusInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGQuestStatusInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGQuestStatusInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGQuestStatusModify.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGQuestStatusModify.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGQuestStatusModifyHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGuildChat.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGuildChat.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGuildChatHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGuildMemberList.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGuildMemberList.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGuildMemberListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGuildResponse.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGuildResponse.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCGuildResponseHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCHolyLandBonusInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCHolyLandBonusInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCHolyLandBonusInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCHPRecoveryEndToOthers.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCHPRecoveryEndToOthers.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCHPRecoveryEndToOthersHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCHPRecoveryEndToSelf.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCHPRecoveryEndToSelf.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCHPRecoveryEndToSelfHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCHPRecoveryStartToOthers.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCHPRecoveryStartToOthers.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCHPRecoveryStartToOthersHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCHPRecoveryStartToSelf.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCHPRecoveryStartToSelf.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCHPRecoveryStartToSelfHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKickMessage.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKickMessage.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKickMessageHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKnockBack.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKnockBack.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKnockBackHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK1.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK1.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK1Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK2.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK2.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK2Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK4.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK4.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK4Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK5.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK5.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK5Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCLearnSkillFailed.cpp` |
-| UTF-8 BOM | `.\Client\Packet\Gpackets\GCLearnSkillFailed.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCLearnSkillFailedHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCLearnSkillOK.cpp` |
-| UTF-8 BOM | `.\Client\Packet\Gpackets\GCLearnSkillOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCLearnSkillOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCLearnSkillReady.cpp` |
-| UTF-8 BOM | `.\Client\Packet\Gpackets\GCLearnSkillReady.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCLearnSkillReadyHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCLightning.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCLightning.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCLightningHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMakeItemFail.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMakeItemFail.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMakeItemFailHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMakeItemOK.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMakeItemOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMakeItemOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMineExplosionOK1.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMineExplosionOK1.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMineExplosionOK1Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMineExplosionOK2.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMineExplosionOK2.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMineExplosionOK2Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMiniGameScores.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMiniGameScores.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMiniGameScoresHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCModifyGuildMemberInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCModifyGuildMemberInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCModifyGuildMemberInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCModifyInformation.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCModifyInformation.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCModifyInformationHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCModifyNickname.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCModifyNickname.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCModifyNicknameHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMonsterKillQuestInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMonsterKillQuestInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMonsterKillQuestInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMorph1.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMorph1.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMorph1Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMorphSlayer2.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMorphSlayer2.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMorphSlayer2Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMorphVampire2.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMorphVampire2.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMorphVampire2Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMove.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMove.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMoveError.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMoveError.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMoveErrorHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMoveHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMoveOK.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMoveOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMoveOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMPRecoveryEnd.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMPRecoveryEnd.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMPRecoveryEndHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMPRecoveryStart.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMPRecoveryStart.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMPRecoveryStartHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMyStoreInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMyStoreInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCMyStoreInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNicknameList.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNicknameList.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNicknameListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNicknameVerify.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNicknameVerify.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNicknameVerifyHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNoticeEvent.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNoticeEvent.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNoticeEventHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNotifyWin.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNotifyWin.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNotifyWinHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCAsk.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCAsk.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCAskDynamic.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCAskDynamic.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCAskDynamicHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCAskHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCAskVariable.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCAskVariable.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCAskVariableHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCResponse.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCResponse.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCResponseHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCSay.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCSay.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCSayDynamic.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCSayDynamic.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCSayDynamicHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCNPCSayHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCOtherGuildName.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCOtherGuildName.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCOtherGuildNameHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCOtherModifyInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCOtherModifyInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCOtherModifyInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCOtherStoreInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCOtherStoreInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCOtherStoreInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartyError.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartyError.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartyErrorHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartyInvite.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartyInvite.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartyInviteHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartyJoined.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartyJoined.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartyJoinedHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartyLeave.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartyLeave.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartyLeaveHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartyPosition.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartyPosition.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartyPositionHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartySay.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartySay.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPartySayHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPetInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPetInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPetInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPetStashList.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPetStashList.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPetStashListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPetStashVerify.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPetStashVerify.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPetStashVerifyHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPetUseSkill.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPetUseSkill.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPetUseSkillHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPhoneConnected.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPhoneConnected.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPhoneConnectedHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPhoneConnectionFailed.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPhoneConnectionFailed.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPhoneConnectionFailedHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPhoneDisconnected.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPhoneDisconnected.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPhoneDisconnectedHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPhoneSay.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPhoneSay.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCPhoneSayHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCQuestStatus.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCQuestStatus.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCQuestStatusHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRankBonusInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRankBonusInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRankBonusInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRealWearingInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRealWearingInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRealWearingInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCReconnect.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCReconnect.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCReconnectHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCReconnectLogin.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCReconnectLogin.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCReconnectLoginHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRegenZoneStatus.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRegenZoneStatus.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRegenZoneStatusHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCReloadOK.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCReloadOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCReloadOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRemoveCorpseHead.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRemoveCorpseHead.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRemoveCorpseHeadHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRemoveEffect.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRemoveEffect.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRemoveEffectHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRemoveFromGear.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRemoveFromGear.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRemoveFromGearHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRemoveInjuriousCreature.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRemoveInjuriousCreature.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRemoveInjuriousCreatureHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRemoveStoreItem.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRemoveStoreItem.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRemoveStoreItemHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRequestedIP.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRequestedIP.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRequestedIPHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRequestFailed.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRequestFailed.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRequestFailedHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRequestPowerPointResult.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRequestPowerPointResult.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRequestPowerPointResultHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRideMotorCycle.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRideMotorCycle.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRideMotorCycleFailed.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRideMotorCycleFailed.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRideMotorCycleFailedHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRideMotorCycleHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRideMotorCycleOK.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRideMotorCycleOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRideMotorCycleOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRing.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRing.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCRingHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSay.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSay.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSayHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSearchMotorcycleFail.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSearchMotorcycleFail.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSearchMotorcycleFailHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSearchMotorcycleOK.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSearchMotorcycleOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSearchMotorcycleOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSelectQuestID.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSelectQuestID.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSelectQuestIDHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSelectRankBonusFailed.cpp` |
-| UTF-8 BOM | `.\Client\Packet\Gpackets\GCSelectRankBonusFailed.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSelectRankBonusFailedHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSelectRankBonusOK.cpp` |
-| UTF-8 BOM | `.\Client\Packet\Gpackets\GCSelectRankBonusOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSelectRankBonusOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSetPosition.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSetPosition.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSetPositionHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopBought.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopBought.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopBoughtHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopBuyFail.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopBuyFail.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopBuyFailHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopBuyOK.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopBuyOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopBuyOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopList.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopList.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopListMysterious.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopListMysterious.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopListMysteriousHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopMarketCondition.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopMarketCondition.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopMarketConditionHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopSellFail.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopSellFail.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopSellFailHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopSellOK.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopSellOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopSellOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopSold.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopSold.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopSoldHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopVersion.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopVersion.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShopVersionHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowGuildInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowGuildInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowGuildInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowGuildJoin.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowGuildJoin.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowGuildJoinHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowGuildMemberInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowGuildMemberInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowGuildMemberInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowMessageBox.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowMessageBox.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowMessageBoxHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowUnionInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowUnionInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowUnionInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowWaitGuildInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowWaitGuildInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCShowWaitGuildInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillFailed1.cpp` |
-| UTF-8 BOM | `.\Client\Packet\Gpackets\GCSkillFailed1.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillFailed1Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillFailed2.cpp` |
-| UTF-8 BOM | `.\Client\Packet\Gpackets\GCSkillFailed2.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillFailed2Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToInventoryOK1.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToInventoryOK1.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToInventoryOK1Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToInventoryOK2.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToInventoryOK2.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToInventoryOK2Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK1.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK1.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK1Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK2.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK2.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK2Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK3.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK3.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK3Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK4.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK4.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK4Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK5.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK5.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK5Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK6.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK6.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToObjectOK6Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToSelfOK1.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToSelfOK1.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToSelfOK1Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToSelfOK2.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToSelfOK2.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToSelfOK2Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToSelfOK3.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToSelfOK3.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToSelfOK3Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK1.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK1.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK1Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK2.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK2.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK2Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK3.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK3.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK3Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK4.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK4.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK4Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK5.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK5.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK5Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK6.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK6.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSkillToTileOK6Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSMSAddressList.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSMSAddressList.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSMSAddressListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCStashList.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCStashList.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCStashListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCStashSell.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCStashSell.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCStashSellHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCStatusCurrentHP.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCStatusCurrentHP.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCStatusCurrentHPHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSubInventoryInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSubInventoryInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSubInventoryInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSweeperBonusInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSweeperBonusInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSweeperBonusInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSystemAvailabilities.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSystemAvailabilities.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSystemAvailabilitiesHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSystemMessage.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSystemMessage.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCSystemMessageHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTakeOff.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTakeOff.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTakeOffHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTakeOutFail.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTakeOutFail.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTakeOutFailHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTakeOutOK.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTakeOutOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTakeOutOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTeachSkillInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTeachSkillInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTeachSkillInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowBombOK1.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowBombOK1.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowBombOK1Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowBombOK2.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowBombOK2.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowBombOK2Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowBombOK3.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowBombOK3.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowBombOK3Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowItemOK1.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowItemOK1.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowItemOK1Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowItemOK2.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowItemOK2.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowItemOK2Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowItemOK3.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowItemOK3.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCThrowItemOK3Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTimeLimitItemInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTimeLimitItemInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTimeLimitItemInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeAddItem.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeAddItem.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeAddItemHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeError.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeError.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeErrorHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeFinish.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeFinish.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeFinishHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeMoney.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeMoney.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeMoneyHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradePrepare.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradePrepare.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradePrepareHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeRemoveItem.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeRemoveItem.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeRemoveItemHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeVerify.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeVerify.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCTradeVerifyHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUnburrowFail.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUnburrowFail.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUnburrowFailHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUnburrowOK.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUnburrowOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUnburrowOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUnionOfferList.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUnionOfferList.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUnionOfferListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUntransformFail.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUntransformFail.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUntransformFailHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUntransformOK.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUntransformOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUntransformOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUpdateInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUpdateInfo.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUpdateInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUseBonusPointFail.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUseBonusPointFail.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUseBonusPointFailHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUseBonusPointOK.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUseBonusPointOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUseBonusPointOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUseOK.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUseOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUseOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUsePowerPointResult.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUsePowerPointResult.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCUsePowerPointResultHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCVisibleFail.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCVisibleFail.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCVisibleFailHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCVisibleOK.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCVisibleOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCVisibleOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCWaitGuildList.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCWaitGuildList.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCWaitGuildListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCWarList.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCWarList.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCWarListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCWarScheduleList.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCWarScheduleList.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCWarScheduleListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCWhisper.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCWhisper.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCWhisperFailed.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCWhisperFailed.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCWhisperFailedHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GCWhisperHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GLIncomingConnectionError.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GLIncomingConnectionError.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GLIncomingConnectionErrorHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GLIncomingConnectionOK.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\GLIncomingConnectionOK.h` |
-| UTF-8 | `.\Client\Packet\Gpackets\GLIncomingConnectionOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\SweeperBonusInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Gpackets\SweeperBonusInfo.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCCreatePCError.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCCreatePCError.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCCreatePCErrorHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCCreatePCOK.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCCreatePCOK.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCCreatePCOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCDeletePCError.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCDeletePCError.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCDeletePCErrorHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCDeletePCOK.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCDeletePCOK.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCDeletePCOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCLoginError.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCLoginError.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCLoginErrorHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCLoginOK.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCLoginOK.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCLoginOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCPCList.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCPCList.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCPCListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCQueryResultCharacterName.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCQueryResultCharacterName.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCQueryResultCharacterNameHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCQueryResultPlayerID.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCQueryResultPlayerID.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCQueryResultPlayerIDHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCReconnect.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCReconnect.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCReconnectHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCRegisterPlayerError.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCRegisterPlayerError.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCRegisterPlayerErrorHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCRegisterPlayerOK.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCRegisterPlayerOK.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCRegisterPlayerOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCSelectPCError.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCSelectPCError.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCSelectPCErrorHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCServerList.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCServerList.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCServerListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCVersionCheckError.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCVersionCheckError.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCVersionCheckErrorHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCVersionCheckOK.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCVersionCheckOK.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCVersionCheckOKHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCWorldList.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCWorldList.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LCWorldListHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LGIncomingConnection.cpp` |
-| UTF-8 | `.\Client\Packet\Lpackets\LGIncomingConnection.h` |
-| UTF-8 | `.\Client\Packet\Lpackets\LGIncomingConnectionHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\CRConnect.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\CRConnect.h` |
-| UTF-8 | `.\Client\Packet\Rpackets\CRConnectHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\CRDisconnect.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\CRDisconnect.h` |
-| UTF-8 | `.\Client\Packet\Rpackets\CRDisconnectHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\CRRequest.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\CRRequest.h` |
-| UTF-8 | `.\Client\Packet\Rpackets\CRRequest2.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\CRRequest2.h` |
-| UTF-8 | `.\Client\Packet\Rpackets\CRRequest2Handler.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\CRRequestHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\CRWhisper.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\CRWhisper.h` |
-| UTF-8 | `.\Client\Packet\Rpackets\CRWhisperHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCCharacterInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCCharacterInfo.h` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCCharacterInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCConnectVerify.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCConnectVerify.h` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCConnectVerifyHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCPositionInfo.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCPositionInfo.h` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCPositionInfoHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCRequestedFile.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCRequestedFile.h` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCRequestedFileHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCRequestVerify.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCRequestVerify.h` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCRequestVerifyHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCSay.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCSay.h` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCSayHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCStatusHP.cpp` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCStatusHP.h` |
-| UTF-8 | `.\Client\Packet\Rpackets\RCStatusHPHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Types\CreatureTypes.h` |
-| UTF-8 | `.\Client\Packet\Types\GuildTypes.h` |
-| UTF-8 | `.\Client\Packet\Types\ItemTypes.h` |
-| UTF-8 | `.\Client\Packet\Types\ModifyDef.h` |
-| UTF-8 | `.\Client\Packet\Types\ObjectTypes.h` |
-| UTF-8 | `.\Client\Packet\Types\PacketItemDef.h` |
-| UTF-8 | `.\Client\Packet\Types\PetTypes.h` |
-| UTF-8 | `.\Client\Packet\Types\PlayerTypes.h` |
-| UTF-8 BOM | `.\Client\Packet\Types\QuestTypes.h` |
-| UTF-8 | `.\Client\Packet\Types\RequestTypes.h` |
-| UTF-8 | `.\Client\Packet\Types\ShopTypes.h` |
-| UTF-8 | `.\Client\Packet\Types\SystemTypes.h` |
-| UTF-8 | `.\Client\Packet\Types\WarTypes.h` |
-| UTF-8 | `.\Client\Packet\Types\ZoneTypes.h` |
-| UTF-8 | `.\Client\Packet\Upackets\CURequestLoginMode.cpp` |
-| UTF-8 | `.\Client\Packet\Upackets\CURequestLoginMode.h` |
-| UTF-8 | `.\Client\Packet\Upackets\CURequestLoginModeHandler.cpp` |
-| UTF-8 | `.\Client\Packet\Upackets\UCRequestLoginMode.cpp` |
-| UTF-8 | `.\Client\Packet\Upackets\UCRequestLoginMode.h` |
-| UTF-8 | `.\Client\Packet\Upackets\UCRequestLoginModeHandler.cpp` |
-| UTF-8 BOM | `.\Client\SpriteLib\CAlphaSprite.cpp` |
-| UTF-8 BOM | `.\Client\SpriteLib\CAlphaSprite.h` |
-| UTF-8 | `.\Client\SpriteLib\CAlphaSprite555.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CAlphaSprite555.h` |
-| UTF-8 | `.\Client\SpriteLib\CAlphaSprite565.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CAlphaSprite565.h` |
-| UTF-8 | `.\Client\SpriteLib\CAlphaSpritePack.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CAlphaSpritePack.h` |
-| UTF-8 | `.\Client\SpriteLib\CAlphaSpritePackList.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CAlphaSpritePackList.h` |
-| UTF-8 | `.\Client\SpriteLib\CAlphaSpritePackList555.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CAlphaSpritePackList555.h` |
-| UTF-8 | `.\Client\SpriteLib\CAlphaSpritePackList565.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CAlphaSpritePackList565.h` |
-| UTF-8 | `.\Client\SpriteLib\CAlphaSpritePal.cpp` |
-| UTF-8 BOM | `.\Client\SpriteLib\CAlphaSpritePal.h` |
-| UTF-8 | `.\Client\SpriteLib\CFileIndexTable.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CFileIndexTable.h` |
-| UTF-8 | `.\Client\SpriteLib\CFilter.cpp` |
-| UTF-8 BOM | `.\Client\SpriteLib\CFilter.h` |
-| UTF-8 | `.\Client\SpriteLib\CFilterPack.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CFilterPack.h` |
-| UTF-8 BOM | `.\Client\SpriteLib\CIndexSprite.cpp` |
-| UTF-8 BOM | `.\Client\SpriteLib\CIndexSprite.h` |
-| UTF-8 | `.\Client\SpriteLib\CIndexSprite555.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CIndexSprite555.h` |
-| UTF-8 | `.\Client\SpriteLib\CIndexSprite565.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CIndexSprite565.h` |
-| UTF-8 | `.\Client\SpriteLib\CIndexSpritePack.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CIndexSpritePack.h` |
-| UTF-8 BOM | `.\Client\SpriteLib\CSetManager.h` |
-| UTF-8 BOM | `.\Client\SpriteLib\CShadowSprite.cpp` |
-| UTF-8 BOM | `.\Client\SpriteLib\CShadowSprite.h` |
-| UTF-8 | `.\Client\SpriteLib\CShadowSpritePack.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CShadowSpritePack.h` |
-| UTF-8 BOM | `.\Client\SpriteLib\CSprite.cpp` |
-| UTF-8 BOM | `.\Client\SpriteLib\CSprite.h` |
-| UTF-8 | `.\Client\SpriteLib\CSprite555.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CSprite555.h` |
-| UTF-8 | `.\Client\SpriteLib\CSprite565.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CSprite565.h` |
-| UTF-8 | `.\Client\SpriteLib\CSpriteDef.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CSpriteDef.h` |
-| UTF-8 | `.\Client\SpriteLib\CSpriteOutlineManager.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CSpriteOutlineManager.h` |
-| UTF-8 | `.\Client\SpriteLib\CSpritePack.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CSpritePack.h` |
-| UTF-8 | `.\Client\SpriteLib\CSpritePackList.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CSpritePackList.h` |
-| UTF-8 | `.\Client\SpriteLib\CSpritePackList555.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CSpritePackList555.h` |
-| UTF-8 | `.\Client\SpriteLib\CSpritePackList565.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CSpritePackList565.h` |
-| UTF-8 | `.\Client\SpriteLib\CSpritePal.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CSpritePal.h` |
-| UTF-8 | `.\Client\SpriteLib\CSpritePalBase.cpp` |
-| UTF-8 BOM | `.\Client\SpriteLib\CSpritePalBase.h` |
-| UTF-8 | `.\Client\SpriteLib\CSpriteSet.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CSpriteSet.h` |
-| UTF-8 | `.\Client\SpriteLib\CSpriteSetManager.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CSpriteSetManager.h` |
-| UTF-8 BOM | `.\Client\SpriteLib\CSpriteSurface.cpp` |
-| UTF-8 BOM | `.\Client\SpriteLib\CSpriteSurface.h` |
-| UTF-8 BOM | `.\Client\SpriteLib\CSpriteSurface_Adapter.cpp` |
-| UTF-8 BOM | `.\Client\SpriteLib\CSpriteSurface_Effects.cpp` |
-| UTF-8 BOM | `.\Client\SpriteLib\CSpriteSurface_SDL.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CSprite_SDL.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CStorageSurface.cpp` |
-| UTF-8 | `.\Client\SpriteLib\CStorageSurface.h` |
-| UTF-8 BOM | `.\Client\SpriteLib\CTypePack.h` |
-| UTF-8 | `.\Client\SpriteLib\CTypePackVector.h` |
-| UTF-8 | `.\Client\SpriteLib\DrawTypeDef.h` |
-| UTF-8 | `.\Client\SpriteLib\MPalette.cpp` |
-| UTF-8 | `.\Client\SpriteLib\MPalette.h` |
-| UTF-8 | `.\Client\SpriteLib\MPalettePack.cpp` |
-| UTF-8 | `.\Client\SpriteLib\MPalettePack.h` |
-| UTF-8 | `.\Client\SpriteLib\SP.h` |
-| UTF-8 | `.\Client\SpriteLib\SpriteLibBackend.h` |
-| UTF-8 BOM | `.\Client\SpriteLib\SpriteLibBackendSDL.cpp` |
-| UTF-8 | `.\Client\SpriteLib\SpriteLibBackendSDL.h` |
-| UTF-8 BOM | `.\Client\SpriteLib\TArray.h` |
-| UTF-8 | `.\Client\SXml\SXml.cpp` |
-| UTF-8 | `.\Client\SXml\SXml.h` |
-| UTF-8 BOM | `.\Client\TextSystem\FontHandleUtil.h` |
-| UTF-8 | `.\Client\TextSystem\RenderTarget.h` |
-| UTF-8 | `.\Client\TextSystem\RenderTargetSpriteSurface.cpp` |
-| UTF-8 | `.\Client\TextSystem\RenderTargetSpriteSurface.h` |
-| UTF-8 | `.\Client\TextSystem\TextBackend.h` |
-| UTF-8 BOM | `.\Client\TextSystem\TextBackendSDL.cpp` |
-| UTF-8 BOM | `.\Client\TextSystem\TextService.cpp` |
-| UTF-8 BOM | `.\Client\TextSystem\TextService.h` |
-| UTF-8 | `.\Client\TextSystem\TextTypes.h` |
-| UTF-8 | `.\Client\tools\resource_validator.cpp` |
-| UTF-8 | `.\Client\Updater\Update.cpp` |
-| UTF-8 | `.\Client\Updater\Update.h` |
-| UTF-8 | `.\Client\Updater\UpdateDef.h` |
-| UTF-8 | `.\Client\Updater\UpdateManager.cpp` |
-| UTF-8 | `.\Client\Updater\UpdateManager.h` |
-| UTF-8 | `.\Client\Updater\UpdateUtility.cpp` |
-| UTF-8 | `.\Client\Updater\UpdateUtility.h` |
-| UTF-8 | `.\Client\WinLib\CWinUpdate.cpp` |
-| UTF-8 | `.\Client\WinLib\CWinUpdate.h` |
-| UTF-8 | `.\Client\WinLib\WinLib.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\animation.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\color.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\colorset.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\error.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\frame.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\framepack.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\index_sprite.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\index_spritepack.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\map.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\sdl_framework.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\shadow_sprite.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\shadow_spritepack.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\SP.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\sprite.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\spritepack.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\str.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\types.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\ui_surface.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\vector.h` |
-| UTF-8 BOM | `.\tools\engine\sprite\include\zone.h` |
-| UTF-8 | `.\tools\viewers\creature_viewer\main.cpp` |
-| UTF-8 | `.\tools\viewers\effect_viewer\EffectSpriteTypeTable.cpp` |
-| UTF-8 | `.\tools\viewers\effect_viewer\EffectSpriteTypeTable.h` |
-| UTF-8 | `.\tools\viewers\effect_viewer\main.cpp` |
-| UTF-8 | `.\tools\viewers\effect_viewer\stubs.cpp` |
-| UTF-8 | `.\tools\viewers\item_viewer\main.cpp` |
-| UTF-8 | `.\tools\viewers\item_viewer\viewer.h` |
-| UTF-8 | `.\tools\viewers\map_viewer\main.cpp` |
-| UTF-8 | `.\tools\viewers\map_viewer\mzone_tileprovider.cpp` |
-| UTF-8 | `.\tools\viewers\map_viewer\mzone_tileprovider.h` |
-| UTF-8 | `.\tools\viewers\map_viewer\zoneloader.cpp` |
-| UTF-8 | `.\tools\viewers\map_viewer\zoneloader.h` |
-| UTF-8 | `.\tools\viewers\sprite_viewer\main.cpp` |
-| UTF-8 | `.\tools\viewers\zone_parser\main.cpp` |
-| UTF-8 | `.\VS_UI\Client_PCH.cpp` |
-| UTF-8 | `.\VS_UI\Client_PCH.h` |
-| UTF-8 | `.\VS_UI\DebugInfo.cpp` |
-| UTF-8 | `.\VS_UI\DIK_Defines.h` |
-| UTF-8 BOM | `.\VS_UI\MitemTableInit.cpp` |
-| UTF-8 | `.\VS_UI\RarFile.cpp` |
-| UTF-8 | `.\VS_UI\RarFile.h` |
-| UTF-8 | `.\VS_UI\SXml.cpp` |
-| UTF-8 | `.\VS_UI\SXml.h` |
-| UTF-8 BOM | `.\VS_UI\WinMain.cpp` |
-| UTF-8 | `.\VS_UI\src\AcceleratorDef.cpp` |
-| UTF-8 | `.\VS_UI\src\AcceleratorManager.cpp` |
-| UTF-8 | `.\VS_UI\src\CWebPage.h` |
-| UTF-8 | `.\VS_UI\src\cwebpage_.h` |
-| UTF-8 | `.\VS_UI\src\InputFocusManager.cpp` |
-| UTF-8 | `.\VS_UI\src\InputFocusManager.h` |
-| UTF-8 BOM | `.\VS_UI\src\KeyAccelerator.cpp` |
-| UTF-8 | `.\VS_UI\src\SkinManager.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\Vs_ui.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\VS_UI_Base.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_BBS.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\VS_UI_DESC.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\VS_UI_Description.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_Descriptor.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\VS_UI_Dialog.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_ELEVATOR.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_Exception.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\VS_UI_Exchange.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\VS_UI_ExtraDialog.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\VS_UI_Game.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\VS_UI_GameCommon.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\vs_ui_gamecommon2.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\VS_UI_GameOusters.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\VS_UI_GameSlayer.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_GameVampire.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_GlobalResource.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_Helper.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\VS_UI_Item.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_Message.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_mouse_pointer.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\VS_UI_PetStorage.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_PointExchange.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_progress.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_Shop.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_skill_tree.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_SKILL_VIEW.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\VS_UI_Storage.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\VS_UI_Title.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\VS_UI_TITLE_SHOWCHAR.CPP` |
-| UTF-8 | `.\VS_UI\src\VS_UI_Tutorial.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_ui_result_receiver.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\VS_UI_util.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_WebBrowser.cpp` |
-| UTF-8 | `.\VS_UI\src\VS_UI_widget.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\hangul\Ci.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\hangul\Ci.h` |
-| UTF-8 | `.\VS_UI\src\hangul\Ci_macOS.cpp` |
-| UTF-8 BOM | `.\VS_UI\src\hangul\FL2.cpp` |
-| UTF-8 | `.\VS_UI\src\hangul\Fl2.h` |
-| UTF-8 | `.\VS_UI\src\header\AcceleratorDef.h` |
-| UTF-8 | `.\VS_UI\src\header\AcceleratorManager.h` |
-| UTF-8 BOM | `.\VS_UI\src\header\KeyAccelerator.h` |
-| UTF-8 | `.\VS_UI\src\header\SkinManager.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI.h` |
-| UTF-8 BOM | `.\VS_UI\src\header\VS_UI_Base.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_bbs.h` |
-| UTF-8 BOM | `.\VS_UI\src\header\VS_UI_DESC.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_Description.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_descriptor.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_Dialog.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_ELEVATOR.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_Exception.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_Exchange.h` |
-| UTF-8 BOM | `.\VS_UI\src\header\VS_UI_ExtraDialog.h` |
-| UTF-8 BOM | `.\VS_UI\src\header\VS_UI_filepath.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_Game.h` |
-| UTF-8 BOM | `.\VS_UI\src\header\VS_UI_GameCommon.h` |
-| UTF-8 BOM | `.\VS_UI\src\header\VS_UI_GameCommon2.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_GameOusters.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_GameSlayer.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_GameVampire.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_GlobalResource.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_Helper.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_item.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_Message.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_mouse_pointer.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_PetStorage.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_PointExchange.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_progress.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_Shop.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_skill_tree.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_SKILL_VIEW.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_Storage.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_title.h` |
-| UTF-8 BOM | `.\VS_UI\src\header\VS_UI_Tutorial.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_UIMessage.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_ui_result_receiver.h` |
-| UTF-8 BOM | `.\VS_UI\src\header\VS_UI_util.h` |
-| UTF-8 | `.\VS_UI\src\header\VS_UI_WebBrowser.h` |
-| UTF-8 BOM | `.\VS_UI\src\header\VS_UI_widget.h` |
-| UTF-8 | `.\VS_UI\src\Imm\CImm.cpp` |
-| UTF-8 | `.\VS_UI\src\Imm\CImm.h` |
-| UTF-8 | `.\VS_UI\src\Imm\FeelitAPI.h` |
-| UTF-8 | `.\VS_UI\src\Imm\IFC.h` |
-| UTF-8 | `.\VS_UI\src\Imm\IFCErrors.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmBaseTypes.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmBox.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmCompoundEffect.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmCondition.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmConstant.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmDamper.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmDevice.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmDevices.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmDXDevice.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmEffect.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmEffectSuite.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmEllipse.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmEnclosure.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmFriction.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmGrid.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmIFR.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmInertia.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmMouse.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmPeriodic.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmProjects.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmRamp.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmSpring.h` |
-| UTF-8 | `.\VS_UI\src\Imm\ImmTexture.h` |
-| UTF-8 | `.\VS_UI\src\widget\mother.cpp` |
-| UTF-8 | `.\VS_UI\src\widget\mother.h` |
-| UTF-8 | `.\VS_UI\src\widget\PI.H` |
-| UTF-8 | `.\VS_UI\src\widget\pi_core.cpp` |
-| UTF-8 | `.\VS_UI\src\widget\pi_core.h` |
-| UTF-8 | `.\VS_UI\src\widget\SimpleDataList.h` |
-| UTF-8 | `.\VS_UI\src\widget\unicorn.h` |
-| UTF-8 | `.\VS_UI\src\widget\u_button.cpp` |
-| UTF-8 | `.\VS_UI\src\widget\u_button.h` |
-| UTF-8 | `.\VS_UI\src\widget\U_edit.cpp` |
-| UTF-8 | `.\VS_UI\src\widget\U_edit.h` |
-| UTF-8 | `.\VS_UI\src\widget\u_scrollbar.cpp` |
-| UTF-8 | `.\VS_UI\src\widget\u_scrollbar.h` |
-| UTF-8 BOM | `.\VS_UI\src\widget\u_window.cpp` |
-| UTF-8 | `.\VS_UI\src\widget\u_window.h` |
+| ENCODING | FILE SIZE | FILE PATH |
+| :--- | :--- | :--- |
+| UTF-8 BOM | 1.1 KB | `.\basic\2d.h` |
+| UTF-8 BOM | 4.2 KB | `.\basic\AudioTypes.h` |
+| UTF-8 BOM | 1.9 KB | `.\basic\BasicData.cpp` |
+| UTF-8 BOM | 1.3 KB | `.\basic\BasicData.h` |
+| UTF-8 BOM | 1.2 KB | `.\basic\BasicException.cpp` |
+| UTF-8 BOM | 900 B | `.\basic\BasicException.h` |
+| UTF-8 BOM | 637 B | `.\basic\BasicMemory.h` |
+| UTF-8 | 415 B | `.\basic\Basics.h` |
+| UTF-8 BOM | 3.3 KB | `.\basic\ColorDraw.cpp` |
+| UTF-8 BOM | 4.0 KB | `.\basic\ColorDraw.h` |
+| UTF-8 BOM | 2.7 KB | `.\basic\Directory.cpp` |
+| UTF-8 BOM | 1.7 KB | `.\basic\Directory.h` |
+| UTF-8 BOM | 1.4 KB | `.\basic\DLL.h` |
+| UTF-8 BOM | 1.0 KB | `.\basic\GL_import.cpp` |
+| UTF-8 BOM | 2.6 KB | `.\basic\GL_import.h` |
+| UTF-8 BOM | 1.2 KB | `.\basic\IMG.h` |
+| UTF-8 BOM | 9.7 KB | `.\basic\InputCodes.h` |
+| UTF-8 BOM | 3.1 KB | `.\basic\i_signal.h` |
+| UTF-8 BOM | 516 B | `.\basic\picinfo.h` |
+| UTF-8 BOM | 57.9 KB | `.\basic\Platform.h` |
+| UTF-8 BOM | 14.3 KB | `.\basic\PlatformSDL.cpp` |
+| UTF-8 BOM | 914 B | `.\basic\PlatformUtil.h` |
+| UTF-8 | 342 B | `.\basic\PS.h` |
+| UTF-8 BOM | 2.3 KB | `.\basic\TGA.h` |
+| UTF-8 BOM | 6.1 KB | `.\basic\Timer2.cpp` |
+| UTF-8 BOM | 1.4 KB | `.\basic\timer2.h` |
+| UTF-8 BOM | 523 B | `.\basic\Typedef.h` |
+| UTF-8 | 29.9 KB | `.\build\CMakeFiles\4.4.0-rc3\CompilerIdCXX\CMakeCXXCompilerId.cpp` |
+| UTF-8 | 29.9 KB | `.\build\vs2019\CMakeFiles\4.4.0-rc3\CompilerIdCXX\CMakeCXXCompilerId.cpp` |
+| UTF-8 | 1.2 KB | `.\Client\ActionFunctions.cpp` |
+| UTF-8 | 4.8 KB | `.\Client\AddonDef.h` |
+| UTF-8 | 3.4 KB | `.\Client\APICheck.cpp` |
+| UTF-8 | 1.0 KB | `.\Client\APICheck.h` |
+| UTF-8 | 12.9 KB | `.\Client\AppendPatchInfo.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\AppendPatchInfo.h` |
+| UTF-8 | 2.6 KB | `.\Client\BIT_RES.CPP` |
+| UTF-8 | 441 B | `.\Client\BIT_RES.H` |
+| UTF-8 | 2.2 KB | `.\Client\BloodBibleSignInfo.cpp` |
+| UTF-8 | 1.6 KB | `.\Client\BloodBibleSignInfo.h` |
+| UTF-8 | 1.3 KB | `.\Client\CAvi.cpp` |
+| UTF-8 | 506 B | `.\Client\CAvi.h` |
+| UTF-8 | 4.3 KB | `.\Client\CDataTable.h` |
+| UTF-8 | 8.1 KB | `.\Client\CDirectDrawSurface.h` |
+| UTF-8 | 3.3 KB | `.\Client\CDirectInput.h` |
+| UTF-8 | 3.7 KB | `.\Client\CDirectMusic.h` |
+| UTF-8 | 1.3 KB | `.\Client\CDirectSetup.h` |
+| UTF-8 | 4.2 KB | `.\Client\CDirectSound.h` |
+| UTF-8 | 2.6 KB | `.\Client\CDirectSoundStream.h` |
+| UTF-8 BOM | 201.1 KB | `.\Client\CGameUpdate.cpp` |
+| UTF-8 | 899 B | `.\Client\CGameUpdate.h` |
+| UTF-8 | 2.6 KB | `.\Client\CGHandlersStub.cpp` |
+| UTF-8 | 1.1 KB | `.\Client\CJpeg.h` |
+| UTF-8 BOM | 119.3 KB | `.\Client\Client.cpp` |
+| UTF-8 | 8.3 KB | `.\Client\Client.h` |
+| UTF-8 | 25.7 KB | `.\Client\ClientConfig.cpp` |
+| UTF-8 | 9.3 KB | `.\Client\ClientConfig.h` |
+| UTF-8 | 4.7 KB | `.\Client\ClientDef.h` |
+| UTF-8 BOM | 17.3 KB | `.\Client\ClientFunction.cpp` |
+| UTF-8 | 1.3 KB | `.\Client\ClientFunction.h` |
+| UTF-8 | 667 B | `.\Client\ClientTimeFunctions.cpp` |
+| UTF-8 | 23 B | `.\Client\Client_PCH.cpp` |
+| UTF-8 | 1.3 KB | `.\Client\Client_PCH.h` |
+| UTF-8 | 10.2 KB | `.\Client\CMessageArray.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\CMessageArray.h` |
+| UTF-8 | 15.9 KB | `.\Client\CMP3.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\CMP3.h` |
+| UTF-8 | 13.2 KB | `.\Client\CNormalSpriteTexturePartManager.cpp` |
+| UTF-8 | 1009 B | `.\Client\COGGSTREAM.CPP` |
+| UTF-8 | 1.1 KB | `.\Client\COGGSTREAM.H` |
+| UTF-8 | 678 B | `.\Client\common.h` |
+| UTF-8 | 2.5 KB | `.\Client\COpeningUpdate.cpp` |
+| UTF-8 | 705 B | `.\Client\COpeningUpdate.h` |
+| UTF-8 BOM | 6.0 KB | `.\Client\COrderedList.h` |
+| UTF-8 | 19.1 KB | `.\Client\CPartManager.h` |
+| UTF-8 | 9.5 KB | `.\Client\CPositionList.h` |
+| UTF-8 BOM | 10.8 KB | `.\Client\CrashReport.cpp` |
+| UTF-8 | 1022 B | `.\Client\CrashReport.h` |
+| UTF-8 | 1.6 KB | `.\Client\CSDLGraphicsFlip.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\CServerInformation.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\CServerInformation.h` |
+| UTF-8 | 17.9 KB | `.\Client\CShadowPartManager.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\CShadowPartManager.h` |
+| UTF-8 | 1.6 KB | `.\Client\CSoundPartManager.cpp` |
+| UTF-8 | 1.1 KB | `.\Client\CSoundPartManager.h` |
+| UTF-8 | 10.9 KB | `.\Client\CSpritePal.cpp` |
+| UTF-8 | 5.8 KB | `.\Client\CSpritePal.h` |
+| UTF-8 | 13.8 KB | `.\Client\CSpriteTexturePartManager.cpp` |
+| UTF-8 | 4.6 KB | `.\Client\CSpriteTexturePartManager.h` |
+| UTF-8 | 6.3 KB | `.\Client\CSystemInfo.cpp` |
+| UTF-8 | 1.2 KB | `.\Client\CSystemInfo.h` |
+| UTF-8 | 13.9 KB | `.\Client\CTexturePartManager.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\CTexturePartManager.h` |
+| UTF-8 | 2.7 KB | `.\Client\CToken.cpp` |
+| UTF-8 | 1.2 KB | `.\Client\CToken.h` |
+| UTF-8 | 5.7 KB | `.\Client\CTypeMap.h` |
+| UTF-8 | 4.4 KB | `.\Client\CTypeMap2.h` |
+| UTF-8 BOM | 6.1 KB | `.\Client\CTypeTable.h` |
+| UTF-8 | 3.7 KB | `.\Client\CUsingColorSetTable.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\CUsingColorSetTable.h` |
+| UTF-8 | 3.0 KB | `.\Client\CWaitPacketUpdate.cpp` |
+| UTF-8 | 896 B | `.\Client\CWaitPacketUpdate.h` |
+| UTF-8 | 29.5 KB | `.\Client\CWaitUIUpdate.cpp` |
+| UTF-8 | 1022 B | `.\Client\CWaitUIUpdate.h` |
+| UTF-8 | 3.8 KB | `.\Client\DebugInfo.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\DebugInfo.h` |
+| UTF-8 | 4.0 KB | `.\Client\DebugKit.cpp` |
+| UTF-8 | 1.4 KB | `.\Client\DebugKit.h` |
+| UTF-8 BOM | 7.2 KB | `.\Client\DebugLog.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\DebugLog.h` |
+| UTF-8 | 11.7 KB | `.\Client\deflate.h` |
+| UTF-8 | 27 B | `.\Client\DirectXLib_PCH.cpp` |
+| UTF-8 | 682 B | `.\Client\DirectXLib_PCH.h` |
+| UTF-8 | 505 B | `.\Client\DllInfo.h` |
+| UTF-8 | 19.8 KB | `.\Client\DrawCreatureDivineGuidance.cpp` |
+| UTF-8 | 62.6 KB | `.\Client\DrawCreatureEffect.cpp` |
+| UTF-8 | 36.8 KB | `.\Client\DrawCreatureShadow.cpp` |
+| UTF-8 | 1.5 KB | `.\Client\DrawItemNameNode.h` |
+| UTF-8 | 2.7 KB | `.\Client\DrawTextNode.h` |
+| UTF-8 | 637 B | `.\Client\DrawTypeDef.h` |
+| UTF-8 | 555 B | `.\Client\DXLib.h` |
+| UTF-8 | 11.1 KB | `.\Client\EffectResourceContainer.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\EffectResourceContainer.h` |
+| UTF-8 BOM | 112.7 KB | `.\Client\EffectSpriteTypeDef.h` |
+| UTF-8 | 1.6 KB | `.\Client\EffectSpriteTypeHelper.h` |
+| UTF-8 | 10.5 KB | `.\Client\ExperienceTable.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\ExperienceTable.h` |
+| UTF-8 | 559 B | `.\Client\ExpInfo.cpp` |
+| UTF-8 | 1.2 KB | `.\Client\ExpInfo.h` |
+| UTF-8 | 1021 B | `.\Client\FameInfo.cpp` |
+| UTF-8 | 610 B | `.\Client\FameInfo.h` |
+| UTF-8 | 1.5 KB | `.\Client\GAME1024.cpp` |
+| UTF-8 | 971 B | `.\Client\GAME1024.h` |
+| UTF-8 | 17.2 KB | `.\Client\GameFunctions.cpp` |
+| UTF-8 | 6.3 KB | `.\Client\GameHelpers.cpp` |
+| UTF-8 | 4.2 KB | `.\Client\GameHelpers.h` |
+| UTF-8 | 79.3 KB | `.\Client\GameInit.cpp` |
+| UTF-8 | 36.5 KB | `.\Client\GameInitInfo.cpp` |
+| UTF-8 BOM | 159.1 KB | `.\Client\GameMain.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\GameObject.h` |
+| UTF-8 | 44.0 KB | `.\Client\GamePacketFunctions.cpp` |
+| UTF-8 | 138.7 KB | `.\Client\GameUI.cpp` |
+| UTF-8 | 1.5 KB | `.\Client\GCNotifyWin.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\GCNotifyWin.h` |
+| UTF-8 | 890 B | `.\Client\GCNotifyWinHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\GetWinVer.cpp` |
+| UTF-8 | 1.6 KB | `.\Client\GetWinVer.h` |
+| UTF-8 | 2.2 KB | `.\Client\Globals.cpp` |
+| UTF-8 | 9.0 KB | `.\Client\GlobalVariables.cpp` |
+| UTF-8 | 4.4 KB | `.\Client\GuildInfo.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\GuildInfo.h` |
+| UTF-8 | 3.2 KB | `.\Client\GuildMemberInfo.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\GuildMemberInfo.h` |
+| UTF-8 | 2.1 KB | `.\Client\header.cpp` |
+| UTF-8 | 559 B | `.\Client\header.h` |
+| UTF-8 | 1.5 KB | `.\Client\heckSystem.cpp` |
+| UTF-8 | 475 B | `.\Client\heckSystem.h` |
+| UTF-8 | 24.2 KB | `.\Client\huffman.cpp` |
+| UTF-8 | 1.1 KB | `.\Client\huffman.h` |
+| UTF-8 | 1.2 KB | `.\Client\infblock.h` |
+| UTF-8 | 764 B | `.\Client\infcodes.h` |
+| UTF-8 | 505 B | `.\Client\inffast.h` |
+| UTF-8 | 8.9 KB | `.\Client\inffixed.h` |
+| UTF-8 | 2.6 KB | `.\Client\inftrees.h` |
+| UTF-8 | 3.7 KB | `.\Client\infutil.h` |
+| UTF-8 | 803 B | `.\Client\InputService.h` |
+| UTF-8 | 3.7 KB | `.\Client\ItemClassDef.h` |
+| UTF-8 | 705 B | `.\Client\l3types.h` |
+| UTF-8 | 1.9 KB | `.\Client\LeakMemoryDumper.cpp` |
+| UTF-8 | 857 B | `.\Client\LeakMemoryDumper.h` |
+| UTF-8 | 15.8 KB | `.\Client\MActionInfoTable.cpp` |
+| UTF-8 | 31.2 KB | `.\Client\MActionInfoTable.h` |
+| UTF-8 | 30.2 KB | `.\Client\MActionResult.cpp` |
+| UTF-8 | 27.9 KB | `.\Client\MActionResult.h` |
+| UTF-8 | 2.1 KB | `.\Client\MActionResultDef.h` |
+| UTF-8 | 3.7 KB | `.\Client\MAnimationObject.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\MAnimationObject.h` |
+| UTF-8 | 6.8 KB | `.\Client\MAroundZoneEffectGenerator.cpp` |
+| UTF-8 | 800 B | `.\Client\MAroundZoneEffectGenerator.h` |
+| UTF-8 | 74.0 KB | `.\Client\MathTable.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\MathTable.h` |
+| UTF-8 | 5.3 KB | `.\Client\MAttachCreatureEffectGenerator.cpp` |
+| UTF-8 | 840 B | `.\Client\MAttachCreatureEffectGenerator.h` |
+| UTF-8 | 2.2 KB | `.\Client\MAttachCreatureEffectGroundGenerator.cpp` |
+| UTF-8 | 883 B | `.\Client\MAttachCreatureEffectGroundGenerator.h` |
+| UTF-8 | 3.2 KB | `.\Client\MAttachCreatureOrbitEffectGenerator.cpp` |
+| UTF-8 | 861 B | `.\Client\MAttachCreatureOrbitEffectGenerator.h` |
+| UTF-8 | 5.1 KB | `.\Client\MAttachEffect.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\MAttachEffect.h` |
+| UTF-8 | 2.5 KB | `.\Client\MAttachOrbitEffect.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\MAttachOrbitEffect.h` |
+| UTF-8 BOM | 3.5 KB | `.\Client\MAttachZoneAroundEffectGenerator.CPP` |
+| UTF-8 | 449 B | `.\Client\MAttachZoneAroundEffectGenerator.h` |
+| UTF-8 | 7.9 KB | `.\Client\MAttachZoneEffectGenerator.cpp` |
+| UTF-8 | 800 B | `.\Client\MAttachZoneEffectGenerator.h` |
+| UTF-8 | 3.5 KB | `.\Client\MAttachZoneSelectableEffectGenerator.cpp` |
+| UTF-8 | 881 B | `.\Client\MAttachZoneSelectableEffectGenerator.h` |
+| UTF-8 | 4.3 KB | `.\Client\MAttackCreatureEffectGenerator.cpp` |
+| UTF-8 | 820 B | `.\Client\MAttackCreatureEffectGenerator.h` |
+| UTF-8 | 3.1 KB | `.\Client\MAttackCreatureHomingEffectGenerator.cpp` |
+| UTF-8 | 892 B | `.\Client\MAttackCreatureHomingEffectGenerator.h` |
+| UTF-8 | 2.4 KB | `.\Client\MAttackCreatureParabolaEffectGenerator.cpp` |
+| UTF-8 | 910 B | `.\Client\MAttackCreatureParabolaEffectGenerator.h` |
+| UTF-8 | 2.2 KB | `.\Client\MAttackZoneBombEffectGenerator.cpp` |
+| UTF-8 | 865 B | `.\Client\MAttackZoneBombEffectGenerator.h` |
+| UTF-8 | 4.8 KB | `.\Client\MAttackZoneEffectGenerator.cpp` |
+| UTF-8 | 820 B | `.\Client\MAttackZoneEffectGenerator.h` |
+| UTF-8 | 2.6 KB | `.\Client\MAttackZoneParabolaEffectGenerator.cpp` |
+| UTF-8 | 893 B | `.\Client\MAttackZoneParabolaEffectGenerator.h` |
+| UTF-8 | 2.7 KB | `.\Client\MAttackZoneRectEffectGenerator.cpp` |
+| UTF-8 | 437 B | `.\Client\MAttackZoneRectEffectGenerator.h` |
+| UTF-8 | 4.3 KB | `.\Client\MBloodyBreakerEffectGenerator.CPP` |
+| UTF-8 | 820 B | `.\Client\MBloodyBreakerEffectGenerator.h` |
+| UTF-8 | 5.7 KB | `.\Client\MBloodyWallEffectGenerator.cpp` |
+| UTF-8 | 800 B | `.\Client\MBloodyWallEffectGenerator.h` |
+| UTF-8 | 5.4 KB | `.\Client\MBloodyWaveEffectGenerator.cpp` |
+| UTF-8 | 800 B | `.\Client\MBloodyWaveEffectGenerator.h` |
+| UTF-8 | 2.7 KB | `.\Client\MChaseEffect.cpp` |
+| UTF-8 | 1.2 KB | `.\Client\MChaseEffect.h` |
+| UTF-8 | 21.3 KB | `.\Client\MChatManager.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\MChatManager.h` |
+| UTF-8 | 11.9 KB | `.\Client\MCompareManager.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\MCompareManager.h` |
+| UTF-8 | 604 B | `.\Client\MCrashReportManager.cpp` |
+| UTF-8 | 1.3 KB | `.\Client\MCrashReportManager.h` |
+| UTF-8 BOM | 324.6 KB | `.\Client\MCreature.cpp` |
+| UTF-8 | 47.7 KB | `.\Client\MCreature.h` |
+| UTF-8 | 2.5 KB | `.\Client\MCreatureSpriteTable.cpp` |
+| UTF-8 | 4.2 KB | `.\Client\MCreatureSpriteTable.h` |
+| UTF-8 | 16.2 KB | `.\Client\MCreatureTable.cpp` |
+| UTF-8 | 7.9 KB | `.\Client\MCreatureTable.h` |
+| UTF-8 | 58.0 KB | `.\Client\MCreatureWear.cpp` |
+| UTF-8 | 4.2 KB | `.\Client\MCreatureWear.h` |
+| UTF-8 BOM | 8.8 KB | `.\Client\md5.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\md5.h` |
+| UTF-8 | 7.2 KB | `.\Client\MEffect.cpp` |
+| UTF-8 | 9.1 KB | `.\Client\MEffect.h` |
+| UTF-8 | 2.3 KB | `.\Client\MEffectGenerator.h` |
+| UTF-8 | 2.4 KB | `.\Client\MEffectGeneratorDef.h` |
+| UTF-8 | 26.5 KB | `.\Client\MEffectGeneratorTable.cpp` |
+| UTF-8 | 1.7 KB | `.\Client\MEffectGeneratorTable.h` |
+| UTF-8 | 2.0 KB | `.\Client\MEffectManager.cpp` |
+| UTF-8 | 1.3 KB | `.\Client\MEffectManager.h` |
+| UTF-8 | 6.3 KB | `.\Client\MEffectSpriteTypeTable.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\MEffectSpriteTypeTable.h` |
+| UTF-8 BOM | 26.8 KB | `.\Client\MEffectStatusDef.h` |
+| UTF-8 | 2.4 KB | `.\Client\MEffectStatusTable.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\MEffectStatusTable.h` |
+| UTF-8 | 3.9 KB | `.\Client\MEffectTarget.cpp` |
+| UTF-8 | 6.2 KB | `.\Client\MEffectTarget.h` |
+| UTF-8 | 4.2 KB | `.\Client\MemoryPool.cpp` |
+| UTF-8 | 1.4 KB | `.\Client\MemoryPool.h` |
+| UTF-8 | 8.8 KB | `.\Client\MEventManager.cpp` |
+| UTF-8 | 6.1 KB | `.\Client\MEventManager.h` |
+| UTF-8 | 70.4 KB | `.\Client\MFakeCreature.cpp` |
+| UTF-8 | 8.8 KB | `.\Client\MFakeCreature.h` |
+| UTF-8 | 2.3 KB | `.\Client\MFallingEffectGenerator.cpp` |
+| UTF-8 | 777 B | `.\Client\MFallingEffectGenerator.h` |
+| UTF-8 | 12.7 KB | `.\Client\MFileDef.h` |
+| UTF-8 | 7.8 KB | `.\Client\MFirePiecingEffectGenerator.cpp` |
+| UTF-8 | 805 B | `.\Client\MFirePiecingEffectGenerator.h` |
+| UTF-8 | 4.6 KB | `.\Client\MFollowPathEffectGenerator.cpp` |
+| UTF-8 | 730 B | `.\Client\MFollowPathEffectGenerator.h` |
+| UTF-8 | 2.5 KB | `.\Client\MFunctionManager.cpp` |
+| UTF-8 | 990 B | `.\Client\MFunctionManager.h` |
+| UTF-8 | 1.2 KB | `.\Client\MGameDef.h` |
+| UTF-8 BOM | 143.5 KB | `.\Client\MGameStringTable.cpp` |
+| UTF-8 BOM | 120.8 KB | `.\Client\MGameStringTable.h` |
+| UTF-8 | 4.3 KB | `.\Client\MGameTime.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\MGameTime.h` |
+| UTF-8 | 22.1 KB | `.\Client\MGridItemManager.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\MGridItemManager.h` |
+| UTF-8 | 3.8 KB | `.\Client\MGuidanceEffect.cpp` |
+| UTF-8 | 1.1 KB | `.\Client\MGuidanceEffect.h` |
+| UTF-8 | 6.7 KB | `.\Client\MGuildInfoMapper.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\MGuildInfoMapper.h` |
+| UTF-8 | 25.5 KB | `.\Client\MGuildMarkManager.cpp` |
+| UTF-8 BOM | 6.3 KB | `.\Client\MGuildMarkManager.h` |
+| UTF-8 | 681 B | `.\Client\MGuildType.h` |
+| UTF-8 | 9.5 KB | `.\Client\MHelicopterManager.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\MHelicopterManager.h` |
+| UTF-8 | 9.3 KB | `.\Client\MHelpDef.h` |
+| UTF-8 | 2.3 KB | `.\Client\MHelpDisplayer.cpp` |
+| UTF-8 | 761 B | `.\Client\MHelpDisplayer.h` |
+| UTF-8 | 12.9 KB | `.\Client\MHelpManager.cpp` |
+| UTF-8 | 7.9 KB | `.\Client\MHelpManager.h` |
+| UTF-8 BOM | 12.6 KB | `.\Client\MHelpMessageManager.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\MHelpMessageManager.h` |
+| UTF-8 | 2.4 KB | `.\Client\MHelpStringTable.cpp` |
+| UTF-8 | 1.3 KB | `.\Client\MHelpStringTable.h` |
+| UTF-8 | 6.3 KB | `.\Client\MHomingEffect.cpp` |
+| UTF-8 | 1.5 KB | `.\Client\MHomingEffect.h` |
+| UTF-8 | 6.3 KB | `.\Client\MImageObject.cpp` |
+| UTF-8 | 6.4 KB | `.\Client\MImageObject.h` |
+| UTF-8 | 5.0 KB | `.\Client\MInteractionObject.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\MInteractionObject.h` |
+| UTF-8 | 1.2 KB | `.\Client\MInteractionObjectTable.cpp` |
+| UTF-8 | 1.6 KB | `.\Client\MInteractionObjectTable.h` |
+| UTF-8 | 6.6 KB | `.\Client\MInternetConnection.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\MInternetConnection.h` |
+| UTF-8 | 13.4 KB | `.\Client\MinTr.h` |
+| UTF-8 | 9.1 KB | `.\Client\MInventory.cpp` |
+| UTF-8 | 4.5 KB | `.\Client\MInventory.h` |
+| UTF-8 | 6.9 KB | `.\Client\MissingGlobals.cpp` |
+| UTF-8 BOM | 118.3 KB | `.\Client\MItem.cpp` |
+| UTF-8 | 84.6 KB | `.\Client\MItem.h` |
+| UTF-8 | 6.4 KB | `.\Client\MItemFinder.h` |
+| UTF-8 | 9.3 KB | `.\Client\MItemManager.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\MItemManager.h` |
+| UTF-8 | 4.7 KB | `.\Client\MItemOptionTable.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\MItemOptionTable.h` |
+| UTF-8 BOM | 1.35 MB | `.\Client\MItemTable.cpp` |
+| UTF-8 | 7.9 KB | `.\Client\MItemTable.h` |
+| UTF-8 BOM | 538.1 KB | `.\Client\MitemTableInit.cpp` |
+| UTF-8 BOM | 295.5 KB | `.\Client\MitemTableinit2.cpp` |
+| UTF-8 | 905.2 KB | `.\Client\MItemTable_bak-2007-5-7.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\MJusticeAttackManager.cpp` |
+| UTF-8 | 1.1 KB | `.\Client\MJusticeAttackManager.h` |
+| UTF-8 | 433 B | `.\Client\MLevelNameTable.cpp` |
+| UTF-8 | 392 B | `.\Client\MLevelNameTable.h` |
+| UTF-8 | 4.9 KB | `.\Client\MLinearEffect.cpp` |
+| UTF-8 | 1.1 KB | `.\Client\MLinearEffect.h` |
+| UTF-8 | 9.1 KB | `.\Client\MLoadingSPKWorkNode.cpp` |
+| UTF-8 | 4.5 KB | `.\Client\MLoadingSPKWorkNode.h` |
+| UTF-8 | 2.7 KB | `.\Client\MMeteorDropEffectGenerator.cpp` |
+| UTF-8 | 799 B | `.\Client\MMeteorDropEffectGenerator.h` |
+| UTF-8 | 3.0 KB | `.\Client\MMoneyManager.cpp` |
+| UTF-8 | 1.3 KB | `.\Client\MMoneyManager.h` |
+| UTF-8 | 2.9 KB | `.\Client\MMonsterKillQuestInfo.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\MMonsterKillQuestInfo.h` |
+| UTF-8 | 1.4 KB | `.\Client\MMovingEffect.cpp` |
+| UTF-8 | 939 B | `.\Client\MMovingEffect.h` |
+| UTF-8 | 4.2 KB | `.\Client\MMultipleFallingEffectGenerator.cpp` |
+| UTF-8 | 845 B | `.\Client\MMultipleFallingEffectGenerator.h` |
+| UTF-8 | 7.3 KB | `.\Client\MMusic.cpp` |
+| UTF-8 | 1.7 KB | `.\Client\MMusic.h` |
+| UTF-8 | 998 B | `.\Client\MMusicTable.cpp` |
+| UTF-8 | 1.2 KB | `.\Client\MMusicTable.h` |
+| UTF-8 | 8.5 KB | `.\Client\MNPC.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\MNPC.h` |
+| UTF-8 | 7.7 KB | `.\Client\MNPCScriptTable.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\MNPCScriptTable.h` |
+| UTF-8 | 8.7 KB | `.\Client\MNPCTable.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\MNPCTable.h` |
+| UTF-8 | 2.2 KB | `.\Client\MObject.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\MObject.h` |
+| UTF-8 | 12.8 KB | `.\Client\MObjectSelector.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\MObjectSelector.h` |
+| UTF-8 | 43.1 KB | `.\Client\ModifyStatusManager.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\ModifyStatusManager.h` |
+| UTF-8 | 1.0 KB | `.\Client\MonsterNameTable.cpp` |
+| UTF-8 | 1.7 KB | `.\Client\MonsterNameTable.h` |
+| UTF-8 | 31.7 KB | `.\Client\MOustersGear.cpp` |
+| UTF-8 | 6.7 KB | `.\Client\MOustersGear.h` |
+| UTF-8 | 21.4 KB | `.\Client\mp3.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\mp3.h` |
+| UTF-8 | 5.0 KB | `.\Client\MParabolaEffect.cpp` |
+| UTF-8 | 1.3 KB | `.\Client\MParabolaEffect.h` |
+| UTF-8 | 7.3 KB | `.\Client\MParty.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\MParty.h` |
+| UTF-8 | 417.8 KB | `.\Client\MPlayer.cpp` |
+| UTF-8 | 26.2 KB | `.\Client\MPlayer.h` |
+| UTF-8 | 9.8 KB | `.\Client\MPlayerGear.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\MPlayerGear.h` |
+| UTF-8 | 9.5 KB | `.\Client\MPlayingWithFireEffectGenerator.cpp` |
+| UTF-8 | 853 B | `.\Client\MPlayingWithFireEffectGenerator.h` |
+| UTF-8 | 2.0 KB | `.\Client\MPortal.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\MPortal.h` |
+| UTF-8 | 12.4 KB | `.\Client\MPriceManager.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\MPriceManager.h` |
+| UTF-8 | 712 B | `.\Client\MQuestInfo.cpp` |
+| UTF-8 | 883 B | `.\Client\MQuestInfo.h` |
+| UTF-8 | 491 B | `.\Client\MQuickSlot.cpp` |
+| UTF-8 | 645 B | `.\Client\MQuickSlot.h` |
+| UTF-8 | 519 B | `.\Client\MRequestMode.cpp` |
+| UTF-8 | 975 B | `.\Client\MRequestMode.h` |
+| UTF-8 | 3.1 KB | `.\Client\MRippleZoneEffectGenerator.cpp` |
+| UTF-8 | 848 B | `.\Client\MRippleZoneEffectGenerator.h` |
+| UTF-8 | 7.2 KB | `.\Client\MRippleZonePixelEffectGenerator.cpp` |
+| UTF-8 | 884 B | `.\Client\MRippleZonePixelEffectGenerator.h` |
+| UTF-8 | 3.5 KB | `.\Client\MRippleZoneWideEffectGenerator.cpp` |
+| UTF-8 | 885 B | `.\Client\MRippleZoneWideEffectGenerator.h` |
+| UTF-8 | 6.1 KB | `.\Client\MRisingEffectGenerator.cpp` |
+| UTF-8 | 768 B | `.\Client\MRisingEffectGenerator.h` |
+| UTF-8 | 2.4 KB | `.\Client\MScreenEffect.cpp` |
+| UTF-8 | 1.7 KB | `.\Client\MScreenEffect.h` |
+| UTF-8 | 4.0 KB | `.\Client\MScreenEffectManager.cpp` |
+| UTF-8 | 475 B | `.\Client\MScreenEffectManager.h` |
+| UTF-8 | 60.4 KB | `.\Client\MSector.cpp` |
+| UTF-8 | 19.9 KB | `.\Client\MSector.h` |
+| UTF-8 | 3.1 KB | `.\Client\MSectorInfo.h` |
+| UTF-8 | 1.3 KB | `.\Client\MShadowAnimationObject.cpp` |
+| UTF-8 | 1.0 KB | `.\Client\MShadowAnimationObject.h` |
+| UTF-8 | 1.2 KB | `.\Client\MShadowObject.cpp` |
+| UTF-8 | 957 B | `.\Client\MShadowObject.h` |
+| UTF-8 | 3.4 KB | `.\Client\MShop.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\MShop.h` |
+| UTF-8 | 7.8 KB | `.\Client\MShopShelf.cpp` |
+| UTF-8 | 6.1 KB | `.\Client\MShopShelf.h` |
+| UTF-8 | 2.1 KB | `.\Client\MShopTemplate.cpp` |
+| UTF-8 | 1.4 KB | `.\Client\MShopTemplateTable.h` |
+| UTF-8 BOM | 131.9 KB | `.\Client\MSkillInfoTable.cpp` |
+| UTF-8 | 81.3 KB | `.\Client\MSkillManager.cpp` |
+| UTF-8 | 22.4 KB | `.\Client\MSkillManager.h` |
+| UTF-8 | 1.4 KB | `.\Client\MSkipEffect.cpp` |
+| UTF-8 | 540 B | `.\Client\MSkipEffect.h` |
+| UTF-8 | 4.4 KB | `.\Client\MSkipEffectGenerator.cpp` |
+| UTF-8 | 768 B | `.\Client\MSkipEffectGenerator.h` |
+| UTF-8 | 37.6 KB | `.\Client\MSlayerGear.cpp` |
+| UTF-8 | 8.9 KB | `.\Client\MSlayerGear.h` |
+| UTF-8 | 9.7 KB | `.\Client\MSlotItemManager.cpp` |
+| UTF-8 | 1.6 KB | `.\Client\MSlotItemManager.h` |
+| UTF-8 | 7.4 KB | `.\Client\MSortedItemManager.cpp` |
+| UTF-8 | 1.6 KB | `.\Client\MSortedItemManager.h` |
+| UTF-8 | 925 B | `.\Client\MSoundTable.cpp` |
+| UTF-8 | 1.5 KB | `.\Client\MSoundTable.h` |
+| UTF-8 | 4.6 KB | `.\Client\MSpreadOutEffectGenerator.cpp` |
+| UTF-8 | 775 B | `.\Client\MSpreadOutEffectGenerator.h` |
+| UTF-8 | 1.6 KB | `.\Client\MStatus.cpp` |
+| UTF-8 | 7.1 KB | `.\Client\MStatus.h` |
+| UTF-8 | 12.7 KB | `.\Client\MStatusManager.cpp` |
+| UTF-8 | 1.7 KB | `.\Client\MStatusManager.h` |
+| UTF-8 | 4.4 KB | `.\Client\MStopInventoryEffectGenerator.cpp` |
+| UTF-8 | 834 B | `.\Client\MStopInventoryEffectGenerator.h` |
+| UTF-8 | 9.2 KB | `.\Client\MStopZoneCrossEffectGenerator.cpp` |
+| UTF-8 | 831 B | `.\Client\MStopZoneCrossEffectGenerator.h` |
+| UTF-8 | 8.7 KB | `.\Client\MStopZoneEffectGenerator.cpp` |
+| UTF-8 | 784 B | `.\Client\MStopZoneEffectGenerator.h` |
+| UTF-8 | 5.6 KB | `.\Client\MStopZoneEmptyCrossEffectGenerator.cpp` |
+| UTF-8 | 867 B | `.\Client\MStopZoneEmptyCrossEffectGenerator.h` |
+| UTF-8 | 4.8 KB | `.\Client\MStopZoneEmptyHorizontalEffectGenerator.cpp` |
+| UTF-8 | 854 B | `.\Client\MStopZoneEmptyHorizontalWallEffectGenerator.h` |
+| UTF-8 | 3.7 KB | `.\Client\MStopZoneEmptyRectEffectGenerator.cpp` |
+| UTF-8 | 847 B | `.\Client\MStopZoneEmptyRectEffectGenerator.h` |
+| UTF-8 | 840 B | `.\Client\MStopZoneEmptyVerticalEffectGenerator.h` |
+| UTF-8 | 4.8 KB | `.\Client\MStopZoneEmptyVerticalWallEffectGenerator.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\MStopZoneMultipleEffectGenerator.cpp` |
+| UTF-8 | 853 B | `.\Client\MStopZoneMultipleEffectGenerator.h` |
+| UTF-8 | 5.6 KB | `.\Client\MStopZoneRandomEffectGenerator.cpp` |
+| UTF-8 | 893 B | `.\Client\MStopZoneRandomEffectGenerator.h` |
+| UTF-8 | 7.5 KB | `.\Client\MStopZoneRectEffectGenerator.cpp` |
+| UTF-8 | 811 B | `.\Client\MStopZoneRectEffectGenerator.h` |
+| UTF-8 | 5.3 KB | `.\Client\MStopZoneRhombusEffectGenerator.cpp` |
+| UTF-8 | 876 B | `.\Client\MStopZoneRhombusEffectGenerator.h` |
+| UTF-8 | 4.9 KB | `.\Client\MStopZoneSelectableEffectGenerator.cpp` |
+| UTF-8 | 865 B | `.\Client\MStopZoneSelectableEffectGenerator.h` |
+| UTF-8 | 4.3 KB | `.\Client\MStopZoneWallEffectGenerator.cpp` |
+| UTF-8 | 745 B | `.\Client\MStopZoneWallEffectGenerator.h` |
+| UTF-8 | 6.5 KB | `.\Client\MStopZoneXEffectGenerator.cpp` |
+| UTF-8 | 779 B | `.\Client\MStopZoneXEffectGenerator.h` |
+| UTF-8 | 5.3 KB | `.\Client\MStorage.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\MStorage.h` |
+| UTF-8 | 10.8 KB | `.\Client\MString.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\MString.h` |
+| UTF-8 | 503 B | `.\Client\MStringArray.cpp` |
+| UTF-8 | 417 B | `.\Client\MStringArray.h` |
+| UTF-8 | 2.0 KB | `.\Client\MStringList.cpp` |
+| UTF-8 | 1.0 KB | `.\Client\MStringList.h` |
+| UTF-8 | 9.1 KB | `.\Client\MStringMap.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\MStringMap.h` |
+| UTF-8 | 288 B | `.\Client\MTestDef.cpp` |
+| UTF-8 | 727 B | `.\Client\MTestDef.h` |
+| UTF-8 BOM | 2.6 KB | `.\Client\MTimeItemManager.CPP` |
+| UTF-8 | 1.2 KB | `.\Client\MTimeItemManager.h` |
+| UTF-8 BOM | 613.0 KB | `.\Client\MTopView.cpp` |
+| UTF-8 | 37.8 KB | `.\Client\MTopView.h` |
+| UTF-8 | 143.4 KB | `.\Client\MTopViewDraw.cpp` |
+| UTF-8 | 8.1 KB | `.\Client\MTopviewExceptionProc.cpp` |
+| UTF-8 | 19.2 KB | `.\Client\MTradeManager.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\MTradeManager.h` |
+| UTF-8 | 12.9 KB | `.\Client\MTypeDef.h` |
+| UTF-8 | 721 B | `.\Client\MusicDef.h` |
+| UTF-8 | 29.3 KB | `.\Client\MVampireGear.cpp` |
+| UTF-8 | 6.6 KB | `.\Client\MVampireGear.h` |
+| UTF-8 | 6.5 KB | `.\Client\MViewDef.h` |
+| UTF-8 BOM | 7.3 KB | `.\Client\MWarManager.CPP` |
+| UTF-8 BOM | 2.0 KB | `.\Client\MWarManager.H` |
+| UTF-8 | 19.5 KB | `.\Client\MWeather.cpp` |
+| UTF-8 | 5.1 KB | `.\Client\MWeather.h` |
+| UTF-8 | 501 B | `.\Client\MWorkNode.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\MWorkNode.h` |
+| UTF-8 | 16.3 KB | `.\Client\MWorkThread.cpp` |
+| UTF-8 | 6.4 KB | `.\Client\MWorkThread.h` |
+| UTF-8 | 70 B | `.\Client\mytest.h` |
+| UTF-8 | 0 B | `.\Client\MZLib_PCH.cpp` |
+| UTF-8 | 0 B | `.\Client\MZLib_PCH.h` |
+| UTF-8 | 171.3 KB | `.\Client\MZone.cpp` |
+| UTF-8 | 18.7 KB | `.\Client\MZone.h` |
+| UTF-8 | 1.1 KB | `.\Client\MZoneDef.h` |
+| UTF-8 | 1.6 KB | `.\Client\MZoneInfo.h` |
+| UTF-8 | 1.4 KB | `.\Client\MZoneSound.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\MZoneSound.h` |
+| UTF-8 | 15.0 KB | `.\Client\MZoneSoundManager.cpp` |
+| UTF-8 | 5.0 KB | `.\Client\MZoneSoundManager.h` |
+| UTF-8 | 8.3 KB | `.\Client\MZoneTable.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\MZoneTable.h` |
+| UTF-8 | 204 B | `.\Client\MZoneTileProvider.cpp` |
+| UTF-8 | 1.5 KB | `.\Client\MZoneTileProvider.h` |
+| UTF-8 | 10.7 KB | `.\Client\Netmarble.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\NicknameInfo.cpp` |
+| UTF-8 | 1.7 KB | `.\Client\NicknameInfo.h` |
+| UTF-8 | 584 B | `.\Client\NMCrypt.h` |
+| UTF-8 | 251 B | `.\Client\npfgmsdk.h` |
+| UTF-8 | 6.1 KB | `.\Client\PacketDef.h` |
+| UTF-8 | 215.2 KB | `.\Client\PacketFunction.cpp` |
+| UTF-8 | 8.0 KB | `.\Client\PacketFunction.h` |
+| UTF-8 | 574 B | `.\Client\PacketFunction2.h` |
+| UTF-8 | 1.7 KB | `.\Client\PackFileManager.cpp` |
+| UTF-8 | 13.9 KB | `.\Client\PackFileManager.h` |
+| UTF-8 | 10.5 KB | `.\Client\PCConfigTable.cpp` |
+| UTF-8 | 4.9 KB | `.\Client\PCConfigTable.h` |
+| UTF-8 | 17.4 KB | `.\Client\ProfileManager.cpp` |
+| UTF-8 | 4.4 KB | `.\Client\ProfileManager.h` |
+| UTF-8 | 5.9 KB | `.\Client\Profiler.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Profiler.h` |
+| UTF-8 | 473 B | `.\Client\RaceType.h` |
+| UTF-8 | 3.2 KB | `.\Client\RankBonusDef.h` |
+| UTF-8 | 8.3 KB | `.\Client\RankBonusTable.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\RankBonusTable.h` |
+| UTF-8 | 7.0 KB | `.\Client\reader.cpp` |
+| UTF-8 | 999 B | `.\Client\reader.h` |
+| UTF-8 BOM | 11.3 KB | `.\Client\RenderingFunctions.cpp` |
+| UTF-8 | 18.5 KB | `.\Client\RequestFileManager.cpp` |
+| UTF-8 | 9.1 KB | `.\Client\RequestFileManager.h` |
+| UTF-8 | 1.9 KB | `.\Client\RequestFunction.cpp` |
+| UTF-8 | 980 B | `.\Client\RequestFunction.h` |
+| UTF-8 | 6.0 KB | `.\Client\RequestUserManager.cpp` |
+| UTF-8 | 4.2 KB | `.\Client\RequestUserManager.h` |
+| UTF-8 | 727 B | `.\Client\resource.h` |
+| UTF-8 | 16.7 KB | `.\Client\SDLMain.cpp` |
+| UTF-8 | 745 B | `.\Client\SectorSoundInfo.cpp` |
+| UTF-8 | 1.5 KB | `.\Client\SectorSoundInfo.h` |
+| UTF-8 | 345 B | `.\Client\ServerInfo.h` |
+| UTF-8 | 1.5 KB | `.\Client\ServerInfoFileParser.cpp` |
+| UTF-8 | 416 B | `.\Client\ServerInfoFileParser.h` |
+| UTF-8 | 4.2 KB | `.\Client\ShowTimeChecker.cpp` |
+| UTF-8 | 1.2 KB | `.\Client\ShowTimeChecker.h` |
+| UTF-8 | 1.2 KB | `.\Client\ShrineInfoManager.cpp` |
+| UTF-8 | 678 B | `.\Client\ShrineInfoManager.h` |
+| UTF-8 | 31.8 KB | `.\Client\SizeOfObjects.cpp` |
+| UTF-8 | 889 B | `.\Client\SkillDef.cpp` |
+| UTF-8 BOM | 59.1 KB | `.\Client\SkillDef.h` |
+| UTF-8 | 3.4 KB | `.\Client\soundbuf.cpp` |
+| UTF-8 | 1.4 KB | `.\Client\soundbuf.h` |
+| UTF-8 | 23.9 KB | `.\Client\SoundDef.h` |
+| UTF-8 | 741 B | `.\Client\SoundNode.cpp` |
+| UTF-8 | 1.4 KB | `.\Client\SoundNode.h` |
+| UTF-8 | 297 B | `.\Client\SoundSetting.h` |
+| UTF-8 | 1.9 KB | `.\Client\SpriteIDDef.h` |
+| UTF-8 | 293 B | `.\Client\StdAfx.cpp` |
+| UTF-8 | 877 B | `.\Client\StdAfx.h` |
+| UTF-8 | 2.5 KB | `.\Client\StoreInfo.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\StoreInfo.h` |
+| UTF-8 | 28.2 KB | `.\Client\subdecoder.cpp` |
+| UTF-8 | 43.6 KB | `.\Client\synfilt.cpp` |
+| UTF-8 | 4.8 KB | `.\Client\SystemAvailabilities.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\SystemAvailabilities.h` |
+| UTF-8 | 774 B | `.\Client\TalkBox.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\TalkBox.h` |
+| UTF-8 | 1.2 KB | `.\Client\TempInformation.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\TempInformation.h` |
+| UTF-8 | 6.4 KB | `.\Client\TileRenderer.cpp` |
+| UTF-8 | 5.3 KB | `.\Client\TileRenderer.h` |
+| UTF-8 | 8.4 KB | `.\Client\trees.h` |
+| UTF-8 | 46.3 KB | `.\Client\UIDialog.cpp` |
+| UTF-8 | 4.2 KB | `.\Client\UIDialog.h` |
+| UTF-8 | 15.6 KB | `.\Client\UIFunction.h` |
+| UTF-8 BOM | 350.4 KB | `.\Client\UIMessageManager.cpp` |
+| UTF-8 | 21.8 KB | `.\Client\UIMessageManager.h` |
+| UTF-8 | 3.8 KB | `.\Client\UIUtilityFunctions.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\UserInformation.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\UserInformation.h` |
+| UTF-8 | 8.2 KB | `.\Client\UserOption.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\UserOption.h` |
+| UTF-8 BOM | 28.1 KB | `.\Client\UtilityFunction.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\UtilityFunction.h` |
+| UTF-8 | 4.9 KB | `.\Client\WavePackFileManager.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\WavePackFileManager.h` |
+| UTF-8 | 12.5 KB | `.\Client\WhisperManager.cpp` |
+| UTF-8 | 5.4 KB | `.\Client\WhisperManager.h` |
+| UTF-8 | 8.0 KB | `.\Client\zconf.h` |
+| UTF-8 | 40.8 KB | `.\Client\zlib.h` |
+| UTF-8 | 2.1 KB | `.\Client\ZoneFileHeader.cpp` |
+| UTF-8 | 1.3 KB | `.\Client\ZoneFileHeader.h` |
+| UTF-8 | 5.7 KB | `.\Client\zutil.h` |
+| UTF-8 | 2.5 KB | `.\Client\DXLib\BIT_RES.CPP` |
+| UTF-8 | 441 B | `.\Client\DXLib\BIT_RES.H` |
+| UTF-8 BOM | 6.8 KB | `.\Client\DXLib\CDirectDraw.cpp` |
+| UTF-8 BOM | 8.6 KB | `.\Client\DXLib\CDirectDraw.h` |
+| UTF-8 BOM | 7.4 KB | `.\Client\DXLib\CDirectDrawSurface.cpp` |
+| UTF-8 BOM | 7.9 KB | `.\Client\DXLib\CDirectDrawSurface.h` |
+| UTF-8 BOM | 1.6 KB | `.\Client\DXLib\CDirectDraw_StaticMembers.cpp` |
+| UTF-8 | 25.4 KB | `.\Client\DXLib\CDirectInput.cpp` |
+| UTF-8 BOM | 3.4 KB | `.\Client\DXLib\CDirectInput.h` |
+| UTF-8 BOM | 6.4 KB | `.\Client\DXLib\CDirectInput_Adapter.cpp` |
+| UTF-8 BOM | 3.2 KB | `.\Client\DXLib\CDirectMusic.cpp` |
+| UTF-8 BOM | 3.5 KB | `.\Client\DXLib\CDirectMusic.h` |
+| UTF-8 | 3.8 KB | `.\Client\DXLib\CDirectMusic_Adapter.cpp` |
+| UTF-8 | 1.3 KB | `.\Client\DXLib\CDirectSetup.h` |
+| UTF-8 | 1.0 KB | `.\Client\DXLib\CDirectSetupGetVersion.cpp` |
+| UTF-8 BOM | 7.6 KB | `.\Client\DXLib\CDirectSound.cpp` |
+| UTF-8 BOM | 4.3 KB | `.\Client\DXLib\CDirectSound.h` |
+| UTF-8 BOM | 3.7 KB | `.\Client\DXLib\CDirectSoundStream.cpp` |
+| UTF-8 BOM | 2.7 KB | `.\Client\DXLib\CDirectSoundStream.h` |
+| UTF-8 | 3.8 KB | `.\Client\DXLib\CDirectSoundStream_Adapter.cpp` |
+| UTF-8 | 9.7 KB | `.\Client\DXLib\CDirectSound_Adapter.cpp` |
+| UTF-8 | 7.8 KB | `.\Client\DXLib\codec.h` |
+| UTF-8 | 713 B | `.\Client\DXLib\common.h` |
+| UTF-8 | 231 B | `.\Client\DXLib\config_types.h` |
+| UTF-8 | 504 B | `.\Client\DXLib\DXLib.h` |
+| UTF-8 BOM | 11.6 KB | `.\Client\DXLib\DXLibBackend.h` |
+| UTF-8 BOM | 28.1 KB | `.\Client\DXLib\DXLibBackendSDL.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\DXLib\header.cpp` |
+| UTF-8 | 559 B | `.\Client\DXLib\header.h` |
+| UTF-8 | 24.2 KB | `.\Client\DXLib\huffman.cpp` |
+| UTF-8 | 1.0 KB | `.\Client\DXLib\huffman.h` |
+| UTF-8 | 705 B | `.\Client\DXLib\l3types.h` |
+| UTF-8 | 21.6 KB | `.\Client\DXLib\mp3.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\DXLib\mp3.h` |
+| UTF-8 | 6.7 KB | `.\Client\DXLib\ogg.h` |
+| UTF-8 | 2.5 KB | `.\Client\DXLib\os_types.h` |
+| UTF-8 | 7.3 KB | `.\Client\DXLib\reader.cpp` |
+| UTF-8 | 1.0 KB | `.\Client\DXLib\reader.h` |
+| UTF-8 | 3.5 KB | `.\Client\DXLib\soundbuf.cpp` |
+| UTF-8 | 1.4 KB | `.\Client\DXLib\soundbuf.h` |
+| UTF-8 | 28.5 KB | `.\Client\DXLib\subdecoder.cpp` |
+| UTF-8 | 43.5 KB | `.\Client\DXLib\synfilt.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\DXLib\vorbisenc.h` |
+| UTF-8 | 5.0 KB | `.\Client\DXLib\vorbisfile.h` |
+| UTF-8 | 1.5 KB | `.\Client\framelib\CAnimationFrame.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\framelib\CAnimationFrame.h` |
+| UTF-8 | 2.5 KB | `.\Client\framelib\CAnimationFrameSetManager.cpp` |
+| UTF-8 | 999 B | `.\Client\framelib\CAnimationFrameSetManager.h` |
+| UTF-8 | 2.9 KB | `.\Client\framelib\CCreatureFrameSetManager.cpp` |
+| UTF-8 | 993 B | `.\Client\framelib\CCreatureFrameSetManager.h` |
+| UTF-8 | 3.0 KB | `.\Client\framelib\CFrame.cpp` |
+| UTF-8 | 5.1 KB | `.\Client\framelib\CFrame.h` |
+| UTF-8 | 2.5 KB | `.\Client\framelib\CFramePack.cpp` |
+| UTF-8 | 4.4 KB | `.\Client\framelib\CFramePack.h` |
+| UTF-8 | 5.2 KB | `.\Client\framelib\CFrameSet.h` |
+| UTF-8 | 2.5 KB | `.\Client\framelib\CFrameSetManager.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\framelib\CFrameSetManager.h` |
+| UTF-8 | 637 B | `.\Client\framelib\DrawTypeDef.h` |
+| UTF-8 | 552 B | `.\Client\framelib\FR.h` |
+| UTF-8 | 22 B | `.\Client\framelib\Frame_PCH.cpp` |
+| UTF-8 | 721 B | `.\Client\framelib\Frame_PCH.h` |
+| UTF-8 | 6.7 KB | `.\Client\framelib\TArray.h` |
+| UTF-8 | 1.3 KB | `.\Client\JpegLib\JCONFIG.H` |
+| UTF-8 | 13.9 KB | `.\Client\JpegLib\JERROR.H` |
+| UTF-8 | 12.5 KB | `.\Client\JpegLib\JMORECFG.H` |
+| UTF-8 | 15.7 KB | `.\Client\JpegLib\JPEGINT.H` |
+| UTF-8 | 46.2 KB | `.\Client\JpegLib\JPEGLIB.H` |
+| UTF-8 | 29.4 KB | `.\Client\OtherClass\RequestClientPacketFactoryManager.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\OtherClass\RequestClientPacketFactoryManager.h` |
+| UTF-8 | 29.4 KB | `.\Client\OtherClass\RequestServerPacketFactoryManager.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\OtherClass\RequestServerPacketFactoryManager.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Assert1.h` |
+| UTF-8 BOM | 6.6 KB | `.\Client\Packet\ClientCommunicationManager.cpp` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\ClientCommunicationManager.h` |
+| UTF-8 | 16.0 KB | `.\Client\Packet\ClientPlayer.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\ClientPlayer.h` |
+| UTF-8 | 8.6 KB | `.\Client\Packet\Datagram.cpp` |
+| UTF-8 | 4.6 KB | `.\Client\Packet\Datagram.h` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\DatagramPacket.h` |
+| UTF-8 | 4.3 KB | `.\Client\Packet\DatagramSocket.cpp` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\DatagramSocket.h` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\EffectInfo.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\EffectInfo.h` |
+| UTF-8 | 348 B | `.\Client\Packet\Encrypter.cpp` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Encrypter.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\EncryptUtility.h` |
+| UTF-8 | 0 B | `.\Client\Packet\Exception.cpp` |
+| UTF-8 BOM | 25.8 KB | `.\Client\Packet\Exception.h` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\ExtraInfo.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\ExtraInfo.h` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\ExtraSlotInfo.cpp` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\ExtraSlotInfo.h` |
+| UTF-8 BOM | 1.6 KB | `.\Client\Packet\GameTime.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\GameTime.h` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\GearInfo.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\GearInfo.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\GearSlotInfo.cpp` |
+| UTF-8 | 1.3 KB | `.\Client\Packet\GearSlotInfo.h` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\GuildWarInfo.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\GuildWarInfo.h` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\InventoryInfo.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\InventoryInfo.h` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\InventorySlotInfo.cpp` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\InventorySlotInfo.h` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\LevelWarInfo.cpp` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\LevelWarInfo.h` |
+| UTF-8 | 5.2 KB | `.\Client\Packet\ModifyInfo.cpp` |
+| UTF-8 | 7.9 KB | `.\Client\Packet\ModifyInfo.h` |
+| UTF-8 | 1.3 KB | `.\Client\Packet\NPCInfo.cpp` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\NPCInfo.h` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\OustersSkillInfo.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\OustersSkillInfo.h` |
+| UTF-8 | 24.2 KB | `.\Client\Packet\Packet.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\PacketAssert.cpp` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\PacketAssert.h` |
+| UTF-8 | 996 B | `.\Client\Packet\PacketFactory.h` |
+| UTF-8 | 44.9 KB | `.\Client\Packet\PacketFactoryManager.cpp` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\PacketFactoryManager.h` |
+| UTF-8 | 20.7 KB | `.\Client\Packet\PacketFileAPI.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\PacketFileAPI.h` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\PacketIDSet.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\PacketIDSet.h` |
+| UTF-8 | 20.5 KB | `.\Client\Packet\PacketValidator.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\PacketValidator.h` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\PCInfo.h` |
+| UTF-8 | 4.2 KB | `.\Client\Packet\PCItemInfo.cpp` |
+| UTF-8 | 4.8 KB | `.\Client\Packet\PCItemInfo.h` |
+| UTF-8 | 7.4 KB | `.\Client\Packet\PCOustersInfo.cpp` |
+| UTF-8 | 7.1 KB | `.\Client\Packet\PCOustersInfo.h` |
+| UTF-8 | 9.7 KB | `.\Client\Packet\PCOustersInfo2.cpp` |
+| UTF-8 | 8.7 KB | `.\Client\Packet\PCOustersInfo2.h` |
+| UTF-8 | 4.5 KB | `.\Client\Packet\PCOustersInfo3.cpp` |
+| UTF-8 | 8.2 KB | `.\Client\Packet\PCOustersInfo3.h` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\PCSkillInfo.h` |
+| UTF-8 | 8.8 KB | `.\Client\Packet\PCSlayerInfo.cpp` |
+| UTF-8 | 13.0 KB | `.\Client\Packet\PCSlayerInfo.h` |
+| UTF-8 | 7.9 KB | `.\Client\Packet\PCSlayerInfo2.cpp` |
+| UTF-8 | 9.3 KB | `.\Client\Packet\PCSlayerInfo2.h` |
+| UTF-8 | 4.9 KB | `.\Client\Packet\PCSlayerInfo3.cpp` |
+| UTF-8 | 13.4 KB | `.\Client\Packet\PCSlayerInfo3.h` |
+| UTF-8 | 7.1 KB | `.\Client\Packet\PCVampireInfo.cpp` |
+| UTF-8 | 6.7 KB | `.\Client\Packet\PCVampireInfo.h` |
+| UTF-8 | 9.9 KB | `.\Client\Packet\PCVampireInfo2.cpp` |
+| UTF-8 | 8.3 KB | `.\Client\Packet\PCVampireInfo2.h` |
+| UTF-8 | 4.4 KB | `.\Client\Packet\PCVampireInfo3.cpp` |
+| UTF-8 | 7.8 KB | `.\Client\Packet\PCVampireInfo3.h` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\PetInfo.cpp` |
+| UTF-8 | 4.0 KB | `.\Client\Packet\PetInfo.h` |
+| UTF-8 | 9.2 KB | `.\Client\Packet\Player.cpp` |
+| UTF-8 BOM | 3.2 KB | `.\Client\Packet\Player.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\PlayerInfo.h` |
+| UTF-8 BOM | 15.3 KB | `.\Client\Packet\PlayerStatus.h` |
+| UTF-8 | 8.9 KB | `.\Client\Packet\Properties.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Properties.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\QuestStatusInfo.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\QuestStatusInfo.h` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\RaceWarInfo.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\RaceWarInfo.h` |
+| UTF-8 | 11.5 KB | `.\Client\Packet\RequestClientPlayer.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\RequestClientPlayer.h` |
+| UTF-8 | 21.0 KB | `.\Client\Packet\RequestClientPlayerManager.cpp` |
+| UTF-8 | 4.5 KB | `.\Client\Packet\RequestClientPlayerManager.h` |
+| UTF-8 | 10.8 KB | `.\Client\Packet\RequestServerPlayer.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\RequestServerPlayer.h` |
+| UTF-8 | 12.9 KB | `.\Client\Packet\RequestServerPlayerManager.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\RequestServerPlayerManager.h` |
+| UTF-8 | 4.6 KB | `.\Client\Packet\RideMotorcycleInfo.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\RideMotorcycleInfo.h` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\RideMotorcycleSlotInfo.cpp` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\RideMotorcycleSlotInfo.h` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\ScriptParameter.cpp` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\ScriptParameter.h` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\ServerGroupInfo.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\ServerGroupInfo.h` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\ServerSocket.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\ServerSocket.h` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\SlayerSkillInfo.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\SlayerSkillInfo.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Socket.cpp` |
+| UTF-8 | 4.0 KB | `.\Client\Packet\Socket.h` |
+| UTF-8 | 46.7 KB | `.\Client\Packet\SocketAPI.cpp` |
+| UTF-8 | 5.0 KB | `.\Client\Packet\SocketAPI.h` |
+| UTF-8 | 639 B | `.\Client\Packet\SocketEncryptInputStream.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\SocketEncryptInputStream.h` |
+| UTF-8 | 644 B | `.\Client\Packet\SocketEncryptOutputStream.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\SocketEncryptOutputStream.h` |
+| UTF-8 BOM | 14.9 KB | `.\Client\Packet\SocketImpl.cpp` |
+| UTF-8 | 4.7 KB | `.\Client\Packet\SocketImpl.h` |
+| UTF-8 | 21.5 KB | `.\Client\Packet\SocketInputStream.cpp` |
+| UTF-8 | 4.4 KB | `.\Client\Packet\SocketInputStream.h` |
+| UTF-8 | 8.2 KB | `.\Client\Packet\SocketOutputStream.cpp` |
+| UTF-8 | 4.4 KB | `.\Client\Packet\SocketOutputStream.h` |
+| UTF-8 | 4.9 KB | `.\Client\Packet\StringStream.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\StringStream.h` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\SubItemInfo.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\SubItemInfo.h` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\SubOustersSkillInfo.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\SubOustersSkillInfo.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\SubServerInfo.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\SubServerInfo.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\SubSlayerSkillInfo.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\SubSlayerSkillInfo.h` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\SubVampireSkillInfo.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\SubVampireSkillInfo.h` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\TextInfo.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\TextInfo.h` |
+| UTF-8 | 695 B | `.\Client\Packet\Types.h` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\ValueList.h` |
+| UTF-8 | 4.0 KB | `.\Client\Packet\VampireSkillInfo.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\VampireSkillInfo.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\WarInfo.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\WarInfo.h` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\WorldInfo.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\WorldInfo.h` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Cpackets\CGAbsorbSoul.cpp` |
+| UTF-8 | 4.3 KB | `.\Client\Packet\Cpackets\CGAbsorbSoul.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGAcceptUnion.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGAcceptUnion.h` |
+| UTF-8 | 949 B | `.\Client\Packet\Cpackets\CGAcceptUnionHandler.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Cpackets\CGAddGearToMouse.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Cpackets\CGAddGearToMouse.h` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Cpackets\CGAddInventoryToMouse.cpp` |
+| UTF-8 | 4.4 KB | `.\Client\Packet\Cpackets\CGAddInventoryToMouse.h` |
+| UTF-8 | 1.3 KB | `.\Client\Packet\Cpackets\CGAddItemToCodeSheet.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Cpackets\CGAddItemToCodeSheet.h` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\Cpackets\CGAddItemToCodeSheetHandler.cpp` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Cpackets\CGAddItemToItem.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Cpackets\CGAddItemToItem.h` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Cpackets\CGAddMouseToGear.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Cpackets\CGAddMouseToGear.h` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Cpackets\CGAddMouseToInventory.cpp` |
+| UTF-8 | 4.4 KB | `.\Client\Packet\Cpackets\CGAddMouseToInventory.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Cpackets\CGAddMouseToQuickSlot.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Cpackets\CGAddMouseToQuickSlot.h` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Cpackets\CGAddMouseToZone.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGAddMouseToZone.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Cpackets\CGAddQuickSlotToMouse.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Cpackets\CGAddQuickSlotToMouse.h` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\Cpackets\CGAddSMSAddress.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Cpackets\CGAddSMSAddress.h` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGAddZoneToInventory.cpp` |
+| UTF-8 | 4.2 KB | `.\Client\Packet\Cpackets\CGAddZoneToInventory.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGAddZoneToMouse.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Cpackets\CGAddZoneToMouse.h` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\Cpackets\CGAppointSubmaster.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Cpackets\CGAppointSubmaster.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGAppointSubmasterHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGAttack.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Cpackets\CGAttack.h` |
+| UTF-8 | 1.0 KB | `.\Client\Packet\Cpackets\CGAuthKey.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Cpackets\CGAuthKey.h` |
+| UTF-8 | 697 B | `.\Client\Packet\Cpackets\CGAuthKeyHandler.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Cpackets\CGBloodDrain.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Cpackets\CGBloodDrain.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Cpackets\CGBuyStoreItem.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGBuyStoreItem.h` |
+| UTF-8 | 978 B | `.\Client\Packet\Cpackets\CGBuyStoreItemHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGCastingSkill.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Cpackets\CGCastingSkill.h` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Cpackets\CGConnect.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\Cpackets\CGConnect.h` |
+| UTF-8 | 917 B | `.\Client\Packet\Cpackets\CGConnectSetKey.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Cpackets\CGConnectSetKey.h` |
+| UTF-8 | 812 B | `.\Client\Packet\Cpackets\CGConnectSetKeyHandler.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Cpackets\CGCrashReport.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Cpackets\CGCrashReport.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Cpackets\CGDeleteSMSAddress.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Cpackets\CGDeleteSMSAddress.h` |
+| UTF-8 | 1.0 KB | `.\Client\Packet\Cpackets\CGDenyUnion.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGDenyUnion.h` |
+| UTF-8 | 946 B | `.\Client\Packet\Cpackets\CGDenyUnionHandler.cpp` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGDepositPet.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGDepositPet.h` |
+| UTF-8 | 779 B | `.\Client\Packet\Cpackets\CGDepositPetHandler.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Cpackets\CGDialUp.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Cpackets\CGDialUp.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Cpackets\CGDisplayItem.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Cpackets\CGDisplayItem.h` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGDisplayItemHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGDissectionCorpse.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Cpackets\CGDissectionCorpse.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGDonationMoney.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Cpackets\CGDonationMoney.h` |
+| UTF-8 | 783 B | `.\Client\Packet\Cpackets\CGDonationMoneyHandler.cpp` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGDownSkill.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Cpackets\CGDownSkill.h` |
+| UTF-8 | 812 B | `.\Client\Packet\Cpackets\CGDownSkillHandler.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Cpackets\CGDropMoney.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Cpackets\CGDropMoney.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGExchangeBuy.cpp` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Cpackets\CGExchangeBuy.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Cpackets\CGExchangeList.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Cpackets\CGExchangeList.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGExpelGuild.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGExpelGuild.h` |
+| UTF-8 | 946 B | `.\Client\Packet\Cpackets\CGExpelGuildHandler.cpp` |
+| UTF-8 | 957 B | `.\Client\Packet\Cpackets\CGFailQuest.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Cpackets\CGFailQuest.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Cpackets\CGFailQuestHandler.cpp` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGGetEventItem.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Cpackets\CGGetEventItem.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGGetOffMotorCycle.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Cpackets\CGGetOffMotorCycle.h` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\Cpackets\CGGlobalChat.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGGlobalChat.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGGQuestAccept.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Cpackets\CGGQuestAccept.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGGQuestCancel.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Cpackets\CGGQuestCancel.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Cpackets\CGGuildChat.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Cpackets\CGGuildChat.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Cpackets\CGJoinGuild.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Cpackets\CGJoinGuild.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Cpackets\CGLearnSkill.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGLearnSkill.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Cpackets\CGLogout.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGLogout.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGLotterySelect.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGLotterySelect.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Cpackets\CGLotterySelectHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGMakeItem.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGMakeItem.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Cpackets\CGMixItem.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGMixItem.h` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Cpackets\CGMixItemHandler.cpp` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\Cpackets\CGModifyGuildIntro.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Cpackets\CGModifyGuildIntro.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Cpackets\CGModifyGuildMember.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Cpackets\CGModifyGuildMember.h` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Cpackets\CGModifyGuildMemberIntro.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Cpackets\CGModifyGuildMemberIntro.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Cpackets\CGModifyNickname.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGModifyNickname.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGModifyTaxRatio.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGModifyTaxRatio.h` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Cpackets\CGMouseToStash.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Cpackets\CGMouseToStash.h` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Cpackets\CGMove.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Cpackets\CGMove.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Cpackets\CGNPCAskAnswer.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Cpackets\CGNPCAskAnswer.h` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Cpackets\CGNPCTalk.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Cpackets\CGNPCTalk.h` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Cpackets\CGPartyInvite.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Cpackets\CGPartyInvite.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Cpackets\CGPartyLeave.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Cpackets\CGPartyLeave.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Cpackets\CGPartyPosition.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Cpackets\CGPartyPosition.h` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\Cpackets\CGPartySay.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Cpackets\CGPartySay.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGPetGamble.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Cpackets\CGPetGamble.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGPhoneDisconnect.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGPhoneDisconnect.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGPhoneSay.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGPhoneSay.h` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Cpackets\CGPickupMoney.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Cpackets\CGPickupMoney.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGPortCheck.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Cpackets\CGPortCheck.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGQuitUnion.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Cpackets\CGQuitUnion.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGQuitUnionAccept.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Cpackets\CGQuitUnionAccept.h` |
+| UTF-8 | 966 B | `.\Client\Packet\Cpackets\CGQuitUnionAcceptHandler.cpp` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGQuitUnionDeny.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Cpackets\CGQuitUnionDeny.h` |
+| UTF-8 | 959 B | `.\Client\Packet\Cpackets\CGQuitUnionDenyHandler.cpp` |
+| UTF-8 | 915 B | `.\Client\Packet\Cpackets\CGQuitUnionHandler.cpp` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\Cpackets\CGRangerSay.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Cpackets\CGRangerSay.h` |
+| UTF-8 | 987 B | `.\Client\Packet\Cpackets\CGRangerSayHandler.cpp` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Cpackets\CGReady.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Cpackets\CGReady.h` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Cpackets\CGRegistGuild.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGRegistGuild.h` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\Cpackets\CGRelicToObject.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Cpackets\CGRelicToObject.h` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGReloadFromInventory.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Cpackets\CGReloadFromInventory.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Cpackets\CGReloadFromQuickSlot.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Cpackets\CGReloadFromQuickSlot.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGRequestGuildList.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Cpackets\CGRequestGuildList.h` |
+| UTF-8 | 825 B | `.\Client\Packet\Cpackets\CGRequestGuildListHandler.cpp` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Cpackets\CGRequestGuildMemberList.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Cpackets\CGRequestGuildMemberList.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGRequestInfo.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGRequestInfo.h` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGRequestIP.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Cpackets\CGRequestIP.h` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Cpackets\CGRequestNewbieItem.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Cpackets\CGRequestNewbieItem.h` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Cpackets\CGRequestPowerPoint.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGRequestPowerPoint.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Cpackets\CGRequestRepair.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGRequestRepair.h` |
+| UTF-8 | 1.0 KB | `.\Client\Packet\Cpackets\CGRequestStoreInfo.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Cpackets\CGRequestStoreInfo.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Cpackets\CGRequestStoreInfoHandler.cpp` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGRequestUnion.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Cpackets\CGRequestUnion.h` |
+| UTF-8 | 954 B | `.\Client\Packet\Cpackets\CGRequestUnionHandler.cpp` |
+| UTF-8 | 1.0 KB | `.\Client\Packet\Cpackets\CGRequestUnionInfo.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Cpackets\CGRequestUnionInfo.h` |
+| UTF-8 | 943 B | `.\Client\Packet\Cpackets\CGRequestUnionInfoHandler.cpp` |
+| UTF-8 | 986 B | `.\Client\Packet\Cpackets\CGResurrect.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Cpackets\CGResurrect.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Cpackets\CGRideMotorCycle.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Cpackets\CGRideMotorCycle.h` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\Cpackets\CGSay.cpp` |
+| UTF-8 | 6.1 KB | `.\Client\Packet\Cpackets\CGSay.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGSelectBloodBible.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Cpackets\CGSelectBloodBible.h` |
+| UTF-8 | 775 B | `.\Client\Packet\Cpackets\CGSelectBloodBibleHandler.cpp` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGSelectGuild.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Cpackets\CGSelectGuild.h` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\Cpackets\CGSelectGuildMember.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGSelectGuildMember.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGSelectNickname.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Cpackets\CGSelectNickname.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGSelectPortal.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Cpackets\CGSelectPortal.h` |
+| UTF-8 | 1.0 KB | `.\Client\Packet\Cpackets\CGSelectQuest.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Cpackets\CGSelectQuest.h` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Cpackets\CGSelectQuestHandler.cpp` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Cpackets\CGSelectRankBonus.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Cpackets\CGSelectRankBonus.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGSelectRegenZone.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Cpackets\CGSelectRegenZone.h` |
+| UTF-8 | 658 B | `.\Client\Packet\Cpackets\CGSelectRegenZoneHandler.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Cpackets\CGSelectTileEffect.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Cpackets\CGSelectTileEffect.h` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Cpackets\CGSelectWayPoint.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGSelectWayPoint.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Cpackets\CGSetSlayerHotKey.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGSetSlayerHotKey.h` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Cpackets\CGSetVampireHotKey.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGSetVampireHotKey.h` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGShopRequestBuy.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\Cpackets\CGShopRequestBuy.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGShopRequestList.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Cpackets\CGShopRequestList.h` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Cpackets\CGShopRequestSell.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Cpackets\CGShopRequestSell.h` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Cpackets\CGSilverCoating.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Cpackets\CGSilverCoating.h` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGSkillToInventory.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\Cpackets\CGSkillToInventory.h` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Cpackets\CGSkillToNamed.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Cpackets\CGSkillToNamed.h` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Cpackets\CGSkillToObject.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Cpackets\CGSkillToObject.h` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Cpackets\CGSkillToSelf.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Cpackets\CGSkillToSelf.h` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Cpackets\CGSkillToTile.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Cpackets\CGSkillToTile.h` |
+| UTF-8 | 1008 B | `.\Client\Packet\Cpackets\CGSMSAddressList.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Cpackets\CGSMSAddressList.h` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Cpackets\CGSMSSend.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Cpackets\CGSMSSend.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Cpackets\CGStashDeposit.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Cpackets\CGStashDeposit.h` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Cpackets\CGStashList.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGStashList.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Cpackets\CGStashRequestBuy.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Cpackets\CGStashRequestBuy.h` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Cpackets\CGStashToMouse.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Cpackets\CGStashToMouse.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Cpackets\CGStashWithdraw.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Cpackets\CGStashWithdraw.h` |
+| UTF-8 | 917 B | `.\Client\Packet\Cpackets\CGStoreClose.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGStoreClose.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Cpackets\CGStoreCloseHandler.cpp` |
+| UTF-8 | 909 B | `.\Client\Packet\Cpackets\CGStoreOpen.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGStoreOpen.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Cpackets\CGStoreOpenHandler.cpp` |
+| UTF-8 | 1.0 KB | `.\Client\Packet\Cpackets\CGStoreSign.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Cpackets\CGStoreSign.h` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Cpackets\CGStoreSignHandler.cpp` |
+| UTF-8 | 1.3 KB | `.\Client\Packet\Cpackets\CGSubmitScore.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGSubmitScore.h` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\Cpackets\CGSubmitScoreHandler.cpp` |
+| UTF-8 | 1.3 KB | `.\Client\Packet\Cpackets\CGTakeOutGood.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Cpackets\CGTakeOutGood.h` |
+| UTF-8 | 694 B | `.\Client\Packet\Cpackets\CGTakeOutGoodHandler.cpp` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Cpackets\CGTameMonster.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGTameMonster.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Cpackets\CGThrowBomb.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGThrowBomb.h` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGThrowItem.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Cpackets\CGThrowItem.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Cpackets\CGTradeAddItem.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGTradeAddItem.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Cpackets\CGTradeFinish.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Cpackets\CGTradeFinish.h` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Cpackets\CGTradeMoney.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Cpackets\CGTradeMoney.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Cpackets\CGTradePrepare.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Cpackets\CGTradePrepare.h` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Cpackets\CGTradeRemoveItem.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Cpackets\CGTradeRemoveItem.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Cpackets\CGTryJoinGuild.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGTryJoinGuild.h` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Cpackets\CGTypeStringList.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Cpackets\CGTypeStringList.h` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Cpackets\CGUnburrow.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Cpackets\CGUnburrow.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGUndisplayItem.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGUndisplayItem.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Cpackets\CGUndisplayItemHandler.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Cpackets\CGUntransform.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Cpackets\CGUntransform.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGUseBonusPoint.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGUseBonusPoint.h` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Cpackets\CGUseItemFromGear.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Cpackets\CGUseItemFromGear.h` |
+| UTF-8 | 1.3 KB | `.\Client\Packet\Cpackets\CGUseItemFromGQuestInventory.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Cpackets\CGUseItemFromGQuestInventory.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGUseItemFromGQuestInventoryHandler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Cpackets\CGUseItemFromInventory.cpp` |
+| UTF-8 | 4.3 KB | `.\Client\Packet\Cpackets\CGUseItemFromInventory.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Cpackets\CGUseMessageItemFromInventory.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Cpackets\CGUseMessageItemFromInventory.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGUsePotionFromInventory.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Cpackets\CGUsePotionFromInventory.h` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGUsePotionFromQuickSlot.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Cpackets\CGUsePotionFromQuickSlot.h` |
+| UTF-8 | 1.3 KB | `.\Client\Packet\Cpackets\CGUsePowerPoint.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Cpackets\CGUsePowerPoint.h` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Cpackets\CGVerifyTime.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CGVerifyTime.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Cpackets\CGVisible.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Cpackets\CGVisible.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Cpackets\CGWhisper.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Cpackets\CGWhisper.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGWithdrawPet.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Cpackets\CGWithdrawPet.h` |
+| UTF-8 | 779 B | `.\Client\Packet\Cpackets\CGWithdrawPetHandler.cpp` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Cpackets\CGWithdrawTax.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CGWithdrawTax.h` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Cpackets\CGWithdrawTaxHandler.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Cpackets\CLChangeServer.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Cpackets\CLChangeServer.h` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Cpackets\CLCreatePC.cpp` |
+| UTF-8 | 6.2 KB | `.\Client\Packet\Cpackets\CLCreatePC.h` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Cpackets\CLDeletePC.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CLDeletePC.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Cpackets\CLGetPCList.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Cpackets\CLGetPCList.h` |
+| UTF-8 | 1.3 KB | `.\Client\Packet\Cpackets\CLGetServerList.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Cpackets\CLGetServerList.h` |
+| UTF-8 | 795 B | `.\Client\Packet\Cpackets\CLGetWorldList.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Cpackets\CLGetWorldList.h` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\Cpackets\CLLogin.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Cpackets\CLLogin.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Cpackets\CLLogout.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Cpackets\CLLogout.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Cpackets\CLQueryCharacterName.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Cpackets\CLQueryCharacterName.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Cpackets\CLQueryPlayerID.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Cpackets\CLQueryPlayerID.h` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Cpackets\CLReconnectLogin.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Cpackets\CLReconnectLogin.h` |
+| UTF-8 | 10.8 KB | `.\Client\Packet\Cpackets\CLRegisterPlayer.cpp` |
+| UTF-8 | 9.3 KB | `.\Client\Packet\Cpackets\CLRegisterPlayer.h` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Cpackets\CLSelectPC.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Cpackets\CLSelectPC.h` |
+| UTF-8 | 904 B | `.\Client\Packet\Cpackets\CLSelectServer.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Cpackets\CLSelectServer.h` |
+| UTF-8 | 859 B | `.\Client\Packet\Cpackets\CLSelectWorld.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Cpackets\CLSelectWorld.h` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Cpackets\CLVersionCheck.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Cpackets\CLVersionCheck.h` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\BloodBibleBonusInfo.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\BloodBibleBonusInfo.h` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Gpackets\GCActiveGuildList.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GCActiveGuildList.h` |
+| UTF-8 | 1.0 KB | `.\Client\Packet\Gpackets\GCActiveGuildListHandler.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCAddBat.cpp` |
+| UTF-8 | 4.7 KB | `.\Client\Packet\Gpackets\GCAddBat.h` |
+| UTF-8 | 4.6 KB | `.\Client\Packet\Gpackets\GCAddBatHandler.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCAddBurrowingCreature.cpp` |
+| UTF-8 | 4.0 KB | `.\Client\Packet\Gpackets\GCAddBurrowingCreature.h` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCAddBurrowingCreatureHandler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCAddEffect.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Gpackets\GCAddEffect.h` |
+| UTF-8 | 5.1 KB | `.\Client\Packet\Gpackets\GCAddEffectHandler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCAddEffectToTile.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\Gpackets\GCAddEffectToTile.h` |
+| UTF-8 | 5.0 KB | `.\Client\Packet\Gpackets\GCAddEffectToTileHandler.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCAddGearToInventory.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Gpackets\GCAddGearToInventory.h` |
+| UTF-8 | 4.6 KB | `.\Client\Packet\Gpackets\GCAddGearToInventoryHandler.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCAddGearToZone.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCAddGearToZone.h` |
+| UTF-8 | 4.2 KB | `.\Client\Packet\Gpackets\GCAddGearToZoneHandler.cpp` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\Gpackets\GCAddHelicopter.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCAddHelicopter.h` |
+| UTF-8 | 1.0 KB | `.\Client\Packet\Gpackets\GCAddHelicopterHandler.cpp` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\Gpackets\GCAddInjuriousCreature.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCAddInjuriousCreature.h` |
+| UTF-8 | 820 B | `.\Client\Packet\Gpackets\GCAddInjuriousCreatureHandler.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCAddInstalledMineToZone.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Gpackets\GCAddInstalledMineToZone.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Gpackets\GCAddInstalledMineToZoneHandler.cpp` |
+| UTF-8 | 4.2 KB | `.\Client\Packet\Gpackets\GCAddItemToInventory.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCAddItemToInventory.h` |
+| UTF-8 | 4.4 KB | `.\Client\Packet\Gpackets\GCAddItemToItemVerify.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\Gpackets\GCAddItemToItemVerify.h` |
+| UTF-8 BOM | 8.3 KB | `.\Client\Packet\Gpackets\GCAddItemToItemVerifyHandler.cpp` |
+| UTF-8 | 4.4 KB | `.\Client\Packet\Gpackets\GCAddItemToZone.cpp` |
+| UTF-8 | 5.0 KB | `.\Client\Packet\Gpackets\GCAddItemToZone.h` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Gpackets\GCAddMonster.cpp` |
+| UTF-8 | 5.6 KB | `.\Client\Packet\Gpackets\GCAddMonster.h` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCAddMonsterCorpse.cpp` |
+| UTF-8 | 4.8 KB | `.\Client\Packet\Gpackets\GCAddMonsterCorpse.h` |
+| UTF-8 | 8.7 KB | `.\Client\Packet\Gpackets\GCAddMonsterCorpseHandler.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Gpackets\GCAddMonsterFromBurrowing.cpp` |
+| UTF-8 | 5.1 KB | `.\Client\Packet\Gpackets\GCAddMonsterFromBurrowing.h` |
+| UTF-8 | 7.4 KB | `.\Client\Packet\Gpackets\GCAddMonsterFromBurrowingHandler.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Gpackets\GCAddMonsterFromTransformation.cpp` |
+| UTF-8 | 5.2 KB | `.\Client\Packet\Gpackets\GCAddMonsterFromTransformation.h` |
+| UTF-8 | 5.8 KB | `.\Client\Packet\Gpackets\GCAddMonsterFromTransformationHandler.cpp` |
+| UTF-8 | 9.4 KB | `.\Client\Packet\Gpackets\GCAddMonsterHandler.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCAddNewItemToZone.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCAddNewItemToZone.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Gpackets\GCAddNewItemToZoneHandler.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCAddNickname.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCAddNickname.h` |
+| UTF-8 | 880 B | `.\Client\Packet\Gpackets\GCAddNicknameHandler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCAddNPC.cpp` |
+| UTF-8 | 4.7 KB | `.\Client\Packet\Gpackets\GCAddNPC.h` |
+| UTF-8 | 5.9 KB | `.\Client\Packet\Gpackets\GCAddNPCHandler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCAddOusters.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\Gpackets\GCAddOusters.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Gpackets\GCAddOustersCorpse.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCAddOustersCorpse.h` |
+| UTF-8 | 7.5 KB | `.\Client\Packet\Gpackets\GCAddOustersCorpseHandler.cpp` |
+| UTF-8 | 8.0 KB | `.\Client\Packet\Gpackets\GCAddOustersHandler.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCAddressListVerify.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCAddressListVerify.h` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCAddressListVerifyHandler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCAddSlayer.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\Gpackets\GCAddSlayer.h` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCAddSlayerCorpse.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCAddSlayerCorpse.h` |
+| UTF-8 | 7.5 KB | `.\Client\Packet\Gpackets\GCAddSlayerCorpseHandler.cpp` |
+| UTF-8 | 6.9 KB | `.\Client\Packet\Gpackets\GCAddSlayerHandler.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GCAddStoreItem.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCAddStoreItem.h` |
+| UTF-8 | 7.6 KB | `.\Client\Packet\Gpackets\GCAddStoreItemHandler.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCAddVampire.cpp` |
+| UTF-8 | 4.9 KB | `.\Client\Packet\Gpackets\GCAddVampire.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Gpackets\GCAddVampireCorpse.cpp` |
+| UTF-8 | 4.2 KB | `.\Client\Packet\Gpackets\GCAddVampireCorpse.h` |
+| UTF-8 | 8.7 KB | `.\Client\Packet\Gpackets\GCAddVampireCorpseHandler.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCAddVampireFromBurrowing.cpp` |
+| UTF-8 | 4.5 KB | `.\Client\Packet\Gpackets\GCAddVampireFromBurrowing.h` |
+| UTF-8 | 7.0 KB | `.\Client\Packet\Gpackets\GCAddVampireFromBurrowingHandler.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCAddVampireFromTransformation.cpp` |
+| UTF-8 | 4.6 KB | `.\Client\Packet\Gpackets\GCAddVampireFromTransformation.h` |
+| UTF-8 | 7.6 KB | `.\Client\Packet\Gpackets\GCAddVampireFromTransformationHandler.cpp` |
+| UTF-8 | 9.4 KB | `.\Client\Packet\Gpackets\GCAddVampireHandler.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCAddVampirePortal.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\Gpackets\GCAddVampirePortal.h` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\Gpackets\GCAddVampirePortalHandler.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCAddWolf.cpp` |
+| UTF-8 | 5.4 KB | `.\Client\Packet\Gpackets\GCAddWolf.h` |
+| UTF-8 | 4.5 KB | `.\Client\Packet\Gpackets\GCAddWolfHandler.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCAttack.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCAttack.h` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCAttackArmsOK1.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\Gpackets\GCAttackArmsOK1.h` |
+| UTF-8 | 4.0 KB | `.\Client\Packet\Gpackets\GCAttackArmsOK1Handler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCAttackArmsOK2.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCAttackArmsOK2.h` |
+| UTF-8 | 5.1 KB | `.\Client\Packet\Gpackets\GCAttackArmsOK2Handler.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCAttackArmsOK3.cpp` |
+| UTF-8 | 4.3 KB | `.\Client\Packet\Gpackets\GCAttackArmsOK3.h` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCAttackArmsOK3Handler.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCAttackArmsOK4.cpp` |
+| UTF-8 | 4.3 KB | `.\Client\Packet\Gpackets\GCAttackArmsOK4.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCAttackArmsOK4Handler.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCAttackArmsOK5.cpp` |
+| UTF-8 | 4.2 KB | `.\Client\Packet\Gpackets\GCAttackArmsOK5.h` |
+| UTF-8 | 5.7 KB | `.\Client\Packet\Gpackets\GCAttackArmsOK5Handler.cpp` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Gpackets\GCAttackHandler.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCAttackMeleeOK1.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCAttackMeleeOK1.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCAttackMeleeOK1Handler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCAttackMeleeOK2.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCAttackMeleeOK2.h` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GCAttackMeleeOK2Handler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCAttackMeleeOK3.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCAttackMeleeOK3.h` |
+| UTF-8 | 4.0 KB | `.\Client\Packet\Gpackets\GCAttackMeleeOK3Handler.cpp` |
+| UTF-8 | 1.0 KB | `.\Client\Packet\Gpackets\GCAuthKey.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Gpackets\GCAuthKey.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Gpackets\GCAuthKeyHandler.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCBloodBibleList.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GCBloodBibleList.h` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Gpackets\GCBloodBibleListHandler.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Gpackets\GCBloodBibleSignInfo.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCBloodBibleSignInfo.h` |
+| UTF-8 | 911 B | `.\Client\Packet\Gpackets\GCBloodBibleSignInfoHandler.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCBloodBibleStatus.cpp` |
+| UTF-8 | 5.0 KB | `.\Client\Packet\Gpackets\GCBloodBibleStatus.h` |
+| UTF-8 | 880 B | `.\Client\Packet\Gpackets\GCBloodBibleStatusHandler.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCBloodDrainOK1.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCBloodDrainOK1.h` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCBloodDrainOK1Handler.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCBloodDrainOK2.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCBloodDrainOK2.h` |
+| UTF-8 | 4.0 KB | `.\Client\Packet\Gpackets\GCBloodDrainOK2Handler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCBloodDrainOK3.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCBloodDrainOK3.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCBloodDrainOK3Handler.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCCannotAdd.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCCannotAdd.h` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCCannotAddHandler.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCCannotUse.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCCannotUse.h` |
+| UTF-8 | 5.9 KB | `.\Client\Packet\Gpackets\GCCannotUseHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCCastingSkill.cpp` |
+| UTF-8 BOM | 3.1 KB | `.\Client\Packet\Gpackets\GCCastingSkill.h` |
+| UTF-8 | 699 B | `.\Client\Packet\Gpackets\GCCastingSkillHandler.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Gpackets\GCChangeDarkLight.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCChangeDarkLight.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Gpackets\GCChangeDarkLightHandler.cpp` |
+| UTF-8 | 4.2 KB | `.\Client\Packet\Gpackets\GCChangeInventoryItemNum.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCChangeInventoryItemNum.h` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCChangeShape.cpp` |
+| UTF-8 | 4.5 KB | `.\Client\Packet\Gpackets\GCChangeShape.h` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCChangeShapeHandler.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Gpackets\GCChangeWeather.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCChangeWeather.h` |
+| UTF-8 | 901 B | `.\Client\Packet\Gpackets\GCChangeWeatherHandler.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Gpackets\GCCreateItem.cpp` |
+| UTF-8 | 5.4 KB | `.\Client\Packet\Gpackets\GCCreateItem.h` |
+| UTF-8 | 5.3 KB | `.\Client\Packet\Gpackets\GCCreateItemHandler.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCCreatureDied.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCCreatureDied.h` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCCreatureDiedHandler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCCrossCounterOK1.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCCrossCounterOK1.h` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCCrossCounterOK1Handler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCCrossCounterOK2.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCCrossCounterOK2.h` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\Gpackets\GCCrossCounterOK2Handler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCCrossCounterOK3.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\Gpackets\GCCrossCounterOK3.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Gpackets\GCCrossCounterOK3Handler.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Gpackets\GCDeleteandPickUpOK.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCDeleteandPickUpOK.h` |
+| UTF-8 | 16.8 KB | `.\Client\Packet\Gpackets\GCDeleteandPickUpOKHandler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCDeleteEffectFromTile.cpp` |
+| UTF-8 | 4.0 KB | `.\Client\Packet\Gpackets\GCDeleteEffectFromTile.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Gpackets\GCDeleteEffectFromTileHandler.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCDeleteInventoryItem.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCDeleteInventoryItem.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Gpackets\GCDeleteInventoryItemHandler.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Gpackets\GCDeleteObject.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCDeleteObject.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCDeleteObjectHandler.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GCDisconnect.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCDisconnect.h` |
+| UTF-8 | 866 B | `.\Client\Packet\Gpackets\GCDisconnectHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCDownSkillFailed.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCDownSkillFailed.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Gpackets\GCDownSkillFailedHandler.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCDownSkillOK.cpp` |
+| UTF-8 BOM | 3.1 KB | `.\Client\Packet\Gpackets\GCDownSkillOK.h` |
+| UTF-8 | 1.3 KB | `.\Client\Packet\Gpackets\GCDownSkillOKHandler.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Gpackets\GCDropItemToZone.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCDropItemToZone.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCDropItemToZoneHandler.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCEnterVampirePortal.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCEnterVampirePortal.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Gpackets\GCEnterVampirePortalHandler.cpp` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Gpackets\GCExchangeList.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCExchangeList.h` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Gpackets\GCExecuteElement.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCExecuteElement.h` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\Gpackets\GCExecuteElementHandler.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCFakeMove.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GCFakeMove.h` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\Gpackets\GCFakeMoveHandler.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Gpackets\GCFastMove.cpp` |
+| UTF-8 | 4.0 KB | `.\Client\Packet\Gpackets\GCFastMove.h` |
+| UTF-8 | 5.0 KB | `.\Client\Packet\Gpackets\GCFastMoveHandler.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\GCFlagWarStatus.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\GCFlagWarStatus.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Gpackets\GCFlagWarStatusHandler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCFriendChatting.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\Gpackets\GCFriendChatting.h` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\Gpackets\GCFriendChattingHandler.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCGetDamage.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCGetDamage.h` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCGetDamageHandler.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCGetOffMotorCycle.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCGetOffMotorCycle.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCGetOffMotorCycleFailed.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCGetOffMotorCycleFailed.h` |
+| UTF-8 | 920 B | `.\Client\Packet\Gpackets\GCGetOffMotorCycleFailedHandler.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GCGetOffMotorCycleHandler.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCGetOffMotorCycleOK.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCGetOffMotorCycleOK.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Gpackets\GCGetOffMotorCycleOKHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCGlobalChat.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCGlobalChat.h` |
+| UTF-8 | 5.1 KB | `.\Client\Packet\Gpackets\GCGlobalChatHandler.cpp` |
+| UTF-8 | 5.4 KB | `.\Client\Packet\Gpackets\GCGoodsList.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCGoodsList.h` |
+| UTF-8 | 565 B | `.\Client\Packet\Gpackets\GCGoodsListHandler.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCGQuestInventory.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\GCGQuestInventory.h` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Gpackets\GCGQuestInventoryHandler.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCGQuestStatusInfo.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCGQuestStatusInfo.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCGQuestStatusInfoHandler.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Gpackets\GCGQuestStatusModify.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCGQuestStatusModify.h` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCGQuestStatusModifyHandler.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCGuildChat.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\Gpackets\GCGuildChat.h` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Gpackets\GCGuildChatHandler.cpp` |
+| UTF-8 | 4.0 KB | `.\Client\Packet\Gpackets\GCGuildMemberList.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Gpackets\GCGuildMemberList.h` |
+| UTF-8 | 730 B | `.\Client\Packet\Gpackets\GCGuildMemberListHandler.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GCGuildResponse.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCGuildResponse.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Gpackets\GCGuildResponseHandler.cpp` |
+| UTF-8 | 4.2 KB | `.\Client\Packet\Gpackets\GCHolyLandBonusInfo.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCHolyLandBonusInfo.h` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\Gpackets\GCHolyLandBonusInfoHandler.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCHPRecoveryEndToOthers.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCHPRecoveryEndToOthers.h` |
+| UTF-8 | 963 B | `.\Client\Packet\Gpackets\GCHPRecoveryEndToOthersHandler.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCHPRecoveryEndToSelf.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCHPRecoveryEndToSelf.h` |
+| UTF-8 | 846 B | `.\Client\Packet\Gpackets\GCHPRecoveryEndToSelfHandler.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCHPRecoveryStartToOthers.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\Gpackets\GCHPRecoveryStartToOthers.h` |
+| UTF-8 | 1023 B | `.\Client\Packet\Gpackets\GCHPRecoveryStartToOthersHandler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCHPRecoveryStartToSelf.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\Gpackets\GCHPRecoveryStartToSelf.h` |
+| UTF-8 | 949 B | `.\Client\Packet\Gpackets\GCHPRecoveryStartToSelfHandler.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCKickMessage.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCKickMessage.h` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Gpackets\GCKickMessageHandler.cpp` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Gpackets\GCKnockBack.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCKnockBack.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Gpackets\GCKnockBackHandler.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK1.cpp` |
+| UTF-8 | 4.5 KB | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK1.h` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK1Handler.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK2.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK2.h` |
+| UTF-8 | 5.1 KB | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK2Handler.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK4.cpp` |
+| UTF-8 | 4.8 KB | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK4.h` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK4Handler.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK5.cpp` |
+| UTF-8 | 4.7 KB | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK5.h` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCKnocksTargetBackOK5Handler.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCLearnSkillFailed.cpp` |
+| UTF-8 BOM | 3.4 KB | `.\Client\Packet\Gpackets\GCLearnSkillFailed.h` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\Gpackets\GCLearnSkillFailedHandler.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCLearnSkillOK.cpp` |
+| UTF-8 BOM | 3.5 KB | `.\Client\Packet\Gpackets\GCLearnSkillOK.h` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCLearnSkillOKHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCLearnSkillReady.cpp` |
+| UTF-8 BOM | 3.3 KB | `.\Client\Packet\Gpackets\GCLearnSkillReady.h` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCLearnSkillReadyHandler.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCLightning.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCLightning.h` |
+| UTF-8 | 944 B | `.\Client\Packet\Gpackets\GCLightningHandler.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\GCMakeItemFail.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCMakeItemFail.h` |
+| UTF-8 | 1.3 KB | `.\Client\Packet\Gpackets\GCMakeItemFailHandler.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCMakeItemOK.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GCMakeItemOK.h` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\GCMakeItemOKHandler.cpp` |
+| UTF-8 | 4.9 KB | `.\Client\Packet\Gpackets\GCMineExplosionOK1.cpp` |
+| UTF-8 | 4.7 KB | `.\Client\Packet\Gpackets\GCMineExplosionOK1.h` |
+| UTF-8 | 4.8 KB | `.\Client\Packet\Gpackets\GCMineExplosionOK1Handler.cpp` |
+| UTF-8 | 4.7 KB | `.\Client\Packet\Gpackets\GCMineExplosionOK2.cpp` |
+| UTF-8 | 4.7 KB | `.\Client\Packet\Gpackets\GCMineExplosionOK2.h` |
+| UTF-8 | 4.5 KB | `.\Client\Packet\Gpackets\GCMineExplosionOK2Handler.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCMiniGameScores.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCMiniGameScores.h` |
+| UTF-8 | 712 B | `.\Client\Packet\Gpackets\GCMiniGameScoresHandler.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCModifyGuildMemberInfo.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Gpackets\GCModifyGuildMemberInfo.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Gpackets\GCModifyGuildMemberInfoHandler.cpp` |
+| UTF-8 | 708 B | `.\Client\Packet\Gpackets\GCModifyInformation.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCModifyInformation.h` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Gpackets\GCModifyInformationHandler.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCModifyNickname.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCModifyNickname.h` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Gpackets\GCModifyNicknameHandler.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCMonsterKillQuestInfo.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\GCMonsterKillQuestInfo.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Gpackets\GCMonsterKillQuestInfoHandler.cpp` |
+| UTF-8 | 4.2 KB | `.\Client\Packet\Gpackets\GCMorph1.cpp` |
+| UTF-8 | 5.6 KB | `.\Client\Packet\Gpackets\GCMorph1.h` |
+| UTF-8 | 5.3 KB | `.\Client\Packet\Gpackets\GCMorph1Handler.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCMorphSlayer2.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCMorphSlayer2.h` |
+| UTF-8 | 4.2 KB | `.\Client\Packet\Gpackets\GCMorphSlayer2Handler.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCMorphVampire2.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCMorphVampire2.h` |
+| UTF-8 | 4.7 KB | `.\Client\Packet\Gpackets\GCMorphVampire2Handler.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Gpackets\GCMove.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCMove.h` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\GCMoveError.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCMoveError.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Gpackets\GCMoveErrorHandler.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCMoveHandler.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCMoveOK.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GCMoveOK.h` |
+| UTF-8 | 1.3 KB | `.\Client\Packet\Gpackets\GCMoveOKHandler.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCMPRecoveryEnd.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCMPRecoveryEnd.h` |
+| UTF-8 | 790 B | `.\Client\Packet\Gpackets\GCMPRecoveryEndHandler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCMPRecoveryStart.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCMPRecoveryStart.h` |
+| UTF-8 | 929 B | `.\Client\Packet\Gpackets\GCMPRecoveryStartHandler.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GCMyStoreInfo.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCMyStoreInfo.h` |
+| UTF-8 | 9.5 KB | `.\Client\Packet\Gpackets\GCMyStoreInfoHandler.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCNicknameList.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCNicknameList.h` |
+| UTF-8 | 930 B | `.\Client\Packet\Gpackets\GCNicknameListHandler.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCNicknameVerify.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCNicknameVerify.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCNicknameVerifyHandler.cpp` |
+| UTF-8 | 5.4 KB | `.\Client\Packet\Gpackets\GCNoticeEvent.cpp` |
+| UTF-8 | 7.7 KB | `.\Client\Packet\Gpackets\GCNoticeEvent.h` |
+| UTF-8 | 15.8 KB | `.\Client\Packet\Gpackets\GCNoticeEventHandler.cpp` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\Gpackets\GCNotifyWin.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCNotifyWin.h` |
+| UTF-8 | 928 B | `.\Client\Packet\Gpackets\GCNotifyWinHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCNPCAsk.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCNPCAsk.h` |
+| UTF-8 | 4.5 KB | `.\Client\Packet\Gpackets\GCNPCAskDynamic.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCNPCAskDynamic.h` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GCNPCAskDynamicHandler.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCNPCAskHandler.cpp` |
+| UTF-8 | 4.8 KB | `.\Client\Packet\Gpackets\GCNPCAskVariable.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCNPCAskVariable.h` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCNPCAskVariableHandler.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCNPCInfo.cpp` |
+| UTF-8 | 4.3 KB | `.\Client\Packet\Gpackets\GCNPCInfo.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Gpackets\GCNPCInfoHandler.cpp` |
+| UTF-8 | 4.7 KB | `.\Client\Packet\Gpackets\GCNPCResponse.cpp` |
+| UTF-8 | 19.0 KB | `.\Client\Packet\Gpackets\GCNPCResponse.h` |
+| UTF-8 | 48.8 KB | `.\Client\Packet\Gpackets\GCNPCResponseHandler.cpp` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Gpackets\GCNPCSay.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCNPCSay.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Gpackets\GCNPCSayDynamic.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCNPCSayDynamic.h` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GCNPCSayDynamicHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCNPCSayHandler.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCOtherGuildName.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GCOtherGuildName.h` |
+| UTF-8 | 867 B | `.\Client\Packet\Gpackets\GCOtherGuildNameHandler.cpp` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Gpackets\GCOtherModifyInfo.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GCOtherModifyInfo.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Gpackets\GCOtherModifyInfoHandler.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCOtherStoreInfo.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCOtherStoreInfo.h` |
+| UTF-8 | 8.7 KB | `.\Client\Packet\Gpackets\GCOtherStoreInfoHandler.cpp` |
+| UTF-8 | 1.3 KB | `.\Client\Packet\Gpackets\GCPartyError.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCPartyError.h` |
+| UTF-8 | 4.9 KB | `.\Client\Packet\Gpackets\GCPartyErrorHandler.cpp` |
+| UTF-8 | 1.3 KB | `.\Client\Packet\Gpackets\GCPartyInvite.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\GCPartyInvite.h` |
+| UTF-8 | 8.2 KB | `.\Client\Packet\Gpackets\GCPartyInviteHandler.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\Gpackets\GCPartyJoined.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCPartyJoined.h` |
+| UTF-8 | 5.9 KB | `.\Client\Packet\Gpackets\GCPartyJoinedHandler.cpp` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Gpackets\GCPartyLeave.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCPartyLeave.h` |
+| UTF-8 | 4.7 KB | `.\Client\Packet\Gpackets\GCPartyLeaveHandler.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GCPartyPosition.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCPartyPosition.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCPartyPositionHandler.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Gpackets\GCPartySay.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCPartySay.h` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCPartySayHandler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCPetInfo.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Gpackets\GCPetInfo.h` |
+| UTF-8 | 799 B | `.\Client\Packet\Gpackets\GCPetInfoHandler.cpp` |
+| UTF-8 | 4.3 KB | `.\Client\Packet\Gpackets\GCPetStashList.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCPetStashList.h` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCPetStashListHandler.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCPetStashVerify.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCPetStashVerify.h` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GCPetStashVerifyHandler.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCPetUseSkill.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCPetUseSkill.h` |
+| UTF-8 | 6.0 KB | `.\Client\Packet\Gpackets\GCPetUseSkillHandler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCPhoneConnected.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Gpackets\GCPhoneConnected.h` |
+| UTF-8 | 1.0 KB | `.\Client\Packet\Gpackets\GCPhoneConnectedHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCPhoneConnectionFailed.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCPhoneConnectionFailed.h` |
+| UTF-8 | 750 B | `.\Client\Packet\Gpackets\GCPhoneConnectionFailedHandler.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCPhoneDisconnected.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCPhoneDisconnected.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Gpackets\GCPhoneDisconnectedHandler.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCPhoneSay.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCPhoneSay.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Gpackets\GCPhoneSayHandler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCQuestStatus.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCQuestStatus.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCQuestStatusHandler.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCRankBonusInfo.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCRankBonusInfo.h` |
+| UTF-8 | 1.3 KB | `.\Client\Packet\Gpackets\GCRankBonusInfoHandler.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCRealWearingInfo.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCRealWearingInfo.h` |
+| UTF-8 | 5.8 KB | `.\Client\Packet\Gpackets\GCRealWearingInfoHandler.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCReconnect.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\Gpackets\GCReconnect.h` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GCReconnectHandler.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GCReconnectLogin.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\Gpackets\GCReconnectLogin.h` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCReconnectLoginHandler.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCRegenZoneStatus.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\GCRegenZoneStatus.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Gpackets\GCRegenZoneStatusHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCReloadOK.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCReloadOK.h` |
+| UTF-8 | 9.5 KB | `.\Client\Packet\Gpackets\GCReloadOKHandler.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCRemoveCorpseHead.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Gpackets\GCRemoveCorpseHead.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCRemoveCorpseHeadHandler.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\Gpackets\GCRemoveEffect.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\Gpackets\GCRemoveEffect.h` |
+| UTF-8 | 4.5 KB | `.\Client\Packet\Gpackets\GCRemoveEffectHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCRemoveFromGear.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCRemoveFromGear.h` |
+| UTF-8 | 12.6 KB | `.\Client\Packet\Gpackets\GCRemoveFromGearHandler.cpp` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\Gpackets\GCRemoveInjuriousCreature.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCRemoveInjuriousCreature.h` |
+| UTF-8 | 973 B | `.\Client\Packet\Gpackets\GCRemoveInjuriousCreatureHandler.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Gpackets\GCRemoveStoreItem.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCRemoveStoreItem.h` |
+| UTF-8 | 1.3 KB | `.\Client\Packet\Gpackets\GCRemoveStoreItemHandler.cpp` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Gpackets\GCRequestedIP.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCRequestedIP.h` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCRequestedIPHandler.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Gpackets\GCRequestFailed.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCRequestFailed.h` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCRequestFailedHandler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCRequestPowerPointResult.cpp` |
+| UTF-8 | 4.4 KB | `.\Client\Packet\Gpackets\GCRequestPowerPointResult.h` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCRequestPowerPointResultHandler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCRideMotorCycle.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCRideMotorCycle.h` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCRideMotorCycleFailed.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GCRideMotorCycleFailed.h` |
+| UTF-8 | 914 B | `.\Client\Packet\Gpackets\GCRideMotorCycleFailedHandler.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCRideMotorCycleHandler.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCRideMotorCycleOK.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCRideMotorCycleOK.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCRideMotorCycleOKHandler.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCRing.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCRing.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Gpackets\GCRingHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCSay.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCSay.h` |
+| UTF-8 | 8.3 KB | `.\Client\Packet\Gpackets\GCSayHandler.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCSearchMotorcycleFail.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCSearchMotorcycleFail.h` |
+| UTF-8 | 887 B | `.\Client\Packet\Gpackets\GCSearchMotorcycleFailHandler.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GCSearchMotorcycleOK.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCSearchMotorcycleOK.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Gpackets\GCSearchMotorcycleOKHandler.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCSelectQuestID.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCSelectQuestID.h` |
+| UTF-8 | 1017 B | `.\Client\Packet\Gpackets\GCSelectQuestIDHandler.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCSelectRankBonusFailed.cpp` |
+| UTF-8 BOM | 3.4 KB | `.\Client\Packet\Gpackets\GCSelectRankBonusFailed.h` |
+| UTF-8 | 1.0 KB | `.\Client\Packet\Gpackets\GCSelectRankBonusFailedHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCSelectRankBonusOK.cpp` |
+| UTF-8 BOM | 3.2 KB | `.\Client\Packet\Gpackets\GCSelectRankBonusOK.h` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\Gpackets\GCSelectRankBonusOKHandler.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCSetPosition.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCSetPosition.h` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\Gpackets\GCSetPositionHandler.cpp` |
+| UTF-8 | 4.6 KB | `.\Client\Packet\Gpackets\GCShopBought.cpp` |
+| UTF-8 | 6.2 KB | `.\Client\Packet\Gpackets\GCShopBought.h` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCShopBoughtHandler.cpp` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Gpackets\GCShopBuyFail.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GCShopBuyFail.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Gpackets\GCShopBuyFailHandler.cpp` |
+| UTF-8 | 4.3 KB | `.\Client\Packet\Gpackets\GCShopBuyOK.cpp` |
+| UTF-8 | 5.9 KB | `.\Client\Packet\Gpackets\GCShopBuyOK.h` |
+| UTF-8 | 7.8 KB | `.\Client\Packet\Gpackets\GCShopBuyOKHandler.cpp` |
+| UTF-8 | 7.9 KB | `.\Client\Packet\Gpackets\GCShopList.cpp` |
+| UTF-8 | 4.9 KB | `.\Client\Packet\Gpackets\GCShopList.h` |
+| UTF-8 | 5.5 KB | `.\Client\Packet\Gpackets\GCShopListHandler.cpp` |
+| UTF-8 | 6.2 KB | `.\Client\Packet\Gpackets\GCShopListMysterious.cpp` |
+| UTF-8 | 4.6 KB | `.\Client\Packet\Gpackets\GCShopListMysterious.h` |
+| UTF-8 | 4.4 KB | `.\Client\Packet\Gpackets\GCShopListMysteriousHandler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCShopMarketCondition.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCShopMarketCondition.h` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCShopMarketConditionHandler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCShopSellFail.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCShopSellFail.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Gpackets\GCShopSellFailHandler.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCShopSellOK.cpp` |
+| UTF-8 | 4.0 KB | `.\Client\Packet\Gpackets\GCShopSellOK.h` |
+| UTF-8 | 5.9 KB | `.\Client\Packet\Gpackets\GCShopSellOKHandler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCShopSold.cpp` |
+| UTF-8 | 4.0 KB | `.\Client\Packet\Gpackets\GCShopSold.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCShopSoldHandler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCShopVersion.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Gpackets\GCShopVersion.h` |
+| UTF-8 | 5.0 KB | `.\Client\Packet\Gpackets\GCShopVersionHandler.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\Gpackets\GCShowGuildInfo.cpp` |
+| UTF-8 | 4.9 KB | `.\Client\Packet\Gpackets\GCShowGuildInfo.h` |
+| UTF-8 | 757 B | `.\Client\Packet\Gpackets\GCShowGuildInfoHandler.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCShowGuildJoin.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCShowGuildJoin.h` |
+| UTF-8 | 826 B | `.\Client\Packet\Gpackets\GCShowGuildJoinHandler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCShowGuildMemberInfo.cpp` |
+| UTF-8 | 4.2 KB | `.\Client\Packet\Gpackets\GCShowGuildMemberInfo.h` |
+| UTF-8 | 749 B | `.\Client\Packet\Gpackets\GCShowGuildMemberInfoHandler.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GCShowMessageBox.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCShowMessageBox.h` |
+| UTF-8 | 644 B | `.\Client\Packet\Gpackets\GCShowMessageBoxHandler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCShowUnionInfo.cpp` |
+| UTF-8 | 7.8 KB | `.\Client\Packet\Gpackets\GCShowUnionInfo.h` |
+| UTF-8 | 764 B | `.\Client\Packet\Gpackets\GCShowUnionInfoHandler.cpp` |
+| UTF-8 | 5.3 KB | `.\Client\Packet\Gpackets\GCShowWaitGuildInfo.cpp` |
+| UTF-8 | 5.1 KB | `.\Client\Packet\Gpackets\GCShowWaitGuildInfo.h` |
+| UTF-8 | 739 B | `.\Client\Packet\Gpackets\GCShowWaitGuildInfoHandler.cpp` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\Gpackets\GCSkillFailed1.cpp` |
+| UTF-8 BOM | 2.6 KB | `.\Client\Packet\Gpackets\GCSkillFailed1.h` |
+| UTF-8 | 4.2 KB | `.\Client\Packet\Gpackets\GCSkillFailed1Handler.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\GCSkillFailed2.cpp` |
+| UTF-8 BOM | 3.8 KB | `.\Client\Packet\Gpackets\GCSkillFailed2.h` |
+| UTF-8 | 5.3 KB | `.\Client\Packet\Gpackets\GCSkillFailed2Handler.cpp` |
+| UTF-8 | 4.7 KB | `.\Client\Packet\Gpackets\GCSkillInfo.cpp` |
+| UTF-8 | 4.3 KB | `.\Client\Packet\Gpackets\GCSkillInfo.h` |
+| UTF-8 | 12.9 KB | `.\Client\Packet\Gpackets\GCSkillInfoHandler.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCSkillToInventoryOK1.cpp` |
+| UTF-8 | 4.8 KB | `.\Client\Packet\Gpackets\GCSkillToInventoryOK1.h` |
+| UTF-8 | 15.0 KB | `.\Client\Packet\Gpackets\GCSkillToInventoryOK1Handler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCSkillToInventoryOK2.cpp` |
+| UTF-8 | 4.0 KB | `.\Client\Packet\Gpackets\GCSkillToInventoryOK2.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Gpackets\GCSkillToInventoryOK2Handler.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK1.cpp` |
+| UTF-8 | 4.4 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK1.h` |
+| UTF-8 | 7.9 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK1Handler.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK2.cpp` |
+| UTF-8 | 4.3 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK2.h` |
+| UTF-8 | 9.6 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK2Handler.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK3.cpp` |
+| UTF-8 | 4.3 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK3.h` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK3Handler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK4.cpp` |
+| UTF-8 | 4.5 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK4.h` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK4Handler.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK5.cpp` |
+| UTF-8 | 4.7 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK5.h` |
+| UTF-8 | 6.5 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK5Handler.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK6.cpp` |
+| UTF-8 | 4.3 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK6.h` |
+| UTF-8 | 5.4 KB | `.\Client\Packet\Gpackets\GCSkillToObjectOK6Handler.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCSkillToSelfOK1.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\Gpackets\GCSkillToSelfOK1.h` |
+| UTF-8 | 6.1 KB | `.\Client\Packet\Gpackets\GCSkillToSelfOK1Handler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCSkillToSelfOK2.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\Gpackets\GCSkillToSelfOK2.h` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCSkillToSelfOK2Handler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCSkillToSelfOK3.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Gpackets\GCSkillToSelfOK3.h` |
+| UTF-8 | 4.2 KB | `.\Client\Packet\Gpackets\GCSkillToSelfOK3Handler.cpp` |
+| UTF-8 | 5.0 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK1.cpp` |
+| UTF-8 | 5.1 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK1.h` |
+| UTF-8 | 8.0 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK1Handler.cpp` |
+| UTF-8 | 5.0 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK2.cpp` |
+| UTF-8 | 5.2 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK2.h` |
+| UTF-8 | 11.1 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK2Handler.cpp` |
+| UTF-8 | 4.5 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK3.cpp` |
+| UTF-8 | 5.1 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK3.h` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK3Handler.cpp` |
+| UTF-8 | 4.8 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK4.cpp` |
+| UTF-8 | 5.1 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK4.h` |
+| UTF-8 | 5.4 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK4Handler.cpp` |
+| UTF-8 | 4.9 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK5.cpp` |
+| UTF-8 | 5.1 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK5.h` |
+| UTF-8 | 7.1 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK5Handler.cpp` |
+| UTF-8 | 5.1 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK6.cpp` |
+| UTF-8 | 5.2 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK6.h` |
+| UTF-8 | 8.4 KB | `.\Client\Packet\Gpackets\GCSkillToTileOK6Handler.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\Gpackets\GCSMSAddressList.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCSMSAddressList.h` |
+| UTF-8 | 976 B | `.\Client\Packet\Gpackets\GCSMSAddressListHandler.cpp` |
+| UTF-8 | 14.7 KB | `.\Client\Packet\Gpackets\GCStashList.cpp` |
+| UTF-8 | 4.2 KB | `.\Client\Packet\Gpackets\GCStashList.h` |
+| UTF-8 | 7.9 KB | `.\Client\Packet\Gpackets\GCStashListHandler.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Gpackets\GCStashSell.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Gpackets\GCStashSell.h` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCStashSellHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCStatusCurrentHP.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCStatusCurrentHP.h` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\Gpackets\GCStatusCurrentHPHandler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCSubInventoryInfo.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Gpackets\GCSubInventoryInfo.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Gpackets\GCSubInventoryInfoHandler.cpp` |
+| UTF-8 | 4.0 KB | `.\Client\Packet\Gpackets\GCSweeperBonusInfo.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GCSweeperBonusInfo.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCSweeperBonusInfoHandler.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCSystemAvailabilities.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCSystemAvailabilities.h` |
+| UTF-8 | 994 B | `.\Client\Packet\Gpackets\GCSystemAvailabilitiesHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Gpackets\GCSystemMessage.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\Gpackets\GCSystemMessage.h` |
+| UTF-8 | 4.9 KB | `.\Client\Packet\Gpackets\GCSystemMessageHandler.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCTakeOff.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCTakeOff.h` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\GCTakeOffHandler.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCTakeOutFail.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCTakeOutFail.h` |
+| UTF-8 | 797 B | `.\Client\Packet\Gpackets\GCTakeOutFailHandler.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCTakeOutOK.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCTakeOutOK.h` |
+| UTF-8 | 902 B | `.\Client\Packet\Gpackets\GCTakeOutOKHandler.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\GCTeachSkillInfo.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\GCTeachSkillInfo.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Gpackets\GCTeachSkillInfoHandler.cpp` |
+| UTF-8 | 4.7 KB | `.\Client\Packet\Gpackets\GCThrowBombOK1.cpp` |
+| UTF-8 | 4.5 KB | `.\Client\Packet\Gpackets\GCThrowBombOK1.h` |
+| UTF-8 | 6.7 KB | `.\Client\Packet\Gpackets\GCThrowBombOK1Handler.cpp` |
+| UTF-8 | 4.9 KB | `.\Client\Packet\Gpackets\GCThrowBombOK2.cpp` |
+| UTF-8 | 4.9 KB | `.\Client\Packet\Gpackets\GCThrowBombOK2.h` |
+| UTF-8 | 9.3 KB | `.\Client\Packet\Gpackets\GCThrowBombOK2Handler.cpp` |
+| UTF-8 | 4.8 KB | `.\Client\Packet\Gpackets\GCThrowBombOK3.cpp` |
+| UTF-8 | 4.8 KB | `.\Client\Packet\Gpackets\GCThrowBombOK3.h` |
+| UTF-8 | 5.3 KB | `.\Client\Packet\Gpackets\GCThrowBombOK3Handler.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\GCThrowItemOK1.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GCThrowItemOK1.h` |
+| UTF-8 | 4.2 KB | `.\Client\Packet\Gpackets\GCThrowItemOK1Handler.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCThrowItemOK2.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCThrowItemOK2.h` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCThrowItemOK2Handler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCThrowItemOK3.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCThrowItemOK3.h` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCThrowItemOK3Handler.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\GCTimeLimitItemInfo.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCTimeLimitItemInfo.h` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\Gpackets\GCTimeLimitItemInfoHandler.cpp` |
+| UTF-8 | 4.6 KB | `.\Client\Packet\Gpackets\GCTradeAddItem.cpp` |
+| UTF-8 | 7.1 KB | `.\Client\Packet\Gpackets\GCTradeAddItem.h` |
+| UTF-8 | 6.3 KB | `.\Client\Packet\Gpackets\GCTradeAddItemHandler.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Gpackets\GCTradeError.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\Gpackets\GCTradeError.h` |
+| UTF-8 | 7.4 KB | `.\Client\Packet\Gpackets\GCTradeErrorHandler.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Gpackets\GCTradeFinish.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCTradeFinish.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCTradeFinishHandler.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Gpackets\GCTradeMoney.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCTradeMoney.h` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\GCTradeMoneyHandler.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Gpackets\GCTradePrepare.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Gpackets\GCTradePrepare.h` |
+| UTF-8 | 7.6 KB | `.\Client\Packet\Gpackets\GCTradePrepareHandler.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Gpackets\GCTradeRemoveItem.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCTradeRemoveItem.h` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCTradeRemoveItemHandler.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCTradeVerify.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GCTradeVerify.h` |
+| UTF-8 | 18.0 KB | `.\Client\Packet\Gpackets\GCTradeVerifyHandler.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Gpackets\GCUnburrowFail.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCUnburrowFail.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Gpackets\GCUnburrowFailHandler.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Gpackets\GCUnburrowOK.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GCUnburrowOK.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCUnburrowOKHandler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCUnionOfferList.cpp` |
+| UTF-8 | 6.3 KB | `.\Client\Packet\Gpackets\GCUnionOfferList.h` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCUnionOfferListHandler.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Gpackets\GCUntransformFail.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCUntransformFail.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Gpackets\GCUntransformFailHandler.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Gpackets\GCUntransformOK.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCUntransformOK.h` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCUntransformOKHandler.cpp` |
+| UTF-8 | 10.7 KB | `.\Client\Packet\Gpackets\GCUpdateInfo.cpp` |
+| UTF-8 | 13.9 KB | `.\Client\Packet\Gpackets\GCUpdateInfo.h` |
+| UTF-8 | 26.3 KB | `.\Client\Packet\Gpackets\GCUpdateInfoHandler.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Gpackets\GCUseBonusPointFail.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Gpackets\GCUseBonusPointFail.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Gpackets\GCUseBonusPointFailHandler.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCUseBonusPointOK.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCUseBonusPointOK.h` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GCUseBonusPointOKHandler.cpp` |
+| UTF-8 | 4.4 KB | `.\Client\Packet\Gpackets\GCUseOK.cpp` |
+| UTF-8 | 5.5 KB | `.\Client\Packet\Gpackets\GCUseOK.h` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GCUseOKHandler.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCUsePowerPointResult.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\Gpackets\GCUsePowerPointResult.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Gpackets\GCUsePowerPointResultHandler.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Gpackets\GCVisibleFail.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Gpackets\GCVisibleFail.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Gpackets\GCVisibleFailHandler.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Gpackets\GCVisibleOK.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Gpackets\GCVisibleOK.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Gpackets\GCVisibleOKHandler.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Gpackets\GCWaitGuildList.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GCWaitGuildList.h` |
+| UTF-8 | 1009 B | `.\Client\Packet\Gpackets\GCWaitGuildListHandler.cpp` |
+| UTF-8 | 5.8 KB | `.\Client\Packet\Gpackets\GCWarList.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Gpackets\GCWarList.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Gpackets\GCWarListHandler.cpp` |
+| UTF-8 | 6.0 KB | `.\Client\Packet\Gpackets\GCWarScheduleList.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GCWarScheduleList.h` |
+| UTF-8 | 730 B | `.\Client\Packet\Gpackets\GCWarScheduleListHandler.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Gpackets\GCWhisper.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Gpackets\GCWhisper.h` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GCWhisperFailed.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Gpackets\GCWhisperFailed.h` |
+| UTF-8 | 854 B | `.\Client\Packet\Gpackets\GCWhisperFailedHandler.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Gpackets\GCWhisperHandler.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Gpackets\GLIncomingConnectionError.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GLIncomingConnectionError.h` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\GLIncomingConnectionErrorHandler.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Gpackets\GLIncomingConnectionOK.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Gpackets\GLIncomingConnectionOK.h` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Gpackets\GLIncomingConnectionOKHandler.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Gpackets\SweeperBonusInfo.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Gpackets\SweeperBonusInfo.h` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Lpackets\LCCreatePCError.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Lpackets\LCCreatePCError.h` |
+| UTF-8 | 1015 B | `.\Client\Packet\Lpackets\LCCreatePCErrorHandler.cpp` |
+| UTF-8 | 670 B | `.\Client\Packet\Lpackets\LCCreatePCOK.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Lpackets\LCCreatePCOK.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Lpackets\LCCreatePCOKHandler.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Lpackets\LCDeletePCError.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Lpackets\LCDeletePCError.h` |
+| UTF-8 | 1.1 KB | `.\Client\Packet\Lpackets\LCDeletePCErrorHandler.cpp` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Lpackets\LCDeletePCOK.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Lpackets\LCDeletePCOK.h` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Lpackets\LCDeletePCOKHandler.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Lpackets\LCLoginError.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Lpackets\LCLoginError.h` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\Lpackets\LCLoginErrorHandler.cpp` |
+| UTF-8 | 1.6 KB | `.\Client\Packet\Lpackets\LCLoginOK.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Lpackets\LCLoginOK.h` |
+| UTF-8 | 5.4 KB | `.\Client\Packet\Lpackets\LCLoginOKHandler.cpp` |
+| UTF-8 | 5.4 KB | `.\Client\Packet\Lpackets\LCPCList.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Lpackets\LCPCList.h` |
+| UTF-8 | 9.7 KB | `.\Client\Packet\Lpackets\LCPCListHandler.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Lpackets\LCQueryResultCharacterName.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Lpackets\LCQueryResultCharacterName.h` |
+| UTF-8 | 1.3 KB | `.\Client\Packet\Lpackets\LCQueryResultCharacterNameHandler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Lpackets\LCQueryResultPlayerID.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Lpackets\LCQueryResultPlayerID.h` |
+| UTF-8 | 4.6 KB | `.\Client\Packet\Lpackets\LCQueryResultPlayerIDHandler.cpp` |
+| UTF-8 | 4.5 KB | `.\Client\Packet\Lpackets\LCReconnect.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Lpackets\LCReconnect.h` |
+| UTF-8 | 8.7 KB | `.\Client\Packet\Lpackets\LCReconnectHandler.cpp` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Lpackets\LCRegisterPlayerError.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Lpackets\LCRegisterPlayerError.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Lpackets\LCRegisterPlayerErrorHandler.cpp` |
+| UTF-8 | 1.5 KB | `.\Client\Packet\Lpackets\LCRegisterPlayerOK.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Lpackets\LCRegisterPlayerOK.h` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Lpackets\LCRegisterPlayerOKHandler.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Lpackets\LCSelectPCError.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Lpackets\LCSelectPCError.h` |
+| UTF-8 | 1.8 KB | `.\Client\Packet\Lpackets\LCSelectPCErrorHandler.cpp` |
+| UTF-8 | 4.1 KB | `.\Client\Packet\Lpackets\LCServerList.cpp` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Lpackets\LCServerList.h` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Lpackets\LCServerListHandler.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Lpackets\LCVersionCheckError.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Lpackets\LCVersionCheckError.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Lpackets\LCVersionCheckErrorHandler.cpp` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Lpackets\LCVersionCheckOK.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Lpackets\LCVersionCheckOK.h` |
+| UTF-8 | 765 B | `.\Client\Packet\Lpackets\LCVersionCheckOKHandler.cpp` |
+| UTF-8 | 3.9 KB | `.\Client\Packet\Lpackets\LCWorldList.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Lpackets\LCWorldList.h` |
+| UTF-8 | 3.7 KB | `.\Client\Packet\Lpackets\LCWorldListHandler.cpp` |
+| UTF-8 | 4.2 KB | `.\Client\Packet\Lpackets\LGIncomingConnection.cpp` |
+| UTF-8 | 4.4 KB | `.\Client\Packet\Lpackets\LGIncomingConnection.h` |
+| UTF-8 | 4.8 KB | `.\Client\Packet\Lpackets\LGIncomingConnectionHandler.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Packet\Rpackets\CRConnect.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Rpackets\CRConnect.h` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Rpackets\CRConnectHandler.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Rpackets\CRDisconnect.cpp` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Rpackets\CRDisconnect.h` |
+| UTF-8 | 973 B | `.\Client\Packet\Rpackets\CRDisconnectHandler.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Rpackets\CRRequest.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Rpackets\CRRequest.h` |
+| UTF-8 | 3.0 KB | `.\Client\Packet\Rpackets\CRRequest2.cpp` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Rpackets\CRRequest2.h` |
+| UTF-8 | 1.2 KB | `.\Client\Packet\Rpackets\CRRequest2Handler.cpp` |
+| UTF-8 | 5.4 KB | `.\Client\Packet\Rpackets\CRRequestHandler.cpp` |
+| UTF-8 | 5.2 KB | `.\Client\Packet\Rpackets\CRWhisper.cpp` |
+| UTF-8 | 4.3 KB | `.\Client\Packet\Rpackets\CRWhisper.h` |
+| UTF-8 | 5.9 KB | `.\Client\Packet\Rpackets\CRWhisperHandler.cpp` |
+| UTF-8 | 2.4 KB | `.\Client\Packet\Rpackets\RCCharacterInfo.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Rpackets\RCCharacterInfo.h` |
+| UTF-8 | 2.0 KB | `.\Client\Packet\Rpackets\RCCharacterInfoHandler.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Rpackets\RCConnectVerify.cpp` |
+| UTF-8 | 3.6 KB | `.\Client\Packet\Rpackets\RCConnectVerify.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Rpackets\RCConnectVerifyHandler.cpp` |
+| UTF-8 | 2.6 KB | `.\Client\Packet\Rpackets\RCPositionInfo.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Rpackets\RCPositionInfo.h` |
+| UTF-8 | 2.7 KB | `.\Client\Packet\Rpackets\RCPositionInfoHandler.cpp` |
+| UTF-8 | 5.0 KB | `.\Client\Packet\Rpackets\RCRequestedFile.cpp` |
+| UTF-8 | 5.0 KB | `.\Client\Packet\Rpackets\RCRequestedFile.h` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Rpackets\RCRequestedFileHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Rpackets\RCRequestVerify.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Rpackets\RCRequestVerify.h` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Rpackets\RCRequestVerifyHandler.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Packet\Rpackets\RCSay.cpp` |
+| UTF-8 | 3.1 KB | `.\Client\Packet\Rpackets\RCSay.h` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Rpackets\RCSayHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\Packet\Rpackets\RCStatusHP.cpp` |
+| UTF-8 | 3.2 KB | `.\Client\Packet\Rpackets\RCStatusHP.h` |
+| UTF-8 | 2.2 KB | `.\Client\Packet\Rpackets\RCStatusHPHandler.cpp` |
+| UTF-8 | 14.7 KB | `.\Client\Packet\Types\CreatureTypes.h` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Types\GuildTypes.h` |
+| UTF-8 | 9.0 KB | `.\Client\Packet\Types\ItemTypes.h` |
+| UTF-8 | 4.4 KB | `.\Client\Packet\Types\ModifyDef.h` |
+| UTF-8 | 576 B | `.\Client\Packet\Types\ObjectTypes.h` |
+| UTF-8 | 1.7 KB | `.\Client\Packet\Types\PacketItemDef.h` |
+| UTF-8 | 518 B | `.\Client\Packet\Types\PetTypes.h` |
+| UTF-8 | 4.3 KB | `.\Client\Packet\Types\PlayerTypes.h` |
+| UTF-8 BOM | 2.5 KB | `.\Client\Packet\Types\QuestTypes.h` |
+| UTF-8 | 1.0 KB | `.\Client\Packet\Types\RequestTypes.h` |
+| UTF-8 | 1.9 KB | `.\Client\Packet\Types\ShopTypes.h` |
+| UTF-8 | 3.8 KB | `.\Client\Packet\Types\SystemTypes.h` |
+| UTF-8 | 727 B | `.\Client\Packet\Types\WarTypes.h` |
+| UTF-8 | 3.5 KB | `.\Client\Packet\Types\ZoneTypes.h` |
+| UTF-8 | 2.1 KB | `.\Client\Packet\Upackets\CURequestLoginMode.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\Packet\Upackets\CURequestLoginMode.h` |
+| UTF-8 | 1.4 KB | `.\Client\Packet\Upackets\CURequestLoginModeHandler.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\Packet\Upackets\UCRequestLoginMode.cpp` |
+| UTF-8 | 3.4 KB | `.\Client\Packet\Upackets\UCRequestLoginMode.h` |
+| UTF-8 | 779 B | `.\Client\Packet\Upackets\UCRequestLoginModeHandler.cpp` |
+| UTF-8 BOM | 80.1 KB | `.\Client\SpriteLib\CAlphaSprite.cpp` |
+| UTF-8 BOM | 9.8 KB | `.\Client\SpriteLib\CAlphaSprite.h` |
+| UTF-8 | 4.6 KB | `.\Client\SpriteLib\CAlphaSprite555.cpp` |
+| UTF-8 | 868 B | `.\Client\SpriteLib\CAlphaSprite555.h` |
+| UTF-8 | 2.9 KB | `.\Client\SpriteLib\CAlphaSprite565.cpp` |
+| UTF-8 | 918 B | `.\Client\SpriteLib\CAlphaSprite565.h` |
+| UTF-8 | 9.3 KB | `.\Client\SpriteLib\CAlphaSpritePack.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\SpriteLib\CAlphaSpritePack.h` |
+| UTF-8 | 7.1 KB | `.\Client\SpriteLib\CAlphaSpritePackList.cpp` |
+| UTF-8 | 2.2 KB | `.\Client\SpriteLib\CAlphaSpritePackList.h` |
+| UTF-8 | 1.3 KB | `.\Client\SpriteLib\CAlphaSpritePackList555.cpp` |
+| UTF-8 | 801 B | `.\Client\SpriteLib\CAlphaSpritePackList555.h` |
+| UTF-8 | 1.3 KB | `.\Client\SpriteLib\CAlphaSpritePackList565.cpp` |
+| UTF-8 | 822 B | `.\Client\SpriteLib\CAlphaSpritePackList565.h` |
+| UTF-8 | 77.2 KB | `.\Client\SpriteLib\CAlphaSpritePal.cpp` |
+| UTF-8 BOM | 3.9 KB | `.\Client\SpriteLib\CAlphaSpritePal.h` |
+| UTF-8 | 2.1 KB | `.\Client\SpriteLib\CFileIndexTable.cpp` |
+| UTF-8 | 1.4 KB | `.\Client\SpriteLib\CFileIndexTable.h` |
+| UTF-8 | 17.0 KB | `.\Client\SpriteLib\CFilter.cpp` |
+| UTF-8 BOM | 2.6 KB | `.\Client\SpriteLib\CFilter.h` |
+| UTF-8 | 2.5 KB | `.\Client\SpriteLib\CFilterPack.cpp` |
+| UTF-8 | 1.5 KB | `.\Client\SpriteLib\CFilterPack.h` |
+| UTF-8 BOM | 214.1 KB | `.\Client\SpriteLib\CIndexSprite.cpp` |
+| UTF-8 BOM | 13.3 KB | `.\Client\SpriteLib\CIndexSprite.h` |
+| UTF-8 | 5.0 KB | `.\Client\SpriteLib\CIndexSprite555.cpp` |
+| UTF-8 | 869 B | `.\Client\SpriteLib\CIndexSprite555.h` |
+| UTF-8 | 2.9 KB | `.\Client\SpriteLib\CIndexSprite565.cpp` |
+| UTF-8 | 869 B | `.\Client\SpriteLib\CIndexSprite565.h` |
+| UTF-8 | 1.9 KB | `.\Client\SpriteLib\CIndexSpritePack.cpp` |
+| UTF-8 | 1.3 KB | `.\Client\SpriteLib\CIndexSpritePack.h` |
+| UTF-8 BOM | 6.7 KB | `.\Client\SpriteLib\CSetManager.h` |
+| UTF-8 BOM | 97.4 KB | `.\Client\SpriteLib\CShadowSprite.cpp` |
+| UTF-8 BOM | 10.4 KB | `.\Client\SpriteLib\CShadowSprite.h` |
+| UTF-8 | 9.2 KB | `.\Client\SpriteLib\CShadowSpritePack.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\SpriteLib\CShadowSpritePack.h` |
+| UTF-8 BOM | 273.6 KB | `.\Client\SpriteLib\CSprite.cpp` |
+| UTF-8 BOM | 13.7 KB | `.\Client\SpriteLib\CSprite.h` |
+| UTF-8 | 6.9 KB | `.\Client\SpriteLib\CSprite555.cpp` |
+| UTF-8 | 961 B | `.\Client\SpriteLib\CSprite555.h` |
+| UTF-8 | 5.0 KB | `.\Client\SpriteLib\CSprite565.cpp` |
+| UTF-8 | 958 B | `.\Client\SpriteLib\CSprite565.h` |
+| UTF-8 | 879 B | `.\Client\SpriteLib\CSpriteDef.cpp` |
+| UTF-8 | 1.1 KB | `.\Client\SpriteLib\CSpriteDef.h` |
+| UTF-8 | 925 B | `.\Client\SpriteLib\CSpriteOutlineManager.cpp` |
+| UTF-8 | 938 B | `.\Client\SpriteLib\CSpriteOutlineManager.h` |
+| UTF-8 | 1.9 KB | `.\Client\SpriteLib\CSpritePack.cpp` |
+| UTF-8 | 1.2 KB | `.\Client\SpriteLib\CSpritePack.h` |
+| UTF-8 | 7.0 KB | `.\Client\SpriteLib\CSpritePackList.cpp` |
+| UTF-8 | 3.7 KB | `.\Client\SpriteLib\CSpritePackList.h` |
+| UTF-8 | 1.2 KB | `.\Client\SpriteLib\CSpritePackList555.cpp` |
+| UTF-8 | 853 B | `.\Client\SpriteLib\CSpritePackList555.h` |
+| UTF-8 | 1.2 KB | `.\Client\SpriteLib\CSpritePackList565.cpp` |
+| UTF-8 | 857 B | `.\Client\SpriteLib\CSpritePackList565.h` |
+| UTF-8 | 25.8 KB | `.\Client\SpriteLib\CSpritePal.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\SpriteLib\CSpritePal.h` |
+| UTF-8 | 2.9 KB | `.\Client\SpriteLib\CSpritePalBase.cpp` |
+| UTF-8 BOM | 2.4 KB | `.\Client\SpriteLib\CSpritePalBase.h` |
+| UTF-8 | 3.4 KB | `.\Client\SpriteLib\CSpriteSet.cpp` |
+| UTF-8 | 1.6 KB | `.\Client\SpriteLib\CSpriteSet.h` |
+| UTF-8 | 2.7 KB | `.\Client\SpriteLib\CSpriteSetManager.cpp` |
+| UTF-8 | 1.4 KB | `.\Client\SpriteLib\CSpriteSetManager.h` |
+| UTF-8 BOM | 400.8 KB | `.\Client\SpriteLib\CSpriteSurface.cpp` |
+| UTF-8 BOM | 27.0 KB | `.\Client\SpriteLib\CSpriteSurface.h` |
+| UTF-8 BOM | 27.2 KB | `.\Client\SpriteLib\CSpriteSurface_Adapter.cpp` |
+| UTF-8 BOM | 14.9 KB | `.\Client\SpriteLib\CSpriteSurface_Effects.cpp` |
+| UTF-8 BOM | 25.7 KB | `.\Client\SpriteLib\CSpriteSurface_SDL.cpp` |
+| UTF-8 | 571 B | `.\Client\SpriteLib\CSprite_SDL.cpp` |
+| UTF-8 | 4.7 KB | `.\Client\SpriteLib\CStorageSurface.cpp` |
+| UTF-8 | 1.6 KB | `.\Client\SpriteLib\CStorageSurface.h` |
+| UTF-8 BOM | 21.3 KB | `.\Client\SpriteLib\CTypePack.h` |
+| UTF-8 | 4.0 KB | `.\Client\SpriteLib\CTypePackVector.h` |
+| UTF-8 | 656 B | `.\Client\SpriteLib\DrawTypeDef.h` |
+| UTF-8 | 1.8 KB | `.\Client\SpriteLib\MPalette.cpp` |
+| UTF-8 | 1.8 KB | `.\Client\SpriteLib\MPalette.h` |
+| UTF-8 | 824 B | `.\Client\SpriteLib\MPalettePack.cpp` |
+| UTF-8 | 781 B | `.\Client\SpriteLib\MPalettePack.h` |
+| UTF-8 | 560 B | `.\Client\SpriteLib\SP.h` |
+| UTF-8 | 11.6 KB | `.\Client\SpriteLib\SpriteLibBackend.h` |
+| UTF-8 BOM | 44.5 KB | `.\Client\SpriteLib\SpriteLibBackendSDL.cpp` |
+| UTF-8 | 8.3 KB | `.\Client\SpriteLib\SpriteLibBackendSDL.h` |
+| UTF-8 BOM | 6.8 KB | `.\Client\SpriteLib\TArray.h` |
+| UTF-8 | 21.5 KB | `.\Client\SXml\SXml.cpp` |
+| UTF-8 | 6.0 KB | `.\Client\SXml\SXml.h` |
+| UTF-8 BOM | 1.0 KB | `.\Client\TextSystem\FontHandleUtil.h` |
+| UTF-8 | 441 B | `.\Client\TextSystem\RenderTarget.h` |
+| UTF-8 | 816 B | `.\Client\TextSystem\RenderTargetSpriteSurface.cpp` |
+| UTF-8 | 603 B | `.\Client\TextSystem\RenderTargetSpriteSurface.h` |
+| UTF-8 | 839 B | `.\Client\TextSystem\TextBackend.h` |
+| UTF-8 BOM | 10.2 KB | `.\Client\TextSystem\TextBackendSDL.cpp` |
+| UTF-8 BOM | 12.1 KB | `.\Client\TextSystem\TextService.cpp` |
+| UTF-8 BOM | 1.6 KB | `.\Client\TextSystem\TextService.h` |
+| UTF-8 | 1.5 KB | `.\Client\TextSystem\TextTypes.h` |
+| UTF-8 | 12.8 KB | `.\Client\tools\resource_validator.cpp` |
+| UTF-8 | 12.2 KB | `.\Client\Updater\Update.cpp` |
+| UTF-8 | 2.8 KB | `.\Client\Updater\Update.h` |
+| UTF-8 | 1.3 KB | `.\Client\Updater\UpdateDef.h` |
+| UTF-8 | 5.2 KB | `.\Client\Updater\UpdateManager.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\Updater\UpdateManager.h` |
+| UTF-8 | 32.3 KB | `.\Client\Updater\UpdateUtility.cpp` |
+| UTF-8 | 3.3 KB | `.\Client\Updater\UpdateUtility.h` |
+| UTF-8 | 1.3 KB | `.\Client\WinLib\CWinUpdate.cpp` |
+| UTF-8 | 2.1 KB | `.\Client\WinLib\CWinUpdate.h` |
+| UTF-8 | 406 B | `.\Client\WinLib\WinLib.h` |
+| UTF-8 BOM | 7.4 KB | `.\tools\engine\sprite\include\animation.h` |
+| UTF-8 BOM | 1.3 KB | `.\tools\engine\sprite\include\color.h` |
+| UTF-8 BOM | 5.2 KB | `.\tools\engine\sprite\include\colorset.h` |
+| UTF-8 BOM | 2.3 KB | `.\tools\engine\sprite\include\error.h` |
+| UTF-8 BOM | 7.1 KB | `.\tools\engine\sprite\include\frame.h` |
+| UTF-8 BOM | 9.0 KB | `.\tools\engine\sprite\include\framepack.h` |
+| UTF-8 BOM | 6.2 KB | `.\tools\engine\sprite\include\index_sprite.h` |
+| UTF-8 BOM | 4.2 KB | `.\tools\engine\sprite\include\index_spritepack.h` |
+| UTF-8 BOM | 3.4 KB | `.\tools\engine\sprite\include\map.h` |
+| UTF-8 BOM | 2.2 KB | `.\tools\engine\sprite\include\sdl_framework.h` |
+| UTF-8 BOM | 5.9 KB | `.\tools\engine\sprite\include\shadow_sprite.h` |
+| UTF-8 BOM | 4.2 KB | `.\tools\engine\sprite\include\shadow_spritepack.h` |
+| UTF-8 BOM | 163 B | `.\tools\engine\sprite\include\SP.h` |
+| UTF-8 BOM | 2.5 KB | `.\tools\engine\sprite\include\sprite.h` |
+| UTF-8 BOM | 1.9 KB | `.\tools\engine\sprite\include\spritepack.h` |
+| UTF-8 BOM | 5.0 KB | `.\tools\engine\sprite\include\str.h` |
+| UTF-8 BOM | 2.9 KB | `.\tools\engine\sprite\include\types.h` |
+| UTF-8 BOM | 6.8 KB | `.\tools\engine\sprite\include\ui_surface.h` |
+| UTF-8 BOM | 2.9 KB | `.\tools\engine\sprite\include\vector.h` |
+| UTF-8 BOM | 8.2 KB | `.\tools\engine\sprite\include\zone.h` |
+| UTF-8 | 13.3 KB | `.\tools\viewers\creature_viewer\main.cpp` |
+| UTF-8 | 7.9 KB | `.\tools\viewers\effect_viewer\EffectSpriteTypeTable.cpp` |
+| UTF-8 | 2.5 KB | `.\tools\viewers\effect_viewer\EffectSpriteTypeTable.h` |
+| UTF-8 | 37.8 KB | `.\tools\viewers\effect_viewer\main.cpp` |
+| UTF-8 | 759 B | `.\tools\viewers\effect_viewer\stubs.cpp` |
+| UTF-8 | 8.8 KB | `.\tools\viewers\item_viewer\main.cpp` |
+| UTF-8 | 1.4 KB | `.\tools\viewers\item_viewer\viewer.h` |
+| UTF-8 | 24.4 KB | `.\tools\viewers\map_viewer\main.cpp` |
+| UTF-8 | 1.5 KB | `.\tools\viewers\map_viewer\mzone_tileprovider.cpp` |
+| UTF-8 | 2.1 KB | `.\tools\viewers\map_viewer\mzone_tileprovider.h` |
+| UTF-8 | 7.2 KB | `.\tools\viewers\map_viewer\zoneloader.cpp` |
+| UTF-8 | 5.4 KB | `.\tools\viewers\map_viewer\zoneloader.h` |
+| UTF-8 | 9.2 KB | `.\tools\viewers\sprite_viewer\main.cpp` |
+| UTF-8 | 9.3 KB | `.\tools\viewers\zone_parser\main.cpp` |
+| UTF-8 | 23 B | `.\VS_UI\Client_PCH.cpp` |
+| UTF-8 | 2.8 KB | `.\VS_UI\Client_PCH.h` |
+| UTF-8 | 3.7 KB | `.\VS_UI\DebugInfo.cpp` |
+| UTF-8 | 4.8 KB | `.\VS_UI\DIK_Defines.h` |
+| UTF-8 BOM | 801.5 KB | `.\VS_UI\MitemTableInit.cpp` |
+| UTF-8 | 7.4 KB | `.\VS_UI\RarFile.cpp` |
+| UTF-8 | 1.8 KB | `.\VS_UI\RarFile.h` |
+| UTF-8 | 20.5 KB | `.\VS_UI\SXml.cpp` |
+| UTF-8 | 6.0 KB | `.\VS_UI\SXml.h` |
+| UTF-8 BOM | 95.8 KB | `.\VS_UI\WinMain.cpp` |
+| UTF-8 | 2.9 KB | `.\VS_UI\src\AcceleratorDef.cpp` |
+| UTF-8 | 12.8 KB | `.\VS_UI\src\AcceleratorManager.cpp` |
+| UTF-8 | 638 B | `.\VS_UI\src\CWebPage.h` |
+| UTF-8 | 876 B | `.\VS_UI\src\cwebpage_.h` |
+| UTF-8 | 1.6 KB | `.\VS_UI\src\InputFocusManager.cpp` |
+| UTF-8 | 1.9 KB | `.\VS_UI\src\InputFocusManager.h` |
+| UTF-8 BOM | 7.4 KB | `.\VS_UI\src\KeyAccelerator.cpp` |
+| UTF-8 | 2.9 KB | `.\VS_UI\src\SkinManager.cpp` |
+| UTF-8 BOM | 132.7 KB | `.\VS_UI\src\Vs_ui.cpp` |
+| UTF-8 BOM | 13.7 KB | `.\VS_UI\src\VS_UI_Base.cpp` |
+| UTF-8 | 25 B | `.\VS_UI\src\VS_UI_BBS.cpp` |
+| UTF-8 BOM | 18.0 KB | `.\VS_UI\src\VS_UI_DESC.cpp` |
+| UTF-8 BOM | 130.2 KB | `.\VS_UI\src\VS_UI_Description.cpp` |
+| UTF-8 | 4.1 KB | `.\VS_UI\src\VS_UI_Descriptor.cpp` |
+| UTF-8 BOM | 42.9 KB | `.\VS_UI\src\VS_UI_Dialog.cpp` |
+| UTF-8 | 7.6 KB | `.\VS_UI\src\VS_UI_ELEVATOR.cpp` |
+| UTF-8 | 25 B | `.\VS_UI\src\VS_UI_Exception.cpp` |
+| UTF-8 BOM | 54.8 KB | `.\VS_UI\src\VS_UI_Exchange.cpp` |
+| UTF-8 BOM | 109.1 KB | `.\VS_UI\src\VS_UI_ExtraDialog.cpp` |
+| UTF-8 BOM | 180.0 KB | `.\VS_UI\src\VS_UI_Game.cpp` |
+| UTF-8 BOM | 1.15 MB | `.\VS_UI\src\VS_UI_GameCommon.cpp` |
+| UTF-8 BOM | 572.3 KB | `.\VS_UI\src\vs_ui_gamecommon2.cpp` |
+| UTF-8 BOM | 60.6 KB | `.\VS_UI\src\VS_UI_GameOusters.cpp` |
+| UTF-8 BOM | 82.7 KB | `.\VS_UI\src\VS_UI_GameSlayer.cpp` |
+| UTF-8 | 36.0 KB | `.\VS_UI\src\VS_UI_GameVampire.cpp` |
+| UTF-8 | 21.1 KB | `.\VS_UI\src\VS_UI_GlobalResource.cpp` |
+| UTF-8 | 25 B | `.\VS_UI\src\VS_UI_Helper.cpp` |
+| UTF-8 BOM | 15.7 KB | `.\VS_UI\src\VS_UI_Item.cpp` |
+| UTF-8 | 8.0 KB | `.\VS_UI\src\VS_UI_Message.cpp` |
+| UTF-8 | 16.7 KB | `.\VS_UI\src\VS_UI_mouse_pointer.cpp` |
+| UTF-8 BOM | 48.0 KB | `.\VS_UI\src\VS_UI_PetStorage.cpp` |
+| UTF-8 | 14.8 KB | `.\VS_UI\src\VS_UI_PointExchange.cpp` |
+| UTF-8 | 18.5 KB | `.\VS_UI\src\VS_UI_progress.cpp` |
+| UTF-8 | 31.5 KB | `.\VS_UI\src\VS_UI_Shop.cpp` |
+| UTF-8 | 35.5 KB | `.\VS_UI\src\VS_UI_skill_tree.cpp` |
+| UTF-8 | 32.1 KB | `.\VS_UI\src\VS_UI_SKILL_VIEW.cpp` |
+| UTF-8 BOM | 28.6 KB | `.\VS_UI\src\VS_UI_Storage.cpp` |
+| UTF-8 BOM | 228.9 KB | `.\VS_UI\src\VS_UI_Title.cpp` |
+| UTF-8 BOM | 22.0 KB | `.\VS_UI\src\VS_UI_TITLE_SHOWCHAR.CPP` |
+| UTF-8 | 54.8 KB | `.\VS_UI\src\VS_UI_Tutorial.cpp` |
+| UTF-8 | 2.7 KB | `.\VS_UI\src\VS_UI_ui_result_receiver.cpp` |
+| UTF-8 BOM | 35.4 KB | `.\VS_UI\src\VS_UI_util.cpp` |
+| UTF-8 | 5.4 KB | `.\VS_UI\src\VS_UI_WebBrowser.cpp` |
+| UTF-8 | 3.9 KB | `.\VS_UI\src\VS_UI_widget.cpp` |
+| UTF-8 BOM | 8.1 KB | `.\VS_UI\src\hangul\Ci.cpp` |
+| UTF-8 BOM | 2.6 KB | `.\VS_UI\src\hangul\Ci.h` |
+| UTF-8 | 4.0 KB | `.\VS_UI\src\hangul\Ci_macOS.cpp` |
+| UTF-8 BOM | 11.6 KB | `.\VS_UI\src\hangul\FL2.cpp` |
+| UTF-8 | 2.4 KB | `.\VS_UI\src\hangul\Fl2.h` |
+| UTF-8 | 1014 B | `.\VS_UI\src\header\AcceleratorDef.h` |
+| UTF-8 | 2.4 KB | `.\VS_UI\src\header\AcceleratorManager.h` |
+| UTF-8 BOM | 3.9 KB | `.\VS_UI\src\header\KeyAccelerator.h` |
+| UTF-8 | 1.2 KB | `.\VS_UI\src\header\SkinManager.h` |
+| UTF-8 | 27.8 KB | `.\VS_UI\src\header\VS_UI.h` |
+| UTF-8 BOM | 9.2 KB | `.\VS_UI\src\header\VS_UI_Base.h` |
+| UTF-8 | 23 B | `.\VS_UI\src\header\VS_UI_bbs.h` |
+| UTF-8 BOM | 2.6 KB | `.\VS_UI\src\header\VS_UI_DESC.h` |
+| UTF-8 | 662 B | `.\VS_UI\src\header\VS_UI_Description.h` |
+| UTF-8 | 1.8 KB | `.\VS_UI\src\header\VS_UI_descriptor.h` |
+| UTF-8 | 5.6 KB | `.\VS_UI\src\header\VS_UI_Dialog.h` |
+| UTF-8 | 1016 B | `.\VS_UI\src\header\VS_UI_ELEVATOR.h` |
+| UTF-8 | 0 B | `.\VS_UI\src\header\VS_UI_Exception.h` |
+| UTF-8 | 2.3 KB | `.\VS_UI\src\header\VS_UI_Exchange.h` |
+| UTF-8 BOM | 10.1 KB | `.\VS_UI\src\header\VS_UI_ExtraDialog.h` |
+| UTF-8 BOM | 23.6 KB | `.\VS_UI\src\header\VS_UI_filepath.h` |
+| UTF-8 | 33.3 KB | `.\VS_UI\src\header\VS_UI_Game.h` |
+| UTF-8 BOM | 113.2 KB | `.\VS_UI\src\header\VS_UI_GameCommon.h` |
+| UTF-8 BOM | 48.4 KB | `.\VS_UI\src\header\VS_UI_GameCommon2.h` |
+| UTF-8 | 4.3 KB | `.\VS_UI\src\header\VS_UI_GameOusters.h` |
+| UTF-8 | 12.7 KB | `.\VS_UI\src\header\VS_UI_GameSlayer.h` |
+| UTF-8 | 2.4 KB | `.\VS_UI\src\header\VS_UI_GameVampire.h` |
+| UTF-8 | 13.8 KB | `.\VS_UI\src\header\VS_UI_GlobalResource.h` |
+| UTF-8 | 23 B | `.\VS_UI\src\header\VS_UI_Helper.h` |
+| UTF-8 | 2.0 KB | `.\VS_UI\src\header\VS_UI_item.h` |
+| UTF-8 | 1.6 KB | `.\VS_UI\src\header\VS_UI_Message.h` |
+| UTF-8 | 3.5 KB | `.\VS_UI\src\header\VS_UI_mouse_pointer.h` |
+| UTF-8 | 3.8 KB | `.\VS_UI\src\header\VS_UI_PetStorage.h` |
+| UTF-8 | 4.2 KB | `.\VS_UI\src\header\VS_UI_PointExchange.h` |
+| UTF-8 | 2.3 KB | `.\VS_UI\src\header\VS_UI_progress.h` |
+| UTF-8 | 2.6 KB | `.\VS_UI\src\header\VS_UI_Shop.h` |
+| UTF-8 | 4.3 KB | `.\VS_UI\src\header\VS_UI_skill_tree.h` |
+| UTF-8 | 2.8 KB | `.\VS_UI\src\header\VS_UI_SKILL_VIEW.h` |
+| UTF-8 | 2.5 KB | `.\VS_UI\src\header\VS_UI_Storage.h` |
+| UTF-8 | 31.6 KB | `.\VS_UI\src\header\VS_UI_title.h` |
+| UTF-8 BOM | 8.4 KB | `.\VS_UI\src\header\VS_UI_Tutorial.h` |
+| UTF-8 | 7.5 KB | `.\VS_UI\src\header\VS_UI_UIMessage.h` |
+| UTF-8 | 1.5 KB | `.\VS_UI\src\header\VS_UI_ui_result_receiver.h` |
+| UTF-8 BOM | 9.7 KB | `.\VS_UI\src\header\VS_UI_util.h` |
+| UTF-8 | 2.0 KB | `.\VS_UI\src\header\VS_UI_WebBrowser.h` |
+| UTF-8 BOM | 20.4 KB | `.\VS_UI\src\header\VS_UI_widget.h` |
+| UTF-8 | 2.8 KB | `.\VS_UI\src\Imm\CImm.cpp` |
+| UTF-8 | 1.5 KB | `.\VS_UI\src\Imm\CImm.h` |
+| UTF-8 | 55.1 KB | `.\VS_UI\src\Imm\FeelitAPI.h` |
+| UTF-8 | 1.9 KB | `.\VS_UI\src\Imm\IFC.h` |
+| UTF-8 | 4.3 KB | `.\VS_UI\src\Imm\IFCErrors.h` |
+| UTF-8 | 15.0 KB | `.\VS_UI\src\Imm\ImmBaseTypes.h` |
+| UTF-8 | 4.2 KB | `.\VS_UI\src\Imm\ImmBox.h` |
+| UTF-8 | 4.8 KB | `.\VS_UI\src\Imm\ImmCompoundEffect.h` |
+| UTF-8 | 12.1 KB | `.\VS_UI\src\Imm\ImmCondition.h` |
+| UTF-8 | 5.0 KB | `.\VS_UI\src\Imm\ImmConstant.h` |
+| UTF-8 | 4.4 KB | `.\VS_UI\src\Imm\ImmDamper.h` |
+| UTF-8 | 7.8 KB | `.\VS_UI\src\Imm\ImmDevice.h` |
+| UTF-8 | 3.2 KB | `.\VS_UI\src\Imm\ImmDevices.h` |
+| UTF-8 | 3.2 KB | `.\VS_UI\src\Imm\ImmDXDevice.h` |
+| UTF-8 | 9.6 KB | `.\VS_UI\src\Imm\ImmEffect.h` |
+| UTF-8 | 2.9 KB | `.\VS_UI\src\Imm\ImmEffectSuite.h` |
+| UTF-8 | 7.5 KB | `.\VS_UI\src\Imm\ImmEllipse.h` |
+| UTF-8 | 9.7 KB | `.\VS_UI\src\Imm\ImmEnclosure.h` |
+| UTF-8 | 4.1 KB | `.\VS_UI\src\Imm\ImmFriction.h` |
+| UTF-8 | 4.8 KB | `.\VS_UI\src\Imm\ImmGrid.h` |
+| UTF-8 | 8.2 KB | `.\VS_UI\src\Imm\ImmIFR.h` |
+| UTF-8 | 4.4 KB | `.\VS_UI\src\Imm\ImmInertia.h` |
+| UTF-8 | 3.3 KB | `.\VS_UI\src\Imm\ImmMouse.h` |
+| UTF-8 | 6.6 KB | `.\VS_UI\src\Imm\ImmPeriodic.h` |
+| UTF-8 | 6.2 KB | `.\VS_UI\src\Imm\ImmProjects.h` |
+| UTF-8 | 5.2 KB | `.\VS_UI\src\Imm\ImmRamp.h` |
+| UTF-8 | 4.4 KB | `.\VS_UI\src\Imm\ImmSpring.h` |
+| UTF-8 | 12.1 KB | `.\VS_UI\src\Imm\ImmTexture.h` |
+| UTF-8 | 826 B | `.\VS_UI\src\widget\mother.cpp` |
+| UTF-8 | 517 B | `.\VS_UI\src\widget\mother.h` |
+| UTF-8 | 312 B | `.\VS_UI\src\widget\PI.H` |
+| UTF-8 | 1.1 KB | `.\VS_UI\src\widget\pi_core.cpp` |
+| UTF-8 | 1.5 KB | `.\VS_UI\src\widget\pi_core.h` |
+| UTF-8 | 3.5 KB | `.\VS_UI\src\widget\SimpleDataList.h` |
+| UTF-8 | 391 B | `.\VS_UI\src\widget\unicorn.h` |
+| UTF-8 | 5.3 KB | `.\VS_UI\src\widget\u_button.cpp` |
+| UTF-8 | 3.5 KB | `.\VS_UI\src\widget\u_button.h` |
+| UTF-8 | 14.9 KB | `.\VS_UI\src\widget\U_edit.cpp` |
+| UTF-8 | 5.0 KB | `.\VS_UI\src\widget\U_edit.h` |
+| UTF-8 | 3.4 KB | `.\VS_UI\src\widget\u_scrollbar.cpp` |
+| UTF-8 | 1.3 KB | `.\VS_UI\src\widget\u_scrollbar.h` |
+| UTF-8 BOM | 44.0 KB | `.\VS_UI\src\widget\u_window.cpp` |
+| UTF-8 | 7.7 KB | `.\VS_UI\src\widget\u_window.h` |
