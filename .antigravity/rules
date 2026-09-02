@@ -1,0 +1,2 @@
+- Never run inline python code using `python -c`.
+- Write python code into a dedicated file (e.g., `scratch.py`) and execute `python scratch.py`.
