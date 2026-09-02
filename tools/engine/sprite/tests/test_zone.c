@@ -1,6 +1,6 @@
 /**
  * @file test_zone.c
- * @brief Unit tests for zone.h
+ * @brief zone.h에 대한 단위 테스트
  */
 
 #include "zone.h"
@@ -9,7 +9,7 @@
 #include <string.h>
 #include <assert.h>
 
-/* Test helper macros */
+/* 테스트 헬퍼 매크로 */
 #define TEST_ASSERT(cond, msg) do { \
     if (!(cond)) { \
         printf("FAIL: %s\n", msg); \
@@ -20,7 +20,7 @@
 #define TEST_PASS(name) printf("PASS: %s\n", name)
 
 /* ============================================================================
- * Tests
+ * 테스트
  * ============================================================================ */
 
 static int test_zone_strerror(void) {
@@ -96,7 +96,7 @@ static int test_zone_can_walk_null(void) {
 }
 
 static int test_zone_free_null(void) {
-    /* Should not crash */
+    /* 크래시가 발생하지 않아야 한다 */
     zone_free(NULL);
 
     Zone zone;
@@ -108,7 +108,7 @@ static int test_zone_free_null(void) {
 }
 
 static int test_sector_flags(void) {
-    /* Test flag constants match expected values */
+    /* 플래그 상수가 예상 값과 일치하는지 테스트 */
     TEST_ASSERT(SECTOR_BLOCK_UNDERGROUND == 0x01, "SECTOR_BLOCK_UNDERGROUND should be 0x01");
     TEST_ASSERT(SECTOR_BLOCK_GROUND == 0x02, "SECTOR_BLOCK_GROUND should be 0x02");
     TEST_ASSERT(SECTOR_BLOCK_FLYING == 0x04, "SECTOR_BLOCK_FLYING should be 0x04");
@@ -120,7 +120,7 @@ static int test_sector_flags(void) {
 }
 
 /* ============================================================================
- * Test Runner
+ * 테스트 실행기
  * ============================================================================ */
 
 int test_zone_run_all(void) {

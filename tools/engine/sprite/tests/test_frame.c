@@ -1,16 +1,15 @@
 /**
  * @file test_frame.c
- * @brief Frame and FrameArray unit tests and property-based tests
- * 
- * Property 1: FrameArray 数据一致性
- * For any FrameArray, after adding frames, the size should match
- * and all frames should be retrievable with correct values.
- * 
- * Property 2: Frame 数据存储
- * For any Frame, after setting values, the getters should return
- * the same values.
- * 
- * Validates: Requirements 3.4, 3.5, 4.6
+ * @brief Frame과 FrameArray의 단위 테스트 및 속성 기반 테스트
+ *
+ * 속성 1: FrameArray 데이터 일관성
+ * 임의의 FrameArray에 대해, 프레임을 추가한 뒤 크기가 일치해야 하고
+ * 모든 프레임을 올바른 값으로 조회할 수 있어야 한다.
+ *
+ * 속성 2: Frame 데이터 저장
+ * 임의의 Frame에 대해, 값을 설정한 뒤 getter가 동일한 값을 반환해야 한다.
+ *
+ * 검증 대상: 요구사항 3.4, 3.5, 4.6
  */
 
 #include "frame.h"
@@ -19,11 +18,11 @@
 #include <string.h>
 #include <time.h>
 
-/* Test helper declarations */
+/* 테스트 헬퍼 선언 */
 void test_assert(int condition, const char* message);
 void test_assert_eq(int expected, int actual, const char* message);
 
-/* Simple pseudo-random number generator for property testing */
+/* 속성 테스트를 위한 간단한 의사난수 생성기 */
 static unsigned int frame_pbt_seed = 0;
 
 static void frame_pbt_init_seed(void) {
@@ -44,12 +43,12 @@ static int16_t frame_pbt_random_int16(void) {
 }
 
 /* ============================================================================
- * Property 1: FrameArray 数据一致性
- * 
- * For any FrameArray, after adding frames, the size should match
- * and all frames should be retrievable with correct values.
- * 
- * Validates: Requirements 4.6
+ * 속성 1: FrameArray 데이터 일관성
+ *
+ * 임의의 FrameArray에 대해, 프레임을 추가한 뒤 크기가 일치해야 하고
+ * 모든 프레임을 올바른 값으로 조회할 수 있어야 한다.
+ *
+ * 검증 대상: 요구사항 4.6
  * ============================================================================ */
 
 static int test_property1_framearray_consistency(void) {
@@ -61,15 +60,15 @@ static int test_property1_framearray_consistency(void) {
     printf("    Running %d iterations...\n", NUM_ITERATIONS);
     
     for (int i = 0; i < NUM_ITERATIONS; i++) {
-        /* Generate random size (1 to MAX_SIZE) */
+        /* 임의의 크기를 생성한다 (1~MAX_SIZE) */
         int size = 1 + (frame_pbt_random() % MAX_SIZE);
         
-        /* Create FrameArray */
+        /* FrameArray를 생성한다 */
         FrameArray arr;
         frame_array_init(&arr);
         vecInit(&arr, size);
         
-        /* Generate and store random Frame values */
+        /* 임의의 Frame 값을 생성하고 저장한다 */
         TYPE_SPRITEID* expected_ids = (TYPE_SPRITEID*)malloc(size * sizeof(TYPE_SPRITEID));
         int16_t* expected_cx = (int16_t*)malloc(size * sizeof(int16_t));
         int16_t* expected_cy = (int16_t*)malloc(size * sizeof(int16_t));
@@ -84,7 +83,7 @@ static int test_property1_framearray_consistency(void) {
             vecAppend(&arr, f);
         }
         
-        /* Verify size */
+        /* 크기를 검증한다 */
         if (frame_array_size(&arr) != size) {
             printf("    [FAIL] Iteration %d: Size mismatch\n", i);
             printf("           Expected: %d, Got: %d\n", size, frame_array_size(&arr));
@@ -96,7 +95,7 @@ static int test_property1_framearray_consistency(void) {
             break;
         }
         
-        /* Verify all values can be retrieved correctly */
+        /* 모든 값을 올바르게 조회할 수 있는지 검증한다 */
         int mismatch = 0;
         for (int j = 0; j < size; j++) {
             Frame* f = frame_array_get(&arr, j);
@@ -135,12 +134,11 @@ static int test_property1_framearray_consistency(void) {
 }
 
 /* ============================================================================
- * Property 2: Frame 数据存储
- * 
- * For any Frame, after setting values, the getters should return
- * the same values.
- * 
- * Validates: Requirements 3.4, 3.5
+ * 속성 2: Frame 데이터 저장
+ *
+ * 임의의 Frame에 대해, 값을 설정한 뒤 getter가 동일한 값을 반환해야 한다.
+ *
+ * 검증 대상: 요구사항 3.4, 3.5
  * ============================================================================ */
 
 static int test_property2_frame_storage(void) {
@@ -151,12 +149,12 @@ static int test_property2_frame_storage(void) {
     printf("    Running %d iterations...\n", NUM_ITERATIONS);
     
     for (int i = 0; i < NUM_ITERATIONS; i++) {
-        /* Generate random values */
+        /* 임의의 값을 생성한다 */
         TYPE_SPRITEID sprite_id = frame_pbt_random_uint16();
         int16_t cx = frame_pbt_random_int16();
         int16_t cy = frame_pbt_random_int16();
         
-        /* Test frame_init */
+        /* frame_init을 테스트한다 */
         Frame frame;
         frame_init(&frame, sprite_id, cx, cy);
         
@@ -180,11 +178,11 @@ static int test_property2_frame_storage(void) {
 }
 
 /* ============================================================================
- * Unit Tests
+ * 단위 테스트
  * ============================================================================ */
 
 /**
- * Unit test: Frame init
+ * 단위 테스트: Frame 초기화
  */
 static void test_frame_init(void) {
     printf("  Unit test: Frame init\n");
@@ -198,14 +196,14 @@ static void test_frame_init(void) {
 }
 
 /**
- * Unit test: Frame file I/O
+ * 단위 테스트: Frame 파일 입출력
  */
 static void test_frame_file_io(void) {
     printf("  Unit test: Frame file I/O\n");
     
     const char* test_file = "/tmp/test_frame.bin";
     
-    /* Create and save frame */
+    /* Frame을 생성하고 저장한다 */
     Frame frame1;
     frame_init(&frame1, 12345, -100, 200);
     
@@ -215,7 +213,7 @@ static void test_frame_file_io(void) {
         fclose(file);
         test_assert(save_result, "frame_save succeeds");
         
-        /* Load frame */
+        /* Frame을 로드한다 */
         Frame frame2;
         file = fopen(test_file, "rb");
         if (file) {
@@ -230,7 +228,7 @@ static void test_frame_file_io(void) {
             test_assert(0, "Failed to open file for reading");
         }
         
-        /* Clean up */
+        /* 정리한다 */
         remove(test_file);
     } else {
         test_assert(0, "Failed to open file for writing");
@@ -238,7 +236,7 @@ static void test_frame_file_io(void) {
 }
 
 /**
- * Unit test: FrameArray init and free
+ * 단위 테스트: FrameArray 초기화와 해제
  */
 static void test_framearray_init_free(void) {
     printf("  Unit test: FrameArray init and free\n");
@@ -248,7 +246,7 @@ static void test_framearray_init_free(void) {
     
     test_assert_eq(0, frame_array_size(&arr), "Initial size is 0");
     
-    /* Add some frames */
+    /* 몇 개의 Frame을 추가한다 */
     Frame f1, f2, f3;
     frame_init(&f1, 100, 10, 20);
     frame_init(&f2, 200, 30, 40);
@@ -269,14 +267,14 @@ static void test_framearray_init_free(void) {
 }
 
 /**
- * Unit test: FrameArray file I/O
+ * 단위 테스트: FrameArray 파일 입출력
  */
 static void test_framearray_file_io(void) {
     printf("  Unit test: FrameArray file I/O\n");
     
     const char* test_file = "/tmp/test_framearray.bin";
     
-    /* Create and save array */
+    /* 배열을 생성하고 저장한다 */
     FrameArray arr1;
     frame_array_init(&arr1);
     
@@ -295,7 +293,7 @@ static void test_framearray_file_io(void) {
         fclose(file);
         test_assert(save_result, "frame_array_save succeeds");
         
-        /* Load array */
+        /* 배열을 로드한다 */
         FrameArray arr2;
         file = fopen(test_file, "rb");
         if (file) {
@@ -319,7 +317,7 @@ static void test_framearray_file_io(void) {
             test_assert(0, "Failed to open file for reading");
         }
         
-        /* Clean up */
+        /* 정리한다 */
         remove(test_file);
     } else {
         test_assert(0, "Failed to open file for writing");
@@ -329,21 +327,21 @@ static void test_framearray_file_io(void) {
 }
 
 /**
- * Unit test: Nested arrays (DirectionArray)
+ * 단위 테스트: 중첩 배열 (DirectionArray)
  */
 static void test_nested_arrays(void) {
     printf("  Unit test: Nested arrays (DirectionArray)\n");
     
-    /* Create DirectionArray (8 directions) */
+    /* DirectionArray를 생성한다 (8방향) */
     DirectionArray dir_arr;
     direction_array_init(&dir_arr);
     
-    /* Add 8 directions */
+    /* 8개 방향을 추가한다 */
     for (int d = 0; d < 8; d++) {
         FrameArray fa;
         frame_array_init(&fa);
         
-        /* Each direction has d+1 frames */
+        /* 각 방향은 d+1개의 프레임을 가진다 */
         for (int f = 0; f < d + 1; f++) {
             Frame frame;
             frame_init(&frame, d * 100 + f, d, f);
@@ -355,7 +353,7 @@ static void test_nested_arrays(void) {
     
     test_assert_eq(8, direction_array_size(&dir_arr), "Direction array has 8 elements");
     
-    /* Verify structure */
+    /* 구조를 검증한다 */
     FrameArray* fa0 = direction_array_get(&dir_arr, 0);
     test_assert_eq(1, frame_array_size(fa0), "Direction 0 has 1 frame");
     
@@ -372,23 +370,23 @@ static void test_nested_arrays(void) {
 }
 
 /* ============================================================================
- * Main test function
+ * 메인 테스트 함수
  * ============================================================================ */
 
 void test_frame_and_tarray(void) {
     int property1_passed;
     int property2_passed;
     
-    /* Initialize random seed for property tests */
+    /* 속성 테스트를 위한 난수 시드를 초기화한다 */
     frame_pbt_init_seed();
     printf("  (PBT seed: %u)\n", frame_pbt_seed);
     
-    /* Run property-based tests */
+    /* 속성 기반 테스트를 실행한다 */
     printf("\n  --- Property-Based Tests ---\n");
     property1_passed = test_property1_framearray_consistency();
     property2_passed = test_property2_frame_storage();
     
-    /* Run unit tests */
+    /* 단위 테스트를 실행한다 */
     printf("\n  --- Unit Tests ---\n");
     test_frame_init();
     test_frame_file_io();
@@ -396,7 +394,7 @@ void test_frame_and_tarray(void) {
     test_framearray_file_io();
     test_nested_arrays();
     
-    /* Summary */
+    /* 요약 */
     printf("\n  --- Property Test Summary ---\n");
     printf("  Property 1 (FrameArray data consistency): %s\n", 
            property1_passed ? "PASSED" : "FAILED");

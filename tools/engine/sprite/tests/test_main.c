@@ -1,17 +1,17 @@
 /**
  * @file test_main.c
- * @brief Simple test framework and test runner
+ * @brief 간단한 테스트 프레임워크와 테스트 실행기
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Test result counters */
+/* 테스트 결과 카운터 */
 static int tests_run = 0;
 static int tests_passed = 0;
 static int tests_failed = 0;
 
-/* Test macros */
+/* 테스트 매크로 */
 #define TEST_ASSERT(condition, message) do { \
     tests_run++; \
     if (condition) { \
@@ -34,7 +34,7 @@ static int tests_failed = 0;
     } \
 } while(0)
 
-/* External test functions */
+/* 외부 테스트 함수 */
 extern void test_color_conversion(void);
 extern void test_sdl_framework(void);
 extern void test_sprite_parsing(void);
@@ -82,7 +82,7 @@ int main(void) {
     return tests_failed > 0 ? 1 : 0;
 }
 
-/* Expose test macros to other test files */
+/* 다른 테스트 파일에 테스트 매크로를 노출한다 */
 void test_assert(int condition, const char* message) {
     tests_run++;
     if (condition) {

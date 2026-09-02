@@ -1,13 +1,12 @@
 /**
  * @file test_framepack.c
- * @brief CreatureFramePack tests
- * 
- * Property 3: CFPK 加载正确性
- * For any valid .cfpk file, after loading, the CreatureFramePack
- * should contain the correct number of CreatureTypes, and each
- * ActionArray should have the correct structure.
- * 
- * Validates: Requirements 3.1, 3.2, 3.3
+ * @brief CreatureFramePack 테스트
+ *
+ * 속성 3: CFPK 로딩 정확성
+ * 유효한 .cfpk 파일이라면, 로드 후 CreatureFramePack이 올바른 개수의
+ * CreatureType을 포함해야 하고 각 ActionArray가 올바른 구조를 가져야 한다.
+ *
+ * 검증 대상: 요구사항 3.1, 3.2, 3.3
  */
 
 #include "framepack.h"
@@ -15,19 +14,19 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* Test helper declarations */
+/* 테스트 헬퍼 선언 */
 void test_assert(int condition, const char* message);
 void test_assert_eq(int expected, int actual, const char* message);
 
-/* Path to test data files */
+/* 테스트 데이터 파일 경로 */
 static const char* CREATURE_CFPK_PATH = "../DarkEden/Data/Image/Creature.cfpk";
 
 /* ============================================================================
- * Unit Tests
+ * 단위 테스트
  * ============================================================================ */
 
 /**
- * Unit test: CreatureFramePack init and free
+ * 단위 테스트: CreatureFramePack 초기화와 해제
  */
 static void test_framepack_init_free(void) {
     printf("  Unit test: CreatureFramePack init and free\n");
@@ -42,32 +41,32 @@ static void test_framepack_init_free(void) {
 }
 
 /**
- * Unit test: CreatureFramePack file I/O with simple data
+ * 단위 테스트: 간단한 데이터로 CreatureFramePack 파일 입출력
  */
 static void test_framepack_file_io(void) {
     printf("  Unit test: CreatureFramePack file I/O\n");
     
     const char* test_file = "/tmp/test_creaturepack.cfpk";
     
-    /* Create a simple frame pack */
+    /* 간단한 프레임 팩을 생성한다 */
     CreatureFramePack pack1;
     creature_framepack_init(&pack1);
-    
-    /* Add 2 creature types */
+
+    /* 크리처 타입 2개를 추가한다 */
     for (int type = 0; type < 2; type++) {
         ActionArray aa;
         action_array_init(&aa);
-        
-        /* Each type has 1 action */
+
+        /* 각 타입은 1개의 액션을 가진다 */
         DirectionArray da;
         direction_array_init(&da);
-        
-        /* Each action has 2 directions */
+
+        /* 각 액션은 2개의 방향을 가진다 */
         for (int dir = 0; dir < 2; dir++) {
             FrameArray fa;
             frame_array_init(&fa);
-            
-            /* Each direction has 2 frames */
+
+            /* 각 방향은 2개의 프레임을 가진다 */
             for (int f = 0; f < 2; f++) {
                 Frame frame;
                 frame_init(&frame, type * 100 + dir * 10 + f, type, dir);
@@ -83,21 +82,21 @@ static void test_framepack_file_io(void) {
     
     test_assert_eq(2, creature_framepack_size(&pack1), "Pack has 2 creature types");
     
-    /* Save to file */
+    /* 파일로 저장한다 */
     int save_result = creature_framepack_save(&pack1, test_file);
     test_assert(save_result, "creature_framepack_save succeeds");
     
-    /* Load from file */
+    /* 파일에서 로드한다 */
     CreatureFramePack pack2;
     creature_framepack_init(&pack2);
     
     int load_result = creature_framepack_load(&pack2, test_file);
     test_assert(load_result, "creature_framepack_load succeeds");
     
-    /* Verify structure */
+    /* 구조를 검증한다 */
     test_assert_eq(2, creature_framepack_size(&pack2), "Loaded pack has 2 creature types");
     
-    /* Verify creature type 0 */
+    /* 크리처 타입 0을 검증한다 */
     ActionArray* aa = creature_framepack_get(&pack2, 0);
     test_assert(aa != NULL, "Type 0 exists");
     test_assert_eq(1, action_array_size(aa), "Type 0 has 1 action");
@@ -115,19 +114,19 @@ static void test_framepack_file_io(void) {
     test_assert_eq(0, f->cx, "Frame data preserved (cx)");
     test_assert_eq(0, f->cy, "Frame data preserved (cy)");
     
-    /* Verify creature type 1 */
+    /* 크리처 타입 1을 검증한다 */
     f = creature_framepack_get_frame(&pack2, 1, 0, 0, 0);
     test_assert(f != NULL, "Type 1 frame accessible");
     test_assert_eq(100, f->sprite_id, "Type 1 frame data correct");
     
-    /* Clean up */
+    /* 정리한다 */
     creature_framepack_free(&pack1);
     creature_framepack_free(&pack2);
     remove(test_file);
 }
 
 /**
- * Unit test: creature_framepack_get_frame helper
+ * 단위 테스트: creature_framepack_get_frame 헬퍼
  */
 static void test_framepack_get_frame(void) {
     printf("  Unit test: creature_framepack_get_frame\n");
@@ -135,7 +134,7 @@ static void test_framepack_get_frame(void) {
     CreatureFramePack pack;
     creature_framepack_init(&pack);
     
-    /* Create structure: 1 type, 2 actions, 3 directions, 4 frames */
+    /* 구조 생성: 타입 1개, 액션 2개, 방향 3개, 프레임 4개 */
     ActionArray aa;
     action_array_init(&aa);
     
@@ -161,7 +160,7 @@ static void test_framepack_get_frame(void) {
     
     vecAppend(&pack.creatures, aa);
     
-    /* Test get_frame */
+    /* get_frame을 테스트한다 */
     Frame* f = creature_framepack_get_frame(&pack, 0, 0, 0, 0);
     test_assert(f != NULL, "Frame [0][0][0][0] exists");
     test_assert_eq(0, f->sprite_id, "Frame [0][0][0][0] correct");
@@ -170,7 +169,7 @@ static void test_framepack_get_frame(void) {
     test_assert(f != NULL, "Frame [0][1][2][3] exists");
     test_assert_eq(123, f->sprite_id, "Frame [0][1][2][3] correct");
     
-    /* Test invalid indices */
+    /* 잘못된 인덱스를 테스트한다 */
     f = creature_framepack_get_frame(&pack, 1, 0, 0, 0);
     test_assert(f == NULL, "Invalid type returns NULL");
     
@@ -181,13 +180,12 @@ static void test_framepack_get_frame(void) {
 }
 
 /* ============================================================================
- * Property 3: CFPK 加载正确性
- * 
- * For any valid .cfpk file, after loading, the CreatureFramePack
- * should contain the correct number of CreatureTypes, and each
- * ActionArray should have the correct structure.
- * 
- * Validates: Requirements 3.1, 3.2, 3.3
+ * 속성 3: CFPK 로딩 정확성
+ *
+ * 유효한 .cfpk 파일이라면, 로드 후 CreatureFramePack이 올바른 개수의
+ * CreatureType을 포함해야 하고 각 ActionArray가 올바른 구조를 가져야 한다.
+ *
+ * 검증 대상: 요구사항 3.1, 3.2, 3.3
  * ============================================================================ */
 
 static int test_property3_cfpk_loading(void) {
@@ -195,7 +193,7 @@ static int test_property3_cfpk_loading(void) {
     
     printf("  Property 3: CFPK loading correctness\n");
     
-    /* Try to load the real Creature.cfpk file */
+    /* 실제 Creature.cfpk 파일을 로드해본다 */
     CreatureFramePack pack;
     creature_framepack_init(&pack);
     
@@ -204,20 +202,20 @@ static int test_property3_cfpk_loading(void) {
     if (!creature_framepack_load(&pack, CREATURE_CFPK_PATH)) {
         printf("    [SKIP] Could not load %s (file may not exist)\n", CREATURE_CFPK_PATH);
         printf("    [INFO] This test requires the DarkEden game data files\n");
-        return 1;  /* Skip test if file not available */
+        return 1;  /* 파일이 없으면 테스트를 건너뛴다 */
     }
     
     printf("    Loaded successfully!\n");
     printf("    CreatureType count: %d\n", creature_framepack_size(&pack));
     
-    /* Verify basic structure */
+    /* 기본 구조를 검증한다 */
     if (creature_framepack_size(&pack) == 0) {
         printf("    [FAIL] Pack is empty\n");
         creature_framepack_free(&pack);
         return 0;
     }
     
-    /* Verify structure of each creature type */
+    /* 각 크리처 타입의 구조를 검증한다 */
     int valid_types = 0;
     int total_frames = 0;
     
@@ -225,24 +223,24 @@ static int test_property3_cfpk_loading(void) {
         ActionArray* aa = creature_framepack_get(&pack, type);
         
         if (aa == NULL || action_array_size(aa) == 0) {
-            continue;  /* Empty creature type is valid */
+            continue;  /* 비어있는 크리처 타입도 유효하다 */
         }
         
         valid_types++;
         
-        /* Check each action */
+        /* 각 액션을 확인한다 */
         for (int action = 0; action < action_array_size(aa); action++) {
             DirectionArray* da = action_array_get(aa, action);
             
             if (da == NULL) continue;
             
-            /* Check each direction */
+            /* 각 방향을 확인한다 */
             for (int dir = 0; dir < direction_array_size(da); dir++) {
                 FrameArray* fa = direction_array_get(da, dir);
                 
                 if (fa == NULL) continue;
                 
-                /* Count frames */
+                /* 프레임 수를 센다 */
                 total_frames += frame_array_size(fa);
             }
         }
@@ -251,7 +249,7 @@ static int test_property3_cfpk_loading(void) {
     printf("    Valid creature types: %d\n", valid_types);
     printf("    Total frames: %d\n", total_frames);
     
-    /* Basic sanity checks */
+    /* 기본적인 정합성 확인 */
     if (valid_types == 0) {
         printf("    [FAIL] No valid creature types found\n");
         passed = 0;
@@ -262,7 +260,7 @@ static int test_property3_cfpk_loading(void) {
         passed = 0;
     }
     
-    /* Print sample data for verification */
+    /* 검증을 위해 샘플 데이터를 출력한다 */
     printf("    Sample data (first valid creature):\n");
     for (int type = 0; type < creature_framepack_size(&pack) && type < 5; type++) {
         ActionArray* aa = creature_framepack_get(&pack, type);
@@ -287,18 +285,18 @@ static int test_property3_cfpk_loading(void) {
 }
 
 /**
- * Test InfoToFile debug output
+ * InfoToFile 디버그 출력을 테스트한다
  */
 static void test_infotofile(void) {
     printf("  Unit test: creature_framepack_info_to_file\n");
     
     const char* test_info_file = "/tmp/test_creature_info.txt";
     
-    /* Create a simple frame pack */
+    /* 간단한 프레임 팩을 생성한다 */
     CreatureFramePack pack;
     creature_framepack_init(&pack);
-    
-    /* Add 2 creature types */
+
+    /* 크리처 타입 2개를 추가한다 */
     for (int type = 0; type < 2; type++) {
         ActionArray aa;
         action_array_init(&aa);
@@ -321,13 +319,13 @@ static void test_infotofile(void) {
         vecAppend(&pack.creatures, aa);
     }
     
-    /* Write info file */
+    /* info 파일을 작성한다 */
     creature_framepack_info_to_file(&pack, test_info_file);
     
-    /* Verify file was created */
+    /* 파일이 생성되었는지 검증한다 */
     FILE* file = fopen(test_info_file, "r");
     if (file) {
-        /* Read first line to verify content */
+        /* 내용을 검증하기 위해 첫 줄을 읽는다 */
         char buffer[256];
         if (fgets(buffer, sizeof(buffer), file)) {
             test_assert(strstr(buffer, "CreatureFramePack") != NULL ||
@@ -344,24 +342,24 @@ static void test_infotofile(void) {
 }
 
 /* ============================================================================
- * Main test function
+ * 메인 테스트 함수
  * ============================================================================ */
 
 void test_framepack(void) {
     int property3_passed;
     
-    /* Run unit tests */
+    /* 단위 테스트를 실행한다 */
     printf("\n  --- Unit Tests ---\n");
     test_framepack_init_free();
     test_framepack_file_io();
     test_framepack_get_frame();
     test_infotofile();
     
-    /* Run property-based tests */
+    /* 속성 기반 테스트를 실행한다 */
     printf("\n  --- Property-Based Tests ---\n");
     property3_passed = test_property3_cfpk_loading();
     
-    /* Summary */
+    /* 요약 */
     printf("\n  --- Property Test Summary ---\n");
     printf("  Property 3 (CFPK loading correctness): %s\n",
            property3_passed ? "PASSED" : "FAILED");
