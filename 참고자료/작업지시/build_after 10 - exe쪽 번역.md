@@ -10,14 +10,11 @@ dk_client\build\vs2019\DarkEden.vcxproj
 
 1. 한번에 다하기는 많을거 같으니 이정도만 먼저 진행해줘
 2. .cpp , .h 파일 외에는 따로 건드리지마.
-  
-	줄  461:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\DebugInfo.cpp" />
-	줄  462:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\DebugKit.cpp" />
-	줄  463:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\DebugLog.cpp" />
-	줄  464:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\DirectXLib_PCH.cpp" />
-	줄  465:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\DrawCreatureDivineGuidance.cpp" />
-	줄  466:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\DrawCreatureEffect.cpp" />
-	줄  467:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\DrawCreatureShadow.cpp" />
+
+
+| UTF-8 BOM | 159.1 KB | `.\Client\GameMain.cpp` |
+| UTF-8 | 1.9 KB | `.\Client\GameObject.h` |
+
 
 
 3. 번역완료된 파일들은 아래 md 파일에 기록하고 진행상황을 다음에도 이어갈수 있게 클로드 메모리에도 기록해줘 

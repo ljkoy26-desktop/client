@@ -33,11 +33,7 @@
 	줄  457:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\ClientFunction.cpp" />
 	줄  458:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\ClientTimeFunctions.cpp" />
 	줄  459:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\Client_PCH.cpp" />
-	줄  460:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\CrashReport.cpp" />
-
-
-
-	
+	줄  460:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\CrashReport.cpp" />	
 	줄  461:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\DebugInfo.cpp" />
 	줄  462:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\DebugKit.cpp" />
 	줄  463:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\DebugLog.cpp" />
@@ -47,10 +43,17 @@
 	줄  467:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\DrawCreatureShadow.cpp" />
 	
 	
+	
+	
+	
 	줄  468:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\EffectResourceContainer.cpp" />
 	줄  469:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\ExpInfo.cpp" />
 	줄  470:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\ExperienceTable.cpp" />
 	줄  471:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\FameInfo.cpp" />
+	
+	
+	
+	
 	줄  472:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\GAME1024.cpp" />
 	줄  473:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\GameInit.cpp" />
 	줄  474:     <ClCompile Include="H:\Source\GithubDesktop\dk_client\Client\GameInitInfo.cpp" />
