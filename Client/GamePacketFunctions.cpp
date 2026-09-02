@@ -1,8 +1,8 @@
-//-----------------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------------
 // GamePacketFunctions.cpp
 //-----------------------------------------------------------------------------
-// Cross-platform game functions extracted from PacketFunction.cpp
-// These functions are needed by the client but don't depend on Windows-specific APIs
+// PacketFunction.cpp 에서 분리한 크로스 플랫폼 게임 함수
+// 클라이언트에 필요하지만 Windows 전용 API 에 의존하지 않는 함수들
 //-----------------------------------------------------------------------------
 
 #include "Client_PCH.h"
@@ -66,12 +66,12 @@
 extern MScreenEffectManager*	g_pInventoryEffectManager;
 extern DWORD				g_PreviousCreatureType;
 
-// Hair style IDs defined in PacketFunction.cpp
+// PacketFunction.cpp 에 정의된 헤어스타일 ID
 extern int	g_PacketHairMaleID[3];
 extern int	g_PacketHairFemaleID[3];
 
 //-----------------------------------------------------------------------------
-// NewFakeCreature - Create fake creature from creature type (4 int parameters)
+// NewFakeCreature - 크리처 타입으로 페이크 크리처 생성 (int 파라미터 4개)
 //-----------------------------------------------------------------------------
 MFakeCreature*
 NewFakeCreature(int creatureType, int x, int y, int dir)
@@ -109,7 +109,7 @@ NewFakeCreature(int creatureType, int x, int y, int dir)
 }
 
 //-----------------------------------------------------------------------------
-// NewFakeCreature - Create fake creature from existing creature (3 parameters)
+// NewFakeCreature - 기존 크리처로부터 페이크 크리처 생성 (파라미터 3개)
 //-----------------------------------------------------------------------------
 MFakeCreature*
 NewFakeCreature(MCreature* pCreature, int x, int y)
@@ -154,7 +154,7 @@ NewFakeCreature(MCreature* pCreature, int x, int y)
 }
 
 //-----------------------------------------------------------------------------
-// SetFadeStart - Start fade effect
+// SetFadeStart - 페이드 효과 시작
 //-----------------------------------------------------------------------------
 void SetFadeStart(char start, char end, char step, BYTE r, BYTE g, BYTE b, WORD delay)
 {
@@ -163,7 +163,7 @@ void SetFadeStart(char start, char end, char step, BYTE r, BYTE g, BYTE b, WORD 
 }
 
 //-----------------------------------------------------------------------------
-// SetFadeEnd - End fade effect
+// SetFadeEnd - 페이드 효과 종료
 //-----------------------------------------------------------------------------
 void SetFadeEnd()
 {
@@ -172,43 +172,43 @@ void SetFadeEnd()
 }
 
 //-----------------------------------------------------------------------------
-// SetPetInfo - Set pet information
+// SetPetInfo - 펫 정보 설정
 //-----------------------------------------------------------------------------
 void SetPetInfo(PetInfo* pPetInfo, unsigned int flag)
 {
 	(void)pPetInfo; (void)flag;
-	// Stub implementation - pet info handling
+	// 스텁 구현 - 펫 정보 처리
 }
 
 //-----------------------------------------------------------------------------
-// SetGearInfo - Set gear information
+// SetGearInfo - 장비 정보 설정
 //-----------------------------------------------------------------------------
 void SetGearInfo(GearInfo* pGearInfo, BloodBibleSignInfo* pBloodBibleInfo)
 {
 	(void)pGearInfo; (void)pBloodBibleInfo;
-	// Stub implementation - gear info handling
+	// 스텁 구현 - 장비 정보 처리
 }
 
 //-----------------------------------------------------------------------------
-// SetExtraInfo - Set extra information
+// SetExtraInfo - 추가 정보 설정
 //-----------------------------------------------------------------------------
 void SetExtraInfo(ExtraInfo* pExtraInfo)
 {
 	(void)pExtraInfo;
-	// Stub implementation - extra info handling
+	// 스텁 구현 - 추가 정보 처리
 }
 
 //-----------------------------------------------------------------------------
-// SetEffectInfo - Set effect information
+// SetEffectInfo - 이펙트 정보 설정
 //-----------------------------------------------------------------------------
 void SetEffectInfo(MCreature* pCreature, EffectInfo* pEffectInfo, int delayedFrame)
 {
 	(void)pCreature; (void)pEffectInfo; (void)delayedFrame;
-	// Stub implementation - effect info handling
+	// 스텁 구현 - 이펙트 정보 처리
 }
 
 //-----------------------------------------------------------------------------
-// ComeFromPortal - Creature coming from portal
+// ComeFromPortal - 포탈에서 나오는 크리처
 //-----------------------------------------------------------------------------
 void ComeFromPortal(MCreature* pCreature)
 {
@@ -247,7 +247,7 @@ void ComeFromPortal(MCreature* pCreature)
 }
 
 //-----------------------------------------------------------------------------
-// MoveIntoPortal - Creature moving into portal
+// MoveIntoPortal - 포탈로 들어가는 크리처
 //-----------------------------------------------------------------------------
 void MoveIntoPortal(MCreature* pCreature)
 {
@@ -280,7 +280,7 @@ void MoveIntoPortal(MCreature* pCreature)
 }
 
 //-----------------------------------------------------------------------------
-// SkillIllendue - Illendue skill effect
+// SkillIllendue - 일렌듀 스킬 이펙트
 //-----------------------------------------------------------------------------
 void SkillIllendue(MCreature* pUserCreature, MCreature* pTargetCreature, int skillID)
 {
@@ -357,7 +357,7 @@ void SkillIllendue(MCreature* pUserCreature, MCreature* pTargetCreature, int ski
 }
 
 //-----------------------------------------------------------------------------
-// SkillBlazeWalk - Blaze Walk skill effect
+// SkillBlazeWalk - 블레이즈 워크 스킬 이펙트
 //-----------------------------------------------------------------------------
 void SkillBlazeWalk(MCreature* pUserCreature, MCreature* pTargetCreature, int skillID, BYTE grade)
 {
@@ -419,16 +419,16 @@ void SkillBlazeWalk(MCreature* pUserCreature, MCreature* pTargetCreature, int sk
 }
 
 //-----------------------------------------------------------------------------
-// SkillToSector - Skill effect to sector
+// SkillToSector - 섹터 대상 스킬 이펙트
 //-----------------------------------------------------------------------------
 void SkillToSector(TYPE_ACTIONINFO nActionInfo, TYPE_SECTORPOSITION sX, TYPE_SECTORPOSITION sY, int dir, DWORD delayFrame, MActionResult* pResult)
 {
 	(void)nActionInfo; (void)sX; (void)sY; (void)dir; (void)delayFrame; (void)pResult;
-	// Stub implementation - skill to sector
+	// 스텁 구현 - 섹터 대상 스킬
 }
 
 //-----------------------------------------------------------------------------
-// SetPCSlayerInfo - Set PC slayer information
+// SetPCSlayerInfo - PC 슬레이어 정보 설정
 //-----------------------------------------------------------------------------
 void SetPCSlayerInfo(PCSlayerInfo2* pInfo)
 {
@@ -440,7 +440,7 @@ void SetPCSlayerInfo(PCSlayerInfo2* pInfo)
 	g_pPlayer->SetSight( pInfo->getSight() );
 
 	//--------------------------------------------------
-	// Player 몸 설정 - IMPORTANT: Set creature type!
+	// Player 몸 설정 - 중요: 크리처 타입을 설정해야 한다!
 	//--------------------------------------------------
 	if (pInfo->getCompetence()==0)
 	{
@@ -457,41 +457,41 @@ void SetPCSlayerInfo(PCSlayerInfo2* pInfo)
 	g_pPlayer->SetMasterEffectType( pInfo->getMasterEffectColor() );
 	SetAddonToSlayer( g_pPlayer, pInfo );
 
-	// TODO: Add remaining implementation from PacketFunction.cpp:2691-2953
-	// This includes guild info, rank, stats, domain levels, etc.
+	// TODO: PacketFunction.cpp:2691-2953 의 나머지 구현 추가 필요
+	// 길드 정보, 랭크, 스탯, 도메인 레벨 등 포함
 }
 
 //-----------------------------------------------------------------------------
-// AddItemToZone - Add item to zone
+// AddItemToZone - 존에 아이템 추가
 //-----------------------------------------------------------------------------
 MItem* AddItemToZone(GCAddItemToZone* pPacket, BOOL bDropping)
 {
 	(void)pPacket; (void)bDropping;
-	// Stub implementation - add item to zone
+	// 스텁 구현 - 존에 아이템 추가
 	return NULL;
 }
 
 //-----------------------------------------------------------------------------
-// g_PrintColorStr - Print colored string (for UI descriptions)
+// g_PrintColorStr - 컬러 문자열 출력 (UI 설명용)
 //-----------------------------------------------------------------------------
 int g_PrintColorStr(int x, int y, const char* str, PrintInfo& info, DWORD color)
 {
 	(void)x; (void)y; (void)str; (void)info; (void)color;
-	// Stub implementation - print colored string
+	// 스텁 구현 - 컬러 문자열 출력
 	return 0;
 }
 
 //-----------------------------------------------------------------------------
-// SetAddonToOusters - Set addon info for Ousters (PCOustersInfo2)
+// SetAddonToOusters - 아우스터즈 애드온 정보 설정 (PCOustersInfo2)
 //-----------------------------------------------------------------------------
 void SetAddonToOusters(MCreatureWear* pCreature, const PCOustersInfo2* pInfo)
 {
 	(void)pCreature; (void)pInfo;
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// SetAddonToOusters - Set addon info for Ousters (PCOustersInfo3)
+// SetAddonToOusters - 아우스터즈 애드온 정보 설정 (PCOustersInfo3)
 //-----------------------------------------------------------------------------
 void SetAddonToOusters(MCreatureWear* pCreature, const PCOustersInfo3* pInfo)
 {
@@ -501,7 +501,7 @@ void SetAddonToOusters(MCreatureWear* pCreature, const PCOustersInfo3* pInfo)
 	int coatType = pInfo->getCoatType();
 	int armType = pInfo->getArmType();
 
-	// Check if g_pPacketItemOustersCoat array is properly initialized
+	// g_pPacketItemOustersCoat 배열이 제대로 초기화되었는지 확인
 	if (coatType < 0 || coatType >= OUSTERS_COAT_MAX) {
 		fprintf(stderr, "ERROR: SetAddonToOusters: coatType=%d is out of range [0, %d)\n", coatType, OUSTERS_COAT_MAX);
 		return;
@@ -528,20 +528,20 @@ void SetAddonToOusters(MCreatureWear* pCreature, const PCOustersInfo3* pInfo)
 }
 
 //-----------------------------------------------------------------------------
-// Additional functions needed by packet handlers
+// 패킷 핸들러에 필요한 추가 함수들
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-// AffectModifyInfo - Apply modify info to status
+// AffectModifyInfo - 상태에 변경 정보 적용
 //-----------------------------------------------------------------------------
 void AffectModifyInfo(MStatus* pStatus, ModifyInfo* pInfo)
 {
 	(void)pStatus; (void)pInfo;
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// SetAddonToSlayer - Set addon for Slayer (PCSlayerInfo2)
+// SetAddonToSlayer - 슬레이어 애드온 설정 (PCSlayerInfo2)
 //-----------------------------------------------------------------------------
 void SetAddonToSlayer(MCreatureWear* pCreature, const PCSlayerInfo2* pInfo)
 {
@@ -568,34 +568,34 @@ void SetAddonToSlayer(MCreatureWear* pCreature, const PCSlayerInfo2* pInfo)
 }
 
 //-----------------------------------------------------------------------------
-// SetAddonToSlayer - Set addon for Slayer (PCSlayerInfo3)
+// SetAddonToSlayer - 슬레이어 애드온 설정 (PCSlayerInfo3)
 //-----------------------------------------------------------------------------
 void SetAddonToSlayer(MCreatureWear* pCreature, const PCSlayerInfo3* pInfo)
 {
 	(void)pCreature; (void)pInfo;
-	// Stub implementation - TODO: Add full implementation from PacketFunction.cpp:856-1150
+	// 스텁 구현 - TODO: PacketFunction.cpp:856-1150 의 전체 구현 추가 필요
 }
 
 //-----------------------------------------------------------------------------
-// SetAddonToSlayer - Set addon for Slayer (int npcID)
+// SetAddonToSlayer - 슬레이어 애드온 설정 (int npcID)
 //-----------------------------------------------------------------------------
 void SetAddonToSlayer(MCreatureWear* pCreature, int npcID)
 {
 	(void)pCreature; (void)npcID;
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// SetInventoryInfo - Set inventory information
+// SetInventoryInfo - 인벤토리 정보 설정
 //-----------------------------------------------------------------------------
 void SetInventoryInfo(InventoryInfo* pInventoryInfo)
 {
 	(void)pInventoryInfo;
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// SetPCOustersInfo - Set PC Ousters information
+// SetPCOustersInfo - PC 아우스터즈 정보 설정
 //-----------------------------------------------------------------------------
 void SetPCOustersInfo(PCOustersInfo2* pInfo)
 {
@@ -607,7 +607,7 @@ void SetPCOustersInfo(PCOustersInfo2* pInfo)
 	g_pPlayer->SetSight( pInfo->getSight() );
 
 	//--------------------------------------------------
-	// Player 몸 설정 - IMPORTANT: Set creature type!
+	// Player 몸 설정 - 중요: 크리처 타입을 설정해야 한다!
 	//--------------------------------------------------
 	if (pInfo->getCompetence()==0)
 	{
@@ -624,11 +624,11 @@ void SetPCOustersInfo(PCOustersInfo2* pInfo)
 	g_pPlayer->SetBodyColor1( pInfo->getHairColor() );
 	g_pPlayer->SetMasterEffectType( pInfo->getMasterEffectColor() );
 
-	// TODO: Add remaining implementation from PacketFunction.cpp:3253-3370
+	// TODO: PacketFunction.cpp:3253-3370 의 나머지 구현 추가 필요
 }
 
 //-----------------------------------------------------------------------------
-// SetPCVampireInfo - Set PC Vampire information
+// SetPCVampireInfo - PC 뱀파이어 정보 설정
 //-----------------------------------------------------------------------------
 void SetPCVampireInfo(PCVampireInfo2* pInfo)
 {
@@ -640,7 +640,7 @@ void SetPCVampireInfo(PCVampireInfo2* pInfo)
 	g_pPlayer->SetSight( pInfo->getSight() );
 
 	//--------------------------------------------------
-	// Player 몸 설정 - IMPORTANT: Set creature type!
+	// Player 몸 설정 - 중요: 크리처 타입을 설정해야 한다!
 	//--------------------------------------------------
 	// 박쥐나 늑대로 변신 중인 경우..
 	if (g_PreviousCreatureType==CREATURETYPE_WOLF
@@ -689,96 +689,96 @@ void SetPCVampireInfo(PCVampireInfo2* pInfo)
 	else
 		g_pPlayer->SetBatColor( 0xFFFF );
 
-	// TODO: Add remaining implementation from PacketFunction.cpp:2954-3252
+	// TODO: PacketFunction.cpp:2954-3252 의 나머지 구현 추가 필요
 }
 
 //-----------------------------------------------------------------------------
-// SkillCrossCounter - Cross Counter skill effect
+// SkillCrossCounter - 크로스 카운터 스킬 이펙트
 //-----------------------------------------------------------------------------
 void SkillCrossCounter(MCreature* pUserCreature, MCreature* pTargetCreature, int skillID)
 {
 	(void)pUserCreature; (void)pTargetCreature; (void)skillID;
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// SkillShadowDancing - Shadow Dancing skill effect
+// SkillShadowDancing - 섀도우 댄싱 스킬 이펙트
 //-----------------------------------------------------------------------------
 void SkillShadowDancing(MCreature* pUserCreature, MCreature* pTargetCreature, int type)
 {
 	(void)pUserCreature; (void)pTargetCreature; (void)type;
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// g_PrintColorStrOut - Print colored string with outline
+// g_PrintColorStrOut - 테두리가 있는 컬러 문자열 출력
 //-----------------------------------------------------------------------------
 int g_PrintColorStrOut(int x, int y, const char* str, PrintInfo& info, DWORD color1, DWORD color2)
 {
 	(void)x; (void)y; (void)str; (void)info; (void)color1; (void)color2;
-	// Stub implementation
+	// 스텁 구현
 	return 0;
 }
 
 //-----------------------------------------------------------------------------
-// AddOustersElemental - Add Ousters elemental effect
+// AddOustersElemental - 아우스터즈 원소 이펙트 추가
 //-----------------------------------------------------------------------------
 void AddOustersElemental(MCreature* pCreature, int elementalType, int count)
 {
 	(void)pCreature; (void)elementalType; (void)count;
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// CheckItemForSkillIcon - Check if item should show skill icon
+// CheckItemForSkillIcon - 아이템이 스킬 아이콘을 표시해야 하는지 확인
 //-----------------------------------------------------------------------------
 bool CheckItemForSkillIcon(const MItem* pItem)
 {
 	(void)pItem;
-	// Stub implementation
+	// 스텁 구현
 	return false;
 }
 
 //-----------------------------------------------------------------------------
-// More functions needed
+// 추가로 필요한 함수들
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-// g_PrintColorStrShadow - Print colored string with shadow
+// g_PrintColorStrShadow - 그림자가 있는 컬러 문자열 출력
 //-----------------------------------------------------------------------------
 int g_PrintColorStrShadow(int x, int y, const char* str, PrintInfo& info, DWORD color1, DWORD color2)
 {
 	(void)x; (void)y; (void)str; (void)info; (void)color1; (void)color2;
-	// Stub implementation
+	// 스텁 구현
 	return 0;
 }
 
 //-----------------------------------------------------------------------------
-// CreateActionResultNode - Create action result node
+// CreateActionResultNode - 액션 결과 노드 생성
 //-----------------------------------------------------------------------------
 void CreateActionResultNode(MCreature* pCreature, int type, BYTE count)
 {
 	(void)pCreature; (void)type; (void)count;
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// Global variables needed by the game
+// 게임에 필요한 전역 변수
 //-----------------------------------------------------------------------------
 
-// Mouse position globals (note: no underscore prefix to match VS_UI declarations)
+// 마우스 위치 전역 변수 (VS_UI 선언과 일치하도록 언더스코어 접두어 없음)
 extern "C" {
 	int g_mouse_x = 0;
 	int g_mouse_y = 0;
 }
 
-// Ousters packet item globals are defined in PacketFunction.cpp
+// 아우스터즈 패킷 아이템 전역 변수는 PacketFunction.cpp 에 정의되어 있다.
 // MItem* g_pPacketItemOustersArm[OUSTERS_ARM_MAX] = {NULL};
 // MItem* g_pPacketItemOustersCoat[OUSTERS_COAT_MAX] = {NULL};
 
 //-----------------------------------------------------------------------------
-// Packet Item Table globals (from PacketFunction.cpp)
-// NOTE: PacketFunction.cpp is excluded on non-Windows platforms
+// 패킷 아이템 테이블 전역 변수 (PacketFunction.cpp 에서)
+// 참고: PacketFunction.cpp 는 Windows가 아닌 플랫폼에서는 제외된다.
 //-----------------------------------------------------------------------------
 MItem*		g_pPacketItemHelm[HELMET_MAX] = { NULL };
 MItem*		g_pPacketItemJacket[JACKET_MAX] = { NULL };
@@ -791,149 +791,149 @@ MItem*		g_pPacketItemShoulder[SHOULDER_MAX] = { NULL };
 MItem*		g_pPacketItemOustersCoat[OUSTERS_COAT_MAX] = { NULL };
 MItem*		g_pPacketItemOustersArm[OUSTERS_ARM_MAX] = { NULL };
 
-// Wave pack file manager (note: no underscore prefix)
+// 웨이브 팩 파일 매니저 (언더스코어 접두어 없음)
 class CWavePackFileManager;
 CWavePackFileManager* g_pWavePackFileManager = NULL;
 
-// Info show globals (note: no underscore prefix)
+// 정보 표시 전역 변수 (언더스코어 접두어 없음)
 extern "C" {
 	bool gbl_info_show = true;
 	bool gbl_show_item = true;
 }
 
 //-----------------------------------------------------------------------------
-// Functions from GameFunctions.cpp that are still needed
+// GameFunctions.cpp 에서 여전히 필요한 함수들
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-// SetGoreLevel - Set gore level
+// SetGoreLevel - 고어 레벨 설정
 //-----------------------------------------------------------------------------
 void SetGoreLevel(bool bGoreLevel)
 {
 	(void)bGoreLevel;
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// GetNMClipData - Get Netmarble clipboard data
+// GetNMClipData - 넷마블 클립보드 데이터 가져오기
 //-----------------------------------------------------------------------------
 bool GetNMClipData(char* pBuffer, unsigned int bufferSize, const char* pURL, bool bUseHTML)
 {
 	(void)pBuffer; (void)bufferSize; (void)pURL; (void)bUseHTML;
-	// Stub implementation
+	// 스텁 구현
 	return false;
 }
 
 //-----------------------------------------------------------------------------
-// SendBugReport - Send bug report
+// SendBugReport - 버그 리포트 전송
 //-----------------------------------------------------------------------------
 void SendBugReport(const char* pFormat, ...)
 {
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// SendCrashReport - Send crash report
+// SendCrashReport - 크래시 리포트 전송
 //-----------------------------------------------------------------------------
 void SendCrashReport()
 {
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// AddVampirePortal - Add vampire portal
+// AddVampirePortal - 뱀파이어 포탈 추가
 //-----------------------------------------------------------------------------
 void AddVampirePortal(int serverID, const char* ownerName, TYPE_SECTORPOSITION sX, TYPE_SECTORPOSITION sY, DWORD delayFrame, int zoneID, TYPE_SECTORPOSITION zoneX, TYPE_SECTORPOSITION zoneY, bool bStartFromMainNode)
 {
 	(void)serverID; (void)ownerName; (void)sX; (void)sY; (void)delayFrame; (void)zoneID; (void)zoneX; (void)zoneY; (void)bStartFromMainNode;
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// ConvertAlignment - Convert alignment value
+// ConvertAlignment - 얼라인먼트 값 변환
 //-----------------------------------------------------------------------------
 int ConvertAlignment(int alignment)
 {
-	// Stub implementation
+	// 스텁 구현
 	return alignment;
 }
 
 //-----------------------------------------------------------------------------
-// More functions needed
+// 추가로 필요한 함수들
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-// SetDragonTorando - Set dragon tornado effect
+// SetDragonTorando - 드래곤 토네이도 이펙트 설정
 //-----------------------------------------------------------------------------
 void SetDragonTorando(int type, DWORD color, int count, int delay)
 {
 	(void)type; (void)color; (void)count; (void)delay;
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// GetBombActionInfo - Get bomb action info
+// GetBombActionInfo - 폭탄 액션 정보 가져오기
 //-----------------------------------------------------------------------------
 int GetBombActionInfo(int itemType)
 {
 	(void)itemType;
-	// Stub implementation
+	// 스텁 구현
 	return 0;
 }
 
 //-----------------------------------------------------------------------------
-// GetMineActionInfo - Get mine action info
+// GetMineActionInfo - 지뢰 액션 정보 가져오기
 //-----------------------------------------------------------------------------
 int GetMineActionInfo(int itemType)
 {
 	(void)itemType;
-	// Stub implementation
+	// 스텁 구현
 	return 0;
 }
 
 //-----------------------------------------------------------------------------
-// PopupErrorMessage - Popup error message
+// PopupErrorMessage - 오류 메시지 팝업
 //-----------------------------------------------------------------------------
 void PopupErrorMessage(ErrorID errorID)
 {
 	(void)errorID;
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// CheckMacScreenMode - Check Mac screen mode
+// CheckMacScreenMode - Mac 화면 모드 확인
 //-----------------------------------------------------------------------------
 bool CheckMacScreenMode()
 {
-	// Stub implementation
+	// 스텁 구현
 	return false;
 }
 
 //-----------------------------------------------------------------------------
-// Send_nProtect_Auth - Send nProtect authentication
+// Send_nProtect_Auth - nProtect 인증 전송
 //-----------------------------------------------------------------------------
 void Send_nProtect_Auth(DWORD authCode)
 {
 	(void)authCode;
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// SetServerGroupName - Set server group name
+// SetServerGroupName - 서버 그룹 이름 설정
 //-----------------------------------------------------------------------------
 void SetServerGroupName(const char* pName)
 {
 	(void)pName;
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// Even more functions needed
+// 그 밖에 필요한 함수들
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-// InitPacketItemTable - Initialize packet item table
-// NOTE: Copied from PacketFunction.cpp which is excluded on non-Windows
+// InitPacketItemTable - 패킷 아이템 테이블 초기화
+// 참고: Windows가 아닌 플랫폼에서 제외되는 PacketFunction.cpp 에서 복사됨
 //-----------------------------------------------------------------------------
 void InitPacketItemTable()
 {
@@ -1098,103 +1098,103 @@ void InitPacketItemTable()
 }
 
 //-----------------------------------------------------------------------------
-// SendUserIDToGameMonA - Send user ID to GameMon
+// SendUserIDToGameMonA - GameMon 에 유저 ID 전송
 //-----------------------------------------------------------------------------
 void SendUserIDToGameMonA(const char* pUserID)
 {
 	(void)pUserID;
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// ConvertDurationToFrame - Convert duration to frames
+// ConvertDurationToFrame - 지속시간을 프레임으로 변환
 //-----------------------------------------------------------------------------
 DWORD ConvertDurationToFrame(int duration)
 {
-	// Stub implementation
-	return duration / 30;  // Assuming 30 FPS
+	// 스텁 구현
+	return duration / 30;  // 30 FPS 로 가정
 }
 
 //-----------------------------------------------------------------------------
-// GetDirectionToPosition - Get direction to position
+// GetDirectionToPosition - 위치까지의 방향 가져오기
 //-----------------------------------------------------------------------------
 BYTE GetDirectionToPosition(int originX, int originY, int destX, int destY)
 {
-	// Stub implementation
+	// 스텁 구현
 	return 0;
 }
 
 //-----------------------------------------------------------------------------
-// Final functions needed
+// 마지막으로 필요한 함수들
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-// GetOustersCreatureType - Get Ousters creature type
+// GetOustersCreatureType - 아우스터즈 크리처 타입 가져오기
 //-----------------------------------------------------------------------------
 int GetOustersCreatureType(int coatType)
 {
-	// Stub implementation
+	// 스텁 구현
 	return coatType;
 }
 
 //-----------------------------------------------------------------------------
-// GetVampireCreatureType - Get Vampire creature type
+// GetVampireCreatureType - 뱀파이어 크리처 타입 가져오기
 //-----------------------------------------------------------------------------
 int GetVampireCreatureType(int level, bool bFemale, int rank)
 {
-	// Stub implementation
+	// 스텁 구현
 	(void)level; (void)bFemale; (void)rank;
 	return 0;
 }
 
 //-----------------------------------------------------------------------------
-// ReleasePacketItemTable - Release packet item table
+// ReleasePacketItemTable - 패킷 아이템 테이블 해제
 //-----------------------------------------------------------------------------
 void ReleasePacketItemTable()
 {
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// UseItemOK - Use item OK
+// UseItemOK - 아이템 사용 가능 여부
 //-----------------------------------------------------------------------------
 bool UseItemOK()
 {
-	// Stub implementation
+	// 스텁 구현
 	return true;
 }
 
 //-----------------------------------------------------------------------------
-// SetFlagTo - Set flag to
+// SetFlagTo - 플래그 설정
 //-----------------------------------------------------------------------------
 void SetFlagTo(bool bFlag)
 {
 	(void)bFlag;
-	// Stub implementation
+	// 스텁 구현
 }
 
 //-----------------------------------------------------------------------------
-// Conversion utility functions
+// 변환 유틸리티 함수
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-// ConvertMillisecondToFrame - Convert milliseconds to frames
+// ConvertMillisecondToFrame - 밀리초를 프레임으로 변환
 //-----------------------------------------------------------------------------
 DWORD ConvertMillisecondToFrame(unsigned long ms)
 {
-	// Stub implementation - assuming 30 FPS
+	// 스텁 구현 - 30 FPS 로 가정
 	return ms / 33;
 }
 
 //-----------------------------------------------------------------------------
-// ConvertDurationToMillisecond - Convert duration to milliseconds
+// ConvertDurationToMillisecond - 지속시간을 밀리초로 변환
 //-----------------------------------------------------------------------------
 DWORD ConvertDurationToMillisecond(int duration)
 {
-	// Stub implementation - assuming duration is in frames
-	return duration * 33;  // Convert to milliseconds (assuming 30 FPS)
+	// 스텁 구현 - duration 은 프레임 단위로 가정
+	return duration * 33;  // 밀리초로 변환 (30 FPS 가정)
 }
 
 //-----------------------------------------------------------------------------
-// Windows-specific functions (stubs for macOS)
+// Windows 전용 함수 (macOS 용 스텁)
 //-----------------------------------------------------------------------------

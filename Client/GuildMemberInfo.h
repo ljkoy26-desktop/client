@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////////////
+﻿//////////////////////////////////////////////////////////////////////
 // 
 // Filename    : GuildMemberInfo.h 
 // Written By  : 
@@ -41,7 +41,7 @@ public :
     // 출력스트림(버퍼)으로 패킷의 바이너리 이미지를 보낸다.
     void write (SocketOutputStream & oStream) const throw (ProtocolException, Error);
 
-	// get packet's body size
+	// 패킷의 바디 크기를 얻는다.
 	// 최적화시, 미리 계산된 정수를 사용한다.
 	PacketSize_t getSize () throw ();
 
@@ -49,22 +49,22 @@ public :
 		return ( szBYTE + 20 + szGuildMemberRank + szbool) * 220 + szBYTE + szServerID;
 	}
 
-	// get packet's debug string
+	// 패킷 디버그 문자열을 얻는다.
 	string toString () const throw ();
 
-	// get/set Name
+	// 이름 get/set
 	string getName() const throw() { return m_Name; }
 	void setName( const string& Name ) throw() { m_Name = Name; }
 
-	// get/set GuildMemberRank
+	// 길드 멤버 랭크 get/set
 	GuildMemberRank_t getRank() const throw() { return m_Rank; }
 	void setRank( GuildMemberRank_t rank ) throw() { m_Rank = rank; }
 
-	// get/set Guild Member LogOn
+	// 길드 멤버 로그온 상태 get/set
 	bool getLogOn() const throw() { return m_bLogOn; }
 	void setLogOn( bool logOn ) throw() { m_bLogOn = logOn; }
 
-	// get/set Guild Member Zone(current)
+	// 길드 멤버 존(현재 위치) get/set
 	ServerID_t	getServerID()	const throw() { return m_ServerID; }
 	void		setServerID( ServerID_t	ServerID)	throw() { m_ServerID = ServerID; }
 
@@ -73,14 +73,14 @@ private :
 	// 이름
 	string m_Name;
 
-	// Guild Member Rank
+	// 길드 멤버 랭크
 	GuildMemberRank_t m_Rank;
 
 
-	// Guild Member LogOn
+	// 길드 멤버 로그온 상태
 	bool m_bLogOn;
 
-	// Guild Member Zone(current)
+	// 길드 멤버 존(현재 위치)
 	ServerID_t	m_ServerID;
 
 };

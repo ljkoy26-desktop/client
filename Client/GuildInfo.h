@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////////////
+﻿//////////////////////////////////////////////////////////////////////
 // 
 // Filename    : GuildInfo.h 
 // Written By  : 
@@ -41,7 +41,7 @@ public :
     // 출력스트림(버퍼)으로 패킷의 바이너리 이미지를 보낸다.
     void write (SocketOutputStream & oStream) const throw (ProtocolException, Error);
 
-	// get packet's body size
+	// 패킷의 바디 크기를 얻는다.
 	// 최적화시, 미리 계산된 정수를 사용한다.
 	PacketSize_t getSize () throw ();
 
@@ -50,26 +50,26 @@ public :
 		return szGuildID + szBYTE + 30 + szBYTE + 20 + szBYTE + szBYTE + 11;
 	}
 
-	// get packet's debug string
+	// 패킷 디버그 문자열을 얻는다.
 	std::string toString () const throw ();
 
-	// get/set GuildID
+	// GuildID get/set
 	GuildID_t getGuildID() const throw() { return m_GuildID; }
 	void setGuildID( GuildID_t GuildID ) throw() { m_GuildID = GuildID; }
 
-	// get/set Guild Name
+	// 길드 이름 get/set
 	std::string getGuildName() const throw() { return m_GuildName; }
 	void setGuildName( const std::string& GuildName ) throw() { m_GuildName = GuildName; }
 
-	// get/set Guild Master
+	// 길드 마스터 get/set
 	std::string getGuildMaster() const throw() { return m_GuildMaster; }
 	void setGuildMaster( const std::string& GuildMaster ) throw() { m_GuildMaster = GuildMaster; }
 
-	// get/set Guild Member Count
+	// 길드 멤버 카운트 get/set
 	BYTE getGuildMemberCount() const throw() { return m_GuildMemberCount; }
 	void setGuildMemberCount( BYTE GuildMemberCount ) throw() { m_GuildMemberCount = GuildMemberCount; }
 
-	// get/set Guild Expire Date
+	// 길드 만료일 get/set
 	std::string getGuildExpireDate() const throw() { return m_GuildExpireDate; }
 	void setGuildExpireDate( const std::string& GuildExpireDate ) throw() { m_GuildExpireDate = GuildExpireDate; }
 

@@ -1,14 +1,13 @@
-// GetWinVer.h  Version 1.1
+﻿// GetWinVer.h  Version 1.1
 //
 // Copyright (C) 2001-2003 Hans Dietrich
 //
-// This software is released into the public domain.  
-// You are free to use it in any way you like, except
-// that you may not sell this source code.
+// 이 소프트웨어는 퍼블릭 도메인으로 공개된다.
+// 이 소스 코드를 판매하는 것을 제외하고는 자유롭게 사용할 수 있다.
 //
-// This software is provided "as is" with no expressed 
-// or implied warranty.  I accept no liability for any 
-// damage or loss of business that this software may cause. 
+// 이 소프트웨어는 어떠한 명시적/묵시적 보증 없이 "있는 그대로" 제공된다.
+// 이 소프트웨어로 인해 발생하는 어떠한 손해나 사업 손실에 대해서도
+// 책임지지 않는다.
 //
 ///////////////////////////////////////////////////////////////////////////////
 

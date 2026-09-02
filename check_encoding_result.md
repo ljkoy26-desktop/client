@@ -1,8 +1,8 @@
 # C++ File Encoding Scan Results
 
-- **Target Directory:** `C:\Users\USER\Desktop\Github_clone\dk_client`
+- **Target Directory:** `H:\Source\GithubDesktop\dk_client`
 - **Target Extensions:** `.cpp, .h`
-- **Total Files Checked:** 2314
+- **Total Files Checked:** 2313
 
 | ENCODING | FILE SIZE | FILE PATH |
 | :--- | :--- | :--- |
@@ -33,8 +33,7 @@
 | UTF-8 BOM | 6.1 KB | `.\basic\Timer2.cpp` |
 | UTF-8 BOM | 1.4 KB | `.\basic\timer2.h` |
 | UTF-8 BOM | 523 B | `.\basic\Typedef.h` |
-| UTF-8 | 29.9 KB | `.\build\CMakeFiles\4.4.0-rc3\CompilerIdCXX\CMakeCXXCompilerId.cpp` |
-| UTF-8 | 29.9 KB | `.\build\vs2019\CMakeFiles\4.4.0-rc3\CompilerIdCXX\CMakeCXXCompilerId.cpp` |
+| UTF-8 BOM | 29.9 KB | `.\build\vs2019\CMakeFiles\4.4.2\CompilerIdCXX\CMakeCXXCompilerId.cpp` |
 | UTF-8 | 1.2 KB | `.\Client\ActionFunctions.cpp` |
 | UTF-8 | 4.8 KB | `.\Client\AddonDef.h` |
 | UTF-8 | 3.4 KB | `.\Client\APICheck.cpp` |
@@ -67,7 +66,7 @@
 | UTF-8 | 1.3 KB | `.\Client\ClientFunction.h` |
 | UTF-8 | 667 B | `.\Client\ClientTimeFunctions.cpp` |
 | UTF-8 | 23 B | `.\Client\Client_PCH.cpp` |
-| UTF-8 | 1.3 KB | `.\Client\Client_PCH.h` |
+| UTF-8 BOM | 1.4 KB | `.\Client\Client_PCH.h` |
 | UTF-8 | 10.2 KB | `.\Client\CMessageArray.cpp` |
 | UTF-8 | 1.8 KB | `.\Client\CMessageArray.h` |
 | UTF-8 | 15.9 KB | `.\Client\CMP3.cpp` |
@@ -83,7 +82,7 @@
 | UTF-8 | 9.5 KB | `.\Client\CPositionList.h` |
 | UTF-8 BOM | 10.8 KB | `.\Client\CrashReport.cpp` |
 | UTF-8 | 1022 B | `.\Client\CrashReport.h` |
-| UTF-8 | 1.6 KB | `.\Client\CSDLGraphicsFlip.cpp` |
+| UTF-8 | 1.5 KB | `.\Client\CSDLGraphicsFlip.cpp` |
 | UTF-8 | 2.8 KB | `.\Client\CServerInformation.cpp` |
 | UTF-8 | 4.1 KB | `.\Client\CServerInformation.h` |
 | UTF-8 | 17.9 KB | `.\Client\CShadowPartManager.cpp` |
@@ -113,7 +112,7 @@
 | UTF-8 | 2.6 KB | `.\Client\DebugInfo.h` |
 | UTF-8 | 4.0 KB | `.\Client\DebugKit.cpp` |
 | UTF-8 | 1.4 KB | `.\Client\DebugKit.h` |
-| UTF-8 BOM | 7.2 KB | `.\Client\DebugLog.cpp` |
+| UTF-8 BOM | 7.3 KB | `.\Client\DebugLog.cpp` |
 | UTF-8 | 2.9 KB | `.\Client\DebugLog.h` |
 | UTF-8 | 11.7 KB | `.\Client\deflate.h` |
 | UTF-8 | 27 B | `.\Client\DirectXLib_PCH.cpp` |
@@ -121,30 +120,32 @@
 | UTF-8 | 505 B | `.\Client\DllInfo.h` |
 | UTF-8 | 19.8 KB | `.\Client\DrawCreatureDivineGuidance.cpp` |
 | UTF-8 | 62.6 KB | `.\Client\DrawCreatureEffect.cpp` |
-| UTF-8 | 36.8 KB | `.\Client\DrawCreatureShadow.cpp` |
+| UTF-8 BOM | 36.9 KB | `.\Client\DrawCreatureShadow.cpp` |
 | UTF-8 | 1.5 KB | `.\Client\DrawItemNameNode.h` |
 | UTF-8 | 2.7 KB | `.\Client\DrawTextNode.h` |
 | UTF-8 | 637 B | `.\Client\DrawTypeDef.h` |
 | UTF-8 | 555 B | `.\Client\DXLib.h` |
-| UTF-8 | 11.1 KB | `.\Client\EffectResourceContainer.cpp` |
+| UTF-8 BOM | 11.4 KB | `.\Client\EffectResourceContainer.cpp` |
 | UTF-8 | 3.6 KB | `.\Client\EffectResourceContainer.h` |
 | UTF-8 BOM | 112.7 KB | `.\Client\EffectSpriteTypeDef.h` |
 | UTF-8 | 1.6 KB | `.\Client\EffectSpriteTypeHelper.h` |
-| UTF-8 | 10.5 KB | `.\Client\ExperienceTable.cpp` |
+| UTF-8 BOM | 10.7 KB | `.\Client\ExperienceTable.cpp` |
 | UTF-8 | 3.0 KB | `.\Client\ExperienceTable.h` |
 | UTF-8 | 559 B | `.\Client\ExpInfo.cpp` |
 | UTF-8 | 1.2 KB | `.\Client\ExpInfo.h` |
 | UTF-8 | 1021 B | `.\Client\FameInfo.cpp` |
 | UTF-8 | 610 B | `.\Client\FameInfo.h` |
-| UTF-8 | 1.5 KB | `.\Client\GAME1024.cpp` |
-| UTF-8 | 971 B | `.\Client\GAME1024.h` |
-| UTF-8 | 17.2 KB | `.\Client\GameFunctions.cpp` |
-| UTF-8 | 6.3 KB | `.\Client\GameHelpers.cpp` |
-| UTF-8 | 4.2 KB | `.\Client\GameHelpers.h` |
-| UTF-8 | 79.3 KB | `.\Client\GameInit.cpp` |
-| UTF-8 | 36.5 KB | `.\Client\GameInitInfo.cpp` |
-| UTF-8 BOM | 159.1 KB | `.\Client\GameMain.cpp` |
+| UTF-8 BOM | 1.5 KB | `.\Client\GAME1024.cpp` |
+| UTF-8 BOM | 975 B | `.\Client\GAME1024.h` |
+| UTF-8 BOM | 17.0 KB | `.\Client\GameFunctions.cpp` |
+| UTF-8 BOM | 6.4 KB | `.\Client\GameHelpers.cpp` |
+| UTF-8 BOM | 4.2 KB | `.\Client\GameHelpers.h` |
+| UTF-8 BOM | 79.4 KB | `.\Client\GameInit.cpp` |
+| UTF-8 BOM | 36.7 KB | `.\Client\GameInitInfo.cpp` |
+| UTF-8 BOM | 159.8 KB | `.\Client\GameMain.cpp` |
 | UTF-8 | 1.9 KB | `.\Client\GameObject.h` |
+
+
 
 
 
@@ -163,6 +164,12 @@
 | UTF-8 | 2.7 KB | `.\Client\GuildInfo.h` |
 | UTF-8 | 3.2 KB | `.\Client\GuildMemberInfo.cpp` |
 | UTF-8 | 2.3 KB | `.\Client\GuildMemberInfo.h` |
+
+
+
+
+
+
 | UTF-8 | 2.1 KB | `.\Client\header.cpp` |
 | UTF-8 | 559 B | `.\Client\header.h` |
 | UTF-8 | 1.5 KB | `.\Client\heckSystem.cpp` |
@@ -2047,11 +2054,11 @@
 | UTF-8 | 779 B | `.\Client\Packet\Upackets\UCRequestLoginModeHandler.cpp` |
 | UTF-8 BOM | 80.1 KB | `.\Client\SpriteLib\CAlphaSprite.cpp` |
 | UTF-8 BOM | 9.8 KB | `.\Client\SpriteLib\CAlphaSprite.h` |
-| UTF-8 | 4.6 KB | `.\Client\SpriteLib\CAlphaSprite555.cpp` |
+| UTF-8 BOM | 4.6 KB | `.\Client\SpriteLib\CAlphaSprite555.cpp` |
 | UTF-8 | 868 B | `.\Client\SpriteLib\CAlphaSprite555.h` |
-| UTF-8 | 2.9 KB | `.\Client\SpriteLib\CAlphaSprite565.cpp` |
+| UTF-8 BOM | 3.0 KB | `.\Client\SpriteLib\CAlphaSprite565.cpp` |
 | UTF-8 | 918 B | `.\Client\SpriteLib\CAlphaSprite565.h` |
-| UTF-8 | 9.3 KB | `.\Client\SpriteLib\CAlphaSpritePack.cpp` |
+| UTF-8 | 9.4 KB | `.\Client\SpriteLib\CAlphaSpritePack.cpp` |
 | UTF-8 | 2.2 KB | `.\Client\SpriteLib\CAlphaSpritePack.h` |
 | UTF-8 | 7.1 KB | `.\Client\SpriteLib\CAlphaSpritePackList.cpp` |
 | UTF-8 | 2.2 KB | `.\Client\SpriteLib\CAlphaSpritePackList.h` |
@@ -2061,17 +2068,17 @@
 | UTF-8 | 822 B | `.\Client\SpriteLib\CAlphaSpritePackList565.h` |
 | UTF-8 | 77.2 KB | `.\Client\SpriteLib\CAlphaSpritePal.cpp` |
 | UTF-8 BOM | 3.9 KB | `.\Client\SpriteLib\CAlphaSpritePal.h` |
-| UTF-8 | 2.1 KB | `.\Client\SpriteLib\CFileIndexTable.cpp` |
-| UTF-8 | 1.4 KB | `.\Client\SpriteLib\CFileIndexTable.h` |
+| UTF-8 BOM | 2.2 KB | `.\Client\SpriteLib\CFileIndexTable.cpp` |
+| UTF-8 BOM | 1.4 KB | `.\Client\SpriteLib\CFileIndexTable.h` |
 | UTF-8 | 17.0 KB | `.\Client\SpriteLib\CFilter.cpp` |
 | UTF-8 BOM | 2.6 KB | `.\Client\SpriteLib\CFilter.h` |
-| UTF-8 | 2.5 KB | `.\Client\SpriteLib\CFilterPack.cpp` |
-| UTF-8 | 1.5 KB | `.\Client\SpriteLib\CFilterPack.h` |
+| UTF-8 BOM | 2.5 KB | `.\Client\SpriteLib\CFilterPack.cpp` |
+| UTF-8 BOM | 1.5 KB | `.\Client\SpriteLib\CFilterPack.h` |
 | UTF-8 BOM | 214.1 KB | `.\Client\SpriteLib\CIndexSprite.cpp` |
-| UTF-8 BOM | 13.3 KB | `.\Client\SpriteLib\CIndexSprite.h` |
-| UTF-8 | 5.0 KB | `.\Client\SpriteLib\CIndexSprite555.cpp` |
+| UTF-8 BOM | 13.4 KB | `.\Client\SpriteLib\CIndexSprite.h` |
+| UTF-8 BOM | 5.0 KB | `.\Client\SpriteLib\CIndexSprite555.cpp` |
 | UTF-8 | 869 B | `.\Client\SpriteLib\CIndexSprite555.h` |
-| UTF-8 | 2.9 KB | `.\Client\SpriteLib\CIndexSprite565.cpp` |
+| UTF-8 BOM | 2.9 KB | `.\Client\SpriteLib\CIndexSprite565.cpp` |
 | UTF-8 | 869 B | `.\Client\SpriteLib\CIndexSprite565.h` |
 | UTF-8 | 1.9 KB | `.\Client\SpriteLib\CIndexSpritePack.cpp` |
 | UTF-8 | 1.3 KB | `.\Client\SpriteLib\CIndexSpritePack.h` |
@@ -2082,47 +2089,47 @@
 | UTF-8 | 3.3 KB | `.\Client\SpriteLib\CShadowSpritePack.h` |
 | UTF-8 BOM | 273.6 KB | `.\Client\SpriteLib\CSprite.cpp` |
 | UTF-8 BOM | 13.7 KB | `.\Client\SpriteLib\CSprite.h` |
-| UTF-8 | 6.9 KB | `.\Client\SpriteLib\CSprite555.cpp` |
+| UTF-8 BOM | 6.9 KB | `.\Client\SpriteLib\CSprite555.cpp` |
 | UTF-8 | 961 B | `.\Client\SpriteLib\CSprite555.h` |
-| UTF-8 | 5.0 KB | `.\Client\SpriteLib\CSprite565.cpp` |
+| UTF-8 BOM | 5.1 KB | `.\Client\SpriteLib\CSprite565.cpp` |
 | UTF-8 | 958 B | `.\Client\SpriteLib\CSprite565.h` |
-| UTF-8 | 879 B | `.\Client\SpriteLib\CSpriteDef.cpp` |
-| UTF-8 | 1.1 KB | `.\Client\SpriteLib\CSpriteDef.h` |
-| UTF-8 | 925 B | `.\Client\SpriteLib\CSpriteOutlineManager.cpp` |
-| UTF-8 | 938 B | `.\Client\SpriteLib\CSpriteOutlineManager.h` |
+| UTF-8 BOM | 891 B | `.\Client\SpriteLib\CSpriteDef.cpp` |
+| UTF-8 BOM | 1.1 KB | `.\Client\SpriteLib\CSpriteDef.h` |
+| UTF-8 BOM | 945 B | `.\Client\SpriteLib\CSpriteOutlineManager.cpp` |
+| UTF-8 BOM | 1003 B | `.\Client\SpriteLib\CSpriteOutlineManager.h` |
 | UTF-8 | 1.9 KB | `.\Client\SpriteLib\CSpritePack.cpp` |
 | UTF-8 | 1.2 KB | `.\Client\SpriteLib\CSpritePack.h` |
-| UTF-8 | 7.0 KB | `.\Client\SpriteLib\CSpritePackList.cpp` |
-| UTF-8 | 3.7 KB | `.\Client\SpriteLib\CSpritePackList.h` |
+| UTF-8 BOM | 7.1 KB | `.\Client\SpriteLib\CSpritePackList.cpp` |
+| UTF-8 BOM | 3.7 KB | `.\Client\SpriteLib\CSpritePackList.h` |
 | UTF-8 | 1.2 KB | `.\Client\SpriteLib\CSpritePackList555.cpp` |
 | UTF-8 | 853 B | `.\Client\SpriteLib\CSpritePackList555.h` |
 | UTF-8 | 1.2 KB | `.\Client\SpriteLib\CSpritePackList565.cpp` |
 | UTF-8 | 857 B | `.\Client\SpriteLib\CSpritePackList565.h` |
 | UTF-8 | 25.8 KB | `.\Client\SpriteLib\CSpritePal.cpp` |
 | UTF-8 | 1.9 KB | `.\Client\SpriteLib\CSpritePal.h` |
-| UTF-8 | 2.9 KB | `.\Client\SpriteLib\CSpritePalBase.cpp` |
-| UTF-8 BOM | 2.4 KB | `.\Client\SpriteLib\CSpritePalBase.h` |
-| UTF-8 | 3.4 KB | `.\Client\SpriteLib\CSpriteSet.cpp` |
-| UTF-8 | 1.6 KB | `.\Client\SpriteLib\CSpriteSet.h` |
-| UTF-8 | 2.7 KB | `.\Client\SpriteLib\CSpriteSetManager.cpp` |
+| UTF-8 BOM | 2.9 KB | `.\Client\SpriteLib\CSpritePalBase.cpp` |
+| UTF-8 BOM | 2.5 KB | `.\Client\SpriteLib\CSpritePalBase.h` |
+| UTF-8 BOM | 3.4 KB | `.\Client\SpriteLib\CSpriteSet.cpp` |
+| UTF-8 BOM | 1.6 KB | `.\Client\SpriteLib\CSpriteSet.h` |
+| UTF-8 BOM | 2.8 KB | `.\Client\SpriteLib\CSpriteSetManager.cpp` |
 | UTF-8 | 1.4 KB | `.\Client\SpriteLib\CSpriteSetManager.h` |
 | UTF-8 BOM | 400.8 KB | `.\Client\SpriteLib\CSpriteSurface.cpp` |
 | UTF-8 BOM | 27.0 KB | `.\Client\SpriteLib\CSpriteSurface.h` |
-| UTF-8 BOM | 27.2 KB | `.\Client\SpriteLib\CSpriteSurface_Adapter.cpp` |
+| UTF-8 BOM | 26.4 KB | `.\Client\SpriteLib\CSpriteSurface_Adapter.cpp` |
 | UTF-8 BOM | 14.9 KB | `.\Client\SpriteLib\CSpriteSurface_Effects.cpp` |
-| UTF-8 BOM | 25.7 KB | `.\Client\SpriteLib\CSpriteSurface_SDL.cpp` |
-| UTF-8 | 571 B | `.\Client\SpriteLib\CSprite_SDL.cpp` |
-| UTF-8 | 4.7 KB | `.\Client\SpriteLib\CStorageSurface.cpp` |
-| UTF-8 | 1.6 KB | `.\Client\SpriteLib\CStorageSurface.h` |
+| UTF-8 BOM | 24.9 KB | `.\Client\SpriteLib\CSpriteSurface_SDL.cpp` |
+| UTF-8 BOM | 594 B | `.\Client\SpriteLib\CSprite_SDL.cpp` |
+| UTF-8 BOM | 4.7 KB | `.\Client\SpriteLib\CStorageSurface.cpp` |
+| UTF-8 BOM | 1.6 KB | `.\Client\SpriteLib\CStorageSurface.h` |
 | UTF-8 BOM | 21.3 KB | `.\Client\SpriteLib\CTypePack.h` |
 | UTF-8 | 4.0 KB | `.\Client\SpriteLib\CTypePackVector.h` |
 | UTF-8 | 656 B | `.\Client\SpriteLib\DrawTypeDef.h` |
-| UTF-8 | 1.8 KB | `.\Client\SpriteLib\MPalette.cpp` |
-| UTF-8 | 1.8 KB | `.\Client\SpriteLib\MPalette.h` |
+| UTF-8 BOM | 1.8 KB | `.\Client\SpriteLib\MPalette.cpp` |
+| UTF-8 BOM | 1.8 KB | `.\Client\SpriteLib\MPalette.h` |
 | UTF-8 | 824 B | `.\Client\SpriteLib\MPalettePack.cpp` |
 | UTF-8 | 781 B | `.\Client\SpriteLib\MPalettePack.h` |
 | UTF-8 | 560 B | `.\Client\SpriteLib\SP.h` |
-| UTF-8 | 11.6 KB | `.\Client\SpriteLib\SpriteLibBackend.h` |
+| UTF-8 BOM | 12.6 KB | `.\Client\SpriteLib\SpriteLibBackend.h` |
 | UTF-8 BOM | 44.5 KB | `.\Client\SpriteLib\SpriteLibBackendSDL.cpp` |
 | UTF-8 | 8.3 KB | `.\Client\SpriteLib\SpriteLibBackendSDL.h` |
 | UTF-8 BOM | 6.8 KB | `.\Client\SpriteLib\TArray.h` |
@@ -2148,26 +2155,26 @@
 | UTF-8 | 1.3 KB | `.\Client\WinLib\CWinUpdate.cpp` |
 | UTF-8 | 2.1 KB | `.\Client\WinLib\CWinUpdate.h` |
 | UTF-8 | 406 B | `.\Client\WinLib\WinLib.h` |
-| UTF-8 BOM | 7.4 KB | `.\tools\engine\sprite\include\animation.h` |
-| UTF-8 BOM | 1.3 KB | `.\tools\engine\sprite\include\color.h` |
-| UTF-8 BOM | 5.2 KB | `.\tools\engine\sprite\include\colorset.h` |
-| UTF-8 BOM | 2.3 KB | `.\tools\engine\sprite\include\error.h` |
-| UTF-8 BOM | 7.1 KB | `.\tools\engine\sprite\include\frame.h` |
-| UTF-8 BOM | 9.0 KB | `.\tools\engine\sprite\include\framepack.h` |
-| UTF-8 BOM | 6.2 KB | `.\tools\engine\sprite\include\index_sprite.h` |
-| UTF-8 BOM | 4.2 KB | `.\tools\engine\sprite\include\index_spritepack.h` |
-| UTF-8 BOM | 3.4 KB | `.\tools\engine\sprite\include\map.h` |
+| UTF-8 BOM | 7.2 KB | `.\tools\engine\sprite\include\animation.h` |
+| UTF-8 BOM | 1.2 KB | `.\tools\engine\sprite\include\color.h` |
+| UTF-8 BOM | 5.0 KB | `.\tools\engine\sprite\include\colorset.h` |
+| UTF-8 BOM | 2.2 KB | `.\tools\engine\sprite\include\error.h` |
+| UTF-8 BOM | 6.8 KB | `.\tools\engine\sprite\include\frame.h` |
+| UTF-8 BOM | 8.7 KB | `.\tools\engine\sprite\include\framepack.h` |
+| UTF-8 BOM | 6.0 KB | `.\tools\engine\sprite\include\index_sprite.h` |
+| UTF-8 BOM | 4.1 KB | `.\tools\engine\sprite\include\index_spritepack.h` |
+| UTF-8 BOM | 3.3 KB | `.\tools\engine\sprite\include\map.h` |
 | UTF-8 BOM | 2.2 KB | `.\tools\engine\sprite\include\sdl_framework.h` |
-| UTF-8 BOM | 5.9 KB | `.\tools\engine\sprite\include\shadow_sprite.h` |
-| UTF-8 BOM | 4.2 KB | `.\tools\engine\sprite\include\shadow_spritepack.h` |
+| UTF-8 BOM | 5.7 KB | `.\tools\engine\sprite\include\shadow_sprite.h` |
+| UTF-8 BOM | 4.1 KB | `.\tools\engine\sprite\include\shadow_spritepack.h` |
 | UTF-8 BOM | 163 B | `.\tools\engine\sprite\include\SP.h` |
-| UTF-8 BOM | 2.5 KB | `.\tools\engine\sprite\include\sprite.h` |
-| UTF-8 BOM | 1.9 KB | `.\tools\engine\sprite\include\spritepack.h` |
-| UTF-8 BOM | 5.0 KB | `.\tools\engine\sprite\include\str.h` |
-| UTF-8 BOM | 2.9 KB | `.\tools\engine\sprite\include\types.h` |
-| UTF-8 BOM | 6.8 KB | `.\tools\engine\sprite\include\ui_surface.h` |
-| UTF-8 BOM | 2.9 KB | `.\tools\engine\sprite\include\vector.h` |
-| UTF-8 BOM | 8.2 KB | `.\tools\engine\sprite\include\zone.h` |
+| UTF-8 BOM | 2.4 KB | `.\tools\engine\sprite\include\sprite.h` |
+| UTF-8 BOM | 1.8 KB | `.\tools\engine\sprite\include\spritepack.h` |
+| UTF-8 BOM | 4.7 KB | `.\tools\engine\sprite\include\str.h` |
+| UTF-8 BOM | 2.8 KB | `.\tools\engine\sprite\include\types.h` |
+| UTF-8 BOM | 6.6 KB | `.\tools\engine\sprite\include\ui_surface.h` |
+| UTF-8 BOM | 2.8 KB | `.\tools\engine\sprite\include\vector.h` |
+| UTF-8 BOM | 7.9 KB | `.\tools\engine\sprite\include\zone.h` |
 | UTF-8 | 13.3 KB | `.\tools\viewers\creature_viewer\main.cpp` |
 | UTF-8 | 7.9 KB | `.\tools\viewers\effect_viewer\EffectSpriteTypeTable.cpp` |
 | UTF-8 | 2.5 KB | `.\tools\viewers\effect_viewer\EffectSpriteTypeTable.h` |
@@ -2282,7 +2289,7 @@
 | UTF-8 BOM | 9.7 KB | `.\VS_UI\src\header\VS_UI_util.h` |
 | UTF-8 | 2.0 KB | `.\VS_UI\src\header\VS_UI_WebBrowser.h` |
 | UTF-8 BOM | 20.4 KB | `.\VS_UI\src\header\VS_UI_widget.h` |
-| UTF-8 | 2.8 KB | `.\VS_UI\src\Imm\CImm.cpp` |
+| UTF-8 | 2.7 KB | `.\VS_UI\src\Imm\CImm.cpp` |
 | UTF-8 | 1.5 KB | `.\VS_UI\src\Imm\CImm.h` |
 | UTF-8 | 55.1 KB | `.\VS_UI\src\Imm\FeelitAPI.h` |
 | UTF-8 | 1.9 KB | `.\VS_UI\src\Imm\IFC.h` |

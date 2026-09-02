@@ -1,4 +1,4 @@
-
+﻿
 //////////////////////////////////////////////////////////////////////
 //
 // Filename    : GCNotifyWinHandler.cc
@@ -22,7 +22,7 @@ void GCNotifyWinHandler::execute ( GCNotifyWin * pPacket , Player * pPlayer )
 	__BEGIN_TRY
 
 #ifdef __GAME_CLIENT__
-	// UI_RunImageNotice not implemented in SDL backend
+	// UI_RunImageNotice 는 SDL 백엔드에서 미구현 상태
 	// UI_RunImageNotice( pPacket->getName().c_str(), pPacket->getGiftID() );
 #endif
 

@@ -101,6 +101,30 @@
 
 ---
 
+---
+
+## 6차 번역 완료 (2026-09-03)
+
+아래 파일들은 영어 주석을 한글로 번역 완료 (vcxproj 줄 476~480 및 GamePacketFunctions.cpp 대상):
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/GamePacketFunctions.cpp` | 파일 헤더, 함수별 섹션 헤더(NewFakeCreature/SetFade*/SetPetInfo/SetGearInfo/SetExtraInfo/SetEffectInfo/ComeFromPortal/MoveIntoPortal/Skill*/SetPCSlayerInfo/AddItemToZone/g_PrintColorStr*/SetAddonTo*/AffectModifyInfo/SetInventoryInfo/SetPCOustersInfo/SetPCVampireInfo/CheckItemForSkillIcon/CreateActionResultNode 등), 전역 변수 섹션 헤더, InitPacketItemTable 내부 섹션 헤더, 스텁 구현 주석 전체 |
+| `Client/GameUI.cpp` | 4996줄 전체에서 영어 주석 130여개 번역 (Is Running/Run/Close/Set/Get 계열 섹션 헤더, sobeit/csm 작성 이력 주석, 스킬/파티/길드/캐릭터 정보 관련 섹션 헤더 등). 순수 함수명만 반복하는 헤더(UI_SetCharInfoSTR 등)와 주석 처리된 죽은 코드는 원문 유지 |
+| `Client/GCNotifyWin.cpp` | (번역 불필요 - 영어 설명 주석 없음) |
+| `Client/GCNotifyWin.h` | 멤버 변수 인라인 주석(NPC's object id, chatting message) |
+| `Client/GCNotifyWinHandler.cpp` | UI_RunImageNotice 미구현 주석 |
+| `Client/GetWinVer.cpp` | Windows 버전 판별 함수 내 섹션/인라인 주석 전체 |
+| `Client/GetWinVer.h` | 라이선스 헤더 주석 |
+| `Client/Globals.cpp` | 파일 헤더, 전역 변수/함수 섹션 헤더, 스텁 구현 주석 |
+| `Client/GlobalVariables.cpp` | 파일 헤더, include 주석, 전역 변수 그룹 섹션 헤더 전체(플랫폼/메시지배열/네트워크/사운드/존/매니저/그래픽/입력상태/게임상태/FPS/렌더링플래그/기타/패킷시스템/설정파일/MP3/비디오음악/게임모드/존설정/관전모드/마우스위치/크리처변신/사운드설정/클라이언트통신/VS_UI) |
+| `Client/GuildInfo.cpp` | 디버그 문자열 주석 |
+| `Client/GuildInfo.h` | getSize/toString/getter·setter 주석 |
+| `Client/GuildMemberInfo.cpp` | 디버그 문자열 주석 |
+| `Client/GuildMemberInfo.h` | getSize/toString/getter·setter/멤버 변수 주석 |
+
+---
+
 ## 다음 번역 대상 (vcxproj 기준 이후 파일들)
 
-vcxproj 줄 472 이후 파일들은 미번역 상태.
+vcxproj 줄 481 이후 파일들(`LeakMemoryDumper.cpp`부터)은 미번역 상태.

@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////////////////////
+﻿//////////////////////////////////////////////////////////////////////////////
 // Filename    : GCNotifyWin.h 
 // Written By  : excel96
 // Description : 
@@ -33,8 +33,8 @@ public:
 	void setName(const string & msg) throw() { m_Name = msg; }
 
 private:
-	DWORD		m_GiftID; // NPC's object id
-	string		m_Name;  // chatting message
+	DWORD		m_GiftID; // NPC의 오브젝트 ID
+	string		m_Name;  // 채팅 메시지
 	
 };
 

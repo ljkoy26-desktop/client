@@ -1,9 +1,9 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	client_PCH.h
 
-	Minimal precompiled header for CMake builds.
-	Replaces the original VC6 precompiled header.
+	CMake 빌드를 위한 최소한의 미리 컴파일된 헤더.
+	원본 VC6 미리 컴파일된 헤더를 대체한다.
 
 	2025.01.14
 
@@ -12,13 +12,13 @@
 #ifndef __CLIENT_PCH_H__
 #define __CLIENT_PCH_H__
 
-/* Define this as a game client build */
+/* 게임 클라이언트 빌드임을 정의한다 */
 #define __GAME_CLIENT__
 
-/* Platform types */
+/* 플랫폼 타입 */
 #include "../basic/Platform.h"
 
-/* Standard C++ library */
+/* 표준 C++ 라이브러리 */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -26,10 +26,10 @@
 #include <time.h>
 #include <iostream>
 
-/* Use standard namespace for convenience */
+/* 편의를 위해 표준 네임스페이스를 사용한다 */
 using namespace std;
 
-/* RECT definition for non-Windows platforms */
+/* Windows가 아닌 플랫폼을 위한 RECT 정의 */
 #ifndef PLATFORM_WINDOWS
 #ifndef RECT_DEFINED
 #define RECT_DEFINED
@@ -41,7 +41,7 @@ typedef struct tagRECT {
 } RECT, *PRECT, *LPRECT;
 #endif
 
-/* POINT definition */
+/* POINT 정의 */
 #ifndef POINT_DEFINED
 #define POINT_DEFINED
 typedef struct tagPOINT {
@@ -50,7 +50,7 @@ typedef struct tagPOINT {
 } POINT, *PPOINT, *LPPOINT;
 #endif
 
-/* SIZE definition */
+/* SIZE 정의 */
 #ifndef SIZE_DEFINED
 #define SIZE_DEFINED
 typedef struct tagSIZE {
@@ -61,7 +61,7 @@ typedef struct tagSIZE {
 
 #endif /* PLATFORM_WINDOWS */
 
-/* Exception handling for Packet system */
+/* Packet 시스템을 위한 예외 처리 */
 #include "Packet/Exception.h"
 
 #endif /* __CLIENT_PCH_H__ */

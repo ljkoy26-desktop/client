@@ -1,4 +1,4 @@
- //-----------------------------------------------------------------------------
+﻿ //-----------------------------------------------------------------------------
 // GameUI.cpp`
 //-----------------------------------------------------------------------------
 // UI의 message를 처리하는 부분이다.
@@ -70,7 +70,7 @@
 #include "packet/GPackets/GCMiniGameScores.h"
 #include "SystemAvailabilities.h"
 #include "VS_UI_GameCommon2.h"
-//add by viva : include friend file
+//viva 추가 : 친구 파일 포함
 #include "Gpackets/GCFriendChatting.h"
 //#include "mintr.h"
 #include "MGameTime.h"
@@ -91,8 +91,8 @@ BOOL g_bDrawProgress = FALSE;
 extern IWebBrowser2*			g_pWebBrowser; 
 
 ///////////////////////////////////////////////////////////////////////////////
-//UI friend system
-//add by viva
+//UI 친구 시스템
+//viva 추가
 ///////////////////////////////////////////////////////////////////////////////
 extern C_VS_UI_FRIEND_INFO* gpC_vs_ui_friend_info;
 void
@@ -143,7 +143,7 @@ void UI_FriendChatting_Message(GCFriendChatting* pPacket)
 //--------------------------------------------------------------------------------
 //UI_Friend_REQUEST
 //
-//add by viva
+//viva 추가
 //--------------------------------------------------------------------------------
 void UI_RunFriendRequest(GCFriendChatting* pPacket)
 {
@@ -237,7 +237,7 @@ void UI_RunFriendDelete(GCFriendChatting* pPacket)
 
 
 //-----------------------------------------------------------------------------
-// Is Running SelectWayPoint
+// SelectWayPoint 실행 중인지 확인
 //-----------------------------------------------------------------------------
 bool
 UI_IsRunningSelectWayPoint()
@@ -246,7 +246,7 @@ UI_IsRunningSelectWayPoint()
 }
 
 //-----------------------------------------------------------------------------
-// Run SelectWayPoint
+// SelectWayPoint 실행
 //-----------------------------------------------------------------------------
 void
 UI_RunSelectWayPoint()
@@ -255,7 +255,7 @@ UI_RunSelectWayPoint()
 }
 
 //-----------------------------------------------------------------------------
-// Close SelectWayPoint
+// SelectWayPoint 닫기
 //-----------------------------------------------------------------------------
 void
 UI_CloseSelectWayPoint()
@@ -264,7 +264,7 @@ UI_CloseSelectWayPoint()
 }
 
 //-----------------------------------------------------------------------------
-// Save UserOption
+// UserOption 저장
 //-----------------------------------------------------------------------------
 // UI의 UserOption정보를 화일로 저장한다.
 //-----------------------------------------------------------------------------
@@ -281,7 +281,7 @@ UI_SaveUserOption()
 }
 
 //-----------------------------------------------------------------------------
-// Add EffectStatus
+// EffectStatus 추가
 //-----------------------------------------------------------------------------
 void		
 UI_AffectUserOption()
@@ -293,7 +293,7 @@ UI_AffectUserOption()
 //		g_SDLAudio.SetMute();
 
 		//--------------------------------------------------------------
-		// QuickSlot
+		// 퀵슬롯
 		//--------------------------------------------------------------
 		//if (g_pUserOption->OpenQuickSlot)
 		{
@@ -305,7 +305,7 @@ UI_AffectUserOption()
 		}
 
 		//--------------------------------------------------------------
-		// Minimap
+		// 미니맵
 		//--------------------------------------------------------------
 //		if (g_pUserOption->DrawMinimap)
 //		{
@@ -328,7 +328,7 @@ UI_AffectUserOption()
 }
 
 //-----------------------------------------------------------------------------
-// Add EffectStatus
+// EffectStatus 추가
 //-----------------------------------------------------------------------------
 void		
 UI_AddEffectStatus(int es, DWORD delayFrame)
@@ -357,10 +357,10 @@ UI_AddEffectStatus(int es, DWORD delayFrame)
 				//-----------------------------------------------------------------
 				if (itr->actionInfo == ai)
 				{
-					// 2004, 6, 11 sobeit add start - 옵저빙아이,블레스 등등, delay 버그때문에 delay만 갱신
+					// 2004, 6, 11 sobeit 추가 시작 - 옵저빙아이,블레스 등등, delay 버그때문에 delay만 갱신
 					if(delayFrame)
 						(itr->delayFrame = timeGetTime()+delayFrame*1000/16);
-					// 2004, 6, 11 sobeit add end
+					// 2004, 6, 11 sobeit 추가 끝
 					return;
 				}
 
@@ -378,16 +378,16 @@ UI_AddEffectStatus(int es, DWORD delayFrame)
 			if(ai == SKILL_BLOOD_DRAIN)
 			{
 				g_char_slot_ingame.bl_drained = true;
-				// 2004, 5, 7, sobeit add start - 흡혈 당했을 때 도움말을 보여준다.
+				// 2004, 5, 7, sobeit 추가 시작 - 흡혈 당했을 때 도움말을 보여준다.
 			//	ExecuteHelpEvent( HELP_EVENT_DRAIN_BLOOD ); 
-				// 2004, 5, 6, sobeit add end
+				// 2004, 5, 6, sobeit 추가 끝
 			}
 		}
 	}
 }
 
 //-----------------------------------------------------------------------------
-// Add EffectStatus
+// EffectStatus 추가
 //-----------------------------------------------------------------------------
 void		
 UI_RemoveEffectStatus(int es)
@@ -432,7 +432,7 @@ UI_RemoveEffectStatus(int es)
 }
 
 //-----------------------------------------------------------------------------
-// Set WorldList
+// WorldList 설정
 //-----------------------------------------------------------------------------
 void
 UI_SetWorldList()
@@ -499,7 +499,7 @@ UI_SetWorldList()
 }
 
 //-----------------------------------------------------------------------------
-// Set ServerList
+// ServerList 설정
 //-----------------------------------------------------------------------------
 void
 UI_SetServerList()
@@ -571,7 +571,7 @@ UI_SetServerList()
 }
 
 //-----------------------------------------------------------------------------
-// Set Current ServerName
+// 현재 ServerName 설정
 //-----------------------------------------------------------------------------
 void	
 UI_SetCurrentServerName(const char *name, int status)
@@ -580,7 +580,7 @@ UI_SetCurrentServerName(const char *name, int status)
 }
 
 //-----------------------------------------------------------------------------
-// IsRunningSelectExplosive
+// SelectExplosive 실행 중인지 확인
 //-----------------------------------------------------------------------------
 BOOL		
 UI_IsRunningSelectExplosive()
@@ -635,7 +635,7 @@ UI_RemoveDescriptor(void* pPtr)
 }
 
 //-----------------------------------------------------------------------------
-// Is Running Interface
+// 인터페이스 실행 중인지 확인
 //-----------------------------------------------------------------------------
 BOOL
 UI_IsRunningExchange()
@@ -644,7 +644,7 @@ UI_IsRunningExchange()
 }
 
 //-----------------------------------------------------------------------------
-// Is Running Storage
+// 보관함 실행 중인지 확인
 //-----------------------------------------------------------------------------
 BOOL
 UI_IsRunningStorage()
@@ -653,7 +653,7 @@ UI_IsRunningStorage()
 }
 
 //-----------------------------------------------------------------------------
-// Is Running Shop
+// 상점 실행 중인지 확인
 //-----------------------------------------------------------------------------
 BOOL
 UI_IsRunningShop()
@@ -662,7 +662,7 @@ UI_IsRunningShop()
 }
 
 //-----------------------------------------------------------------------------
-// Is Running Bookcase
+// Bookcase 실행 중인지 확인
 //-----------------------------------------------------------------------------
 BOOL
 UI_IsRunningBookcase()
@@ -671,7 +671,7 @@ UI_IsRunningBookcase()
 }
 
 //-----------------------------------------------------------------------------
-// Is Running Repair
+// 수리 실행 중인지 확인
 //-----------------------------------------------------------------------------
 BOOL 
 UI_IsRunningRepair()
@@ -680,7 +680,7 @@ UI_IsRunningRepair()
 }
 
 //-----------------------------------------------------------------------------
-// Is Running Silvering
+// 은도금 실행 중인지 확인
 //-----------------------------------------------------------------------------
 BOOL 
 UI_IsRunningSilvering()
@@ -690,7 +690,7 @@ UI_IsRunningSilvering()
 
 
 //-----------------------------------------------------------------------------
-// Is Running Sell
+// 판매 실행 중인지 확인
 //-----------------------------------------------------------------------------
 BOOL
 UI_IsRunningSell()
@@ -699,7 +699,7 @@ UI_IsRunningSell()
 }
 
 //-----------------------------------------------------------------------------
-// Is Running Tutorial Exit
+// Tutorial Exit 실행 중인지 확인
 //-----------------------------------------------------------------------------
 BOOL		
 UI_IsRunningTutorialExit()
@@ -709,7 +709,7 @@ UI_IsRunningTutorialExit()
 }
 
 //-----------------------------------------------------------------------------
-// Is Running Briefing
+// Briefing 실행 중인지 확인
 //-----------------------------------------------------------------------------
 BOOL		
 UI_IsRunningBriefing()
@@ -719,7 +719,7 @@ UI_IsRunningBriefing()
 }
 
 //-----------------------------------------------------------------------------
-// Is Running Computer
+// Computer 실행 중인지 확인
 //-----------------------------------------------------------------------------
 BOOL		
 UI_IsRunningComputer()
@@ -728,7 +728,7 @@ UI_IsRunningComputer()
 }
 
 //-----------------------------------------------------------------------------
-// Is Run Briefing
+// Briefing 실행 중인지 확인
 //-----------------------------------------------------------------------------
 void		
 UI_RunBriefing()
@@ -742,7 +742,7 @@ UI_RunBriefing()
 }
 
 //-----------------------------------------------------------------------------
-// Is Run Computer
+// Computer 실행 중인지 확인
 //-----------------------------------------------------------------------------
 void		
 UI_RunComputer()
@@ -767,7 +767,7 @@ UI_RunComputer()
 }
 
 //-----------------------------------------------------------------------------
-// Is Run Tutorial Exit
+// Tutorial Exit 실행 중인지 확인
 //-----------------------------------------------------------------------------
 void		
 UI_RunTutorialExit()
@@ -776,7 +776,7 @@ UI_RunTutorialExit()
 }
 
 //-----------------------------------------------------------------------------
-// Is Close Briefing
+// Briefing 닫혔는지 확인
 //-----------------------------------------------------------------------------
 void		
 UI_CloseBriefing()
@@ -790,7 +790,7 @@ UI_CloseBriefing()
 }
 
 //-----------------------------------------------------------------------------
-// Is Close Computer
+// Computer 닫혔는지 확인
 //-----------------------------------------------------------------------------
 void		
 UI_CloseComputer()
@@ -807,7 +807,7 @@ UI_CloseComputer()
 }
 
 //-----------------------------------------------------------------------------
-// Is Close Tutorial Exit
+// Tutorial Exit 닫혔는지 확인
 //-----------------------------------------------------------------------------
 void		
 UI_CloseTutorialExit()
@@ -821,7 +821,7 @@ UI_CloseTutorialExit()
 void		
 UI_RunExchangeAsk(TYPE_OBJECTID otherID)
 {
-	// by csm 12/4
+	// csm 작성, 12/4
 	MCreature* pCreature = g_pZone->GetCreature( otherID );
 	if(pCreature == NULL)
 	{
@@ -850,7 +850,7 @@ UI_RunExchangeAsk(TYPE_OBJECTID otherID)
 }
 
 //-----------------------------------------------------------------------------
-// Run ExchangeCancel
+// ExchangeCancel 실행
 //-----------------------------------------------------------------------------
 void
 UI_RunExchangeCancel(const char* pName)
@@ -864,7 +864,7 @@ UI_RunExchangeCancel(const char* pName)
 }
 
 //-----------------------------------------------------------------------------
-// Run Exchange
+// Exchange 실행
 //-----------------------------------------------------------------------------
 void
 UI_RunExchange(TYPE_OBJECTID otherID)
@@ -947,7 +947,7 @@ UI_RunExchange(TYPE_OBJECTID otherID)
 }
 
 //-----------------------------------------------------------------------------
-// Run Bookcase
+// Bookcase 실행
 //-----------------------------------------------------------------------------
 void
 UI_RunBookcase()
@@ -956,7 +956,7 @@ UI_RunBookcase()
 }
 
 //-----------------------------------------------------------------------------
-// Close Bookcase
+// Bookcase 닫기
 //-----------------------------------------------------------------------------
 void
 UI_CloseBookcase()
@@ -965,7 +965,7 @@ UI_CloseBookcase()
 }
 
 //-----------------------------------------------------------------------------
-// Close Shop
+// 상점 닫기
 //-----------------------------------------------------------------------------
 void
 UI_CloseShop()
@@ -974,7 +974,7 @@ UI_CloseShop()
 }
 
 //-----------------------------------------------------------------------------
-// Close Storage
+// 보관함 닫기
 //-----------------------------------------------------------------------------
 void
 UI_CloseStorage()
@@ -1000,7 +1000,7 @@ UI_CloseStorage()
 
 
 //-----------------------------------------------------------------------------
-// Close Exchange
+// Exchange 닫기
 //-----------------------------------------------------------------------------
 void
 UI_CloseExchange()
@@ -1033,7 +1033,7 @@ UI_CloseExchange()
 }
 
 //-----------------------------------------------------------------------------
-// Close Exchange Ask
+// Exchange Ask 닫기
 //-----------------------------------------------------------------------------
 void
 UI_CloseExchangeAsk()
@@ -1059,7 +1059,7 @@ UI_CloseExchangeAsk()
 }
 
 //-----------------------------------------------------------------------------
-// Close Exchange Cancel
+// Exchange Cancel 닫기
 //-----------------------------------------------------------------------------
 void
 UI_CloseExchangeCancel()
@@ -1086,7 +1086,7 @@ UI_BackupLoginID(char *id)
 }
 
 //--------------------------------------------------------------------------------
-// Close All Dialog
+// 모든 Dialog 닫기
 //--------------------------------------------------------------------------------
 void
 UI_CloseAllDialog()
@@ -1173,7 +1173,7 @@ UI_SetHotKey(int hotkey, int id)
 }
 
 //--------------------------------------------------------------------------------
-// Get Hotkey
+// 단축키 가져오기
 //--------------------------------------------------------------------------------
 int		
 UI_GetHotKey(int hotkey)
@@ -1460,7 +1460,7 @@ UI_SetSkillPoint(int sp)
 
 
 //-----------------------------------------------------------------------------
-// Is Vampire Interface
+// Vampire 인터페이스인지 확인
 //-----------------------------------------------------------------------------
 Race
 UI_GetInterfaceRace()
@@ -1488,7 +1488,7 @@ UI_GetInterfaceRace()
 //}
 
 //-----------------------------------------------------------------------------
-// Already Exist ID Message
+// 이미 존재하는 ID 메시지
 //-----------------------------------------------------------------------------
 void
 UI_AlreadyExistIDMessage()
@@ -1497,7 +1497,7 @@ UI_AlreadyExistIDMessage()
 }
 
 //-----------------------------------------------------------------------------
-// No Already Exist ID Message
+// ID가 존재하지 않는다는 메시지
 //-----------------------------------------------------------------------------
 void
 UI_NoAlreadyExistIDMessage()
@@ -1506,7 +1506,7 @@ UI_NoAlreadyExistIDMessage()
 }
 
 //-----------------------------------------------------------------------------
-// Disconnect PCS
+// PCS 연결 해제
 //-----------------------------------------------------------------------------
 /*
 void
@@ -1517,7 +1517,7 @@ UI_DisconnectPCS(int slot)
 */
 
 //-----------------------------------------------------------------------------
-// PCS Connection Failed
+// PCS 연결 실패
 //-----------------------------------------------------------------------------
 /*
 void
@@ -1548,7 +1548,7 @@ UI_AcquireQuitPCSOnlineModeMessage()
 */
 
 //-----------------------------------------------------------------------------
-// Please Connect PCS
+// PCS 연결 요청 메시지
 //-----------------------------------------------------------------------------
 /*
 void	
@@ -1559,7 +1559,7 @@ UI_PleaseConnectPCS(char * sz_name, long pcs_number, int slot)
 */
 
 //-----------------------------------------------------------------------------
-// OnLine PCS
+// PCS 온라인
 //-----------------------------------------------------------------------------
 /*
 void	
@@ -1581,7 +1581,7 @@ UI_AcquirePDSClosedMessage()
 */
 
 //-----------------------------------------------------------------------------
-// Change To Vampire Interface
+// Vampire 인터페이스로 전환
 //-----------------------------------------------------------------------------
 void		
 UI_ChangeInterfaceRace(Race race)
@@ -1625,7 +1625,7 @@ UI_ChangeInterfaceRace(Race race)
 }
 
 //-----------------------------------------------------------------------------
-// Change To Slayer Interface
+// Slayer 인터페이스로 전환
 //-----------------------------------------------------------------------------
 //void		
 //UI_ChangeToSlayerInterface()
@@ -1660,7 +1660,7 @@ UI_GetMouseItem()
 }
 
 //-----------------------------------------------------------------------------
-// Get Inventory GridPosition
+// 인벤토리 그리드 위치 가져오기
 //-----------------------------------------------------------------------------
 POINT	
 UI_GetInventoryGridPosition(int x, int y)
@@ -1673,7 +1673,7 @@ UI_GetInventoryGridPosition(int x, int y)
 }
 
 //-----------------------------------------------------------------------------
-// Get Inventory Position
+// 인벤토리 위치 가져오기
 //-----------------------------------------------------------------------------
 POINT	
 UI_GetInventoryPosition()
@@ -1686,7 +1686,7 @@ UI_GetInventoryPosition()
 }
 
 //-----------------------------------------------------------------------------
-// Lock Item Trade
+// 아이템 거래 잠금
 //-----------------------------------------------------------------------------
 void
 UI_LockItemTrade()
@@ -1697,7 +1697,7 @@ UI_LockItemTrade()
 }
 
 //-----------------------------------------------------------------------------
-// UnLock Item Trade
+// 아이템 거래 잠금 해제
 //-----------------------------------------------------------------------------
 void
 UI_UnlockItemTrade()
@@ -1708,7 +1708,7 @@ UI_UnlockItemTrade()
 }
 
 //-----------------------------------------------------------------------------
-//  Run Skill Tree ( domain )
+//  Skill Tree 실행 ( domain )
 //-----------------------------------------------------------------------------
 void
 UI_RunSkillTree(int domain, int maxLevel)
@@ -1773,7 +1773,7 @@ UI_RunSkillTree(int domain, int maxLevel)
 		g_pPCTalkBox->Release();		// 
 
 		//---------------------------------------------------
-		// normal
+		// 일반
 		//---------------------------------------------------
 		g_pPCTalkBox->SetType( PCTalkBox::SKILL_LEARN );
 
@@ -1861,7 +1861,7 @@ UI_RunSkillTree(int domain, int maxLevel)
 }
 
 //-----------------------------------------------------------------------------
-// Open Inventory To Sell
+// 판매용 인벤토리 열기
 //-----------------------------------------------------------------------------
 void
 UI_OpenInventoryToSell()
@@ -1873,7 +1873,7 @@ UI_OpenInventoryToSell()
 }
 
 //-----------------------------------------------------------------------------
-// Open Inventory To Repair
+// 수리용 인벤토리 열기
 //-----------------------------------------------------------------------------
 void
 UI_OpenInventoryToRepair()
@@ -1885,7 +1885,7 @@ UI_OpenInventoryToRepair()
 }
 
 //-----------------------------------------------------------------------------
-// Open Inventory To Silvering
+// 은도금용 인벤토리 열기
 //-----------------------------------------------------------------------------
 void
 UI_OpenInventoryToSilvering()
@@ -1898,7 +1898,7 @@ UI_OpenInventoryToSilvering()
 
 
 //-----------------------------------------------------------------------------
-// Close Repair
+// 수리 닫기
 //-----------------------------------------------------------------------------
 void
 UI_CloseRepair()
@@ -1907,7 +1907,7 @@ UI_CloseRepair()
 }
 
 //-----------------------------------------------------------------------------
-// Close Silvering
+// 은도금 닫기
 //-----------------------------------------------------------------------------
 void
 UI_CloseSilvering()
@@ -1916,7 +1916,7 @@ UI_CloseSilvering()
 }
 
 //-----------------------------------------------------------------------------
-// Close Sell
+// 판매 닫기
 //-----------------------------------------------------------------------------
 void
 UI_CloseSell()
@@ -1925,21 +1925,21 @@ UI_CloseSell()
 }
 
 //-----------------------------------------------------------------------------
-// Run Shop
+// 상점 실행
 //-----------------------------------------------------------------------------
 void
 UI_RunShop()
 {
 	// NPC대화하는 dialog를 숨긴다
 	g_pUIDialog->HidePCTalkDlg();
-	// 2004, 8, 17, sobeit add start - 상점창 여는 동시에 esc키 눌러서 치료대화를 이용하는 버그 때문에 추가
+	// 2004, 8, 17, sobeit 추가 시작 - 상점창 여는 동시에 esc키 눌러서 치료대화를 이용하는 버그 때문에 추가
 	g_pUIDialog->SetLockInputPCTalk();
-	// 2004, 8, 17, sobeit add end
+	// 2004, 8, 17, sobeit 추가 끝
 	gC_vs_ui.RunShop();
 }
 
 //-----------------------------------------------------------------------------
-// Set Shop
+// 상점 설정
 //-----------------------------------------------------------------------------
 void
 UI_SetShop(MShop* pShop)
@@ -1948,7 +1948,7 @@ UI_SetShop(MShop* pShop)
 }
 
 //-----------------------------------------------------------------------------
-// Run Storage Buy
+// 보관함 구매 실행
 //-----------------------------------------------------------------------------
 // 보관함 살래말래? 가격은 price
 //-----------------------------------------------------------------------------
@@ -1962,7 +1962,7 @@ UI_RunStorageBuy(int price)
 }
 
 //-----------------------------------------------------------------------------
-// Run Storage
+// 보관함 실행
 //-----------------------------------------------------------------------------
 void
 UI_RunStorage()
@@ -1976,7 +1976,7 @@ UI_RunStorage()
 	g_pStorage->SetActive();
 }
 //-----------------------------------------------------------------------------
-// Run Pet Storage
+// 펫 보관함 실행
 //-----------------------------------------------------------------------------
 void
 UI_RunPetStorage()
@@ -1990,7 +1990,7 @@ UI_RunPetStorage()
 	g_pStorage->SetActive();
 }
 //-----------------------------------------------------------------------------
-// Set Storage
+// 보관함 설정
 //-----------------------------------------------------------------------------
 void
 UI_SetStorage(MStorage* pStorage)
@@ -1998,7 +1998,7 @@ UI_SetStorage(MStorage* pStorage)
 	gC_vs_ui.SetStorage( pStorage );
 }
 //-----------------------------------------------------------------------------
-// Set Storage
+// 보관함 설정
 //-----------------------------------------------------------------------------
 void
 UI_SetPetStorage(MStorage* pStorage)
@@ -2016,7 +2016,7 @@ UI_StartCharacterManager()
 }
 
 //-----------------------------------------------------------------------------
-// New Character Create OK
+// 캐릭터 생성 성공
 //-----------------------------------------------------------------------------
 // 새 캐릭터 생성 성공
 //-----------------------------------------------------------------------------
@@ -2027,7 +2027,7 @@ UI_NewCharacterCreateOk()
 }
 
 //-----------------------------------------------------------------------------
-// New Character Create Failed
+// 캐릭터 생성 실패
 //-----------------------------------------------------------------------------
 // 새 캐릭터 생성이 실패한 경우
 //-----------------------------------------------------------------------------
@@ -2038,7 +2038,7 @@ UI_NewCharacterCreateFailed(int error)
 }
 
 //-----------------------------------------------------------------------------
-// Delete Character OK
+// 캐릭터 삭제 성공
 //-----------------------------------------------------------------------------
 // 캐릭터 삭제 성공
 //-----------------------------------------------------------------------------
@@ -2050,7 +2050,7 @@ UI_DeleteCharacterOK()
 }
 
 //-----------------------------------------------------------------------------
-// Delete Character Failed
+// 캐릭터 삭제 실패
 //-----------------------------------------------------------------------------
 // 캐릭터 삭제 실패 - 주민등록번호.. 문제. - -;
 //-----------------------------------------------------------------------------
@@ -2084,7 +2084,7 @@ UI_StartGame()
 
 
 //-----------------------------------------------------------------------------
-// Set NPC Info
+// NPC 정보 설정
 //-----------------------------------------------------------------------------
 // Zone에 존재하는 NPC에 대한 정보를 설정한다.
 //-----------------------------------------------------------------------------
@@ -2096,12 +2096,12 @@ UI_SetNPCInfo( const char* pName, int npcID, int x, int y )
 }
 
 //-----------------------------------------------------------------------------
-// Set Character
+// Character 설정
 //-----------------------------------------------------------------------------
 void
 UI_SetCharacter(int slotID, PCSlayerInfo * pInfo)
 {
-	// set character
+	// 캐릭터 설정
 	S_SLOT slot;
 	ZeroMemory(&slot, sizeof(S_SLOT));
 
@@ -2133,8 +2133,8 @@ UI_SetCharacter(int slotID, PCSlayerInfo * pInfo)
 	slot.INT_EXP_REMAIN = pInfo->getINTExp();
 	slot.STATUS.clear();
 
-	// Map WeaponType to SKILLDOMAIN
-	// WeaponType enum has 19 values (0-18), so array must have WEAPON_MAX elements
+	// WeaponType 을 SKILLDOMAIN 으로 매핑
+	// WeaponType enum 은 19개의 값(0-18)을 가지므로 배열은 WEAPON_MAX 개의 요소를 가져야 한다
 	SKILLDOMAIN weaponDomain[WEAPON_MAX] =
 	{
 		MAX_SKILLDOMAIN,          // WEAPON_NONE (0)
@@ -2158,7 +2158,7 @@ UI_SetCharacter(int slotID, PCSlayerInfo * pInfo)
 		SKILLDOMAIN_HEAL,         // WEAPON_MACE1 (18)
 	};
 
-	// Validate weapon type before accessing array
+	// 배열 접근 전에 weapon type 검증
 	WeaponType weaponType = pInfo->getWeaponType();
 	if (weaponType >= 0 && weaponType < WEAPON_MAX)
 	{
@@ -2166,7 +2166,7 @@ UI_SetCharacter(int slotID, PCSlayerInfo * pInfo)
 	}
 	else
 	{
-		// Fallback to ETC domain if weapon type is invalid
+		// weapon type 이 유효하지 않으면 ETC domain 으로 대체
 		g_StatusManager.SetCurrentWeaponDomain( SKILLDOMAIN_ETC, 1 );
 	}
 
@@ -2456,7 +2456,7 @@ UI_SetCharacter(int slotID, PCSlayerInfo * pInfo)
 }
 
 //-----------------------------------------------------------------------------
-// Set Character
+// Character 설정
 //-----------------------------------------------------------------------------
 void
 UI_SetCharacter(int slotID, PCVampireInfo * pInfo)
@@ -2512,11 +2512,11 @@ UI_SetCharacter(int slotID, PCVampireInfo * pInfo)
 	slot.GRADE	= pInfo->getRank();
 //	slot.NOTERITY = pInfo->getNotoriety();
 
-	// coat
+	// 코트
 	int coatType = pInfo->getCoatType();
 	int coatColor = pInfo->getCoatColor();
 
-	// color
+	// 색상
 	slot.skin_color	= pInfo->getSkinColor();
 	slot.hair_color = pInfo->getBatColor();
 	slot.m_AdvancementLevel = pInfo->getAdvancementLevel();
@@ -2559,7 +2559,7 @@ UI_SetCharacter(int slotID, PCVampireInfo * pInfo)
 	/*
 	if (slot.bl_female)
 	{
-		// default .. 나중에 바꿔야 한다.
+		// 기본값 .. 나중에 바꿔야 한다.
 		slot.coat_color = 38;
 	}
 	//------------------------------------------------------------
@@ -2567,7 +2567,7 @@ UI_SetCharacter(int slotID, PCVampireInfo * pInfo)
 	//------------------------------------------------------------
 	else
 	{
-		// default 
+		// 기본값
 		slot.coat_color = 91;
 	}
 	*/
@@ -2592,7 +2592,7 @@ UI_SetCharacter(int slotID, PCVampireInfo * pInfo)
 }
 
 //-----------------------------------------------------------------------------
-// Set Character
+// Character 설정
 //-----------------------------------------------------------------------------
 void
 UI_SetCharacter(int slotID, PCOustersInfo * pInfo)
@@ -2647,7 +2647,7 @@ UI_SetCharacter(int slotID, PCOustersInfo * pInfo)
 	slot.m_AdvancementLevel = pInfo->getAdvancementLevel();
 //	slot.NOTERITY = pInfo->getNotoriety();
 
-	// coat
+	// 코트
 	int coatType = pInfo->getCoatType();
 	int coatColor = pInfo->getCoatColor();
 	int weaponType = pInfo->getArmType();
@@ -2655,7 +2655,7 @@ UI_SetCharacter(int slotID, PCOustersInfo * pInfo)
 	int bootsColor = pInfo->getBootsColor();
 	int armColor = pInfo->getArmColor();
 
-	// color
+	// 색상
 //	slot.skin_color	= pInfo->getSkinColor();
 	slot.hair_color = pInfo->getHairColor();
 
@@ -2673,7 +2673,7 @@ UI_SetCharacter(int slotID, PCOustersInfo * pInfo)
 //
 //	int spriteType = (*g_pCreatureTable)[creatureType].SpriteType;
 
-	// Check if g_pPacketItemOustersCoat array is properly initialized
+	// g_pPacketItemOustersCoat 배열이 제대로 초기화되었는지 확인
 	int spriteType = 0;  // Default fallback
 	if (coatType < 0 || coatType >= OUSTERS_COAT_MAX) {
 		fprintf(stderr, "ERROR: UI_SetCharacter: coatType=%d is out of range [0, %d)\n", coatType, OUSTERS_COAT_MAX);
@@ -2713,7 +2713,7 @@ UI_SetCharacter(int slotID, PCOustersInfo * pInfo)
 	/*
 	if (slot.bl_female)
 	{
-		// default .. 나중에 바꿔야 한다.
+		// 기본값 .. 나중에 바꿔야 한다.
 		slot.coat_color = 38;
 	}
 	//------------------------------------------------------------
@@ -2721,7 +2721,7 @@ UI_SetCharacter(int slotID, PCOustersInfo * pInfo)
 	//------------------------------------------------------------
 	else
 	{
-		// default 
+		// 기본값
 		slot.coat_color = 91;
 	}
 	*/
@@ -2749,7 +2749,7 @@ UI_SetCharacter(int slotID, PCOustersInfo * pInfo)
 
 
 //-----------------------------------------------------------------------------
-// Start Progress
+// 진행 시작
 //-----------------------------------------------------------------------------
 void
 UI_StartProgress(int zoneID)
@@ -2825,7 +2825,7 @@ UI_StartProgress(int zoneID)
 	PROGRESS_SPK_INDEX index;
 			
 	//----------------------------------------------------------------
-	// tutorial 
+	// 튜토리얼
 	//----------------------------------------------------------------
 	if (oldZoneID==2106 
 		|| zoneID==2106)
@@ -2833,7 +2833,7 @@ UI_StartProgress(int zoneID)
 		index = TUTORIAL_HELIPORT;
 	}
 	//----------------------------------------------------------------
-	// dungeon
+	// 던전
 	//----------------------------------------------------------------
 	else if (oldZoneID==1002 || oldZoneID==1003 || oldZoneID==1004
 			|| zoneID==1002 || zoneID==1003 || zoneID==1004)
@@ -2841,7 +2841,7 @@ UI_StartProgress(int zoneID)
 		index = DUNGEON_EXIT;
 	}
 	//----------------------------------------------------------------
-	// Slayer random
+	// Slayer 랜덤
 	//----------------------------------------------------------------
 	else if (g_pPlayer!=NULL && g_pPlayer->IsSlayer())
 	{
@@ -2859,7 +2859,7 @@ UI_StartProgress(int zoneID)
 		DEBUG_ADD("[UI] Start Progress : Slayer Random OK");
 	}
 	//----------------------------------------------------------------
-	// Vampire random
+	// Vampire 랜덤
 	//----------------------------------------------------------------
 	else
 	{
@@ -2886,7 +2886,7 @@ UI_StartProgress(int zoneID)
 }
 
 //-----------------------------------------------------------------------------
-// Draw Progess
+// 진행 그리기
 //-----------------------------------------------------------------------------
 void		
 UI_DrawProgress(int percent)
@@ -2939,7 +2939,7 @@ UI_DrawProgress(int percent)
 }
 
 //-----------------------------------------------------------------------------
-// End Progess
+// 진행 종료
 //-----------------------------------------------------------------------------
 void		
 UI_EndProgress()
@@ -2952,7 +2952,7 @@ UI_EndProgress()
 }
 
 //-----------------------------------------------------------------------------
-// Set HP
+// HP 설정
 //-----------------------------------------------------------------------------
 void
 UI_SetHP(int current, int max)
@@ -3039,7 +3039,7 @@ UI_SetHP(int current, int max)
 }
 
 //-----------------------------------------------------------------------------
-// Set MP
+// MP 설정
 //-----------------------------------------------------------------------------
 void
 UI_SetMP(int current, int max)
@@ -3083,7 +3083,7 @@ UI_SetMP(int current, int max)
 }
 
 //-----------------------------------------------------------------------------
-// Add Chat To History
+// 채팅을 히스토리에 추가
 //-----------------------------------------------------------------------------
 void
 UI_AddChatToHistory(char* str, char* sz_id, int cond, DWORD color) // const로 하면 안됨! (6/23, KJTINC)
@@ -3143,7 +3143,7 @@ const char g_sz_chat_id_divisor[CLD_TOTAL][3] =
 }
 
 //-----------------------------------------------------------------------------
-// Drop Item
+// 아이템 드롭
 //-----------------------------------------------------------------------------
 void
 UI_DropItem()
@@ -3152,7 +3152,7 @@ UI_DropItem()
 }
 
 //-----------------------------------------------------------------------------
-// Pickup Item
+// 아이템 줍기
 //-----------------------------------------------------------------------------
 void
 UI_PickUpItem(MItem* pItem)
@@ -3164,7 +3164,7 @@ UI_PickUpItem(MItem* pItem)
 }
 
 //-----------------------------------------------------------------------------
-// Lock Item
+// 아이템 잠금
 //-----------------------------------------------------------------------------
 void
 UI_LockItem()
@@ -3175,7 +3175,7 @@ UI_LockItem()
 }
 
 //-----------------------------------------------------------------------------
-// UnLock Item
+// 아이템 잠금 해제
 //-----------------------------------------------------------------------------
 void
 UI_UnlockItem()
@@ -3186,7 +3186,7 @@ UI_UnlockItem()
 }
 
 //-----------------------------------------------------------------------------
-// Lock Gear
+// 장비 잠금
 //-----------------------------------------------------------------------------
 void
 UI_LockGear()
@@ -3197,7 +3197,7 @@ UI_LockGear()
 }
 
 //-----------------------------------------------------------------------------
-// Unlock Gear
+// 장비 잠금 해제
 //-----------------------------------------------------------------------------
 void
 UI_UnlockGear()
@@ -3223,12 +3223,12 @@ void UI_ResultReceiver(DWORD message, int left, int right, void *void_ptr)
 }
 
 //-----------------------------------------------------------------------------
-// Run Party
+// 파티 실행
 //-----------------------------------------------------------------------------
 void		
 UI_RunParty()
 {
-	// by csm 12/4
+	// csm 작성, 12/4
 	if (!UI_IsRunningParty())
 	{	
 		//gC_vs_ui.RunPartyManager();
@@ -3237,7 +3237,7 @@ UI_RunParty()
 }
 
 //-----------------------------------------------------------------------------
-// Request Party
+// 파티 요청
 //-----------------------------------------------------------------------------
 void
 UI_RunPartyRequest(TYPE_OBJECTID otherID)
@@ -3279,12 +3279,12 @@ UI_RunPartyRequest(TYPE_OBJECTID otherID)
 
 
 //-----------------------------------------------------------------------------
-// Run PartyAsk
+// PartyAsk 실행
 //-----------------------------------------------------------------------------
 void		
 UI_RunPartyAsk(TYPE_OBJECTID otherID)
 {
-	// by csm 12/4
+	// csm 작성, 12/4
 	MCreature* TempCreature = g_pZone->GetCreature( otherID );
 	if(TempCreature->CurPernalShop() != 1)
 	{
@@ -3325,7 +3325,7 @@ UI_RunPartyAsk(TYPE_OBJECTID otherID)
 }
 
 //-----------------------------------------------------------------------------
-// Run PartyCancel
+// PartyCancel 실행
 //-----------------------------------------------------------------------------
 void		
 UI_RunPartyCancel(const char* pName)
@@ -3339,7 +3339,7 @@ UI_RunPartyCancel(const char* pName)
 }
 
 //-----------------------------------------------------------------------------
-// Close PartyRequest
+// PartyRequest 닫기
 //-----------------------------------------------------------------------------
 void		
 UI_ClosePartyRequest()
@@ -3349,7 +3349,7 @@ UI_ClosePartyRequest()
 
 
 //-----------------------------------------------------------------------------
-// Close Party
+// 파티 닫기
 //-----------------------------------------------------------------------------
 void		
 UI_CloseParty()
@@ -3358,7 +3358,7 @@ UI_CloseParty()
 }
 
 //-----------------------------------------------------------------------------
-// Close PartyAsk
+// PartyAsk 닫기
 //-----------------------------------------------------------------------------
 void		
 UI_ClosePartyAsk()
@@ -3378,7 +3378,7 @@ UI_ClosePartyAsk()
 }
 
 //-----------------------------------------------------------------------------
-// Close PartyCancel
+// PartyCancel 닫기
 //-----------------------------------------------------------------------------
 void		
 UI_ClosePartyCancel()
@@ -3497,7 +3497,7 @@ UI_ShowGuildMemberList( GCGuildMemberList *pPacket)
 		member_info.MEMBER_NAME = pInfo->getName();
 		member_info.member_grade = pInfo->getRank();
 		member_info.bLogOn = pInfo->getLogOn();
-		// 2004, 10, 8, sobeit add start 
+		// 2004, 10, 8, sobeit 추가 시작 
 //		member_info.server_type = pInfo->getServerID();  
 		if(pServerGroup && member_info.bLogOn)
 		{
@@ -3517,7 +3517,7 @@ UI_ShowGuildMemberList( GCGuildMemberList *pPacket)
 			member_info.SERVER_NAME = (*g_pGameStringTable)[UI_STRING_MESSAGE_NOT_LOGINED].GetString();
 			member_info.bLogOn = false; // 서버네임 찾을수 없는거는 그냥 비 로그인으로 하자..ㅋㅋ
 		}
-		// 2004, 10, 8, sobeit add end
+		// 2004, 10, 8, sobeit 추가 끝
 		gC_vs_ui.AddTeamMemberInfo(member_info, bAvailableRecall); 
 	}
 
@@ -3578,9 +3578,9 @@ UI_ShowGuildInfo(GCShowGuildInfo *pPacket)
 	team_info.REGISTERED_DATE = "";
 	team_info.RANKING = 0;
 
-	// 2004, 10, 19, sobeit add start - 현재 떠 있는 길드 리스트가 연합리스트 인지 그냥 길드 리스트 인지..에휴..
+	// 2004, 10, 19, sobeit 추가 시작 - 현재 떠 있는 길드 리스트가 연합리스트 인지 그냥 길드 리스트 인지..에휴..
 	bool IsUnionTeamInfo = gC_vs_ui.IsRunningTeamList(true); //  
-	// 2004, 10, 19, sobeit add end
+	// 2004, 10, 19, sobeit 추가 끝
 	gC_vs_ui.RunTeamInfo(false, (void *)&team_info, IsUnionTeamInfo);
 }
 
@@ -3805,7 +3805,7 @@ void	UI_RunConnect()
 	}
 	else
 	{
-		// 2004, 7, 15, sobeit modify start
+		// 2004, 7, 15, sobeit 수정 시작
 		if(false == g_pUserInformation->IsAutoLogIn) // 수동 로그인
 			gC_vs_ui.RunConnect();
 		else // 웹 로그인
@@ -3839,7 +3839,7 @@ void	UI_RunConnect()
 			
 			gpC_base->SendMessage(UI_LOGIN, 0, 0, (void *)&login);
 		}
-		// 2004, 7, 15, sobeit modify end
+		// 2004, 7, 15, sobeit 수정 끝
 	}
 }
 
@@ -4267,9 +4267,9 @@ void		UI_RunItemShop( GCGoodsList *pPacket )
 		
 		pItem->SetID( pInfo->objectID );
 		pItem->SetItemType( pInfo->itemType );
-		// 2004, 5, 18 sobeit add start
+		// 2004, 5, 18 sobeit 추가 시작
 		pItem->SetGrade( pInfo->grade );
-		// 2004, 5, 18 sobeit add end
+		// 2004, 5, 18 sobeit 추가 끝
 		pItem->SetItemOptionList( pInfo->optionType );
 		if( pItem->IsGunItem() )
 		{
@@ -4361,10 +4361,10 @@ void		UI_OkMixingForge(DWORD parameter, MItem* pItem, MItem* pItem2)
 		g_pUIDialog->PopupFreeMessageDlg((*g_pGameStringTable)[STRING_ERROR_ETC_ERROR].GetString() );
 		return;
 	}
-	//2004,04,27 sobeit set grade add start
+	//2004,04,27 sobeit set grade 추가 시작
 	int nMaxGrade = max(pItem->GetGrade(), pItem2->GetGrade());
 	pModifyItem->SetGrade(nMaxGrade);
-	//2004,04,27 sobeit set grade add end
+	//2004,04,27 sobeit set grade 추가 끝
 
 	MItem* pRemoveItem = g_pInventory->RemoveItem( pItem2->GetID() );
 	SAFE_DELETE( pRemoveItem );
@@ -4618,7 +4618,7 @@ UI_RunNotice(DWORD sendID, DWORD parameter)
 //		bOpen = true;
 		break;
 
-	// START CTF
+	// CTF 시작
 	case 2:
 		FileName = "StartCTF";
 		bOpen = true;
@@ -4830,7 +4830,7 @@ void UI_ShowTargetArrow(int x, int y)
 	gC_vs_ui.DrawTargetArrow(x,y);
 }
 
-// 2005, 1, 3, sobeit add start - 승직 아이템 교환
+// 2005, 1, 3, sobeit 추가 시작 - 승직 아이템 교환
 void
 UI_Show_Swap_Advancement_Item()
 {
@@ -4843,9 +4843,9 @@ bool		UI_IsRunningSwapAdvancementItem()
 {
 	return gC_vs_ui.IsRunningSwapAdvancementItem();
 }
-// 2005, 1, 3, sobeit add end
+// 2005, 1, 3, sobeit 추가 끝
 
-// 2005, 1, 11, sobeit add start - 불우 이웃돕기 성금 창
+// 2005, 1, 11, sobeit 추가 시작 - 불우 이웃돕기 성금 창
 void 
 UI_Run_Campaign_Help_Unfortunate_Neighbors(int value)
 {
@@ -4854,9 +4854,9 @@ UI_Run_Campaign_Help_Unfortunate_Neighbors(int value)
 
 	gC_vs_ui.Run_Campaign_Help_Unfortunate_Neighbors(value);
 }
-// 2005, 1, 11, sobeit add end
+// 2005, 1, 11, sobeit 추가 끝
 
-// 2005, 1, 24, sobeit add start - 이벤트 아이템 받기
+// 2005, 1, 24, sobeit 추가 시작 - 이벤트 아이템 받기
 void 
 UI_Run_Confirm_GetEventItem(int value)
 {
@@ -4865,7 +4865,7 @@ UI_Run_Confirm_GetEventItem(int value)
 
 	gC_vs_ui.Run_Confirm_GetItemEvent(value);
 }
-// 2005, 1, 11, sobeit add end
+// 2005, 1, 11, sobeit 추가 끝
 
 void 
 UI_Run_WebBrowser(char* szURL)

@@ -1,13 +1,13 @@
-#include "Client_PCH.h"
+﻿#include "Client_PCH.h"
 
 BOOL GetWinVersion(char *szVersion)
 {
 #ifdef PLATFORM_WINDOWS
-   // Windows implementation - simplified version
+   // Windows 구현부 - 단순화된 버전
    OSVERSIONINFOEX osvi;
    BOOL bOsVersionInfoEx;
 
-   // Try calling GetVersionEx using the OSVERSIONINFOEX structure.
+   // OSVERSIONINFOEX 구조체를 사용하여 GetVersionEx 호출을 시도한다.
    ZeroMemory(&osvi, sizeof(OSVERSIONINFOEX));
    osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
 
@@ -22,7 +22,7 @@ BOOL GetWinVersion(char *szVersion)
 
    switch (osvi.dwPlatformId)
    {
-      // Test for the Windows NT product family.
+      // Windows NT 제품군인지 확인한다.
       case VER_PLATFORM_WIN32_NT:
          if ( osvi.dwMajorVersion == 10 && osvi.dwMinorVersion == 0 )
             strcat (szVersion, "Windows 10/11");
@@ -40,7 +40,7 @@ BOOL GetWinVersion(char *szVersion)
             sprintf(szVersion, "Windows NT %d.%d", osvi.dwMajorVersion, osvi.dwMinorVersion);
          break;
 
-      // Test for the Windows 95 product family.
+      // Windows 95 제품군인지 확인한다.
       case VER_PLATFORM_WIN32_WINDOWS:
          if (osvi.dwMajorVersion == 4 && osvi.dwMinorVersion == 0)
              strcpy(szVersion, "Windows 95");
@@ -57,7 +57,7 @@ BOOL GetWinVersion(char *szVersion)
          break;
    }
 
-   // Add build number if available
+   // 빌드 번호가 있으면 추가한다.
    if (osvi.dwBuildNumber > 0)
    {
       sprintf(szTemp, " (Build %d)", osvi.dwBuildNumber & 0xFFFF);
@@ -67,7 +67,7 @@ BOOL GetWinVersion(char *szVersion)
    return TRUE;
 
 #else
-   // Non-Windows platforms
+   // Windows가 아닌 플랫폼
    strcpy(szVersion, "Non-Windows Platform");
    return TRUE;
 #endif
