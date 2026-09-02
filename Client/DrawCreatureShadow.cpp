@@ -1,4 +1,4 @@
-//#define __3D_IMAGE_OBJECT__					// by sonee
+﻿//#define __3D_IMAGE_OBJECT__					// by sonee
 //----------------------------------------------------------------------
 // MTopViewDraw.cpp
 //----------------------------------------------------------------------
@@ -79,7 +79,7 @@ int GetAdvancementVampireActionFromVampireAction( int CurAction, const MCreature
 BYTE GetCreatureActionCountMax( const MCreature* pCreature, int action );
 
 //----------------------------------------------------------------
-// Draw CreatureShadow
+// 크리처 그림자 출력
 //----------------------------------------------------------------
 // 2D/3D와 관련해서...
 // Lock / Unlock은 외부에서 해줘야 한다.
@@ -400,7 +400,7 @@ MTopView::DrawCreatureShadow(POINT* pPoint, MCreature* pCreature)
 					//// CDirect3D::GetDevice()->SetTexture() removed (SDL2)
 
 					CSpriteSurface* pSurface = m_pCreatureShadowManager->GetTexture(sprite);
-					// CDirect3D::GetDevice()->SetTexture() removed (SDL2)
+					// CDirect3D::GetDevice()->SetTexture() 제거됨 (SDL2)
 
 					
 					RECT rect = { pointTemp.x, 
@@ -660,8 +660,8 @@ MTopView::DrawCreatureShadow(POINT* pPoint, MCreature* pCreature)
 
 void	MTopView::DrawShadowSlayerCharacter( POINT *pPoint, MCreature* pCreature, int action, int direction, int frame )
 {
-	// Check if m_AddonShadowFPK is initialized (fix crash in SDL backend)
-	// CCreatureFramePack doesn't have IsNotInit(), so we check m_Size
+	// m_AddonShadowFPK가 초기화되었는지 확인 (SDL 백엔드 크래시 방지)
+	// CCreatureFramePack에는 IsNotInit()가 없으므로 m_Size를 확인한다
 	if (m_AddonShadowFPK.GetSize() == 0) {
 		return;
 	}

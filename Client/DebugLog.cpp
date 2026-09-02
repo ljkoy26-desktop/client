@@ -1,8 +1,8 @@
 ﻿//-----------------------------------------------------------------------------
 // DebugLog.cpp
 //
-// Lightweight, cross-platform logging system for Dark Eden client
-// Implementation
+// Dark Eden 클라이언트용 경량 크로스플랫폼 로깅 시스템
+// 구현부
 //-----------------------------------------------------------------------------
 
 #include "DebugLog.h"
@@ -17,13 +17,13 @@
 	#include <sys/time.h>
 #endif
 
-// Platform-specific includes
+// 플랫폼별 포함 파일
 #ifdef PLATFORM_WINDOWS
 	#define PLATFORM_LOCK_INITIALIZED 1
 #endif
 
 //-----------------------------------------------------------------------------
-// Configuration
+// 설정
 //-----------------------------------------------------------------------------
 typedef struct {
 	LogLevel level;
@@ -46,15 +46,15 @@ static LogConfig g_config = {
 static bool g_initialized = false;
 
 //-----------------------------------------------------------------------------
-// Thread safety
+// 스레드 안전성
 //-----------------------------------------------------------------------------
 static CRITICAL_SECTION g_log_lock;
 
 //-----------------------------------------------------------------------------
-// Helper Functions
+// 헬퍼 함수
 //-----------------------------------------------------------------------------
 
-// Extract filename from full path (e.g., "/path/to/GameInit.cpp" -> "GameInit.cpp")
+// 전체 경로에서 파일명만 추출 (예: "/path/to/GameInit.cpp" -> "GameInit.cpp")
 static const char* get_filename(const char *path) {
 	if (path == NULL) return "unknown";
 
@@ -66,7 +66,7 @@ static const char* get_filename(const char *path) {
 	return (filename != NULL) ? (filename + 1) : path;
 }
 
-// Get level string
+// 레벨 문자열 반환
 static const char* get_level_string(LogLevel level) {
 	switch (level) {
 		case LOG_LEVEL_DEBUG: return "DEBUG";
@@ -77,8 +77,8 @@ static const char* get_level_string(LogLevel level) {
 	}
 }
 
-// Get timestamp with milliseconds
-// Format: "2024-01-20 23:45:12.123"
+// 밀리초 포함 타임스탬프 반환
+// 형식: "2024-01-20 23:45:12.123"
 static void get_timestamp(char *buffer, size_t size) {
 #ifdef PLATFORM_WINDOWS
 	struct _timeb timebuf;
@@ -109,27 +109,27 @@ static void get_timestamp(char *buffer, size_t size) {
 }
 
 //-----------------------------------------------------------------------------
-// Public Interface Implementation
+// 공개 인터페이스 구현
 //-----------------------------------------------------------------------------
 
 void log_init(void) {
 	if (g_initialized) {
-		return;	// Already initialized
+		return;	// 이미 초기화됨
 	}
 
-	// Initialize lock FIRST
+	// 잠금 먼저 초기화
 	InitializeCriticalSection(&g_log_lock);
 
-	// Set default level based on build type
+	// 빌드 타입에 따른 기본 레벨 설정
 #ifdef _DEBUG
 	g_config.level = LOG_LEVEL_INFO;
 #else
-	g_config.level = LOG_LEVEL_ERROR;	// Production: only errors
+	g_config.level = LOG_LEVEL_ERROR;	// 프로덕션: 오류만 출력
 #endif
 
 	g_initialized = true;
 
-	// Log initialization message directly to stderr (avoiding lock)
+	// 초기화 메시지를 stderr에 직접 출력 (잠금 우회)
 	fprintf(stderr, "[DEBUG LOG] Logging system initialized (level: %s)\n",
 			g_config.level == LOG_LEVEL_DEBUG ? "DEBUG" :
 			g_config.level == LOG_LEVEL_INFO ? "INFO" :
@@ -143,17 +143,17 @@ void log_cleanup(void) {
 		return;
 	}
 
-	// Log shutdown message directly to stderr (avoiding potential lock issues)
+	// 종료 메시지를 stderr에 직접 출력 (잠금 문제 우회)
 	fprintf(stderr, "[DEBUG LOG] Logging system shutting down\n");
 	fflush(stderr);
 
-	// Close log file if open
+	// 로그 파일이 열려있으면 닫는다
 	if (g_config.log_fp != NULL) {
 		fclose(g_config.log_fp);
 		g_config.log_fp = NULL;
 	}
 
-	// Cleanup lock
+	// 잠금 정리
 	DeleteCriticalSection(&g_log_lock);
 
 	g_initialized = false;
@@ -174,23 +174,23 @@ void log_set_console_output(bool enable) {
 void log_set_file_output(const char *path) {
 	EnterCriticalSection(&g_log_lock);
 
-	// Close existing file if open
+	// 기존 파일이 열려있으면 닫는다
 	if (g_config.log_fp != NULL) {
 		fclose(g_config.log_fp);
 		g_config.log_fp = NULL;
 	}
 
 	if (path != NULL && path[0] != '\0') {
-		// Store path
+		// 경로 저장
 		strncpy(g_config.log_file, path, sizeof(g_config.log_file) - 1);
 		g_config.log_file[sizeof(g_config.log_file) - 1] = '\0';
 
-		// Open file
+		// 파일 열기
 		g_config.log_fp = fopen(g_config.log_file, "w");
 		if (g_config.log_fp != NULL) {
 			g_config.output_to_file = true;
 		} else {
-			// Failed to open file, fallback to console
+			// 파일 열기 실패, 콘솔로 대체
 			g_config.output_to_file = false;
 		}
 	} else {
@@ -208,7 +208,7 @@ void log_set_array_output(bool enable) {
 }
 
 //-----------------------------------------------------------------------------
-// Core Logging Function
+// 핵심 로깅 함수
 //-----------------------------------------------------------------------------
 
 void log_write(LogLevel level,
@@ -217,23 +217,23 @@ void log_write(LogLevel level,
 			   const char *fmt,
 			   ...)
 {
-	// Fast path: level filtering (no lock needed)
+	// 빠른 경로: 레벨 필터링 (잠금 불필요)
 	if (level < g_config.level || !g_initialized) {
 		return;
 	}
 
-	// Extract filename
+	// 파일명 추출
 	const char *filename = get_filename(file);
 	const char *level_str = get_level_string(level);
 
-	// Format message
+	// 메시지 형식화
 	char message[2048];
 	va_list args;
 	va_start(args, fmt);
 	vsnprintf(message, sizeof(message), fmt, args);
 	va_end(args);
 
-	// Build full log line
+	// 전체 로그 라인 생성
 	char log_line[2048];
 	char timestamp[64];
 	get_timestamp(timestamp, sizeof(timestamp));
@@ -242,24 +242,24 @@ void log_write(LogLevel level,
 			 "[%s] [%s] [%s:%d] %s",
 			 timestamp, level_str, filename, line, message);
 
-	// Critical section for output
+	// 출력용 임계 구역
 	EnterCriticalSection(&g_log_lock);
 
-	// Output to console (stderr)
+	// 콘솔에 출력 (stderr)
 	if (g_config.output_to_console) {
 		fprintf(stderr, "%s\n", log_line);
 		fflush(stderr);
 	}
 
-	// Output to file
+	// 파일에 출력
 	if (g_config.output_to_file && g_config.log_fp != NULL) {
 		fprintf(g_config.log_fp, "%s\n", log_line);
 		fflush(g_config.log_fp);
 	}
 
-	// Output to memory array (g_pDebugMessage)
-	// Note: Disabled to avoid circular dependency with CMessageArray
-	// If needed, enable by including CMessageArray.h before this file
+	// 메모리 배열에 출력 (g_pDebugMessage)
+	// 주의: CMessageArray와의 순환 의존성 방지를 위해 비활성화됨
+	// 필요 시 이 파일 앞에 CMessageArray.h를 포함하여 활성화
 #if 0
 	if (g_config.output_to_array && g_pDebugMessage != NULL) {
 		g_pDebugMessage->Add(log_line);

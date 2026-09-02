@@ -45,6 +45,22 @@
 
 ---
 
+## 2차 번역 완료 (2026-09-02)
+
+아래 파일들은 영어 주석을 한글로 번역 완료 (vcxproj 줄 461~467 대상):
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/DebugInfo.cpp` | (번역 불필요 - 주석처리된 코드 블록만 존재) |
+| `Client/DebugKit.cpp` | 파일 헤더, 생성자/소멸자 섹션 헤더 |
+| `Client/DebugLog.cpp` | 파일 헤더, 설정/스레드 안전성/헬퍼 함수/공개 인터페이스/핵심 로깅 함수 섹션 헤더 및 인라인 주석 전체 |
+| `Client/DirectXLib_PCH.cpp` | (번역 불필요 - include 한 줄만 존재) |
+| `Client/DrawCreatureDivineGuidance.cpp` | (번역 불필요 - 주석처리된 코드 블록만 존재) |
+| `Client/DrawCreatureEffect.cpp` | (번역 불필요 - 주석처리된 코드 블록만 존재) |
+| `Client/DrawCreatureShadow.cpp` | 섹션 헤더(크리처 그림자 출력), SDL 크래시 방지 주석, SDL2 제거 주석 |
+
+---
+
 ## 다음 번역 대상 (vcxproj 기준 이후 파일들)
 
-vcxproj 줄 461 이후 파일들은 미번역 상태.
+vcxproj 줄 468 이후 파일들은 미번역 상태.
