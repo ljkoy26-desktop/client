@@ -62,7 +62,7 @@ class CAlphaSprite
 		void		operator = (const CAlphaSprite& Sprite);
 
 		//---------------------------------------------------------
-		// m_Pixels의 memory를 Release한다.		
+		// m_Pixels의 메모리를 해제한다.
 		//---------------------------------------------------------
 		void		Release();
 
@@ -73,7 +73,7 @@ class CAlphaSprite
 		static WORD	GetColorkey() 					{ return s_Colorkey; }
 
 		//---------------------------------------------------------
-		// fstream에서 save/load를 한다.
+		// fstream에서 저장/불러오기를 한다.
 		//---------------------------------------------------------
 		virtual bool		SaveToFile(std::ofstream& file) = 0;
 		virtual bool		LoadFromFile(std::ifstream& file) = 0;		
@@ -91,7 +91,7 @@ class CAlphaSprite
 		bool		IsColorPixel(short x, short y);
 
 		//---------------------------------------------------------
-		// get functions		
+		// 조회 함수
 		//---------------------------------------------------------
 		WORD		GetWidth()		const			{ return m_Width; }
 		WORD		GetHeight()		const			{ return m_Height; }
@@ -99,7 +99,7 @@ class CAlphaSprite
 		WORD*		GetPixelLine(WORD y)	const	{ return m_Pixels[y]; }
 
 #ifdef SPRITELIB_BACKEND_SDL
-		/* Backend sprite management */
+		/* 백엔드 스프라이트 관리 */
 		spritectl_sprite_t GetBackendSprite() const	{ return m_backend_sprite; }
 		bool IsBackendDirty() const			{ return m_backend_dirty; }
 		void SetBackendSprite(spritectl_sprite_t sprite)	{ m_backend_sprite = sprite; }
@@ -123,7 +123,7 @@ class CAlphaSprite
 		void		BltClipHeight(WORD *pDest, WORD pitch, RECT* pRect);
 
 		//---------------------------------------------------------
-		// Blt 4444  for Texture
+		// Blt 4444 (텍스처용)
 		//---------------------------------------------------------
 		void		Blt4444(WORD *pDest, WORD pitch);				
 		void		Blt4444ClipLeft(WORD *pDest, WORD pitch, RECT* pRect);
@@ -132,7 +132,7 @@ class CAlphaSprite
 		void		Blt4444ClipHeight(WORD *pDest, WORD pitch, RECT* pRect);
 
 		//---------------------------------------------------------
-		// Blt 4444 NotTrans for Texture (투명부분도 검게 칠한다)
+		// Blt 4444 NotTrans (텍스처용, 투명부분도 검게 칠한다)
 		//---------------------------------------------------------
 		void		Blt4444NotTrans(WORD *pDest, WORD pitch);				
 		void		Blt4444NotTransClipLeft(WORD *pDest, WORD pitch, RECT* pRect);
@@ -159,7 +159,7 @@ class CAlphaSprite
 		//void		BltHalfClipHeight(WORD *pDest, WORD pitch, RECT* pRect);
 
 		//---------------------------------------------------------
-		// Alpha Blending
+		// 알파 블렌딩
 		//---------------------------------------------------------
 		void		BltAlpha(WORD *pDest, WORD pitch, BYTE alpha);
 		void		BltAlphaClipLeft(WORD *pDest, WORD pitch, RECT* pRect, BYTE alpha);
@@ -184,7 +184,7 @@ class CAlphaSprite
 		//void		BltDarknessClipHeight(WORD *pDest, WORD pitch, RECT* pRect, BYTE DarkBits);
 
 		//---------------------------------------------------------
-		// Effect
+		// 효과
 		//---------------------------------------------------------
 		//void		BltEffect(WORD *pDest, WORD pitch);				
 		//void		BltEffectClipLeft(WORD *pDest, WORD pitch, RECT* pRect);
@@ -197,7 +197,7 @@ class CAlphaSprite
 		//void		BltAlphaFilter(WORD *pDest, WORD pitch, CFilter* pFilter);		
 
 		//---------------------------------------------------------
-		// Utility Functions
+		// 유틸리티 함수
 		//---------------------------------------------------------
 		//void			memcpyHalf(WORD* pDest, WORD* pSource, WORD pixels);
 		void		memcpyAlpha(WORD* pDest, WORD* pSource, WORD pixels);
@@ -212,7 +212,7 @@ class CAlphaSprite
 
 
 		//---------------------------------------------------------
-		// debug function
+		// 디버그 함수
 		//---------------------------------------------------------
 		//static void		OutputLog()
 		//{
@@ -226,12 +226,12 @@ class CAlphaSprite
 	protected :
 		WORD			m_Width;		// 가로 pixel수
 		WORD			m_Height;		// 세로 pixel수		
-		WORD**			m_Pixels;		// pixels
+		WORD**			m_Pixels;		// 픽셀들
 		bool			m_bInit;		// data가 있는가?
 
 #ifdef SPRITELIB_BACKEND_SDL
-		spritectl_sprite_t	m_backend_sprite;	// Backend sprite handle
-		bool			m_backend_dirty;	// True if m_Pixels changed but not synced to backend
+		spritectl_sprite_t	m_backend_sprite;	// 백엔드 스프라이트 핸들
+		bool			m_backend_dirty;	// m_Pixels가 변경되었지만 백엔드에 동기화되지 않았으면 true
 #endif
 
 		static WORD		s_Colorkey;

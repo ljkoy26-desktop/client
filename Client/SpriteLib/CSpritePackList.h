@@ -1,4 +1,4 @@
-#include <fstream>
+﻿#include <fstream>
 //----------------------------------------------------------------------
 // CSpritePackList.h
 //----------------------------------------------------------------------
@@ -24,12 +24,12 @@ class CSpritePackList {
 		virtual ~CSpritePackList();
 
 		//---------------------------------------------------
-		// Init/Release		
+		// 초기화/해제
 		//---------------------------------------------------
 		void		Release();
 
 		//---------------------------------------------------
-		// add / remove
+		// 추가 / 제거
 		//---------------------------------------------------
 		void		AddSprite(TYPE_SPRITEID n, CSprite* pSprite);
 		void		AddSprite(CSprite* pSprite);
@@ -37,7 +37,7 @@ class CSpritePackList {
 		void		ChangeSprite(TYPE_SPRITEID n, TYPE_SPRITEID m);
 
 		//---------------------------------------------------
-		// get
+		// 조회
 		//---------------------------------------------------
 		CSprite*	GetSprite(TYPE_SPRITEID n) const;
 
@@ -48,12 +48,12 @@ class CSpritePackList {
 		SPRITE_LIST* GetListPtr() { return &m_listSprite; }
 
 		//---------------------------------------------------
-		// get size
+		// 크기 조회
 		//---------------------------------------------------
 		TYPE_SPRITEID	GetSize() const	{ return m_listSprite.size(); }
 
 		//---------------------------------------------------
-		// file I/O
+		// 파일 입출력
 		//---------------------------------------------------
 		bool				SaveToFile(std::ofstream& spkFile, std::ofstream& indexFile);
 		virtual void		LoadFromFile(std::ifstream& file) = 0;
@@ -68,12 +68,12 @@ class CSpritePalPackList {
 		~CSpritePalPackList();
 
 		//---------------------------------------------------
-		// Init/Release		
+		// 초기화/해제
 		//---------------------------------------------------
 		void		Release();
 
 		//---------------------------------------------------
-		// add / remove
+		// 추가 / 제거
 		//---------------------------------------------------
 		void		AddSprite(TYPE_SPRITEID n, CSpritePal* pSprite);
 		void		AddSprite(CSpritePal* pSprite);
@@ -81,7 +81,7 @@ class CSpritePalPackList {
 		void		ChangeSprite(TYPE_SPRITEID n, TYPE_SPRITEID m);
 
 		//---------------------------------------------------
-		// get
+		// 조회
 		//---------------------------------------------------
 		CSpritePal*	GetSprite(TYPE_SPRITEID n) const;
 
@@ -92,12 +92,12 @@ class CSpritePalPackList {
 		SPRITEPAL_LIST* GetListPtr() { return &m_listSprite; }
 
 		//---------------------------------------------------
-		// get size
+		// 크기 조회
 		//---------------------------------------------------
 		TYPE_SPRITEID	GetSize() const	{ return m_listSprite.size(); }
 
 		//---------------------------------------------------
-		// file I/O
+		// 파일 입출력
 		//---------------------------------------------------
 		bool				SaveToFile(std::ofstream& spkFile, std::ofstream& indexFile);
 		void		LoadFromFile(std::ifstream& file);

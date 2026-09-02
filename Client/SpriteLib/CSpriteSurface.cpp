@@ -10,20 +10,20 @@
 #include "CFilter.h"
 #include "CSpriteSurface.h"
 
-/* Include SDL backend adapter if enabled */
+/* 활성화된 경우 SDL 백엔드 어댑터를 포함한다 */
 #ifdef SPRITELIB_BACKEND_SDL
 	#include "CSpriteSurface_Adapter.cpp"
 #endif
 
 
 //----------------------------------------------------------------------
-// Static member
+// 정적 멤버
 //----------------------------------------------------------------------
 int	CSpriteSurface::s_Value1 = 1;
 int	CSpriteSurface::s_Value2 = 31;
 int	CSpriteSurface::s_Value3 = 1;
 
-// memcpy Effect
+// memcpy 효과
 FUNCTION_MEMCPYEFFECT 	CSpriteSurface::s_pMemcpyEffectFunction = memcpyEffectDarker;
 FUNCTION_MEMCPYEFFECT	CSpriteSurface::s_pMemcpyEffectFunctionTable[MAX_EFFECT] =
 {
@@ -69,7 +69,7 @@ WORD		CSpriteSurface::s_EffectScreenTableB[32][32];
 
 //----------------------------------------------------------------------
 //
-// constructor/destructor
+// 생성자/소멸자
 //
 //----------------------------------------------------------------------
 
@@ -83,7 +83,7 @@ CSpriteSurface::CSpriteSurface()
 CSpriteSurface::~CSpriteSurface()
 {
 #ifdef SPRITELIB_BACKEND_SDL
-	/* Cleanup backend surface */
+	/* 백엔드 서페이스를 정리한다 */
 	if (m_backend_surface != SPRITECTL_INVALID_SURFACE) {
 		spritectl_destroy_surface(m_backend_surface);
 		m_backend_surface = SPRITECTL_INVALID_SURFACE;
@@ -93,7 +93,7 @@ CSpriteSurface::~CSpriteSurface()
 
 //----------------------------------------------------------------------
 //
-// member functions
+// 멤버 함수
 //
 //----------------------------------------------------------------------
 
@@ -165,7 +165,7 @@ CSpriteSurface::Line(int x1, int y1, int x2, int y2, WORD color)
 	WORD* lpSurfaceTemp;
 
 	//
-	// Bresenham algolithm
+	// 브레젠험 알고리즘
 	//
 	int x, y;
 	int d, dx, dy;
@@ -286,7 +286,7 @@ CSpriteSurface::ClippingRectToPoint(RECT*& pRect, POINT*& pPoint)
 	if (pPoint->x>=(int)m_ClipRight || pPoint->y>=(int)m_ClipBottom)		
 		return false;
 
-	// width clipping
+	// 너비 클리핑
 	if (pPoint->x<m_ClipLeft) 
 	{
 		pRect->left = pRect->left-pPoint->x + m_ClipLeft; //abs(pPoint->x);
@@ -297,7 +297,7 @@ CSpriteSurface::ClippingRectToPoint(RECT*& pRect, POINT*& pPoint)
 		pRect->right = pRect->left+ m_ClipRight-pPoint->x;
 	}
 
-	// height clipping
+	// 높이 클리핑
 	if (pPoint->y<m_ClipTop) 
 	{
 		pRect->top = pRect->top-pPoint->y + m_ClipTop;
@@ -326,7 +326,7 @@ CSpriteSurface::BltHalf(POINT* pPoint,
 							   CDirectDrawSurface* SourceSurface, RECT*  pRect)
 {
 	//------------------------
-	// Clipping
+	// 클리핑
 	//------------------------
 	// TargetSurface의 영역을 넘어가는지에 대한 체크
 	if (pPoint->x>=(int)m_ClipRight || pPoint->y>=(int)m_ClipBottom) 
@@ -334,7 +334,7 @@ CSpriteSurface::BltHalf(POINT* pPoint,
 
 	POINT pt = *pPoint;
 
-	// width clipping
+	// 너비 클리핑
 	if (pt.x<m_ClipLeft) 
 	{
 		pRect->left = pRect->left-pt.x + m_ClipLeft;
@@ -345,7 +345,7 @@ CSpriteSurface::BltHalf(POINT* pPoint,
 		pRect->right = pRect->left+ m_ClipRight-pt.x;
 	}
 
-	// height clipping
+	// 높이 클리핑
 	if (pt.y<m_ClipTop) 
 	{
 		pRect->top = pRect->top-pt.y + m_ClipTop;
@@ -381,7 +381,7 @@ CSpriteSurface::BltHalf(POINT* pPoint,
 		lpSourceSurface = (WORD*)((BYTE*)lpSourceSurface + lSourcePitch);
 	}
 
-	// unlock
+	// 잠금 해제
 	//Unlock();
 	
 	SourceSurface->Unlock();
@@ -401,7 +401,7 @@ CSpriteSurface::BltDarkness(POINT* pPoint,
 							   BYTE DarkBits)
 {
 	//------------------------
-	// Clipping
+	// 클리핑
 	//------------------------
 	// TargetSurface의 영역을 넘어가는지에 대한 체크
 	if (pPoint->x>=(int)m_ClipRight || pPoint->y>=(int)m_ClipBottom) 
@@ -409,7 +409,7 @@ CSpriteSurface::BltDarkness(POINT* pPoint,
 
 	POINT pt = *pPoint;
 
-	// width clipping
+	// 너비 클리핑
 	if (pt.x<m_ClipLeft) 
 	{
 		pRect->left = pRect->left-pt.x + m_ClipLeft;
@@ -420,7 +420,7 @@ CSpriteSurface::BltDarkness(POINT* pPoint,
 		pRect->right = pRect->left+ m_ClipRight-pt.x;
 	}
 
-	// height clipping
+	// 높이 클리핑
 	if (pt.y<m_ClipTop) 
 	{
 		pRect->top = pRect->top-pt.y + m_ClipTop;
@@ -457,7 +457,7 @@ CSpriteSurface::BltDarkness(POINT* pPoint,
 		lpSourceSurface = (WORD*)((BYTE*)lpSourceSurface + lSourcePitch);
 	}
 
-	// unlock
+	// 잠금 해제
 	//Unlock();
 	//SourceSurface->Unlock();
 	m_ddsd.lpSurface	= lpSurfaceTemp;
@@ -475,7 +475,7 @@ CSpriteSurface::BltBrightness(POINT* pPoint,
 							   BYTE BrightBits)
 {
 	//------------------------
-	// Clipping
+	// 클리핑
 	//------------------------
 	// TargetSurface의 영역을 넘어가는지에 대한 체크
 	if (pPoint->x>=(int)m_ClipRight || pPoint->y>=(int)m_ClipBottom) 
@@ -483,7 +483,7 @@ CSpriteSurface::BltBrightness(POINT* pPoint,
 
 	POINT pt = *pPoint;
 
-	// width clipping
+	// 너비 클리핑
 	if (pt.x<m_ClipLeft) 
 	{
 		pRect->left = pRect->left-pt.x + m_ClipLeft;
@@ -494,7 +494,7 @@ CSpriteSurface::BltBrightness(POINT* pPoint,
 		pRect->right = pRect->left+ m_ClipRight-pt.x;
 	}
 
-	// height clipping
+	// 높이 클리핑
 	if (pt.y<m_ClipTop) 
 	{
 		pRect->top = pRect->top-pt.y + m_ClipTop;
@@ -531,7 +531,7 @@ CSpriteSurface::BltBrightness(POINT* pPoint,
 		lpSourceSurface = (WORD*)((BYTE*)lpSourceSurface + lSourcePitch);
 	}
 
-	// unlock
+	// 잠금 해제
 	//Unlock();
 	//SourceSurface->Unlock();
 	m_ddsd.lpSurface	= lpSurfaceTemp;
@@ -551,7 +551,7 @@ CSpriteSurface::BltDarknessFilter(POINT* pPoint,
 							   WORD TransColor)
 {
 	//------------------------
-	// Clipping
+	// 클리핑
 	//------------------------
 	// TargetSurface의 영역을 넘어가는지에 대한 체크
 	if (pPoint->x>=(int)m_ClipRight || pPoint->y>=(int)m_ClipBottom) 
@@ -559,7 +559,7 @@ CSpriteSurface::BltDarknessFilter(POINT* pPoint,
 
 	POINT pt = *pPoint;
 	
-	// width clipping
+	// 너비 클리핑
 	if (pt.x<m_ClipLeft) 
 	{
 		pRect->left = pRect->left-pt.x + m_ClipLeft;
@@ -570,7 +570,7 @@ CSpriteSurface::BltDarknessFilter(POINT* pPoint,
 		pRect->right = pRect->left+ m_ClipRight-pt.x;
 	}
 
-	// height clipping
+	// 높이 클리핑
 	if (pt.y<m_ClipTop) 
 	{
 		pRect->top = pRect->top-pt.y + m_ClipTop;
@@ -596,7 +596,7 @@ CSpriteSurface::BltDarknessFilter(POINT* pPoint,
 	lpSourceSurface = (WORD*)((BYTE*)lpSourceSurface + pRect->top*lSourcePitch) + pRect->left;
 
 	//------------------------------------------------------------	
-	// Darker : BG - SPR_Filter
+	// 어둡게: BG - SPR_Filter
 	//------------------------------------------------------------	
 	BYTE	filter;
 
@@ -626,7 +626,7 @@ CSpriteSurface::BltDarknessFilter(POINT* pPoint,
 		lpSourceSurface = (WORD*)((BYTE*)lpSourceSurface + lSourcePitch);
 	}
 
-	// unlock
+	// 잠금 해제
 	Unlock();
 	SourceSurface->Unlock();
 }
@@ -656,7 +656,7 @@ CSpriteSurface::BltSpriteOutline(CSpriteOutlineManager* pSOM, WORD color)
 	rect.bottom = pSOM->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= point.x + pSOM->GetWidth();
@@ -850,7 +850,7 @@ CSpriteSurface::BltSpriteOutline(CSpriteOutlineManager* pSOM, WORD color)
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					pSOM->Blt( (WORD*)m_ddsd.lpSurface, m_ddsd.lPitch, color);
 				}				
 			}			
@@ -888,7 +888,7 @@ CSpriteSurface::BltSpriteOutlineOnly(CSpriteOutlineManager* pSOM, WORD color)
 	rect.bottom = pSOM->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= point.x + pSOM->GetWidth();
@@ -1082,7 +1082,7 @@ CSpriteSurface::BltSpriteOutlineOnly(CSpriteOutlineManager* pSOM, WORD color)
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					pSOM->BltOutline( (WORD*)m_ddsd.lpSurface, m_ddsd.lPitch, color);
 				}				
 			}			
@@ -1120,7 +1120,7 @@ CSpriteSurface::BltSpriteOutlineDarkness(CSpriteOutlineManager* pSOM, WORD color
 	rect.bottom = pSOM->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= point.x + pSOM->GetWidth();
@@ -1314,7 +1314,7 @@ CSpriteSurface::BltSpriteOutlineDarkness(CSpriteOutlineManager* pSOM, WORD color
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					pSOM->BltDarkness( (WORD*)m_ddsd.lpSurface, m_ddsd.lPitch, color, DarkBits);
 				}				
 			}			
@@ -1328,7 +1328,7 @@ CSpriteSurface::BltSpriteOutlineDarkness(CSpriteOutlineManager* pSOM, WORD color
 
 
 //----------------------------------------------------------------------
-// Change Brightness
+// 밝기 변경
 //----------------------------------------------------------------------
 // m_pDDSurface의 pRect영역을 어둡게 한다. 
 // DarkBits는 (0~5) bit단위로 1, 1/2, 1/4, 1/8, 1/16, 1/32, 0이다.
@@ -1338,7 +1338,7 @@ CSpriteSurface::BltSpriteOutlineDarkness(CSpriteOutlineManager* pSOM, WORD color
 void	
 CSpriteSurface::ChangeBrightnessBit(RECT*  pRect, BYTE DarkBits)
 {
-	// ClippingRect
+	// 클리핑 사각형
 	if (pRect->left < m_ClipLeft) pRect->left=m_ClipLeft;
 	if ((WORD)pRect->right > m_ClipRight) pRect->right=m_ClipRight;
 
@@ -1609,7 +1609,7 @@ CSpriteSurface::ChangeBrightnessBit(RECT*  pRect, BYTE DarkBits)
 void	
 CSpriteSurface::BltColorAlpha(RECT* pRect, WORD color, BYTE alpha2)
 {
-	// ClippingRect
+	// 클리핑 사각형
 	if (pRect->left < m_ClipLeft) pRect->left=m_ClipLeft;
 	if ((WORD)pRect->right > m_ClipRight) pRect->right=m_ClipRight;
 
@@ -2024,7 +2024,7 @@ CSpriteSurface::BltSprite(POINT* pPoint, CSprite* pSprite)
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -2221,7 +2221,7 @@ CSpriteSurface::BltSprite(POINT* pPoint, CSprite* pSprite)
 				}
 				else
 				{
-					// No Clip
+					// 클립 없음
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->Blt(lpSurface, Pitch);
 				}				
@@ -2247,7 +2247,7 @@ CSpriteSurface::BltSpriteNoClip(POINT* pPoint, CSprite* pSprite)
 	WORD*	lpSurface	= (WORD*)m_ddsd.lpSurface;
 	WORD	Pitch		= m_ddsd.lPitch;
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	// 출력 시작 위치			
@@ -2256,7 +2256,7 @@ CSpriteSurface::BltSpriteNoClip(POINT* pPoint, CSprite* pSprite)
 	// 출력
 	pSprite->Blt(lpSurface, Pitch);	
 
-	// Unlock
+	// 잠금 해제
 	//Unlock();
 }
 
@@ -2289,7 +2289,7 @@ CSpriteSurface::BltSpriteHalf(POINT* pPoint, CSprite* pSprite)
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -2487,7 +2487,7 @@ CSpriteSurface::BltSpriteHalf(POINT* pPoint, CSprite* pSprite)
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltHalf(lpSurface, Pitch);
 				}				
@@ -2531,7 +2531,7 @@ CSpriteSurface::BltSpriteAlpha(POINT* pPoint, CSprite* pSprite, BYTE alpha)
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -2729,7 +2729,7 @@ CSpriteSurface::BltSpriteAlpha(POINT* pPoint, CSprite* pSprite, BYTE alpha)
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltAlpha(lpSurface, Pitch, alpha);
 				}				
@@ -2774,7 +2774,7 @@ CSpriteSurface::BltSpriteColor(POINT* pPoint, CSprite* pSprite, BYTE rgb)
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -2972,7 +2972,7 @@ CSpriteSurface::BltSpriteColor(POINT* pPoint, CSprite* pSprite, BYTE rgb)
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltColor(lpSurface, Pitch, rgb);
 				}				
@@ -3017,7 +3017,7 @@ CSpriteSurface::BltSpriteColorSet(POINT* pPoint, CSprite* pSprite, WORD colorSet
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -3215,7 +3215,7 @@ CSpriteSurface::BltSpriteColorSet(POINT* pPoint, CSprite* pSprite, WORD colorSet
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltColorSet(lpSurface, Pitch, colorSet);
 				}				
@@ -3259,7 +3259,7 @@ CSpriteSurface::BltSpriteDarkness(POINT* pPoint, CSprite* pSprite, BYTE DarkBits
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -3457,7 +3457,7 @@ CSpriteSurface::BltSpriteDarkness(POINT* pPoint, CSprite* pSprite, BYTE DarkBits
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltDarkness(lpSurface, Pitch, DarkBits);
 				}				
@@ -3501,7 +3501,7 @@ CSpriteSurface::BltSpriteEffect(POINT* pPoint, CSprite* pSprite)
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -3699,7 +3699,7 @@ CSpriteSurface::BltSpriteEffect(POINT* pPoint, CSprite* pSprite)
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));			
 					pSprite->BltEffect(lpSurface, Pitch);
 				}				
@@ -3744,7 +3744,7 @@ CSpriteSurface::BltSpritePalEffect(POINT* pPoint, CSpritePal* pSprite, MPalette 
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -3942,7 +3942,7 @@ CSpriteSurface::BltSpritePalEffect(POINT* pPoint, CSpritePal* pSprite, MPalette 
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));			
 					pSprite->BltEffect(lpSurface, Pitch, pal);
 				}				
@@ -3986,7 +3986,7 @@ CSpriteSurface::BltSpriteScale(POINT* pPoint, CSprite* pSprite, BYTE scale)
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -4184,7 +4184,7 @@ CSpriteSurface::BltSpriteScale(POINT* pPoint, CSprite* pSprite, BYTE scale)
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));			
 					pSprite->BltScale(lpSurface, Pitch, scale);
 				}				
@@ -4231,7 +4231,7 @@ CSpriteSurface::BltAlphaSprite(POINT* pPoint, CAlphaSprite* pSprite)
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -4429,7 +4429,7 @@ CSpriteSurface::BltAlphaSprite(POINT* pPoint, CAlphaSprite* pSprite)
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));			
 					pSprite->Blt(lpSurface, Pitch);
 				}				
@@ -4475,7 +4475,7 @@ CSpriteSurface::BltAlphaSpritePal(POINT* pPoint, CAlphaSpritePal* pSprite, MPale
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -4673,7 +4673,7 @@ CSpriteSurface::BltAlphaSpritePal(POINT* pPoint, CAlphaSpritePal* pSprite, MPale
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));			
 					pSprite->Blt(lpSurface, Pitch, pal);
 				}				
@@ -4719,7 +4719,7 @@ CSpriteSurface::BltAlphaSpriteAlpha(POINT* pPoint, CAlphaSprite* pSprite, BYTE a
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -4917,7 +4917,7 @@ CSpriteSurface::BltAlphaSpriteAlpha(POINT* pPoint, CAlphaSprite* pSprite, BYTE a
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));			
 					pSprite->BltAlpha(lpSurface, Pitch, alpha);
 				}				
@@ -4964,7 +4964,7 @@ CSpriteSurface::BltAlphaSpritePalAlpha(POINT* pPoint, CAlphaSpritePal* pSprite, 
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -5162,7 +5162,7 @@ CSpriteSurface::BltAlphaSpritePalAlpha(POINT* pPoint, CAlphaSpritePal* pSprite, 
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));			
 					pSprite->BltAlpha(lpSurface, Pitch, alpha, pal);
 				}				
@@ -5208,7 +5208,7 @@ CSpriteSurface::BltAlphaSprite4444(POINT* pPoint, CAlphaSprite* pSprite)
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -5406,7 +5406,7 @@ CSpriteSurface::BltAlphaSprite4444(POINT* pPoint, CAlphaSprite* pSprite)
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->Blt4444(lpSurface, Pitch);
 				}				
@@ -5452,7 +5452,7 @@ CSpriteSurface::BltAlphaSpritePal4444(POINT* pPoint, CAlphaSpritePal* pSprite, M
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -5650,7 +5650,7 @@ CSpriteSurface::BltAlphaSpritePal4444(POINT* pPoint, CAlphaSpritePal* pSprite, M
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->Blt4444(lpSurface, Pitch, pal);
 				}				
@@ -5696,7 +5696,7 @@ CSpriteSurface::BltAlphaSprite4444NotTrans(POINT* pPoint, CAlphaSprite* pSprite)
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -5894,7 +5894,7 @@ CSpriteSurface::BltAlphaSprite4444NotTrans(POINT* pPoint, CAlphaSprite* pSprite)
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->Blt4444NotTrans(lpSurface, Pitch);
 				}				
@@ -5939,7 +5939,7 @@ CSpriteSurface::BltAlphaSpritePal4444NotTrans(POINT* pPoint, CAlphaSpritePal* pS
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -6137,7 +6137,7 @@ CSpriteSurface::BltAlphaSpritePal4444NotTrans(POINT* pPoint, CAlphaSpritePal* pS
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->Blt4444NotTrans(lpSurface, Pitch, pal);
 				}				
@@ -6183,7 +6183,7 @@ CSpriteSurface::BltAlphaSprite4444SmallNotTrans(POINT* pPoint, CAlphaSprite* pSp
 	rect.bottom = pSprite->GetHeight() >> shift;
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + (pSprite->GetWidth() >> shift);
@@ -6378,7 +6378,7 @@ CSpriteSurface::BltAlphaSprite4444SmallNotTrans(POINT* pPoint, CAlphaSprite* pSp
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->Blt4444SmallNotTrans(lpSurface, Pitch, shift);
 				}				
@@ -6424,7 +6424,7 @@ CSpriteSurface::BltAlphaSpritePal4444SmallNotTrans(POINT* pPoint, CAlphaSpritePa
 	rect.bottom = pSprite->GetHeight() >> shift;
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + (pSprite->GetWidth() >> shift);
@@ -6619,7 +6619,7 @@ CSpriteSurface::BltAlphaSpritePal4444SmallNotTrans(POINT* pPoint, CAlphaSpritePa
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->Blt4444SmallNotTrans(lpSurface, Pitch, shift, pal);
 				}				
@@ -6664,7 +6664,7 @@ CSpriteSurface::BltIndexSprite(POINT* pPoint, CIndexSprite* pSprite)
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -6862,7 +6862,7 @@ CSpriteSurface::BltIndexSprite(POINT* pPoint, CIndexSprite* pSprite)
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->Blt(lpSurface, Pitch);
 				}				
@@ -6907,7 +6907,7 @@ CSpriteSurface::BltIndexSpriteDarkness(POINT* pPoint, CIndexSprite* pSprite, BYT
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -7105,7 +7105,7 @@ CSpriteSurface::BltIndexSpriteDarkness(POINT* pPoint, CIndexSprite* pSprite, BYT
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltDarkness(lpSurface, Pitch, DarkBits);
 				}				
@@ -7150,7 +7150,7 @@ CSpriteSurface::BltIndexSpriteAlpha(POINT* pPoint, CIndexSprite* pSprite, BYTE a
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -7348,7 +7348,7 @@ CSpriteSurface::BltIndexSpriteAlpha(POINT* pPoint, CIndexSprite* pSprite, BYTE a
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltAlpha(lpSurface, Pitch, alpha);
 				}				
@@ -7395,7 +7395,7 @@ CSpriteSurface::BltIndexSpriteColor(POINT* pPoint, CIndexSprite* pSprite, BYTE r
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -7593,7 +7593,7 @@ CSpriteSurface::BltIndexSpriteColor(POINT* pPoint, CIndexSprite* pSprite, BYTE r
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltColor(lpSurface, Pitch, rgb);
 				}				
@@ -7638,7 +7638,7 @@ CSpriteSurface::BltIndexSpriteColorSet(POINT* pPoint, CIndexSprite* pSprite, WOR
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -7836,7 +7836,7 @@ CSpriteSurface::BltIndexSpriteColorSet(POINT* pPoint, CIndexSprite* pSprite, WOR
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltColorSet(lpSurface, Pitch, colorSet);
 				}				
@@ -7882,7 +7882,7 @@ CSpriteSurface::BltIndexSpriteEffect(POINT* pPoint, CIndexSprite* pSprite)
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -8080,7 +8080,7 @@ CSpriteSurface::BltIndexSpriteEffect(POINT* pPoint, CIndexSprite* pSprite)
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltEffect(lpSurface, Pitch);
 				}				
@@ -8105,7 +8105,7 @@ CSpriteSurface::BltSpriteAlphaFilter(POINT* pPoint, CSprite* pSprite, CFilter* p
 	WORD*	lpSurface;
 	WORD	Pitch;
 
-	// Lock
+	// 잠금
 	LockW(lpSurface, Pitch);
 
 	// 출력 시작 위치			
@@ -8164,7 +8164,7 @@ CSpriteSurface::BltSpriteAlphaFilter(POINT* pPoint, CSprite* pSprite)
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -8362,7 +8362,7 @@ CSpriteSurface::BltSpriteAlphaFilter(POINT* pPoint, CSprite* pSprite)
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltAlphaFilter(lpSurface, Pitch);
 				}				
@@ -8422,7 +8422,7 @@ CSpriteSurface::BltSpriteAlphaFilterDarkness(POINT* pPoint, CSprite* pSprite, BY
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -8620,7 +8620,7 @@ CSpriteSurface::BltSpriteAlphaFilterDarkness(POINT* pPoint, CSprite* pSprite, BY
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltAlphaFilterDarkness(lpSurface, Pitch, DarkBits);
 				}				
@@ -8665,7 +8665,7 @@ CSpriteSurface::BltSpriteAlpha4444NotTrans(POINT* pPoint, CSprite* pSprite, BYTE
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -8863,7 +8863,7 @@ CSpriteSurface::BltSpriteAlpha4444NotTrans(POINT* pPoint, CSprite* pSprite, BYTE
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltAlpha4444NotTrans(lpSurface, Pitch, alpha);
 				}				
@@ -8908,7 +8908,7 @@ CSpriteSurface::BltSpriteAlpha4444SmallNotTrans(POINT* pPoint, CSprite* pSprite,
 	rect.bottom = pSprite->GetHeight() >> shift;
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + (pSprite->GetWidth() >> shift);
@@ -9103,7 +9103,7 @@ CSpriteSurface::BltSpriteAlpha4444SmallNotTrans(POINT* pPoint, CSprite* pSprite,
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltAlpha4444SmallNotTrans(lpSurface, Pitch, alpha, shift);
 				}				
@@ -9148,7 +9148,7 @@ CSpriteSurface::BltSprite1555NotTrans(POINT* pPoint, CSprite* pSprite)
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -9346,7 +9346,7 @@ CSpriteSurface::BltSprite1555NotTrans(POINT* pPoint, CSprite* pSprite)
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->Blt1555NotTrans(lpSurface, Pitch);
 				}				
@@ -9393,7 +9393,7 @@ CSpriteSurface::BltSpritePal1555NotTrans(POINT* pPoint, CSpritePal* pSprite, MPa
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -9591,7 +9591,7 @@ CSpriteSurface::BltSpritePal1555NotTrans(POINT* pPoint, CSpritePal* pSprite, MPa
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->Blt1555NotTrans(lpSurface, Pitch, pal);
 				}				
@@ -9636,7 +9636,7 @@ CSpriteSurface::BltSprite1555SmallNotTrans(POINT* pPoint, CSprite* pSprite, BYTE
 	rect.bottom = pSprite->GetHeight() >> shift;
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + (pSprite->GetWidth() >> shift);
@@ -9831,7 +9831,7 @@ CSpriteSurface::BltSprite1555SmallNotTrans(POINT* pPoint, CSprite* pSprite, BYTE
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->Blt1555SmallNotTrans(lpSurface, Pitch, shift);
 				}				
@@ -9878,7 +9878,7 @@ CSpriteSurface::BltSpritePal1555SmallNotTrans(POINT* pPoint, CSpritePal* pSprite
 	rect.bottom = pSprite->GetHeight() >> shift;
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + (pSprite->GetWidth() >> shift);
@@ -10073,7 +10073,7 @@ CSpriteSurface::BltSpritePal1555SmallNotTrans(POINT* pPoint, CSpritePal* pSprite
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->Blt1555SmallNotTrans(lpSurface, Pitch, shift, pal);
 				}				
@@ -10137,7 +10137,7 @@ CSpriteSurface::BltSpriteDarkerFilter(POINT* pPoint, CSprite* pSprite)
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -10335,7 +10335,7 @@ CSpriteSurface::BltSpriteDarkerFilter(POINT* pPoint, CSprite* pSprite)
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltDarkerFilter(lpSurface, Pitch);
 				}				
@@ -10381,7 +10381,7 @@ CSpriteSurface::BltShadowSprite(POINT* pPoint, CShadowSprite* pSprite)
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -10579,7 +10579,7 @@ CSpriteSurface::BltShadowSprite(POINT* pPoint, CShadowSprite* pSprite)
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->Blt(lpSurface, Pitch);
 				}				
@@ -10625,7 +10625,7 @@ CSpriteSurface::BltShadowSpriteDarkness(POINT* pPoint, CShadowSprite* pSprite, B
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -10823,7 +10823,7 @@ CSpriteSurface::BltShadowSpriteDarkness(POINT* pPoint, CShadowSprite* pSprite, B
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltDarkness(lpSurface, Pitch, DarkBits);
 				}				
@@ -10868,7 +10868,7 @@ CSpriteSurface::BltShadowSpriteSmall(POINT* pPoint, CShadowSprite* pSprite, BYTE
 	rect.bottom = pSprite->GetHeight() >> shift;
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + (pSprite->GetWidth() >> shift);
@@ -11063,7 +11063,7 @@ CSpriteSurface::BltShadowSpriteSmall(POINT* pPoint, CShadowSprite* pSprite, BYTE
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltSmall(lpSurface, Pitch, shift);
 				}				
@@ -11109,7 +11109,7 @@ CSpriteSurface::BltShadowSpriteSmall4444(POINT* pPoint, CShadowSprite* pSprite, 
 	rect.bottom = pSprite->GetHeight() >> shift;
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + (pSprite->GetWidth() >> shift);
@@ -11304,7 +11304,7 @@ CSpriteSurface::BltShadowSpriteSmall4444(POINT* pPoint, CShadowSprite* pSprite, 
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltSmall4444(lpSurface, Pitch, pixel, shift);
 				}				
@@ -11349,7 +11349,7 @@ CSpriteSurface::BltShadowSprite4444(POINT* pPoint, CShadowSprite* pSprite, WORD 
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -11547,7 +11547,7 @@ CSpriteSurface::BltShadowSprite4444(POINT* pPoint, CShadowSprite* pSprite, WORD 
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->Blt4444(lpSurface, Pitch, pixel);
 				}				
@@ -11563,7 +11563,7 @@ CSpriteSurface::BltShadowSprite4444(POINT* pPoint, CShadowSprite* pSprite, WORD 
 
 
 //----------------------------------------------------------------------
-// Half Copy
+// Half 복사
 //----------------------------------------------------------------------
 // source --> dest 로 pixels만큼 반투명 출력을 한다.
 //----------------------------------------------------------------------
@@ -11683,7 +11683,7 @@ CSpriteSurface::memcpyHalf(WORD* pDest, WORD* pSource, WORD pixels)
 
 
 //----------------------------------------------------------------------
-// Alpha Copy 1Pixel
+// 알파 복사 1픽셀
 //----------------------------------------------------------------------
 // source --> dest 로 pixels만큼 s_Value1값으로 출력을 한다.
 //
@@ -11712,7 +11712,7 @@ CSpriteSurface::memcpyAlpha1Pixel(WORD pDest, WORD pSource)
 */
 
 //----------------------------------------------------------------------
-// Alpha Copy
+// 알파 복사
 //----------------------------------------------------------------------
 // source --> dest 로 pixels만큼 s_Value1값으로 출력을 한다.
 //
@@ -11758,7 +11758,7 @@ CSpriteSurface::memcpyAlpha(WORD* pDest, WORD* pSource, WORD pixels)
 
 	register int qTimes = pixels >> 2;	// pixels / 4
 
-	// Alpha Blending
+	// 알파 블렌딩
 	switch ( pixels & 0x03 )	// pixels % 4
 	{
 		//------------------
@@ -12135,7 +12135,7 @@ CSpriteSurface::memcpyAlpha(WORD* pDest, WORD* pSource, WORD pixels)
 
 
 //----------------------------------------------------------------------
-// Color Copy
+// 색상 복사
 //----------------------------------------------------------------------
 // source --> dest 로 pixels만큼 특정한 Color값(s_Value1)으로 출력을 한다.
 //----------------------------------------------------------------------
@@ -12235,7 +12235,7 @@ CSpriteSurface::memcpyColor(WORD* pDest, WORD* pSource, WORD pixels)
 }
 
 //----------------------------------------------------------------------
-// Scale Copy
+// 스케일 복사
 //----------------------------------------------------------------------
 // source --> dest 로 pixels만큼 Scale(s_Value1)을 바꿔서 
 // 출력한다. 
@@ -12276,7 +12276,7 @@ CSpriteSurface::memcpyScale(WORD* pDest, WORD destPitch, WORD* pSource, WORD pix
 
 
 //----------------------------------------------------------------------
-// Darkness Copy
+// 어둡게 복사
 //----------------------------------------------------------------------
 // source --> dest 로 pixels만큼 특정한 Darkness값(s_Value1)만큼
 // 어둡게 출력한다.
@@ -12377,7 +12377,7 @@ CSpriteSurface::memcpyDarkness(WORD* pDest, WORD* pSource, WORD pixels)
 }
 
 //----------------------------------------------------------------------
-// Brightness Copy
+// 밝게 복사
 //----------------------------------------------------------------------
 // source --> dest 로 pixels만큼 특정한 Brightness값(s_Value1)만큼
 // 밝게 출력한다.
@@ -12419,7 +12419,7 @@ CSpriteSurface::memcpyEffectDarker(WORD* pDest, WORD* pSource, WORD pixels)
 	register int i = pixels;
 
 	//------------------------------------------------------------	
-	// Darker : BG - SPR_Filter
+	// 어둡게: BG - SPR_Filter
 	//------------------------------------------------------------
 	int		darkR,
 			darkG,
@@ -12452,7 +12452,7 @@ CSpriteSurface::memcpyEffectGrayScale(WORD* pDest, WORD* pSource, WORD pixels)
 	register int i = pixels;
 
 	//------------------------------------------------------------	
-	// Gray Scale : color value = (R+G+B)/3
+	// Gray Scale: 색상값 = (R+G+B)/3
 	//------------------------------------------------------------
 	BYTE average;
 
@@ -12482,7 +12482,7 @@ CSpriteSurface::memcpyEffectLighten(WORD* pDest, WORD* pSource, WORD pixels)
 	register int i = pixels;
 
 	//------------------------------------------------------------	
-	// Lighten : max(BG, SPR)
+	// 밝게: max(BG, SPR)
 	//------------------------------------------------------------
 	while (i--)
 	{
@@ -12507,7 +12507,7 @@ CSpriteSurface::memcpyEffectDarken(WORD* pDest, WORD* pSource, WORD pixels)
 	register int i = pixels;
 
 	//------------------------------------------------------------	
-	// Darken : min(BG, SPR)
+	// 어두워짐: min(BG, SPR)
 	//------------------------------------------------------------	
 	while (i--)
 	{
@@ -12562,7 +12562,7 @@ CSpriteSurface::memcpyEffectScreen(WORD* pDest, WORD* pSource, WORD pixels)
 	register int i = pixels;
 
 	//------------------------------------------------------------	
-	// Screen :  TempSum=(MAXDAC-max(BG,SPR))/MAXDAC*min(BG,SPR)
+	// 스크린:  TempSum=(MAXDAC-max(BG,SPR))/MAXDAC*min(BG,SPR)
 	//           Screen=max(BG,SPR)+TempSum
 	//------------------------------------------------------------	
 	WORD temp;
@@ -12613,7 +12613,7 @@ CSpriteSurface::memcpyEffectScreenAlpha(WORD* pDest, WORD* pSource, WORD pixels)
 	register int i = pixels;
 	
 	//------------------------------------------------------------	
-	// Screen :  TempSum=(MAXDAC-max(BG,SPR))/MAXDAC*min(BG,SPR)
+	// 스크린:  TempSum=(MAXDAC-max(BG,SPR))/MAXDAC*min(BG,SPR)
 	//           Screen=max(BG,SPR)+TempSum
 	//------------------------------------------------------------	
 	WORD temp;
@@ -12770,7 +12770,7 @@ CSpriteSurface::memcpyEffectGradation(WORD* pDest, WORD* pSource, WORD pixels)
 }
 
 //----------------------------------------------------------------------
-// Effect SimpleOutline
+// SimpleOutline 효과
 //----------------------------------------------------------------------
 // 좀 띄엄띄엄한 외곽선 출력(투명색 압축의 양 끝 점에 출력)
 // pixels는 1이상이라고 가정한다.
@@ -12788,7 +12788,7 @@ CSpriteSurface::memcpyEffectSimpleOutline(WORD* pDest, WORD* pSource, WORD pixel
 }
 
 //----------------------------------------------------------------------
-// Effect WipeOut
+// WipeOut 효과
 //----------------------------------------------------------------------
 // s_Value1 : 덜 출력할 수준? 
 //				64 - 투명
@@ -12834,7 +12834,7 @@ CSpriteSurface::memcpyEffectWipeOut(WORD* pDest, WORD* pSource, WORD pixels)
 }
 
 //----------------------------------------------------------------------
-// Effect Net
+// Net 효과
 //----------------------------------------------------------------------
 // s_Value1 : 건너띄는 점
 //
@@ -12882,7 +12882,7 @@ CSpriteSurface::memcpyEffectGrayScaleVarious(WORD* pDest, WORD* pSource, WORD pi
 	//int grayValue = s_Value1;
 
 	//------------------------------------------------------------	
-	// Gray Scale : color value = (R+G+B)/3
+	// Gray Scale: 색상값 = (R+G+B)/3
 	//------------------------------------------------------------
 	int average;
 	int r, g, b;
@@ -12944,7 +12944,7 @@ CSpriteSurface::memcpyPalEffectDarker(WORD* pDest, BYTE* pSource, WORD pixels, M
 	register int i = pixels;
 
 	//------------------------------------------------------------	
-	// Darker : BG - SPR_Filter
+	// 어둡게: BG - SPR_Filter
 	//------------------------------------------------------------
 	int		darkR,
 			darkG,
@@ -12977,7 +12977,7 @@ CSpriteSurface::memcpyPalEffectGrayScale(WORD* pDest, BYTE* pSource, WORD pixels
 	register int i = pixels;
 
 	//------------------------------------------------------------	
-	// Gray Scale : color value = (R+G+B)/3
+	// Gray Scale: 색상값 = (R+G+B)/3
 	//------------------------------------------------------------
 	BYTE average;
 
@@ -13007,7 +13007,7 @@ CSpriteSurface::memcpyPalEffectLighten(WORD* pDest, BYTE* pSource, WORD pixels, 
 	register int i = pixels;
 
 	//------------------------------------------------------------	
-	// Lighten : max(BG, SPR)
+	// 밝게: max(BG, SPR)
 	//------------------------------------------------------------
 	while (i--)
 	{
@@ -13032,7 +13032,7 @@ CSpriteSurface::memcpyPalEffectDarken(WORD* pDest, BYTE* pSource, WORD pixels, M
 	register int i = pixels;
 
 	//------------------------------------------------------------	
-	// Darken : min(BG, SPR)
+	// 어두워짐: min(BG, SPR)
 	//------------------------------------------------------------	
 	while (i--)
 	{
@@ -13087,7 +13087,7 @@ CSpriteSurface::memcpyPalEffectScreen(WORD* pDest, BYTE* pSource, WORD pixels, M
 	register int i = pixels;
 
 	//------------------------------------------------------------	
-	// Screen :  TempSum=(MAXDAC-max(BG,SPR))/MAXDAC*min(BG,SPR)
+	// 스크린:  TempSum=(MAXDAC-max(BG,SPR))/MAXDAC*min(BG,SPR)
 	//           Screen=max(BG,SPR)+TempSum
 	//------------------------------------------------------------	
 	WORD temp;
@@ -13241,7 +13241,7 @@ CSpriteSurface::memcpyPalEffectGradation(WORD* pDest, BYTE* pSource, WORD pixels
 }
 
 //----------------------------------------------------------------------
-// Effect SimpleOutline
+// SimpleOutline 효과
 //----------------------------------------------------------------------
 // 좀 띄엄띄엄한 외곽선 출력(투명색 압축의 양 끝 점에 출력)
 // pixels는 1이상이라고 가정한다.
@@ -13259,7 +13259,7 @@ CSpriteSurface::memcpyPalEffectSimpleOutline(WORD* pDest, BYTE* pSource, WORD pi
 }
 
 //----------------------------------------------------------------------
-// Effect WipeOut
+// WipeOut 효과
 //----------------------------------------------------------------------
 // s_Value1 : 덜 출력할 수준? 
 //				64 - 투명
@@ -13305,7 +13305,7 @@ CSpriteSurface::memcpyPalEffectWipeOut(WORD* pDest, BYTE* pSource, WORD pixels, 
 }
 
 //----------------------------------------------------------------------
-// Effect Net
+// Net 효과
 //----------------------------------------------------------------------
 // s_Value1 : 건너띄는 점
 //
@@ -13353,7 +13353,7 @@ CSpriteSurface::memcpyPalEffectGrayScaleVarious(WORD* pDest, BYTE* pSource, WORD
 	//int grayValue = s_Value1;
 
 	//------------------------------------------------------------	
-	// Gray Scale : color value = (R+G+B)/3
+	// Gray Scale: 색상값 = (R+G+B)/3
 	//------------------------------------------------------------
 	int average;
 	int r, g, b;
@@ -13409,7 +13409,7 @@ CSpriteSurface::memcpyPalEffectGrayScaleVarious(WORD* pDest, BYTE* pSource, WORD
 
 
 //----------------------------------------------------------------------
-// Init EffectTable
+// EffectTable 초기화
 //----------------------------------------------------------------------
 void		
 CSpriteSurface::InitEffectTable()
@@ -13473,7 +13473,7 @@ CSpriteSurface::BltIndexSpriteBrightness(POINT* pPoint, CIndexSprite* pSprite, B
 	rect.bottom = pSprite->GetHeight();
 
 
-	// Lock
+	// 잠금
 	//LockW(lpSurface, Pitch);
 
 	int xPlusSpriteWidth	= pt.x + pSprite->GetWidth();
@@ -13671,7 +13671,7 @@ CSpriteSurface::BltIndexSpriteBrightness(POINT* pPoint, CIndexSprite* pSprite, B
 				}
 				else
 				{
-					// No Clip					
+					// 클립 없음					
 					lpSurface = (WORD*)((BYTE*)lpSurface + pt.y*Pitch + (pt.x<<1));
 					pSprite->BltBrightness(lpSurface, Pitch, BrightBits);
 				}				
@@ -13685,13 +13685,13 @@ CSpriteSurface::BltIndexSpriteBrightness(POINT* pPoint, CIndexSprite* pSprite, B
 }
 
 //----------------------------------------------------------------------
-// DirectX Compatibility Methods (SDL Backend Stubs)
+// DirectX 호환성 메서드 (SDL 백엔드 스텁)
 //----------------------------------------------------------------------
 
 bool CSpriteSurface::Restore()
 {
 #ifdef SPRITELIB_BACKEND_SDL
-	// SDL backend: Surface doesn't need restoration
+	// SDL 백엔드: 서페이스는 복구가 필요 없다
 	return true;
 #else
 	return false;
@@ -13703,7 +13703,7 @@ void* CSpriteSurface::Lock(RECT* rect, DWORD* pitch)
 #ifdef SPRITELIB_BACKEND_SDL
 	(void)rect;
 	if (pitch) {
-		*pitch = m_width * 2; // 16-bit color
+		*pitch = m_width * 2; // 16비트 컬러
 	}
 	return spritectl_surface_lock(m_backend_surface);
 #else
@@ -13722,7 +13722,7 @@ void CSpriteSurface::Unlock()
 int CSpriteSurface::GetSurfacePitch() const
 {
 #ifdef SPRITELIB_BACKEND_SDL
-	return m_width * 2; // 16-bit color
+	return m_width * 2; // 16비트 컬러
 #else
 	return 0;
 #endif
@@ -13759,8 +13759,8 @@ bool CSpriteSurface::InitTextureSurface(int width, int height, void* pixels, voi
 {
 #ifdef SPRITELIB_BACKEND_SDL
 	(void)pixels;
-	(void)pixelFormat;  // Store for future use if needed
-	// Create or resize the surface
+	(void)pixelFormat;  // 필요하면 나중에 사용하기 위해 저장
+	// 서페이스를 생성하거나 크기를 조정한다
 	if (m_backend_surface) {
 		spritectl_surface_release(m_backend_surface);
 	}

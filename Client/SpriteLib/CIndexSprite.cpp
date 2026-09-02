@@ -11,7 +11,7 @@
 #endif
 
 //-----------------------------------------------------------------------------
-// Static Member
+// 정적 멤버
 //-----------------------------------------------------------------------------
 WORD	CIndexSprite::ColorSet[MAX_COLORSET][MAX_COLORGRADATION];
 WORD	CIndexSprite::GradationValue[MAX_COLORGRADATION];
@@ -19,7 +19,7 @@ WORD	CIndexSprite::ColorSetDarkness[MAX_DARKBIT][MAX_COLORSET][MAX_COLORGRADATIO
 BYTE	CIndexSprite::ColorToGradation[MAX_COLOR_TO_GRADATION];
 
 //----------------------------------------------------------------------
-// Static member
+// 정적 멤버
 //----------------------------------------------------------------------
 WORD	CIndexSprite::s_Colorkey = 0;
 int		CIndexSprite::s_IndexValue[MAX_COLORSET_USE];
@@ -30,7 +30,7 @@ int		CIndexSprite::s_IndexValue[MAX_COLORSET_USE];
 const int defaultGradationColor = 384;
 
 //-----------------------------------------------------------------------------
-// memcpy Effect
+// memcpy 효과
 //-----------------------------------------------------------------------------
 FUNCTION_MEMCPYEFFECT 	CIndexSprite::s_pMemcpyEffectFunction = memcpyEffectDarker;
 FUNCTION_MEMCPYEFFECT	CIndexSprite::s_pMemcpyEffectFunctionTable[MAX_EFFECT] =
@@ -52,7 +52,7 @@ FUNCTION_MEMCPYEFFECT	CIndexSprite::s_pMemcpyEffectFunctionTable[MAX_EFFECT] =
 
 //-----------------------------------------------------------------------------
 //
-// Static Functions
+// 정적 함수
 //
 //-----------------------------------------------------------------------------
 
@@ -134,7 +134,7 @@ CIndexSprite::SetColorSet()
 		
 
 	//----------------------------------------------------------------------
-	// ColorIndex Table 
+	// ColorIndex 테이블
 	//----------------------------------------------------------------------
 	set = 0;
 	int r,g,b;
@@ -239,7 +239,7 @@ CIndexSprite::SetColorSet()
 	}
 
 	//----------------------------------------------------------------------
-	// Color to Gradation
+	// 색상 → Gradation 변환
 	//----------------------------------------------------------------------
 	for (BYTE cg=0; cg<MAX_COLOR_TO_GRADATION; cg++)
 	{
@@ -433,7 +433,7 @@ CIndexSprite::GetIndexColor(WORD* pColor, int step,
 
 //----------------------------------------------------------------------
 //
-// constructor/destructore
+// 생성자/소멸자
 //
 //----------------------------------------------------------------------
 
@@ -457,7 +457,7 @@ CIndexSprite::~CIndexSprite()
 
 //----------------------------------------------------------------------
 //
-// member functions
+// 멤버 함수
 //
 //----------------------------------------------------------------------
 
@@ -491,7 +491,7 @@ CIndexSprite::Release()
 
 
 //----------------------------------------------------------------------
-// Assign Operator
+// 대입 연산자
 //----------------------------------------------------------------------
 void
 CIndexSprite::operator = (const CIndexSprite& Sprite)
@@ -827,7 +827,7 @@ CIndexSprite::SetPixel(WORD* pSource, WORD sourcePitch,
 
 
 //-----------------------------------------------------------------------------
-// Generate Index 2
+// 인덱스 생성 2
 //-----------------------------------------------------------------------------
 // 
 // ppColor에서 width*height만큼의 점을 읽어서 Sprite를 만드는데..
@@ -906,7 +906,7 @@ CIndexSprite::GenerateFromIndex(WORD** ppColor,
 
 
 	//-----------------------------------
-	// test code
+	// 테스트 코드
 	//-----------------------------------
 	//int* m_pLineIndex = new int [height];
 
@@ -1215,7 +1215,7 @@ CIndexSprite::GenerateFromIndex(WORD** ppColor,
 	m_Pixels = new WORD* [height];
 
 
-	// test code
+	// 테스트 코드
 	//int* m_pLineIndex = new int [height];
 
 
@@ -1584,7 +1584,7 @@ CIndexSprite::GetIndexInfo(WORD**& ppIndex)
 }
 
 //----------------------------------------------------------------------
-// Is ColorPixel ?
+// 색상 픽셀인가?
 //----------------------------------------------------------------------
 // Sprite안에서 (x,y)는 색깔이 있는가?(투명색이 아닌 경우)
 //----------------------------------------------------------------------
@@ -1655,7 +1655,7 @@ CIndexSprite::IsColorPixel(short x, short y)
 }
 
 //----------------------------------------------------------------------
-// Get Pixel ?
+// 픽셀 얻기
 //----------------------------------------------------------------------
 // Sprite안에서 (x,y)는 색깔을 얻는다.(투명색이 아닌 경우)
 //----------------------------------------------------------------------
@@ -4201,7 +4201,7 @@ CIndexSprite::BltWave(WORD *pDest, WORD pitch)
 					colorCount = *pPixels++;
 					
 					//memcpy((void*)pDestTemp, (void*)pPixels, colorCount<<1);
-					// WAVE
+					// 웨이브
 					for (int l=0; l<colorCount; l++)
 					{
 						WORD color = *pPixels;

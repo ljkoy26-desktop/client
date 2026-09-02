@@ -13,14 +13,14 @@
 class CAlphaSpritePal : public CSpritePalBase
 {
 public:
-	// Constructor and destructor (for vtable)
+	// 생성자와 소멸자 (vtable용)
 	CAlphaSpritePal();
 	virtual ~CAlphaSpritePal();
 
 	void SetPixel(BYTE *pSource, WORD pitch, BYTE *pSourceAlpha, WORD alphaPitch, WORD width, WORD height);
 	
 	//---------------------------------------------------------
-	// Blt functions
+	// Blt 함수
 	//---------------------------------------------------------
 	void		Blt(int x, int y, WORD* pDest, int pitch, MPalette &pal);
 
@@ -35,7 +35,7 @@ public:
 	void		BltClipHeight(WORD *pDest, WORD pitch, RECT* pRect, MPalette &pal);
 	
 	//---------------------------------------------------------
-	// Blt 4444  for Texture
+	// Blt 4444 (텍스처용)
 	//---------------------------------------------------------
 	void		Blt4444(WORD *pDest, WORD pitch, MPalette &pal);				
 	void		Blt4444ClipLeft(WORD *pDest, WORD pitch, RECT* pRect, MPalette &pal);
@@ -44,7 +44,7 @@ public:
 	void		Blt4444ClipHeight(WORD *pDest, WORD pitch, RECT* pRect, MPalette &pal);
 	
 	//---------------------------------------------------------
-	// Blt 4444 NotTrans for Texture (투명부분도 검게 칠한다)
+	// Blt 4444 NotTrans (텍스처용, 투명부분도 검게 칠한다)
 	//---------------------------------------------------------
 	void		Blt4444NotTrans(WORD *pDest, WORD pitch, MPalette &pal);				
 	void		Blt4444NotTransClipLeft(WORD *pDest, WORD pitch, RECT* pRect, MPalette &pal);
@@ -58,7 +58,7 @@ public:
 	void		Blt4444SmallNotTrans(WORD *pDest, WORD pitch, BYTE shift, MPalette &pal);
 	
 	//---------------------------------------------------------
-	// Alpha Blending
+	// 알파 블렌딩
 	//---------------------------------------------------------
 	void		BltAlpha(WORD *pDest, WORD pitch, BYTE alpha, MPalette &pal);
 	void		BltAlphaClipLeft(WORD *pDest, WORD pitch, RECT* pRect, BYTE alpha, MPalette &pal);
@@ -67,7 +67,7 @@ public:
 	void		BltAlphaClipHeight(WORD *pDest, WORD pitch, RECT* pRect, BYTE alpha, MPalette &pal);
 	
 	//---------------------------------------------------------
-	// Utility Functions
+	// 유틸리티 함수
 	//---------------------------------------------------------
 	void		memcpyAlpha4444(WORD* pDest, BYTE* pSource, WORD pixels, MPalette &pal);
 	void		memcpyAlpha4444Small(WORD* pDest, BYTE* pSource, WORD pixels, MPalette &pal);

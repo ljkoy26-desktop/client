@@ -72,7 +72,7 @@ class CShadowSprite
 		static WORD	GetColorkey() 					{ return s_Colorkey; }
 
 		//---------------------------------------------------------
-		// fstream에서 save/load를 한다.
+		// fstream에서 저장/불러오기를 한다.
 		//---------------------------------------------------------
 		bool		SaveToFile(std::ofstream& file);
 		bool		LoadFromFile(std::ifstream& file);
@@ -95,7 +95,7 @@ class CShadowSprite
 		bool		IsColorPixel(short x, short y);
 
 		//---------------------------------------------------------
-		// get functions		
+		// 조회 함수
 		//---------------------------------------------------------
 		WORD		GetWidth()		const			{ return m_Width; }
 		WORD		GetHeight()		const			{ return m_Height; }
@@ -103,7 +103,7 @@ class CShadowSprite
 		WORD*		GetPixelLine(WORD y)	const	{ return m_Pixels[y]; }
 
 #ifdef SPRITELIB_BACKEND_SDL
-		/* Backend sprite management */
+		/* 백엔드 스프라이트 관리 */
 		spritectl_sprite_t GetBackendSprite() const	{ return m_backend_sprite; }
 		bool IsBackendDirty() const			{ return m_backend_dirty; }
 		void SetBackendSprite(spritectl_sprite_t sprite)	{ m_backend_sprite = sprite; }
@@ -127,7 +127,7 @@ class CShadowSprite
 
 		//---------------------------------------------------------
 		// 실제 크기보다 작게 출력하기
-		// Test Code~~
+		// 테스트 코드~~
 		//---------------------------------------------------------
 		void		BltSmall(WORD *pDest, WORD pitch, BYTE shift);
 		void		BltSmallClipLeft(WORD *pDest, WORD pitch, RECT* pRect, BYTE shift);
@@ -159,7 +159,7 @@ class CShadowSprite
 		//void		BltHalfClipHeight(WORD *pDest, WORD pitch, RECT* pRect);
 
 		//---------------------------------------------------------
-		// Alpha Blending
+		// 알파 블렌딩
 		//---------------------------------------------------------
 		//void		BltAlpha(WORD *pDest, WORD pitch);
 		//void		BltAlphaClipLeft(WORD *pDest, WORD pitch, RECT* pRect);
@@ -203,7 +203,7 @@ class CShadowSprite
 
 
 		//---------------------------------------------------------
-		// Effect
+		// 효과
 		//---------------------------------------------------------
 		//void		BltEffect(WORD *pDest, WORD pitch);				
 		//void		BltEffectClipLeft(WORD *pDest, WORD pitch, RECT* pRect);
@@ -216,7 +216,7 @@ class CShadowSprite
 		//void		BltShadowFilter(WORD *pDest, WORD pitch, CFilter* pFilter);		
 
 		//---------------------------------------------------------
-		// Utility Functions
+		// 유틸리티 함수
 		//---------------------------------------------------------
 		void		memcpyShadowDarkness(WORD* pDest, WORD pixels);
 		inline void		memcpyShadow4444(WORD* pDest, WORD pixels);
@@ -231,12 +231,12 @@ class CShadowSprite
 	protected :
 		WORD			m_Width;		// 가로 pixel수
 		WORD			m_Height;		// 세로 pixel수		
-		WORD**			m_Pixels;		// pixels
+		WORD**			m_Pixels;		// 픽셀들
 		bool			m_bInit;		// data가 있는가?
 
 #ifdef SPRITELIB_BACKEND_SDL
-		spritectl_sprite_t	m_backend_sprite;	// Backend sprite handle
-		bool			m_backend_dirty;	// True if m_Pixels changed but not synced to backend
+		spritectl_sprite_t	m_backend_sprite;	// 백엔드 스프라이트 핸들
+		bool			m_backend_dirty;	// m_Pixels가 변경되었지만 백엔드에 동기화되지 않았으면 true
 #endif
 
 		static WORD		s_Colorkey;

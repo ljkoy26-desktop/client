@@ -32,24 +32,24 @@ public:
 	virtual ~CTypePack();
 	
 	//--------------------------------------------------------
-	// Init/Release
+	// 초기화/해제
 	//--------------------------------------------------------
 	virtual void	Init(WORD size);
 	virtual void	Release();
 	
 	//--------------------------------------------------------
-	// Size
+	// 크기
 	//--------------------------------------------------------
 	DWORD		GetSize() const { return m_Size; }
 	
 	//--------------------------------------------------------
-	// operator
+	// 연산자
 	//--------------------------------------------------------
 	Type&		operator [] (WORD n);//		{ return m_pSpritePals[n]; }
 	Type&		Get(WORD n);
 
 	//--------------------------------------------------------
-	// file I/O
+	// 파일 입출력
 	//--------------------------------------------------------
 	virtual bool LoadFromFile(std::ifstream&file);
 	virtual bool SaveToFile(std::ofstream&dataFile, std::ofstream&indexFile);
@@ -70,7 +70,7 @@ protected:
 	WORD			m_Size;
 	bool			m_bRunningLoad;
 
-	// runtime loading
+	// 런타임 로딩
 	WORD			m_nLoadData;	// Loading 된 CSprite의 개수
 	std::ifstream *m_file;
 	int*			m_file_index;
@@ -207,7 +207,7 @@ bool CTypePack<Type>::LoadFromFile(std::ifstream&file)
 }
 
 //----------------------------------------------------------------------
-// Load From File Running
+// 실시간 파일 로딩
 //----------------------------------------------------------------------
 // 실시간 로딩
 //----------------------------------------------------------------------
@@ -411,11 +411,11 @@ template <class TypeBase, class Type1, class Type2>
 class CTypePack2
 {
 private:
-	// Disable copy constructor and copy assignment to prevent issues with m_file pointer
+	// m_file 포인터 문제를 방지하기 위해 복사 생성자와 복사 대입을 금지한다
 	CTypePack2(const CTypePack2&) = delete;
 	CTypePack2& operator=(const CTypePack2&) = delete;
 
-	// Disable move constructor and move assignment to prevent m_file pointer from being moved
+	// m_file 포인터가 이동되는 것을 방지하기 위해 이동 생성자와 이동 대입을 금지한다
 	CTypePack2(CTypePack2&&) = delete;
 	CTypePack2& operator=(CTypePack2&&) = delete;
 
@@ -424,24 +424,24 @@ public:
 	virtual ~CTypePack2();
 	
 	//--------------------------------------------------------
-	// Init/Release
+	// 초기화/해제
 	//--------------------------------------------------------
 	virtual void	Init(WORD size );
 	virtual void	Release();
 	
 	//--------------------------------------------------------
-	// Size
+	// 크기
 	//--------------------------------------------------------
 	DWORD		GetSize() const { return m_Size; }
 	
 	//--------------------------------------------------------
-	// operator
+	// 연산자
 	//--------------------------------------------------------
 	TypeBase&		operator [] (WORD n);//		{ return m_pSpritePals[n]; }
 	TypeBase&		Get(WORD n);
 
 	//--------------------------------------------------------
-	// file I/O
+	// 파일 입출력
 	//--------------------------------------------------------
 	virtual bool LoadFromFile(std::ifstream&file);
 	virtual bool SaveToFile(std::ofstream&dataFile, std::ofstream&indexFile);
@@ -464,7 +464,7 @@ protected:
 	WORD			m_Size;
 	bool			m_bRunningLoad;
 
-	// runtime loading
+	// 런타임 로딩
 	WORD			m_nLoadData;	// Loading 된 CSprite의 개수
 	std::ifstream *m_file;
 	int*			m_file_index;
@@ -509,8 +509,8 @@ void CTypePack2<TypeBase, Type1, Type2>::Release()
 
 	if(m_pData != NULL)
 	{
-		// IMPORTANT: Delete with correct type to match new Type1[size] or new Type2[size]
-		// Using base class pointer to delete derived class array is UB even with virtual destructor
+		// 중요: new Type1[size] 또는 new Type2[size]에 맞는 올바른 타입으로 delete해야 한다
+		// 기반 클래스 포인터로 파생 클래스 배열을 delete하는 것은 가상 소멸자가 있어도 UB이다
 		if(m_bSecond)
 			delete [] ((Type2*)m_pData);
 		else
@@ -555,7 +555,7 @@ TypeBase &CTypePack2<TypeBase, Type1, Type2>::Get(WORD n)
 			return m_pData[n];
 		}
 
-		// Validate sprite index
+		// 스프라이트 인덱스 유효성 검사
 		if (n >= m_Size)
 		{
 			printf("WARNING Get[%d]: this=%p, sprite index %d out of range (size=%d)\n",
@@ -564,13 +564,13 @@ TypeBase &CTypePack2<TypeBase, Type1, Type2>::Get(WORD n)
 			return m_pData[n];
 		}
 
-		// Debug: print object and file pointer info BEFORE using m_file
+		// 디버그: m_file을 사용하기 전에 객체와 파일 포인터 정보를 출력한다
 //		printf("DEBUG Get[%d]: this=%p, m_file=%p, m_nLoadData=%d, m_Size=%d\n",
 //		       n, this, m_file, m_nLoadData, m_Size);
 
-		// Try to load sprite - use exception handler to detect file corruption
+		// 스프라이트 로드를 시도한다 - 파일 손상 감지를 위해 예외 처리기를 사용한다
 		try {
-			// Check if file stream is valid before using it
+			// 사용하기 전에 파일 스트림이 유효한지 확인한다
 			if (!m_file->good())
 			{
 				printf("WARNING Get[%d]: this=%p, m_file=%p is not good(), disabling lazy loading\n",
@@ -583,7 +583,7 @@ TypeBase &CTypePack2<TypeBase, Type1, Type2>::Get(WORD n)
 		}
 		catch (...)
 		{
-			// File operation failed, disable lazy loading
+			// 파일 작업이 실패하여 지연 로딩을 비활성화한다
 			printf("WARNING: Failed to load sprite %d from file, disabling lazy loading\n", n);
 			m_bRunningLoad = false;
 			return m_pData[n];
@@ -651,7 +651,7 @@ bool CTypePack2<TypeBase, Type1, Type2>::LoadFromFile(std::ifstream&file)
 }
 
 //----------------------------------------------------------------------
-// Load From File Running
+// 실시간 파일 로딩
 //----------------------------------------------------------------------
 // 실시간 로딩
 //----------------------------------------------------------------------
@@ -663,7 +663,7 @@ bool CTypePack2<TypeBase, Type1, Type2>::LoadFromFileRunning(LPCTSTR lpszFilenam
 	filename += 'i';
 	std::ifstream indexFile(filename.c_str(), ios::binary);
 
-	// Check if index file opened successfully
+	// 인덱스 파일이 정상적으로 열렸는지 확인한다
 	if (!indexFile.is_open() || !indexFile.good())
 	{
 		printf("ERROR: Failed to open index file: %s\n", filename.c_str());
@@ -701,7 +701,7 @@ bool CTypePack2<TypeBase, Type1, Type2>::LoadFromFileRunning(LPCTSTR lpszFilenam
 	// file에서 sprite 개수를 읽어온다.	
 	m_file->open(lpszFilename, ios::binary);
 
-	// Check if data file opened successfully
+	// 데이터 파일이 정상적으로 열렸는지 확인한다
 	if (!m_file->is_open() || !m_file->good())
 	{
 		printf("ERROR: Failed to open data file: %s\n", lpszFilename);

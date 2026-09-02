@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // CSprite555.cpp
 //----------------------------------------------------------------------
 #include "client_PCH.h"
@@ -12,7 +12,7 @@
 
 //----------------------------------------------------------------------
 //
-// member functions
+// 멤버 함수
 //
 //----------------------------------------------------------------------
 
@@ -117,9 +117,9 @@ CSprite555::LoadFromFile(ifstream& file)
 	// Loading하고 있지 않은 상태인 경우
 	// Loading할려는 상태로 만든다.
 	InterlockedCompareExchange( 
-		(PVOID *)&pCheck,  // pointer to the destination pointer
-		(PVOID)&LOADING_STATUS_NOW,      // the exchange value
-		(PVOID)&LOADING_STATUS_NONE		// the value to compare
+		(PVOID *)&pCheck,  // 대상 포인터
+		(PVOID)&LOADING_STATUS_NOW,      // 교체할 값
+		(PVOID)&LOADING_STATUS_NONE		// 비교할 값
 	);
  
 	// 지금 loading할것이 아니면 return
@@ -154,7 +154,7 @@ CSprite555::LoadFromFile(ifstream& file)
 	}
 
 	//---------------------------------
-	// for OLD version of CSprite
+	// 예전 버전의 CSprite를 위함
 	//---------------------------------
 	//BOOL dummy;
 	//file.read((char*)&dummy, 1);	
@@ -229,7 +229,7 @@ CSprite555::LoadFromFileToBuffer(ifstream& file)
 		return false;
 
 	//---------------------------------
-	// for OLD version of CSprite
+	// 예전 버전의 CSprite를 위함
 	//---------------------------------
 	//BOOL dummy;
 	//file.read((char*)&dummy, 1);	
@@ -248,7 +248,7 @@ CSprite555::LoadFromFileToBuffer(ifstream& file)
 		
 		file.read((char*)s_Buffer[i], s_BufferLen[i]<<1);
 
-		// converter to 5:5:5
+		// 5:5:5로 변환
 		count = s_Buffer[i][0];			
 		index = 1;
 

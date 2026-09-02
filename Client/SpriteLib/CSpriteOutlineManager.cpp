@@ -1,4 +1,4 @@
-#include "CSpriteOutlineManager.h"
+﻿#include "CSpriteOutlineManager.h"
 #include "CSprite.h"
 #include "CIndexSprite.h"
 
@@ -41,7 +41,7 @@ void CSpriteOutlineManager::Add(int x, int y, CIndexSprite* pSprite, unsigned sh
 
 void CSpriteOutlineManager::Generate(int type)
 {
-	// TODO: Generate sprite outline
-	// For now, this is a stub
+	// TODO: 스프라이트 윤곽선을 생성한다
+	// 지금은 스텁이다
 	(void)type;
 }

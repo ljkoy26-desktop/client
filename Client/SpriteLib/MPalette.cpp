@@ -1,4 +1,4 @@
-#include "client_PCH.h"
+﻿#include "client_PCH.h"
 #include "MPalette.h"
 #include <fstream>\nusing namespace std;
 
@@ -45,7 +45,7 @@ void MPalette::operator = (const MPalette& pal)
 }
 
 
-// file save는 565를 기준으로 한다.
+// 파일 저장은 565를 기준으로 한다.
 bool MPalette555::LoadFromFile(std::ifstream &file)
 {
 	Release();
@@ -63,7 +63,7 @@ bool MPalette555::LoadFromFile(std::ifstream &file)
 	return true;
 }
 
-// file save는 565를 기준으로 한다.
+// 파일 저장은 565를 기준으로 한다.
 bool MPalette555::SaveToFile(std::ofstream &file)
 {
 	file.write((const char *)&m_Size, 1);

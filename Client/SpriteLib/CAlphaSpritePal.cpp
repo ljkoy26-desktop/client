@@ -7,7 +7,7 @@
 int		CAlphaSpritePal::s_Value1	= 0;
 int		CAlphaSpritePal::s_Value2	= 0;
 
-// Constructor and destructor for vtable
+// 생성자와 소멸자 (vtable용)
 CAlphaSpritePal::CAlphaSpritePal()
 {
 }
@@ -238,7 +238,7 @@ void CAlphaSpritePal::Blt(int x, int y, WORD* pDest, int pitch, MPalette &pal)
 }
 
 //----------------------------------------------------------------------
-// AlphaChannel Copy
+// 알파채널 복사
 //----------------------------------------------------------------------
 // Alpha값 : 1~32
 //----------------------------------------------------------------------
@@ -255,7 +255,7 @@ CAlphaSpritePal::memcpyAlpha(WORD* pDest, BYTE* pSource, WORD pixels, MPalette &
 	
 	BYTE alpha;
 	
-	// Alpha Channel Blending
+	// 알파 채널 블렌딩
 	// 한점씩 찍기
 	while (i--)
 	{	
@@ -288,7 +288,7 @@ CAlphaSpritePal::memcpyAlpha(WORD* pDest, BYTE* pSource, WORD pixels, MPalette &
 
 
 //----------------------------------------------------------------------
-// AlphaChannel Copy  4444
+// 알파채널 복사  4444
 //----------------------------------------------------------------------
 // Alpha값 : 1~32
 //----------------------------------------------------------------------
@@ -308,7 +308,7 @@ CAlphaSpritePal::memcpyAlpha4444(WORD* pDest, BYTE* pSource, WORD pixels, MPalet
 
 	BYTE alpha;
 
-	// Alpha Channel Blending
+	// 알파 채널 블렌딩
 	// 한점씩 찍기
 	while (i--)
 	{	
@@ -2539,7 +2539,7 @@ CAlphaSpritePal::BltAlphaClipHeight(WORD *pDest, WORD pitch, RECT* pRect, BYTE a
 
 
 //----------------------------------------------------------------------
-// AlphaChannel Copy
+// 알파채널 복사
 //----------------------------------------------------------------------
 // Alpha값 : 1~32
 //----------------------------------------------------------------------
@@ -2557,7 +2557,7 @@ CAlphaSpritePal::memcpyAlphaValue(WORD* pDest, BYTE* pSource, WORD pixels, MPale
 
 	//BYTE alpha;
 
-	// Alpha Channel Blending
+	// 알파 채널 블렌딩
 	// 한점씩 찍기
 	while (i--)
 	{	
@@ -2745,7 +2745,7 @@ CAlphaSpritePal::Blt4444SmallNotTrans(WORD *pDest, WORD pitch, BYTE shift, MPale
 
 
 //----------------------------------------------------------------------
-// AlphaChannel Copy  4444 Small
+// 알파채널 복사  4444 Small
 //----------------------------------------------------------------------
 // Alpha값 : 1~32
 //----------------------------------------------------------------------
@@ -2765,7 +2765,7 @@ CAlphaSpritePal::memcpyAlpha4444Small(WORD* pDest, BYTE* pSource, WORD pixels, M
 
 	BYTE alpha;
 	
-	// Alpha Channel Blending
+	// 알파 채널 블렌딩
 	// 한점씩 찍기
 	while (i--)
 	{	

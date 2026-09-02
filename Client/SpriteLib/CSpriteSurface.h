@@ -373,7 +373,7 @@ public:
 
 	//------------------------------------------------------------
 	//
-	// Lock & Draw Functions
+	// 잠금 및 그리기 함수
 	//
 	//------------------------------------------------------------
 
@@ -401,7 +401,7 @@ public:
 	// CSprite 관련 함수
 	//
 	//------------------------------------------------------------
-	// Sprite
+	// 스프라이트
 	void	BltSprite(POINT* pPoint, CSprite* pSprite);
 	void	BltSpriteNoClip(POINT* pPoint, CSprite* pSprite);
 	void	BltSpriteHalf(POINT* pPoint, CSprite* pSprite);
@@ -420,13 +420,13 @@ public:
 	void	BltSpritePal1555SmallNotTrans(POINT* pPoint, CSpritePal* pSprite, BYTE shift, MPalette& pal);
 	void	BltSpritePal1555NotTrans(POINT* pPoint, CSpritePal* pSprite, MPalette& pal);
 
-	// Filter
+	// 필터
 	void	BltSpriteAlphaFilter(POINT* pPoint, CSprite* pSprite);
 	void	BltSpriteAlphaFilterDarkness(POINT* pPoint, CSprite* pSprite, BYTE DarkBits);
 	void	BltSpriteDarkerFilter(POINT* pPoint, CSprite* pSprite);
 	//void	BltSpriteAlphaFilter(POINT* pPoint, CSprite* pSprite, CFilter* pFilter);
 
-	// AlphaSprite
+	// 알파 스프라이트
 	void	BltAlphaSprite(POINT* pPoint, CAlphaSprite* pSprite);
 	void	BltAlphaSpriteAlpha(POINT* pPoint, CAlphaSprite* pSprite, BYTE alpha);
 	void	BltAlphaSprite4444(POINT* pPoint, CAlphaSprite* pSprite);
@@ -439,7 +439,7 @@ public:
 	void	BltAlphaSpritePal4444NotTrans(POINT* pPoint, CAlphaSpritePal* pSprite, MPalette& pal);
 	void	BltAlphaSpritePal4444SmallNotTrans(POINT* pPoint, CAlphaSpritePal* pSprite, BYTE shift, MPalette& pal);
 
-	// IndexSprite
+	// 인덱스 스프라이트
 	void	BltIndexSprite(POINT* pPoint, CIndexSprite* pSprite);
 	void	BltIndexSpriteDarkness(POINT* pPoint, CIndexSprite* pSprite, BYTE DarkBits);
 	void	BltIndexSpriteAlpha(POINT* pPoint, CIndexSprite* pSprite, BYTE alpha);
@@ -448,12 +448,12 @@ public:
 	void	BltIndexSpriteEffect(POINT* pPoint, CIndexSprite* pSprite);
 	void	BltIndexSpriteBrightness(POINT* pPoint, CIndexSprite* pSprite, BYTE BrightBits);
 
-	// Sprite Outline
+	// 스프라이트 외곽선
 	void	BltSpriteOutline(CSpriteOutlineManager* pSOM, WORD color);
 	void	BltSpriteOutlineOnly(CSpriteOutlineManager* pSOM, WORD color);
 	void	BltSpriteOutlineDarkness(CSpriteOutlineManager* pSOM, WORD color, BYTE DarkBits);
 
-	// ShadowSprite
+	// 그림자 스프라이트
 	void	BltShadowSprite(POINT* pPoint, CShadowSprite* pSprite);
 	void	BltShadowSpriteSmall(POINT* pPoint, CShadowSprite* pSprite, BYTE shift);
 	void	BltShadowSpriteDarkness(POINT* pPoint, CShadowSprite* pSprite, BYTE DarkBits);

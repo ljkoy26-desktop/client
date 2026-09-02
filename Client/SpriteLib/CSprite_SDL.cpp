@@ -1,9 +1,9 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	CSprite_SDL.cpp
 
-	SDL2 backend implementation for CSprite.
-	This file is currently empty - backend logic is in CSpriteSurface_Adapter.cpp
+	CSprite를 위한 SDL2 백엔드 구현.
+	이 파일은 현재 비어 있음 - 백엔드 로직은 CSpriteSurface_Adapter.cpp에 있다
 
 	2025.01.15
 
@@ -16,6 +16,6 @@
 #include "CFilter.h"
 #include "SpriteLibBackend.h"
 
-/* Placeholder for future CSprite-specific SDL backend functionality */
+/* 향후 CSprite 전용 SDL 백엔드 기능을 위한 자리 표시자 */
 
 #endif /* SPRITELIB_BACKEND_SDL */

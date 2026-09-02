@@ -859,7 +859,7 @@ CSpritePal::Blt1555SmallNotTrans(WORD *pDest, WORD pitch, BYTE shift, MPalette &
 }
 
 //----------------------------------------------------------------------
-// AlphaChannel Copy  1555
+// 알파채널 복사  1555
 //----------------------------------------------------------------------
 // Alpha값 : 의미없다.
 //----------------------------------------------------------------------
@@ -877,7 +877,7 @@ CSpritePal::memcpy1555(WORD* pDest, BYTE* pSource, WORD pixels, MPalette &pal)
 	
 	register int i = pixels;
 	
-	// Alpha Channel Blending
+	// 알파 채널 블렌딩
 	// 한점씩 찍기
 	while (i--)
 	{	
@@ -899,7 +899,7 @@ CSpritePal::memcpy1555(WORD* pDest, BYTE* pSource, WORD pixels, MPalette &pal)
 }
 
 //----------------------------------------------------------------------
-// Alpha Copy  1555 Small
+// 알파 복사  1555 Small
 //----------------------------------------------------------------------
 // Alpha값 : 의미없다 - -;
 //----------------------------------------------------------------------

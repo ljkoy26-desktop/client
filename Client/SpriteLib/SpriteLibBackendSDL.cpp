@@ -771,8 +771,8 @@ int spritectl_blt_sprite(spritectl_surface_t dest, int x, int y,
 	 * 같은 버퍼를 공유했던 이전 alpha 블릿의 낡은 mod 값을 그대로 이어받을 수 있다. */
 	SDL_SetSurfaceAlphaMod(src_surface, (flags & SPRITECTL_BLT_ALPHA) ? (Uint8)alpha : 255);
 
-	/* 关键: 始终启用混合模式以支持 alpha 通道 */
-	/* 即使不是 alpha 模式，也需要 BLEND 模式来处理 colorkey 产生的透明像素 */
+	/* 중요: 알파 채널을 지원하기 위해 항상 블렌드 모드를 활성화한다 */
+	/* alpha 모드가 아니더라도 colorkey로 인해 생기는 투명 픽셀을 처리하려면 BLEND 모드가 필요하다 */
 	if (SDL_SetSurfaceBlendMode(src_surface, SDL_BLENDMODE_BLEND) != 0) {
 		fprintf(stderr, "[SpriteLib] SDL_SetSurfaceBlendMode failed: %s\n",
 		        SDL_GetError());

@@ -21,7 +21,7 @@ public:
 	bool IsEmptySprite() const		{ if(IsInit() && m_Size == 0) return true; return false; }
 	
 	//--------------------------------------------------------
-	// Init/Release
+	// 초기화/해제
 	//--------------------------------------------------------
 	bool		IsNotInit() const	{ return !m_bInit; }
 	bool		IsInit() const		{ return m_bInit; }
@@ -33,13 +33,13 @@ public:
 	void		Release();
 	
 	//--------------------------------------------------------
-	// file I/O
+	// 파일 입출력
 	//--------------------------------------------------------
 	bool LoadFromFile(ifstream &file);
 	bool SaveToFile(ofstream &file);
 	
 	//--------------------------------------------------------
-	// Get Functions
+	// 조회 함수
 	//--------------------------------------------------------
 	WORD	GetWidth() const	{ return m_Width; }
 	WORD	GetHeight() const	{ return m_Height; }
@@ -48,17 +48,17 @@ public:
 	static BYTE	GetColorKey()				{ return s_Colorkey; }
 	
 	//--------------------------------------------------------
-	// operator
+	// 연산자
 	//--------------------------------------------------------
 	void		operator = (const CSpritePalBase& Sprite);
 	
 	//---------------------------------------------------------
-	// Blt functions
+	// Blt 함수
 	//---------------------------------------------------------
 	virtual void Blt(int x, int y, WORD* pDest, int pitch, MPalette &pal) = 0;
 	
 	//---------------------------------------------------------
-	// Pixel
+	// 픽셀
 	//---------------------------------------------------------
 	virtual bool	IsColorPixel(short x,short y) = 0;
 	virtual WORD	GetPixel(short x, short y, MPalette &pal) = 0;
@@ -68,8 +68,8 @@ protected:
 	WORD			m_Height;		// 세로 pixel수		
 	DWORD			m_Size;			// 스프라이트의 size
 	
-	BYTE**			m_pPixels;		// pixels point array
-	BYTE*			m_pData;			// data
+	BYTE**			m_pPixels;		// 픽셀 포인터 배열
+	BYTE*			m_pData;			// 데이터
 	
 	bool			m_bInit;		// data가 있는가?
 	bool			m_bLoading;		// Loading중인가?

@@ -68,9 +68,9 @@
 using namespace std;
 
 //-----------------------------------------------------------------------------
-// Defines
+// 정의
 //-----------------------------------------------------------------------------
-// Maximum value설정
+// 최댓값 설정
 #define	MAX_COLORSET_SEED			33	// 기본 색상의 개수
 #define	MAX_COLORSET_SEED_MODIFY	15	// 기본 색상마다의 변형 색깔 수
 #define	MAX_COLORSET				495 // MAX_COLORSET_SEED * MAX_COLORSET_SEED_MODIFY
@@ -126,30 +126,30 @@ class CIndexSprite {
 		static	BYTE	GetColorToGradation(BYTE color);
 
 		//---------------------------------------------------------
-		// Generate Index
+		// 인덱스 생성
 		//---------------------------------------------------------
 		void			GenerateFromIndex(WORD** ppColor, WORD width, WORD height, WORD** ppIndex);
 		void			GetIndexInfo(WORD**& ppIndex);
 
 		//---------------------------------------------------------
-		// m_Pixels의 memory를 Release한다.		
+		// m_Pixels의 메모리를 해제한다.
 		//---------------------------------------------------------
 		void		Release();
 
 		//---------------------------------------------------------
-		// 투명 Color 
+		// 투명 색상
 		//---------------------------------------------------------
 		static void	SetColorkey(WORD color)			{ s_Colorkey = color; }
 		static WORD	GetColorkey() 					{ return s_Colorkey; }
 
 		//---------------------------------------------------------
-		// fstream에서 save/load를 한다.
+		// fstream에서 저장/불러오기를 한다.
 		//---------------------------------------------------------
 		virtual bool		SaveToFile(std::ofstream& file) = 0;
 		virtual bool		LoadFromFile(std::ifstream& file) = 0;		
 
 		//---------------------------------------------------------
-		// get functions		
+		// 조회 함수
 		//---------------------------------------------------------
 		WORD		GetWidth()		const			{ return m_Width; }
 		WORD		GetHeight()		const			{ return m_Height; }
@@ -157,7 +157,7 @@ class CIndexSprite {
 		WORD*		GetPixelLine(WORD y)	const	{ return m_Pixels[y]; }
 
 #ifdef SPRITELIB_BACKEND_SDL
-		/* Backend sprite management */
+		/* 백엔드 스프라이트 관리 */
 		spritectl_sprite_t GetBackendSprite() const	{ return m_backend_sprite; }
 		bool IsBackendDirty() const			{ return m_backend_dirty; }
 		void SetBackendSprite(spritectl_sprite_t sprite)	{ m_backend_sprite = sprite; }
@@ -170,7 +170,7 @@ class CIndexSprite {
 		bool		IsColorPixel(short x, short y);
 
 		//---------------------------------------------------------
-		// Index Blt
+		// 인덱스 블리팅(Blt)
 		//---------------------------------------------------------
 		void		Blt(WORD *pDest, WORD pitch);				
 		void		BltClipLeft(WORD *pDest, WORD pitch, RECT* pRect);
@@ -197,7 +197,7 @@ class CIndexSprite {
 		void		BltBrightnessClipHeight(WORD *pDest, WORD pitch, RECT* pRect, BYTE DarkBits);
 
 		//---------------------------------------------------------
-		// Alpha Blending
+		// 알파 블렌딩
 		//---------------------------------------------------------
 		void		BltAlpha(WORD *pDest, WORD pitch, BYTE alpha);		
 		void		BltAlphaClipLeft(WORD *pDest, WORD pitch, RECT* pRect, BYTE alpha);
@@ -226,7 +226,7 @@ class CIndexSprite {
 		void		BltColorSetClipHeight(WORD *pDest, WORD pitch, RECT* pRect, WORD colorSet);
 
 		//---------------------------------------------------------
-		// Effect
+		// 효과
 		//---------------------------------------------------------
 		void		BltEffect(WORD *pDest, WORD pitch);				
 		void		BltEffectClipLeft(WORD *pDest, WORD pitch, RECT* pRect);
@@ -236,15 +236,15 @@ class CIndexSprite {
 
 
 		//---------------------------------------------------------
-		// Blt Wave - Test - -;;
+		// Blt Wave - 테스트 - -;;
 		//---------------------------------------------------------
 		//void		BltWave(WORD *pDest, WORD pitch);
 		
 	public :
 		//--------------------------------------------------------
-		// ColorSet Table
+		// ColorSet 테이블
 		//--------------------------------------------------------
-		// 25 Set ,  13 Gradation
+		// 25개의 Set, 13개의 Gradation
 		static WORD		ColorSet[MAX_COLORSET][MAX_COLORGRADATION];			// 실제 색
 		static WORD		GradationValue[MAX_COLORGRADATION];					// 각 gradation의 값 - IndexEditor에서 계산을 위한 값
 		static WORD		ColorSetDarkness[MAX_DARKBIT][MAX_COLORSET][MAX_COLORGRADATION];	// 어둡게 했을 때의 색깔 값
@@ -253,17 +253,17 @@ class CIndexSprite {
 	protected :
 		WORD			m_Width;		// 가로 pixel수
 		WORD			m_Height;		// 세로 pixel수		
-		WORD**			m_Pixels;		// pixels
+		WORD**			m_Pixels;		// 픽셀
 		bool			m_bInit;		// data가 있는가?
 
 #ifdef SPRITELIB_BACKEND_SDL
-		spritectl_sprite_t	m_backend_sprite;	// Backend sprite handle
-		bool			m_backend_dirty;	// True if m_Pixels changed but not synced to backend
+		spritectl_sprite_t	m_backend_sprite;	// 백엔드 스프라이트 핸들
+		bool			m_backend_dirty;	// m_Pixels가 변경됐지만 아직 백엔드에 동기화되지 않았으면 true
 #endif
 
 		static WORD		s_Colorkey;
 	
-		// Blt Value (parameter 대용)
+		// Blt 값 (parameter 대용)
 		static int		s_IndexValue[MAX_COLORSET_USE];
 
 	

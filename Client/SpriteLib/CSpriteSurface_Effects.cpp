@@ -1,10 +1,10 @@
 ﻿//----------------------------------------------------------------------
 // CSpriteSurface_Effects.cpp
 //
-// Pure pixel manipulation effect functions extracted from CSpriteSurface.cpp
-// These functions are backend-agnostic and work with both DirectX and SDL
+// CSpriteSurface.cpp에서 분리해낸 순수 픽셀 조작 효과 함수들
+// 이 함수들은 백엔드에 종속되지 않으며 DirectX와 SDL 양쪽에서 동작한다
 //
-// 2025.01.27 - Extracted for SDL backend support
+// 2025.01.27 - SDL 백엔드 지원을 위해 분리됨
 //----------------------------------------------------------------------
 
 #include "Client_PCH.h"
@@ -326,7 +326,7 @@ CSpriteSurface::memcpyPalEffectGradation(WORD* pDest, BYTE* pSource, WORD pixels
 }
 
 //----------------------------------------------------------------------
-// Effect SimpleOutline
+// SimpleOutline 효과
 //----------------------------------------------------------------------
 // �� �������� �ܰ��� ���(������ ������ �� �� ���� ���)
 // pixels�� 1�̻��̶�� �����Ѵ�.
@@ -344,7 +344,7 @@ CSpriteSurface::memcpyPalEffectSimpleOutline(WORD* pDest, BYTE* pSource, WORD pi
 }
 
 //----------------------------------------------------------------------
-// Effect WipeOut
+// WipeOut 효과
 //----------------------------------------------------------------------
 // s_Value1 : �� ����� ����? 
 //				64 - ����
@@ -390,7 +390,7 @@ CSpriteSurface::memcpyPalEffectWipeOut(WORD* pDest, BYTE* pSource, WORD pixels, 
 }
 
 //----------------------------------------------------------------------
-// Effect Net
+// Net 효과
 //----------------------------------------------------------------------
 // s_Value1 : �ǳʶ�� ��
 //

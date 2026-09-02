@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // CSprite565.cpp
 //----------------------------------------------------------------------
 #include "client_PCH.h"
@@ -11,7 +11,7 @@
 
 //----------------------------------------------------------------------
 //
-// member functions
+// 멤버 함수
 //
 //----------------------------------------------------------------------
 
@@ -88,9 +88,9 @@ CSprite565::LoadFromFile(ifstream& file)
 	// Loading하고 있지 않은 상태인 경우
 	// Loading할려는 상태로 만든다.
 	void* pOld = InterlockedCompareExchange( 
-						(PVOID *)&pCheck,  // pointer to the destination pointer
-						&T,      // the exchange value
-						&F		// the value to compare
+						(PVOID *)&pCheck,  // 대상 포인터
+						&T,      // 교체할 값
+						&F		// 비교할 값
 					);
  
 	bool old = *(bool*)pOld;
@@ -123,7 +123,7 @@ CSprite565::LoadFromFile(ifstream& file)
 	}
 
 	//---------------------------------
-	// for OLD version of CSprite
+	// 예전 버전의 CSprite를 위함
 	//---------------------------------
 	//BOOL dummy;
 	//file.read((char*)&dummy, 1);	
@@ -143,18 +143,18 @@ CSprite565::LoadFromFile(ifstream& file)
 		// byte수와 실제 data를 Load한다.
 		file.read((char*)&len, 2);
 
-		// len is the number of WORDs, not bytes
-		// Allocate len WORDs (len * sizeof(WORD) bytes)
+		// len은 WORD 개수이지 바이트 수가 아니다
+		// len개의 WORD를 할당한다 (len * sizeof(WORD) 바이트)
 		m_Pixels[i] = NULL;
 		m_Pixels[i] = new WORD [len];
 		//m_Pixels[i] = (WORD*)malloc(sizeof(WORD)*len);
 
-		// Read len * sizeof(WORD) bytes (which is len << 1)
-		// But validate len to prevent buffer overflow
-		if (len > 0 && len <= 8192) {  // Sanity check: max 8192 WORDs per line
+		// len * sizeof(WORD) 바이트(len << 1)를 읽는다
+		// 단, 버퍼 오버플로를 막기 위해 len을 검증한다
+		if (len > 0 && len <= 8192) {  // 안전성 검사: 한 줄당 최대 8192 WORD
 			file.read((char*)m_Pixels[i], len << 1);
 		} else {
-			// Invalid length - allocate but don't read
+			// 잘못된 길이 - 할당은 하되 읽지는 않는다
 			memset(m_Pixels[i], 0, len * sizeof(WORD));
 		}
 	}	
@@ -183,7 +183,7 @@ CSprite565::LoadFromFileToBuffer(ifstream& file)
 		return false;
 
 	//---------------------------------
-	// for OLD version of CSprite
+	// 예전 버전의 CSprite를 위함
 	//---------------------------------
 	//BOOL dummy;
 	//file.read((char*)&dummy, 1);	

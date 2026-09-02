@@ -30,13 +30,13 @@ class CFilter {
 		bool		IsInit() const		{ return m_ppFilter==NULL; }
 
 		//---------------------------------------------------------
-		// Init / Release
+		// 초기화 / 해제
 		//---------------------------------------------------------
 		void		Init(WORD width, WORD height);
 		void		Release();
 
 		//---------------------------------------------------------
-		// Set Filter Value
+		// 필터 값 설정
 		//---------------------------------------------------------
 		// CDirectDrawSurface에서 값을 읽어온다.
 		void		SetFilter(WORD* pSurface, WORD pitch, WORD width, WORD height);
@@ -51,7 +51,7 @@ class CFilter {
 		void		SetFilter(WORD x, WORD y, BYTE value)	{ m_ppFilter[y][x]=value; }
 
 		//---------------------------------------------------------
-		// Blt
+		// 블리팅(Blt)
 		//---------------------------------------------------------
 		void		BltFilter(int x, int y, const CFilter& filter);
 		void		BltFilterAdd(int x, int y, const CFilter& filter);
@@ -60,13 +60,13 @@ class CFilter {
 		void		Blt4444Color(WORD* pSurface, WORD pitch, WORD color);
 
 		//---------------------------------------------------------
-		// File I/O
+		// 파일 입출력
 		//---------------------------------------------------------
 		bool		SaveToFile(std::ofstream& file);
 		bool		LoadFromFile(std::ifstream& file);
 
 		//---------------------------------------------------------
-		// Get
+		// 조회
 		//---------------------------------------------------------
 		WORD		GetWidth() const		{ return m_Width; }
 		WORD		GetHeight() const		{ return m_Height; }

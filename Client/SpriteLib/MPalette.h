@@ -1,4 +1,4 @@
-#include <fstream>
+﻿#include <fstream>
 #ifndef __MPALETTE_H__
 #define __MPALETTE_H__
 
@@ -15,25 +15,25 @@ public:
 	~MPalette();
 	
 	//--------------------------------------------------------
-	// Init/Release
+	// 초기화/해제
 	//--------------------------------------------------------
 	void	Release();
 	void	Init(BYTE size);
 	
 	//--------------------------------------------------------
-	// Size
+	// 크기
 	//--------------------------------------------------------
 	BYTE		GetSize() const { return m_Size; }
 	
 	//--------------------------------------------------------
-	// operator
+	// 연산자
 	//--------------------------------------------------------
 	WORD&		operator [] (BYTE n)		{ return m_pColor[n]; }
 	WORD&		operator [] (BYTE n) const { return m_pColor[n]; }
 	void		operator = (const MPalette& pal);
 	
 	//--------------------------------------------------------
-	// file I/O
+	// 파일 입출력
 	//--------------------------------------------------------
 	virtual bool	SaveToFile(std::ofstream& file) { return false; };
 	virtual bool	LoadFromFile(std::ifstream& file) { return false; };		
@@ -49,7 +49,7 @@ class MPalette555 : public MPalette
 {
 public:
 	//--------------------------------------------------------
-	// file I/O
+	// 파일 입출력
 	//--------------------------------------------------------
 	bool LoadFromFile(std::ifstream &file);
 	bool SaveToFile(std::ofstream &file);
@@ -59,7 +59,7 @@ class MPalette565 : public MPalette
 {
 public:
 	//--------------------------------------------------------
-	// file I/O
+	// 파일 입출력
 	//--------------------------------------------------------
 	bool LoadFromFile(std::ifstream &file);
 	bool SaveToFile(std::ofstream &file);

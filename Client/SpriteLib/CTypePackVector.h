@@ -20,29 +20,29 @@ public:
 	~CTypePackVector()	{ Release(); }
 	
 	//--------------------------------------------------------
-	// Init/Release
+	// 초기화/해제
 	//--------------------------------------------------------
 	void	Release()	{ for(int i = 0; i < GetSize(); i++)delete m_vData[i]; m_vData.clear(); }
 
 	//--------------------------------------------------------
-	// Add/Remove
+	// 추가/제거
 	//--------------------------------------------------------
 	void	AddData(Type* data, int index = -1)			{ if(index == -1)m_vData.push_back(data); else m_vData.insert(&m_vData[index], data); }
 	void	RemoveData(WORD dataID)		{ delete m_vData[dataID]; m_vData.erase(&m_vData[dataID]); }
 
 	//--------------------------------------------------------
-	// Size
+	// 크기
 	//--------------------------------------------------------
 	DWORD		GetSize() const { return m_vData.size(); }
 	
 	//--------------------------------------------------------
-	// operator
+	// 연산자
 	//--------------------------------------------------------
 	Type*		operator [] (WORD n)	{ return m_vData[n]; }
 	Type*		GetData(WORD n)			{ return m_vData[n]; }
 	
 	//--------------------------------------------------------
-	// file I/O
+	// 파일 입출력
 	//--------------------------------------------------------
 	bool LoadFromFile(std::ifstream &file);
 	bool SaveToFile(std::ofstream &dataFile, std::ofstream &indexFile);

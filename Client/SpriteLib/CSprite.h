@@ -22,7 +22,7 @@
 class CFilter;
 
 #ifdef SPRITELIB_BACKEND_SDL
-/* Forward declaration for friend declaration */
+/* friend 선언을 위한 전방 선언 */
 class CSpriteSurface;
 #endif
 
@@ -72,24 +72,24 @@ class CSprite
 		void		operator = (const CSprite& Sprite);
 
 		//---------------------------------------------------------
-		// s_Pixels의 memory를 Init/Release한다.		
+		// s_Pixels의 메모리를 초기화/해제한다.
 		//---------------------------------------------------------
 		//static void	InitBuffer(WORD width, WORD height);
 		//static void ReleaseBuffer();
 
 		//---------------------------------------------------------
-		// m_Pixels의 memory를 Release한다.		
+		// m_Pixels의 메모리를 해제한다.
 		//---------------------------------------------------------
 		void		Release();
 
 		//---------------------------------------------------------
-		// 투명 Color 
+		// 투명 색상
 		//---------------------------------------------------------
 		static void	SetColorkey(WORD color)			{ s_Colorkey = color; }
 		static WORD	GetColorkey() 					{ return s_Colorkey; }
 
 		//---------------------------------------------------------
-		// fstream에서 save/load를 한다.
+		// fstream에서 저장/불러오기를 한다.
 		//---------------------------------------------------------
 		virtual bool		SaveToFile(std::ofstream& file) = 0;
 		virtual bool		LoadFromFile(std::ifstream& file) = 0;		
@@ -106,7 +106,7 @@ class CSprite
 		void		SetPixelNoColorkey(WORD* pSource, WORD pitch, WORD width, WORD height);
 
 		//---------------------------------------------------------
-		// get functions		
+		// 조회 함수
 		//---------------------------------------------------------
 		WORD		GetWidth()		const			{ return m_Width; }
 		WORD		GetHeight()		const			{ return m_Height; }
@@ -114,7 +114,7 @@ class CSprite
 		WORD*		GetPixelLine(WORD y)	const	{ return m_Pixels[y]; }	
 
 #ifdef SPRITELIB_BACKEND_SDL
-	/* Backend sprite management */
+	/* 백엔드 스프라이트 관리 */
 	spritectl_sprite_t GetBackendSprite() const	{ return m_backend_sprite; }
 	bool IsBackendDirty() const			{ return m_backend_dirty; }
 	void SetBackendSprite(spritectl_sprite_t sprite)	{ m_backend_sprite = sprite; }
@@ -156,7 +156,7 @@ class CSprite
 		void		BltHalfClipHeight(WORD* pDest, WORD pitch, RECT* pRect);
 
 		//---------------------------------------------------------
-		// Alpha Blending
+		// 알파 블렌딩
 		//---------------------------------------------------------
 		void		BltAlpha(WORD* pDest, WORD pitch, BYTE alpha);
 		void		BltAlphaClipLeft(WORD* pDest, WORD pitch, RECT* pRect, BYTE alpha);
@@ -174,7 +174,7 @@ class CSprite
 		void		BltColorClipHeight(WORD* pDest, WORD pitch, RECT* pRect, BYTE rgb);
 
 		//---------------------------------------------------------
-		// Scale바꾸기
+		// 크기 바꾸기
 		//---------------------------------------------------------
 		void		BltScale(WORD* pDest, WORD pitch, BYTE scale);
 		void		BltScaleClipLeft(WORD* pDest, WORD pitch, RECT* pRect, BYTE scale);
@@ -194,7 +194,7 @@ class CSprite
 
 
 		//---------------------------------------------------------
-		// Effect
+		// 효과
 		//---------------------------------------------------------
 		void		BltEffect(WORD* pDest, WORD pitch);
 		void		BltEffectClipLeft(WORD* pDest, WORD pitch, RECT* pRect);
@@ -286,7 +286,7 @@ class CSprite
 
 
 		//---------------------------------------------------------
-		// Utility Functions
+		// 유틸리티 함수
 		//---------------------------------------------------------
 		//void		memcpyDarknessFilter(WORD* pDest, WORD* pSource, WORD* pFilter, WORD pixels);
 
@@ -305,22 +305,22 @@ class CSprite
 	protected :
 		WORD			m_Width;		// 가로 pixel수
 		WORD			m_Height;		// 세로 pixel수		
-		WORD**			m_Pixels;		// pixels
+		WORD**			m_Pixels;		// 픽셀
 		bool			m_bInit;		// data가 있는가?
 		bool			m_bLoading;		// Loading중인가?
 
 #ifdef SPRITELIB_BACKEND_SDL
-		spritectl_sprite_t	m_backend_sprite;	// Backend sprite handle
-		bool			m_backend_dirty;	// True if m_Pixels changed but not synced to backend
+		spritectl_sprite_t	m_backend_sprite;	// 백엔드 스프라이트 핸들
+		bool			m_backend_dirty;	// m_Pixels가 변경됐지만 아직 백엔드에 동기화되지 않았으면 true
 
-		/* Allow CSpriteSurface to access backend members for blitting */
+		/* 블리팅을 위해 CSpriteSurface가 백엔드 멤버에 접근할 수 있도록 허용한다 */
 		friend class CSpriteSurface;
 #endif
 
 	public :
 		static WORD		s_Colorkey;
 
-		// Blt Value
+		// Blt 값
 		static DWORD	s_Value1;
 		static DWORD	s_Value2;
 		static DWORD	s_Value3;

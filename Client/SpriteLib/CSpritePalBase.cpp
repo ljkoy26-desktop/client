@@ -1,4 +1,4 @@
-#include "client_PCH.h"
+﻿#include "client_PCH.h"
 #include "CSpritePalBase.h"
 #include "CSpriteSurface.h"
 
@@ -11,8 +11,8 @@ CSpritePalBase::CSpritePalBase()
 	m_Height = 0;		// 세로 pixel수		
 	m_Size = 0;			// 스프라이트의 size
 	
-	m_pPixels = NULL;		// pixels point array
-	m_pData = NULL;			// data
+	m_pPixels = NULL;		// 픽셀 포인터 배열
+	m_pData = NULL;			// 데이터
 	
 	m_bInit = false;		// data가 있는가?
 	m_bLoading = false;		// Loading중인가?

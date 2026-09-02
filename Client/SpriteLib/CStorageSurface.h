@@ -1,4 +1,4 @@
-#include <fstream>
+﻿#include <fstream>
 //----------------------------------------------------------------------
 // CStorageSurface.h
 //----------------------------------------------------------------------
@@ -27,20 +27,20 @@ class CStorageSurface {
 		~CStorageSurface();
 
 		//--------------------------------------------------------
-		// Init / Release
+		// 초기화 / 해제
 		//--------------------------------------------------------
 		// (Surface개수, width, height)
 		void					Init(int size, int width, int height);
 		void					Release();
 
 		//--------------------------------------------------------
-		// Store / Restore		
+		// 저장 / 복원
 		//--------------------------------------------------------
 		void					Store(int i, CSpriteSurface* pSurface, POINT* pPoint);
 		void					Restore(int i, CSpriteSurface* pSurface, POINT* pPoint=NULL) const;
 
 		//--------------------------------------------------------
-		// Get
+		// 조회
 		//--------------------------------------------------------
 		int						GetSize() const		{ return m_Size; }
 

@@ -11,12 +11,12 @@ typedef CTypePack2<MPalette, MPalette555, MPalette565> MPalettePack;
 //{
 //public:
 //	//--------------------------------------------------------
-//	// Init/Release
+//	// 초기화/해제
 //	//--------------------------------------------------------
 //	void	Init(WORD size, bool b565 = true);
-//	
+//
 //	//--------------------------------------------------------
-//	// file I/O
+//	// 파일 입출력
 //	//--------------------------------------------------------
 //	bool LoadFromFile(std::ifstream &file, bool b565 = true);
 //	bool LoadFromFile(LPCTSTR lpszFilename, bool b565 = true);

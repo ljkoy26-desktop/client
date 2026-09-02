@@ -17,12 +17,12 @@ public:
 	void SetPixel(BYTE *pSource, WORD pitch, WORD width, WORD height);
 
 	//---------------------------------------------------------
-	// Blt functions
+	// Blt 함수
 	//---------------------------------------------------------
 	void Blt(int x, int y, WORD* pDest, int pitch, MPalette &pal);
-	
+
 	//---------------------------------------------------------
-	// Effect
+	// 효과
 	//---------------------------------------------------------
 	void		BltEffect(WORD *pDest, WORD pitch, MPalette &pal);				
 	void		BltEffectClipLeft(WORD *pDest, WORD pitch, RECT* pRect, MPalette &pal);
@@ -37,7 +37,7 @@ public:
 	void		Blt1555NotTrans(WORD *pDest, WORD pitch, MPalette &pal);
 
 	//---------------------------------------------------------
-	// Utility Functions
+	// 유틸리티 함수
 	//---------------------------------------------------------
 	static void		memcpy1555(WORD* pDest, BYTE* pSource, WORD pixels, MPalette &pal);
 	static void		memcpy1555Small(WORD* pDest, BYTE* pSource, WORD pixels, MPalette &pal);

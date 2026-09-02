@@ -35,12 +35,12 @@ typedef struct {
 } LogConfig;
 
 static LogConfig g_config = {
-	LOG_LEVEL_INFO,		// Default level
-	true,				// Console output enabled
-	false,				// File output disabled
-	false,				// Array output disabled
-	"",					// Log file path
-	NULL				// File handle
+	LOG_LEVEL_INFO,		// 기본 레벨
+	true,				// 콘솔 출력 활성화
+	false,				// 파일 출력 비활성화
+	false,				// 배열 출력 비활성화
+	"",					// 로그 파일 경로
+	NULL				// 파일 핸들
 };
 
 static bool g_initialized = false;
@@ -60,7 +60,7 @@ static const char* get_filename(const char *path) {
 
 	const char *filename = strrchr(path, '/');
 	if (filename == NULL) {
-		filename = strrchr(path, '\\');	// Windows path separator
+		filename = strrchr(path, '\\');	// Windows 경로 구분자
 	}
 
 	return (filename != NULL) ? (filename + 1) : path;

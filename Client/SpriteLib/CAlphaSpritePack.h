@@ -22,7 +22,7 @@ class CAlphaSpritePack {
 		~CAlphaSpritePack();
 
 		//------------------------------------------------------------
-		// Init/Release
+		// 초기화/해제
 		//------------------------------------------------------------
 		void		Init(TYPE_SPRITEID count, bool b565);		
 		void		Release();
@@ -30,7 +30,7 @@ class CAlphaSpritePack {
 
 
 		//------------------------------------------------------------
-		// file I/O
+		// 파일 입출력
 		//------------------------------------------------------------
 		bool		SaveToFile(std::ofstream& spkFile, std::ofstream& indexFile);
 		bool		SaveToFileSpriteOnly(std::ofstream& spkFile, int32_t &filePosition);
@@ -42,12 +42,12 @@ class CAlphaSpritePack {
 		bool		LoadFromFileSprite(int spriteID, int fileSpriteID, const char* spkFilename, const char* indexFilename);
 
 		//--------------------------------------------------------
-		// size
+		// 크기
 		//--------------------------------------------------------
 		TYPE_SPRITEID	GetSize() const		{ return m_nSprites; }
 
 		//------------------------------------------------------------
-		// operator
+		// 연산자
 		//------------------------------------------------------------
 		CAlphaSprite&	operator [] (TYPE_SPRITEID n) { return m_pSprites[n]; }
 
