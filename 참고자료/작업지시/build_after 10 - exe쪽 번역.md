@@ -11,10 +11,19 @@ dk_client\build\vs2019\DarkEden.vcxproj
 1. 한번에 다하기는 많을거 같으니 이정도만 먼저 진행해줘
 2. .cpp , .h 파일 외에는 따로 건드리지마.
 
-
-| UTF-8 BOM | 159.1 KB | `.\Client\GameMain.cpp` |
-| UTF-8 | 1.9 KB | `.\Client\GameObject.h` |
-
+| UTF-8 | 44.0 KB | `.\Client\GamePacketFunctions.cpp` |
+| UTF-8 | 138.7 KB | `.\Client\GameUI.cpp` |
+| UTF-8 | 1.5 KB | `.\Client\GCNotifyWin.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\GCNotifyWin.h` |
+| UTF-8 | 890 B | `.\Client\GCNotifyWinHandler.cpp` |
+| UTF-8 | 2.5 KB | `.\Client\GetWinVer.cpp` |
+| UTF-8 | 1.6 KB | `.\Client\GetWinVer.h` |
+| UTF-8 | 2.2 KB | `.\Client\Globals.cpp` |
+| UTF-8 | 9.0 KB | `.\Client\GlobalVariables.cpp` |
+| UTF-8 | 4.4 KB | `.\Client\GuildInfo.cpp` |
+| UTF-8 | 2.7 KB | `.\Client\GuildInfo.h` |
+| UTF-8 | 3.2 KB | `.\Client\GuildMemberInfo.cpp` |
+| UTF-8 | 2.3 KB | `.\Client\GuildMemberInfo.h` |
 
 
 3. 번역완료된 파일들은 아래 md 파일에 기록하고 진행상황을 다음에도 이어갈수 있게 클로드 메모리에도 기록해줘 
