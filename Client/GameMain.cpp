@@ -3,14 +3,14 @@
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-// Include files
+// 포함 파일
 //-----------------------------------------------------------------------------
 #include "Client_PCH.h"
 
 #ifdef PLATFORM_WINDOWS
-// <MMSystem.h> not included: this file only uses timeGetTime()/GetTickCount(),
-// which basic/Platform.h already routes through platform_get_ticks(); including
-// the real header here conflicts with that macro (see basic/Platform.h).
+// <MMSystem.h> 미포함: 이 파일은 timeGetTime()/GetTickCount()만 사용하며,
+// 이는 basic/Platform.h에서 platform_get_ticks()를 통해 이미 처리됨; 여기서
+// 실제 헤더를 포함하면 해당 매크로와 충돌함 (basic/Platform.h 참고).
 #include <process.h>
 #include <io.h>
 #include <direct.h>
@@ -153,24 +153,24 @@ extern BOOL g_bPlayPropeller;
 //#define	delete		DEBUG_DELETE
 
 //-----------------------------------------------------------------------------
-// Global
+// 전역 변수
 //-----------------------------------------------------------------------------
 // mp3
 //CMySound*			g_pMP3 = NULL;
 
-// Avi
+// AVI
 CAVI				*g_pAvi = NULL;
 
 int g_previousSoundID = SOUNDID_NULL;
 
 	
-// Sound PartManager
+// 사운드 파트 매니저
 CSoundPartManager*	g_pSoundManager = NULL;
 
-// Cursor Surface
+// 커서 서피스
 CStorageSurface*	g_pCursorSurface = NULL;
 
-// mouse cursor
+// 마우스 커서
 POINT				g_SelectSector = { SECTORPOSITION_NULL, SECTORPOSITION_NULL };
 BOOL				g_bLButtonDown = FALSE;
 BOOL				g_bRButtonDown = FALSE;
@@ -181,7 +181,7 @@ BOOL				g_bUIInput		= FALSE;
 
 int					g_UpdateDelay		= 0;
 
-// Zone
+// 존
 WORD				g_ZoneCreatureColorSet = 0xFFFF;
 WORD				g_MyBatColorSet = 0xFFFF;
 bool				g_bZoneSafe = false;
@@ -197,10 +197,10 @@ DWORD				g_ZoneRandomSoundTime = 0;
 bool				g_bWatchMode = false;
 
 
-// effectManager
+// 이펙트 매니저
 MScreenEffectManager*	g_pInventoryEffectManager = NULL;
 
-// DirectDraw
+// DirectDraw 서피스
 CSpriteSurface*			g_pBack		= NULL;
 CSpriteSurface*			g_pLast		= NULL;
 int						g_ScreenShotNumber = 0;
@@ -209,7 +209,7 @@ CSDLStream*		g_pSDLStream = NULL;
 CMP3*					g_pMP3 = NULL;
 int						g_SoundPerSecond = 0;
 
-// Chat string
+// 채팅 문자열
 #ifdef	OUTPUT_DEBUG
 	CMessageArray*		g_pDebugMessage = NULL;
 #endif
@@ -227,17 +227,17 @@ CMessageArray*		g_pGameMessage = NULL;
 
 CMessageArray*		g_pHelpMessage = NULL;
 
-// socket
+// 소켓
 ClientPlayer*		g_pSocket = NULL;
 
-// Thread
+// 스레드
 MWorkThread*		g_pLoadingThread = NULL;
 //HANDLE				g_hFileThread = 0;
 //HANDLE				g_hFileEvent;
 //THREADJOB			g_ThreadJob;
 	
 
-// Server IP
+// 서버 IP
 //char				g_ServerIP[80];
 bool				g_bFullScreen	= false;
 int					g_MaxNPC		= MAX_NPC;
@@ -257,7 +257,7 @@ extern MCreature*		AddClientCreature();
 extern void Add_GDR_Effect(int nEffect, bool bAppearBossMonster);
 extern void Add_GDR_Potal_Effect(int nMapID);
 //---------------------------------------------------------------------------
-// Update Socket Input
+// 소켓 입력 업데이트
 //---------------------------------------------------------------------------
 bool
 UpdateSocketInput()
@@ -409,7 +409,7 @@ UpdateSocketInput()
 }
 
 //---------------------------------------------------------------------------
-// Update Socket Output
+// 소켓 출력 업데이트
 //---------------------------------------------------------------------------
 bool
 UpdateSocketOutput()
@@ -450,7 +450,7 @@ UpdateSocketOutput()
 }
 
 //---------------------------------------------------------------------------
-// Check Time
+// 시간 확인
 //---------------------------------------------------------------------------
 // speedhack체크를 위해서 1분마다 한번씩 패킷을 보낸다.
 //---------------------------------------------------------------------------
@@ -648,8 +648,8 @@ bool CheckInvalidProcess()
 		}
 	}
 #else
-	// Anti-cheat process checking is Windows-specific
-	// On other platforms, simply return true (no invalid processes detected)
+	// 치트 방지 프로세스 검사는 Windows 전용
+	// 다른 플랫폼에서는 단순히 true 반환 (유효하지 않은 프로세스 없음)
 #endif
 	return true;
 }
@@ -691,7 +691,7 @@ SetMode(enum CLIENT_MODE mode)
 		// 초기 화면
 		//------------------------------------------------------
 		case MODE_OPENING :
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  OPENING");
 			
 			UnInitSound();		// 잠시 Sound 중지
@@ -778,7 +778,7 @@ SetMode(enum CLIENT_MODE mode)
 		// Login 상태 설정..
 		//------------------------------------------------------
 		case MODE_MAINMENU :
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  MAINMENU");
 			
 			// acquire
@@ -846,7 +846,7 @@ SetMode(enum CLIENT_MODE mode)
 			// 음악 시작
 			//------------------------------------------------------
 			if (g_pUserOption->PlayWaveMusic)
-			// Music playback - use SDL_mixer (cross-platform)
+			// 음악 재생 - SDL_mixer 사용 (크로스플랫폼)
 			g_Music.Stop();
 
 			if (g_pUserOption->PlayMusic)
@@ -880,7 +880,7 @@ SetMode(enum CLIENT_MODE mode)
 		//------------------------------------------------------
 		case MODE_NEWUSER :
 		{
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  MODE_NEWUSER");
 			
 			//----------------------------------------------
@@ -905,7 +905,7 @@ SetMode(enum CLIENT_MODE mode)
 		//------------------------------------------------------
 		case MODE_WAIT_LOGINOK :
 		{
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  MODE_WAIT_LOGINOK");
 			
 			//------------------------------------------------------
@@ -928,7 +928,7 @@ SetMode(enum CLIENT_MODE mode)
 		//------------------------------------------------------
 		case MODE_WAIT_WORLD_LIST :
 		{
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  MODE_WAIT_WORLD_LIST");
 
 			//----------------------------------------------
@@ -946,7 +946,7 @@ SetMode(enum CLIENT_MODE mode)
 		//------------------------------------------------------
 		case MODE_WAIT_SELECT_WORLD :
 		{
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  MODE_WAIT_SELECT_WORLD");
 
 			g_pUserInformation->KeepConnection = FALSE;			
@@ -965,7 +965,7 @@ SetMode(enum CLIENT_MODE mode)
 		//------------------------------------------------------
 		case MODE_WAIT_SERVER_LIST :
 		{
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  MODE_WAIT_SERVER_LIST");
 			
 			//----------------------------------------------
@@ -983,7 +983,7 @@ SetMode(enum CLIENT_MODE mode)
 		//------------------------------------------------------
 		case MODE_WAIT_SELECT_SERVER :
 		{
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  MODE_WAIT_SELECT_SERVER");
 
 			g_pUserInformation->KeepConnection = FALSE;			
@@ -1055,7 +1055,7 @@ SetMode(enum CLIENT_MODE mode)
 		//------------------------------------------------------		
 		case MODE_WAIT_REGISTERPLAYEROK :
 		{
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  MODE_WAIT_REGISTERPLAYEROK");
 			
 			//----------------------------------------------
@@ -1073,7 +1073,7 @@ SetMode(enum CLIENT_MODE mode)
 		//------------------------------------------------------
 		case MODE_WAIT_PCLIST :
 		{			
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  MODE_WAIT_PCLIST");				
 			
 			//------------------------------------------------------------
@@ -1121,7 +1121,7 @@ SetMode(enum CLIENT_MODE mode)
 		//------------------------------------------------------
 		case MODE_WAIT_SELECTPC :
 		{
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  MODE_WAIT_SELECTPC");
 			
 			//----------------------------------------------
@@ -1149,7 +1149,7 @@ SetMode(enum CLIENT_MODE mode)
 		//------------------------------------------------------
 		case MODE_WAIT_CREATEPCOK :
 		{
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  MODE_WAIT_CREATEPCOK");
 			
 			//----------------------------------------------
@@ -1167,7 +1167,7 @@ SetMode(enum CLIENT_MODE mode)
 		//------------------------------------------------------
 		case MODE_WAIT_DELETEPCOK :
 		{
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  MODE_WAIT_DELETEPCOK");
 			
 			//----------------------------------------------
@@ -1185,7 +1185,7 @@ SetMode(enum CLIENT_MODE mode)
 		//------------------------------------------------------
 		case MODE_WAIT_RECONNECT :
 		{				
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  MODE_WAIT_RECONNECT");
 			
 			//----------------------------------------------
@@ -1203,7 +1203,7 @@ SetMode(enum CLIENT_MODE mode)
 		//------------------------------------------------------
 		case MODE_WAIT_RECONNECT_LOGIN :
 		{				
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  MODE_WAIT_RECONNECT_LOGIN");
 
 			// 귓속말 안 받을려고... 냠 -- ;
@@ -1264,7 +1264,7 @@ SetMode(enum CLIENT_MODE mode)
 
 			g_ZoneRandomSoundTime = g_CurrentTime;
 
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  MODE_WAIT_UPDATEINFO");
 			
 			//----------------------------------------------
@@ -1282,7 +1282,7 @@ SetMode(enum CLIENT_MODE mode)
 		//------------------------------------------------------
 		case MODE_WAIT_SETPOSITION :
 		{
-			// Debug Message
+			// 디버그 메시지
 			DEBUG_ADD("[ SetMode ]  MODE_WAIT_SETPOSITION");
 			
 			//--------------------------------------------------
@@ -1431,7 +1431,7 @@ SetMode(enum CLIENT_MODE mode)
 g_pUpdate = g_pCGameUpdate;
 		g_pCGameUpdate->Init();
 
-		// Ensure input is enabled after start game
+		// 게임 시작 후 입력이 활성화되었는지 확인
 		CheckActivate(TRUE);
 
 		ExecuteHelpEvent( HELP_EVENT_INTERFACE );
@@ -1495,7 +1495,7 @@ g_pUpdate = g_pCGameUpdate;
 #ifdef PLATFORM_WINDOWS
 			PostMessage(g_hWnd, WM_CLOSE, 0, 0);
 #else
-			// On non-Windows platforms, set running flag to false to exit game loop
+			// 비-Windows 플랫폼에서는 실행 플래그를 false로 설정하여 게임 루프 종료
 			extern bool g_bRunning;
 			g_bRunning = false;
 #endif // PLATFORM_WINDOWS
@@ -1507,7 +1507,7 @@ g_pUpdate = g_pCGameUpdate;
 }
 
 //-----------------------------------------------------------------------------
-// Check Activate
+// 활성화 확인
 //-----------------------------------------------------------------------------
 // 프로그램이 실행중인지 아닌지에 따라서 처리..
 // ALT + TAB 과 관련이 깊다. - -;
@@ -1581,13 +1581,13 @@ CheckActivate(BOOL bActiveGame)
 			g_bActiveGame = TRUE;
 
 			DEBUG_ADD("IsHAL : Before graphics release");
-			// CDirect3D::Release() removed (SDL2)
+			// CDirect3D::Release() 제거됨 (SDL2)
 
 			DEBUG_ADD("IsHAL : Before graphics init");
-			// CDirect3D::Init() removed (SDL2) - SDL2 always uses hardware acceleration
+			// CDirect3D::Init() 제거됨 (SDL2) - SDL2는 항상 하드웨어 가속 사용
 
 			DEBUG_ADD("IsHAL : Before graphics restore");
-			// CDirect3D::Restore() removed (SDL2)
+			// CDirect3D::Restore() 제거됨 (SDL2)
 
 			if (g_bFullScreen)
 			{
@@ -1636,7 +1636,7 @@ CheckActivate(BOOL bActiveGame)
 				//------------------------------------
 				// 연주중이면.. 중단..
 				//------------------------------------
-				// Music playback - use SDL_mixer (cross-platform)
+				// 음악 재생 - SDL_mixer 사용 (크로스플랫폼)
 				if (g_pUserOption->PlayMusic)
 				{
 					if (g_Music.IsPlay())
@@ -1697,7 +1697,7 @@ CheckActivate(BOOL bActiveGame)
 		//----------------------------------------------------
 		else
 		{
-			// SDL handles display mode restoration automatically
+			// SDL이 디스플레이 모드 복원을 자동으로 처리함
 			if (g_bFullScreen)
 			{
 				CSDLGraphics::RestoreDisplayMode();
@@ -1710,7 +1710,7 @@ CheckActivate(BOOL bActiveGame)
 			//g_SDLMusic.Pause();
 			//musicPause = g_Music.IsPause();
 
-			// Music playback - use SDL_mixer (cross-platform)
+			// 음악 재생 - SDL_mixer 사용 (크로스플랫폼)
 			g_Music.Stop();
 			
 			if (g_Mode!=MODE_WAIT_UPDATEINFO)
@@ -1729,7 +1729,7 @@ CheckActivate(BOOL bActiveGame)
 }
 
 //-----------------------------------------------------------------------------
-// File Thread Proc
+// 파일 스레드 프로시저
 //-----------------------------------------------------------------------------
 /*
 LONG
@@ -1874,7 +1874,7 @@ FileThreadProc(LPVOID lpParameter)
 */
 
 //-----------------------------------------------------------------------------
-// Stop File Thread
+// 파일 스레드 정지
 //-----------------------------------------------------------------------------
 /*
 void
@@ -1944,14 +1944,14 @@ StopFileThread()
 */
 
 //-----------------------------------------------------------------------------
-// Load Creature
+// 크리처 로드
 //-----------------------------------------------------------------------------
 // n번째 Creature Type ID의 Sprite를 load한다.
 //-----------------------------------------------------------------------------
 BOOL
 LoadCreature(int spriteType)
 {
-	// Debug Message
+	// 디버그 메시지
 	DEBUG_ADD_FORMAT("LoadCreature : %d", spriteType);
 	
 	g_pTopView->LoadFromFileCreatureSPK( spriteType );
@@ -1960,14 +1960,14 @@ LoadCreature(int spriteType)
 }
 
 //-----------------------------------------------------------------------------
-// Load CreatureType
+// 크리처 타입 로드
 //-----------------------------------------------------------------------------
 // creature type을 보고 sprite를 load한다.
 //-----------------------------------------------------------------------------
 BOOL
 LoadCreatureType(int creatureType)
 {
-	// Debug Message
+	// 디버그 메시지
 	DEBUG_ADD_FORMAT("LoadCreatureType : %d", creatureType);
 	
 	int spriteType = (*g_pCreatureTable)[creatureType].SpriteTypes[0];
@@ -1990,7 +1990,7 @@ LoadCreatureType(int creatureType)
 }
 
 //-----------------------------------------------------------------------------
-// ReleaseUselessCreatureSPKExcept
+// 불필요한 크리처 SPK 해제
 //-----------------------------------------------------------------------------
 void		
 ReleaseUselessCreatureSPKExcept(const COrderedList<int>& listUse)
@@ -2001,7 +2001,7 @@ ReleaseUselessCreatureSPKExcept(const COrderedList<int>& listUse)
 }
 
 //-----------------------------------------------------------------------------
-// Release GameObject
+// 게임 오브젝트 해제
 //-----------------------------------------------------------------------------
 // game에 관련된 object들을 제거시킨다.
 //-----------------------------------------------------------------------------
@@ -2109,7 +2109,7 @@ ReleaseGameObject()
 }
 
 //-----------------------------------------------------------------------------
-// Load Zone
+// 존 로드
 //-----------------------------------------------------------------------------
 // n번째 zone을 load한다.
 //-----------------------------------------------------------------------------
@@ -2143,7 +2143,7 @@ LoadZone(int n)
 	g_SDLAudio.ReleaseDuplicateBuffer();
 
 
-	// Debug Message
+	// 디버그 메시지
 	DEBUG_ADD_FORMAT("LoadZone : ID=%d, Filename=%s", pZoneInfo->ID, pZoneInfo->Filename.GetString());		
 	
 	//------------------------------------------------
@@ -2225,7 +2225,7 @@ LoadZone(int n)
 	// priority를 최대한 낮춘다.
 	if (g_pLoadingThread!=NULL)
 	{
-		// Thread priority is platform-specific - currently implemented for Windows only
+		// 스레드 우선순위는 플랫폼마다 다름 - 현재 Windows만 구현됨
 #ifdef PLATFORM_WINDOWS
 		g_pLoadingThread->SetPriority( THREAD_PRIORITY_IDLE );
 #endif // PLATFORM_WINDOWS
@@ -2810,7 +2810,7 @@ LoadZone(int n)
 	// 이전에 출력된 creature들을 없앤다.
 	g_pTopView->SetZone(g_pZone);	
 
-	// Debug Message
+	// 디버그 메시지
 	DEBUG_ADD_FORMAT("LoadZone OK : size=(%d, %d)", g_pZone->GetWidth(), g_pZone->GetHeight());			
 		
 
@@ -2867,7 +2867,7 @@ LoadZone(int n)
 }
 
 //-----------------------------------------------------------------------------
-// Move Zone 
+// 존 이동 
 //-----------------------------------------------------------------------------
 // Zone을 이동한다.
 //-----------------------------------------------------------------------------
@@ -2896,7 +2896,7 @@ MoveZone(int n)
 }
 
 //-----------------------------------------------------------------------------
-// LoadZoneInfo
+// 존 정보 로드
 //-----------------------------------------------------------------------------
 BOOL
 LoadZoneInfo(int n)
@@ -3254,12 +3254,12 @@ LoadZoneInfo(int n)
 }
 
 //-----------------------------------------------------------------------------
-// Init Player
+// 플레이어 초기화
 //-----------------------------------------------------------------------------
 BOOL
 InitPlayer(int x, int y, int dir)
 {
-	// Debug Message
+	// 디버그 메시지
 	DEBUG_ADD_FORMAT("InitPlayer : (%d,%d) Dir=%d", x, y, dir);			
 	
 	//------------------------------------------------
@@ -3488,7 +3488,7 @@ InitPlayer(int x, int y, int dir)
 }
 
 //-----------------------------------------------------------------------------
-// Make ScreenShot
+// 스크린샷 생성
 //-----------------------------------------------------------------------------
 // 현재 화면의 ScreenShot을 저장한다.
 //-----------------------------------------------------------------------------
@@ -3552,15 +3552,13 @@ MakeScreenShot()
 			#endif
 
 //			g_pBack->SaveToBMP(str);
-			// SaveSurfaceToImage() (UtilityFunction.cpp) takes a
-			// CDirectDrawSurface&, but with SPRITELIB_BACKEND_SDL (the only
-			// backend this project builds now, Windows included)
-			// CSpriteSurface is a standalone class that no longer inherits
-			// from CDirectDrawSurface - see CSpriteSurface.h's
-			// SPRITESURFACE_STANDALONE branch. g_pBack is a CSpriteSurface*,
-			// so this call never type-checked under that backend.
-			// TODO: Implement screenshot saving against CSpriteSurface (SDL
-			// surface -> BMP/JPEG) or via stb_image_write; see 참고자료/작업필요stub.md.
+			// SaveSurfaceToImage() (UtilityFunction.cpp)는 CDirectDrawSurface&를 인수로 받지만,
+			// SPRITELIB_BACKEND_SDL(현재 이 프로젝트가 빌드하는 유일한 백엔드, Windows 포함)에서는
+			// CSpriteSurface가 CDirectDrawSurface를 더 이상 상속하지 않는 독립 클래스임.
+			// CSpriteSurface.h의 SPRITESURFACE_STANDALONE 분기 참고.
+			// g_pBack은 CSpriteSurface*이므로, 이 호출은 해당 백엔드에서 타입 검사를 통과하지 못함.
+			// TODO: SDL 서피스 -> BMP/JPEG 또는 stb_image_write를 통해 CSpriteSurface 스크린샷 저장 구현;
+			// 참고자료/작업필요stub.md 참고.
 			printf("Screenshot functionality not yet implemented on this platform\n");
 
 #ifdef PLATFORM_WINDOWS
@@ -3588,7 +3586,7 @@ MakeScreenShot()
 }
 
 //-----------------------------------------------------------------------------
-// PlaySound
+// 사운드 재생
 //-----------------------------------------------------------------------------
 // (*g_pSoundTable)에서의 soundID와 관련되는 Filename을 Play하면 된다.
 // (*g_pSoundManager)에 있으면 바로 play하면 되고.. 
@@ -3662,7 +3660,7 @@ PlaySound(TYPE_SOUNDID soundID, bool repeat, int x, int y)
 #ifdef PLATFORM_WINDOWS
 				DEBUG_ADD_FORMAT("[Error] Failed to Load WAV. id=%d, fn=%s", soundID, (*g_pSoundTable)[soundID].Filename );
 #else
-				// MString debug output on non-Windows
+				// 비-Windows 플랫폼에서 MString 디버그 출력
 				printf("[Error] Failed to Load WAV. id=%d\n", soundID);
 #endif // PLATFORM_WINDOWS
 			}
@@ -3790,10 +3788,10 @@ PlaySound(TYPE_SOUNDID soundID, bool repeat, int x, int y)
 }
 
 //-----------------------------------------------------------------------------
-// PlaySound
+// 사운드 재생
 //-----------------------------------------------------------------------------
 // 소리나는 위치가 늘 player의 위치..
-// CenterPan & MaxVolume
+// 센터 패닝 & 최대 음량
 //-----------------------------------------------------------------------------
 void	
 PlaySound(TYPE_SOUNDID soundID)
@@ -3975,7 +3973,7 @@ void PlaySoundForce(TYPE_SOUNDID soundID)
 #ifdef PLATFORM_WINDOWS
 			DEBUG_ADD_FORMAT("[Error] Failed to Load WAV. id=%d, fn=%s", soundID, (*g_pSoundTable)[soundID].Filename );
 #else
-			// MString debug output on non-Windows
+			// 비-Windows 플랫폼에서 MString 디버그 출력
 			printf("[Error] Failed to Load WAV. id=%d\n", soundID);
 #endif // PLATFORM_WINDOWS
 		}
@@ -4051,7 +4049,7 @@ void PlaySoundForce(TYPE_SOUNDID soundID)
 }
 
 //-----------------------------------------------------------------------------
-// Stop Sound
+// 사운드 정지
 //-----------------------------------------------------------------------------
 void	
 StopSound(TYPE_SOUNDID soundID)
@@ -4092,7 +4090,7 @@ StopSound(TYPE_SOUNDID soundID)
 }
 
 //---------------------------------------------------------------------------
-// Play Music Current Zone
+// 현재 존 음악 재생
 //---------------------------------------------------------------------------
 // 날씨를 바꾼다.
 //---------------------------------------------------------------------------
@@ -4292,7 +4290,7 @@ PlayMusicCurrentZone()
 }
 
 //---------------------------------------------------------------------------
-// Set Weather
+// 날씨 설정
 //---------------------------------------------------------------------------
 // 날씨를 바꾼다.
 //---------------------------------------------------------------------------
@@ -4399,7 +4397,7 @@ SetWeather(int weather, int level)
 }
 
 //---------------------------------------------------------------------------
-// Set Lightning
+// 번개 설정
 //---------------------------------------------------------------------------
 void
 SetLightning(DWORD delay)
@@ -4425,7 +4423,7 @@ SetLightning(DWORD delay)
 }
 
 //---------------------------------------------------------------------------
-// Open File
+// 파일 열기
 //---------------------------------------------------------------------------
 bool
 FileOpenBinary(const char* filename, std::ifstream& file)
@@ -4435,7 +4433,7 @@ FileOpenBinary(const char* filename, std::ifstream& file)
 		file.close();
 	}
 
-	// Convert path separators to match platform
+	// 플랫폼에 맞게 경로 구분자 변환
 	std::string convertedPath(filename);
 #ifndef PLATFORM_WINDOWS
 	for (size_t i = 0; i < convertedPath.length(); i++)
@@ -4446,7 +4444,7 @@ FileOpenBinary(const char* filename, std::ifstream& file)
 		}
 	}
 #else
-	// On Windows, keep backslashes as-is
+	// Windows에서는 역슬래시 유지
 #endif // PLATFORM_WINDOWS
 	file.open(convertedPath.c_str(), ios::binary);
 
@@ -4466,12 +4464,12 @@ FileOpenBinary(const char* filename, std::ifstream& file)
 }
 
 //---------------------------------------------------------------------------
-// Update Input
+// 입력 업데이트
 //---------------------------------------------------------------------------
 void
 UpdateInput()
 {
-	// Input Event
+	// 입력 이벤트
 	//g_pSDLInput->PollJoy();
 	//g_pSDLInput->PollKey();
 	//g_pSDLInput->PollMouse();    
@@ -4586,7 +4584,7 @@ UpdateInput()
 	*/}
 
 //---------------------------------------------------------------------------
-// Update Mouse
+// 마우스 업데이트
 //---------------------------------------------------------------------------
 void
 UpdateMouse()
@@ -4614,7 +4612,7 @@ UpdateMouse()
 }
 
 //---------------------------------------------------------------------------
-// keep Connection
+// 연결 유지
 //---------------------------------------------------------------------------
 void
 KeepConnection()
@@ -4651,7 +4649,7 @@ KeepConnection()
 }
 
 //---------------------------------------------------------------------------
-// Update Disconnected
+// 연결 끊김 업데이트
 //---------------------------------------------------------------------------
 void
 UpdateDisconnected()
@@ -4780,7 +4778,7 @@ UpdateDisconnected()
 //	if (true)
 //	{
 //		POINT point;
-//		if (false)  // CDirect3D::GetDevice()->BeginScene() removed (SDL2)
+//		if (false)  // CDirect3D::GetDevice()->BeginScene() 제거됨 (SDL2)
 //		{
 //			return;
 //		}
@@ -4788,7 +4786,7 @@ UpdateDisconnected()
 //		//gC_vs_ui.Show();
 //
 //		//-----------------------------------------------------------------
-//		// Disconnected dialog
+//		// 연결 끊김 다이얼로그
 //		//-----------------------------------------------------------------
 //		g_pBack->Lock();
 //		
@@ -4808,7 +4806,7 @@ UpdateDisconnected()
 //		//gC_vs_ui.MouseControl(M_MOVING, g_x, g_y);
 //		//gC_vs_ui.DrawMousePointer();
 //	
-//		// CDirect3D::GetDevice()->EndScene() removed (SDL2)
+//		// CDirect3D::GetDevice()->EndScene() 제거됨 (SDL2)
 
 //	}
 //	else
@@ -4817,7 +4815,7 @@ UpdateDisconnected()
 		POINT point;
 
 		//-----------------------------------------------------------------
-		// Disconnected dialog
+		// 연결 끊김 다이얼로그
 		//-----------------------------------------------------------------
 		g_pLast->Lock();
 		
@@ -4956,7 +4954,7 @@ UpdateDisconnected()
 
 //			if (true)
 //			{
-//				if (false)  // CDirect3D::GetDevice()->BeginScene() removed (SDL2)
+//				if (false)  // CDirect3D::GetDevice()->BeginScene() 제거됨 (SDL2)
 //				{
 //					return;
 //				}
@@ -4964,7 +4962,7 @@ UpdateDisconnected()
 //				gC_vs_ui.Show();
 //
 //				//-----------------------------------------------------------------
-//				// Disconnected dialog
+//				// 연결 끊김 다이얼로그
 //				//-----------------------------------------------------------------
 //				g_pBack->Lock();
 //				
@@ -5002,7 +5000,7 @@ UpdateDisconnected()
 //				gC_vs_ui.MouseControl(M_MOVING, g_x, g_y);
 //				gC_vs_ui.DrawMousePointer();
 //			
-//				// CDirect3D::GetDevice()->EndScene() removed (SDL2)
+//				// CDirect3D::GetDevice()->EndScene() 제거됨 (SDL2)
 
 //			}
 //			else
@@ -5010,7 +5008,7 @@ UpdateDisconnected()
 				gC_vs_ui.Show();
 
 				//-----------------------------------------------------------------
-				// Disconnected dialog
+				// 연결 끊김 다이얼로그
 				//-----------------------------------------------------------------
 				g_pLast->Lock();
 				
@@ -5060,9 +5058,9 @@ UpdateDisconnected()
 
 			CSDLGraphics::Flip();
 
-			// Yield CPU to prevent 100% usage
-			// On Windows, PeekMessage/GetMessage handle this
-			// On macOS/Linux with SDL, we need to explicitly yield
+			// CPU 점유율 100% 방지를 위해 양보
+			// Windows에서는 PeekMessage/GetMessage가 처리함
+			// macOS/Linux (SDL)에서는 명시적으로 양보 필요
 			SDL_Delay(41);
 		}
 		
@@ -5082,7 +5080,7 @@ UpdateDisconnected()
 		
 //		if (true)
 //		{
-//			if (false)  // CDirect3D::GetDevice()->BeginScene() removed (SDL2)
+//			if (false)  // CDirect3D::GetDevice()->BeginScene() 제거됨 (SDL2)
 //			{
 //				return;
 //			}
@@ -5092,7 +5090,7 @@ UpdateDisconnected()
 //			gC_vs_ui.MouseControl(M_MOVING, g_x, g_y);
 //			gC_vs_ui.DrawMousePointer();
 //		
-//			// CDirect3D::GetDevice()->EndScene() removed (SDL2)
+//			// CDirect3D::GetDevice()->EndScene() 제거됨 (SDL2)
 
 //		}
 //		else
@@ -5164,7 +5162,7 @@ void RunAfterServerDisconnect()
 }
 
 //-----------------------------------------------------------------------------
-// Select LastSelected Character
+// 마지막 선택 캐릭터 선택
 //-----------------------------------------------------------------------------
 // 이전에 선택한 캐릭터를 선택하기
 //-----------------------------------------------------------------------------
@@ -5207,7 +5205,7 @@ SelectLastSelectedCharacter()
 }
 
 //-----------------------------------------------------------------------------
-// Select LastSelected Character
+// 마지막 선택 캐릭터 저장
 //-----------------------------------------------------------------------------
 // 현재 선택한 캐릭터를 저장하기
 //-----------------------------------------------------------------------------
@@ -5266,7 +5264,7 @@ SaveLastSelectedCharacter(int slot)
 }
 
 //-----------------------------------------------------------------------------
-// Set WatchMode ( true || false )
+// 관전 모드 설정 ( true || false )
 //-----------------------------------------------------------------------------
 // 구경하는 mode..
 //-----------------------------------------------------------------------------
@@ -5300,7 +5298,7 @@ SetWatchMode(bool active)
 }
 
 //-----------------------------------------------------------------------------
-// Add ClientCreature
+// 클라이언트 크리처 추가
 //-----------------------------------------------------------------------------
 MCreature*
 AddClientCreature()
@@ -5767,7 +5765,7 @@ AddClientCreature()
 
 
 //-----------------------------------------------------------------------------
-// GetMakeItemFitPosition
+// 아이템 배치 가능 위치 찾기
 //-----------------------------------------------------------------------------
 //
 // 성수만들기, 폭탄/지뢰 만들기.. 등에서 사용된다.
