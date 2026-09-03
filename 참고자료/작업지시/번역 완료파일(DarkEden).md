@@ -212,7 +212,7 @@
 | `Client/MCompareManager.h` | (번역 불필요 - 영어 주석 없음) |
 | `Client/MCrashReportManager.cpp` | (번역 불필요 - 영어 주석 없음) |
 | `Client/MCrashReportManager.h` | (번역 불필요 - 영어 주석 없음) |
-| `Client/MCreature.cpp` | (건너뜀 - 324.6KB, 300KB 초과로 별도 확인 필요) |
+| `Client/MCreature.cpp` | MoveTable 초기화/해제, 생성자/소멸자, 멤버 함수, 크리처 타입/몸색/이름/방향/액션/상태/이펙트/이동/패킷/회복/어둠/환각/재생 관련 섹션 헤더 122개 번역 |
 | `Client/MCreature.h` | (번역 불필요 - 영어 주석 없음) |
 | `Client/MCreatureSpriteTable.cpp` | 전역 변수, 생성자/소멸자, 멤버 함수, 파일에 저장, 파일에서 불러오기 섹션 헤더 |
 | `Client/MCreatureSpriteTable.h` | (번역 불필요 - 영어 주석 없음) |
