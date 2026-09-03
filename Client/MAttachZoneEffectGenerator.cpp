@@ -15,7 +15,7 @@
 //#define	new			DEBUG_NEW
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MAttachZoneEffectGenerator	g_StopZoneEffectGenerator;
 
@@ -69,7 +69,7 @@ bool	MercyGroundEffect( const EFFECTGENERATOR_INFO& egInfo )
 }
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MAttachZoneEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )

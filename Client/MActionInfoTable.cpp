@@ -7,7 +7,7 @@
 #include "SkillDef.h"
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 MActionInfoTable*			g_pActionInfoTable = NULL;
 
@@ -67,9 +67,9 @@ ACTION_INFO_NODE::SetChildMode()
 }
 
 //----------------------------------------------------------------------
-// Save
+// 저장
 //----------------------------------------------------------------------
-void			
+void
 ACTION_INFO_NODE::SaveToFile(std::ofstream& file)
 {			
 	file.write((const char*)&EffectGeneratorID, SIZE_EFFECTGENERATORID);			
@@ -84,9 +84,9 @@ ACTION_INFO_NODE::SaveToFile(std::ofstream& file)
 }
 
 //----------------------------------------------------------------------
-// Load
+// 불러오기
 //----------------------------------------------------------------------
-void			
+void
 ACTION_INFO_NODE::LoadFromFile(std::ifstream& file)
 {			
 	file.read((char*)&EffectGeneratorID, SIZE_EFFECTGENERATORID);			
@@ -108,7 +108,7 @@ ACTION_INFO_NODE::LoadFromFile(std::ifstream& file)
 //----------------------------------------------------------------------
 
 //----------------------------------------------------------------------
-// constructor
+// 생성자
 //----------------------------------------------------------------------
 MActionInfo::MActionInfo()
 { 
@@ -173,7 +173,7 @@ MActionInfo::MActionInfo()
 }
 
 //----------------------------------------------------------------------
-// destructor
+// 소멸자
 //----------------------------------------------------------------------
 MActionInfo::~MActionInfo()
 {
@@ -188,7 +188,7 @@ MActionInfo::SetChildMode()
 {
 	// 하...하드코딩-_-;
 
-	// male
+	// 남성
 	if(m_ActionEffectSpriteType >= EFFECTSPRITETYPE_BLOOD_GUN_1_1 &&
 		m_ActionEffectSpriteType <= EFFECTSPRITETYPE_BLOOD_HORIZONTAL_3)
 	{
@@ -205,7 +205,7 @@ MActionInfo::SetChildMode()
 //		m_ActionEffectSpriteType += EFFECTSPRITETYPE_GREEN_BLOOD_DRAIN_1 - EFFECTSPRITETYPE_BLOOD_DRAIN_1;
 //	}
 	
-	// female
+	// 여성
 	if(m_ActionEffectSpriteTypeFemale >= EFFECTSPRITETYPE_BLOOD_GUN_1_1 &&
 		m_ActionEffectSpriteTypeFemale <= EFFECTSPRITETYPE_BLOOD_HORIZONTAL_3)
 	{
@@ -487,7 +487,7 @@ MActionInfoTable::~MActionInfoTable()
 
 //----------------------------------------------------------------------
 //
-// member functions
+// 멤버 함수
 //
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
@@ -506,9 +506,9 @@ MActionInfoTable::SetChildMode()
 }
 
 //----------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //----------------------------------------------------------------------
-void		
+void
 MActionInfoTable::SaveToFile(std::ofstream& file)
 {
 	file.write((const char*)&m_nMinResultActionInfo, 4);
@@ -518,9 +518,9 @@ MActionInfoTable::SaveToFile(std::ofstream& file)
 }
 		
 //----------------------------------------------------------------------
-// Load From File
+// 파일에서 불러오기
 //----------------------------------------------------------------------
-void		
+void
 MActionInfoTable::LoadFromFile(std::ifstream& file)
 {
 	file.read((char*)&m_nMinResultActionInfo, 4);

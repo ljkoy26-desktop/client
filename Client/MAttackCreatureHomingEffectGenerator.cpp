@@ -14,12 +14,12 @@
 //#define	delete		DEBUG_DELETE
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MAttackCreatureHomingEffectGenerator	g_AttackCreatureHomingEffectGenerator;
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MAttackCreatureHomingEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )

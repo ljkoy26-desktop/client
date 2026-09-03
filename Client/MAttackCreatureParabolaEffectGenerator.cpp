@@ -12,12 +12,12 @@
 //#define	delete		DEBUG_DELETE
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MAttackCreatureParabolaEffectGenerator	g_AttackCreatureParabolaEffectGenerator;
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MAttackCreatureParabolaEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )

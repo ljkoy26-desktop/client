@@ -15,12 +15,12 @@
 #include "MTopView.h"
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MAttachCreatureEffectGenerator	g_AttachCreatureEffectGenerator;
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MAttachCreatureEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )

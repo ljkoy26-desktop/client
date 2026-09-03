@@ -5,7 +5,7 @@
 #include "MCreatureSpriteTable.h"
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 CREATURESPRITE_TABLE*	g_pCreatureSpriteTable = NULL;
 // CREATURESPRITE_TABLE*	g_pAddonSpriteTable = NULL;
@@ -13,7 +13,7 @@ CREATURESPRITE_TABLE*	g_pCreatureSpriteTable = NULL;
 
 //----------------------------------------------------------------------
 //
-// constructor / destructor
+// 생성자/소멸자
 //
 //----------------------------------------------------------------------
 CREATURESPRITETABLE_INFO::CREATURESPRITETABLE_INFO()
@@ -28,14 +28,14 @@ CREATURESPRITETABLE_INFO::~CREATURESPRITETABLE_INFO()
 
 //----------------------------------------------------------------------
 //
-// member functions
+// 멤버 함수
 //
 //----------------------------------------------------------------------
 
 //----------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //----------------------------------------------------------------------
-void			
+void
 CREATURESPRITETABLE_INFO::SaveToFile(std::ofstream& file)
 {
 	file.write((const char*)&FrameID, SIZE_FRAMEID);	
@@ -49,9 +49,9 @@ CREATURESPRITETABLE_INFO::SaveToFile(std::ofstream& file)
 }
 
 //----------------------------------------------------------------------
-// Load From File
+// 파일에서 불러오기
 //----------------------------------------------------------------------
-void			
+void
 CREATURESPRITETABLE_INFO::LoadFromFile(std::ifstream& file)
 {
 	file.read((char*)&FrameID, SIZE_FRAMEID);

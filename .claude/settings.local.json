@@ -5,7 +5,9 @@
       "Bash(cmake:*)",
       "Bash(\"C:\\\\Users\\\\USER\\\\Desktop\\\\sourceTree_root\\\\vcpkg download\\\\vcpkg\\\\vcpkg.exe\" install:*)",
       "Bash(\"C:\\\\Users\\\\USER\\\\Desktop\\\\sourceTree_root\\\\vcpkg download\\\\vcpkg\\\\vcpkg.exe\" search:*)",
-      "Bash(\"C:/Users/USER/Desktop/sourceTree_root/vcpkg download/vcpkg/vcpkg.exe\" install:*)"
+      "Bash(\"C:/Users/USER/Desktop/sourceTree_root/vcpkg download/vcpkg/vcpkg.exe\" install:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)"
     ]
   }
 }

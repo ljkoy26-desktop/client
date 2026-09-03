@@ -14,12 +14,12 @@
 #include "MAttachOrbitEffect.h"
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MAttachCreatureOrbitEffectGenerator	g_AttachCreatureEffectGenerator;
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MAttachCreatureOrbitEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )

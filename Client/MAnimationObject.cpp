@@ -6,13 +6,13 @@
 
 //----------------------------------------------------------------------
 //
-// constructor/destructor
+// 생성자/소멸자
 //
 //----------------------------------------------------------------------
 MAnimationObject::MAnimationObject()
 : CAnimationFrame(BLT_NORMAL)
 {
-	// type
+	// 타입
 	m_ObjectType	= TYPE_ANIMATIONOBJECT;	
 
 	m_bAnimation	= true;
@@ -26,13 +26,13 @@ MAnimationObject::MAnimationObject(TYPE_OBJECTID id, TYPE_OBJECTID ImageObjectID
 	// instace ID발급
 	m_ID			= id;
 
-	// type
+	// 타입
 	m_ObjectType	= TYPE_ANIMATIONOBJECT;	
 	m_ImageObjectID = ImageObjectID;
 
 	m_bAnimation	= true;
 
-	// data
+	// 데이터
 	m_SpriteID		= SpriteID;
 	m_PixelX		= pX;
 	m_PixelY		= pY;	
@@ -48,12 +48,12 @@ MAnimationObject::~MAnimationObject()
 
 //----------------------------------------------------------------------
 //
-// member functions
+// 멤버 함수
 //
 //----------------------------------------------------------------------
 
 //----------------------------------------------------------------------
-// Set
+// 설정
 //----------------------------------------------------------------------
 void
 MAnimationObject::Set(TYPE_OBJECTID id, TYPE_OBJECTID ImageObjectID, TYPE_SPRITEID SpriteID, int pX, int pY, TYPE_SECTORPOSITION viewpoint, bool trans, BYTE bltType)
@@ -61,13 +61,13 @@ MAnimationObject::Set(TYPE_OBJECTID id, TYPE_OBJECTID ImageObjectID, TYPE_SPRITE
 	// instace ID발급
 	m_ID			= id;
 
-	// type
+	// 타입
 	m_ObjectType	= TYPE_ANIMATIONOBJECT;	
 	m_ImageObjectID = ImageObjectID;
 
 	m_bAnimation	= true;
 
-	// data
+	// 데이터
 	m_SpriteID		= SpriteID;
 	m_PixelX		= pX;
 	m_PixelY		= pY;	
@@ -77,7 +77,7 @@ MAnimationObject::Set(TYPE_OBJECTID id, TYPE_OBJECTID ImageObjectID, TYPE_SPRITE
 	m_BltType		= bltType;
 }
 //----------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //----------------------------------------------------------------------
 void	
 MAnimationObject::SaveToFile(ofstream& file)
@@ -94,7 +94,7 @@ MAnimationObject::SaveToFile(ofstream& file)
 }
 		
 //----------------------------------------------------------------------
-// Load From File
+// 파일에서 불러오기
 //----------------------------------------------------------------------
 void	
 MAnimationObject::LoadFromFile(ifstream& file)
@@ -118,7 +118,7 @@ MAnimationObject::LoadFromFile(ifstream& file)
 DWORD	MAnimationObject::LoopFrameCount = 0;
 
 //----------------------------------------------------------------------
-// Next Frame
+// 다음 프레임
 //----------------------------------------------------------------------
 void	
 MAnimationObject::NextFrame()

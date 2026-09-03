@@ -5,7 +5,7 @@
 #include "MCreatureTable.h"
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 CREATURE_TABLE*		g_pCreatureTable = NULL;
 
@@ -38,9 +38,9 @@ ITEM_WEARINFO::ITEM_WEARINFO()
 }
 
 //----------------------------------------------------------------------
-// operator =
+// 대입 연산자
 //----------------------------------------------------------------------
-void		
+void
 ITEM_WEARINFO::operator = (const ITEM_WEARINFO& info)
 {
 	skinColor = info.skinColor;
@@ -62,9 +62,9 @@ ITEM_WEARINFO::operator = (const ITEM_WEARINFO& info)
 }
 
 //----------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //----------------------------------------------------------------------
-void		
+void
 ITEM_WEARINFO::SaveToFile(std::ofstream& file)
 {
 	file.write((const char*)&skinColor, 2);
@@ -86,9 +86,9 @@ ITEM_WEARINFO::SaveToFile(std::ofstream& file)
 }
 
 //----------------------------------------------------------------------
-// Load From File
+// 파일에서 불러오기
 //----------------------------------------------------------------------
-void		
+void
 ITEM_WEARINFO::LoadFromFile(std::ifstream& file)
 {
 	file.read((char*)&skinColor, 2);
@@ -122,7 +122,7 @@ CREATURETABLE_INFO::CREATURETABLE_INFO()
 	ColorSet		= 0;
 	m_pActionSound	= NULL;
 	m_pActionCount	= NULL;
-	m_nMaxAction		= 0;	// Initialize max action count
+	m_nMaxAction		= 0;	// 최대 액션 수 초기화
 
 	bFlyingCreature = false;
 	FlyingHeight = 0;
@@ -160,11 +160,11 @@ CREATURETABLE_INFO::~CREATURETABLE_INFO()
 
 //----------------------------------------------------------------------
 //
-// member functions
+// 멤버 함수
 //
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
-// Set Creature Type
+// 크리처 종족 설정
 //----------------------------------------------------------------------
 void				
 CREATURETABLE_INFO::SetCreatureTribe(enum CREATURETRIBE ct, int nMaxAction)
@@ -175,7 +175,7 @@ CREATURETABLE_INFO::SetCreatureTribe(enum CREATURETRIBE ct, int nMaxAction)
 }
 
 //----------------------------------------------------------------------
-// Init ActionSound Type ( m_CreatureTribe )
+// 액션 사운드 타입 초기화 ( m_CreatureTribe )
 //----------------------------------------------------------------------
 // m_CreatureType에 맞게 SoundID의 개수를 적절히 설정한다.
 //----------------------------------------------------------------------
@@ -213,7 +213,7 @@ CREATURETABLE_INFO::InitActionType(int nMaxAction)
 }
 
 //----------------------------------------------------------------------
-// Get ActionSound Max
+// 액션 사운드 최대값 반환
 //----------------------------------------------------------------------
 int
 CREATURETABLE_INFO::GetActionMax() const
@@ -247,9 +247,9 @@ CREATURETABLE_INFO::GetActionMax() const
 }
 
 //----------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //----------------------------------------------------------------------
-void			
+void
 CREATURETABLE_INFO::SaveToFile(std::ofstream& file)
 {
 	Name.SaveToFile( file );
@@ -308,9 +308,9 @@ CREATURETABLE_INFO::SaveToFile(std::ofstream& file)
 }
 
 //----------------------------------------------------------------------
-// Load From File
+// 파일에서 불러오기
 //----------------------------------------------------------------------
-void			
+void
 CREATURETABLE_INFO::LoadFromFile(std::ifstream& file)
 {
 	Name.LoadFromFile( file );
@@ -405,7 +405,7 @@ CREATURETABLE_INFO::LoadFromFile(std::ifstream& file)
 }
 
 //----------------------------------------------------------------------
-// assign operator = 
+// 대입 연산자
 //----------------------------------------------------------------------
 void				
 CREATURETABLE_INFO::operator = (const CREATURETABLE_INFO& creatureInfo)
@@ -464,8 +464,8 @@ CREATURETABLE_INFO::operator = (const CREATURETABLE_INFO& creatureInfo)
 
 //----------------------------------------------------------------------
 //
-// constructor / destructor
-// 
+// 생성자/소멸자
+//
 //----------------------------------------------------------------------
 CreatureSpriteTypeMapper::CreatureSpriteTypeMapper()
 {
@@ -476,24 +476,24 @@ CreatureSpriteTypeMapper::~CreatureSpriteTypeMapper()
 }
 
 //----------------------------------------------------------------------
-// Init
+// 초기화
 //----------------------------------------------------------------------
-void	
+void
 CreatureSpriteTypeMapper::Init(int numSpriteTypes)
 {
 	Release();
 
-	// Use resize() instead of reserve() to actually allocate elements
+	// 실제 원소를 할당하기 위해 reserve() 대신 resize() 사용
 	m_CreatureSpriteTypes.resize( numSpriteTypes, NULL );
 }
 
 //----------------------------------------------------------------------
-// Release
+// 해제
 //----------------------------------------------------------------------
-void	
+void
 CreatureSpriteTypeMapper::Release()
 {
-	// Use size() not capacity()
+	// capacity() 대신 size() 사용
 	int numSpriteTypes = m_CreatureSpriteTypes.size();
 
 	for (int i=0; i<numSpriteTypes; i++)
@@ -508,7 +508,7 @@ CreatureSpriteTypeMapper::Release()
 
 
 //----------------------------------------------------------------------
-// Add CreatureType
+// 크리처 타입 추가
 //----------------------------------------------------------------------
 void	
 CreatureSpriteTypeMapper::AddCreatureType(TYPE_SPRITEID spriteID, WORD creatureType)
@@ -527,7 +527,7 @@ CreatureSpriteTypeMapper::AddCreatureType(TYPE_SPRITEID spriteID, WORD creatureT
 }
 
 //----------------------------------------------------------------------
-// Get Random CreatureType
+// 무작위 크리처 타입 반환
 //----------------------------------------------------------------------
 int		
 CreatureSpriteTypeMapper::GetRandomCreatureType(TYPE_SPRITEID spriteID) const
@@ -555,12 +555,12 @@ CreatureSpriteTypeMapper::GetRandomCreatureType(TYPE_SPRITEID spriteID) const
 }
 
 //----------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //----------------------------------------------------------------------
-void				
+void
 CreatureSpriteTypeMapper::SaveToFile(std::ofstream& file)
 {
-	// Use size() not capacity()
+	// capacity() 대신 size() 사용
 	int numSpriteTypes = m_CreatureSpriteTypes.size();
 
 	file.write((const char*)&numSpriteTypes, 4);
@@ -590,9 +590,9 @@ CreatureSpriteTypeMapper::SaveToFile(std::ofstream& file)
 }
 
 //----------------------------------------------------------------------
-// Load From File
+// 파일에서 불러오기
 //----------------------------------------------------------------------
-void				
+void
 CreatureSpriteTypeMapper::LoadFromFile(std::ifstream& file)
 {
 	int numSpriteTypes;
@@ -611,7 +611,7 @@ CreatureSpriteTypeMapper::LoadFromFile(std::ifstream& file)
 
 		file.read((char*)&numCreatureTypes, 4);
 
-		// Use resize() instead of reserve() to actually allocate elements
+		// 실제 원소를 할당하기 위해 reserve() 대신 resize() 사용
 		pCreatureTypes->resize( numCreatureTypes, 0 );
 
 		for (int j=0; j<numCreatureTypes; j++)

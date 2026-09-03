@@ -14,12 +14,12 @@
 //#define	new			DEBUG_NEW
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MAroundZoneEffectGenerator	g_StopZoneEffectGenerator;
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MAroundZoneEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )

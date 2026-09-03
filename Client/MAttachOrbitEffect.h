@@ -57,12 +57,12 @@ class MAttachOrbitEffect : public MAttachEffect {
 		virtual int		GetPixelY() const	{ return (int)m_PixelY + s_OrbitPosition[m_Type][m_OrbitStep].y; }
 
 		//--------------------------------------------------------
-		// Get Orbit X,Y
+		// 궤도 X,Y 좌표 반환
 		//--------------------------------------------------------
 		const POINT&	GetOrbitPosition() const	{ return s_OrbitPosition[m_Type][m_OrbitStep]; }
 		
 		//--------------------------------------------------------
-		// Init OrbitPosition
+		// 궤도 좌표 초기화
 		//--------------------------------------------------------
 		static void		InitOrbitPosition();
 	

@@ -17,12 +17,12 @@
 //extern	MPlayer	g_pPlayer->
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MAttackCreatureEffectGenerator	g_AttackCreatureEffectGenerator;
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MAttackCreatureEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )

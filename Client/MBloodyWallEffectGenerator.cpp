@@ -14,12 +14,12 @@
 //#define	delete		DEBUG_DELETE
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MBloodyWallEffectGenerator	g_BloodyWallEffectGenerator;
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MBloodyWallEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )

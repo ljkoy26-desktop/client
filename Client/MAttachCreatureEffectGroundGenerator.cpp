@@ -10,12 +10,12 @@
 #include "MEffectSpriteTypeTable.h"
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MAttachCreatureEffectGroundGenerator	g_AttachCreatureEffectGenerator;
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MAttachCreatureEffectGroundGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )

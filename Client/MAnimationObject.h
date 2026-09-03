@@ -36,7 +36,7 @@ using namespace std;
 
 //----------------------------------------------------------------------
 //
-// ImageObject class
+// ImageObject 클래스
 //
 //----------------------------------------------------------------------
 class MAnimationObject : public MImageObject, public CAnimationFrame, public ShowTimeChecker {
@@ -53,7 +53,7 @@ class MAnimationObject : public MImageObject, public CAnimationFrame, public Sho
 		BYTE	GetDirection() const	{ return m_Direction; }
 
 		//-------------------------------------------------------
-		// Sound
+		// 사운드
 		//-------------------------------------------------------
 		bool			IsSoundFrame() const			{ return m_SoundFrame==m_CurrentFrame; }
 		void			SetSoundFrame(BYTE fr)			{ m_SoundFrame = fr; }
@@ -62,7 +62,7 @@ class MAnimationObject : public MImageObject, public CAnimationFrame, public Sho
 		TYPE_SOUNDID	GetSoundID() const				{ return m_SoundID; }
 
 		//-------------------------------------------------------
-		// File I/O
+		// 파일 입출력
 		//-------------------------------------------------------
 		virtual void	SaveToFile(std::ofstream& file);
 		virtual void	LoadFromFile(std::ifstream& file);

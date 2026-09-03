@@ -15,12 +15,12 @@
 //#define	delete		DEBUG_DELETE
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MAttackZoneEffectGenerator	g_AttackZoneEffectGenerator;
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MAttackZoneEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )

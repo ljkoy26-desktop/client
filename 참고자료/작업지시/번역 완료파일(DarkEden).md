@@ -151,6 +151,78 @@
 
 ---
 
+---
+
+## 8차 번역 완료 (2026-09-03)
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/MActionInfoTable.cpp` | 전역 변수, 저장/불러오기, 생성자/소멸자, 멤버 함수, 파일에 저장/파일에서 불러오기, 남성/여성 섹션 헤더 |
+| `Client/MActionInfoTable.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MActionResult.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MActionResult.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MActionResultDef.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAnimationObject.cpp` | 생성자/소멸자, 타입, 데이터, 멤버 함수, 설정, 파일에 저장, 파일에서 불러오기, 다음 프레임 섹션 헤더 |
+| `Client/MAnimationObject.h` | ImageObject 클래스, 사운드, 파일 입출력 섹션 헤더 |
+| `Client/MAroundZoneEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MAroundZoneEffectGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MathTable.cpp` | 360도 각도 반환, FSin/FCos/FArcTan/FSines 초기화, 목표 방향 각도 반환, 각도 반전/클리핑, 각도 방향 반환, 각도 클리핑 섹션 헤더 및 인라인 주석 |
+| `Client/MathTable.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttachCreatureEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MAttachCreatureEffectGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttachCreatureEffectGroundGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MAttachCreatureEffectGroundGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttachCreatureOrbitEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MAttachCreatureOrbitEffectGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttachEffect.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttachEffect.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttachOrbitEffect.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttachOrbitEffect.h` | 궤도 X,Y 좌표 반환, 궤도 좌표 초기화 섹션 헤더 |
+| `Client/MAttachZoneAroundEffectGenerator.CPP` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttachZoneAroundEffectGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttachZoneEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MAttachZoneEffectGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttachZoneSelectableEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MAttachZoneSelectableEffectGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttackCreatureEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MAttackCreatureEffectGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttackCreatureHomingEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MAttackCreatureHomingEffectGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttackCreatureParabolaEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MAttackCreatureParabolaEffectGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttackZoneBombEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MAttackZoneBombEffectGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttackZoneEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MAttackZoneEffectGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttackZoneParabolaEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MAttackZoneParabolaEffectGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttackZoneRectEffectGenerator.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MAttackZoneRectEffectGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MBloodyBreakerEffectGenerator.CPP` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MBloodyBreakerEffectGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MBloodyWallEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MBloodyWallEffectGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MBloodyWaveEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MBloodyWaveEffectGenerator.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MChaseEffect.cpp` | 생성자/소멸자, 멤버 함수, 업데이트 섹션 헤더 |
+| `Client/MChaseEffect.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MChatManager.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MChatManager.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MCompareManager.cpp` | 전역 변수, 생성자/소멸자, 멤버 함수, 초기화, 비교 함수 섹션 헤더 (HC_ 함수 헤더는 코드 식별자이므로 유지) |
+| `Client/MCompareManager.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MCrashReportManager.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MCrashReportManager.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MCreature.cpp` | (건너뜀 - 324.6KB, 300KB 초과로 별도 확인 필요) |
+| `Client/MCreature.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MCreatureSpriteTable.cpp` | 전역 변수, 생성자/소멸자, 멤버 함수, 파일에 저장, 파일에서 불러오기 섹션 헤더 |
+| `Client/MCreatureSpriteTable.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MCreatureTable.cpp` | 전역 변수, 대입 연산자, 파일에 저장/불러오기, 멤버 함수, 크리처 종족 설정, 액션 사운드 타입 초기화, 액션 사운드 최대값 반환, 생성자/소멸자, 초기화, 해제, 크리처 타입 추가, 무작위 크리처 타입 반환 섹션 헤더; 최대 액션 수 초기화, reserve()→resize() 사용, capacity()→size() 사용 인라인 주석 |
+| `Client/MCreatureTable.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MCreatureWear.cpp` | 정적 멤버, 생성자/소멸자, 멤버 함수, AddonInfo 초기화, 동일 복장 설정, 부가 ColorSet1/2 설정, AddonInfo로 아이템 생성, 부가장비 제거, 부가장비 설정, 부가장비 해제, 크리처 타입 설정, 이펙트 상태 제거, 이펙트 업데이트 섹션 헤더 |
+| `Client/MCreatureWear.h` | (번역 불필요 - 영어 주석 없음) |
+
+---
+
 ## 다음 번역 대상 (vcxproj 기준 이후 파일들)
 
-vcxproj 줄 481 이후 파일들 (LeakMemoryDumper.h 다음부터) 은 미번역 상태.
+vcxproj 줄 MCreatureWear.h 이후 파일들은 미번역 상태.
