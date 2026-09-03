@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // MInventory.h
 //----------------------------------------------------------------------
 /*
@@ -100,7 +100,7 @@ class MInventory : public MGridItemManager {
 		~MInventory();
 
 		//------------------------------------------------------
-		// Add
+		// 추가
 		//------------------------------------------------------		
 		bool			AddItem(MItem* pItem);					// 적절한 grid에 추가한다.
 		bool			AddItem(MItem* pItem, BYTE x, BYTE y);	// grid(x,y)에 pItem을 추가한다.
@@ -108,12 +108,12 @@ class MInventory : public MGridItemManager {
 		bool			ReplaceItem(MItem* pItem, BYTE x, BYTE y, MItem*& pOldItem);	// (x,y)위치의 Item교환
 		
 		//------------------------------------------------------		
-		// Get FitPosition
+		// 적합한 위치 반환
 		//------------------------------------------------------		
 		bool			GetFitPosition(MItem* pItem, POINT& point);	// pItem이 들어갈 수 있는 적절한 grid위치를 구한다.
 
 		//------------------------------------------------------
-		// Find Item
+		// 아이템 검색
 		//------------------------------------------------------		
 		MItem*			FindItem( ITEM_CLASS itemClass, TYPE_ITEMTYPE itemType=ITEMTYPE_NULL);
 

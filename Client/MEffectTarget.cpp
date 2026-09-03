@@ -8,7 +8,7 @@
 #include "DebugInfo.h"
 
 //----------------------------------------------------------------------
-// Static member
+// 정적 멤버
 //----------------------------------------------------------------------
 BYTE		MEffectTarget::s_EffectID	= 0;
 
@@ -75,7 +75,7 @@ MEffectTarget::~MEffectTarget()
 }
 
 //----------------------------------------------------------------------
-// Set Result
+// 결과 설정
 //----------------------------------------------------------------------
 void			
 MEffectTarget::SetResult(MActionResult* pResult)
@@ -89,9 +89,9 @@ MEffectTarget::SetResult(MActionResult* pResult)
 }
 		
 //----------------------------------------------------------------------
-// assign
+// 대입 연산자
 //----------------------------------------------------------------------
-void	
+void
 MEffectTarget::operator = (const MEffectTarget& target)
 {
 	m_MaxPhase		= target.m_MaxPhase;
@@ -132,9 +132,9 @@ MPortalEffectTarget::~MPortalEffectTarget()
 }
 
 //------------------------------------------------------------------
-// assign
+// 대입 연산자
 //------------------------------------------------------------------
-void	
+void
 MPortalEffectTarget::operator = (const MEffectTarget& target)
 {
 	(MEffectTarget)*this = target;
@@ -151,7 +151,7 @@ MPortalEffectTarget::operator = (const MEffectTarget& target)
 }
 
 //------------------------------------------------------------------
-// Get ZoneName
+// 존 이름 반환
 //------------------------------------------------------------------
 const char*				
 MPortalEffectTarget::GetZoneName() const

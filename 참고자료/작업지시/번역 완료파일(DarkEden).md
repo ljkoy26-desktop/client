@@ -223,6 +223,96 @@
 
 ---
 
+---
+
+## 9차 번역 완료 (2026-09-03)
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/md5.cpp` | 비-Windows 스텁 주석, 인라인/멤버 함수 구현 섹션 헤더(중국어→한글), 첫 번째/네 번째 라운드 주석(중국어→한글) |
+| `Client/md5.h` | 파일 헤더 주석 |
+| `Client/MEffect.cpp` | 정적 멤버 초기화, 생성자/소멸자, 인스턴스 ID, 리소스 컨테이너 주석(중국어→한글), 멤버 함수, 카운트/링크/이펙트타겟/위치/FrameID/업데이트 설정 섹션 헤더 전체 |
+| `Client/MEffect.h` | 파일 상단 이펙트 설명 블록(영어→한글), 신규/구 생성자 주석, 리소스 컨테이너 관리 주석, 이펙트 타입/선택가능/위력/속도 섹션 헤더, 신규 추가 멤버 주석 |
+| `Client/MEffectGeneratorDef.h` | 클래스 ID 섹션 헤더 |
+| `Client/MEffectGeneratorTable.cpp` | 전역 변수, 생성자/소멸자, 멤버 함수, 해제, 이펙트 생성 섹션 헤더 |
+| `Client/MEffectGeneratorTable.h` | 초기화/해제 섹션 헤더 |
+| `Client/MEffectManager.cpp` | 생성자/소멸자, 멤버 함수, 해제, 이펙트 추가, 업데이트 섹션 헤더 |
+| `Client/MEffectManager.h` | 이펙트 목록, 해제, 추가, 업데이트, 목록 섹션 헤더 |
+| `Client/MEffectSpriteTypeTable.cpp` | 전역 변수, 메모리 보호/ASAN 영어 주석 전체, 파일에 저장/불러오기, Pair FrameID 목록 섹션 헤더 |
+| `Client/MEffectSpriteTypeTable.h` | 손상 감지용 섀도우 복사본, 검증 함수 주석 |
+| `Client/MEffectStatusTable.cpp` | 전역 변수, 멤버 함수(x2), 파일에 저장, 파일에서 불러오기 섹션 헤더 |
+| `Client/MEffectStatusTable.h` | 파일 입출력 섹션 헤더 |
+| `Client/MEffectTarget.cpp` | 정적 멤버, 결과 설정, 대입 연산자(x2), 존 이름 반환 섹션 헤더 |
+| `Client/MEffectTarget.h` | 대입 연산자, 인스턴스 ID, 설정, 대입 연산자, 반환 섹션 헤더 (MEffectTarget/MPortalEffectTarget) |
+| `Client/MemoryPool.cpp` | (번역 불필요 - 이미 한글 주석) |
+| `Client/MemoryPool.h` | (번역 불필요 - 이미 한글 주석) |
+| `Client/MEventManager.cpp` | 전역 변수, 이벤트 처리 섹션 헤더 |
+| `Client/MEventManager.h` | 명시적 헤더 경로 주석(영어→한글) |
+| `Client/MFakeCreature.cpp` | 정적 멤버, FakeID 반환, 생성자/소멸자, 우선순위 큐/목록 제거, 멤버 함수, 가짜 크리처 타입 설정, 액션 결과 설정, 액션, 빠른 이동 액션 설정, 가짜 위치 설정, 가짜 업데이트, 가짜 종료 여부, 기타 패킷 특수 액션, 다음 목적지 설정/반환, 다음 위치 반환, 목적지 설정, 메시지:경로탐색, 비어있지않으면 삭제, 우선순위 큐 테스트 코드, 최선 우선 탐색, 목적지 반환, 이동, 액션 중지 주석 전체 |
+| `Client/MFakeCreature.h` | 반환, 클래스 타입, 가짜 크리처 타입, 가짜 위치 설정, 액션 섹션 헤더 |
+
+---
+
+## 10차 번역 완료 (2026-09-03)
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/MFallingEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MFallingEffectGenerator.h` | (번역 불필요) |
+| `Client/MFirePiecingEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MFirePiecingEffectGenerator.h` | (번역 불필요) |
+| `Client/MFollowPathEffectGenerator.cpp` | 이펙트 생성 섹션 헤더 |
+| `Client/MFollowPathEffectGenerator.h` | (번역 불필요) |
+| `Client/MFunctionManager.cpp` | 생성자/소멸자, 멤버 함수, 초기화, 해제, 실행, 함수 설정 섹션 헤더 |
+| `Client/MFunctionManager.h` | (번역 불필요) |
+| `Client/MGameDef.h` | 인벤토리, 상점 선반, 창고, 거래 섹션 헤더 |
+| `Client/MGameStringTable.cpp` | 전역 변수 섹션 헤더 |
+| `Client/MGameStringTable.h` | (번역 불필요) |
+| `Client/MGameTime.cpp` | 전역 변수, 생성자/소멸자, 멤버 함수, 기준 시간 설정, 현재 시간 설정 섹션 헤더 |
+| `Client/MGameTime.h` | 반환 섹션 헤더 |
+| `Client/MGridItemManager.cpp` | 생성자/소멸자, 멤버 함수, 초기화, 해제, 검색, 아이템 교환 가능 여부, 추가(×2), 반환, 제거(×2), 아이템 교환, 그리드 순서로 아이템 검색 섹션 헤더 |
+| `Client/MGridItemManager.h` | 초기화/해제, 반환, 추가/반환/제거, 아이템 교환 가능 여부, 적합한 위치 반환, 그리드 순서로 아이템 검색 섹션 헤더 |
+| `Client/MGuidanceEffect.cpp` | 생성자/소멸자, 멤버 함수, 이동, 크리처 추적, 업데이트 섹션 헤더 |
+| `Client/MGuidanceEffect.h` | (번역 불필요) |
+| `Client/MGuildInfoMapper.cpp` | 전역 변수, 초기화, 해제, 연산자 [], 반환, 설정, 파일에 저장(×2), 파일에서 불러오기(×2), 대입 연산자, 파일에서 값 변경, 정보를 파일에 저장 섹션 헤더 |
+| `Client/MGuildInfoMapper.h` | 반환/설정, 대입 연산자, 파일 입출력, 초기화/해제, 연산자 [], 파일 입출력, 전역 변수 섹션 헤더 |
+| `Client/MGuildMarkManager.cpp` | 전역 변수, 해제, 길드마크 생성, 추가, 반환, 작은 반환, 보유 여부 확인, 로드, 저장, 병합, 등급 마크 로드/반환/작은 반환, 레벨 마크 반환/작은 반환 섹션 헤더 |
+| `Client/MGuildMarkManager.h` | 해제, 길드마크 생성, 추가/반환, 파일 입출력, 전역 변수 섹션 헤더 |
+
+---
+
+---
+
+## 11차 번역 완료 (2026-09-03)
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/MHelicopterManager.cpp` | 상수 정의, 해제(×2), 추적 크리처 설정, 사운드 업데이트, 업데이트, 헬리콥터 추가/반환/즉시제거/제거 섹션 헤더 |
+| `Client/MHelicopterManager.h` | (번역 불필요) |
+| `Client/MHelpDef.h` | (번역 불필요) |
+| `Client/MHelpDisplayer.cpp` | 전역 변수, 생성자/소멸자, 멤버 함수 섹션 헤더 |
+| `Client/MHelpDisplayer.h` | (번역 불필요) |
+| `Client/MHelpManager.cpp` | 전역 변수, 도움말 이벤트 실행, 다음 반환, True/False 설정, 파일에 저장(×2), 파일에서 불러오기(×2), 출력 타입 반환, 초기화, 해제, 이벤트 발생 기록 초기화, 이벤트 실행 섹션 헤더 |
+| `Client/MHelpManager.h` | 파일 입출력(×3), 타입 반환(×2), 다음 반환, 비교 노드 반환/설정, 반환, 초기화/해제, 이벤트 실행, 파일 입출력, 전역 변수, 도움말 이벤트 실행 섹션 헤더 |
+| `Client/MHelpMessageManager.cpp` | (번역 불필요) |
+| `Client/MHelpMessageManager.h` | (번역 불필요) |
+| `Client/MHelpStringTable.cpp` | 전역 변수, 생성자/소멸자, 멤버 함수, 초기화, 표시 기록 초기화, 파일에서 불러오기 섹션 헤더 |
+| `Client/MHelpStringTable.h` | 초기화, 파일 입출력 섹션 헤더 |
+| `Client/MHomingEffect.cpp` | 생성자/소멸자, 멤버 함수, 목표 설정, 각도로 방향 설정, 업데이트 섹션 헤더 |
+| `Client/MHomingEffect.h` | 목표 설정 섹션 헤더 |
+| `Client/MImageObject.cpp` | 정적 멤버 초기화, 생성자/소멸자, 멤버 함수, 설정, 파일에 저장, 파일에서 불러오기, 벽 설정, 벽 방향 반환 섹션 헤더 |
+| `Client/MImageObject.h` | 파일 입출력 섹션 헤더 |
+| `Client/MInteractionObject.cpp` | 생성자/소멸자, 멤버 함수, 파일에 저장, 파일에서 불러오기, 액션 설정, 다음 액션 설정 섹션 헤더 |
+| `Client/MInteractionObject.h` | 파일 입출력 섹션 헤더 |
+| `Client/MInteractionObjectTable.cpp` | 전역 변수, 파일에 저장, 파일에서 불러오기 섹션 헤더 |
+| `Client/MInteractionObjectTable.h` | 파일 입출력 섹션 헤더 |
+| `Client/MInternetConnection.cpp` | 해제(×2), 초기화(×2), 옵션 설정, 마지막 응답 정보 반환, 업데이트 섹션 헤더 |
+| `Client/MInventory.cpp` | 전역 변수, 생성자/소멸자, 멤버 함수, 상태 이상 확인, 아이템 추가(×2), 아이템 적합 위치 반환, 아이템 검색 섹션 헤더 |
+| `Client/MInventory.h` | 추가, 적합한 위치 반환, 아이템 검색 섹션 헤더 |
+| `Client/MissingGlobals.cpp` | 렌더링 플래그, 추가 누락 전역 변수 섹션 헤더 |
+
+---
+
 ## 다음 번역 대상 (vcxproj 기준 이후 파일들)
 
-vcxproj 줄 MCreatureWear.h 이후 파일들은 미번역 상태.
+MissingGlobals.cpp 이후 파일들 (MItem.cpp 부터) 은 미번역 상태.

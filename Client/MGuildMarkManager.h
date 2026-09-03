@@ -142,18 +142,18 @@ class MGuildMarkManager {
 		bool			IsInit() const		{ return (m_GuildMarkSPKFilename.GetLength()+m_GuildMarkSpriteMapperFilename.GetLength())!=0; }
 
 		//----------------------------------------------------------
-		// Release
+		// 해제
 		//----------------------------------------------------------
 		void			Release();
 
 		//----------------------------------------------------------
-		// Create( guildID, pFilename은 *.bmp || *.jpg )
+		// 길드마크 생성( guildID, pFilename은 *.bmp || *.jpg )
 		//----------------------------------------------------------
 		bool			CreateGuildMark(WORD guildID, const char* pFilename);
 		static bool		CreateGuildMark(const char* pFilename, CSprite *&pSprite, CSprite *&pSpriteSmall);
 
 		//----------------------------------------------------------
-		// Add / Get
+		// 추가/반환
 		//----------------------------------------------------------
 		bool			HasGuildMark(WORD guildID) const;
 		bool			AddGuildMark(WORD guildID, CSprite* pSprite, CSprite* pSpriteSmall);
@@ -167,7 +167,7 @@ class MGuildMarkManager {
 		CSprite*		GetLevelMarkSmall(WORD level);
 
 		//----------------------------------------------------------
-		// File I/O
+		// 파일 입출력
 		//----------------------------------------------------------
 		bool			LoadGuildMark(WORD guildID);
 		bool			SaveGuildMark(WORD guildID, CSprite* pSprite, CSprite* pSpriteSmall);
@@ -187,7 +187,7 @@ class MGuildMarkManager {
 };
 
 //----------------------------------------------------------------------
-// global
+// 전역 변수
 //----------------------------------------------------------------------
 extern MGuildMarkManager* g_pGuildMarkManager;
 

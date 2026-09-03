@@ -24,7 +24,7 @@ class GUILD_INFO {
 		~GUILD_INFO();
 
 		//----------------------------------------------------------
-		// Get / Set
+		// 반환/설정
 		//----------------------------------------------------------
 		void			SetSpriteID(TYPE_SPRITEID id)		{ m_SpriteID = id; }
 //		void			SetGuildName(const char* pName)		{ m_GuildName = pName; }
@@ -35,12 +35,12 @@ class GUILD_INFO {
 //		const char*		GetLeaderName() const				{ return m_LeaderName.GetString(); }
 
 		//----------------------------------------------------------
-		// operator =
+		// 대입 연산자
 		//----------------------------------------------------------
 		void			operator = (const GUILD_INFO& info);
 
 		//----------------------------------------------------------
-		// File I/O
+		// 파일 입출력
 		//----------------------------------------------------------
 		void	SaveToFile(std::ofstream& file);
 		void	LoadFromFile(std::ifstream& file);
@@ -63,13 +63,13 @@ class MGuildInfoMapper : public std::map<WORD, GUILD_INFO*> {
 		~MGuildInfoMapper();
 
 		//----------------------------------------------------------
-		// Init / Release
+		// 초기화/해제
 		//----------------------------------------------------------
 		//void	Init(int n);
 		void	Release();
 
 		//----------------------------------------------------------
-		// operator []
+		// 연산자 []
 		//----------------------------------------------------------
 		//TYPE_SPRITEID&			operator [] (int n);
 		//const TYPE_SPRITEID&	operator [] (int n) const;
@@ -77,7 +77,7 @@ class MGuildInfoMapper : public std::map<WORD, GUILD_INFO*> {
 		void			Set(WORD guildID, GUILD_INFO* pInfo);
 
 		//----------------------------------------------------------
-		// File I/O
+		// 파일 입출력
 		//----------------------------------------------------------
 		void	SaveToFile(std::ofstream& file);
 		void	LoadFromFile(std::ifstream& file);
@@ -94,7 +94,7 @@ class MGuildInfoMapper : public std::map<WORD, GUILD_INFO*> {
 };
 
 //----------------------------------------------------------------------
-// global
+// 전역 변수
 //----------------------------------------------------------------------
 extern MGuildInfoMapper* g_pGuildInfoMapper;
 

@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////
-///md5.h this is the head of the class md5.
+///md5.h - MD5 클래스의 헤더 파일.
 #ifdef PLATFORM_WINDOWS
 #include <Windows.h>
 #else

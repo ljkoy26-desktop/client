@@ -149,7 +149,7 @@ class MFakeCreature : public MCreatureWear {
 		bool	IsNextDirectionNULL()		{ return m_listDirection.empty(); }
 		void	SetStop();		
 		
-		// get
+		// 반환
 		void	GetDestination(POINT &dest);
 		void	GetNextDestination(POINT &dest);
 		bool	GetNextPosition(POINT &next);
@@ -162,25 +162,25 @@ class MFakeCreature : public MCreatureWear {
 		int		CalculateDistance(int x, int y);
 
 		//------------------------------------------------------
-		// class type
+		// 클래스 타입
 		//------------------------------------------------------
 		virtual CLASS_TYPE	GetClassType() const	{ return CLASS_FAKE; }
 
 		//------------------------------------------------------
-		// Fake CreatureType
+		// 가짜 크리처 타입
 		//------------------------------------------------------
 		FAKE_CREATURE_TYPE	GetFakeCreatureType() const		{ return m_FakeCreatureType; }
 		void				SetFakeCreatureType(FAKE_CREATURE_TYPE fct);
 
 		//------------------------------------------------------
-		// Set FakePosition
+		// 가짜 위치 설정
 		//------------------------------------------------------
 		void				SetFakePosition(TYPE_SECTORPOSITION sX, TYPE_SECTORPOSITION sY);
 		TYPE_SECTORPOSITION	GetFakeX() const	{ return m_FakeX; }
 		TYPE_SECTORPOSITION	GetFakeY() const	{ return m_FakeY; }
 
 		//------------------------------------------------------
-		// Action
+		// 액션
 		//------------------------------------------------------
 		virtual void		Action();
 		virtual void		ActionMove();

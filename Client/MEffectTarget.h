@@ -35,8 +35,8 @@ class MEffectTarget {
 
 	public :
 		//--------------------------------
-		// assign
-		//--------------------------------		
+		// 대입 연산자
+		//--------------------------------
 		MEffectTarget(const MEffectTarget& target);
 		MEffectTarget(BYTE max);
 		virtual ~MEffectTarget();
@@ -44,13 +44,13 @@ class MEffectTarget {
 		virtual EFFECT_TARGET_TYPE	GetEffectTargetType() const	{ return EFFECT_TARGET_NORMAL; }
 	
 		//-------------------------------------------------------
-		// Instance ID
+		// 인스턴스 ID
 		//-------------------------------------------------------
 		void		NewEffectID()			{ m_EffectID = s_EffectID++; }
 		BYTE		GetEffectID() const		{ return m_EffectID; }
 
 		//-------------------------------------------------------
-		// Set
+		// 설정
 		//-------------------------------------------------------
 		void		Set(int x, int y, int z, TYPE_OBJECTID id)
 		{			
@@ -65,7 +65,7 @@ class MEffectTarget {
 		void		SetDelayFrame(DWORD df)		{ m_DelayFrame = df; }
 	
 		//-------------------------------------------------------
-		// assign operator
+		// 대입 연산자
 		//-------------------------------------------------------
 		virtual void	operator = (const MEffectTarget& target);		
 
@@ -81,8 +81,8 @@ class MEffectTarget {
 		void			SetResultTime()			{ m_bResultTime = true; }
 
 		//-------------------------------------------------------
-		// Get
-		//-------------------------------------------------------		
+		// 반환
+		//-------------------------------------------------------
 		BYTE			GetMaxPhase() const		{ return m_MaxPhase; }
 		BYTE			GetCurrentPhase() const	{ return m_CurrentPhase; }
 		DWORD			GetDelayFrame() const	{ return m_DelayFrame; }	
@@ -146,7 +146,7 @@ class MPortalEffectTarget : public MEffectTarget {
 		virtual EFFECT_TARGET_TYPE	GetEffectTargetType() const	{ return EFFECT_TARGET_PORTAL; }
 
 		//------------------------------------------------------------------
-		// Set
+		// 설정
 		//------------------------------------------------------------------
 		void					SetOwnerName(const char* name)	{ m_OwnerName = name; }
 		void					SetPortal(int id, TYPE_SECTORPOSITION x, TYPE_SECTORPOSITION y)
@@ -157,7 +157,7 @@ class MPortalEffectTarget : public MEffectTarget {
 		}
 
 		//------------------------------------------------------------------
-		// Get
+		// 반환
 		//------------------------------------------------------------------
 		const char*				GetOwnerName() const	{ return m_OwnerName.GetString(); }
 		int						GetZoneID() const		{ return m_ZoneID; }
@@ -166,7 +166,7 @@ class MPortalEffectTarget : public MEffectTarget {
 		const char*				GetZoneName() const;
 
 		//------------------------------------------------------------------
-		// assign
+		// 대입 연산자
 		//------------------------------------------------------------------
 		virtual void	operator = (const MEffectTarget& target);		
 

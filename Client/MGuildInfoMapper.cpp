@@ -5,7 +5,7 @@
 #include "MGuildInfoMapper.h"
 
 //----------------------------------------------------------------------
-// global
+// 전역 변수
 //----------------------------------------------------------------------
 MGuildInfoMapper* g_pGuildInfoMapper = NULL;
 
@@ -32,9 +32,9 @@ GUILD_INFO::~GUILD_INFO()
 }
 
 //----------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //----------------------------------------------------------------------
-void	
+void
 GUILD_INFO::SaveToFile(std::ofstream& file)
 {
 	file.write((const char*)&m_SpriteID, SIZE_SPRITEID);
@@ -43,9 +43,9 @@ GUILD_INFO::SaveToFile(std::ofstream& file)
 }
 
 //----------------------------------------------------------------------
-// Load From File
+// 파일에서 불러오기
 //----------------------------------------------------------------------
-void	
+void
 GUILD_INFO::LoadFromFile(std::ifstream& file)
 {
 	file.read((char*)&m_SpriteID, SIZE_SPRITEID);
@@ -57,7 +57,7 @@ GUILD_INFO::LoadFromFile(std::ifstream& file)
 }
 
 //----------------------------------------------------------------------
-// operator = 
+// 대입 연산자
 //----------------------------------------------------------------------
 void			
 GUILD_INFO::operator = (const GUILD_INFO& info)
@@ -82,7 +82,7 @@ MGuildInfoMapper::~MGuildInfoMapper()
 }
 
 //----------------------------------------------------------------------
-// Init
+// 초기화
 //----------------------------------------------------------------------
 /*
 void
@@ -95,7 +95,7 @@ MGuildInfoMapper::Init(int n)
 */
 
 //----------------------------------------------------------------------
-// Release
+// 해제
 //----------------------------------------------------------------------
 void	
 MGuildInfoMapper::Release()
@@ -118,7 +118,7 @@ MGuildInfoMapper::Release()
 }
 
 //----------------------------------------------------------------------
-// operator []
+// 연산자 []
 //----------------------------------------------------------------------
 /*
 TYPE_SPRITEID&	
@@ -141,7 +141,7 @@ MGuildInfoMapper::operator [] (int n) const
 */
 
 //----------------------------------------------------------------------
-// Get
+// 반환
 //----------------------------------------------------------------------
 GUILD_INFO*	
 MGuildInfoMapper::Get(WORD guildID) const
@@ -157,7 +157,7 @@ MGuildInfoMapper::Get(WORD guildID) const
 }
 
 //----------------------------------------------------------------------
-// Set
+// 설정
 //----------------------------------------------------------------------
 void			
 MGuildInfoMapper::Set(WORD guildID, GUILD_INFO* pInfo)
@@ -175,9 +175,9 @@ MGuildInfoMapper::Set(WORD guildID, GUILD_INFO* pInfo)
 }
 
 //----------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //----------------------------------------------------------------------
-void	
+void
 MGuildInfoMapper::SaveToFile(std::ofstream& file)
 {
 	int num = size();
@@ -199,9 +199,9 @@ MGuildInfoMapper::SaveToFile(std::ofstream& file)
 }
 
 //----------------------------------------------------------------------
-// Load From File
+// 파일에서 불러오기
 //----------------------------------------------------------------------
-void	
+void
 MGuildInfoMapper::LoadFromFile(std::ifstream& file)
 {
 	int num;
@@ -224,7 +224,7 @@ MGuildInfoMapper::LoadFromFile(std::ifstream& file)
 }
 
 //----------------------------------------------------------------------
-// Change Value To File
+// 파일에서 값 변경
 //----------------------------------------------------------------------
 // 화일에서 사바사바.. -_-;
 //----------------------------------------------------------------------
@@ -242,7 +242,7 @@ MGuildInfoMapper::ChangeValueToFile(const char* pFilename, WORD guildID) const
 */
 
 //----------------------------------------------------------------------
-// Save Info To File
+// 정보를 파일에 저장
 //----------------------------------------------------------------------
 //void	
 //MGuildInfoMapper::SaveInfoToFile(const char* pFilename)

@@ -1,48 +1,48 @@
 //----------------------------------------------------------------------
 // MEffect.h
 //-------------------------------------------------------------------------
-// Effects displayed on the screen
+// 화면에 표시되는 이펙트
 //----------------------------------------------------------------------------------
 //
-// < What is an Effect?
-// - Effects displayed on the screen.
-// - Excluding characters, items, buildings, obstacles, etc. (what else?),
-// these are animations.
-// - All Effects are expressed using CAlphaSprite and alpha channel blending.
-// - Things like a character swinging a sword or a priest's aura
-// are not included in the Effects discussed here.
-// - An Effect can be considered an independent object.
+// < 이펙트란 무엇인가?
+// - 화면에 표시되는 이펙트.
+// - 캐릭터, 아이템, 건물, 장애물 등을 제외한 (그 외?) 애니메이션.
+// - 모든 이펙트는 CAlphaSprite와 알파 채널 블렌딩을 사용하여 표현된다.
+// - 캐릭터가 검을 휘두르거나 성직자의 오라 같은 것은
+//   여기서 다루는 이펙트에 포함되지 않는다.
+// - 이펙트는 독립 오브젝트로 볼 수 있다.
 ///
-// < Effect Types >
-// = Missile
-// - Pixel-based movement.
-// - Animated from the launch location to the target location
-// / / Moves at a constant speed (pixels).
-// - May or may not be guided missiles. // - May be destroyed by collision with obstacles, characters, buildings, etc.
-// - Disappears upon reaching the target location.
+// < 이펙트 타입 >
+// = 미사일(Missile)
+// - 픽셀 기반으로 이동한다.
+// - 발사 위치에서 목표 위치까지 애니메이션된다.
+// - 일정한 속도(픽셀)로 이동한다.
+// - 유도 미사일일 수도 있고 아닐 수도 있다.
+// - 장애물, 캐릭터, 건물 등과 충돌 시 제거될 수 있다.
+// - 목표 위치에 도달하면 사라진다.
 //
-// = Tile Magic
-// - Animated on a specific Tile.
-// - Size may be larger than the Tile.
-// - Output is displayed last on the Tile.
-// - Disappears after a certain number of frames.
+// = 타일 마법(Tile Magic)
+// - 특정 타일 위에서 애니메이션된다.
+// - 타일보다 크기가 클 수 있다.
+// - 타일에서 마지막으로 출력된다.
+// - 일정 프레임 후 사라진다.
 //
 //----------------------------------------------------------------------
-// - All Effects must belong to a Sector within a Zone.
-// Since the output order must be sorted by y-coordinate,
-// we decided to place them in a Sector to output them according to the Sector's Object output.
+// - 모든 이펙트는 Zone 내의 Sector에 속해야 한다.
+//   출력 순서를 y좌표로 정렬해야 하므로,
+//   Sector의 오브젝트 출력 순서에 따라 출력하기 위해 Sector에 배치하기로 결정했다.
 //
-// - The Effect lasts for a certain amount of time.
-// That is, we set a counter so that it ends when it reaches 0.
+// - 이펙트는 일정 시간 동안 지속된다.
+//   즉, 카운터를 설정하여 0이 되면 종료된다.
 //----------------------------------------------------------------------
 //
-// The Effect is not saved to a file. //
+// 이펙트는 파일에 저장되지 않는다.
 //----------------------------------------------------------------------
-/* class hierarchy
+/* 클래스 계층
 
 MEffect --+-- MMovingEffect ---- ....
 
-MEffect: Effect anchored to a Tile
+MEffect: 타일에 고정된 이펙트
 */
 //----------------------------------------------------------------------
 
@@ -83,39 +83,39 @@ class MEffect : public MObject, public CAnimationFrame {
 		};
 
 	public :
-		// New constructor: supports dependency injection (requires explicit resource container)
+		// 신규 생성자: 의존성 주입 지원 (명시적 리소스 컨테이너 필요)
 		MEffect(BYTE bltType, EffectResourceContainer* resources);
 
-		// Old constructor: maintain backward compatibility (no resource container)
+		// 구 생성자: 이전 버전 호환성 유지 (리소스 컨테이너 없음)
 		MEffect(BYTE bltType);
 
 		~MEffect();
 
 		//--------------------------------------------------------
-		// Resource container management (newly added)
+		// 리소스 컨테이너 관리 (신규 추가)
 		//--------------------------------------------------------
-		// Set resource container (for dependency injection)
+		// 리소스 컨테이너 설정 (의존성 주입용)
 		void SetResourceContainer(EffectResourceContainer* resources);
 
-		// Get resource container
+		// 리소스 컨테이너 반환
 		EffectResourceContainer* GetResourceContainer() const { return m_pResources; }
 
 		//--------------------------------------------------------
-		// Set FrameID
+		// FrameID 설정
 		//--------------------------------------------------------
 		void			SetFrameID(TYPE_FRAMEID FrameID, BYTE max);
 
 		//--------------------------------------------------------
-		// GetEffectType
+		// 이펙트 타입 반환
 		//--------------------------------------------------------
 		virtual EFFECT_TYPE		GetEffectType()	const	{ return EFFECT_SECTOR; }
 
 		void SetEst( int est ) { m_est = est; }
 		int GetEst() const { return m_est; }
 		//--------------------------------------------------------
-		//	Is Selectable
+		// 선택 가능 여부
 		//--------------------------------------------------------
-		virtual bool		IsSelectable() const		{ return false; }		
+		virtual bool		IsSelectable() const		{ return false; }
 
 		//--------------------------------------------------------
 		// 끝나는 시간...
@@ -158,13 +158,13 @@ class MEffect : public MObject, public CAnimationFrame {
 		virtual int		GetPixelZ() const	{ return (int)m_PixelZ; }
 
 		//--------------------------------------------------------
-		// Power
+		// 위력
 		//--------------------------------------------------------
 		void			SetPower(BYTE power)	{ m_Power = power; }
 		BYTE			GetPower() const		{ return m_Power; }
 
 		//--------------------------------------------------------
-		// Step
+		// 속도
 		//--------------------------------------------------------
 		void			SetStepPixel(WORD step)	{ m_StepPixel=step; }
 		WORD			GetStepPixel() const	{ return m_StepPixel; }
@@ -238,7 +238,7 @@ class MEffect : public MObject, public CAnimationFrame {
 		bool			m_bDrawSkip;
 		DWORD			m_dwWaitFrame;
 
-		// Newly added: resource container (dependency injection)
+		// 신규 추가: 리소스 컨테이너 (의존성 주입)
 		EffectResourceContainer*	m_pResources;
 };
 
@@ -251,7 +251,7 @@ class MSelectableEffect : public MEffect {
 		~MSelectableEffect() {}
 
 		//--------------------------------------------------------
-		//	Is Selectable
+		// 선택 가능 여부
 		//--------------------------------------------------------
 		bool		IsSelectable() const		{ return true; }
 };

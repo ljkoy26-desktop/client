@@ -35,7 +35,7 @@ class MGameTime {
 		void	SetCurrentTime(DWORD time);
 
 		//-------------------------------------------------------------
-		// Get
+		// 반환
 		//-------------------------------------------------------------
 		WORD	GetYear() const			{ return m_Year; }
 		BYTE	GetMonth() const		{ return m_Month; }

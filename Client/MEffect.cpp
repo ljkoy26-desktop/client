@@ -8,7 +8,7 @@
 #include "DebugInfo.h"
 
 //----------------------------------------------------------------------
-// Init Static Members
+// 정적 멤버 초기화
 //----------------------------------------------------------------------
 TYPE_OBJECTID	MEffect::s_ID	= 0;
 
@@ -18,13 +18,13 @@ TYPE_OBJECTID	MEffect::s_ID	= 0;
 
 //----------------------------------------------------------------------
 //
-// constructor/destructor
+// 생성자/소멸자
 //
 //----------------------------------------------------------------------
 MEffect::MEffect(BYTE bltType)
 : CAnimationFrame(bltType)
 {
-	// instance ID
+	// 인스턴스 ID
 	m_ID			= s_ID++;
 
 	m_ObjectType	= TYPE_EFFECT;
@@ -49,7 +49,7 @@ MEffect::MEffect(BYTE bltType)
 	m_bMulti = false;
 	m_bDrawSkip = false;
 
-	// 新增：资源容器初始化
+	// 추가: 리소스 컨테이너 초기화
 	m_pResources = nullptr;
 
 	#ifdef OUTPUT_DEBUG
@@ -57,11 +57,11 @@ MEffect::MEffect(BYTE bltType)
 	#endif
 }
 
-// 新构造函数：支持依赖注入
+// 신규 생성자: 의존성 주입 지원
 MEffect::MEffect(BYTE bltType, EffectResourceContainer* resources)
 : CAnimationFrame(bltType)
 {
-	// instance ID
+	// 인스턴스 ID
 	m_ID			= s_ID++;
 
 	m_ObjectType	= TYPE_EFFECT;
@@ -85,7 +85,7 @@ MEffect::MEffect(BYTE bltType, EffectResourceContainer* resources)
 	m_bMulti = false;
 	m_bDrawSkip = false;
 
-	// 新增：资源容器（依赖注入）
+	// 추가: 리소스 컨테이너 (의존성 주입)
 	m_pResources = resources;
 
 	#ifdef OUTPUT_DEBUG
@@ -109,11 +109,11 @@ MEffect::~MEffect()
 
 //----------------------------------------------------------------------
 //
-// member functions
+// 멤버 함수
 //
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
-// Set Count
+// 카운트 설정
 //----------------------------------------------------------------------
 void			
 MEffect::SetCount(DWORD last, DWORD linkCount)
@@ -130,7 +130,7 @@ MEffect::SetCount(DWORD last, DWORD linkCount)
 	}
 }
 //----------------------------------------------------------------------
-// Set Link
+// 링크 설정
 //----------------------------------------------------------------------
 void			
 MEffect::SetLink(TYPE_ACTIONINFO nActionInfo, MEffectTarget* pEffectTarget)
@@ -159,7 +159,7 @@ MEffect::SetLink(TYPE_ACTIONINFO nActionInfo, MEffectTarget* pEffectTarget)
 }
 
 //----------------------------------------------------------------------
-// SetEffectTargetNULL
+// 이펙트 타겟 NULL 설정
 //----------------------------------------------------------------------
 void
 MEffect::SetEffectTargetNULL()
@@ -169,7 +169,7 @@ MEffect::SetEffectTargetNULL()
 
 
 //----------------------------------------------------------------------
-// Set Position(x,y)
+// 위치 설정(x,y)
 //----------------------------------------------------------------------
 // pixel좌표를 설정하고
 // Zone에서 해당하는 Sector의 좌표도 설정해줘야 한다.
@@ -186,7 +186,7 @@ MEffect::SetPixelPosition(int x, int y, int z)
 
 
 //----------------------------------------------------------------------
-// Affect Position
+// 위치 적용
 //----------------------------------------------------------------------
 // PixelPositon으로서 Sector좌표를 설정한다.
 //----------------------------------------------------------------------
@@ -200,7 +200,7 @@ MEffect::AffectPosition()
 
 
 //----------------------------------------------------------------------
-// SetFrameID
+// FrameID 설정
 //----------------------------------------------------------------------
 // Base class인 CAnimationFrame의 SetFrameID를 overload한다.
 //----------------------------------------------------------------------
@@ -214,9 +214,9 @@ MEffect::SetFrameID(TYPE_FRAMEID FrameID, BYTE max)
 }
 
 //----------------------------------------------------------------------
-// SetPosition(x,y)
+// 위치 설정(x,y)
 //----------------------------------------------------------------------
-void		
+void
 MEffect::SetPosition(TYPE_SECTORPOSITION x, TYPE_SECTORPOSITION y)
 {
 	m_X = x; 
@@ -227,7 +227,7 @@ MEffect::SetPosition(TYPE_SECTORPOSITION x, TYPE_SECTORPOSITION y)
 }
 
 //----------------------------------------------------------------------
-// SetX
+// X 설정
 //----------------------------------------------------------------------
 void		
 MEffect::SetX(TYPE_SECTORPOSITION x)
@@ -237,7 +237,7 @@ MEffect::SetX(TYPE_SECTORPOSITION x)
 }
 
 //----------------------------------------------------------------------
-// SetY
+// Y 설정
 //----------------------------------------------------------------------
 void		
 MEffect::SetY(TYPE_SECTORPOSITION y)
@@ -247,7 +247,7 @@ MEffect::SetY(TYPE_SECTORPOSITION y)
 }
 
 //----------------------------------------------------------------------
-// Update
+// 업데이트
 //----------------------------------------------------------------------
 // m_Count가 0일때까지 -1 해주면서 Frame을 바꾼다.
 //----------------------------------------------------------------------
@@ -288,7 +288,7 @@ MEffect::IsWaitFrame() const
 }
 
 //----------------------------------------------------------------------
-// SetResourceContainer - 设置资源容器（新增）
+// 리소스 컨테이너 설정 (신규 추가)
 //----------------------------------------------------------------------
 void
 MEffect::SetResourceContainer(EffectResourceContainer* resources)

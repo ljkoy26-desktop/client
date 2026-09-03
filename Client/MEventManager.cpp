@@ -13,7 +13,7 @@
 #include "DebugInfo.h"
 #include "PacketFunction.h"
 //----------------------------------------------------------------------
-// global
+// 전역 변수
 //----------------------------------------------------------------------
 MEventManager* g_pEventManager = NULL;
 
@@ -226,7 +226,7 @@ const MEvent*	MEventManager::GetEventByFlag(DWORD flag, int count)
 
 extern DWORD g_CurrentFrame;
 //--------------------------------------------------
-// Process
+// 이벤트 처리
 //--------------------------------------------------
 void	MEventManager::ProcessEvent()
 {

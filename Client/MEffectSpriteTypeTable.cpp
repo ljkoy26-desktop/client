@@ -6,13 +6,13 @@
 
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 EFFECTSPRITETYPE_TABLE*			g_pEffectSpriteTypeTable = NULL;
 MActionEffectSpriteTypeTable*	g_pActionEffectSpriteTypeTable = NULL;
 
-// Memory protection: Store a copy of the pointer to detect corruption
-// If the pointer is corrupted, we can detect it by comparing with the shadow
+// 메모리 보호: 손상 감지를 위해 포인터 복사본을 저장한다
+// 포인터가 손상된 경우, 섀도우 복사본과 비교하여 감지할 수 있다
 #ifdef __SANITIZE_ADDRESS__
 EFFECTSPRITETYPE_TABLE* g_pEffectSpriteTypeTable_shadow = NULL;
 EFFECTSPRITETYPE_TABLE::TYPE* g_pEffectSpriteTypeTable_m_pTypeInfo_shadow = NULL;
@@ -23,10 +23,10 @@ void validate_effect_sprite_table_pointer(const char* location) {
 		fprintf(stderr, "[CORRUPTION] g_pEffectSpriteTypeTable corrupted at %s!\n", location);
 		fprintf(stderr, "[CORRUPTION] Expected: %p, Got: %p\n",
 		        g_pEffectSpriteTypeTable_shadow, g_pEffectSpriteTypeTable);
-		// Don't abort - let ASAN handle the crash with better diagnostics
+		// 중단하지 않음 - ASAN이 더 나은 진단으로 크래시를 처리하도록 한다
 	}
 
-	// Check if m_pTypeInfo internal pointer is corrupted
+	// m_pTypeInfo 내부 포인터 손상 여부 확인
 	if (g_pEffectSpriteTypeTable != NULL && g_pEffectSpriteTypeTable_shadow != NULL) {
 		EFFECTSPRITETYPE_TABLE::TYPE* current_m_pTypeInfo = g_pEffectSpriteTypeTable->GetInternalPointer();
 		if (current_m_pTypeInfo != g_pEffectSpriteTypeTable_m_pTypeInfo_shadow) {
@@ -35,12 +35,12 @@ void validate_effect_sprite_table_pointer(const char* location) {
 			        g_pEffectSpriteTypeTable_m_pTypeInfo_shadow, current_m_pTypeInfo);
 		}
 
-		// Check if m_pTypeInfo points to freed SDL surface memory region
-		// SDL surfaces are typically allocated in specific memory ranges
+		// m_pTypeInfo가 해제된 SDL 서피스 메모리 영역을 가리키는지 확인
+		// SDL 서피스는 일반적으로 특정 메모리 범위에 할당된다
 		uintptr_t ptr_addr = (uintptr_t)current_m_pTypeInfo;
-		// Check if it looks like a heap pointer that might be in a freed region
+		// 해제된 영역에 있을 수 있는 힙 포인터처럼 보이는지 확인
 		if (ptr_addr > 0x1000 && ptr_addr < 0x100000000ULL) {
-			// Use ASAN to check if the memory is poisoned
+			// ASAN으로 메모리가 오염(poisoned)되었는지 확인
 			if (__asan_address_is_poisoned(current_m_pTypeInfo, sizeof(EFFECTSPRITETYPE_TABLE::TYPE))) {
 				fprintf(stderr, "[CORRUPTION] m_pTypeInfo points to poisoned/freed memory at %s!\n", location);
 				fprintf(stderr, "[CORRUPTION] m_pTypeInfo=%p\n", current_m_pTypeInfo);
@@ -109,7 +109,7 @@ MActionEffectSpriteTypeTable::~MActionEffectSpriteTypeTable()
 //
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
-// Save
+// 파일에 저장
 //----------------------------------------------------------------------
 EFFECTSPRITETYPETABLE_INFO::EFFECTSPRITETYPETABLE_INFO()
 {
@@ -134,7 +134,7 @@ EFFECTSPRITETYPETABLE_INFO::SaveToFile(std::ofstream& file)
 	file.write((const char*)&FemaleEffectSpriteType, SIZE_EFFECTSPRITETYPE);		
 
 	//----------------------------------------------------------
-	// Pair FrameID List
+	// Pair FrameID 목록
 	//----------------------------------------------------------
 	BYTE numPair = PairFrameIDList.size();
 	file.write((const char*)&numPair, 1);
@@ -152,7 +152,7 @@ EFFECTSPRITETYPETABLE_INFO::SaveToFile(std::ofstream& file)
 }
 
 //----------------------------------------------------------------------
-// Load
+// 파일에서 불러오기
 //----------------------------------------------------------------------
 void			
 EFFECTSPRITETYPETABLE_INFO::LoadFromFile(std::ifstream& file)
@@ -173,7 +173,7 @@ EFFECTSPRITETYPETABLE_INFO::LoadFromFile(std::ifstream& file)
 	file.read((char*)&FemaleEffectSpriteType, SIZE_EFFECTSPRITETYPE);	
 
 	//----------------------------------------------------------
-	// Pair FrameID List
+	// Pair FrameID 목록
 	//----------------------------------------------------------
 	PairFrameIDList.clear();
 

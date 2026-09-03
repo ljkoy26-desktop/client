@@ -45,7 +45,7 @@ class EFFECTSTATUS_NODE {
 		
 	public :
 		//-------------------------------------------------------
-		// File I/O
+		// 파일 입출력
 		//-------------------------------------------------------
 		void			SaveToFile(std::ofstream& file);		
 		void			LoadFromFile(std::ifstream& file);		

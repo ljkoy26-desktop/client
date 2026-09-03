@@ -25,7 +25,7 @@ class MEffectGeneratorTable {
 		~MEffectGeneratorTable();
 
 		//----------------------------------------------------
-		// Init / Release
+		// 초기화/해제
 		//----------------------------------------------------
 		void	Init();	
 		void	Release();

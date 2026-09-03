@@ -12,7 +12,7 @@ class MEffect;
 
 class MEffectManager {
 	public :
-		// Effect list
+		// 이펙트 목록
 		typedef std::list<MEffect*>						EFFECT_LIST;
 
 	public :
@@ -20,22 +20,22 @@ class MEffectManager {
 		virtual ~MEffectManager();
 
 		//------------------------------------------------------
-		// Release
+		// 해제
 		//------------------------------------------------------
 		virtual void		Release();
 
 		//------------------------------------------------------
-		// Add
+		// 추가
 		//------------------------------------------------------
 		virtual void		AddEffect(MEffect* pEffect);
 
 		//------------------------------------------------------
-		// Update
+		// 업데이트
 		//------------------------------------------------------
 		virtual void		Update() = 0;
 
 		//------------------------------------------------------
-		// list
+		// 목록
 		//------------------------------------------------------
 		int					GetSize() const			{ return m_listEffect.size(); }
 		EFFECT_LIST::const_iterator GetEffects()	{ return m_listEffect.begin(); }

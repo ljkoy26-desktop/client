@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 // MHelpManager.h
 //---------------------------------------------------------------------------
 /*
@@ -69,7 +69,7 @@ class MHelpNode {
 		virtual NODE_TYPE	GetType() const	= 0;
 
 		//------------------------------------------------------
-		// File I/O
+		// 파일 입출력
 		//------------------------------------------------------
 		virtual void		SaveToFile(std::ofstream& file) = 0;
 		virtual void		LoadFromFile(std::ifstream& file) = 0;
@@ -109,17 +109,17 @@ class MCompareHelpNode : public MHelpNode {
 		}
 
 		//-----------------------------------------------------------
-		// Get Type
+		// 타입 반환
 		//-----------------------------------------------------------
 		virtual MHelpNode::NODE_TYPE	GetType() const	{ return MHelpNode::TYPE_COMPARE; }
 
 		//-----------------------------------------------------------
-		// Get Next
+		// 다음 반환
 		//-----------------------------------------------------------
 		MHelpNode*			GetNext() const;
 
 		//-----------------------------------------------------------
-		// Get/Set Compare Node
+		// 비교 노드 반환/설정
 		//-----------------------------------------------------------
 		HELP_COMPARE		GetCompareType() const		{ return m_pCompareType; }
 		void				SetTrue(MHelpNode* pNode);
@@ -128,7 +128,7 @@ class MCompareHelpNode : public MHelpNode {
 		MHelpNode*			GetFalse() const			{ return m_pFalse; }
 
 		//------------------------------------------------------
-		// File I/O
+		// 파일 입출력
 		//------------------------------------------------------
 		virtual void		SaveToFile(std::ofstream& file);
 		virtual void		LoadFromFile(std::ifstream& file);	
@@ -158,17 +158,17 @@ class MOutputHelpNode : public MHelpNode, public std::list<HELP_OUTPUT> {
 		virtual ~MOutputHelpNode() {}
 
 		//-----------------------------------------------------------
-		// Get Type
+		// 타입 반환
 		//-----------------------------------------------------------
 		virtual MHelpNode::NODE_TYPE	GetType() const		{ return MHelpNode::TYPE_OUTPUT; }
 
 		//-----------------------------------------------------------
-		// Get 
+		// 반환
 		//-----------------------------------------------------------
 		HELP_OUTPUT			GetOutputType() const;
 		
 		//------------------------------------------------------
-		// File I/O
+		// 파일 입출력
 		//------------------------------------------------------
 		virtual void		SaveToFile(std::ofstream& file);
 		virtual void		LoadFromFile(std::ifstream& file);	
@@ -189,7 +189,7 @@ class MHelpManager : public CTypeTable<MHelpNode*> {
 		~MHelpManager();
 
 		//------------------------------------------------------
-		// Init / Release
+		// 초기화/해제
 		//------------------------------------------------------
 		void		Init(int size);		
 		void		Release();
@@ -201,12 +201,12 @@ class MHelpManager : public CTypeTable<MHelpNode*> {
 		bool		IsEventOccured(HELP_EVENT he)		{ return m_EventOccured[he]; }
 
 		//------------------------------------------------------
-		// Execute Event
+		// 이벤트 실행
 		//------------------------------------------------------
 		void		ExecuteEvent(HELP_EVENT he);
 
 		//------------------------------------------------------
-		// File I/O
+		// 파일 입출력
 		//------------------------------------------------------
 		void		SaveToFile(std::ofstream& file);
 		void		LoadFromFile(std::ifstream& file);	
@@ -216,12 +216,12 @@ class MHelpManager : public CTypeTable<MHelpNode*> {
 };
 
 //---------------------------------------------------------------------------
-// Global
+// 전역 변수
 //---------------------------------------------------------------------------
 extern MHelpManager*		g_pHelpManager;
 
 //-----------------------------------------------------------------------------
-// Execute Help Event
+// 도움말 이벤트 실행
 //-----------------------------------------------------------------------------
 extern void		ExecuteHelpEvent(HELP_EVENT he);
 

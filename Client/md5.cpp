@@ -7,7 +7,7 @@
 #ifdef PLATFORM_WINDOWS
 #include <conio.h>
 #else
-// Non-Windows stub definitions
+// 비-Windows 스텁 정의
 #ifndef PM_REMOVE
 #define PM_REMOVE 0x0001
 #endif
@@ -34,7 +34,7 @@ const LPSTR CMd5::ErrInfo[5][2]={
 								{"Have not assign the text !","未指定文本!"},
 								{"Have something wrong with MD5!","有错误发生!"},
 								};
-//==========================<内联函数实现>=========================================
+//==========================<인라인 함수 구현>=========================================
 
 ULONG CMd5::LRotate(ULONG Sdata,int nBit)
 {
@@ -80,7 +80,7 @@ void CMd5::II(ULONG &a,ULONG b,ULONG c,ULONG d,ULONG Msg,int nBit,ULONG Cnt)
 	a=LRotate(a,nBit);
 	a+=b;
 }
-//==========================<成员函数实现>======================================
+//==========================<멤버 함수 구현>======================================
 
 CMd5::CMd5()
 {
@@ -183,7 +183,7 @@ while(PeekMessage(&msg,NULL,0,0,PM_REMOVE))
 	  DispatchMessage(&msg);
   }
   ULONG a=T[0],b=T[1],c=T[2],d=T[3];
- //第一轮-------------------------------->
+ // 첫 번째 라운드 -------------------------------->
   FF (a, b, c, d, pM[ 0], S11, 0xd76aa478); //- 1 -
   FF (d, a, b, c, pM[ 1], S12, 0xe8c7b756); //- 2 -
   FF (c, d, a, b, pM[ 2], S13, 0x242070db); //- 3 -
@@ -237,7 +237,7 @@ while(PeekMessage(&msg,NULL,0,0,PM_REMOVE))
   HH (c, d, a, b, pM[15], S33, 0x1fa27cf8); //- 47 -
   HH (b, c, d, a, pM[ 2], S34, 0xc4ac5665); //- 48 -
 
-  //第四轮-------------------------------->
+  // 네 번째 라운드 -------------------------------->
   II (a, b, c, d, pM[ 0], S41, 0xf4292244); //- 49 -
   II (d, a, b, c, pM[ 7], S42, 0x432aff97); //- 50 -
   II (c, d, a, b, pM[14], S43, 0xab9423a7); //- 51 -

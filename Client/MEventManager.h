@@ -8,9 +8,9 @@
 #pragma warning(disable:4786)
 
 #include "ctypetable.h"
-/* Explicit path: plain "CDirectDrawSurface.h" resolves to this same
-   directory's stale, unmigrated copy (missing m_ddsd) instead of the
-   maintained Client/DXLib/CDirectDrawSurface.h. */
+/* 명시적 경로: 단순히 "CDirectDrawSurface.h"로 포함하면 동일 디렉터리의
+   오래되고 미이전된 사본 (m_ddsd 누락)을 가리키므로,
+   관리 중인 Client/DXLib/CDirectDrawSurface.h를 명시적으로 포함한다. */
 #include "DXLib/CDirectDrawSurface.h"
 #include <map>
 #include <vector>

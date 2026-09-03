@@ -17,7 +17,7 @@
 #endif
 
 //----------------------------------------------------------------------
-// global
+// 전역 변수
 //----------------------------------------------------------------------
 MGuildMarkManager* g_pGuildMarkManager = NULL;
 
@@ -60,9 +60,9 @@ MGuildMarkManager::~MGuildMarkManager()
 }
 
 //----------------------------------------------------------------------
-// Release
+// 해제
 //----------------------------------------------------------------------
-void		
+void
 MGuildMarkManager::Release()
 {
 	GUILDMARK_MAP::iterator iMark = m_GuildMarks.begin();
@@ -88,12 +88,12 @@ MGuildMarkManager::Release()
 }
 
 //----------------------------------------------------------------------
-// Create GuildMark( guildID, pFilename )
+// 길드마크 생성( guildID, pFilename )
 //
 // pFilename은 *.bmp이거나 *.jpg
 //
 // image화일인 pFilename을 읽어서
-// CSprite로 만든 후, 
+// CSprite로 만든 후,
 // guildMarkSPK(+SPKIndex)에 추가하고 그 때의 ID를
 // guildID와 연결해서 guildMarkSpriteMapper에 추가해두면 된다.
 //----------------------------------------------------------------------
@@ -177,7 +177,7 @@ MGuildMarkManager::CreateGuildMark(WORD guildID, const char* pFilename)
 }
 
 //----------------------------------------------------------------------
-// A GuildMark
+// 길드마크 추가
 //----------------------------------------------------------------------
 bool		
 MGuildMarkManager::AddGuildMark(WORD guildID, CSprite* pSprite, CSprite* pSpriteSmall)
@@ -213,7 +213,7 @@ MGuildMarkManager::AddGuildMark(WORD guildID, CSprite* pSprite, CSprite* pSprite
 }
 
 //----------------------------------------------------------------------
-// Get GuildMark
+// 길드마크 반환
 //----------------------------------------------------------------------
 CSprite*	
 MGuildMarkManager::GetGuildMark(WORD guildID)
@@ -229,7 +229,7 @@ MGuildMarkManager::GetGuildMark(WORD guildID)
 }
 
 //----------------------------------------------------------------------
-// Get GuildMarkSmall
+// 작은 길드마크 반환
 //----------------------------------------------------------------------
 CSprite*	
 MGuildMarkManager::GetGuildMarkSmall(WORD guildID)
@@ -245,7 +245,7 @@ MGuildMarkManager::GetGuildMarkSmall(WORD guildID)
 }
 
 //----------------------------------------------------------------------
-// Has GuildMark
+// 길드마크 보유 여부 확인
 //----------------------------------------------------------------------
 bool			
 MGuildMarkManager::HasGuildMark(WORD guildID) const
@@ -261,7 +261,7 @@ MGuildMarkManager::HasGuildMark(WORD guildID) const
 }
 
 //----------------------------------------------------------------------
-// Load GuildMark
+// 길드마크 로드
 //----------------------------------------------------------------------
 // 길드ID를 guildMarkSpriteMapper에서 찾으면.. 관련된 SpriteID를 알 수 있다.
 // guildMarkSPKIndex에서 그 SpriteID로 그 길드Sprite의 SpriteIndex를 
@@ -361,7 +361,7 @@ MGuildMarkManager::LoadGuildMark(WORD guildID)
 }
 
 //----------------------------------------------------------------------
-// Save GuildMark
+// 길드마크 저장
 //----------------------------------------------------------------------
 // m_GuildMarkSPKFilename에서 max SpriteID를 찾아보고..
 // 화일의 끝에 CSprite를 추가한다.
@@ -504,7 +504,7 @@ MGuildMarkManager::SaveGuildMark(WORD guildID, CSprite* pSprite, CSprite* pSprit
 }
 
 //----------------------------------------------------------------------
-// MergeGuildMark
+// 길드마크 병합
 //----------------------------------------------------------------------
 // org에 app를 추가하고
 // app를 지운다.
@@ -723,7 +723,7 @@ MGuildMarkManager::MergeGuildMark(const char* pSPKFilenameOrg,
 
 
 ////----------------------------------------------------------------------
-//// Load GradeMark
+//// 등급 마크 로드
 ////----------------------------------------------------------------------
 //bool		
 //MGuildMarkManager::LoadGradeMark(WORD gradeSpriteID)
@@ -766,7 +766,7 @@ MGuildMarkManager::MergeGuildMark(const char* pSPKFilenameOrg,
 //}
 
 //----------------------------------------------------------------------
-// Get GradeMark
+// 등급 마크 반환
 //----------------------------------------------------------------------
 CSprite*	
 MGuildMarkManager::GetGradeMark(WORD gradeID, Race race)
@@ -778,7 +778,7 @@ MGuildMarkManager::GetGradeMark(WORD gradeID, Race race)
 }
 
 //----------------------------------------------------------------------
-// Get GradeMarkSmall
+// 작은 등급 마크 반환
 //----------------------------------------------------------------------
 CSprite*	
 MGuildMarkManager::GetGradeMarkSmall(WORD gradeID, Race race)
@@ -790,7 +790,7 @@ MGuildMarkManager::GetGradeMarkSmall(WORD gradeID, Race race)
 }
 
 //----------------------------------------------------------------------
-// Get LevelMark
+// 레벨 마크 반환
 //----------------------------------------------------------------------
 CSprite*	
 MGuildMarkManager::GetLevelMark(WORD level)
@@ -799,7 +799,7 @@ MGuildMarkManager::GetLevelMark(WORD level)
 }
 
 //----------------------------------------------------------------------
-// Get LevelMarkSmall
+// 작은 레벨 마크 반환
 //----------------------------------------------------------------------
 CSprite*	
 MGuildMarkManager::GetLevelMarkSmall(WORD level)

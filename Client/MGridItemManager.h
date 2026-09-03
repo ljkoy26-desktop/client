@@ -68,20 +68,20 @@ class MGridItemManager : public MItemManager {
 		~MGridItemManager();
 
 		//------------------------------------------------------
-		// Init / Release
+		// 초기화/해제
 		//------------------------------------------------------
 		void		Init(BYTE width, BYTE height);
 		void		Release();
 
 		//------------------------------------------------------
-		// get
+		// 반환
 		//------------------------------------------------------
 		BYTE		GetWidth() const	{ return m_Width; }
 		BYTE		GetHeight() const	{ return m_Height; }
 		
 		//------------------------------------------------------
-		// Add / Get / Remove
-		//------------------------------------------------------		
+		// 추가/반환/제거
+		//------------------------------------------------------
 		bool			AddItem(MItem* pItem);					// 적절한 grid에 추가한다.
 		bool			AddItem(MItem* pItem, BYTE x, BYTE y);	// grid(x,y)에 pItem을 추가한다.
 
@@ -93,19 +93,19 @@ class MGridItemManager : public MItemManager {
 
 		bool			ReplaceItem(MItem* pItem, BYTE x, BYTE y, MItem*& pOldItem);	// (x,y)위치의 Item교환
 
-		//------------------------------------------------------		
-		// Can Replace Item (실제는 Add or Replace를 check한다.)
-		//------------------------------------------------------		
+		//------------------------------------------------------
+		// 아이템 교환 가능 여부 확인 (실제는 Add or Replace를 check한다.)
+		//------------------------------------------------------
 		bool			CanReplaceItem(MItem* pItem, BYTE x, BYTE y, MItem*& pOldItem);
 
-		//------------------------------------------------------		
-		// Get FitPosition
-		//------------------------------------------------------		
+		//------------------------------------------------------
+		// 적합한 위치 반환
+		//------------------------------------------------------
 		bool			GetFitPosition(MItem* pItem, POINT& point);	// pItem이 들어갈 수 있는 적절한 grid위치를 구한다.
 
-		//------------------------------------------------------		
-		// FindItemGridOrder
-		//------------------------------------------------------		
+		//------------------------------------------------------
+		// 그리드 순서로 아이템 검색
+		//------------------------------------------------------
 		MItem*			FindItemGridOrder( MItemFinder& itemFinder ) const;
 
 	protected :

@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // MInteractionObject.h
 //----------------------------------------------------------------------
 //
@@ -49,7 +49,7 @@ class MInteractionObject : public MAnimationObject {
 		BYTE			GetInteractionObjectType() const	{ return m_InteractionObjectType; }
 
 		//-------------------------------------------------------
-		// File I/O
+		// 파일 입출력
 		//-------------------------------------------------------
 		virtual void	SaveToFile(std::ofstream& file);
 		virtual void	LoadFromFile(std::ifstream& file);

@@ -137,7 +137,7 @@ void	MakePathWildTyphoon()
 }
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MFollowPathEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )

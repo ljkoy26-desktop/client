@@ -92,11 +92,11 @@ extern	EFFECTSPRITETYPE_TABLE*			g_pEffectSpriteTypeTable;
 extern	MActionEffectSpriteTypeTable*	g_pActionEffectSpriteTypeTable;
 
 #ifdef __SANITIZE_ADDRESS__
-// Shadow copies for corruption detection
+// 손상 감지용 섀도우 복사본
 extern EFFECTSPRITETYPE_TABLE* g_pEffectSpriteTypeTable_shadow;
 extern EFFECTSPRITETYPE_TABLE::TYPE* g_pEffectSpriteTypeTable_m_pTypeInfo_shadow;
 
-// Function to validate that g_pEffectSpriteTypeTable hasn't been corrupted
+// g_pEffectSpriteTypeTable 손상 여부 검증 함수
 extern void validate_effect_sprite_table_pointer(const char* location);
 #endif
 

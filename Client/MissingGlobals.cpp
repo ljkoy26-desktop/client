@@ -1,4 +1,4 @@
-/*----------------------------------------------------------------------------
+﻿/*----------------------------------------------------------------------------
 
 	MissingGlobals.cpp
 
@@ -106,7 +106,7 @@ int					g_UpdateDelay = 0;
 MScreenEffectManager*	g_pInventoryEffectManager = NULL;
 
 //-----------------------------------------------------------------------------
-// Rendering flags (not in Client.cpp)
+// 렌더링 플래그 (Client.cpp에 없는 것들)
 //-----------------------------------------------------------------------------
 bool				g_bPutMessage = true;
 bool				g_bNewDraw = false;
@@ -124,7 +124,7 @@ bool				g_bHAL = false;
 bool				g_bMusicSW = true;
 
 //-----------------------------------------------------------------------------
-// Additional missing globals (not in Client.cpp)
+// 추가 누락 전역 변수 (Client.cpp에 없는 것들)
 //-----------------------------------------------------------------------------
 bool gbl_info_show = true;
 bool gbl_show_item = true;

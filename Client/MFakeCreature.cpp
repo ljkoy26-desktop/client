@@ -60,12 +60,12 @@ extern POINT GetNextTileByDirection(int TileX, int TileY, BYTE Dir);
 			}										\
 		}
 //----------------------------------------------------------------------
-// static
+// 정적 멤버
 //----------------------------------------------------------------------
 DWORD MFakeCreature::m_FakeID = 0;
 
 //----------------------------------------------------------------------
-// Get FakeID
+// FakeID 반환
 //----------------------------------------------------------------------
 DWORD
 MFakeCreature::GetFakeID()
@@ -90,8 +90,8 @@ MFakeCreature::GetFakeID()
 }
 
 //----------------------------------------------------------------------
-// 
-// constructor / destructor
+//
+// 생성자/소멸자
 //
 //----------------------------------------------------------------------
 MFakeCreature::MFakeCreature()
@@ -142,21 +142,21 @@ MFakeCreature::~MFakeCreature()
 		}
 	}
 
-	// remove priority queue 
+	// 우선순위 큐 제거
 	RemoveNodes();
 
-	// remove list
+	// 목록 제거
 	m_listDirection.clear();
 
 }
 
 //----------------------------------------------------------------------
 //
-// member functions
+// 멤버 함수
 //
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
-// Set Fake Creature
+// 가짜 크리처 타입 설정
 //----------------------------------------------------------------------
 void				
 MFakeCreature::SetFakeCreatureType(FAKE_CREATURE_TYPE fct)
@@ -193,7 +193,7 @@ MFakeCreature::SetFakeCreatureType(FAKE_CREATURE_TYPE fct)
 }
 
 //----------------------------------------------------------------------
-// Set ActionResult  [새기술]
+// 액션 결과 설정 [새기술]
 //----------------------------------------------------------------------
 // Creature에 넣어야 되는데.. 컴파일 시간을 줄이기 위해서 -_-;;
 //----------------------------------------------------------------------
@@ -224,7 +224,7 @@ MFakeCreature::SetActionResult(MActionResult* pResult)
 */
 
 //----------------------------------------------------------------------
-// Action
+// 액션
 //----------------------------------------------------------------------
 void
 MFakeCreature::Action()
@@ -534,7 +534,7 @@ MFakeCreature::Action()
 }
 
 //----------------------------------------------------------------------
-// Set FakeCreature FastMoveAction [새기술]
+// 가짜 크리처 빠른 이동 액션 설정 [새기술]
 //----------------------------------------------------------------------
 void
 MFakeCreature::SetFakeCreatureFastMoveAction(TYPE_SECTORPOSITION sX, TYPE_SECTORPOSITION sY,
@@ -549,7 +549,7 @@ MFakeCreature::SetFakeCreatureFastMoveAction(TYPE_SECTORPOSITION sX, TYPE_SECTOR
 
 
 //----------------------------------------------------------------------
-// Set FakePosition
+// 가짜 위치 설정
 //----------------------------------------------------------------------
 void				
 MFakeCreature::SetFakePosition(TYPE_SECTORPOSITION sX, TYPE_SECTORPOSITION sY)	
@@ -591,7 +591,7 @@ MFakeCreature::SetFakePosition(TYPE_SECTORPOSITION sX, TYPE_SECTORPOSITION sY)
 }
 
 //----------------------------------------------------------------------
-// Update Fake
+// 가짜 업데이트
 //----------------------------------------------------------------------
 void
 MFakeCreature::UpdateFake()
@@ -648,7 +648,7 @@ MFakeCreature::UpdateFake()
 }
 
 //----------------------------------------------------------------------
-// IsFakeEnd
+// 가짜 종료 여부 확인
 //----------------------------------------------------------------------
 bool
 MFakeCreature::IsFakeEnd()
@@ -723,7 +723,7 @@ MFakeCreature::IsFakeEnd()
 }
 
 //----------------------------------------------------------------------
-// Packet Special Action To Other [새기술]
+// 기타 패킷 특수 액션 [새기술]
 //----------------------------------------------------------------------
 void		
 MFakeCreature::PacketSpecialActionToOther(TYPE_ACTIONINFO nActionInfo, TYPE_OBJECTID id, MActionResult* pActionResult)
@@ -881,7 +881,7 @@ MFakeCreature::KeepTraceCreature()
 }
 
 //----------------------------------------------------------------------
-// Set Next Destination
+// 다음 목적지 설정
 //----------------------------------------------------------------------
 // 다음에 이동할 목표 위치를 결정한다.
 // 목표위치가 갈 수 없는 곳인 경우... 어떻게 할 것인가?
@@ -955,7 +955,7 @@ MFakeCreature::SetNextDestination(TYPE_SECTORPOSITION sX, TYPE_SECTORPOSITION sY
 }
 
 //----------------------------------------------------------------------
-// Get NextDestination()
+// 다음 목적지 반환
 //----------------------------------------------------------------------
 void
 MFakeCreature::GetNextDestination(POINT &dest)
@@ -965,7 +965,7 @@ MFakeCreature::GetNextDestination(POINT &dest)
 }
 
 //----------------------------------------------------------------------
-// Get NextPosition()
+// 다음 위치 반환
 //----------------------------------------------------------------------
 // 길찾기에 의해서 정해진 길들 중에서
 // 바로 다음에 가야할 Sector에 대한 좌표를 넘겨준다.
@@ -1007,7 +1007,7 @@ MFakeCreature::GetNextPosition(POINT &next)
 
 
 //----------------------------------------------------------------------
-// Set Destination(sX, sY)
+// 목적지 설정(sX, sY)
 //----------------------------------------------------------------------
 // 목표위치를 지정하는 순간에 목표위치까지의
 // Best Path를 결정해서 m_listDirection에 저장해둔다.
@@ -1023,8 +1023,8 @@ MFakeCreature::SetDestination(TYPE_SECTORPOSITION sX, TYPE_SECTORPOSITION sY)
 		)
 		return false;
 
-	// message : find path
-	//DEBUG_ADD_FORMAT("........Find Path........");				
+	// 메시지: 경로 탐색
+	//DEBUG_ADD_FORMAT("........Find Path........");
 
 	#ifdef OUTPUT_DEBUG_PLAYER_ACTION
 		DEBUG_ADD_FORMAT("SetDest(%d, %d)", sX, sY);
@@ -1042,7 +1042,7 @@ MFakeCreature::SetDestination(TYPE_SECTORPOSITION sX, TYPE_SECTORPOSITION sY)
 	}
 
 	//-------------------------------------------------------
-	// if not empty, delete all elements
+	// 비어있지 않으면 모든 요소를 삭제한다
 	//-------------------------------------------------------
 	if (!m_listDirection.empty())
 	{
@@ -1108,7 +1108,7 @@ MFakeCreature::SetDestination(TYPE_SECTORPOSITION sX, TYPE_SECTORPOSITION sY)
 	}
 
 	/*
-	// priority queue test code
+	// 우선순위 큐 테스트 코드
 	ofstream file("test.txt", ios::app);
 	CString str;
 
@@ -1136,7 +1136,7 @@ MFakeCreature::SetDestination(TYPE_SECTORPOSITION sX, TYPE_SECTORPOSITION sY)
 	//--------------------------------------------------------------
 	// 갈 수 있는 곳이면
 	//--------------------------------------------------------------
-	// Best First Search
+	// 최선 우선 탐색 (Best First Search)
 	//--------------------------------------------------------------
 	BOOL	bCanStand = m_pZone->CanMove(m_MoveType, sX,sY);
 
@@ -1442,7 +1442,7 @@ MFakeCreature::SetDestination(TYPE_SECTORPOSITION sX, TYPE_SECTORPOSITION sY)
 			signX, signY;
 
 		//-------------------------------------------------------
-		// if not empty, delete all elements
+		// 비어있지 않으면 모든 요소를 삭제한다
 		//-------------------------------------------------------
 		if (!m_listDirection.empty())
 		{
@@ -1489,7 +1489,7 @@ MFakeCreature::SetDestination(TYPE_SECTORPOSITION sX, TYPE_SECTORPOSITION sY)
 }
 
 //----------------------------------------------------------------------
-// Get Destination()
+// 목적지 반환
 //----------------------------------------------------------------------
 void
 MFakeCreature::GetDestination(POINT &dest)
@@ -1557,8 +1557,8 @@ MFakeCreature::SetStop()
 	m_bTraceFlag = false;
 	//m_fNextTrace	= FLAG_TRACE_NULL;
 
-	// Action 중지
-	m_sX=0; 
+	// 액션 중지
+	m_sX=0;
 	m_sY=0;
 
 	// 다음 동작도 없앰
@@ -1583,8 +1583,8 @@ MFakeCreature::SetStop()
 	// 2001.11.8 - 정지할때 좌표 보정 확실히..
 	ActionMoveNextPosition();
 
-	// Action 중지
-	m_sX=0; 
+	// 액션 중지
+	m_sX=0;
 	m_sY=0;
 
 	int action = ACTION_STAND;
@@ -1603,7 +1603,7 @@ MFakeCreature::SetStop()
 }
 
 //----------------------------------------------------------------------
-// Move
+// 이동
 //----------------------------------------------------------------------
 //
 // 현재의 방향(m_CurrentDirection)으로 한 Frame이동한다.
