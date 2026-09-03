@@ -1,4 +1,4 @@
-// VS_UI_ELEVATOR.h: interface for the C_VS_UI_ELEVATOR class.
+// VS_UI_ELEVATOR.h: C_VS_UI_ELEVATOR 클래스의 인터페이스.
 //
 //////////////////////////////////////////////////////////////////////
 #ifndef _VS_UI_ELEVATOR_H_

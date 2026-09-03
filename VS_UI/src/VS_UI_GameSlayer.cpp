@@ -47,7 +47,7 @@ int C_VS_UI_SLAYER_GEAR::m_slot_image[SLOT_SIZE] = {
 };
 
 //-----------------------------------------------------------------------------
-// Click
+// 클릭
 //
 // 뭔가했으면 true를, 그렇지않으면 false를 반환한다.
 //-----------------------------------------------------------------------------
@@ -91,7 +91,7 @@ bool C_VS_UI_SLAYER_QUICKITEM::Click()
 			}
 			else
 			{
-				// failed.
+				// 실패.
 				return false;
 			}
 		}
@@ -157,7 +157,7 @@ bool C_VS_UI_SLAYER_QUICKITEM::Click()
 						}
 						else
 						{
-							// failed.
+							// 실패.
 							return false;
 						}
 					}
@@ -253,7 +253,7 @@ void	C_VS_UI_SLAYER_QUICKITEM::ToggleBelt()
 {
 //	m_bl_opened = !m_bl_opened;
 
-	// reset Window width by open/close
+	// 열기/닫기에 따라 Window 너비 재설정
 	Run(PUSHPIN_ID);
 	ResetSize();
 
@@ -265,7 +265,7 @@ void	C_VS_UI_SLAYER_QUICKITEM::Open()
 //	m_bl_opened = true;
 
 	AttrAutoHide(Window::ATTRIBUTES_HIDE_NOT);
-	// reset Window width by open/close
+	// 열기/닫기에 따라 Window 너비 재설정
 	ResetSize();
 
 	PlaySound(SOUND_SLAYER_BELT);
@@ -278,14 +278,14 @@ void	C_VS_UI_SLAYER_QUICKITEM::Close()
 	
 	Run(PUSHPIN_ID);
 
-	// reset Window width by open/close
+	// 열기/닫기에 따라 Window 너비 재설정
 	ResetSize();
 
 	PlaySound(SOUND_SLAYER_BELT);
 }
 
 //-----------------------------------------------------------------------------
-// ResetSize
+// 크기 재설정
 //
 // belt를 교체하고나서 size를 재설정해야 한다.
 //-----------------------------------------------------------------------------
@@ -345,7 +345,7 @@ void C_VS_UI_SLAYER_QUICKITEM::ResetSize()
 }
 
 //-----------------------------------------------------------------------------
-// GetPocketCount
+// Pocket 개수 반환
 //
 // 
 //-----------------------------------------------------------------------------
@@ -452,7 +452,7 @@ bool C_VS_UI_SLAYER_QUICKITEM::MouseControl(UINT message, int _x, int _y)
 	Window::MouseControl(message, _x, _y);
 	_x-=x; _y-=y;
 
-	// test open/close button
+	// 열기/닫기 버튼 테스트
 	bool ret = false;
 	if(m_bl_width)
 	{
@@ -469,7 +469,7 @@ bool C_VS_UI_SLAYER_QUICKITEM::MouseControl(UINT message, int _x, int _y)
 			ret = !m_pC_button_group->MouseControl(message, _y, _x);
 	}
 
-	if (g_pQuickSlot != NULL) // item selection
+	if (g_pQuickSlot != NULL) // 아이템 선택
 	{
 		int i;
 
@@ -1095,7 +1095,7 @@ void C_VS_UI_SLAYER_QUICKITEM::Show()
 	g_FL2_ReleaseDC();
 	
 
-	// show hot-key
+	// 단축키 표시
 	char * p_hotkey_mark[] = {"F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8"};
 	if (m_focus_slot != NOT_SELECTED)
 	//for (i=0; i < GetPocketCount(); i++)
@@ -1218,8 +1218,8 @@ C_VS_UI_SLAYER::C_VS_UI_SLAYER():C_VS_UI_TRIBE()
 
 	m_pC_sys_button_spk = new C_SPRITE_PACK(SPK_SLAYER_SYS_BUTTON);
 
-	// common buttons
-	int tab_x = 18, tab_y = 49-4;  //modify by viva : menu button point
+	// 공통 버튼
+	int tab_x = 18, tab_y = 49-4;  // viva 수정 : 메뉴 버튼 위치
 	m_pC_common_button_group->Add( new C_VS_UI_EVENT_BUTTON(tab_x, tab_y, m_pC_sys_button_spk->GetWidth(TAB_MENU), m_pC_sys_button_spk->GetHeight(TAB_MENU), TAB_MENU_ID, this, TAB_MENU) );
 	tab_x += m_pC_sys_button_spk->GetWidth(TAB_MENU);
 	m_pC_common_button_group->Add( new C_VS_UI_EVENT_BUTTON(tab_x, tab_y, m_pC_sys_button_spk->GetWidth(TAB_EXP), m_pC_sys_button_spk->GetHeight(TAB_EXP), TAB_EXP_ID, this, TAB_EXP) );
@@ -1237,14 +1237,14 @@ C_VS_UI_SLAYER::C_VS_UI_SLAYER():C_VS_UI_TRIBE()
 	int system_x = w-m_pC_main_spk->GetWidth(BUTTON_SYSTEM)-5, system_y = h-m_pC_main_spk->GetHeight(BUTTON_SYSTEM);
 	m_pC_common_button_group->Add( new C_VS_UI_EVENT_BUTTON(system_x, system_y, m_pC_main_spk->GetWidth(BUTTON_SYSTEM), m_pC_main_spk->GetHeight(BUTTON_SYSTEM), SYSTEM_ID, this, BUTTON_SYSTEM) );
 	m_pC_common_button_group->Add( new C_VS_UI_EVENT_BUTTON(24, system_y, gpC_global_resource->m_pC_assemble_box_button_spk->GetWidth(C_GLOBAL_RESOURCE::AB_BUTTON_PUSHPIN), gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_PUSHPIN), PUSHPIN_ID, this,C_GLOBAL_RESOURCE::AB_BUTTON_PUSHPIN ) );
-	//modify by viva : buttons under the menu
+	// viva 수정 : 메뉴 아래 버튼들
 	const int button_x = 25, button_y = 72-4, button_x_gap = 37, button_y_gap = 37;
 	
-	// menu buttons
+	// 메뉴 버튼
 	m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*0, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_INVENTORY), m_pC_sys_button_spk->GetHeight(BUTTON_INVENTORY), INVENTORY_ID, this, BUTTON_INVENTORY) );
 	m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*1, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_GEAR), m_pC_sys_button_spk->GetHeight(BUTTON_GEAR), GEAR_ID, this, BUTTON_GEAR) );
 	m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*2, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_INFO), m_pC_sys_button_spk->GetHeight(BUTTON_INFO), INFO_ID, this, BUTTON_INFO) );
-	//add by viva : friend button
+	// viva 추가 : 친구 버튼
 #ifdef __FRIEND_SYSTEM_VIVA__
 	m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*3, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_FRIEND), m_pC_sys_button_spk->GetHeight(BUTTON_FRIEND), FRIEND_ID, this, BUTTON_FRIEND) );
 #endif
@@ -1256,13 +1256,13 @@ C_VS_UI_SLAYER::C_VS_UI_SLAYER():C_VS_UI_TRIBE()
 
 	// sms 버튼 
 //	if(false == g_pUserInformation->IsNetmarble)
-//add by zdj 2005.5.17
-	// add by Coffee 2006.11.26
+// zdj 추가, 2005.5.17
+	// Coffee 추가, 2006.11.26
 		//m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*3, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_SMS), m_pC_sys_button_spk->GetHeight(BUTTON_SMS), SMS_ID, this, BUTTON_SMS) );
 
 	m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*3, button_y+button_y_gap, m_pC_sys_button_spk->GetWidth(BUTTON_NAMING), m_pC_sys_button_spk->GetHeight(BUTTON_NAMING), NAMING_ID, this, BUTTON_NAMING) );
 
-	// guild buttons
+	// 길드 버튼
 	m_pC_guild_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*0, button_y+button_y_gap*0, m_pC_sys_button_spk->GetWidth(BUTTON_TEAM_INFO), m_pC_sys_button_spk->GetHeight(BUTTON_TEAM_INFO), TEAM_INFO_ID, this, BUTTON_TEAM_INFO) );
 	m_pC_guild_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*1, button_y+button_y_gap*0, m_pC_sys_button_spk->GetWidth(BUTTON_TEAM_MEMBER_LIST), m_pC_sys_button_spk->GetHeight(BUTTON_TEAM_MEMBER_LIST), TEAM_MEMBER_LIST_ID, this, BUTTON_TEAM_MEMBER_LIST) );
 	// 2004, 10, 12, sobeit add start - 길드 명령 아이콘
@@ -1278,20 +1278,20 @@ C_VS_UI_SLAYER::C_VS_UI_SLAYER():C_VS_UI_TRIBE()
 	m_pC_util_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*0, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_STORE), m_pC_sys_button_spk->GetHeight(BUTTON_STORE), UTIL_STORE_ID, this, BUTTON_STORE) );
 	if(false == g_pUserInformation->IsNetmarble && false == g_pUserInformation->IsTestServer) // 본섭만
 	{
-//add by zdj 2005.5.16
-// add by Coffee 2006.11.26
+// zdj 추가, 2005.5.16
+// Coffee 추가, 2006.11.26
 		m_pC_util_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*1, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_POWER_JJANG), m_pC_sys_button_spk->GetHeight(BUTTON_POWER_JJANG), UTIL_POWER_JJANG_ID, this, BUTTON_POWER_JJANG) );
 	}
 	// 2004, 12, 2, sobeit add end
 
-	// help buttons
+	// 도움말 버튼
 	m_pC_help_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*0, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_HELP), m_pC_sys_button_spk->GetHeight(BUTTON_HELP), HELP_ID, this, BUTTON_HELP) );
 	m_pC_help_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*1, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_CHAT_HELP), m_pC_sys_button_spk->GetHeight(BUTTON_CHAT_HELP), CHAT_HELP_ID, this, BUTTON_CHAT_HELP) );
 	m_pC_help_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*2, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_BATTLE_HELP), m_pC_sys_button_spk->GetHeight(BUTTON_BATTLE_HELP), BATTLE_HELP_ID, this, BUTTON_BATTLE_HELP) );
 	m_pC_help_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*0, button_y+button_y_gap, m_pC_sys_button_spk->GetWidth(BUTTON_SKILL_HELP), m_pC_sys_button_spk->GetHeight(BUTTON_SKILL_HELP), SKILL_HELP_ID, this, BUTTON_SKILL_HELP) );
 	m_pC_help_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*1, button_y+button_y_gap, m_pC_sys_button_spk->GetWidth(BUTTON_TEAM_MEMBER_LIST), m_pC_sys_button_spk->GetHeight(BUTTON_TEAM_MEMBER_LIST), GUILD_HELP_ID, this, BUTTON_TEAM_MEMBER_LIST) );
 
-	// instance objects 
+	// 인스턴스 오브젝트 
 	m_pC_quickitem = new C_VS_UI_SLAYER_QUICKITEM;
 
 //	if(m_skill_domain > 150)
@@ -1367,7 +1367,7 @@ void	C_VS_UI_SLAYER::OpenGear(bool bl_set_load)
 //}
 
 //-----------------------------------------------------------------------------
-// DoCommonActionBeforeEventOccured
+// 이벤트 발생 전 공통 동작 수행
 //
 // C_VS_UI_TRIBE::DoCommonActionBeforeEventOccured() 설명 참조.
 //-----------------------------------------------------------------------------
@@ -1377,7 +1377,7 @@ void C_VS_UI_SLAYER::DoCommonActionBeforeEventOccured()
 }
 
 //-----------------------------------------------------------------------------
-// DoCommonActionAfterEventOccured
+// 이벤트 발생 후 공통 동작 수행
 //
 // C_VS_UI_TRIBE::DoCommonActionAfterEventOccured() 설명 참조.
 //
@@ -1500,7 +1500,7 @@ bool C_VS_UI_SLAYER::IsRunningQuickItemSlot()
 //		m_pC_chat->MouseControl(message, _x, _y);
 
 	//
-	// Main interface.
+	// 메인 인터페이스.
 	//
 //	int i;
 
@@ -1596,7 +1596,7 @@ void C_VS_UI_SLAYER::Show()
 		sz_temp[strlen(sz_temp)-3] = '\0';
 		hour = atoi(sz_temp);
 		
-		const int icon_x = 88, icon_y = 29-2;	//modify by viva : icon_y
+		const int icon_x = 88, icon_y = 29-2;	// viva 수정 : icon_y
 		if(hour >= 8 && hour < 16)	// 낮이다
 			m_pC_main_spk->BltLocked(x+icon_x, y+icon_y, ICON_SUN);
 		else if(hour >= 20 || hour < 4)	// 밤이다
@@ -1642,7 +1642,7 @@ void C_VS_UI_SLAYER::Show()
 			
 		case TAB_EXP_ID:
 			// EXP 는 버튼이 없다
-			{//modify by viva : bar_y
+			{// viva 수정 : bar_y
 				const int bar_x = 98, bar_y = 74-3, str_x = 27, num_x = 76, bar_gap = 12;
 				char sz_temp[10];
 				
@@ -1812,7 +1812,7 @@ void C_VS_UI_SLAYER::Start()
 	m_pC_effect_status->Start();
 	m_pC_minimap->Start();
 
-	// add by Coffee 2007-3-6 添加世界地图
+	// Coffee 추가, 2007-3-6, 월드맵 추가
 //	m_pC_worldmap->Start();
 	// end 
 
@@ -1845,7 +1845,7 @@ C_VS_UI_SLAYER_PORTAL::C_VS_UI_SLAYER_PORTAL()
 	m_right_x = 313, m_right_y = m_left_y;
 	m_close_x = 255, m_close_y = 105;
 
-	// set button
+	// button 설정
 	m_pC_button_group = new ButtonGroup(this);
 
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x + m_left_x, y + m_left_y, m_etc_spk.GetWidth(LEFT), m_etc_spk.GetHeight(LEFT), LEFT, this, LEFT));
@@ -2458,7 +2458,7 @@ void	C_VS_UI_SLAYER_PORTAL::ShowButtonWidget(C_VS_UI_EVENT_BUTTON * p_button)
 
 //-----------------------------------------------------------------------------
 //
-// keyboard
+// 키보드
 //
 //-----------------------------------------------------------------------------
 void	C_VS_UI_SLAYER_PORTAL::KeyboardControl(UINT message, UINT key, long extra)

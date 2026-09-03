@@ -1,6 +1,6 @@
 ﻿#include "client_PCH.h"
 #define assert(e) ((void)(e))
-// Disabled assert for macOS
+// macOS용으로 assert 비활성화
 
 // VS_UI_Dialog.cpp
 #pragma warning(disable:4786)
@@ -141,7 +141,7 @@ C_VS_UI_DIALOG::C_VS_UI_DIALOG(int _x, int _y, int width, int height, void (*exe
 
 	w = width;
 	h = height;
-	// set Window pixel size
+	// Window 픽셀 크기 설정
 //	w = gpC_global_resource->m_pC_assemble_box_spk->GetWidth(C_GLOBAL_RESOURCE::AB_LEFT) + 
 //		 gpC_global_resource->m_pC_assemble_box_spk->GetWidth(C_GLOBAL_RESOURCE::AB_CENTER)*m_center_x + 
 //		 gpC_global_resource->m_pC_assemble_box_spk->GetWidth(C_GLOBAL_RESOURCE::AB_RIGHT);
@@ -155,7 +155,7 @@ C_VS_UI_DIALOG::C_VS_UI_DIALOG(int _x, int _y, int width, int height, void (*exe
 	DIALOG_BUTTON_WIDTH = gpC_global_resource->m_pC_assemble_box_button_spk->GetWidth(C_GLOBAL_RESOURCE::AB_BUTTON_OK);
 	DIALOG_BUTTON_HEIGHT = gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_OK);
 
-	// -1 = center
+	// -1 = 중앙
 	if (_x == -1)
 		x = g_GameRect.right/2-w/2;
 	else
@@ -176,7 +176,7 @@ C_VS_UI_DIALOG::C_VS_UI_DIALOG(int _x, int _y, int width, int height, void (*exe
 	if (y < 0 && h != -1)
 		y = 0;
 
-	// set Button count
+	// Button 개수 설정
 	m_button_count = 0;
 	if (m_ddb != DIALOG_NO_BUTTON)
 	{
@@ -184,12 +184,12 @@ C_VS_UI_DIALOG::C_VS_UI_DIALOG(int _x, int _y, int width, int height, void (*exe
 			m_button_count++;
 		if (m_ddb & DIALOG_CANCEL)
 			m_button_count++;
-		//add by viva : black button
+		// viva 추가 : black button
 		if (m_ddb & DIALOG_FRIEND_BLACK)
 			m_button_count++;
 	}
 
-	// set Client rect
+	// Client rect 설정
 	// Window는 Move되지 않을 것임을 가정한다.
 	const int _EXTRA = 30;//2;
 	m_client_rect.x = x+DECORATE_GAP+_EXTRA;
@@ -200,7 +200,7 @@ C_VS_UI_DIALOG::C_VS_UI_DIALOG(int _x, int _y, int width, int height, void (*exe
 		m_client_rect.h = h-DECORATE_GAP*2-_EXTRA;
 	}
 
-	// set button
+	// button 설정
 	m_pC_button_group = new ButtonGroup(this);
 
 	if (m_ddb & DIALOG_OK && h != -1)
@@ -223,7 +223,7 @@ C_VS_UI_DIALOG::C_VS_UI_DIALOG(int _x, int _y, int width, int height, void (*exe
 			//m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(150, DIALOG_BUTTON_Y, DIALOG_BUTTON_WIDTH, DIALOG_BUTTON_HEIGHT, DIALOG_EXECID_CANCEL, this, C_GLOBAL_RESOURCE::AB_BUTTON_CANCEL));
 		}
 	}
-	if(m_ddb & DIALOG_FRIEND_BLACK && h != -1)		//add by viva
+	if(m_ddb & DIALOG_FRIEND_BLACK && h != -1)		// viva 추가
 	{
 		m_pC_button_group->Add( new C_VS_UI_EVENT_BUTTON(DIALOG_BUTTON_POS(BS_OK)-gpC_global_resource->m_pC_assemble_box_button_spk->GetWidth(C_GLOBAL_RESOURCE::AB_BUTTON_FRIEND_BLACK) -10, DIALOG_BUTTON_Y, gpC_global_resource->m_pC_assemble_box_button_spk->GetWidth(C_GLOBAL_RESOURCE::AB_BUTTON_FRIEND_BLACK), gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_FRIEND_BLACK), DIALOG_EXECID_FRIEND_BLACK, this, C_GLOBAL_RESOURCE::AB_BUTTON_FRIEND_BLACK));
 		//m_pC_button_group->Add( new C_VS_UI_EVENT_BUTTON(125, DIALOG_BUTTON_Y, gpC_global_resource->m_pC_assemble_box_button_spk->GetWidth(C_GLOBAL_RESOURCE::AB_BUTTON_FRIEND_BLACK), gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_FRIEND_BLACK), DIALOG_EXECID_FRIEND_BLACK, this, C_GLOBAL_RESOURCE::AB_BUTTON_FRIEND_BLACK));
@@ -322,7 +322,7 @@ void C_VS_UI_DIALOG::Run(id_t id)
 			break;
 	}
 
-	// scroll up/down common control
+	// 스크롤 업/다운 공통 처리
 //	if (m_available_tag == true)
 //	{
 //		// change scroll tag position
@@ -395,7 +395,7 @@ bool C_VS_UI_DIALOG::MouseControl(UINT message, int _x, int _y)
 			m_pC_button_group->MouseControl(message, _x, _y+m_menu_y_size);		
 	} else m_pC_button_group->MouseControl(message, _x, _y+m_menu_y_size);
 
-	// control scroll bar tag
+	// 스크롤바 태그 제어
 //	if (m_available_tag == true)
 	if(m_pC_msg_scroll_bar)
 	{
@@ -547,7 +547,7 @@ void C_VS_UI_DIALOG::ShowButtonWidget(C_VS_UI_EVENT_BUTTON * p_button)
 				p_pi = &gpC_base->m_dialog_menu_pi;
 				menuStyle.color = TextSystem::ColorFromCOLORREF(gpC_base->m_dialog_menu_pi.text_color);
 
-				// arrow^^
+				// 화살표^^
 //				gpC_global_resource->m_pC_assemble_box_etc_spk->Blt(p_button->x-15, p_button->y+1, C_GLOBAL_RESOURCE::AB_RIGHT_ARROW);
 //				gpC_global_resource->m_pC_assemble_box_etc_spk->Blt(p_button->Right()+9, p_button->y+1, C_GLOBAL_RESOURCE::AB_LEFT_ARROW);
 //				gpC_global_resource->m_pC_assemble_box_etc_spk->Blt(p_button->x-25, p_button->y+1, C_GLOBAL_RESOURCE::AB_LEFT_ARROW);
@@ -696,7 +696,7 @@ void C_VS_UI_DIALOG::Show()
 //	}
 //	}
 
-	// message
+	// 메시지
 	gpC_base->m_p_DDSurface_back->Lock();
 	if (m_msg_rect.h != 0 && !m_vs_msg.empty())
 	{
@@ -774,7 +774,7 @@ void C_VS_UI_DIALOG::Show()
 			}
 		}
 
-		// draw boundary line
+		// 경계선 그리기
 //		if (m_menu_count > 0)
 //		{
 //			if (gpC_base->m_p_DDSurface_back->Lock()) // draw track
@@ -981,7 +981,7 @@ void C_VS_UI_DIALOG::SetMessage(char ** sz_msg, UINT line_count, SETMESSAGE_MODE
 			m_msg_rect.h -= 14;
 	}
 	
-	// set print line count
+	// 출력 줄 수 설정
 	m_print_line_count = (m_msg_rect.h)/m_message_str_height;//+MSG_EXTRA_HGAP
 	
 	if(m_pC_menu_scroll_bar==NULL&&m_flag_menu)		// 아래쪽 메뉴판에 스크롤바가 생기지 않았을경우
@@ -992,7 +992,7 @@ void C_VS_UI_DIALOG::SetMessage(char ** sz_msg, UINT line_count, SETMESSAGE_MODE
 	}
 	if (mode == SMO_NOFIT)
 	{		
-		m_nofit_mode_msg_y = m_msg_rect.y+m_msg_rect.h/2-(m_message_str_height*line_count)/2; // sort in center
+		m_nofit_mode_msg_y = m_msg_rect.y+m_msg_rect.h/2-(m_message_str_height*line_count)/2; // 중앙 정렬
 	}
 	else if (m_line_count > m_print_line_count)				// 출력범위가 좁으므로 ScrollBar 를 생성한다.
 	{
@@ -1081,7 +1081,7 @@ void C_VS_UI_DIALOG::SetMenu(const DIALOG_MENU * p_dialog_menu, UINT menu_count,
 		return;
 
 	m_flag_menu=TRUE;
-	// set Menu list
+	// Menu 목록 설정
 	m_menu_count = menu_count;
 
 	if (m_p_menu!=NULL)
@@ -1144,7 +1144,7 @@ void C_VS_UI_DIALOG::SetMenu(const DIALOG_MENU * p_dialog_menu, UINT menu_count,
 		fMakeScrollBar=TRUE;
 	}
 	
-	// Create Menu button
+	// Menu button 생성
 	if(h != -1)
 	{
 		int plus = 0;

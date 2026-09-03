@@ -3,7 +3,7 @@
 #include "client_PCH.h"
 #include <assert.h>
 #define assert(e) ((void)(e))
-// Disabled assert for macOS
+// macOS용으로 assert 비활성화
 
 #include "VS_UI_Description.h"
 #include "VS_UI_GameCommon.h"
@@ -22,7 +22,7 @@
 #include "VS_UI.h"
 #include "VS_UI_GameCommon2.h"
 
-// Always include ClientFunction.h for DrawAlphaBox
+// DrawAlphaBox 사용을 위해 항상 ClientFunction.h를 포함
 #include "ClientFunction.h"
 
 enum 
@@ -70,7 +70,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 	SetRect(&_rect, rect.x, rect.y, rect.x+rect.w, rect.y+rect.h);
 	DrawAlphaBox(&_rect, 0, 0, 0, g_pUserOption->ALPHA_DEPTH);
 
-	// REMOVED: DrawRect with LIGHT_MAGENTA was overwriting the alpha-blended background
+	// 제거됨: LIGHT_MAGENTA로 DrawRect를 하면 알파 블렌딩된 배경을 덮어써서 삭제함
 	// gpC_base->m_p_DDSurface_back->DrawRect(&_rect, LIGHT_MAGENTA);
 
 //#endif
@@ -109,7 +109,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 //#endif
 
 	//
-	// show contents
+	// 내용 표시
 	//
 	int px = rect.x+SIDE_GAP_HALF;
 	int py = rect.y+SIDE_GAP_HALF;
@@ -118,8 +118,8 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 
 	char sz_name[NAME_STRING_LEN];
 	char sz_ename[NAME_STRING_LEN];
-	sz_name[0] = '\0'; // for strcat()
-	sz_ename[0] = '\0'; // for strcat()
+	sz_name[0] = '\0'; // strcat()을 위함
+	sz_ename[0] = '\0'; // strcat()을 위함
 	
 	COLORREF name_color = ITEM_NAME_NORMAL_COLOR;
 	COLORREF ename_color = ITEM_ENAME_NORMAL_COLOR;
@@ -130,9 +130,9 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 	if (g_pTimeItemManager->IsExist( p_item->GetID() ) )
 	{
 		strcat( sz_name, (*g_pGameStringTable)[UI_STRING_MESSAGE_QUEST_HAN].GetString() );
-		strcat(sz_name, " "); // add 'space'
+		strcat(sz_name, " "); // 공백 추가
 		strcat( sz_ename,(*g_pGameStringTable)[UI_STRING_MESSAGE_QUEST_ENG].GetString() );
-		strcat(sz_ename, " "); // add 'space'
+		strcat(sz_ename, " "); // 공백 추가
 	}
 
 	if (p_item->IsIdentified())
@@ -164,10 +164,10 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				MPetItem *pPetItem = (MPetItem *)p_item;
 				
 				strcat(sz_name, pPetItem->GetPetOptionName().c_str());
-//				strcat(sz_name, " "); // add 'space'
+//				strcat(sz_name, " "); // 공백 추가
 
 				strcat(sz_ename, pPetItem->GetPetOptionEName().c_str());
-//				strcat(sz_ename, " "); // add 'space'
+//				strcat(sz_ename, " "); // 공백 추가
 			}
 		}
 		else if (!p_item->IsEmptyItemOptionList() && p_item->GetItemClass() != ITEM_CLASS_COUPLE_RING &&
@@ -181,12 +181,12 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				if(p_item->GetItemOptionName(i)!=NULL)
 				{
 					strcat(sz_name, p_item->GetItemOptionName(i));
-					strcat(sz_name, " "); // add 'space'
+					strcat(sz_name, " "); // 공백 추가
 				}
 				if(p_item->GetItemOptionEName(i)!=NULL)
 				{
 					strcat(sz_ename, p_item->GetItemOptionEName(i));
-					strcat(sz_ename, " "); // add 'space'
+					strcat(sz_ename, " "); // 공백 추가
 				}
 			}
 			if(p_item->GetItemOptionListCount() == 2 )
@@ -254,7 +254,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 
 //	if (p_item->IsIdentified())
 	{
-		// weight
+		// 무게
 //		vx = g_PrintColorStr(px, py, "Weight", gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
 //		sprintf(sz_buf, "%d", p_item->GetWeight());
 //		g_PrintColorStr(vx, py, sz_buf, gpC_base->m_item_desc_pi, RGB_WHITE);
@@ -434,7 +434,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 		
 			else
 			{
-				// Durability
+				// 내구도
 				if (
 					p_item->GetMaxDurability() != -1 && !p_item->IsUniqueItem() && !p_item->IsQuestItem() &&
 					itemClass!=ITEM_CLASS_VAMPIRE_AMULET &&
@@ -450,7 +450,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 					py += SMALL_FONT_Y_GAP;
 				}
 
-				// Silvering
+				// 실버링
 				if (p_item->GetSilverMax() != -1)
 				{
 					vx = g_PrintColorStr(px, py,(*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_SILVERING].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -458,7 +458,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 					g_PrintColorStr(vx, py, sz_buf, gpC_base->m_item_desc_pi, RGB_WHITE);				
 					py += SMALL_FONT_Y_GAP;
 				}			
-				// Damage
+				// 데미지
 				if (p_item->GetMaxDamage() != -1)
 				{
 					int stringID = UI_STRING_MESSAGE_DESC_DAMAGE;
@@ -479,7 +479,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 					py += SMALL_FONT_Y_GAP;
 				}
 
-				// critical hit
+				// 크리티컬 히트
 				if (p_item->GetCriticalHit() != -1)
 				{
 					vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_CRITICALHIT].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -487,7 +487,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 					g_PrintColorStr(vx, py, sz_buf, gpC_base->m_item_desc_pi, RGB_RED);
 					py += SMALL_FONT_Y_GAP;
 				}		
-				// Defense
+				// 방어력
 				if (p_item->GetDefenseValue() != -1)
 				{
 					vx = g_PrintColorStr(px, py,(*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DEFENSE].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -495,7 +495,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 					g_PrintColorStr(vx, py, sz_buf, gpC_base->m_item_desc_pi, RGB_GREEN);				
 					py += SMALL_FONT_Y_GAP;
 				}			
-				// Protection
+				// 보호력
 				if (p_item->GetProtectionValue() != -1)
 				{
 					vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_PROTECTION].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -503,7 +503,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 					g_PrintColorStr(vx, py, sz_buf, gpC_base->m_item_desc_pi, RGB_GREEN);				
 					py += SMALL_FONT_Y_GAP;
 				}			
-				// TOHIT
+				// 명중률
 				if (p_item->GetToHit() != -1)
 				{
 					vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_ACCURACY].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -511,7 +511,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 					g_PrintColorStr(vx, py, sz_buf, gpC_base->m_item_desc_pi, RGB_GREEN);				
 					py += SMALL_FONT_Y_GAP;
 				}			
-				// Heal point
+				// 회복량
 				if (p_item->GetHealPoint() != -1)
 				{
 					vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_HP].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -519,7 +519,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 					g_PrintColorStr(vx, py, sz_buf, gpC_base->m_item_desc_pi, RGB_WHITE);				
 					py += SMALL_FONT_Y_GAP;
 				}			
-				// Mana point
+				// 마나량
 				if (p_item->GetManaPoint() != -1)
 				{
 					if( g_eRaceInterface == RACE_OUSTERS )
@@ -531,7 +531,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 					py += SMALL_FONT_Y_GAP;
 				}
 				
-				// Attack range
+				// 공격 사거리
 				if (p_item->GetReach() != -1 && p_item->GetReach() != 1)
 				{
 					vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_RANGE].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -539,7 +539,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 					g_PrintColorStr(vx, py, sz_buf, gpC_base->m_item_desc_pi, RGB_WHITE);				
 					py += SMALL_FONT_Y_GAP;
 				}			
-				// Bullet
+				// 탄환
 				if (p_item->GetMagazineSize() != -1)
 				{
 					vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_MAGAZINE_NUM].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -547,7 +547,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 					g_PrintColorStr(vx, py, sz_buf, gpC_base->m_item_desc_pi, RGB_WHITE);
 					py += SMALL_FONT_Y_GAP;
 				}
-				// Pocket size
+				// Pocket 크기
 				if (p_item->GetPocketNumber() != -1)
 				{
 					vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_POCKET_NUM].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -555,7 +555,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 					g_PrintColorStr(vx, py, sz_buf, gpC_base->m_item_desc_pi, RGB_WHITE);				
 					py += SMALL_FONT_Y_GAP;
 				}			
-				// Pile size
+				// Pile 크기
 				if (p_item->IsPileItem() == true)
 				{
 					vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_ITEM_NUM].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -564,7 +564,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 					py += SMALL_FONT_Y_GAP;
 				}
 				
-				// Charge size
+				// Charge 크기
 				if (p_item->IsChargeItem() == true)
 				{
 					vx = g_PrintColorStr(px, py,(*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_LEFT_NUM].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -573,7 +573,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 					py += SMALL_FONT_Y_GAP;
 				}
 
-				// lucky value
+				// 행운 수치
 				if (p_item->GetLucky() != - 9999 && itemClass != ITEM_CLASS_COUPLE_RING && itemClass != ITEM_CLASS_VAMPIRE_COUPLE_RING &&  itemClass != ITEM_CLASS_CORE_ZAP)
 				{
 					vx = g_PrintColorStr(px, py,(*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_LUCKY].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -617,7 +617,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 			}
 		} else
 		{
-			// Durability
+			// 내구도
 			if (p_item->GetMaxDurability() != -1&&!p_item->IsUniqueItem()&&p_item->GetItemClass()!=ITEM_CLASS_VAMPIRE_AMULET && !p_item->IsQuestItem())
 			{
 				vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DURABILITY].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -625,7 +625,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				g_PrintColorStr(vx, py, sz_buf, gpC_base->m_item_desc_pi, RGB_WHITE);				
 				py += SMALL_FONT_Y_GAP;
 			}
-			// Silvering
+			// 실버링
 			if (p_item->GetSilverMax() != -1)
 			{
 				vx = g_PrintColorStr(px, py,(*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_SILVERING].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -634,7 +634,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				py += SMALL_FONT_Y_GAP;
 			}
 			
-			// Damage
+			// 데미지
 			if (p_item->GetMaxDamage() != -1)
 			{
 				vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DAMAGE].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -643,7 +643,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				py += SMALL_FONT_Y_GAP;
 			}
 			
-			// Damage
+			// 데미지
 			if (p_item->GetOriginalSpeed() > 0)
 			{
 				vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_ATTACK_SPEED].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -652,7 +652,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				py += SMALL_FONT_Y_GAP;
 			}
 
-			// critical hit
+			// 크리티컬 히트
 			if (p_item->GetCriticalHit() != -1)
 			{
 				vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_CRITICALHIT].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -661,7 +661,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				py += SMALL_FONT_Y_GAP;
 			}
 			
-			// Defense
+			// 방어력
 			if (p_item->GetDefenseValue() != -1)
 			{
 				vx = g_PrintColorStr(px, py,(*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DEFENSE].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -670,7 +670,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				py += SMALL_FONT_Y_GAP;
 			}
 			
-			// Protection
+			// 보호력
 			if (p_item->GetProtectionValue() != -1)
 			{
 				vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_PROTECTION].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -679,7 +679,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				py += SMALL_FONT_Y_GAP;
 			}
 			
-			// TOHIT
+			// 명중률
 			if (p_item->GetToHit() != -1)
 			{
 				vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_ACCURACY].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -688,7 +688,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				py += SMALL_FONT_Y_GAP;
 			}
 			
-			// Heal point
+			// 회복량
 			if (p_item->GetHealPoint() != -1)
 			{
 				vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_HP].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -697,7 +697,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				py += SMALL_FONT_Y_GAP;
 			}
 			
-			// Mana point
+			// 마나량
 			if (p_item->GetManaPoint() != -1)
 			{
 				vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_MP].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -706,7 +706,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				py += SMALL_FONT_Y_GAP;
 			}
 			
-			// Attack range
+			// 공격 사거리
 			if (p_item->GetReach() != -1 && p_item->GetReach() != 1)
 			{
 				vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_RANGE].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -715,7 +715,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				py += SMALL_FONT_Y_GAP;
 			}
 			
-			// Bullet
+			// 탄환
 			if (p_item->GetMagazineSize() != -1)
 			{
 				vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_MAGAZINE_NUM].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -724,7 +724,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				py += SMALL_FONT_Y_GAP;
 			}
 			
-			// Pocket size
+			// Pocket 크기
 			if (p_item->GetPocketNumber() != -1)
 			{
 				vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_POCKET_NUM].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -732,7 +732,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				g_PrintColorStr(vx, py, sz_buf, gpC_base->m_item_desc_pi, RGB_WHITE);				
 				py += SMALL_FONT_Y_GAP;
 			}			
-			// Pile size
+			// Pile 크기
 			if (p_item->IsPileItem() == true)
 			{
 				vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_ITEM_NUM].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -741,7 +741,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				py += SMALL_FONT_Y_GAP;
 			}
 			
-			// Charge size
+			// Charge 크기
 			if (p_item->IsChargeItem() == true)
 			{
 				vx = g_PrintColorStr(px, py,(*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_LEFT_NUM].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -749,7 +749,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 				g_PrintColorStr(vx, py, sz_buf, gpC_base->m_item_desc_pi, RGB_WHITE);				
 				py += SMALL_FONT_Y_GAP;
 			}
-			// lucky value
+			// 행운 수치
 			if (p_item->GetLucky() != - 9999)
 			{
 				vx = g_PrintColorStr(px, py,(*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_LUCKY].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -759,7 +759,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 			}
 		}
 
-		/*// Durability
+		/*// 내구도
 		if (p_item->GetMaxDurability() != -1&&!p_item->IsUniqueItem()&&p_item->GetItemClass()!=ITEM_CLASS_VAMPIRE_AMULET)
 		{
 			vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DURABILITY].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -773,7 +773,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 			py += SMALL_FONT_Y_GAP;
 		}
 		
-		// Silvering
+		// 실버링
 		if (p_item->GetSilverMax() != -1)
 		{
 			vx = g_PrintColorStr(px, py,(*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_SILVERING].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -787,7 +787,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 			py += SMALL_FONT_Y_GAP;
 		}
 		
-		// Damage
+		// 데미지
 		if (p_item->GetMaxDamage() != -1)
 		{
 			vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DAMAGE].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -800,7 +800,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 			py += SMALL_FONT_Y_GAP;
 		}
 		
-		// critical hit
+		// 크리티컬 히트
 		if (p_item->GetCriticalHit() != -1)
 		{
 			vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_CRITICALHIT].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -814,7 +814,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 		}
 		
 		
-		// Defense
+		// 방어력
 		if (p_item->GetDefenseValue() != -1)
 		{
 			vx = g_PrintColorStr(px, py,(*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DEFENSE].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -828,7 +828,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 			py += SMALL_FONT_Y_GAP;
 		}
 		
-		// Protection
+		// 보호력
 		if (p_item->GetProtectionValue() != -1)
 		{
 			vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_PROTECTION].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -842,7 +842,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 			py += SMALL_FONT_Y_GAP;
 		}
 
-		// TOHIT
+		// 명중률
 		if (p_item->GetToHit() != -1)
 		{
 			vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_ACCURACY].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -856,7 +856,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 			py += SMALL_FONT_Y_GAP;
 		}
 
-		// Heal point
+		// 회복량
 		if (p_item->GetHealPoint() != -1)
 		{
 			vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_HP].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -869,7 +869,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 			py += SMALL_FONT_Y_GAP;
 		}
 
-		// Mana point
+		// 마나량
 		if (p_item->GetManaPoint() != -1)
 		{
 			vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_MP].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -883,7 +883,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 			py += SMALL_FONT_Y_GAP;
 		}
 
-		// Attack range
+		// 공격 사거리
 		if (p_item->GetReach() != -1 && p_item->GetReach() != 1)
 		{
 			vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_RANGE].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -897,7 +897,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 			py += SMALL_FONT_Y_GAP;
 		}
 
-		// Bullet
+		// 탄환
 		if (p_item->GetMagazineSize() != -1)
 		{
 			vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_MAGAZINE_NUM].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -910,7 +910,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 			py += SMALL_FONT_Y_GAP;
 		}
 
-		// Pocket size
+		// Pocket 크기
 		if (p_item->GetPocketNumber() != -1)
 		{
 			vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_POCKET_NUM].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -924,7 +924,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 			py += SMALL_FONT_Y_GAP;
 		}
 		
-		// Pile size
+		// Pile 크기
 		if (p_item->IsPileItem() == true)
 		{
 			vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_ITEM_NUM].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -937,7 +937,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 			py += SMALL_FONT_Y_GAP;
 		}
 		
-		// Charge size
+		// Charge 크기
 		if (p_item->IsChargeItem() == true)
 		{
 			vx = g_PrintColorStr(px, py,(*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_LEFT_NUM].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -971,7 +971,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 			}
 			py += SMALL_FONT_Y_GAP;
 		}
-		// Add option
+		// 옵션 추가
 		if(p_item->IsIdentified())
 		{			
 			/*if (p_item->GetItemOptionListCount() != 0)
@@ -1160,7 +1160,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 			{
 				if(p_item->IsGearItem())
 				{
-					// Required
+					// 필요
 					if(p_item->IsSlayerItem() || p_item->IsOustersItem())
 					{
 						char sz_and[] = ",";
@@ -1277,7 +1277,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 
 						//sprintf(sz_buf, (*g_pGameStringTable)[UI_STRING_MESSAGE_REQUIRE_ADVANCEMENT_LEVEL_0+LevelGrade].GetString(), LevelUnits+1);
 						sprintf(sz_buf, (*g_pGameStringTable)[UI_STRING_MESSAGE_REQUIRE_ADVANCEMENT_LEVEL_0+LevelGrade].GetString(), RequireAdvancementLevel);
-						// edit end 
+						// 수정 끝 
 						if(g_char_slot_ingame.m_AdvancementLevel >= RequireAdvancementLevel)
 							vx = g_PrintColorStr(vx, py, sz_buf, gpC_base->m_item_desc_pi, RGB_GREEN);
 						else
@@ -1343,8 +1343,8 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 //	if(p_item->GetItemClass() != ITEM_CLASS_EVENT_GIFT_BOX)
 	{
 		
-		// Price
-		// by csm
+		// 가격
+		// csm 작성
 
 		if(gC_vs_ui.IsRunningPersnalShop() && p_item->GetPersnalPrice() !=-1 ) 
 		{
@@ -1470,7 +1470,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 		if (gbl_buy_running == true && !g_pTimeItemManager->IsExist( p_item->GetID() ) )
 		{
 			assert(gbl_sell_running == false);			
-			// check mysterious
+			// 미스터리어스 확인
 			vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_PRICE].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
 			if(C_VS_UI_SHOP::m_shop_type == MShop::SHOP_EVENT_STAR && left)
 			{
@@ -1707,7 +1707,7 @@ void	_Item_Description_Show(Rect rect, void * void_ptr, long left, long right)
 
 		if( pMouseItem->GetItemType() == 23)
 		{
-			// modified by svi 2009-06-25 :  "> 0" -> ">= 0"  
+			// svi 수정, 2009-06-25 :  "> 0" -> ">= 0"  
 			if(p_item->GetGrade() >= 0 &&  p_item->GetGrade() <= 10)
 				bCanUpgrade = true;
 		} else
@@ -1943,7 +1943,7 @@ void	_Skill_Description_Show(Rect rect, void * void_ptr, long left, long right)
 //			filledRect(&dest_surface, &dest_rect, BLACK);
 //#endif
 			SetRect(&_rect, rect.x, rect.y, rect.x+rect.w, rect.y+rect.h);
-			// REMOVED: DrawRect with LIGHT_MAGENTA was overwriting the alpha-blended background
+			// 제거됨: LIGHT_MAGENTA로 DrawRect를 하면 알파 블렌딩된 배경을 덮어써서 삭제함
 		// gpC_base->m_p_DDSurface_back->DrawRect(&_rect, LIGHT_MAGENTA);
 //			rectangle(&dest_surface, dest_rect.x, dest_rect.y, dest_rect.x+dest_rect.w-1, dest_rect.y+dest_rect.h-1, LIGHT_MAGENTA);
 //
@@ -1956,7 +1956,7 @@ void	_Skill_Description_Show(Rect rect, void * void_ptr, long left, long right)
 //#endif
 
 	//
-	// show contents
+	// 내용 표시
 	//
 	int px = rect.x+SIDE_GAP_HALF;
 	int py = rect.y+SIDE_GAP_HALF;
@@ -2011,7 +2011,7 @@ void	_Skill_Description_Show(Rect rect, void * void_ptr, long left, long right)
 
 	if (g_eRaceInterface != RACE_VAMPIRE && (!(*g_pSkillInfoTable)[left].IsPassive() || g_eRaceInterface == RACE_OUSTERS))
 	{
-		// level
+		// 레벨
 		sprintf(sz_buf,"%s: ",(*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_LEVEL].GetString());
 		vx = g_PrintColorStr(px, py, sz_buf, gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
 		sprintf(sz_buf, "%d", (*g_pSkillInfoTable)[left].GetExpLevel());
@@ -2091,7 +2091,7 @@ void	_BloodBible_Description_Show(Rect rect, void * void_ptr, long left, long ri
 	SetRect(&_rect, rect.x, rect.y, rect.x+rect.w, rect.y+rect.h);
 
 	DrawAlphaBox(&_rect, 0, 0, 0, g_pUserOption->ALPHA_DEPTH);
-	// REMOVED: DrawRect with LIGHT_MAGENTA was overwriting the alpha-blended background
+	// 제거됨: LIGHT_MAGENTA로 DrawRect를 하면 알파 블렌딩된 배경을 덮어써서 삭제함
 	// gpC_base->m_p_DDSurface_back->DrawRect(&_rect, LIGHT_MAGENTA);
 
 	int px = rect.x+SIDE_GAP_HALF;
@@ -2194,7 +2194,7 @@ void	_Strings_Description_Show(Rect rect, void * void_ptr, long left, long right
 //			filledRect(&dest_surface, &dest_rect, BLACK);
 //#endif
 			SetRect(&_rect, rect.x, rect.y, rect.x+rect.w, rect.y+rect.h);
-			// REMOVED: DrawRect with LIGHT_MAGENTA was overwriting the alpha-blended background
+			// 제거됨: LIGHT_MAGENTA로 DrawRect를 하면 알파 블렌딩된 배경을 덮어써서 삭제함
 		// gpC_base->m_p_DDSurface_back->DrawRect(&_rect, LIGHT_MAGENTA);
 //			rectangle(&dest_surface, dest_rect.x, dest_rect.y, dest_rect.x+dest_rect.w-1, dest_rect.y+dest_rect.h-1, LIGHT_MAGENTA);
 //
@@ -2207,7 +2207,7 @@ void	_Strings_Description_Show(Rect rect, void * void_ptr, long left, long right
 //#endif
 
 	//
-	// show contents
+	// 내용 표시
 	//
 	int px = rect.x+SIDE_GAP_HALF;
 	int py = rect.y+SIDE_GAP_HALF;
@@ -2260,7 +2260,7 @@ void	_Info_Description_Show(Rect rect, void * void_ptr, long left, long right)
 //			filledRect(&dest_surface, &dest_rect, BLACK);
 //#endif
 			SetRect(&_rect, rect.x, rect.y, rect.x+rect.w, rect.y+rect.h);
-			// REMOVED: DrawRect with LIGHT_MAGENTA was overwriting the alpha-blended background
+			// 제거됨: LIGHT_MAGENTA로 DrawRect를 하면 알파 블렌딩된 배경을 덮어써서 삭제함
 		// gpC_base->m_p_DDSurface_back->DrawRect(&_rect, LIGHT_MAGENTA);
 //			rectangle(&dest_surface, dest_rect.x, dest_rect.y, dest_rect.x+dest_rect.w-1, dest_rect.y+dest_rect.h-1, LIGHT_MAGENTA);
 //
@@ -2273,7 +2273,7 @@ void	_Info_Description_Show(Rect rect, void * void_ptr, long left, long right)
 //#endif
 
 	//
-	// show contents
+	// 내용 표시
 	//
 	int px = rect.x+SIDE_GAP_HALF;
 	int py = rect.y+SIDE_GAP_HALF;
@@ -2320,7 +2320,7 @@ void	_SkillTree_Description_Show(Rect rect, void * void_ptr, long left, long rig
 //			filledRect(&dest_surface, &dest_rect, BLACK);
 //#endif
 			SetRect(&_rect, rect.x, rect.y, rect.x+rect.w, rect.y+rect.h);
-			// REMOVED: DrawRect with LIGHT_MAGENTA was overwriting the alpha-blended background
+			// 제거됨: LIGHT_MAGENTA로 DrawRect를 하면 알파 블렌딩된 배경을 덮어써서 삭제함
 		// gpC_base->m_p_DDSurface_back->DrawRect(&_rect, LIGHT_MAGENTA);
 //			rectangle(&dest_surface, dest_rect.x, dest_rect.y, dest_rect.x+dest_rect.w-1, dest_rect.y+dest_rect.h-1, LIGHT_MAGENTA);
 //
@@ -2333,7 +2333,7 @@ void	_SkillTree_Description_Show(Rect rect, void * void_ptr, long left, long rig
 //#endif
 
 	//
-	// show contents
+	// 내용 표시
 	//
 	int px = rect.x+SIDE_GAP_HALF;
 	int py = rect.y+SIDE_GAP_HALF;
@@ -2378,7 +2378,7 @@ void	_SkillTree_Description_Show(Rect rect, void * void_ptr, long left, long rig
 
 	MSkillDomain::SKILLSTATUS status = (*g_pSkillManager)[*(SKILLDOMAIN *)void_ptr].GetSkillStatus((ACTIONINFO)left);
 
-	// level
+	// 레벨
 	if(g_eRaceInterface != RACE_OUSTERS)
 	{
 		vx = g_PrintColorStr(px, py, (*g_pGameStringTable)[UI_STRING_MESSAGE_REQUIRE_LEVEL].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -2678,7 +2678,7 @@ void	_Help_Description_Show(Rect rect, void * void_ptr, long left, long right)
 //			filledRect(&dest_surface, &dest_rect, BLACK);
 //#endif
 			SetRect(&_rect, rect.x, rect.y, rect.x+rect.w, rect.y+rect.h);
-			// REMOVED: DrawRect with LIGHT_MAGENTA was overwriting the alpha-blended background
+			// 제거됨: LIGHT_MAGENTA로 DrawRect를 하면 알파 블렌딩된 배경을 덮어써서 삭제함
 		// gpC_base->m_p_DDSurface_back->DrawRect(&_rect, LIGHT_MAGENTA);
 //			rectangle(&dest_surface, dest_rect.x, dest_rect.y, dest_rect.x+dest_rect.w-1, dest_rect.y+dest_rect.h-1, LIGHT_MAGENTA);
 //
@@ -2691,7 +2691,7 @@ void	_Help_Description_Show(Rect rect, void * void_ptr, long left, long right)
 //#endif
 
 	//
-	// show contents
+	// 내용 표시
 	//
 	int px = rect.x+SIDE_GAP_HALF;
 	int py = rect.y+SIDE_GAP_HALF;
@@ -2733,7 +2733,7 @@ void _Item_Description_Calculator(void (*fp_show)(Rect, void *, long, long), int
 	char sz_name[NAME_STRING_LEN];
 	char sz_ename[NAME_STRING_LEN];
 	
-	//////////////////////////////// start calculation
+	//////////////////////////////// 계산 시작
 	MItem * p_item = (MItem *)void_ptr;
 
 	MItem * pAddItem = (MItem*)right;
@@ -3008,16 +3008,16 @@ void _Item_Description_Calculator(void (*fp_show)(Rect, void *, long, long), int
 		}
 	}
 	
-	sz_name[0] = '\0'; // for strcat()
-	sz_ename[0] = '\0'; // for strcat()
+	sz_name[0] = '\0'; // strcat()을 위함
+	sz_ename[0] = '\0'; // strcat()을 위함
 	strcat(sz_ename, "(");
 
 	if (g_pTimeItemManager->IsExist( p_item->GetID() ) )
 	{
 		strcat( sz_name, (*g_pGameStringTable)[UI_STRING_MESSAGE_QUEST_HAN].GetString() );
-		strcat(sz_name, " "); // add 'space'
+		strcat(sz_name, " "); // 공백 추가
 		strcat( sz_ename,(*g_pGameStringTable)[UI_STRING_MESSAGE_QUEST_ENG].GetString() );
-		strcat(sz_ename, " "); // add 'space'
+		strcat(sz_ename, " "); // 공백 추가
 	}
 	
 	if(p_item->GetItemClass() == ITEM_CLASS_PET_ITEM)
@@ -3027,10 +3027,10 @@ void _Item_Description_Calculator(void (*fp_show)(Rect, void *, long, long), int
 			MPetItem *pPetItem = (MPetItem *)p_item;
 			
 			strcat(sz_name, pPetItem->GetPetOptionName().c_str());
-//				strcat(sz_name, " "); // add 'space'
+//				strcat(sz_name, " "); // 공백 추가
 
 			strcat(sz_ename, pPetItem->GetPetOptionEName().c_str());
-//				strcat(sz_ename, " "); // add 'space'
+//				strcat(sz_ename, " "); // 공백 추가
 		}
 	}
 	else if (!p_item->IsEmptyItemOptionList() && p_item->GetItemClass() != ITEM_CLASS_CODE_SHEET )
@@ -3040,12 +3040,12 @@ void _Item_Description_Calculator(void (*fp_show)(Rect, void *, long, long), int
 			if(p_item->GetItemOptionName(i)!=NULL)
 			{
 				strcat(sz_name, p_item->GetItemOptionName(i));
-				strcat(sz_name, " "); // add 'space'
+				strcat(sz_name, " "); // 공백 추가
 			}
 			if(p_item->GetItemOptionEName(i)!=NULL)
 			{
 				strcat(sz_ename, p_item->GetItemOptionEName(i));
-				strcat(sz_ename, " "); // add 'space'
+				strcat(sz_ename, " "); // 공백 추가
 			}
 		}
 	}
@@ -3143,7 +3143,7 @@ void _Item_Description_Calculator(void (*fp_show)(Rect, void *, long, long), int
 	rect.w += SIDE_GAP;
 	rect.h += SIDE_GAP;
 
-	// revision?
+	// 수정?
 	if (rect.w < DEFAULT_BOX_WIDTH)
 		rect.w = DEFAULT_BOX_WIDTH;
 
@@ -3160,7 +3160,7 @@ void _Item_Description_Calculator(void (*fp_show)(Rect, void *, long, long), int
 	if (rect.y+rect.h > g_GameRect.bottom)
 		rect.y = g_GameRect.bottom-rect.h;
 
-	//////////////////////////////// end calculation
+	//////////////////////////////// 계산 끝
 
 	g_descriptor_manager.RectCalculationFinished(fp_show, rect, void_ptr, left, right);
 }
@@ -3168,8 +3168,8 @@ void _Item_Description_Calculator(void (*fp_show)(Rect, void *, long, long), int
 //-----------------------------------------------------------------------------
 // _Skill_Description_Calculator
 //
-// left = ACTIONINFO
-// right = icon height
+// left = ACTIONINFO(액션정보)
+// right = 아이콘 높이
 //-----------------------------------------------------------------------------
 void _Skill_Description_Calculator(void (*fp_show)(Rect, void *, long, long), int x, int y, void * void_ptr, long left, long right)
 {
@@ -3177,7 +3177,7 @@ void _Skill_Description_Calculator(void (*fp_show)(Rect, void *, long, long), in
 
 	int line_count = 3;
 
-	//////////////////////////////// start calculation
+	//////////////////////////////// 계산 시작
 	if( (*g_pSkillInfoTable)[left].GetLearnLevel() > g_pSystemAvailableManager->GetLimitLearnSkillLevel() )
 	{
 		line_count = 2;
@@ -3224,7 +3224,7 @@ void _Skill_Description_Calculator(void (*fp_show)(Rect, void *, long, long), in
 	rect.w += SIDE_GAP;
 	rect.h += SIDE_GAP;
 
-	// revision?
+	// 수정?
 	if (rect.w < DEFAULT_BOX_WIDTH)
 		rect.w = DEFAULT_BOX_WIDTH;
 
@@ -3238,7 +3238,7 @@ void _Skill_Description_Calculator(void (*fp_show)(Rect, void *, long, long), in
 		rect.x = g_GameRect.right-rect.w;
 	if (rect.y < 0)
 		rect.y = y+right;
-	//////////////////////////////// end calculation
+	//////////////////////////////// 계산 끝
 
 	g_descriptor_manager.RectCalculationFinished(fp_show, rect, void_ptr, left, right);
 }
@@ -3252,7 +3252,7 @@ void _Info_Description_Calculator(void (*fp_show)(Rect, void *, long, long), int
 {
 	Rect rect;
 
-	//////////////////////////////// start calculation
+	//////////////////////////////// 계산 시작
 	int line_count = 0;
 
 	rect.w = g_GetStringWidth((const char *)void_ptr, gpC_base->m_item_name_pi.hfont);
@@ -3261,7 +3261,7 @@ void _Info_Description_Calculator(void (*fp_show)(Rect, void *, long, long), int
 	rect.w += SIDE_GAP;
 	rect.h += SIDE_GAP;
 
-	// revision?
+	// 수정?
 //	if (rect.w < DEFAULT_BOX_WIDTH)
 //		rect.w = DEFAULT_BOX_WIDTH;
 
@@ -3275,7 +3275,7 @@ void _Info_Description_Calculator(void (*fp_show)(Rect, void *, long, long), int
 		rect.x = g_GameRect.right-rect.w;
 	if (rect.y < 0)
 		rect.y = y+right;
-	//////////////////////////////// end calculation
+	//////////////////////////////// 계산 끝
 
 	g_descriptor_manager.RectCalculationFinished(fp_show, rect, void_ptr, left, right);
 }
@@ -3289,7 +3289,7 @@ void _Strings_Description_Calculator(void (*fp_show)(Rect, void *, long, long), 
 {
 	Rect rect;
 
-	//////////////////////////////// start calculation
+	//////////////////////////////// 계산 시작
 	int line_count = left-1;
 
 	LPSTR* ptr = (LPSTR *)void_ptr;
@@ -3305,7 +3305,7 @@ void _Strings_Description_Calculator(void (*fp_show)(Rect, void *, long, long), 
 	rect.w += SIDE_GAP;
 	rect.h += SIDE_GAP;
 
-	// revision?
+	// 수정?
 //	if (rect.w < DEFAULT_BOX_WIDTH)
 //		rect.w = DEFAULT_BOX_WIDTH;
 
@@ -3319,15 +3319,15 @@ void _Strings_Description_Calculator(void (*fp_show)(Rect, void *, long, long), 
 		rect.x = g_GameRect.right-rect.w;
 	if (rect.y < 0)
 		rect.y = y+right;
-	//////////////////////////////// end calculation
+	//////////////////////////////// 계산 끝
 
 	g_descriptor_manager.RectCalculationFinished(fp_show, rect, void_ptr, left, right);
 }
 //-----------------------------------------------------------------------------
 // _SkillTree_Description_Calculator
 //
-// left = ACTIONINFO
-// right = icon height
+// left = ACTIONINFO(액션정보)
+// right = 아이콘 높이
 // void_ptr = SKILLDOMAIN
 //-----------------------------------------------------------------------------
 void _SkillTree_Description_Calculator(void (*fp_show)(Rect, void *, long, long), int x, int y, void * void_ptr, long left, long right)
@@ -3336,7 +3336,7 @@ void _SkillTree_Description_Calculator(void (*fp_show)(Rect, void *, long, long)
 	int line_count = 4;
 
 	if(left < 0)return;
-	//////////////////////////////// start calculation
+	//////////////////////////////// 계산 시작
 	if( (*g_pSkillInfoTable)[left].GetLearnLevel() > g_pSystemAvailableManager->GetLimitLearnSkillLevel() )
 	{
 		line_count = 2;
@@ -3413,7 +3413,7 @@ void _SkillTree_Description_Calculator(void (*fp_show)(Rect, void *, long, long)
 	rect.w += SIDE_GAP;
 	rect.h += SIDE_GAP;
 
-	// revision?
+	// 수정?
 	if (rect.w < DEFAULT_BOX_WIDTH)
 		rect.w = DEFAULT_BOX_WIDTH;
 
@@ -3427,7 +3427,7 @@ void _SkillTree_Description_Calculator(void (*fp_show)(Rect, void *, long, long)
 		rect.x = g_GameRect.right-rect.w;
 	if (rect.y < 0)
 		rect.y = y+right;
-	//////////////////////////////// end calculation
+	//////////////////////////////// 계산 끝
 
 	g_descriptor_manager.RectCalculationFinished(fp_show, rect, void_ptr, left, right);
 }
@@ -3436,13 +3436,13 @@ void _SkillTree_Description_Calculator(void (*fp_show)(Rect, void *, long, long)
 // _Help_Description_Calculator
 //
 // void_ptr = S_DEFAULT_HELP_STRING *
-// left = item count
+// left = 아이템 개수
 //-----------------------------------------------------------------------------
 void _Help_Description_Calculator(void (*fp_show)(Rect, void *, long, long), int x, int y, void * void_ptr, long left, long right)
 {
 	Rect rect;
 
-	//////////////////////////////// start calculation
+	//////////////////////////////// 계산 시작
 	int line_count = 0;
 	int sub_w = 0, main_w2 = 0;
 	if (((S_DEFAULT_HELP_STRING *)void_ptr)->sz_main_str2 != NULL)
@@ -3478,7 +3478,7 @@ void _Help_Description_Calculator(void (*fp_show)(Rect, void *, long, long), int
 		rect.y = 0;
 //		rect.y = y+right;
 
-	//////////////////////////////// end calculation
+	//////////////////////////////// 계산 끝
 
 	g_descriptor_manager.RectCalculationFinished(fp_show, rect, void_ptr, left, right);
 }
@@ -3487,7 +3487,7 @@ void _Help_Description_Calculator(void (*fp_show)(Rect, void *, long, long), int
 // _Help_Description_Calculator
 //
 // void_ptr = S_DEFAULT_HELP_STRING *
-// left = item count
+// left = 아이템 개수
 //-----------------------------------------------------------------------------
 void _BloodBible_Description_Calculator(void (*fp_show)(Rect, void *, long, long), int x, int y, void * void_ptr, long left, long right)
 {
@@ -3495,7 +3495,7 @@ void _BloodBible_Description_Calculator(void (*fp_show)(Rect, void *, long, long
 
 	S_BLOOD_BIBLE_DESCRIPTION *desc = (S_BLOOD_BIBLE_DESCRIPTION*) void_ptr;
 
-	//////////////////////////////// start calculation
+	//////////////////////////////// 계산 시작
 	int line_count = 0;
 	int width = 0;//, height = 0;
 
@@ -3560,7 +3560,7 @@ void _BloodBible_Description_Calculator(void (*fp_show)(Rect, void *, long, long
 		rect.y = 0;
 //		rect.y = y+right;
 
-	//////////////////////////////// end calculation
+	//////////////////////////////// 계산 끝
 
 	g_descriptor_manager.RectCalculationFinished(fp_show, rect, void_ptr, left, right);
 }
@@ -3570,13 +3570,13 @@ void _BloodBible_Description_Calculator(void (*fp_show)(Rect, void *, long, long
 // _Multiline_Description_Calculator
 //
 // void_ptr = S_DEFAULT_HELP_STRING *
-// left = item count
+// left = 아이템 개수
 //-----------------------------------------------------------------------------
 void _Multiline_Info_Calculator(void (*fp_show)(Rect, void *, long, long), int x, int y, void * void_ptr, long left, long right)
 {
 	Rect rect;
 
-	//////////////////////////////// start calculation
+	//////////////////////////////// 계산 시작
 	
 	int line_count = 0;
 
@@ -3611,7 +3611,7 @@ void _Multiline_Info_Calculator(void (*fp_show)(Rect, void *, long, long), int x
 		rect.x = g_GameRect.right-rect.w;
 	if (rect.y < 0)
 		rect.y = y+right;
-	//////////////////////////////// end calculation
+	//////////////////////////////// 계산 끝
 
 	g_descriptor_manager.RectCalculationFinished(fp_show, rect, void_ptr, left, right);
 }
@@ -3655,7 +3655,7 @@ void	_Multiline_Info_Show(Rect rect, void * void_ptr, long left, long right)
 //			filledRect(&dest_surface, &dest_rect, BLACK);
 //#endif
 			SetRect(&_rect, rect.x, rect.y, rect.x+rect.w, rect.y+rect.h);
-			// REMOVED: DrawRect with LIGHT_MAGENTA was overwriting the alpha-blended background
+			// 제거됨: LIGHT_MAGENTA로 DrawRect를 하면 알파 블렌딩된 배경을 덮어써서 삭제함
 		// gpC_base->m_p_DDSurface_back->DrawRect(&_rect, LIGHT_MAGENTA);
 //			rectangle(&dest_surface, dest_rect.x, dest_rect.y, dest_rect.x+dest_rect.w-1, dest_rect.y+dest_rect.h-1, LIGHT_MAGENTA);
 //
@@ -3668,7 +3668,7 @@ void	_Multiline_Info_Show(Rect rect, void * void_ptr, long left, long right)
 //#endif
 
 	//
-	// show contents
+	// 내용 표시
 	//
 	int px = rect.x+SIDE_GAP_HALF;
 	int py = rect.y+SIDE_GAP_HALF;

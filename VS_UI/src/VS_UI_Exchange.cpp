@@ -2,7 +2,7 @@
 
 #include "client_PCH.h"
 #define assert(e) ((void)(e))
-// Disabled assert for macOS
+// macOS용으로 assert 비활성화
 
 #pragma warning(disable:4786)
 
@@ -147,7 +147,7 @@ C_VS_UI_EXCHANGE::C_VS_UI_EXCHANGE()
 		break;
 	}
 
-	// set button
+	// button 설정
 	m_pC_button_group = new ButtonGroup(this);
 
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+button_x, y+ok_button_y, gpC_global_resource->m_pC_assemble_box_button_spk->GetWidth(C_GLOBAL_RESOURCE::AB_BUTTON_O), gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_O), EXCHANGE_OK_ID, this, C_GLOBAL_RESOURCE::AB_BUTTON_O));
@@ -296,7 +296,7 @@ bool C_VS_UI_EXCHANGE::Click(int grid_start_x, int grid_start_y)
 				}
 				else
 				{
-					// failed.
+					// 실패.
 					return false;
 				}
 			}
@@ -323,7 +323,7 @@ bool C_VS_UI_EXCHANGE::Click(int grid_start_x, int grid_start_y)
 					}
 					else
 					{
-						// not replace, just drop at empty grid.
+						// 교체하지 않고, 빈 그리드에 그냥 놓는다.
 
 						gpC_base->SendMessage(UI_ITEM_DROP_TO_INVENTORY, 
 											  m_focus_grid_x, m_focus_grid_y,
@@ -335,7 +335,7 @@ bool C_VS_UI_EXCHANGE::Click(int grid_start_x, int grid_start_y)
 				}
 				else
 				{
-					// failed.
+					// 실패.
 					return false;
 				}
 			}
@@ -757,7 +757,7 @@ bool	C_VS_UI_EXCHANGE::MouseControl(UINT message, int _x, int _y)
 					py = _y;
 				}
 
-				// search grid
+				// 그리드 검색
 				int distance_x = px - m_my_grid_rect.x;
 				int distance_y = py - m_my_grid_rect.y;
 
@@ -776,7 +776,7 @@ bool	C_VS_UI_EXCHANGE::MouseControl(UINT message, int _x, int _y)
 						int a, b;
 						switch (i)
 						{
-							case 0: // left up - first!
+							case 0: // 왼쪽 위 - 첫 번째!
 								a = m_focus_grid_x+p_pickup_item->GetGridWidth()-C_VS_UI_INVENTORY::GRID_X;
 								b = m_focus_grid_y+p_pickup_item->GetGridHeight()-C_VS_UI_INVENTORY::GRID_Y;
 								if (a > 0)
@@ -785,21 +785,21 @@ bool	C_VS_UI_EXCHANGE::MouseControl(UINT message, int _x, int _y)
 									m_focus_grid_y -= b;
 								break;
 
-							case 1: // right up
+							case 1: // 오른쪽 위
 								m_focus_grid_x = 0;
 								b = m_focus_grid_y+p_pickup_item->GetGridHeight()-C_VS_UI_INVENTORY::GRID_Y;
 								if (b > 0)
 									m_focus_grid_y -= b;
 								break;
 
-							case 2: // left down
+							case 2: // 왼쪽 아래
 								m_focus_grid_y = 0;
 								a = m_focus_grid_x+p_pickup_item->GetGridWidth()-C_VS_UI_INVENTORY::GRID_X;
 								if (a > 0)
 									m_focus_grid_x -= a;
 								break;
 
-							case 3: // right down
+							case 3: // 오른쪽 아래
 								m_focus_grid_y = 0;
 								if (m_focus_grid_x+1 <= p_pickup_item->GetGridHeight())
 									m_focus_grid_x = 0;
@@ -811,10 +811,10 @@ bool	C_VS_UI_EXCHANGE::MouseControl(UINT message, int _x, int _y)
 						g_descriptor_manager.Set(DID_ITEM, GetFocusedItemGridX(p_selected_item), GetFocusedItemGridY(p_selected_item), (void *)p_selected_item);
 
 					return true;
-//					break; // escape 'for'
+//					break; // for문 탈출
 				}
 
-				// other grid
+				// 다른 그리드
 				distance_x = px - m_your_grid_rect.x;
 				distance_y = py - m_your_grid_rect.y;
 
@@ -831,7 +831,7 @@ bool	C_VS_UI_EXCHANGE::MouseControl(UINT message, int _x, int _y)
 						int a, b;
 						switch (i)
 						{
-							case 0: // left up - first!
+							case 0: // 왼쪽 위 - 첫 번째!
 								a = focus_grid_x+p_pickup_item->GetGridWidth()-C_VS_UI_INVENTORY::GRID_X;
 								b = focus_grid_y+p_pickup_item->GetGridHeight()-C_VS_UI_INVENTORY::GRID_Y;
 								if (a > 0)
@@ -840,21 +840,21 @@ bool	C_VS_UI_EXCHANGE::MouseControl(UINT message, int _x, int _y)
 									focus_grid_y -= b;
 								break;
 
-							case 1: // right up
+							case 1: // 오른쪽 위
 								focus_grid_x = 0;
 								b = focus_grid_y+p_pickup_item->GetGridHeight()-C_VS_UI_INVENTORY::GRID_Y;
 								if (b > 0)
 									focus_grid_y -= b;
 								break;
 
-							case 2: // left down
+							case 2: // 왼쪽 아래
 								focus_grid_y = 0;
 								a = focus_grid_x+p_pickup_item->GetGridWidth()-C_VS_UI_INVENTORY::GRID_X;
 								if (a > 0)
 									focus_grid_x -= a;
 								break;
 
-							case 3: // right down
+							case 3: // 오른쪽 아래
 								focus_grid_y = 0;
 								if (focus_grid_x+1 <= p_pickup_item->GetGridHeight())
 									focus_grid_x = 0;
@@ -865,7 +865,7 @@ bool	C_VS_UI_EXCHANGE::MouseControl(UINT message, int _x, int _y)
 					if (p_selected_item != NULL)
 						g_descriptor_manager.Set(DID_ITEM, GetFocusedOtherItemGridX(p_selected_item), GetFocusedOtherItemGridY(p_selected_item), (void *)p_selected_item);
 
-					break; // escape 'for'
+					break; // for문 탈출
 				}
 			}
 			if(gpC_Imm && m_focus_grid_x != NOT_SELECTED || m_focus_grid_y != NOT_SELECTED)
@@ -998,7 +998,7 @@ void	C_VS_UI_EXCHANGE::Show()
 		gpC_global_resource->m_pC_assemble_box_button_spk->BltLocked(x+m_my_name_x, y+m_my_name_y, C_GLOBAL_RESOURCE::AB_NAME_BAR);
 		gpC_global_resource->m_pC_assemble_box_button_spk->BltLocked(x+m_your_name_x, y+m_your_name_y, C_GLOBAL_RESOURCE::AB_NAME_BAR);
 
-		// money
+		// 돈
 		gpC_global_resource->m_pC_assemble_box_button_spk->BltLocked(x+m_inventory_money_button_point.x+25, y+m_inventory_money_button_point.y, C_GLOBAL_RESOURCE::AB_MONEY_BAR);
 		gpC_global_resource->m_pC_assemble_box_button_spk->BltLocked(x+m_money_button_point.x+25, y+m_money_button_point.y, C_GLOBAL_RESOURCE::AB_MONEY_BAR);
 		gpC_global_resource->m_pC_assemble_box_button_spk->BltLocked(x+m_your_money_button_point.x+25, y+m_your_money_button_point.y, C_GLOBAL_RESOURCE::AB_MONEY_BAR);
@@ -1019,7 +1019,7 @@ void	C_VS_UI_EXCHANGE::Show()
 
 		//----------------------------------------------------------------
 		//
-		// show My trade Item
+		// 내 거래 아이템 표시
 		//
 		//----------------------------------------------------------------
 		g_pTradeManager->GetMyInventory()->SetBegin();
@@ -1033,7 +1033,7 @@ void	C_VS_UI_EXCHANGE::Show()
 			// p_item은 NULL이 반드시 아니다. 왜냐하면 존재하는 것만 Get()하기 때문이다.
 			assert(p_item);
 
-			// frame id -> sprite id
+			// frame id -> sprite id 변환
 			TYPE_FRAMEID frame_id = p_item->GetInventoryFrameID();
 
 			int item_x = GetFocusedItemGridX(p_item);
@@ -1124,7 +1124,7 @@ void	C_VS_UI_EXCHANGE::Show()
 				{
 					if (p_item->IsAffectStatus())
 					{
-						// frame id -> sprite id
+						// frame id -> sprite id 변환
 						gpC_item->BltLocked(item_x, item_y, frame_id);
 						if(p_item->GetItemClass() == ITEM_CLASS_OUSTERS_WRISTLET && g_eRaceInterface == RACE_OUSTERS)
 						{
@@ -1235,7 +1235,7 @@ void	C_VS_UI_EXCHANGE::Show()
 		}
 
 		//
-		// show Your trade item
+		// 상대 거래 아이템 표시
 		//
 		g_pTradeManager->GetOtherInventory()->SetBegin();
 
@@ -1246,7 +1246,7 @@ void	C_VS_UI_EXCHANGE::Show()
 			// p_item은 NULL이 반드시 아니다. 왜냐하면 존재하는 것만 Get()하기 때문이다.
 			assert(p_item);
 
-			// frame id -> sprite id
+			// frame id -> sprite id 변환
 			TYPE_FRAMEID frame_id = p_item->GetInventoryFrameID();
 
 			int item_x = m_your_grid_rect.x+C_VS_UI_INVENTORY::GRID_UNIT_PIXEL_X*p_item->GetGridX();
@@ -1287,7 +1287,7 @@ void	C_VS_UI_EXCHANGE::Show()
 				CIndexSprite::SetUsingColorSet(const_cast<MItem *>(p_item)->GetItemOptionColorSet(), 0);
 			if (p_item->IsAffectStatus())
 			{
-				// frame id -> sprite id
+				// frame id -> sprite id 변환
 				gpC_item->BltLocked(item_x, item_y, frame_id);
 				if(p_item->GetItemClass() == ITEM_CLASS_OUSTERS_WRISTLET && g_eRaceInterface == RACE_OUSTERS)
 				{
@@ -1441,10 +1441,10 @@ void	C_VS_UI_EXCHANGE::Show()
 		}
 	}
 	// 2004, 12, 14, sobeit modify end
-	// show my name on trade interace
+	// 거래 화면에 내 이름 표시
 	g_Print(x+m_my_name_x+6, y+m_my_name_y+2, g_char_slot_ingame.sz_name.c_str(), &gpC_base->m_char_value_pi);
 
-	// show your name on trade interface
+	// 거래 화면에 상대 이름 표시
 	g_Print(x+m_your_name_x+6, y+m_your_name_y+2, g_pTradeManager->GetOtherName(), &gpC_base->m_char_value_pi);
 
 //글자 출력용 dc를 풀어준다.

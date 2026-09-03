@@ -256,7 +256,7 @@ public:
 class C_VS_UI_MONEY_DIALOG : public C_VS_UI_DIALOG
 {
 public :
-	enum TYPE_MONEY_DIALOG {		// by sigi
+	enum TYPE_MONEY_DIALOG {		// sigi 작성
 		MONEY_DROP,
 		MONEY_DEPOSIT,
 		MONEY_WITHDRAW,
@@ -283,16 +283,16 @@ private:
 
 	Point							m_money_dialog_pt;
 
-	//static char *				m_sz_question_msg[1];	// 주석처리 by sigi
-	//static char *				m_sz_question_msg_for_storage[1];	// 주석처리 by sigi
-	char *					m_sz_question_msg[MAX_MONEY_DIALOG_TYPE][1];		// by sigi
+	//static char *				m_sz_question_msg[1];	// 주석처리, sigi 작성
+	//static char *				m_sz_question_msg_for_storage[1];	// 주석처리, sigi 작성
+	char *					m_sz_question_msg[MAX_MONEY_DIALOG_TYPE][1];		// sigi 작성
 
-	TYPE_MONEY_DIALOG		m_type;	// dialog type	 by sigi
+	TYPE_MONEY_DIALOG		m_type;	// dialog type, sigi 작성
 	
 	void	ScrollButton(bool up);
 
 public:
-	C_VS_UI_MONEY_DIALOG(int _x, int _y, int center_x, int center_y, void (*exec_fp)(C_VS_UI_DIALOG *, id_t), WORD dd_button, int digit_count, TYPE_MONEY_DIALOG type); // type 추가  by sigi
+	C_VS_UI_MONEY_DIALOG(int _x, int _y, int center_x, int center_y, void (*exec_fp)(C_VS_UI_DIALOG *, id_t), WORD dd_button, int digit_count, TYPE_MONEY_DIALOG type); // type 추가, sigi 작성
 	~C_VS_UI_MONEY_DIALOG();
 
 	void	Start();
@@ -312,11 +312,11 @@ public:
 class C_VS_UI_ASK_DIALOG : public C_VS_UI_DIALOG
 {
 public :
-	enum TYPE_ASK_DIALOG {		// by sigi
+	enum TYPE_ASK_DIALOG {		// sigi 작성
 		ASK_STORAGE_BUY,
 		ASK_EXCHANGE,
 		ASK_EXCHANGE_CANCEL,
-//		ASK_TUTORIAL_EXIT,		// by larosel
+//		ASK_TUTORIAL_EXIT,		// larosel 작성
 		ASK_PARTY_REQUEST,
 		ASK_PARTY_INVITE,
 		ASK_PARTY_CANCEL,
@@ -332,7 +332,7 @@ public :
 		ASK_USE_SMSITEM,		// sms item 을 사용하시겠습니까?
 		ASK_USE_NAMINGITEM,		// 네이밍 아이템을 사용 하겠습니까?
 		ASK_GET_EVENT_ITEM,		// 이벤트 아이템을 받으시겠습니까?
-		//add by viva : ask_friend_request
+		// viva 추가 : ask_friend_request
 		ASK_FRIEND_REQUEST,
 		ASK_FRIEND_REFUSE,
 		ASK_FRIEND_WAIT,

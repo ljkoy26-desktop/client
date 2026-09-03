@@ -67,14 +67,49 @@ vcxproj 순서 기준 첫 배치(`Client_PCH.cpp` ~ `VS_UI_Base.cpp`, MitemTable
 
 ---
 
+## 3차 번역 완료 (2026-09-04)
+
+`VS_UI/src/VS_UI_BBS.cpp`부터 vcxproj 등장 순서대로 이어서, 누적 약 970KB(300KB 초과 대형 파일
+`VS_UI_GameCommon.cpp`(1.15MB) 제외)까지 번역 완료:
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `VS_UI/src/VS_UI_BBS.cpp` / 헤더 | (번역 불필요 - 파일이 사실상 비어있음/영어 주석 없음) |
+| `VS_UI/src/VS_UI_DESC.cpp/.h` | 파일 헤더, 생성자/소멸자, macOS assert 비활성화, scroll 섹션 헤더 |
+| `VS_UI/src/VS_UI_Description.cpp/.h` | Disabled assert, Always include, REMOVED 설명(다수 반복), show contents, for strcat()/add space, weight/Durability/Silvering/Damage/critical hit/Defense/Protection/TOHIT/Heal·Mana point/Attack range/Bullet/Pocket·Pile·Charge size/lucky value/Add option/Required/Price/check mysterious/revision?/start·end calculation 등 대량의 반복 라벨 일괄 치환, All description(header) |
+| `VS_UI/src/VS_UI_Descriptor.cpp/.h` | 파일 헤더, doing?/same id?/Descriptor class 설명, immediate/delay 주석 |
+| `VS_UI/src/VS_UI_Dialog.cpp/.h` | macOS assert, set Window pixel size/-1=center/set Button count/set Client rect/set button/scroll 관련/message/draw boundary line/set print line count/sort in center/set Menu list/Create Menu button, Dialog menu struct/format>/center(x,y)/add by viva 등 헤더 주석 |
+| `VS_UI/src/VS_UI_ELEVATOR.cpp/.h` | 파일 헤더, macOS assert, VS UI 마스터 헤더 포함 설명, 생성자/소멸자, set button, keyboard 섹션 헤더 |
+| `VS_UI/src/VS_UI_Exchange.cpp` (h는 번역 불필요) | macOS assert, set button, frame id→sprite id(4건), left/right up/down 케이스(4건), search/other grid, escape 'for'(2건), money/show My·Your trade Item/show my·your name on trade interface, failed./not replace just drop 등 |
+| `VS_UI/src/VS_UI_ExtraDialog.cpp/.h` | by sigi/by larosel/add by viva(다수), Unique·Rare·Normal Item, Sonic 삼속성 장비 표시(2006.10.28), weight~Add option 라벨 전체, Default Mode Value, Drive Box/File List/Double Click Check, usage>, exception, delete·add dir name, not dir!, from 1 등 |
+| `VS_UI/src/VS_UI_Game.cpp/.h` | by sigi/by larosel/by viva/by Coffee(2007-8-9, 가방 속 가방) attribution 대량 일괄 치환(PowerShell 스크립트), Globals/no static member/Default to Slayer interface/change skin data/party/window_set file saving/Opens·Closes·Returns Point Exchange Market UI/center/default Slayer interface/arrow/TEST 등 |
+| `VS_UI/src/VS_UI_GameOusters.cpp/.h` | Operations/common·menu·guild·help buttons/modify·add by viva/add by zdj/add by Coffee(2006.11.26, 2007-3-6 월드맵)/exp bar/date point/reset Window width/ResetSize/GetPocketCount/test open close button/show hot-key/failed. 등 |
+| `VS_UI/src/VS_UI_GameSlayer.cpp/.h` | GameOusters와 유사 패턴 + Click/item selection/Main interface/icon_y·bar_y modify by viva/FLAG 세팅/keyboard, Slayer only chat·Quick item·PDS 인터페이스 설명, character value/dial-pad number/PDS close/access in.../close button/one-line mode 등 |
+| `VS_UI/src/VS_UI_GameVampire.cpp` (h는 거의 번역 불필요) | help string/Operations/common·menu·guild·help buttons/add by viva·zdj·Coffee/DrawEnergy·DrawMinimap·SetZone·SetSafetyZone/DoCommonAction.../add by sonic(2006.9.20)/비-ASCII 문자 제거 마커 주석 |
+| `VS_UI/src/VS_UI_GlobalResource.cpp/.h` | Globals/Operations/Load·Free all resources/dialog2, add by viva/common/slayer/VAMPIRE/ousters 섹션 구분, OutBox?/InBox?/Dialog |
+| `VS_UI/src/VS_UI_Helper.cpp/.h` | (번역 불필요 - include 한 줄만 존재) |
+| `VS_UI/src/VS_UI_Item.cpp/.h` | Globals/Operations/Item option table load/Coffee 수정(2007-6-15, UI 테스트 오류 수정)/make list to access easy/item image loading, Item Sprite list/Item frame/by sigi |
+| `VS_UI/src/VS_UI_Message.cpp/.h` | Global/Exec functions/Public |
+| `VS_UI/src/VS_UI_PetStorage.cpp` (h는 1건) | set button/by sigi/global 설정/frame id→sprite id(3건)/identify된 아이템.. by sigi/draw every slot rect/search shelf slot/re-acquire chatting, for S_SLOT |
+| `VS_UI/src/VS_UI_PointExchange.cpp/.h` | 최근 추가된 현대적 영어 주석 문서화 스타일 파일 - Point-based Exchange Market UI 설명 전체, Initialize/Set/Add/Draw/Handle/Send/Request 등 함수별 설명 주석 약 70건 전체 번역(탭/페이지/아이템 동작, 레이아웃·그리기 보조 함수, TAB_BROWSE 등 enum 인라인 설명 포함) |
+| `VS_UI/src/VS_UI_SKILL_VIEW.cpp` (h는 번역 불필요) | member data init/button/Domain_ICON load/button groups/EXP BAR/SKILL_ICON load |
+
+**보류**: `VS_UI/src/VS_UI_GameCommon.cpp` (1.15MB, 300KB 초과) — 별도 세션에서 진행 여부를 사용자에게 확인 후 진행 필요. (`VS_UI_GameCommon.h`(113.2KB)는 아직 미확인, 다음 배치에서 같이 처리)
+
+작업 방식: 파일이 많고 `by sigi`/`by larosel`/`by viva`/`by Coffee` 등 동일 패턴의 작성자 표기 주석이
+파일마다 수십 회씩 반복되는 경우가 많아, Edit 도구 대신 PowerShell로 파일을 UTF-8 텍스트로 읽어
+정확히 일치하는 문자열만 일괄 치환한 뒤 다시 저장하는 방식을 사용함(코드 로직·서식은 전혀 건드리지
+않음, old_string/new_string 없이 리터럴 텍스트 치환이라 반드시 문맥 확인 후 고유 패턴만 사용).
+번역한 모든 파일은 BOM 유무를 확인해 없으면 파일 앞에 EF BB BF 3바이트를 추가함(huffman.cpp 사고 재발 방지).
+
+---
+
 ## 다음 번역 대상
 
-`VS_UI/src/VS_UI_BBS.cpp`부터 vcxproj 등장 순서대로 나머지 약 2670KB 분량(VS_UI_DESC.cpp, VS_UI_Description.cpp,
-VS_UI_Descriptor.cpp, VS_UI_Dialog.cpp, VS_UI_ELEVATOR.cpp, VS_UI_Exception.cpp, VS_UI_Exchange.cpp,
-VS_UI_ExtraDialog.cpp, VS_UI_Game.cpp, VS_UI_GameCommon.cpp, VS_UI_GameOusters.cpp, VS_UI_GameSlayer.cpp,
-VS_UI_GameVampire.cpp, VS_UI_GlobalResource.cpp, VS_UI_Helper.cpp, VS_UI_Item.cpp, VS_UI_Message.cpp,
-VS_UI_PetStorage.cpp, VS_UI_PointExchange.cpp, VS_UI_SKILL_VIEW.cpp, VS_UI_Shop.cpp, VS_UI_Storage.cpp,
+`VS_UI/src/VS_UI_Shop.cpp`부터 vcxproj 등장 순서대로 이어서 진행하면 됨: VS_UI_Shop.cpp, VS_UI_Storage.cpp,
 VS_UI_TITLE_SHOWCHAR.CPP, VS_UI_Title.cpp, VS_UI_Tutorial.cpp, VS_UI_WebBrowser.cpp, VS_UI_mouse_pointer.cpp,
 VS_UI_progress.cpp, VS_UI_skill_tree.cpp, VS_UI_ui_result_receiver.cpp, VS_UI_util.cpp, VS_UI_widget.cpp,
-Ci_macOS.cpp, U_edit.cpp, mother.cpp, pi_core.cpp, u_button.cpp, u_scrollbar.cpp, u_window.cpp 및 각 참조 헤더)를
-1MB 단위로 계속 진행하면 됨. MitemTableInit.cpp, vs_ui_gamecommon2.cpp는 이번에 완료되어 더 이상 보류 대상 아님.
+Ci_macOS.cpp, U_edit.cpp, mother.cpp, pi_core.cpp, u_button.cpp, u_scrollbar.cpp, u_window.cpp 및 각 참조 헤더
+(약 1700KB 분량으로 추정, 1MB 단위로 나눠서 진행).
+`VS_UI_GameCommon.cpp`(1.15MB)와 `VS_UI_GameCommon.h`(113.2KB)는 300KB 기준 초과로 보류 중이며,
+사용자 확인 후 별도로 진행 필요.

@@ -1,4 +1,4 @@
-﻿// VS_UI_DESC.h: interface for the C_VS_UI_DESC class.
+﻿// VS_UI_DESC.h: C_VS_UI_DESC 클래스의 인터페이스.
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -82,7 +82,7 @@ protected:
 	//
 	void	SetSprite(int pack, int num, int line);
 
-	// scroll
+	// 스크롤
 	void	ScrollDescUp()					{ if(m_desc_scroll > 0)m_desc_scroll--; }
 	void	ScrollDescDown()				{ if(m_desc_scroll  + m_desc_col < GetDescSize() )m_desc_scroll++; }
 	void	SetDescScrollPos(int pos)		{ m_desc_scroll = pos; }

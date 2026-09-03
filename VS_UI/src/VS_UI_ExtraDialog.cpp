@@ -2,7 +2,7 @@
 
 #include "client_PCH.h"
 #define assert(e) ((void)(e))
-// Disabled assert for macOS
+// macOS용으로 assert 비활성화
 
 #pragma warning(disable:4786)
 
@@ -33,7 +33,7 @@ char * C_VS_UI_EDIT_DIALOG::m_sz_question_msg[1] = {"이 아이템            �
 //char * C_VS_UI_MONEY_DIALOG::m_sz_question_msg[1] = {"버릴 금액을 입력하세요."};
 //char * C_VS_UI_MONEY_DIALOG::m_sz_question_msg_for_storage[1] = {"보관할 금액을 입력하세요."};
 
-char * C_VS_UI_MONEY_DIALOG::m_sz_question_msg[MAX_MONEY_DIALOG_TYPE][1] = {	// by sigi
+char * C_VS_UI_MONEY_DIALOG::m_sz_question_msg[MAX_MONEY_DIALOG_TYPE][1] = {	// sigi 작성
 	{  "버릴 금액을 입력하세요." } ,
 	{  "보관할 금액을 입력하세요." } ,
 	{  "찾을 금액을 입력하세요." } ,
@@ -41,7 +41,7 @@ char * C_VS_UI_MONEY_DIALOG::m_sz_question_msg[MAX_MONEY_DIALOG_TYPE][1] = {	// 
 	{  "빼낼 금액을 입력하세요." } ,
 };
 
-char * C_VS_UI_ASK_DIALOG::m_sz_question_msg[MAX_ASK_DIALOG_TYPE][2] = {	// by sigi
+char * C_VS_UI_ASK_DIALOG::m_sz_question_msg[MAX_ASK_DIALOG_TYPE][2] = {	// sigi 작성
 	{  "보관함을 $%d에 사시겠습니까?"  },	
 	{  "%s 님과 거래하겠습니까?"  },
 	{  "%s 님의 응답을 기다립니다." ,  "취소하시려면 Cancel을 누르세요."   },
@@ -82,7 +82,7 @@ C_VS_UI_EDIT_DIALOG::C_VS_UI_EDIT_DIALOG(int _x, int _y, int center_x, int cente
 	m_buy_dialog_pt.x = m_client_rect.x + 90;
 	m_buy_dialog_pt.y = m_client_rect.y + 13;
 
-	// set scroll button rect
+	// 스크롤 버튼 rect 설정
 	m_scroll_button_up_rt.Set(m_buy_dialog_pt.x+SCROLL_BUTTON_OFFSET_X, m_buy_dialog_pt.y+SCROLL_BUTTON1_OFFSET_Y, SCROLL_BUTTON_WIDTH, SCROLL_BUTTON_HEIGHT);
 	m_scroll_button_down_rt.Set(m_buy_dialog_pt.x+SCROLL_BUTTON_OFFSET_X, m_buy_dialog_pt.y+SCROLL_BUTTON2_OFFSET_Y, SCROLL_BUTTON_WIDTH, SCROLL_BUTTON_HEIGHT);
 
@@ -143,7 +143,7 @@ void C_VS_UI_EDIT_DIALOG::Start()
 	m_bl_up_focused = false;
 	m_bl_down_focused = false;
 
-	char sz_temp[10];	// by sigi (원래는 2였당 - -;)
+	char sz_temp[10];	// sigi 작성 (원래는 2였당 - -;)
 	wsprintf(sz_temp, "%d", m_default_val);
 	m_lev_value.AddString(sz_temp);
 
@@ -374,7 +374,7 @@ void	C_VS_UI_MONEY_DIALOG::KeyboardControl(UINT message, UINT key, long extra)
 
 	int _MAX_MONEY = 0;
 
-	// by sigi
+	// sigi 작성
 	switch (m_type)
 	{
 		// 보관함에 넣기
@@ -537,7 +537,7 @@ int	C_VS_UI_MONEY_DIALOG::GetValue() const
 //
 // 
 //-----------------------------------------------------------------------------
-C_VS_UI_MONEY_DIALOG::C_VS_UI_MONEY_DIALOG(int _x, int _y, int center_x, int center_y, void (*exec_fp)(C_VS_UI_DIALOG *, id_t), WORD dd_button, int digit_count, TYPE_MONEY_DIALOG type) :	// type 추가 by sigi
+C_VS_UI_MONEY_DIALOG::C_VS_UI_MONEY_DIALOG(int _x, int _y, int center_x, int center_y, void (*exec_fp)(C_VS_UI_DIALOG *, id_t), WORD dd_button, int digit_count, TYPE_MONEY_DIALOG type) :	// type 추가, sigi 작성
 							C_VS_UI_DIALOG(_x, _y, center_x, center_y, exec_fp, dd_button)
 {
 	/*	// 주석처리 by sigi
@@ -559,7 +559,7 @@ C_VS_UI_MONEY_DIALOG::C_VS_UI_MONEY_DIALOG(int _x, int _y, int center_x, int cen
 
 	m_type = type;										
 
-	SetMessage(m_sz_question_msg[type], 1);//, SMO_NOFIT);		// by sigi
+	SetMessage(m_sz_question_msg[type], 1);//, SMO_NOFIT);		// sigi 작성
 
 	if (digit_count < 0)
 		digit_count = 0;
@@ -860,7 +860,7 @@ C_VS_UI_ASK_DIALOG::C_VS_UI_ASK_DIALOG(int _x, int _y, int center_x, int center_
 			SetMessage(m_sz_question_msg_temp, 1, SMO_NOFIT );
 			break;
 
-			//add by viva--------------------------------------ASK_FRIEND_REQUEST-----------------------
+			// viva 추가--------------------------------------ASK_FRIEND_REQUEST-----------------------
 		case ASK_FRIEND_REQUEST :
 		case ASK_FRIEND_REFUSE:
 		case ASK_FRIEND_WAIT:
@@ -1454,7 +1454,7 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 			
 			title_pi = gpC_base->m_item_name_pi;
 
-			if(p_item->IsUniqueItem() || p_item->IsQuestItem())			// Unique Item?
+			if(p_item->IsUniqueItem() || p_item->IsQuestItem())			// 유니크 아이템?
 			{
 				WORD temp_color;
 				if(p_item->IsQuestItem() )
@@ -1463,18 +1463,18 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 					temp_color = CIndexSprite::ColorSet[g_pClientConfig->UniqueItemColorSet+13][31];					
 				title_color = RGB(CSDLGraphics::Red(temp_color)<<3, CSDLGraphics::Green(temp_color)<<3, CSDLGraphics::Blue(temp_color)<<3);
 			} else
-			if(p_item->GetItemOptionListCount() == 2 )			// Rare Item ? 
+			if(p_item->GetItemOptionListCount() == 2 )			// 레어 아이템?
 			{
 				title_color = g_pClientConfig->COLOR_NAME_ITEM_RARE_OPTION;
 			} 
-			// add by Sonic 2006.10.28 增加显示三属性装备为红色
+			// Sonic 추가, 2006.10.28, 삼속성 장비를 빨간색으로 표시하는 기능 추가
 			else if(p_item->GetItemOptionListCount() > 2)
 			{
-				title_color = g_pClientConfig->COLOR_NAME_VAMPIRE; //Red
+				title_color = g_pClientConfig->COLOR_NAME_VAMPIRE; // 빨간색
 			}
-			// end by Sonic 2006.10.28 增加显示三属性装备为红色
+			// Sonic 추가 끝, 2006.10.28, 삼속성 장비를 빨간색으로 표시하는 기능 추가
 			else
-				title_color = RGB_YELLOW;						// Normal Item
+				title_color = RGB_YELLOW;						// 일반 아이템
 			pi = gpC_base->m_desc_msg_pi;
 			color = RGB_WHITE;
 			
@@ -1513,12 +1513,12 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 			ReduceString2(sz_temp,55);			
 			SetDescTitle(sz_temp);
 
-			// weight
+			// 무게
 //			wsprintf(sz_temp, "\t무게 : %d", p_item->GetWeight());
 //			temp_string = sz_temp;
 //			m_rep_string.push_back(temp_string);
-			
-			// Durability
+
+			// 내구도
 			if(p_item->IsGunItem())
 			{
 				switch(p_item->GetItemClass())
@@ -1552,7 +1552,7 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 				m_rep_string.push_back(temp_string);
 			}
 			
-			// Silver
+			// 실버
 			if (p_item->GetSilverMax() != -1)
 			{
 				wsprintf(sz_temp, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DIALOG_SILVERING].GetString(), p_item->GetSilverMax());
@@ -1560,7 +1560,7 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 				m_rep_string.push_back(temp_string);
 			}
 			
-			// Damage
+			// 데미지
 			if (p_item->GetMaxDamage() != -1) // damage가 있는가?
 			{
 				wsprintf(sz_temp, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DIALOG_DAMAGE].GetString(), p_item->GetMinDamage(), p_item->GetMaxDamage());
@@ -1568,7 +1568,7 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 				m_rep_string.push_back(temp_string);
 			}
 			
-			// critical hit
+			// 크리티컬 히트
 			if (p_item->GetCriticalHit() != -1) // 크리티컬히트가 있는가?
 			{
 				wsprintf(sz_temp, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DIALOG_CRITICALHIT].GetString(), p_item->GetCriticalHit());
@@ -1576,7 +1576,7 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 				m_rep_string.push_back(temp_string);
 			}
 			
-			// Defense
+			// 방어력
 			if (p_item->GetDefenseValue() != -1)
 			{
 				wsprintf(sz_temp, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DIALOG_DEFENSE].GetString(), p_item->GetDefenseValue());
@@ -1584,7 +1584,7 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 				m_rep_string.push_back(temp_string);
 			}
 			
-			// Protection
+			// 보호력
 			if (p_item->GetProtectionValue() != -1)
 			{
 				wsprintf(sz_temp, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DIALOG_PROTECTION].GetString(), p_item->GetProtectionValue());
@@ -1592,7 +1592,7 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 				m_rep_string.push_back(temp_string);
 			}
 			
-			// TOHIT
+			// 명중률
 			if (p_item->GetToHit() != -1)
 			{
 				wsprintf(sz_temp, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DIALOG_ACCURACY].GetString(), p_item->GetToHit());
@@ -1600,7 +1600,7 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 				m_rep_string.push_back(temp_string);
 			}
 			
-			// Heal point
+			// 회복량
 			if (p_item->GetHealPoint() != -1)
 			{
 				wsprintf(sz_temp, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DIALOG_HP].GetString(), p_item->GetHealPoint());
@@ -1608,7 +1608,7 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 				m_rep_string.push_back(temp_string);
 			}
 			
-			// Mana point
+			// 마나량
 			if (p_item->GetManaPoint() != -1)
 			{
 				wsprintf(sz_temp, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DIALOG_MP].GetString(), p_item->GetManaPoint());
@@ -1616,7 +1616,7 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 				m_rep_string.push_back(temp_string);
 			}
 			
-			// Attack range
+			// 공격 사거리
 			if (p_item->GetReach() != -1 && p_item->GetReach() != 1)
 			{
 				wsprintf(sz_temp, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DIALOG_RANGE].GetString(), p_item->GetReach());
@@ -1624,7 +1624,7 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 				m_rep_string.push_back(temp_string);
 			}
 			
-			// Bullet
+			// 탄환
 			if (p_item->GetMagazineSize() != -1)
 			{
 				wsprintf(sz_temp, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DIALOG_MAGAZINE_NUM].GetString(), p_item->GetMagazineSize());
@@ -1632,7 +1632,7 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 				m_rep_string.push_back(temp_string);
 			}
 			
-			// Pocket size
+			// Pocket 크기
 			if (p_item->GetPocketNumber() != -1)
 			{
 				wsprintf(sz_temp, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_DIALOG_POCKET_NUM].GetString(), p_item->GetPocketNumber());
@@ -1640,7 +1640,7 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 				m_rep_string.push_back(temp_string);
 			}
 			
-			// Pile size
+			// Pile 크기
 //			if (p_item->IsPileItem() == true)
 //			{
 //				wsprintf(sz_temp, "\t아이템 개수 : %d개", p_item->GetNumber());
@@ -1648,7 +1648,7 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 //				m_rep_string.push_back(temp_string);
 //			}
 			
-			// Add option
+			// 옵션 추가
 			/*if (p_item->GetItemOptionListCount() != 0)
 			{
 				int option = p_item->GetItemOptionListCount();
@@ -1981,7 +1981,7 @@ C_VS_UI_DESC_DIALOG::C_VS_UI_DESC_DIALOG(id_t type, void* void_ptr, void* void_p
 				m_rep_string.push_back(temp_string);
 			}
 
-			// Price
+			// 가격
 //			if(//p_item->GetItemClass() != ITEM_CLASS_EVENT_GIFT_BOX
 				// && p_item->GetItemClass() != ITEM_CLASS_EVENT_STAR)
 //				p_item->GetItemClass() != ITEM_CLASS_EVENT_ETC
@@ -2314,7 +2314,7 @@ void	C_VS_UI_DESC_DIALOG::Finish()
 //-----------------------------------------------------------------------------
 // C_VS_UI_FILE_DIALOG::C_VS_UI_FILE_DIALOG
 //
-// Default Mode Value = MODE_PRO_FILE_SELECT
+// 기본 모드 값 = MODE_PRO_FILE_SELECT
 //-----------------------------------------------------------------------------
 C_VS_UI_FILE_DIALOG::C_VS_UI_FILE_DIALOG(MODE Mode)
 {
@@ -2571,7 +2571,7 @@ bool C_VS_UI_FILE_DIALOG::MouseControl(UINT message, int _x, int _y)
 
 	case M_LEFTBUTTON_DOWN:		
 	case M_LB_DOUBLECLICK :		
-		if(m_bl_open_drive)		// Select From Drive Box
+		if(m_bl_open_drive)		// 드라이브 박스에서 선택
 		{
 			if(_x>51&&_y>54&&_x<350&&_y<54+m_string_gap*mi_open_drive_count) 
 			{
@@ -2589,7 +2589,7 @@ bool C_VS_UI_FILE_DIALOG::MouseControl(UINT message, int _x, int _y)
 			} else
 				m_bl_open_drive = false;
 		} else
-		if(_y>35&&_x>30&&_y<49&&_x<340)			// Open Drive Box
+		if(_y>35&&_x>30&&_y<49&&_x<340)			// 드라이브 박스 열기
 		{
 			m_bl_open_drive=true;		
 		}
@@ -2602,7 +2602,7 @@ bool C_VS_UI_FILE_DIALOG::MouseControl(UINT message, int _x, int _y)
 	}*/
 		else 
 			if(_x > m_string_x-25 && _x < m_string_x+280 && 
-				_y > m_string_y && _y < m_string_y + m_scroll_max*m_string_gap)		// File List
+				_y > m_string_y && _y < m_string_y + m_scroll_max*m_string_gap)		// 파일 목록
 			{
 				int m_old_select = m_select;
 				m_select = (_y - m_string_y) / m_string_gap+m_pC_scroll_bar->GetScrollPos();
@@ -2610,7 +2610,7 @@ bool C_VS_UI_FILE_DIALOG::MouseControl(UINT message, int _x, int _y)
 				if(m_select >= m_vs_file_list.size()) m_select = -1;
 				
 				//if(message == M_LB_DOUBLECLICK && m_select != -1)
-				if( m_select == m_old_select && m_select != -1)			// Double Click Check
+				if( m_select == m_old_select && m_select != -1)			// 더블클릭 확인
 				{
 					if(m_vs_file_list_attr[m_select] & FILE_ATTRIBUTE_DIRECTORY) // 디렉토리일 경우 해당디렉토리로 옮김
 					{
@@ -3034,7 +3034,7 @@ bool	C_VS_UI_FILE_DIALOG::IsPixel(int _x, int _y)
 //---------------------------------------------------------------------------
 // 세미콜론으로 구분된 문자 뽑아내기
 // GetFileNameInString 함수를 사용하고 나서 반환된 값은 반드시 delete 해주세요.
-// usage>
+// 사용법>
 // char *name=GetFileNameInString(str,2);
 // MessageBox(NULL,name,name,MB_OK);
 // delete name;
@@ -3211,7 +3211,7 @@ void C_VS_UI_FILE_DIALOG::RefreshFileList(char *sz_dirname)
 	std::string			sz_filename;
 	int					n;
 
-	// exception
+	// 예외
 	if (sz_dirname[strlen(sz_dirname)-1] == '\\')
 		sz_dirname[strlen(sz_dirname)-1] = 0;
 	if (sz_dirname[strlen(sz_dirname)-1] == '*')
@@ -3323,7 +3323,7 @@ void C_VS_UI_FILE_DIALOG::ChangeDir(char *sz_cur_dirname, char *sz_pathname)
 	if (GetParentDir(sz_cur_dirname))
 	{ 
 		//
-		// delete dir name
+		// 디렉터리 이름 삭제
 		//
 		sz_pathname[strlen(sz_pathname)-4] = 0;
 
@@ -3336,7 +3336,7 @@ void C_VS_UI_FILE_DIALOG::ChangeDir(char *sz_cur_dirname, char *sz_pathname)
 	else
 	{
 		//
-		// add dir name
+		// 디렉터리 이름 추가
 		// `directory name의 추가가 가능한가? 그렇지 않다면 아무일도 하지 않는다.
 		//
 		if ((strlen(sz_pathname) + strlen(sz_cur_dirname) + 1 <= MAX_PATH) &&
@@ -3372,10 +3372,10 @@ bool C_VS_UI_FILE_DIALOG::GetParentDir(char *sz_name)
 
 	int n = strlen(sz_name);
 
-	if (sz_name[0] != '\\') return false; // not dir!
+	if (sz_name[0] != '\\') return false; // 디렉터리 아님!
 	if (n != 3) return false;
 
-	for (int i = 1; i < n; i++) // from 1
+	for (int i = 1; i < n; i++) // 1부터
 		if (sz_name[i] != '.')
 			return false;
 

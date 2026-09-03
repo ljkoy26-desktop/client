@@ -1,4 +1,4 @@
-// VS_UI_GlobalResource.cpp
+﻿// VS_UI_GlobalResource.cpp
 
 #include "client_PCH.h"
 #include "VS_UI_GlobalResource.h"
@@ -7,19 +7,19 @@
 #include "UserOption.h"
 
 //-----------------------------------------------------------------------------
-// Globals
+// 전역 변수
 //-----------------------------------------------------------------------------
 C_GLOBAL_RESOURCE	*	gpC_global_resource;
 bool	gbl_wood_skin;
 
 //-----------------------------------------------------------------------------
-// Operations
+// 동작
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
 // C_GLOBAL_RESOURCE
 //
-// Load all resources.
+// 모든 리소스를 로드한다.
 //-----------------------------------------------------------------------------
 C_GLOBAL_RESOURCE::C_GLOBAL_RESOURCE()
 {
@@ -39,7 +39,7 @@ C_GLOBAL_RESOURCE::C_GLOBAL_RESOURCE()
 //-----------------------------------------------------------------------------
 // ~C_GLOBAL_RESOURCE
 //
-// Free all resources.
+// 모든 리소스를 해제한다.
 //-----------------------------------------------------------------------------
 C_GLOBAL_RESOURCE::~C_GLOBAL_RESOURCE()
 {
@@ -413,7 +413,7 @@ void C_GLOBAL_RESOURCE::DrawDialogOnlyLocked(int x, int y, int w, int h)
 }
 
 
-// dialog2
+// dialog2(다이얼로그2)
 
 void C_GLOBAL_RESOURCE::DrawDialog2(Rect &rect, bool alpha)
 {

@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	VS_UI_PointExchange.h
 	  Point-based Exchange Market UI
@@ -16,11 +16,11 @@
 #include <vector>
 #include <string>
 
-// Forward declarations
+// 전방 선언
 class MItem;
 class C_VS_UI_SCROLL;
 
-// Exchange listing item for UI display
+// UI 표시용 거래소 목록 아이템
 struct ExchangeListingItem
 {
 	int64_t listingID;
@@ -34,7 +34,7 @@ struct ExchangeListingItem
 	int enchantLevel;
 	int optionCount;
 
-	// Display position
+	// 표시 위치
 	int displayX;
 	int displayY;
 };
@@ -62,17 +62,17 @@ private:
 
 	enum TAB_ID
 	{
-		TAB_BROWSE,          // Browse listings
-		TAB_MY_LISTINGS,     // My listings
-		TAB_MY_ORDERS,       // My orders
-		TAB_CLAIM,           // Claim items
+		TAB_BROWSE,          // 목록 둘러보기
+		TAB_MY_LISTINGS,     // 내 등록 목록
+		TAB_MY_ORDERS,       // 내 주문
+		TAB_CLAIM,           // 아이템 수령
 	};
 
 	enum EXEC_ID
 	{
 		BUTTON_CLOSE,
 		BUTTON_REFRESH,
-		BUY_CONFIRM,         // Confirm buy button
+		BUY_CONFIRM,         // 구매 확인 버튼
 		BUTTON_PREV_PAGE,
 		BUTTON_NEXT_PAGE,
 		TAB_BROWSE_BTN,
@@ -83,7 +83,7 @@ private:
 
 	enum
 	{
-		// Layout constants
+		// 레이아웃 상수
 		LISTING_START_X = 20,
 		LISTING_START_Y = 80,
 		LISTING_HEIGHT = 40,
@@ -102,26 +102,26 @@ private:
 	int							m_pageSize;
 	int							m_totalItems;
 
-	// Filter options
+	// 필터 옵션
 	int							m_filterItemClass;
 	int							m_filterItemType;
 	int							m_minPrice;
 	int							m_maxPrice;
 
-	// Selected item
+	// 선택된 아이템
 	ExchangeListingItem*		m_pSelectedItem;
 
-	// Display data
+	// 표시 데이터
 	std::vector<ExchangeListingItem> m_listingItems;
 	int							m_pointBalance;
 
 	bool	Click(int x, int y);
 
-	// ButtonVisual interface
+	// ButtonVisual 인터페이스
 	void	ShowButtonWidget(C_VS_UI_EVENT_BUTTON* p_button);
 	void	ShowButtonDescription(C_VS_UI_EVENT_BUTTON* p_button) {}
 
-	// Layout helpers
+	// 레이아웃 보조 함수
 	int	GetTabX(int tabIndex) const;
 	int	GetTabY() const { return 45; }
 	int	GetListingX(int index) const;
@@ -141,29 +141,29 @@ public:
 	void	Finish();
 	void	Show();
 
-	// Tab operations
+	// 탭 동작
 	void	SwitchTab(int tabID);
 	void	RefreshList();
 
-	// Page operations
+	// 페이지 동작
 	void	GoToPrevPage();
 	void	GoToNextPage();
 
-	// Item operations
+	// 아이템 동작
 	void	SelectItem(ExchangeListingItem* pItem);
 	void	BuyItem();
 	void	CreateListing(MItem* pItem, int price);
 	void	CancelListing(ExchangeListingItem* pListing);
 	void	ClaimItem(ExchangeListingItem* pClaim);
 
-	// Display updates
+	// 화면 갱신
 	void	UpdateListings();
 	void	UpdateMyListings();
 	void	UpdateMyOrders();
 	void	UpdateClaimList();
 	void	UpdatePointBalance(int balance);
 
-	// Drawing helpers
+	// 그리기 보조 함수
 	void	DrawBrowseList();
 	void	DrawMyListings();
 	void	DrawMyOrders();
@@ -173,7 +173,7 @@ public:
 	void DrawListingItem(const ExchangeListingItem& item, int index);
 	void DrawSelectedItemInfo();
 
-	// Getters
+	// 반환 함수
 	int		GetCurrentTab() const { return m_currentTab; }
 	int		GetCurrentPage() const { return m_currentPage; }
 	int		GetPointBalance() const { return m_pointBalance; }

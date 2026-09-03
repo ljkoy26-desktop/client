@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	VS_UI_item.h
 
@@ -30,10 +30,10 @@ private:
 	CIndexSpritePack 			m_item_ispk;
 
 	//C_SPRITE_PACK *			m_pC_axs_spk;
-	//CSpritePackList *			m_pC_spk_list; // Item Sprite list
+	//CSpritePackList *			m_pC_spk_list; // 아이템 스프라이트 목록
 	//C_CONVERT_TABLE			m_ct;
 
-	// Item frame
+	// 아이템 프레임
 	//C_SPRITE_FRAME_ARRAY *	m_pC_sprite_frame_array;
 	//C_CONVERT_TABLE			m_sf_ct;
 
@@ -49,7 +49,7 @@ public:
 	void	BltOutlineOnly(int x, int y, int color, SPRITE_ID id);
 	void	BltColorSet(int x, int y, SPRITE_ID id, int color_set);
 
-	// by sigi
+	// sigi 작성
 	void	BltLocked(POINT &point, SPRITE_ID id);
 	void	BltLocked(int x, int y, SPRITE_ID id);
 	void	BltLockedColor(int x, int y, SPRITE_ID id, int rgb);

@@ -19,7 +19,7 @@ int				g_item_list_size = 0;
 //int ITEM_COUNT = 150;
 
 //----------------------------------------------------------------------------
-// Globals
+// 전역 변수
 //----------------------------------------------------------------------------
 
 //
@@ -31,7 +31,7 @@ int				g_item_list_size = 0;
 C_VS_UI_ITEM *	gpC_item;
 
 //----------------------------------------------------------------------------
-// Operations
+// 동작
 //----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
@@ -228,7 +228,7 @@ C_VS_UI_ITEM::C_VS_UI_ITEM()
 	//*
 #ifndef _LIB
 	
-	// Item option table load.
+	// 아이템 옵션 테이블 로드.
     std::string result = g_pFileDef->getProperty("FILE_INFO_ITEMOPTION");
 	const char* fileName = result.c_str();
 	ifstream file(fileName, ios::binary);
@@ -242,10 +242,10 @@ C_VS_UI_ITEM::C_VS_UI_ITEM()
 
 //	int n = 0;
 	extern int g_ui_item_max;
-	// edit by Coffee 2007-6-15 13:41  修正UI测试程序读了物品错误
+	// Coffee 수정, 2007-6-15 13:41, UI 테스트 프로그램이 아이템을 잘못 읽는 오류 수정
 	//for (i=0; i<MAX_ITEM_CLASS; i++)
 	for (i=0; i<MAX_ITEM_CLASS; i++)
-	// edit end by Coffee 2007-6-15 13:42
+	// Coffee 수정 끝, 2007-6-15 13:42
 	{
 		srand(GetTickCount());
 
@@ -272,7 +272,7 @@ C_VS_UI_ITEM::C_VS_UI_ITEM()
 
 			g_item_manager.AddItem( p_item );
 
-			// make list to access easy
+			// 접근하기 쉽게 목록을 만든다
 			//g_p_item_list = (MItem **)realloc(g_p_item_list, sizeof(MItem *)+(g_item_list_size+1));			
 		}
 	}
@@ -291,7 +291,7 @@ C_VS_UI_ITEM::C_VS_UI_ITEM()
 
 	//m_pC_axs_spk = new C_SPRITE_PACK(SPK_AXS);
 
-	// item image loading
+	// 아이템 이미지 로딩
 //	ifstream	item_ispk(ISPK_ITEM, ios::binary|ios::nocreate);
 //	if (!item_ispk)
 //		_Error(FILE_OPEN);

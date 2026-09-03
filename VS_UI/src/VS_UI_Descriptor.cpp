@@ -3,7 +3,7 @@
 #include "client_PCH.h"
 #include <assert.h>
 #define assert(e) ((void)(e))
-// Disabled assert for macOS
+// macOS용으로 assert 비활성화
 #include "VS_UI_Descriptor.h"
 
 DescriptorManager	g_descriptor_manager;
@@ -46,7 +46,7 @@ DescriptorManager::~DescriptorManager()
 //-----------------------------------------------------------------------------
 void	DescriptorManager::Set(id_t id, int x, int y, void * void_ptr, long left, long right)
 {
-	if (m_fp_show) // doing?
+	if (m_fp_show) // 이미 처리 중?
 		return;
 
 	DESCRIBED_UNIT * data;
@@ -115,7 +115,7 @@ void	DescriptorManager::Show()
 //-----------------------------------------------------------------------------
 void	DescriptorManager::AddDescribedUnit(id_t id, void (*fp_rect_calculator)(void (*fp_show)(Rect, void *, long, long), int, int, void *, long, long), void (*fp_show)(Rect, void *, long, long), bool bl_immediate)
 {
-	// same id?
+	// 같은 id인가?
 	DESCRIBED_UNIT * data;
 	for (int i=0; i < Size(); i++)
 		if (Data(i, data))

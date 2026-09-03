@@ -109,7 +109,7 @@ C_VS_UI_PETSTORAGE::C_VS_UI_PETSTORAGE()
 		help_button_y += 10;
 	}
 
-	// set button
+	// button 설정
 	m_pC_button_group = new ButtonGroup(this);
 
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(close_button_x, close_button_y, gpC_global_resource->m_pC_assemble_box_button_spk->GetWidth(C_GLOBAL_RESOURCE::AB_BUTTON_CLOSE), gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_CLOSE), SHOP_CLOSE_ID, this, C_GLOBAL_RESOURCE::AB_BUTTON_CLOSE));
@@ -227,7 +227,7 @@ C_VS_UI_PETSTORAGE::~C_VS_UI_PETSTORAGE()
 
 #ifndef _LIB
 	DeleteNew(m_pPetStorage);
-	g_pStorage = NULL;	// by sigi
+	g_pStorage = NULL;	// sigi 작성
 #endif
 
 	m_pPetStorage = NULL; // 다음 check를 위해서..
@@ -348,7 +348,7 @@ void C_VS_UI_PETSTORAGE::SetPetStorage(MStorage * pStorage)
 
 	m_pPetStorage = pStorage;
 
-	// normal을 default로 설정.. by sigi
+	// normal을 default로 설정.. sigi 작성
 //	m_what_tab = STORAGE_TAB1;
 	
 	m_pPetStorage->SetCurrent(0);	
@@ -379,7 +379,7 @@ void C_VS_UI_PETSTORAGE::Show()
 			
 			if (p_item != NULL)
 			{
-				// frame id -> sprite id
+				// frame id -> sprite id 변환
 				TYPE_FRAMEID frame_id = p_item->GetInventoryFrameID();
 				
 				int item_x = x+GetSlotX(i);
@@ -390,7 +390,7 @@ void C_VS_UI_PETSTORAGE::Show()
 				// item을 center에 맞춘다.
 				item_x += SLOT_WIDTH/2-gpC_item->GetWidth(frame_id)/2;
 				
-				// identify된 아이템인 경우.. by sigi
+				// identify된 아이템인 경우.. sigi 작성
 				if (p_item->IsIdentified())
 				{
 					if(p_item->IsQuestItem())
@@ -417,7 +417,7 @@ void C_VS_UI_PETSTORAGE::Show()
 				{
 					if (p_item->IsAffectStatus())
 					{
-						// frame id -> sprite id
+						// frame id -> sprite id 변환 변환
 						gpC_item->BltLocked(item_x, item_y, frame_id);
 					}
 					else
@@ -434,7 +434,7 @@ void C_VS_UI_PETSTORAGE::Show()
 
 					if (p_mouse_item != NULL)
 					{
-						// frame id -> sprite id
+						// frame id -> sprite id 변환 변환
 						TYPE_FRAMEID frame_id = p_mouse_item->GetInventoryFrameID();
 
 						int item_x = x+GetSlotX(i);
@@ -466,7 +466,7 @@ void C_VS_UI_PETSTORAGE::Show()
 		S_SURFACEINFO	surfaceinfo;
 		SetSurfaceInfo(&surfaceinfo, gpC_base->m_p_DDSurface_back->GetDDSD());
 /*
-		for (i=0; i<STORAGE_SLOT; i++) // draw every slot rect
+		for (i=0; i<STORAGE_SLOT; i++) // 모든 슬롯 rect 그리기
 		{
 			Rect rect(GetSlotX(i), GetSlotY(i),
 						SLOT_WIDTH, SLOT_HEIGHT);
@@ -600,7 +600,7 @@ bool C_VS_UI_PETSTORAGE::MouseControl(UINT message, int _x, int _y)
 	{
 		case M_MOVING:
 			//
-			// search shelf slot...
+			// 선반 슬롯 검색...
 			//
 //			m_bl_money_button_focused = false;
 
@@ -832,7 +832,7 @@ C_VS_UI_PERSNALSHOP::C_VS_UI_PERSNALSHOP()
 		break;		
 	}
 
-	// set button
+	// button 설정
 	m_pC_button_group = new ButtonGroup(this);
 	
 	if(gC_vs_ui.inventory_mode != 2)
@@ -1082,7 +1082,7 @@ void C_VS_UI_PERSNALSHOP::SetPersnalShop(MStorage * pStorage)
 
 	m_pPersnalShop = pStorage;
 
-	// normal을 default로 설정.. by sigi
+	// normal을 default로 설정.. sigi 작성
 //	m_what_tab = STORAGE_TAB1;
 	
 	m_pPersnalShop->SetCurrent(0);	
@@ -1118,7 +1118,7 @@ void C_VS_UI_PERSNALSHOP::Show()
 			
 			if (p_item != NULL)
 			{
-				// frame id -> sprite id
+				// frame id -> sprite id 변환
 				TYPE_FRAMEID frame_id = p_item->GetInventoryFrameID();
 				
 				int item_x = x+GetSlotX(i);
@@ -1129,7 +1129,7 @@ void C_VS_UI_PERSNALSHOP::Show()
 				// item을 center에 맞춘다.
 				item_x += SLOT_WIDTH/2-gpC_item->GetWidth(frame_id)/2;
 				
-				// identify된 아이템인 경우.. by sigi
+				// identify된 아이템인 경우.. sigi 작성
 				if (p_item->IsIdentified())
 				{
 					if(p_item->IsQuestItem())
@@ -1166,7 +1166,7 @@ void C_VS_UI_PERSNALSHOP::Show()
 				{
 					if (p_item->IsAffectStatus())
 					{
-						// frame id -> sprite id
+						// frame id -> sprite id 변환 변환
 						gpC_item->BltLocked(item_x, item_y, frame_id);
 						if(p_item->GetItemClass() == ITEM_CLASS_OUSTERS_WRISTLET && g_eRaceInterface == RACE_OUSTERS)
 						{
@@ -1227,7 +1227,7 @@ void C_VS_UI_PERSNALSHOP::Show()
 
 					if (p_mouse_item != NULL)
 					{
-						// frame id -> sprite id
+						// frame id -> sprite id 변환 변환
 						TYPE_FRAMEID frame_id = p_mouse_item->GetInventoryFrameID();
 
 						int item_x = x+GetSlotX(i);
@@ -1267,7 +1267,7 @@ void C_VS_UI_PERSNALSHOP::Show()
 		S_SURFACEINFO	surfaceinfo;
 		SetSurfaceInfo(&surfaceinfo, gpC_base->m_p_DDSurface_back->GetDDSD());
 /*
-		for (i=0; i<STORAGE_SLOT; i++) // draw every slot rect
+		for (i=0; i<STORAGE_SLOT; i++) // 모든 슬롯 rect 그리기
 		{
 			Rect rect(GetSlotX(i), GetSlotY(i),
 						SLOT_WIDTH, SLOT_HEIGHT);
@@ -1438,7 +1438,7 @@ void ExecF_sellConfirm2(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 
 	//m_select_item_slot = NOT_SELECTED;
 
-	// re-acquire chatting
+	// 채팅 포커스 재획득
 	gC_vs_ui.AcquireChatting();
 }
 
@@ -1551,7 +1551,7 @@ bool C_VS_UI_PERSNALSHOP::MouseControl(UINT message, int _x, int _y)
 	{
 		case M_MOVING:
 			//
-			// search shelf slot...
+			// 선반 슬롯 검색...
 			//
 //			m_bl_money_button_focused = false;
 

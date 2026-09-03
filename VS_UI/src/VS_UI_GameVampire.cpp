@@ -1,4 +1,4 @@
-// VS_UI_GameVampire.cpp
+﻿// VS_UI_GameVampire.cpp
 
 #include "client_PCH.h"
 #include "VS_UI_GameVampire.h"
@@ -18,10 +18,10 @@ int		C_VS_UI_VAMPIRE_GEAR::m_slot_image[SLOT_SIZE] = {
 
 
 //
-// help string
+// 도움말 문자열
 //
 //
-// help string
+// 도움말 문자열
 //
 /*static S_DEFAULT_HELP_STRING	g_help_string[9] = {
 	{"Inventory", "(아이템창)", "TAB"},
@@ -44,7 +44,7 @@ static S_DEFAULT_HELP_STRING	g_chat_help_string[5] = {
 };*/
 
 //----------------------------------------------------------------------------
-// Operations
+// 동작
 //----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
@@ -60,7 +60,7 @@ C_VS_UI_VAMPIRE::C_VS_UI_VAMPIRE():C_VS_UI_TRIBE()
 
 	m_pC_sys_button_spk = new C_SPRITE_PACK(SPK_VAMPIRE_SYS_BUTTON);
 
-	// common buttons
+	// 공통 버튼
 	int tab_x = 18, tab_y = 55;
 	m_pC_common_button_group->Add( new C_VS_UI_EVENT_BUTTON(tab_x, tab_y, m_pC_sys_button_spk->GetWidth(TAB_MENU), m_pC_sys_button_spk->GetHeight(TAB_MENU), TAB_MENU_ID, this, TAB_MENU) );
 	tab_x += m_pC_sys_button_spk->GetWidth(TAB_MENU);
@@ -80,11 +80,11 @@ C_VS_UI_VAMPIRE::C_VS_UI_VAMPIRE():C_VS_UI_TRIBE()
 
 	const int button_x = 24, button_y = 78, button_x_gap = 37, button_y_gap = 37;
 	
-	// menu buttons
+	// 메뉴 버튼
 	m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*0, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_INVENTORY), m_pC_sys_button_spk->GetHeight(BUTTON_INVENTORY), INVENTORY_ID, this, BUTTON_INVENTORY) );
 	m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*1, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_GEAR), m_pC_sys_button_spk->GetHeight(BUTTON_GEAR), GEAR_ID, this, BUTTON_GEAR) );
 	m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*2, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_INFO), m_pC_sys_button_spk->GetHeight(BUTTON_INFO), INFO_ID, this, BUTTON_INFO) );
-	//add by viva : friend button
+	// viva 추가 : 친구 버튼
 #ifdef __FRIEND_SYSTEM_VIVA__ 
 	m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*3, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_FRIEND), m_pC_sys_button_spk->GetHeight(BUTTON_FRIEND), FRIEND_ID, this, BUTTON_FRIEND) );	
 #endif
@@ -94,14 +94,14 @@ C_VS_UI_VAMPIRE::C_VS_UI_VAMPIRE():C_VS_UI_TRIBE()
 	m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*2, button_y+button_y_gap, m_pC_sys_button_spk->GetWidth(BUTTON_MAIL), m_pC_sys_button_spk->GetHeight(BUTTON_MAIL), MAIL_ID, this, BUTTON_MAIL) );
 
 
-//add by zdj 2005.5.17
-// add by Coffee 2006.11.26
+// zdj 추가, 2005.5.17
+// Coffee 추가, 2006.11.26
 //	if(false == g_pUserInformation->IsNetmarble)
 		//m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*3, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_SMS), m_pC_sys_button_spk->GetHeight(BUTTON_SMS), SMS_ID, this, BUTTON_SMS) );
 	
 	m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*3, button_y+button_y_gap, m_pC_sys_button_spk->GetWidth(BUTTON_NAMING), m_pC_sys_button_spk->GetHeight(BUTTON_NAMING), NAMING_ID, this, BUTTON_NAMING) );
 
-	// guild buttons
+	// 길드 버튼
 	m_pC_guild_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*0, button_y+button_y_gap*0, m_pC_sys_button_spk->GetWidth(BUTTON_TEAM_INFO), m_pC_sys_button_spk->GetHeight(BUTTON_TEAM_INFO), TEAM_INFO_ID, this, BUTTON_TEAM_INFO) );
 	m_pC_guild_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*1, button_y+button_y_gap*0, m_pC_sys_button_spk->GetWidth(BUTTON_TEAM_MEMBER_LIST), m_pC_sys_button_spk->GetHeight(BUTTON_TEAM_MEMBER_LIST), TEAM_MEMBER_LIST_ID, this, BUTTON_TEAM_MEMBER_LIST) );
 
@@ -117,23 +117,23 @@ C_VS_UI_VAMPIRE::C_VS_UI_VAMPIRE():C_VS_UI_TRIBE()
 	m_pC_util_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*0, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_STORE), m_pC_sys_button_spk->GetHeight(BUTTON_STORE), UTIL_STORE_ID, this, BUTTON_STORE) );
 	if(false == g_pUserInformation->IsNetmarble && false == g_pUserInformation->IsTestServer)
 	{
-//add by zdj 2005.5.16
-// add by Coffee 2006.11.26
+// zdj 추가, 2005.5.16
+// Coffee 추가, 2006.11.26
 
 		m_pC_util_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*1, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_POWER_JJANG), m_pC_sys_button_spk->GetHeight(BUTTON_POWER_JJANG), UTIL_POWER_JJANG_ID, this, BUTTON_POWER_JJANG) );
-		// End by Coffee 2006.11.19
+		// Coffee 끝, 2006.11.19
 	}
 
 	// 2004, 12, 2, sobeit add end
 
-	// help buttons
+	// 도움말 버튼
 	m_pC_help_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*0, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_HELP), m_pC_sys_button_spk->GetHeight(BUTTON_HELP), HELP_ID, this, BUTTON_HELP) );
 	m_pC_help_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*1, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_CHAT_HELP), m_pC_sys_button_spk->GetHeight(BUTTON_CHAT_HELP), CHAT_HELP_ID, this, BUTTON_CHAT_HELP) );
 	m_pC_help_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*2, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_BATTLE_HELP), m_pC_sys_button_spk->GetHeight(BUTTON_BATTLE_HELP), BATTLE_HELP_ID, this, BUTTON_BATTLE_HELP) );
 	m_pC_help_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*0, button_y+button_y_gap, m_pC_sys_button_spk->GetWidth(BUTTON_SKILL_HELP), m_pC_sys_button_spk->GetHeight(BUTTON_SKILL_HELP), SKILL_HELP_ID, this, BUTTON_SKILL_HELP) );
 	m_pC_help_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*1, button_y+button_y_gap, m_pC_sys_button_spk->GetWidth(BUTTON_TEAM_MEMBER_LIST), m_pC_sys_button_spk->GetHeight(BUTTON_TEAM_MEMBER_LIST), GUILD_HELP_ID, this, BUTTON_TEAM_MEMBER_LIST) );
 
-	// instance objects 
+	// 인스턴스 오브젝트 
 	m_pC_gear = new C_VS_UI_VAMPIRE_GEAR;
 	
 	m_time = "";
@@ -167,7 +167,7 @@ C_VS_UI_VAMPIRE::~C_VS_UI_VAMPIRE()
 
 /*
 //-----------------------------------------------------------------------------
-// DrawEnergy
+// 에너지 그리기
 //
 
 //-----------------------------------------------------------------------------
@@ -177,7 +177,7 @@ void C_VS_UI_VAMPIRE::DrawEnergy()
 	RECT rt = {0,0,m_p_time_surface->GetWidth(),m_p_time_surface->GetHeight()};
 	gpC_base->m_p_DDSurface_back->Blt(&point, m_p_time_surface, &rt);
 
-	// draw energy 'case'
+	// 에너지 케이스 그리기
 	m_pC_etc_spk->Blt(ENERGY_CASE_X, ENERGY_CASE_Y, ENERGY_CASE);
 
 	Rect rect(0, 0, m_hp_line, m_pC_etc_spk->GetHeight(ENERGY_HP));
@@ -209,7 +209,7 @@ void C_VS_UI_VAMPIRE::DrawEnergy()
 */
 /*
 //-----------------------------------------------------------------------------
-// DrawMinimap
+// 미니맵 그리기
 //
 
 //-----------------------------------------------------------------------------
@@ -342,7 +342,7 @@ void C_VS_UI_VAMPIRE::DrawMinimap()
 */
 /*
 //-----------------------------------------------------------------------------
-// SetZone
+// 존 설정
 //
 
 //-----------------------------------------------------------------------------
@@ -403,7 +403,7 @@ void C_VS_UI_VAMPIRE::SetZone(int zone_id)
 }
 
 //-----------------------------------------------------------------------------
-// SetSafetyZone
+// 안전지대 설정
 //
 
 //-----------------------------------------------------------------------------
@@ -493,7 +493,7 @@ void	C_VS_UI_VAMPIRE::OpenGear(bool bl_set_load)
 //}
 
 //-----------------------------------------------------------------------------
-// DoCommonActionBeforeEventOccured
+// 이벤트 발생 전 공통 동작 수행
 //
 // 
 //-----------------------------------------------------------------------------
@@ -503,7 +503,7 @@ void C_VS_UI_VAMPIRE::DoCommonActionBeforeEventOccured()
 }
 
 //-----------------------------------------------------------------------------
-// DoCommonActionAfterEventOccured
+// 이벤트 발생 후 공통 동작 수행
 //
 // 
 //-----------------------------------------------------------------------------
@@ -940,8 +940,8 @@ void C_VS_UI_VAMPIRE::HotKey_F1()
 	const MItem * p_item = g_pInventory->FindItem( ITEM_CLASS_SERUM );
 	if(p_item == NULL)
 		p_item = g_pInventory->FindItem( ITEM_CLASS_EVENT_ETC, 14 );
-	//add by sonic 2006.9.20
-// Block comment with non-ASCII removed
+	// sonic 추가, 2006.9.20
+// (비-ASCII 문자가 포함된 주석 블록 제거됨)
 	if(p_item == NULL)
 		p_item = g_pInventory->FindItem( ITEM_CLASS_EVENT_ETC, 15 );
 	
@@ -950,7 +950,7 @@ void C_VS_UI_VAMPIRE::HotKey_F1()
 	
 	if(p_item == NULL)
 		p_item = g_pInventory->FindItem( ITEM_CLASS_EVENT_ETC, 17 );
-	//end by sonic 2006.9.20
+	// sonic 끝, 2006.9.20
 
 	if (p_item)
 	{

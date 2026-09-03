@@ -1,11 +1,11 @@
-﻿// VS_UI_DESC.cpp: implementation of the C_VS_UI_DESC class.
+﻿// VS_UI_DESC.cpp: C_VS_UI_DESC 클래스의 구현.
 //
 //////////////////////////////////////////////////////////////////////
 
 #include "client_PCH.h"
 #include <assert.h>
 #define assert(e) ((void)(e))
-// Disabled assert for macOS
+// macOS용으로 assert 비활성화
 #include "vs_ui_extradialog.h"
 //#include "VS_UI_DESC.h" // ?? 이상-_-a
 #include "VS_UI_filepath.h"
@@ -14,7 +14,7 @@ extern RECT g_GameRect;
 #define dSTRING_LEN 2048 
 
 //////////////////////////////////////////////////////////////////////
-// Construction/Destruction
+// 생성자/소멸자
 //////////////////////////////////////////////////////////////////////
 
 C_VS_UI_DESC::C_VS_UI_DESC()

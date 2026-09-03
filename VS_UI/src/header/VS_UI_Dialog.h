@@ -23,7 +23,7 @@
 #define DIALOG_NO_BUTTON				0x0000
 #define DIALOG_OK						0x0001
 #define DIALOG_CANCEL					0x0002
-#define DIALOG_FRIEND_BLACK				0x0004		//add by viva
+#define DIALOG_FRIEND_BLACK				0x0004		// viva 추가
 //-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 #define DIALOG_EXECID_EXIT				0xFFFF0000
@@ -31,10 +31,10 @@
 #define DIALOG_EXECID_CANCEL			0xFFFF0002
 #define DIALOG_EXECID_SCROLL_UP		0xFFFF0003
 #define DIALOG_EXECID_SCROLL_DOWN	0xFFFF0004
-#define DIALOG_EXECID_FRIEND_BLACK			0xFFFF0005		//add by viva
+#define DIALOG_EXECID_FRIEND_BLACK			0xFFFF0005		// viva 추가
 
 //-----------------------------------------------------------------------------
-// Dialog menu struct.
+// Dialog 메뉴 구조체.
 //-----------------------------------------------------------------------------
 struct DIALOG_MENU
 {
@@ -66,11 +66,11 @@ enum BUTTON_SEQUENCE
 {
 	BS_OK = 0,
 	BS_CANCEL = 1,
-	BS_FRIEND_BLACK = 2,	//add by viva
+	BS_FRIEND_BLACK = 2,	// viva 추가
 };
 
 //-----------------------------------------------------------------------------
-// SetMessage mode option
+// SetMessage 모드 옵션
 //-----------------------------------------------------------------------------
 enum SETMESSAGE_MODE_OPTION
 {
@@ -81,7 +81,7 @@ enum SETMESSAGE_MODE_OPTION
 //-----------------------------------------------------------------------------
 // C_VS_UI_DIALOG
 //
-// format>
+// 형식>
 //
 //				+----------------------------+
 //				|							 |
@@ -115,7 +115,7 @@ protected:
 	void							(*m_exec_fp)(C_VS_UI_DIALOG *, id_t);
 
 	//
-	// center (x, y)
+	// 중앙 (x, y)
 	//
 	//
 //	int							m_width, m_height;

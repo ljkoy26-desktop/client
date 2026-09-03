@@ -1,9 +1,9 @@
-// VS_UI_PointExchange.cpp
-// Point-based Exchange Market UI Implementation
+﻿// VS_UI_PointExchange.cpp
+// 포인트 기반 거래소 UI 구현
 
 #include "client_PCH.h"
 #define assert(e) ((void)(e))
-// Disabled assert for macOS
+// macOS용으로 assert 비활성화
 
 #pragma warning(disable:4786)
 
@@ -16,7 +16,7 @@
 #include "UserOption.h"
 #include "ServerInfo.h"
 
-// For packets
+// 패킷용
 #include "../Client/Packet/Cpackets/CGExchangeList.h"
 #include "../Client/Packet/Cpackets/CGExchangeBuy.h"
 #include "../Client/Packet/Gpackets/GCExchangeList.h"
@@ -39,8 +39,8 @@ C_VS_UI_POINT_EXCHANGE::C_VS_UI_POINT_EXCHANGE()
 	m_pageSize = LISTINGS_PER_PAGE;
 	m_totalItems = 0;
 
-	m_filterItemClass = 0xFF;  // All classes
-	m_filterItemType = 0xFFFF;  // All types
+	m_filterItemClass = 0xFF;  // 모든 클래스
+	m_filterItemType = 0xFFFF;  // 모든 타입
 	m_minPrice = 0;
 	m_maxPrice = 0;
 
@@ -49,7 +49,7 @@ C_VS_UI_POINT_EXCHANGE::C_VS_UI_POINT_EXCHANGE()
 
 	g_RegisterWindow(this);
 
-	// Initialize sprite pack based on race
+	// 종족에 따라 스프라이트 팩 초기화
 	switch(g_eRaceInterface)
 	{
 	case RACE_SLAYER:
@@ -65,14 +65,14 @@ C_VS_UI_POINT_EXCHANGE::C_VS_UI_POINT_EXCHANGE()
 		break;
 	}
 
-	// Set window dimensions
+	// 창 크기 설정
 	int w_x = 30, w_y = 0;
 	Set(w_x, w_y, 600, 480);
 
-	// Initialize button group
+	// 버튼 그룹 초기화
 	m_pC_button_group = new ButtonGroup(this);
 
-	// Add close button
+	// 닫기 버튼 추가
 	int closeBtnX = w - 40, closeBtnY = 10;
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(
 		closeBtnX, closeBtnY,
@@ -80,7 +80,7 @@ C_VS_UI_POINT_EXCHANGE::C_VS_UI_POINT_EXCHANGE()
 		gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_CLOSE),
 		BUTTON_CLOSE, this, C_GLOBAL_RESOURCE::AB_BUTTON_CLOSE));
 
-	// Add refresh button
+	// 새로고침 버튼 추가
 	int refreshBtnX = w - 80, refreshBtnY = 10;
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(
 		refreshBtnX, refreshBtnY,
@@ -88,7 +88,7 @@ C_VS_UI_POINT_EXCHANGE::C_VS_UI_POINT_EXCHANGE()
 		gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_HELP),
 		BUTTON_REFRESH, this, C_GLOBAL_RESOURCE::AB_BUTTON_HELP));
 
-	// Add tab buttons
+	// 탭 버튼 추가
 	for (int i = 0; i < 4; i++)
 	{
 		C_VS_UI_EVENT_BUTTON* pTab = new C_VS_UI_EVENT_BUTTON(
@@ -98,7 +98,7 @@ C_VS_UI_POINT_EXCHANGE::C_VS_UI_POINT_EXCHANGE()
 		m_pC_button_group->Add(pTab);
 	}
 
-	// Add page navigation buttons
+	// 페이지 이동 버튼 추가
 	int prevPageX = LISTING_START_X, prevPageY = h - 40;
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(
 		prevPageX, prevPageY, 60, 25,
@@ -109,7 +109,7 @@ C_VS_UI_POINT_EXCHANGE::C_VS_UI_POINT_EXCHANGE()
 		nextPageX, nextPageY, 60, 25,
 		BUTTON_NEXT_PAGE, this, 0));
 
-	// Add buy confirm button (initially hidden)
+	// 구매 확인 버튼 추가 (초기에는 숨김)
 	int buyBtnX = w / 2 - 50, buyBtnY = h - 50;
 	C_VS_UI_EVENT_BUTTON* pBuyBtn = new C_VS_UI_EVENT_BUTTON(
 		buyBtnX, buyBtnY, 100, 30,
@@ -142,7 +142,7 @@ void C_VS_UI_POINT_EXCHANGE::Start()
 	AttrPin(true);
 	gpC_window_manager->AppearWindow(this);
 
-	// Request initial listing data
+	// 초기 목록 데이터 요청
 	RefreshList();
 }
 
@@ -163,18 +163,18 @@ void C_VS_UI_POINT_EXCHANGE::Finish()
 
 void C_VS_UI_POINT_EXCHANGE::Show()
 {
-	// Draw background and window frame
+	// 배경과 창 프레임 그리기
 	if (gpC_base->m_p_DDSurface_back->Lock())
 	{
 		gpC_global_resource->DrawDialogLocked(x, y, w, h);
 
-		// Draw background image
+		// 배경 이미지 그리기
 		m_image_spk.BltLocked(x, y, EXCHANGE_WINDOW);
 
-		// Draw tab buttons
+		// 탭 버튼 그리기
 		DrawTabButtons();
 
-		// Draw content based on current tab
+		// 현재 탭에 따라 내용 그리기
 		switch (m_currentTab)
 		{
 		case TAB_BROWSE:
@@ -194,10 +194,10 @@ void C_VS_UI_POINT_EXCHANGE::Show()
 			break;
 		}
 
-		// Draw page info
+		// 페이지 정보 그리기
 		DrawPageInfo();
 
-		// Draw selected item info if any
+		// 선택된 아이템 정보가 있으면 그리기
 		if (m_pSelectedItem)
 		{
 			DrawSelectedItemInfo();
@@ -206,7 +206,7 @@ void C_VS_UI_POINT_EXCHANGE::Show()
 		gpC_base->m_p_DDSurface_back->Unlock();
 	}
 
-	// Draw buttons
+	// 버튼 그리기
 	if (m_pC_button_group)
 		m_pC_button_group->Show();
 }
@@ -217,7 +217,7 @@ void C_VS_UI_POINT_EXCHANGE::Show()
 
 void C_VS_UI_POINT_EXCHANGE::Process()
 {
-	// Handle UI updates and events
+	// UI 업데이트와 이벤트 처리
 	if (m_pC_button_group)
 		m_pC_button_group->Process();
 }
@@ -232,15 +232,15 @@ bool C_VS_UI_POINT_EXCHANGE::IsPixel(int _x, int _y)
 }
 
 //-----------------------------------------------------------------------------
-// ShowButtonWidget (ButtonVisual interface)
+// ShowButtonWidget (ButtonVisual 인터페이스)
 //-----------------------------------------------------------------------------
 
 void C_VS_UI_POINT_EXCHANGE::ShowButtonWidget(C_VS_UI_EVENT_BUTTON* p_button)
 {
-	// Draw button widget
+	// 버튼 위젯 그리기
 	if (p_button && gpC_base->m_p_DDSurface_back->Lock())
 	{
-		// Use global resource to draw the button
+		// 전역 리소스를 사용해 버튼을 그린다
 		gpC_global_resource->m_pC_assemble_box_button_spk->BltLocked(
 			x + p_button->x, y + p_button->y, p_button->m_image_index);
 
@@ -261,12 +261,12 @@ void C_VS_UI_POINT_EXCHANGE::UnacquireMouseFocus()
 }
 
 //-----------------------------------------------------------------------------
-// Click
+// 클릭
 //-----------------------------------------------------------------------------
 
 bool C_VS_UI_POINT_EXCHANGE::Click(int clickX, int clickY)
 {
-	// Check if clicked on a listing item
+	// 목록 아이템을 클릭했는지 확인
 	int relX = clickX - x;
 	int relY = clickY - y;
 
@@ -344,7 +344,7 @@ void C_VS_UI_POINT_EXCHANGE::Run(id_t id)
 }
 
 //-----------------------------------------------------------------------------
-// Tab operations
+// 탭 동작
 //-----------------------------------------------------------------------------
 
 void C_VS_UI_POINT_EXCHANGE::SwitchTab(int tabID)
@@ -353,7 +353,7 @@ void C_VS_UI_POINT_EXCHANGE::SwitchTab(int tabID)
 	m_currentPage = 1;
 	m_pSelectedItem = NULL;
 
-	// Update display based on selected tab
+	// 선택된 탭에 따라 화면 갱신
 	switch (tabID)
 	{
 	case TAB_BROWSE:
@@ -376,7 +376,7 @@ void C_VS_UI_POINT_EXCHANGE::SwitchTab(int tabID)
 
 void C_VS_UI_POINT_EXCHANGE::RefreshList()
 {
-	// Send CGExchangeList packet to server
+	// 서버로 CGExchangeList 패킷 전송
 	if (!g_pSocket) return;
 
 	CGExchangeList* pPacket = new CGExchangeList();
@@ -393,7 +393,7 @@ void C_VS_UI_POINT_EXCHANGE::RefreshList()
 }
 
 //-----------------------------------------------------------------------------
-// Page operations
+// 페이지 동작
 //-----------------------------------------------------------------------------
 
 void C_VS_UI_POINT_EXCHANGE::GoToPrevPage()
@@ -416,7 +416,7 @@ void C_VS_UI_POINT_EXCHANGE::GoToNextPage()
 }
 
 //-----------------------------------------------------------------------------
-// Item operations
+// 아이템 동작
 //-----------------------------------------------------------------------------
 
 void C_VS_UI_POINT_EXCHANGE::SelectItem(ExchangeListingItem* pItem)
@@ -429,7 +429,7 @@ void C_VS_UI_POINT_EXCHANGE::BuyItem()
 	if (!m_pSelectedItem || !g_pSocket)
 		return;
 
-	// Send buy request to server
+	// 서버로 구매 요청 전송
 	CGExchangeBuy* pPacket = new CGExchangeBuy();
 	pPacket->setListingID(m_pSelectedItem->listingID);
 
@@ -440,30 +440,30 @@ void C_VS_UI_POINT_EXCHANGE::BuyItem()
 
 void C_VS_UI_POINT_EXCHANGE::CreateListing(MItem* pItem, int price)
 {
-	// Send create listing request to server
+	// 서버로 목록 등록 요청 전송
 	// TODO: Implement create listing packet - CGExchangeCreateListing
 }
 
 void C_VS_UI_POINT_EXCHANGE::CancelListing(ExchangeListingItem* pListing)
 {
-	// Send cancel listing request to server
+	// 서버로 등록 취소 요청 전송
 	// TODO: Implement cancel packet - CGExchangeCancelListing
 }
 
 void C_VS_UI_POINT_EXCHANGE::ClaimItem(ExchangeListingItem* pClaim)
 {
-	// Send claim request to server
+	// 서버로 수령 요청 전송
 	// TODO: Implement claim packet - CGExchangeClaim
 }
 
 //-----------------------------------------------------------------------------
-// Display updates
+// 화면 갱신
 //-----------------------------------------------------------------------------
 
 void C_VS_UI_POINT_EXCHANGE::UpdateListings()
 {
-	// This will be called when GCExchangeList packet is received
-	// The packet handler will populate m_listingItems
+	// GCExchangeList 패킷을 수신하면 호출된다
+	// 패킷 핸들러가 m_listingItems를 채운다
 }
 
 void C_VS_UI_POINT_EXCHANGE::UpdateMyListings()
@@ -487,7 +487,7 @@ void C_VS_UI_POINT_EXCHANGE::UpdatePointBalance(int balance)
 }
 
 //-----------------------------------------------------------------------------
-// Layout helpers
+// 레이아웃 보조 함수
 //-----------------------------------------------------------------------------
 
 int C_VS_UI_POINT_EXCHANGE::GetTabX(int tabIndex) const
@@ -506,12 +506,12 @@ int C_VS_UI_POINT_EXCHANGE::GetListingY(int index) const
 }
 
 //-----------------------------------------------------------------------------
-// Drawing helpers
+// 그리기 보조 함수
 //-----------------------------------------------------------------------------
 
 void C_VS_UI_POINT_EXCHANGE::DrawTabButtons()
 {
-	// Draw tab buttons with proper highlight state
+	// 올바른 하이라이트 상태로 탭 버튼 그리기
 	for (int i = 0; i < 4; i++)
 	{
 		int spriteIndex = (i == m_currentTab) ?
@@ -527,7 +527,7 @@ void C_VS_UI_POINT_EXCHANGE::DrawTabButtons()
 
 void C_VS_UI_POINT_EXCHANGE::DrawPageInfo()
 {
-	// Draw page information
+	// 페이지 정보 그리기
 	char pageText[64];
 	sprintf(pageText, "Page %d/%d", m_currentPage,
 		(m_totalItems + m_pageSize - 1) / m_pageSize);
@@ -541,7 +541,7 @@ void C_VS_UI_POINT_EXCHANGE::DrawPageInfo()
 
 void C_VS_UI_POINT_EXCHANGE::DrawBrowseList()
 {
-	// Draw listing items
+	// 목록 아이템 그리기
 	for (size_t i = 0; i < m_listingItems.size(); i++)
 	{
 		DrawListingItem(m_listingItems[i], i);
@@ -551,19 +551,19 @@ void C_VS_UI_POINT_EXCHANGE::DrawBrowseList()
 void C_VS_UI_POINT_EXCHANGE::DrawMyListings()
 {
 	// TODO: Draw my listings tab
-	DrawBrowseList(); // Reuse browse list drawing for now
+	DrawBrowseList(); // 지금은 둘러보기 목록 그리기를 재사용
 }
 
 void C_VS_UI_POINT_EXCHANGE::DrawMyOrders()
 {
 	// TODO: Draw my orders tab
-	DrawBrowseList(); // Reuse browse list drawing for now
+	DrawBrowseList(); // 지금은 둘러보기 목록 그리기를 재사용
 }
 
 void C_VS_UI_POINT_EXCHANGE::DrawClaimList()
 {
 	// TODO: Draw claim items tab
-	DrawBrowseList(); // Reuse browse list drawing for now
+	DrawBrowseList(); // 지금은 둘러보기 목록 그리기를 재사용
 }
 
 void C_VS_UI_POINT_EXCHANGE::DrawListingItem(const ExchangeListingItem& item, int index)
@@ -573,18 +573,18 @@ void C_VS_UI_POINT_EXCHANGE::DrawListingItem(const ExchangeListingItem& item, in
 	int itemW = w - LISTING_START_X * 2;
 	int itemH = LISTING_HEIGHT;
 
-	// Draw item background
+	// 아이템 배경 그리기
 	if (gpC_base->m_p_DDSurface_back->Lock())
 	{
-		// Highlight if selected
+		// 선택됐으면 하이라이트
 		if (m_pSelectedItem && m_pSelectedItem->listingID == item.listingID)
 		{
-			// Draw selection highlight
+			// 선택 하이라이트 그리기
 			// TODO: Draw highlight rectangle
 		}
 
 		// TODO: Draw item icon, name, price, seller name
-		// This requires access to item sprite and font rendering
+		// 아이템 스프라이트와 폰트 렌더링 접근이 필요하다
 
 		gpC_base->m_p_DDSurface_back->Unlock();
 	}
@@ -592,6 +592,6 @@ void C_VS_UI_POINT_EXCHANGE::DrawListingItem(const ExchangeListingItem& item, in
 
 void C_VS_UI_POINT_EXCHANGE::DrawSelectedItemInfo()
 {
-	// Draw detailed info about selected item
+	// 선택된 아이템의 상세 정보 그리기
 	// TODO: Implement detailed item info display
 }

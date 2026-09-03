@@ -1,4 +1,4 @@
-// VS_UI_Message.cpp
+﻿// VS_UI_Message.cpp
 
 #include "client_PCH.h"
 
@@ -9,7 +9,7 @@
 #include "MGameStringTable.H"
 //#include "ex\debuginfo.h"
 //-----------------------------------------------------------------------------
-// Global
+// 전역 변수
 //-----------------------------------------------------------------------------
 C_VS_UI_DIALOG *		g_msg_not_available_menu;
 C_VS_UI_DIALOG *		g_msg_wrong_id_password;
@@ -34,7 +34,7 @@ C_VS_UI_DIALOG *		g_msg_password_mismatch;
 //C_VS_UI_DIALOG *		g_msg_character_empty_id;
 
 //-----------------------------------------------------------------------------
-// Exec functions
+// 실행 함수
 //-----------------------------------------------------------------------------
 void g_ExecF(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 {

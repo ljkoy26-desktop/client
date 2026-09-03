@@ -2,7 +2,7 @@
 
 	VS_UI_Descriptor.h
 
-	Descriptor class.
+	Descriptor 클래스.
 
 	객체에 대한 설명 또는 정보를 출력하는 객체이다.
 
@@ -19,7 +19,7 @@
 struct DESCRIBED_UNIT
 {
 	id_t		id;
-	bool		bl_immediate; // immediate(true)/delay(false)
+	bool		bl_immediate; // 즉시(true)/지연(false)
 	void		(*fp_rect_calculator)(void (*fp_show)(Rect, void *, long, long), int, int, void *, long, long);
 	void		(*fp_show)(Rect, void *, long, long);
 };

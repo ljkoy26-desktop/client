@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	VS_UI_Game.h
 
@@ -27,7 +27,7 @@
 #include "VS_UI_Storage.h"
 #include "VS_UI_Exchange.h"
 #include "VS_UI_PointExchange.h"
-#include "VS_UI_Tutorial.h" //by larosel
+#include "VS_UI_Tutorial.h" // larosel 작성
 #include "VS_UI_Title.h"
 //#include "VS_UI_SKILL_VIEW.h"
 #include "VS_UI_ELEVATOR.h"
@@ -38,10 +38,10 @@
 // class C_VS_UI_GAMEMENU_OPTION
 //
 //
-// by sigi
+// sigi 작성
 //
 //-----------------------------------------------------------------------------
-class C_VS_UI_GAMEMENU_OPTION : public C_VS_UI_DIALOG	// by sigi
+class C_VS_UI_GAMEMENU_OPTION : public C_VS_UI_DIALOG	// sigi 작성
 {
 public :
 	enum MENU
@@ -128,7 +128,7 @@ public:
 	
 	void	ShowButtonWidget(C_VS_UI_EVENT_BUTTON * p_button);
 
-	bool	IsRunningMinimap();	// by larosel
+	bool	IsRunningMinimap();	// larosel 작성
 
 };
 */
@@ -218,7 +218,7 @@ class C_VS_UI_GAME : public PI_Processor, public HotKey
 private:
 	HotKey *					m_pC_hotkey;
 
-	// common interface object
+	// 공통 인터페이스 오브젝트
 	C_VS_UI_CHATTING			*m_pC_chatting;
 	C_VS_UI_SKILL				m_C_skill;
 
@@ -234,16 +234,16 @@ private:
 	C_VS_UI_FILE_DIALOG *		m_pC_file_dialog;
 	C_VS_UI_ELEVATOR *			m_pC_elevator;
 
-	C_VS_UI_ASK_DIALOG*			m_pC_storage_buy_dialog;		// by sigi
-	C_VS_UI_ASK_DIALOG*			m_pC_exchange_ask_dialog;		// by sigi
-	C_VS_UI_ASK_DIALOG*			m_pC_exchange_cancel_dialog;	// by sigi
-	C_VS_UI_ASK_DIALOG*			m_pC_tutorial_exit_ask_dialog;	// by larosel
-	C_VS_UI_ASK_DIALOG*			m_pC_party_ask_dialog;		// by sigi
-	C_VS_UI_ASK_DIALOG*			m_pC_party_cancel_dialog;	// by sigi
-	C_VS_UI_ASK_DIALOG*			m_pC_enchant_dialog;	// by sigi
-	C_VS_UI_ASK_DIALOG*			m_pC_no_search_result_dialog;	// by sigi
-	C_VS_UI_ASK_DIALOG*			m_pC_deposit_limit;	// by sigi
-	C_VS_UI_ASK_DIALOG*			m_pC_withdraw_limit;	// by sigi
+	C_VS_UI_ASK_DIALOG*			m_pC_storage_buy_dialog;		// sigi 작성
+	C_VS_UI_ASK_DIALOG*			m_pC_exchange_ask_dialog;		// sigi 작성
+	C_VS_UI_ASK_DIALOG*			m_pC_exchange_cancel_dialog;	// sigi 작성
+	C_VS_UI_ASK_DIALOG*			m_pC_tutorial_exit_ask_dialog;	// larosel 작성
+	C_VS_UI_ASK_DIALOG*			m_pC_party_ask_dialog;		// sigi 작성
+	C_VS_UI_ASK_DIALOG*			m_pC_party_cancel_dialog;	// sigi 작성
+	C_VS_UI_ASK_DIALOG*			m_pC_enchant_dialog;	// sigi 작성
+	C_VS_UI_ASK_DIALOG*			m_pC_no_search_result_dialog;	// sigi 작성
+	C_VS_UI_ASK_DIALOG*			m_pC_deposit_limit;	// sigi 작성
+	C_VS_UI_ASK_DIALOG*			m_pC_withdraw_limit;	// sigi 작성
 	C_VS_UI_ASK_DIALOG*			m_pC_bring_fee_limit;
 	C_VS_UI_ASK_DIALOG*			m_pC_trans_item_dialog;
 	C_VS_UI_ASK_DIALOG*			m_pC_use_pet_food_dialog;
@@ -252,13 +252,13 @@ private:
 	C_VS_UI_ASK_DIALOG*			m_pC_use_askitem_dialog;
 	C_VS_UI_ASK_DIALOG*			m_pC_get_event_item;	
 
-	C_VS_UI_BRING_FEE*			m_pC_bring_fee;						// by sonee
+	C_VS_UI_BRING_FEE*			m_pC_bring_fee;						// sonee 작성
 
-	// vampire/slayer interface
+	// vampire/slayer 인터페이스
 	C_VS_UI_TRIBE *				m_pC_tribe_interface;
 	C_VS_UI_GAMEMENU *			m_pC_gamemenu;
 
-	// Tutorial by larosel
+	// larosel 작성, 튜토리얼
 	C_VS_UI_BOOKCASE *			m_pC_bookcase;
 //	C_VS_UI_BRIEFING *			m_pC_briefing;
 	C_VS_UI_COMPUTER *			m_pC_computer;
@@ -277,7 +277,7 @@ private:
 	C_VS_UI_SLAYER_PORTAL *			m_pC_slayer_portal;
 	C_VS_UI_REQUEST_DIE *			m_pC_request_die;
 
-	// party
+	// 파티
 	C_VS_UI_REQUEST_PARTY *			m_pC_request_party;
 	C_VS_UI_PARTY_MANAGER *			m_pC_party_manager;
 
@@ -420,9 +420,9 @@ public:
 	bool	IsRunningRepair() const;
 	bool	IsRunningSilvering() const;
 	bool	IsRunningSell() const;
-	bool	IsRunningGameMenu(){ return (m_pC_gamemenu != NULL); }	// by larosel
-	bool	IsRunningDescDialog(){ return (m_pC_desc_dialog != NULL); }	// by larosel
-	bool	IsRunningFileDialog(){ return (m_pC_file_dialog != NULL); }	// by larosel
+	bool	IsRunningGameMenu(){ return (m_pC_gamemenu != NULL); }	// larosel 작성
+	bool	IsRunningDescDialog(){ return (m_pC_desc_dialog != NULL); }	// larosel 작성
+	bool	IsRunningFileDialog(){ return (m_pC_file_dialog != NULL); }	// larosel 작성
 	bool	IsRunningElevator() const;
 
 	void	RunQuickItemSlot();
@@ -464,9 +464,9 @@ public:
 //	void	ConnectionFailed();
 //	void	GrantPCSWaitRoomToDuplex(int slot);
 //	int	GetSendPossibleSlot() const;
-	void	ChangeWhisperFocus(){ m_pC_chatting->ChangeWhisperFocus(); }	// by larosel
-	bool	SetSlayerWhisper( bool b ){return m_pC_chatting->SlayerWhisperMode(b);}	// by larosel
-	bool	GetWhisperFocus(){ return m_pC_chatting->GetWhisperFocus(); }	// by larosel
+	void	ChangeWhisperFocus(){ m_pC_chatting->ChangeWhisperFocus(); }	// larosel 작성
+	bool	SetSlayerWhisper( bool b ){return m_pC_chatting->SlayerWhisperMode(b);}	// larosel 작성
+	bool	GetWhisperFocus(){ return m_pC_chatting->GetWhisperFocus(); }	// larosel 작성
 	void	SetGuildChat(bool guild) { m_pC_chatting->SetGuildChat(guild); }
 
 	void	CloseGameMenu();
@@ -527,7 +527,7 @@ public:
 	bool	GetInventoryOpenState() const;
 	bool	GetGearOpenState() const;
 
-	// skill tree interface
+	// 스킬트리 인터페이스
 //	void	RunVampireSkillTree();
 //	void	RunSwordSkillTree();
 //	void	RunBladeSkillTree();
@@ -539,7 +539,7 @@ public:
 //	void	CloseSkillView();
 //	C_VS_UI_SKILL_VIEW * GetSkillViewWindow() { return m_pC_skill_view; }
 
-	////add by viva
+	// viva 추가
 	void	RunFriendRequestAsk(const char* pName);
 	void	CloseFriendRequestAsk(C_VS_UI_ASK_DIALOG* pDialog);
 	void	RunFriendRefuseAsk(const char* pName);
@@ -559,7 +559,7 @@ public:
 	void	RunStorageBuy(int price);	
 	void	RunExchangeAsk(const char* pName);	
 	void	RunExchangeCancel(const char* pName);	
-	void	RunTutorialExitAsk(const int select, const char* pName);	//by larosel
+	void	RunTutorialExitAsk(const int select, const char* pName);	// larosel 작성
 	void	RunStorage();
 	void	RunExchange();
 	void	RunPointExchange();
@@ -578,7 +578,7 @@ public:
 	void	OpenInventoryToRepair();
 	void	OpenInventoryToSilvering();
 
-	// tutorial interface by larosel
+	// 튜토리얼 인터페이스, larosel 작성
 	void	RunBookcase();
 	void	CloseBookcase();
 	bool	IsRunningBookcase() const;
@@ -606,7 +606,7 @@ public:
 	// 2004, 10, 19, sobeit add end
 	bool	IsRunningMailBox() const;
 	
-	// mail-helpmessage//
+	// 메일-도움말메시지//
 	void	AddHelpMail(DWORD id, bool open);
 	bool	IsRunningHelpMailDesc() {return m_pC_help_desc != NULL;}
 
@@ -615,27 +615,27 @@ public:
 	void	CloseHorn();
 	bool	IsRunningHorn() const;
 
-	// finding mine
+	// 지뢰찾기
 	void	RunFindingMine();
 	void	CloseFindingMine();
 	bool	IsRunningFindingMine() const;
 	
-	// minigame arrow tile
+	// 미니게임 화살표 타일
 	void	RunArrowTile();
 	void	CloseArrowTile();
 	bool	IsRunningArrowTile()	const;
 
-	// minigame crazy tile
+	// 미니게임 크레이지 타일
 	void	RunCrazyMine();
 	void	CloseCrazyMine();
 	bool	IsRunningCrazyMine()	const;
 	
-	// slayer_portal
+	// 슬레이어 포탈
 	void	RunSlayerPortal();
 	void	CloseSlayerPortal();
 	bool	IsRunningSlayerPortal() const;
 
-	// TEAMlist
+	// 팀 목록
 	void	RunTeamList(bool ready, bool IsUnion);
 	void	CloseTeamList();
 	bool	IsRunningTeamList(bool IsUnion = false) const;
@@ -655,7 +655,7 @@ public:
 	void	CloseTeamRegist();
 	bool	IsRunningTeamRegist() const;
 
-	//add by viva
+	// viva 추가
 	void	CloseFriendChattingInfo(C_VS_UI_FRIEND_CHATTING_INFO* pInfo);
 	void	OpenFriendChattingInfo(C_VS_UI_FRIEND_INFO::FRIEND_LIST* pList);
 	//end
@@ -681,7 +681,7 @@ public:
 	void	RunWithdrawLimit();	
 	void	CloseWithdrawLimit();	
 
-	// party
+	// 파티
 	void	FinishRequestParty();
 	void	RequestParty(const char *name, DWORD timer);
 	bool	IsRunningRequestParty() const;
@@ -1009,9 +1009,9 @@ public:
 
 	
 	//---------------------------------------
-	// Hot key
+	// 단축키
 	//---------------------------------------
-	void HotKey_Friend();		//add by viva
+	void HotKey_Friend();		// viva 추가
 	void HotKey_PetInfo();		// ctrl + CapsLock
 	void HotKey_MailBox();		// ctrl + b
 	void HotKey_PartyChat();	// ctrl + a

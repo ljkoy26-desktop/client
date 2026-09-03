@@ -26,11 +26,11 @@
 
 
 //----------------------------------------------------------------------------
-// Globals
+// 전역 변수
 //
 // C_VS_UI_GAME Object가 실행중에 있을 때 유효하다.
 //----------------------------------------------------------------------------
-bool gbl_item_lock; // no static member, 'static GLOBAL!'
+bool gbl_item_lock; // static member가 아니다, 'static GLOBAL!'
 						  // 초기화는 C_VS_UI_GAME::Start()에서 해준다.
 bool gbl_gear_lock;
 
@@ -43,8 +43,8 @@ bool gbl_buy_running; // 파는 중..
 bool gbl_repair_running; // 고치는 중...
 bool gbl_silvering_running; // 은도금 하는중
 bool gbl_buy_storage_running; // 고치는 중...
-bool gbl_exchange_ask_running; // 교환할래? 떠 있는 중.. --;		// by sigi
-bool gbl_exchange_cancel_running; // 교환취소할래? 떠 있는 중.. --;	// by sigi
+bool gbl_exchange_ask_running; // 교환할래? 떠 있는 중.. --;		// sigi 작성
+bool gbl_exchange_cancel_running; // 교환취소할래? 떠 있는 중.. --;	// sigi 작성
 bool gbl_party_ask_running; // 파티할래? 떠 있는 중.. --;
 bool gbl_party_cancel_running; // 파티취소할래? 떠 있는 중.. --;
 bool gbl_enchant_running; // Enchant할래? 떠 있는 중.. --;
@@ -52,8 +52,8 @@ bool gbl_use_pet_food_running; // 펫 먹이 먹일래? 떠 있는중
 bool gbl_keep_petitem_running; // 펫 맞길래? 떠 있는중
 bool gbl_get_keep_petitem_running; // 펫 찾을? 떠 있는중
 bool gbl_use_askitem_running; // 무슨무슨 item 사용할래? 떠 있는중
-//bool gbl_option_running; // by sigi
-bool gbl_tutorial_exit_ask_running; // 무기선택한거 안바꾸구 나갈래? 떠있는중..		//by larosel
+//bool gbl_option_running; // sigi 작성
+bool gbl_tutorial_exit_ask_running; // 무기선택한거 안바꾸구 나갈래? 떠있는중..		// larosel 작성
 bool gbl_no_search_result_running; // 검색결과 없음 떠 있는 중
 bool gbl_deposit_limit_running; // 검색결과 없음 떠 있는 중
 bool gbl_withdraw_limit_running; // 검색결과 없음 떠 있는 중
@@ -64,7 +64,7 @@ bool gbl_trans_item_running;
 bool	gbl_skip_escape = false;
 
 bool gbl_swap_advancement_item_running; // 승직 아이템과 교환중
-Race	g_eRaceInterface = RACE_SLAYER;  // Default to Slayer interface
+Race	g_eRaceInterface = RACE_SLAYER;  // 기본값은 Slayer 인터페이스
 
 extern int					g_Dimension ;
 extern RECT g_GameRect;
@@ -107,7 +107,7 @@ void ExecF_CampaignHelp(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 	gC_vs_ui.AcquireChatting();
 }
 
-// by sigi
+// sigi 작성
 void ExecF_ExchangeCancel(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 {
 	switch (id)
@@ -123,7 +123,7 @@ void ExecF_ExchangeCancel(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 	gC_vs_ui.AcquireChatting();
 }
 
-// by sigi
+// sigi 작성
 void ExecF_ExchangeAsk(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 {
 	switch (id)
@@ -143,7 +143,7 @@ void ExecF_ExchangeAsk(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 	gC_vs_ui.AcquireChatting();
 }
 //---------------------------------------------ask_friend_request-----------------------
-//add by viva : ask_friend_request
+// viva 추가 : ask_friend_request
 void ExecF_FriendRequestAsk(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 {
 	//C_VS_UI_ASK_DIALOG* pDialog = (C_VS_UI_ASK_DIALOG*)p_this_dialog;
@@ -166,7 +166,7 @@ void ExecF_FriendRequestAsk(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 	gC_vs_ui.AcquireChatting();
 }
 //-----------------------------------------ask_friend_refuse----------------------------
-//add by viva : ask_friend_refuse
+// viva 추가 : ask_friend_refuse
 void ExecF_FriendRefuseAsk(C_VS_UI_DIALOG* p_this_dialog, id_t id)
 {
 	//C_VS_UI_ASK_DIALOG* pDialog = (C_VS_UI_ASK_DIALOG*)p_this_dialog;
@@ -181,7 +181,7 @@ void ExecF_FriendRefuseAsk(C_VS_UI_DIALOG* p_this_dialog, id_t id)
 	gC_vs_ui.AcquireChatting();
 }
 //------------------------------------ask_friend_wait-------------------------------------
-//	add by viva
+//	viva 추가
 void ExecF_FriendWaitAsk(C_VS_UI_DIALOG* p_this_dialog, id_t id)
 {
 	switch (id)
@@ -195,7 +195,7 @@ void ExecF_FriendWaitAsk(C_VS_UI_DIALOG* p_this_dialog, id_t id)
 	gC_vs_ui.AcquireChatting();
 }
 //------------------------------------ask_friend_exsit-------------------------------------
-//  add by viva
+//  viva 추가
 void ExecF_FriendExistAsk(C_VS_UI_DIALOG* p_this_dialog, id_t id)
 {
 	switch (id)
@@ -285,7 +285,7 @@ void ExecF_UsePetFood(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 	{
 	case DIALOG_EXECID_OK:
 		{
-			#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+			#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9, 가방 속 가방 기능 추가
 				if(((C_VS_UI_ASK_DIALOG*)p_this_dialog)->GetdwTemporayValue())
 				{
 					MSubInventory* pSubInventory = (MSubInventory*)((C_VS_UI_ASK_DIALOG*)p_this_dialog)->GetpTemporayValue();
@@ -490,7 +490,7 @@ void ExecF_PartyAsk(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 	gC_vs_ui.AcquireChatting();
 }
 
-// by sigi
+// sigi 작성
 void ExecF_StorageBuy(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 {
 	switch (id)
@@ -544,7 +544,7 @@ void ExecF_Use_AskItem(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 	gC_vs_ui.AcquireChatting();
 }
 /*
-// by larosel
+// larosel 작성
 void ExecF_TutorialExitAsk(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 {
 	switch (id)
@@ -633,7 +633,7 @@ void C_VS_UI_GAME::ChangeToSlayerInterface()
 
 	DeleteNew(m_pC_tribe_interface);
 
-	// change skin data
+	// 스킨 데이터 변경
 	gpC_global_resource->FreeAssemble();
 	gpC_global_resource->LoadAssemble();
 	
@@ -701,7 +701,7 @@ void C_VS_UI_GAME::ChangeToVampireInterface()
 
 	DeleteNew(m_pC_tribe_interface);
 
-	// change skin data
+	// 스킨 데이터 변경
 	gpC_global_resource->FreeAssemble();
 	gpC_global_resource->LoadAssemble();
 
@@ -754,7 +754,7 @@ void C_VS_UI_GAME::ChangeToVampireInterface()
 C_VS_UI_GAME::C_VS_UI_GAME()
 {	
 	//------------------------------------m_pC_friend_wait_dialog---------------------------
-	m_pC_friend_wait_dialog = NULL;//add by viva
+	m_pC_friend_wait_dialog = NULL;// viva 추가
 
 	m_pC_regen_tower_minimap = NULL;
 	m_pC_input_name = NULL;
@@ -778,7 +778,7 @@ C_VS_UI_GAME::C_VS_UI_GAME()
 	m_pC_storage_buy_dialog = NULL;
 	m_pC_exchange_ask_dialog = NULL;
 	m_pC_exchange_cancel_dialog = NULL;
-	m_pC_tutorial_exit_ask_dialog = NULL;	//by larosel
+	m_pC_tutorial_exit_ask_dialog = NULL;	// larosel 작성
 	m_pC_party_ask_dialog = NULL;
 	m_pC_party_cancel_dialog = NULL;
 	m_pC_enchant_dialog = NULL;
@@ -793,7 +793,7 @@ C_VS_UI_GAME::C_VS_UI_GAME()
 
 //	m_pC_skill_view = NULL;
 
-	//Tutorial by larosel
+	// larosel 작성, 튜토리얼
 	m_pC_bookcase = NULL;
 //	m_pC_briefing = NULL;
 	m_pC_computer = NULL;
@@ -805,7 +805,7 @@ C_VS_UI_GAME::C_VS_UI_GAME()
 	m_pC_team_member_info = NULL;
 	m_pC_team_regist = NULL;
 
-	// party
+	// 파티
 	m_pC_request_party = NULL;
 	m_pC_request_die = NULL;
 	m_pC_party_manager = NULL;
@@ -868,7 +868,7 @@ C_VS_UI_GAME::C_VS_UI_GAME()
 	m_pC_dialog_Campaign_Help = NULL;
 	m_pC_Quest_Npc_Dialog = NULL;
 	m_pC_WebBrowser = NULL;
-	#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+	#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9, 가방 속 가방 기능 추가
 		m_pC_SubInventory = NULL;
 	#endif
 }
@@ -909,7 +909,7 @@ C_VS_UI_GAME::~C_VS_UI_GAME()
 	DeleteNew(m_pC_dialog_Campaign_Help);
 	DeleteNew(m_pC_Quest_Npc_Dialog);
 	DeleteNew(m_pC_WebBrowser);
-	#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+	#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9, 가방 속 가방 기능 추가
 		DeleteNew(m_pC_SubInventory);
 	#endif
 	DeleteNew(m_pC_sms_message);
@@ -1006,7 +1006,7 @@ C_VS_UI_GAME::~C_VS_UI_GAME()
 //	gbl_option_running = false;
 	g_HISTORY_LINE = 4;
 	
-	// window_set file saving
+	// window_set 파일 저장
 	char sz_filename[512];
 	wsprintf(sz_filename, "UserSet\\%s-%d-%d.set", g_char_slot_ingame.sz_name.c_str(),
 		g_Dimension,g_pUserInformation->WorldID);
@@ -1414,7 +1414,7 @@ bool	C_VS_UI_GAME::ClosePopupWindow()
 		return true;
 	}
 
-	#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+	#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9, 가방 속 가방 기능 추가
 		if(IsRunningSubInventory())
 		{
 			CloseSubInventory();
@@ -1656,7 +1656,7 @@ bool	C_VS_UI_GAME::ClosePopupWindow()
 		return true;
 	}
 	
-	// by sigi
+	// sigi 작성
 	// 책 읽고 있으면 책 닫기
 	if (IsRunningBookcase() && m_pC_bookcase->IsReadingBook())
 	{
@@ -2532,7 +2532,7 @@ void C_VS_UI_GAME::CloseExchange()
 //-----------------------------------------------------------------------------
 // RunPointExchange
 //
-// Opens the Point Exchange Market UI
+// Point Exchange Market UI를 연다
 //-----------------------------------------------------------------------------
 void C_VS_UI_GAME::RunPointExchange()
 {
@@ -2551,7 +2551,7 @@ void C_VS_UI_GAME::RunPointExchange()
 //-----------------------------------------------------------------------------
 // ClosePointExchange
 //
-// Closes the Point Exchange Market UI
+// Point Exchange Market UI를 닫는다
 //-----------------------------------------------------------------------------
 void C_VS_UI_GAME::ClosePointExchange()
 {
@@ -2566,7 +2566,7 @@ void C_VS_UI_GAME::ClosePointExchange()
 //-----------------------------------------------------------------------------
 // IsRunningPointExchange
 //
-// Returns true if Point Exchange UI is open
+// Point Exchange UI가 열려 있으면 true를 반환
 //-----------------------------------------------------------------------------
 bool C_VS_UI_GAME::IsRunningPointExchange() const
 {
@@ -2704,9 +2704,9 @@ void C_VS_UI_GAME::RunStorageBuy(int price)
 		DeleteNew(m_pC_storage_buy_dialog);
 	}
 
-	// center
+	// 중앙
 	m_pC_storage_buy_dialog = new C_VS_UI_ASK_DIALOG(-1, -1, 2, 0, ExecF_StorageBuy, DIALOG_OK|DIALOG_CANCEL, 
-												C_VS_UI_ASK_DIALOG::ASK_STORAGE_BUY, price);	// by sigi
+												C_VS_UI_ASK_DIALOG::ASK_STORAGE_BUY, price);	// sigi 작성
 
 	assert(m_pC_storage_buy_dialog != NULL);
 
@@ -2729,7 +2729,7 @@ void C_VS_UI_GAME::RunOption()
 		DeleteNew(m_pC_option);
 	}
 
-	// center
+	// 중앙
 	m_pC_option = new C_VS_UI_OPTION;
 
 	assert(m_pC_option != NULL);
@@ -2740,7 +2740,7 @@ void C_VS_UI_GAME::RunOption()
 }
 */
 //-----------------------------------------------------------------------------
-// RunSkillView //by larosel
+// RunSkillView // larosel 작성
 //
 // 스킬인포를 실행한다.
 //-----------------------------------------------------------------------------
@@ -2779,7 +2779,7 @@ void C_VS_UI_GAME::RunOption()
 //}
 
 //-----------------------------------------------------------------------------
-// RunDescDialog //by larosel
+// RunDescDialog // larosel 작성
 //
 // 설명창을 실행한다.
 //-----------------------------------------------------------------------------
@@ -2815,7 +2815,7 @@ void C_VS_UI_GAME::CloseDescDialog()
 }
 
 //-----------------------------------------------------------------------------
-// RunFileDialog //by larosel
+// RunFileDialog // larosel 작성
 //
 // 파일창을 실행한다.
 //-----------------------------------------------------------------------------
@@ -2854,7 +2854,7 @@ void C_VS_UI_GAME::CloseFileDialog()
 }
 
 //-----------------------------------------------------------------------------
-// RunElevator //by larosel
+// RunElevator // larosel 작성
 //
 // 엘리베이터 인터페이스를 실행한다.
 //-----------------------------------------------------------------------------
@@ -2890,7 +2890,7 @@ void C_VS_UI_GAME::CloseElevator()
 }
 
 //-----------------------------------------------------------------------------
-// RunBookcase //by larosel
+// RunBookcase // larosel 작성
 //
 // 책장을 실행한다.
 //-----------------------------------------------------------------------------
@@ -2926,7 +2926,7 @@ void C_VS_UI_GAME::CloseBookcase()
 }
 /*
 //-----------------------------------------------------------------------------
-// RunBriefing //by larosel
+// RunBriefing // larosel 작성
 //
 // 브리핑을 실행한다.
 //-----------------------------------------------------------------------------
@@ -2947,7 +2947,7 @@ void C_VS_UI_GAME::RunBriefing()
 
 
 //-----------------------------------------------------------------------------
-// CloseBriefing //by larosel
+// CloseBriefing // larosel 작성
 //
 // 이미 finish된 상태이면 아무것도 하지 않는다.
 //-----------------------------------------------------------------------------
@@ -2963,7 +2963,7 @@ void C_VS_UI_GAME::CloseBriefing()
 }
 */
 //-----------------------------------------------------------------------------
-// RunComputer //by larosel
+// RunComputer // larosel 작성
 //
 // 컴퓨터를 실행한다.
 //-----------------------------------------------------------------------------
@@ -2997,7 +2997,7 @@ void C_VS_UI_GAME::RunComputer()
 
 
 //-----------------------------------------------------------------------------
-// CloseComputer //by larosel
+// CloseComputer // larosel 작성
 //
 // 이미 finish된 상태이면 아무것도 하지 않는다.
 //-----------------------------------------------------------------------------
@@ -3015,7 +3015,7 @@ void C_VS_UI_GAME::CloseComputer()
 }
 /*
 //-----------------------------------------------------------------------------
-// RunTutorialExit //by larosel
+// RunTutorialExit // larosel 작성
 //
 // 튜토리얼 나가기를 실행한다.
 //-----------------------------------------------------------------------------
@@ -3036,7 +3036,7 @@ void C_VS_UI_GAME::RunTutorialExit()
 
 
 //-----------------------------------------------------------------------------
-// CloseTutorialExit //by larosel
+// CloseTutorialExit // larosel 작성
 //
 // 이미 finish된 상태이면 아무것도 하지 않는다.
 //-----------------------------------------------------------------------------
@@ -3055,7 +3055,7 @@ void C_VS_UI_GAME::CloseTutorialExit()
 }
 
 //-----------------------------------------------------------------------------
-// RunTutorialExitAsk	// by larosel
+// RunTutorialExitAsk	// larosel 작성
 //
 // 튜토리얼 나가기확인을 실행한다.
 //-----------------------------------------------------------------------------
@@ -3066,7 +3066,7 @@ void C_VS_UI_GAME::RunTutorialExitAsk(const int select, const char* pName)
 		DeleteNew(m_pC_tutorial_exit_ask_dialog);
 	}
 
-	// center
+	// 중앙
 	m_pC_tutorial_exit_ask_dialog = new C_VS_UI_ASK_DIALOG(-1, -1, 2, 0, ExecF_TutorialExitAsk, DIALOG_OK|DIALOG_CANCEL, 
 												C_VS_UI_ASK_DIALOG::ASK_TUTORIAL_EXIT, select, (void *)pName);
 
@@ -3104,7 +3104,7 @@ void C_VS_UI_GAME::CloseTutorialExitAsk()
 */
 
 //-----------------------------------------------------------------------------
-// RunHorn //by larosel
+// RunHorn // larosel 작성
 //
 // 슬레이어 포탈을 실행한다.
 //-----------------------------------------------------------------------------
@@ -3125,7 +3125,7 @@ void C_VS_UI_GAME::RunHorn(int currentZoneID)
 
 
 //-----------------------------------------------------------------------------
-// CloseHorn //by larosel
+// CloseHorn // larosel 작성
 //
 // 이미 finish된 상태이면 아무것도 하지 않는다.
 //-----------------------------------------------------------------------------
@@ -3151,7 +3151,7 @@ bool	C_VS_UI_GAME::IsRunningHorn() const
 }
 
 //-----------------------------------------------------------------------------
-// RunMailBox //by larosel
+// RunMailBox // larosel 작성
 //
 // 메일함
 //-----------------------------------------------------------------------------
@@ -3162,7 +3162,7 @@ void C_VS_UI_GAME::RunMailBox()
 
 
 //-----------------------------------------------------------------------------
-// CloseMailBox //by larosel
+// CloseMailBox // larosel 작성
 //
 // 이미 finish된 상태이면 아무것도 하지 않는다.
 //-----------------------------------------------------------------------------
@@ -3229,7 +3229,7 @@ void	C_VS_UI_GAME::AddHelpMail(DWORD id,  bool open)
 }
 
 //-----------------------------------------------------------------------------
-// RunFindingMine //by larosel
+// RunFindingMine // larosel 작성
 //
 // 슬레이어 포탈을 실행한다.
 //-----------------------------------------------------------------------------
@@ -3250,7 +3250,7 @@ void C_VS_UI_GAME::RunFindingMine()
 
 
 //-----------------------------------------------------------------------------
-// CloseFindingMine //by larosel
+// CloseFindingMine // larosel 작성
 //
 // 이미 finish된 상태이면 아무것도 하지 않는다.
 //-----------------------------------------------------------------------------
@@ -3276,7 +3276,7 @@ bool	C_VS_UI_GAME::IsRunningFindingMine() const
 }
 
 //-----------------------------------------------------------------------------
-// RunSlayerPortal //by larosel
+// RunSlayerPortal // larosel 작성
 //
 // 슬레이어 포탈을 실행한다.
 //-----------------------------------------------------------------------------
@@ -3297,7 +3297,7 @@ void C_VS_UI_GAME::RunSlayerPortal()
 
 
 //-----------------------------------------------------------------------------
-// CloseSlayerPortal //by larosel
+// CloseSlayerPortal // larosel 작성
 //
 // 이미 finish된 상태이면 아무것도 하지 않는다.
 //-----------------------------------------------------------------------------
@@ -3323,7 +3323,7 @@ bool	C_VS_UI_GAME::IsRunningSlayerPortal() const
 }
 
 //-----------------------------------------------------------------------------
-// RunTeamList //by larosel
+// RunTeamList // larosel 작성
 //
 // 슬레이어 포탈을 실행한다.
 //-----------------------------------------------------------------------------
@@ -3344,7 +3344,7 @@ void C_VS_UI_GAME::RunTeamList(bool ready, bool IsUnion)
 
 
 //-----------------------------------------------------------------------------
-// CloseTeamList //by larosel
+// CloseTeamList // larosel 작성
 //
 // 이미 finish된 상태이면 아무것도 하지 않는다.
 //-----------------------------------------------------------------------------
@@ -3381,7 +3381,7 @@ bool	C_VS_UI_GAME::IsRunningTeamList(bool IsUnion) const
 }
 
 //-----------------------------------------------------------------------------
-// RunTeamMemberList //by larosel
+// RunTeamMemberList // larosel 작성
 //
 // 슬레이어 포탈을 실행한다.
 //-----------------------------------------------------------------------------
@@ -3402,7 +3402,7 @@ void C_VS_UI_GAME::RunTeamMemberList()
 
 
 //-----------------------------------------------------------------------------
-// CloseTeamMemberList //by larosel
+// CloseTeamMemberList // larosel 작성
 //
 // 이미 finish된 상태이면 아무것도 하지 않는다.
 //-----------------------------------------------------------------------------
@@ -3428,7 +3428,7 @@ bool	C_VS_UI_GAME::IsRunningTeamMemberList() const
 }
 
 //-----------------------------------------------------------------------------
-// RunTeamInfo //by larosel
+// RunTeamInfo // larosel 작성
 //
 //-----------------------------------------------------------------------------
 void C_VS_UI_GAME::RunTeamInfo(bool ready, void *info, bool IsUnion)
@@ -3448,7 +3448,7 @@ void C_VS_UI_GAME::RunTeamInfo(bool ready, void *info, bool IsUnion)
 
 
 //-----------------------------------------------------------------------------
-// CloseTeamInfo //by larosel
+// CloseTeamInfo // larosel 작성
 //
 // 이미 finish된 상태이면 아무것도 하지 않는다.
 //-----------------------------------------------------------------------------
@@ -3481,7 +3481,7 @@ bool	C_VS_UI_GAME::IsRunningTeamInfo() const
 }
 
 //-----------------------------------------------------------------------------
-// RunTeamMemberInfo //by larosel
+// RunTeamMemberInfo // larosel 작성
 //
 //-----------------------------------------------------------------------------
 void C_VS_UI_GAME::RunTeamMemberInfo(C_VS_UI_TEAM_MEMBER_INFO::MEMBER_INFO *info)
@@ -3501,7 +3501,7 @@ void C_VS_UI_GAME::RunTeamMemberInfo(C_VS_UI_TEAM_MEMBER_INFO::MEMBER_INFO *info
 
 
 //-----------------------------------------------------------------------------
-// CloseTeamMemberInfo //by larosel
+// CloseTeamMemberInfo // larosel 작성
 //
 // 이미 finish된 상태이면 아무것도 하지 않는다.
 //-----------------------------------------------------------------------------
@@ -3527,7 +3527,7 @@ bool	C_VS_UI_GAME::IsRunningTeamMemberInfo() const
 }
 
 //-----------------------------------------------------------------------------
-// RunTeamRegist //by larosel
+// RunTeamRegist // larosel 작성
 //
 //-----------------------------------------------------------------------------
 void C_VS_UI_GAME::RunTeamRegist(bool member, int reg_fee, int rank, char *date, char *team_name, int guild_id)
@@ -3547,7 +3547,7 @@ void C_VS_UI_GAME::RunTeamRegist(bool member, int reg_fee, int rank, char *date,
 
 
 //-----------------------------------------------------------------------------
-// CloseTeamRegist //by larosel
+// CloseTeamRegist // larosel 작성
 //
 // 이미 finish된 상태이면 아무것도 하지 않는다.
 //-----------------------------------------------------------------------------
@@ -3564,7 +3564,7 @@ void C_VS_UI_GAME::CloseTeamRegist()
 //-----------------------------------------------------------------------------
 // CloseFriendChattingInfo 
 //
-// add by viva
+// viva 추가
 //-----------------------------------------------------------------------------
 void C_VS_UI_GAME::CloseFriendChattingInfo(C_VS_UI_FRIEND_CHATTING_INFO* pInfo)
 {
@@ -3581,7 +3581,7 @@ void C_VS_UI_GAME::CloseFriendChattingInfo(C_VS_UI_FRIEND_CHATTING_INFO* pInfo)
 //-----------------------------------------------------------------------------
 // OpenFriendChattingInfo 
 //
-// add by viva
+// viva 추가
 //-----------------------------------------------------------------------------
 void C_VS_UI_GAME::OpenFriendChattingInfo(C_VS_UI_FRIEND_INFO::FRIEND_LIST* pList)
 {
@@ -3620,9 +3620,9 @@ void C_VS_UI_GAME::RunExchangeAsk(const char* pName)
 		DeleteNew(m_pC_exchange_ask_dialog);
 	}
 
-	// center
+	// 중앙
 	m_pC_exchange_ask_dialog = new C_VS_UI_ASK_DIALOG(-1, 50, 2, 0, ExecF_ExchangeAsk, DIALOG_OK|DIALOG_CANCEL, 
-												C_VS_UI_ASK_DIALOG::ASK_EXCHANGE, 0, (void*)pName);	// by sigi
+												C_VS_UI_ASK_DIALOG::ASK_EXCHANGE, 0, (void*)pName);	// sigi 작성
 
 	assert(m_pC_exchange_ask_dialog != NULL);
 
@@ -3632,7 +3632,7 @@ void C_VS_UI_GAME::RunExchangeAsk(const char* pName)
 }
 ///-----------------------------------------------------------------------------
 ////	RunFriendRequestAsk
-//add by viva ask_friend_request
+// viva 추가, ask_friend_request
 //
 //-------------------------------------------------------------------------------
 void C_VS_UI_GAME::RunFriendRequestAsk(const char* pName)
@@ -3720,9 +3720,9 @@ void C_VS_UI_GAME::RunExchangeCancel(const char* pName)
 		DeleteNew(m_pC_exchange_cancel_dialog);
 	}
 
-	// center
+	// 중앙
 	m_pC_exchange_cancel_dialog = new C_VS_UI_ASK_DIALOG(-1, 50, 2, 0, ExecF_ExchangeCancel, DIALOG_CANCEL,// | DIALOG_OK, 
-												C_VS_UI_ASK_DIALOG::ASK_EXCHANGE_CANCEL, 0, (void*)pName);	// by sigi
+												C_VS_UI_ASK_DIALOG::ASK_EXCHANGE_CANCEL, 0, (void*)pName);	// sigi 작성
 
 	assert(m_pC_exchange_cancel_dialog != NULL);
 
@@ -4244,7 +4244,7 @@ void C_VS_UI_GAME::HotKey_PetInfo()
 	if (!m_pC_gamemenu)
 		m_pC_hotkey->HotKey_PetInfo();
 }
-//add by viva
+// viva 추가
 void C_VS_UI_GAME::HotKey_Friend()
 {
 	assert(m_pC_hotkey);
@@ -4272,7 +4272,7 @@ void C_VS_UI_GAME::HotKey_Mark()
 		m_pC_hotkey->HotKey_Mark();
 }
 
-#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9, 가방 속 가방 기능 추가
 	void C_VS_UI_GAME::HotKey_Inventory(bool IsCheckSubInventory)
 #else
 	void C_VS_UI_GAME::HotKey_Inventory()
@@ -4281,7 +4281,7 @@ void C_VS_UI_GAME::HotKey_Mark()
 	assert(m_pC_hotkey);
 
 	//if (!gpC_window_manager->GetShowState(m_pC_gamemenu))
-	#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+	#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9, 가방 속 가방 기능 추가
 		if (!m_pC_gamemenu)
 			m_pC_hotkey->HotKey_Inventory(IsCheckSubInventory);
 	#else
@@ -4673,7 +4673,7 @@ void C_VS_UI_GAME::Start()
 //	for(int zone = 0; zone < zoneNum; zone++)
 
 	
-	// default: Slayer interface
+	// 기본값: Slayer 인터페이스
 	switch(g_eRaceInterface)
 	{
 	case RACE_SLAYER:
@@ -4835,16 +4835,16 @@ void C_VS_UI_GAME::RunPartyAsk(const char* pName, C_VS_UI_REQUEST_PARTY::REQUEST
 		DeleteNew(m_pC_party_ask_dialog);
 	}
 
-	// center
+	// 중앙
 	if(type == C_VS_UI_REQUEST_PARTY::INVITE)
 	{
 		m_pC_party_ask_dialog = new C_VS_UI_ASK_DIALOG(-1, 50, 2, 0, ExecF_PartyAsk, DIALOG_OK|DIALOG_CANCEL, 
-												C_VS_UI_ASK_DIALOG::ASK_PARTY_INVITE, 0, (void*)pName);	// by sigi
+												C_VS_UI_ASK_DIALOG::ASK_PARTY_INVITE, 0, (void*)pName);	// sigi 작성
 	}
 	else if(type == C_VS_UI_REQUEST_PARTY::REQUEST)
 	{
 		m_pC_party_ask_dialog = new C_VS_UI_ASK_DIALOG(-1, 50, 2, 0, ExecF_PartyAsk, DIALOG_OK|DIALOG_CANCEL, 
-												C_VS_UI_ASK_DIALOG::ASK_PARTY_REQUEST, 0, (void*)pName);	// by sigi
+												C_VS_UI_ASK_DIALOG::ASK_PARTY_REQUEST, 0, (void*)pName);	// sigi 작성
 	}
 
 	assert(m_pC_party_ask_dialog != NULL);
@@ -4866,9 +4866,9 @@ void C_VS_UI_GAME::RunPartyCancel(const char* pName)
 		DeleteNew(m_pC_party_cancel_dialog);
 	}
 
-	// center
+	// 중앙
 	m_pC_party_cancel_dialog = new C_VS_UI_ASK_DIALOG(-1, 50, 2, 0, ExecF_PartyCancel, DIALOG_CANCEL,// | DIALOG_OK, 
-												C_VS_UI_ASK_DIALOG::ASK_PARTY_CANCEL, 0, (void*)pName);	// by sigi
+												C_VS_UI_ASK_DIALOG::ASK_PARTY_CANCEL, 0, (void*)pName);	// sigi 작성
 
 	assert(m_pC_party_cancel_dialog != NULL);
 
@@ -4889,9 +4889,9 @@ void C_VS_UI_GAME::RunEnchant(int value)
 		DeleteNew(m_pC_enchant_dialog);
 	}
 
-	// center
+	// 중앙
 	m_pC_enchant_dialog = new C_VS_UI_ASK_DIALOG(-1, 50, 3, 0, ExecF_Enchant, DIALOG_CANCEL | DIALOG_OK, 
-												C_VS_UI_ASK_DIALOG::ASK_ENCHANT, value);	// by sigi
+												C_VS_UI_ASK_DIALOG::ASK_ENCHANT, value);	// sigi 작성
 
 	assert(m_pC_enchant_dialog != NULL);
 
@@ -4925,7 +4925,7 @@ void C_VS_UI_GAME::CloseEnchant()
 //
 // 펫 먹이 먹일래 하고 묻는중...
 //-----------------------------------------------------------------------------
-#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9, 가방 속 가방 기능 추가
 	void C_VS_UI_GAME::RunUsePetFood(DWORD UsingObjectID, MItem* SubInventory)
 #else
 	void C_VS_UI_GAME::RunUsePetFood()
@@ -4936,14 +4936,14 @@ void C_VS_UI_GAME::CloseEnchant()
 		DeleteNew(m_pC_use_pet_food_dialog);
 	}
 	
-	// center
+	// 중앙
 
-	#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+	#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9, 가방 속 가방 기능 추가
 		m_pC_use_pet_food_dialog = new C_VS_UI_ASK_DIALOG(-1, 50, 5, 1, ExecF_UsePetFood, DIALOG_CANCEL | DIALOG_OK, 
-			C_VS_UI_ASK_DIALOG::ASK_USE_PET_FOOD, UsingObjectID, SubInventory);	// by sigi
+			C_VS_UI_ASK_DIALOG::ASK_USE_PET_FOOD, UsingObjectID, SubInventory);	// sigi 작성
 	#else
 		m_pC_use_pet_food_dialog = new C_VS_UI_ASK_DIALOG(-1, 50, 5, 1, ExecF_UsePetFood, DIALOG_CANCEL | DIALOG_OK, 
-			C_VS_UI_ASK_DIALOG::ASK_USE_PET_FOOD, 0);	// by sigi
+			C_VS_UI_ASK_DIALOG::ASK_USE_PET_FOOD, 0);	// sigi 작성
 	#endif
 
 	
@@ -4985,9 +4985,9 @@ void C_VS_UI_GAME::RunKeepPetItemDialog()
 		DeleteNew(m_pC_keep_petitem_dialog);
 	}
 	
-	// center
+	// 중앙
 	m_pC_keep_petitem_dialog = new C_VS_UI_ASK_DIALOG(-1, 50, 5, 1, ExecF_Keep_PetItem, DIALOG_CANCEL | DIALOG_OK, 
-		C_VS_UI_ASK_DIALOG::ASK_KEEP_PETITEM, 0);	// by sigi
+		C_VS_UI_ASK_DIALOG::ASK_KEEP_PETITEM, 0);	// sigi 작성
 	
 	assert(m_pC_keep_petitem_dialog != NULL);
 	
@@ -5027,9 +5027,9 @@ void C_VS_UI_GAME::RunGetKeepPetItemDialog()
 		DeleteNew(m_pC_get_keep_petitem_dialog);
 	}
 	
-	// center
+	// 중앙
 	m_pC_get_keep_petitem_dialog = new C_VS_UI_ASK_DIALOG(-1, 50, 5, 1, ExecF_Get_Keep_PetItem, DIALOG_CANCEL | DIALOG_OK, 
-		C_VS_UI_ASK_DIALOG::ASK_GET_KEEP_PETITEM, 0);	// by sigi
+		C_VS_UI_ASK_DIALOG::ASK_GET_KEEP_PETITEM, 0);	// sigi 작성
 	
 	assert(m_pC_get_keep_petitem_dialog != NULL);
 	
@@ -5068,9 +5068,9 @@ void C_VS_UI_GAME::RunNoSearchResult()
 		DeleteNew(m_pC_no_search_result_dialog);
 	}
 
-	// center
+	// 중앙
 	m_pC_no_search_result_dialog = new C_VS_UI_ASK_DIALOG(-1, -1, 2, 0, ExecF_NoSearchResult, DIALOG_OK,// | DIALOG_OK, 
-												C_VS_UI_ASK_DIALOG::ASK_NO_SEARCH_RESULT, 0);	// by sigi
+												C_VS_UI_ASK_DIALOG::ASK_NO_SEARCH_RESULT, 0);	// sigi 작성
 
 	assert(m_pC_no_search_result_dialog != NULL);
 
@@ -5091,9 +5091,9 @@ void C_VS_UI_GAME::RunDepositLimit()
 		DeleteNew(m_pC_deposit_limit);
 	}
 
-	// center
+	// 중앙
 	m_pC_deposit_limit = new C_VS_UI_ASK_DIALOG(-1, -1, 2, 0, ExecF_DepositLimit, DIALOG_OK,// | DIALOG_OK, 
-												C_VS_UI_ASK_DIALOG::ASK_DEPOSIT_LIMIT, 0);	// by sigi
+												C_VS_UI_ASK_DIALOG::ASK_DEPOSIT_LIMIT, 0);	// sigi 작성
 
 	assert(m_pC_deposit_limit != NULL);
 
@@ -5129,9 +5129,9 @@ void C_VS_UI_GAME::RunWithdrawLimit()
 		DeleteNew(m_pC_withdraw_limit);
 	}
 
-	// center
+	// 중앙
 	m_pC_withdraw_limit = new C_VS_UI_ASK_DIALOG(-1, -1, 2, 0, ExecF_WithdrawLimit, DIALOG_OK,// | DIALOG_OK, 
-												C_VS_UI_ASK_DIALOG::ASK_WITHDRAW_LIMIT, 0);	// by sigi
+												C_VS_UI_ASK_DIALOG::ASK_WITHDRAW_LIMIT, 0);	// sigi 작성
 
 	assert(m_pC_withdraw_limit != NULL);
 
@@ -5244,7 +5244,7 @@ void C_VS_UI_GAME::CloseWithdrawLimit()
 
 
 //-----------------------------------------------------------------------------
-// RunPartyManager //by larosel
+// RunPartyManager // larosel 작성
 //
 //-----------------------------------------------------------------------------
 void C_VS_UI_GAME::RunPartyManager()
@@ -5570,9 +5570,9 @@ void	C_VS_UI_GAME::RunTransItem()
 		DeleteNew(m_pC_trans_item_dialog);
 	}
 
-	// center
+	// 중앙
 	m_pC_trans_item_dialog = new C_VS_UI_ASK_DIALOG(-1, 50, 3, 0, ExecF_TransItem, DIALOG_CANCEL | DIALOG_OK, 
-												C_VS_UI_ASK_DIALOG::ASK_TRANS_ITEM, 0);	// by sigi
+												C_VS_UI_ASK_DIALOG::ASK_TRANS_ITEM, 0);	// sigi 작성
 
 	assert(m_pC_trans_item_dialog != NULL);
 
@@ -5668,7 +5668,7 @@ void C_VS_UI_GAME::ChangeToOustersInterface()
 
 	DeleteNew(m_pC_tribe_interface);
 
-	// change skin data
+	// 스킨 데이터 변경
 	gpC_global_resource->FreeAssemble();
 	gpC_global_resource->LoadAssemble();
 
@@ -5902,7 +5902,7 @@ void	C_VS_UI_GAME::SetMiniGameScore(BYTE& Type, std::string& topname, WORD& tops
 		if( m_pC_crazy_mine )
 			m_pC_crazy_mine->SetScore( topname, topscore, mybestscore );
 		break;
-	case 3 :			// arrow
+	case 3 :			// 화살표
 		if( m_pC_arrow_tile )
 			m_pC_arrow_tile->SetScore( topname, topscore, mybestscore );
 		break;
@@ -6327,7 +6327,7 @@ void C_VS_UI_GAMEMENU::Show()
 	}
 
 /*
-	// TEST -- 
+	// 테스트 --
 	if (m_selected_menu != NOT_SELECTED)
 	{
 		if (gpC_base->m_p_DDSurface_back->Lock())
@@ -6561,11 +6561,11 @@ void C_VS_UI_GAME::RunAskUseItemDialog(int AskType)
 		DeleteNew(m_pC_use_askitem_dialog);
 	}
 	
-	// center
+	// 중앙
 	if(AskType >= C_VS_UI_ASK_DIALOG::MAX_ASK_DIALOG_TYPE)
 		return;
 	m_pC_use_askitem_dialog = new C_VS_UI_ASK_DIALOG(-1, 50, 5, 1, ExecF_Use_AskItem, DIALOG_CANCEL | DIALOG_OK, 
-		(C_VS_UI_ASK_DIALOG::TYPE_ASK_DIALOG)AskType, 0);	// by sigi
+		(C_VS_UI_ASK_DIALOG::TYPE_ASK_DIALOG)AskType, 0);	// sigi 작성
 	
 	assert(m_pC_use_askitem_dialog != NULL);
 	
@@ -6970,7 +6970,7 @@ void	C_VS_UI_GAME::RunModifyTax()
 		DeleteNew(m_pC_dialog_Modify_Tax);
 
 	m_pC_dialog_Modify_Tax = new C_VS_UI_MONEY_DIALOG(400, 300, 2, 0, ExecF_ModifyTax, DIALOG_OK|DIALOG_CANCEL, 10, 
-		C_VS_UI_MONEY_DIALOG::MODIFY_TAX);	// by sigi
+		C_VS_UI_MONEY_DIALOG::MODIFY_TAX);	// sigi 작성
 	m_pC_dialog_Modify_Tax->Start();
 }
 
@@ -7136,7 +7136,7 @@ void	C_VS_UI_GAME::Run_Campaign_Help_Unfortunate_Neighbors(int value)
 		DeleteNew(m_pC_dialog_Campaign_Help);
 
 	m_pC_dialog_Campaign_Help = new C_VS_UI_MONEY_DIALOG(250, 300, 2, 0, ExecF_CampaignHelp, DIALOG_OK|DIALOG_CANCEL, 10, 
-		C_VS_UI_MONEY_DIALOG::MONEY_CAMPAIGN_HELP);	// by sigi
+		C_VS_UI_MONEY_DIALOG::MONEY_CAMPAIGN_HELP);	// sigi 작성
 	m_pC_dialog_Campaign_Help->Start();
 	m_pC_dialog_Campaign_Help->SetTempValue(value);
 
@@ -7218,7 +7218,7 @@ bool C_VS_UI_GAME::IsInRectPointWebBrowser(int X, int Y)
 	return m_pC_WebBrowser->IsInRectPoint(X, Y);
 }
 // 2005, 2, 1, sobeit add end
-#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9, 가방 속 가방 기능 추가
 
 // 2005, 2, 24, sobeit add start
 void	C_VS_UI_GAME::RunSubInventory(MItem* pItem)

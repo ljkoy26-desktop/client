@@ -22,7 +22,7 @@
 #include "VS_UI_Util.h"
 #include "VS_UI_description.h"
 #include "VS_UI_ExtraDialog.h"
-#include "VS_UI_Title.h" // for S_SLOT
+#include "VS_UI_Title.h" // S_SLOT을 위함
 #include "SkillDef.h"
 #include "MItem.h"
 

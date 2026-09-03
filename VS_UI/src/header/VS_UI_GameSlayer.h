@@ -21,7 +21,7 @@
 //-----------------------------------------------------------------------------
 // C_VS_UI_SLAYER_CHAT by larosel
 //
-// Slayer only chat menu interface object.
+// Slayer 전용 채팅 메뉴 인터페이스 오브젝트.
 //-----------------------------------------------------------------------------
 class C_VS_UI_SLAYER_CHAT : public Rect, public Exec//, public ButtonVisual
 {
@@ -58,7 +58,7 @@ public:
 //-----------------------------------------------------------------------------
 // C_VS_UI_SLAYER_QUICKITEM
 //
-// Slayer only Quick item interface object.
+// Slayer 전용 Quick item 인터페이스 오브젝트.
 //-----------------------------------------------------------------------------
 class C_VS_UI_SLAYER_QUICKITEM : public Window, public ButtonVisual, public Exec
 {
@@ -150,14 +150,14 @@ public:
 //-----------------------------------------------------------------------------
 // C_VS_UI_SLAYER_PDS
 //
-// Slayer only Personal Data System Interface Object.
+// Slayer 전용 Personal Data System 인터페이스 오브젝트.
 //
-// - no Window property.
+// - Window 속성 없음.
 //-----------------------------------------------------------------------------
 class C_VS_UI_SLAYER_PDS : public Rect, public Exec, public ButtonVisual
 {
 public:
-	// character value
+	// 캐릭터 능력치
 	/*
 	static long					m_str;
 	static long					m_dex;
@@ -177,7 +177,7 @@ public:
 	static long					m_ac_max;
 	static long					m_cc_max;
 
-	static long					m_pcs_number; // slayer pcs number ; it's private!
+	static long					m_pcs_number; // slayer pcs 번호 ; private임!
 
 private:
 
@@ -190,7 +190,7 @@ private:
 		PCS_END,
 		PCS_SEND,
 
-		// dial-pad number
+		// 다이얼패드 번호
 		PCS_0,
 		PCS_1,
 		PCS_2,
@@ -211,7 +211,7 @@ private:
 		PCS_CONNECTION_MARK,
 	};
 
-	enum PDS_SUB_SPK_INDEX // common use
+	enum PDS_SUB_SPK_INDEX // 공용
 	{
 		CLOSE_PUSHED_BUTTON,
 		SCROLLUP_PUSHED_BUTTON,
@@ -221,7 +221,7 @@ private:
 public:
 	enum PDS_MENU_ALL_ID
 	{
-		PDS_CLOSE_ID, // PDS close, it's common menu.
+		PDS_CLOSE_ID, // PDS 닫기, 공통 메뉴임.
 
 		// pcs
 		PCS_SEL_ID,
@@ -248,7 +248,7 @@ public:
 		PCS_PHONE_1_ID,
 		PCS_PHONE_2_ID,
 		PCS_PHONE_3_ID,
-		PCS_QUIT_ID, // access in C_VS_UI_SLAYER
+		PCS_QUIT_ID, // C_VS_UI_SLAYER에서 접근
 	};	
 
 private:
@@ -285,9 +285,9 @@ private:
 
 	PDS_MENU						m_pds_menu;
 
-	ButtonGroup *				m_pC_common_button_group; // close button
+	ButtonGroup *				m_pC_common_button_group; // 닫기 버튼
 	ButtonGroup *				m_pC_pcs_button_group;
-	ButtonGroup *				m_pC_pcs_button_group2; // when one-line mode
+	ButtonGroup *				m_pC_pcs_button_group2; // 한 줄 모드일 때
 
 	LineEditorVisual			m_lev_pcs_number;
 	Scrollbar					m_pcs_scrollbar;
@@ -504,12 +504,12 @@ protected:
 //-----------------------------------------------------------------------------
 // C_VS_UI_SLAYER
 //
-// Slayer Main interface.
+// Slayer 메인 인터페이스.
 //-----------------------------------------------------------------------------
 class C_VS_UI_SLAYER : public C_VS_UI_TRIBE
 {
 private:
-	// data object
+	// 데이터 오브젝트
 	C_VS_UI_SLAYER_GEAR *		m_pC_gear;
 //	C_VS_UI_ADVANCEMENTSLAYER_GEAR * m_pC_advence_gear;
 
@@ -555,7 +555,7 @@ public:
 	void	KeyboardControl(UINT message, UINT key, long extra);
 
 	//---------------------------------------
-	// Hot key
+	// 단축키
 	//---------------------------------------
 	void HotKey_QuickItemSlot();
 	void HotKey_F1();	

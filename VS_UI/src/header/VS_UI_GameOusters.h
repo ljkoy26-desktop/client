@@ -141,7 +141,7 @@ public:
 //-----------------------------------------------------------------------------
 // C_VS_UI_OUSTERS_QUICKITEM
 //
-// OUSTERS only Quick item interface object.
+// OUSTERS 전용 Quick item 인터페이스 오브젝트.
 //-----------------------------------------------------------------------------
 class C_VS_UI_OUSTERS_QUICKITEM : public Window, public ButtonVisual, public Exec
 {

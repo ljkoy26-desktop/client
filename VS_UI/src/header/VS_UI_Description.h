@@ -2,7 +2,7 @@
 
 	VS_UI_Description.h
 
-	All description.
+	모든 description.
 
 	2000.12.09. KJTINC
 
@@ -15,7 +15,7 @@
 
 #include "VS_UI_Descriptor.h"
 
-// descriptor id
+// descriptor id(설명자 id)
 const id_t DID_ITEM = 1;
 const id_t DID_SKILL = 2;
 const id_t DID_HELP = 3;

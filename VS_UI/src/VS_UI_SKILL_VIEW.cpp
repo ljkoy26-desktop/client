@@ -1,4 +1,4 @@
-// VS_UI_SKILL_VIEW.cpp: implementation of the C_VS_UI_SKILL_VIEW class.
+﻿// VS_UI_SKILL_VIEW.cpp: implementation of the C_VS_UI_SKILL_VIEW class.
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -35,7 +35,7 @@ C_VS_UI_SKILL_VIEW::C_VS_UI_SKILL_VIEW()
 
 	m_p_skill_view_etc_spk = new C_SPRITE_PACK(SPK_SKILLVIEW_ETC);
 
-// member data init
+// 멤버 데이터 초기화
 //	m_iGrade = 0;
 //	m_iDomain = 0;
 //	m_iScroll = 0;
@@ -93,7 +93,7 @@ C_VS_UI_SKILL_VIEW::C_VS_UI_SKILL_VIEW()
 
 	if(gbl_vampire_interface)
 	{
-		// Domain_ICON load
+		// Domain_ICON 로드
 //		ifstream	file(SPK_SKILLVIEW_VAMPIRE_DOMAIN, ios::binary|ios::nocreate);
 //		if (!file)
 //			_Error(FILE_OPEN);
@@ -112,7 +112,7 @@ C_VS_UI_SKILL_VIEW::C_VS_UI_SKILL_VIEW()
 	}
 	else
 	{
-		// Domain_ICON load
+		// Domain_ICON 로드
 //		ifstream	file(SPK_SKILLVIEW_SLAYER_DOMAIN, ios::binary|ios::nocreate);
 //		if (!file)
 //			_Error(FILE_OPEN);
@@ -231,7 +231,7 @@ C_VS_UI_SKILL_VIEW::C_VS_UI_SKILL_VIEW()
 //			EFFECT_DIFFERENT,
 
 
-// button groups
+// 버튼 그룹
 //	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(status_x_offset, status_y_offset, gpC_global_resource->m_pC_assemble_box_button_spk->GetWidth(C_GLOBAL_RESOURCE::AB_BUTTON_UP), gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_UP), STATUS_UP, this, C_GLOBAL_RESOURCE::AB_BUTTON_UP));
 
 //	m_skill_domain = MAX_SKILLDOMAIN;
@@ -367,7 +367,7 @@ void C_VS_UI_SKILL_VIEW::Show()
 										if(rect.bottom > 0 && rect.right > 0 && rect.left < 800 && rect.top < 600)
 											DrawAlphaBox(&rect, 0, 0, 0, 15);
 										
-										// EXP BAR
+										// EXP BAR(경험치 바)
 										int max_exp = (*g_pSkillInfoTable)[(ACTIONINFO)*ss].maxExp;
 										int exp = (*g_pSkillInfoTable)[(ACTIONINFO)*ss].GetSkillExp();
 										int exp_percent;
@@ -836,7 +836,7 @@ void	C_VS_UI_SKILL_VIEW::Start()
 	DeleteNew(m_p_skill_view_spk);
 	DeleteNew(m_pC_skill_view_domain_spk);
 
-// SKILL_ICON load
+// SKILL_ICON 로드
 //	ifstream	file(SPK_SKILL_ICON, ios::binary|ios::nocreate);
 //	if (!file)
 //		_Error(FILE_OPEN);
@@ -850,7 +850,7 @@ void	C_VS_UI_SKILL_VIEW::Start()
 		m_p_skill_view_spk = new C_SPRITE_PACK(SPK_SKILLVIEW_VAMPIRE);
 		m_p_skill_view_grade_spk = new C_SPRITE_PACK(SPK_SKILLVIEW_VAMPIRE_GRADE);
 		m_pC_skill_view_domain_spk = new C_SPRITE_PACK(SPK_SKILLVIEW_VAMPIRE_DOMAIN);
-		// Domain_ICON load
+		// Domain_ICON 로드
 //		ifstream	file(SPK_SKILLVIEW_VAMPIRE_DOMAIN, ios::binary|ios::nocreate);
 //		if (!file)
 //			_Error(FILE_OPEN);
@@ -865,7 +865,7 @@ void	C_VS_UI_SKILL_VIEW::Start()
 		m_pC_skill_view_domain_spk = new C_SPRITE_PACK(SPK_SKILLVIEW_SLAYER_DOMAIN);
 
 
-		// Domain_ICON load
+		// Domain_ICON 로드
 //		ifstream	file(SPK_SKILLVIEW_SLAYER_DOMAIN, ios::binary|ios::nocreate);
 //		if (!file)
 //			_Error(FILE_OPEN);

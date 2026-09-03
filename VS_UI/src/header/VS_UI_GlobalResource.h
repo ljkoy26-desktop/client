@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	VS_UI_GlobalResource.h
 
@@ -139,7 +139,7 @@ public:
 		AB_TITLE_DECORATION_LEFT,
 		AB_TITLE_DECORATION_RIGHT,
 
-		//add by viva
+		// viva 추가
 		AB_BUTTON_FRIEND_BLACK,
 		AB_BUTTON_FRIEND_BLACK_HILIGHTED,
 		AB_BUTTON_FRIEND_BLACK_PUSHED,
@@ -205,7 +205,7 @@ public:
 
 	enum INFO_SPK
 	{
-		//common
+		// 공통
 		TAB_CHAR,
 		TAB_SKILL,
 		TAB_GRADE1,
@@ -253,7 +253,7 @@ public:
 		GRADE_RED_BUTTON,
 		GRADE_RED_BUTTON_DISABLE,
 
-		//slayer
+		// slayer
 		TITLE_FAME,
 		TITLE_MP,
 		TITLE_DOMAINLEVEL,
@@ -342,7 +342,7 @@ public:
 //		ADVANCEMENT_CHINGHO_NUM_9,
 //		ADVANCEMENT_CHINGHO_NUM_10,
 
-		//VAMPIRE
+		// VAMPIRE
 		TITLE_LEVEL = TITLE_FAME,
 		TITLE_BONUS,
 		TITLE_EXP,
@@ -426,7 +426,7 @@ public:
 
 
 
-		//ousters
+		// ousters
 //		OUSTERS_TITLE_LEVEL = TITLE_FAME,
 //		OUSTERS_TITLE_BONUS,
 //		OUSTERS_TITLE_EXP,
@@ -530,19 +530,19 @@ public:
 	void	LoadAssemble();
 	void	FreeAssemble();
 
-	// OutBox?
+	// OutBox인가?
 	void	DrawOutBox(int x, int y, int w, int h);
 	void	DrawOutBox(Rect &rect);
 	void	DrawOutBoxLocked(int x, int y, int w, int h);
 	void	DrawOutBoxLocked(Rect &rect);
 
-	// InBox?
+	// InBox인가?
 	void	DrawInBox(int x, int y, int w, int h);
 	void	DrawInBox(Rect &rect);
 	void	DrawInBoxLocked(int x, int y, int w, int h);
 	void	DrawInBoxLocked(Rect &rect);
 	
-	// Dialog
+	// 다이얼로그
 	void	DrawDialog(int x, int y, int w, int h, bool alpha = false);
 	void	DrawDialog(Rect &rect, bool alpha = false);
 	void	DrawDialogLocked(int x, int y, int w, int h, bool alpha = false);

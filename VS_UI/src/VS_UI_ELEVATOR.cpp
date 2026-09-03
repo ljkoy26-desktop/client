@@ -1,22 +1,22 @@
-// VS_UI_ELEVATOR.cpp: implementation of the C_VS_UI_ELEVATOR class.
+// VS_UI_ELEVATOR.cpp: C_VS_UI_ELEVATOR 클래스의 구현.
 //
 //////////////////////////////////////////////////////////////////////
 
 #include "client_PCH.h"
 #define assert(e) ((void)(e))
-// Disabled assert for macOS
+// macOS용으로 assert 비활성화
 
 #pragma warning(disable:4786)
 
 #include "VS_UI_ELEVATOR.h"
 #include "VS_UI_filepath.h"
 #include "VS_UI_description.h"
-#include "VS_UI.h" // include VS UI master header file.
+#include "VS_UI.h" // VS UI 마스터 헤더 파일 포함.
 
 #include "MGameStringTable.H"
 extern RECT g_GameRect;
 //////////////////////////////////////////////////////////////////////
-// Construction/Destruction
+// 생성자/소멸자
 //////////////////////////////////////////////////////////////////////
 
 C_VS_UI_ELEVATOR::C_VS_UI_ELEVATOR()
@@ -33,7 +33,7 @@ C_VS_UI_ELEVATOR::C_VS_UI_ELEVATOR()
 
 	Set(g_GameRect.right/2-m_image_spk.GetWidth(ELEVATOR)/2, g_GameRect.bottom/2 - m_image_spk.GetHeight(ELEVATOR)/2, m_image_spk.GetWidth(ELEVATOR), m_image_spk.GetHeight(ELEVATOR));
 
-	// set button
+	// 버튼 설정
 	m_pC_button_group = new ButtonGroup(this);
 
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x + ok_button_x, y + ok_button_y, m_image_spk.GetWidth(OK_BUTTON), m_image_spk.GetHeight(OK_BUTTON), OK_BUTTON, this, OK_BUTTON));
@@ -153,7 +153,7 @@ void	C_VS_UI_ELEVATOR::ShowButtonWidget(C_VS_UI_EVENT_BUTTON * p_button)
 
 //-----------------------------------------------------------------------------
 //
-// keyboard
+// 키보드
 //
 //-----------------------------------------------------------------------------
 void	C_VS_UI_ELEVATOR::KeyboardControl(UINT message, UINT key, long extra)

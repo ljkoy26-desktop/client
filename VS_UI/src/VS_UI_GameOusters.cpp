@@ -20,7 +20,7 @@ int		C_VS_UI_OUSTERS_GEAR::m_slot_image[SLOT_SIZE] = {
 };
 
 //----------------------------------------------------------------------------
-// Operations
+// 동작
 //----------------------------------------------------------------------------
 
 MItem*	C_VS_UI_OUSTERS_QUICKITEM::GetItem(int slot)
@@ -61,8 +61,8 @@ C_VS_UI_OUSTERS::C_VS_UI_OUSTERS():C_VS_UI_TRIBE()
 
 	m_pC_sys_button_spk = new C_SPRITE_PACK(SPK_OUSTERS_SYS_BUTTON);
 
-	// common buttons
-	//modify by viva : menu button
+	// 공통 버튼
+	// viva 수정 : 메뉴 버튼
 	int tab_x = 35-11, tab_y = 65-10;
 	m_pC_common_button_group->Add( new C_VS_UI_EVENT_BUTTON(tab_x, tab_y, m_pC_sys_button_spk->GetWidth(TAB_MENU), m_pC_sys_button_spk->GetHeight(TAB_MENU), TAB_MENU_ID, this, TAB_MENU) );
 	tab_x += m_pC_sys_button_spk->GetWidth(TAB_MENU);
@@ -81,13 +81,13 @@ C_VS_UI_OUSTERS::C_VS_UI_OUSTERS():C_VS_UI_TRIBE()
 	m_pC_common_button_group->Add( new C_VS_UI_EVENT_BUTTON(24, system_y, gpC_global_resource->m_pC_assemble_box_button_spk->GetWidth(C_GLOBAL_RESOURCE::AB_BUTTON_PUSHPIN), gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_PUSHPIN), PUSHPIN_ID, this,C_GLOBAL_RESOURCE::AB_BUTTON_PUSHPIN ) );
 
 
-	//modify by viva : the buttons under the menu...
+	// viva 수정 : 메뉴 아래 버튼들...
 	const int button_x = 43 -16, button_y = 89 -11, button_x_gap = 37, button_y_gap = 37;
-	// menu buttons
+	// 메뉴 버튼
 	m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*0, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_INVENTORY), m_pC_sys_button_spk->GetHeight(BUTTON_INVENTORY), INVENTORY_ID, this, BUTTON_INVENTORY) );
 	m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*1, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_GEAR), m_pC_sys_button_spk->GetHeight(BUTTON_GEAR), GEAR_ID, this, BUTTON_GEAR) );
 	m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*2, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_INFO), m_pC_sys_button_spk->GetHeight(BUTTON_INFO), INFO_ID, this, BUTTON_INFO) );
-	//add by viva : friend button
+	// viva 추가 : 친구 버튼
 #ifdef __FRIEND_SYSTEM_VIVA__
 	m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*3, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_FRIEND), m_pC_sys_button_spk->GetHeight(BUTTON_FRIEND), FRIEND_ID, this, BUTTON_FRIEND) );
 #endif
@@ -99,13 +99,13 @@ C_VS_UI_OUSTERS::C_VS_UI_OUSTERS():C_VS_UI_TRIBE()
 	// sms 버튼 
 
 //	if(false == g_pUserInformation->IsNetmarble)
-	//add by zdj 2005.5.17
-	// add by Coffee 2006.11.26
+	// zdj 추가, 2005.5.17
+	// Coffee 추가, 2006.11.26
 		//m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*3, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_SMS), m_pC_sys_button_spk->GetHeight(BUTTON_SMS), SMS_ID, this, BUTTON_SMS) );
 
 	m_pC_menu_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*3, button_y+button_y_gap, m_pC_sys_button_spk->GetWidth(BUTTON_NAMING), m_pC_sys_button_spk->GetHeight(BUTTON_NAMING), NAMING_ID, this, BUTTON_NAMING) );
 
-	// guild buttons
+	// 길드 버튼
 	m_pC_guild_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*0, button_y+button_y_gap*0, m_pC_sys_button_spk->GetWidth(BUTTON_TEAM_INFO), m_pC_sys_button_spk->GetHeight(BUTTON_TEAM_INFO), TEAM_INFO_ID, this, BUTTON_TEAM_INFO) );
 	m_pC_guild_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*1, button_y+button_y_gap*0, m_pC_sys_button_spk->GetWidth(BUTTON_TEAM_MEMBER_LIST), m_pC_sys_button_spk->GetHeight(BUTTON_TEAM_MEMBER_LIST), TEAM_MEMBER_LIST_ID, this, BUTTON_TEAM_MEMBER_LIST) );
 	// 2004, 10, 12, sobeit add start - 길드 명령 아이콘
@@ -121,21 +121,21 @@ C_VS_UI_OUSTERS::C_VS_UI_OUSTERS():C_VS_UI_TRIBE()
 	m_pC_util_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*0, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_STORE), m_pC_sys_button_spk->GetHeight(BUTTON_STORE), UTIL_STORE_ID, this, BUTTON_STORE) );
 	if(false == g_pUserInformation->IsNetmarble && false == g_pUserInformation->IsTestServer) // 본섭만
 	{
-//add by zdj 2005.5.16
-		// add by Coffee 2006.11.26
+// zdj 추가, 2005.5.16
+		// Coffee 추가, 2006.11.26
 		m_pC_util_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*1, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_POWER_JJANG), m_pC_sys_button_spk->GetHeight(BUTTON_POWER_JJANG), UTIL_POWER_JJANG_ID, this, BUTTON_POWER_JJANG) );
 	}
 
 	// 2004, 12, 2, sobeit add end
 
-	// help buttons
+	// 도움말 버튼
 	m_pC_help_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*0, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_HELP), m_pC_sys_button_spk->GetHeight(BUTTON_HELP), HELP_ID, this, BUTTON_HELP) );
 	m_pC_help_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*1, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_CHAT_HELP), m_pC_sys_button_spk->GetHeight(BUTTON_CHAT_HELP), CHAT_HELP_ID, this, BUTTON_CHAT_HELP) );
 	m_pC_help_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*2, button_y, m_pC_sys_button_spk->GetWidth(BUTTON_BATTLE_HELP), m_pC_sys_button_spk->GetHeight(BUTTON_BATTLE_HELP), BATTLE_HELP_ID, this, BUTTON_BATTLE_HELP) );
 	m_pC_help_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*0, button_y+button_y_gap, m_pC_sys_button_spk->GetWidth(BUTTON_SKILL_HELP), m_pC_sys_button_spk->GetHeight(BUTTON_SKILL_HELP), SKILL_HELP_ID, this, BUTTON_SKILL_HELP) );
 	m_pC_help_button_group->Add( new C_VS_UI_EVENT_BUTTON(button_x+button_x_gap*1, button_y+button_y_gap, m_pC_sys_button_spk->GetWidth(BUTTON_TEAM_MEMBER_LIST), m_pC_sys_button_spk->GetHeight(BUTTON_TEAM_MEMBER_LIST), GUILD_HELP_ID, this, BUTTON_TEAM_MEMBER_LIST) );
 
-	// instance objects 
+	// 인스턴스 오브젝트 
 	m_pC_gear = new C_VS_UI_OUSTERS_GEAR;
 	m_pC_armsband = new C_VS_UI_OUSTERS_QUICKITEM;
 	
@@ -190,7 +190,7 @@ void	C_VS_UI_OUSTERS::OpenGear(bool bl_set_load)
 }
 
 //-----------------------------------------------------------------------------
-// DoCommonActionBeforeEventOccured
+// 이벤트 발생 전 공통 동작 수행
 //
 // 
 //-----------------------------------------------------------------------------
@@ -200,7 +200,7 @@ void C_VS_UI_OUSTERS::DoCommonActionBeforeEventOccured()
 }
 
 //-----------------------------------------------------------------------------
-// DoCommonActionAfterEventOccured
+// 이벤트 발생 후 공통 동작 수행
 //
 // 
 //-----------------------------------------------------------------------------
@@ -224,7 +224,7 @@ void C_VS_UI_OUSTERS::Start()
 	m_pC_minimap->Start();
 	m_pC_armsband->Start();
 
-	// add by Coffee 2007-3-6 添加世界地图
+	// Coffee 추가, 2007-3-6, 월드맵 추가
 //	m_pC_worldmap->Start();
 	// end 
 
@@ -255,7 +255,7 @@ void C_VS_UI_OUSTERS::Show()
 		sz_temp[strlen(sz_temp)-3] = '\0';
 		hour = atoi(sz_temp);
 		
-		const int icon_x = 106-10, icon_y = 45-15;	//modify by viva : icon point
+		const int icon_x = 106-10, icon_y = 45-15;	// viva 수정 : 아이콘 위치
 		if(hour >= 8 && hour < 16)	// 낮이다
 			m_pC_main_spk->BltLocked(x+icon_x, y+icon_y, ICON_SUN);
 		else if(hour >= 20 || hour < 4)	// 밤이다
@@ -322,7 +322,7 @@ void C_VS_UI_OUSTERS::Show()
 		case TAB_EXP_ID:
 		// EXP 는 버튼이 없다
 		{
-			//modify by viva : exp_bar etc.  num_x is the str's x
+			// viva 수정 : exp_bar 등. num_x는 문자열의 x 좌표
 			const int bar_x = 110 - 25, bar_y = 98 - 12, str_x = 27, num_x = 46-15, bar_gap = 14;
 			char sz_temp[100];
 			Rect rect;
@@ -335,10 +335,10 @@ void C_VS_UI_OUSTERS::Show()
 			int exp_bar = /*int((float)exp_width * ((float)exp_remain / (float)goal_exp));*/
 				exp_width * (goal_exp - exp_remain) / goal_exp;
 			
-			//exp bar
+			// 경험치 바
 			rect.Set(0, 0, exp_bar, exp_height);
 			
-			//exp bar
+			// 경험치 바
 			m_pC_main_spk->BltLocked(x+bar_x-3, y+bar_y-3, OUSTERS_EXP_BACK);
 			m_pC_main_spk->BltLockedClip(x+bar_x, y+bar_y, rect, OUSTERS_EXP_BAR);
 
@@ -387,7 +387,7 @@ void C_VS_UI_OUSTERS::Show()
 	}	
 
 	g_FL2_GetDC();				
-	//modify by viva : the date point
+	// viva 수정 : 날짜 위치
 	g_PrintColorStr(x -18+ 146 - g_GetStringWidth(m_date.c_str(), gpC_base->m_chatting_pi.hfont)/2, y+16+10 -12, m_date.c_str() ,gpC_base->m_chatting_pi, RGB_WHITE);	
 	g_PrintColorStr(x -18+ 6+128+18 - g_GetStringWidth(m_time.c_str(), gpC_base->m_chatting_pi.hfont)/2, y+37+10 -17, m_time.c_str(), gpC_base->m_chatting_pi, RGB_WHITE);	
 	m_pC_common_button_group->ShowDescription();
@@ -649,7 +649,7 @@ void	C_VS_UI_OUSTERS_QUICKITEM::ToggleBelt()
 {
 //	m_bl_opened = !m_bl_opened;
 
-	// reset Window width by open/close
+	// 열기/닫기에 따라 Window 너비 재설정
 	Run(PUSHPIN_ID);
 	ResetSize();
 
@@ -661,7 +661,7 @@ void	C_VS_UI_OUSTERS_QUICKITEM::Open()
 //	m_bl_opened = true;
 
 	AttrAutoHide(Window::ATTRIBUTES_HIDE_NOT);
-	// reset Window width by open/close
+	// 열기/닫기에 따라 Window 너비 재설정
 	ResetSize();
 
 	PlaySound(SOUND_OUSTERS_ARMSBAND);
@@ -674,14 +674,14 @@ void	C_VS_UI_OUSTERS_QUICKITEM::Close()
 	
 	Run(PUSHPIN_ID);
 
-	// reset Window width by open/close
+	// 열기/닫기에 따라 Window 너비 재설정
 	ResetSize();
 
 	PlaySound(SOUND_OUSTERS_ARMSBAND);
 }
 
 //-----------------------------------------------------------------------------
-// ResetSize
+// 크기 재설정
 //
 // belt를 교체하고나서 size를 재설정해야 한다.
 //-----------------------------------------------------------------------------
@@ -739,7 +739,7 @@ void C_VS_UI_OUSTERS_QUICKITEM::ResetSize()
 }
 
 //-----------------------------------------------------------------------------
-// GetPocketCount
+// Pocket 개수 반환
 //
 // 
 //-----------------------------------------------------------------------------
@@ -851,7 +851,7 @@ bool C_VS_UI_OUSTERS_QUICKITEM::MouseControl(UINT message, int _x, int _y)
 	Window::MouseControl(message, _x, _y);
 	_x-=x; _y-=y;
 
-	// test open/close button
+	// 열기/닫기 버튼 테스트
 	bool ret = false;
 	if(m_bl_width)
 	{
@@ -1538,7 +1538,7 @@ void C_VS_UI_OUSTERS_QUICKITEM::Show()
 	g_FL2_ReleaseDC();
 	
 
-	// show hot-key
+	// 단축키 표시
 	char * p_hotkey_mark[] = {"F1", "F2", "F3", "F4", "F5", "F6"};
 	if (m_focus_slot != NOT_SELECTED)
 	//for (i=0; i < GetPocketCount(); i++)
@@ -1640,7 +1640,7 @@ bool C_VS_UI_OUSTERS_QUICKITEM::Click()
 			}
 			else
 			{
-				// failed.
+				// 실패.
 				return false;
 			}
 		}
@@ -1729,7 +1729,7 @@ bool C_VS_UI_OUSTERS_QUICKITEM::Click()
 						}
 						else
 						{
-							// failed.
+							// 실패.
 							return false;
 						}
 					}
