@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------------
 // AcceleratorManager.cpp
 //-----------------------------------------------------------------------------
 
@@ -8,7 +8,7 @@
 #include "VS_UI.h"
 
 //-----------------------------------------------------------------------------
-// Global
+// 전역 변수
 //-----------------------------------------------------------------------------
 AcceleratorManager*		g_pAcceleratorManager = NULL;
 
@@ -53,10 +53,10 @@ AcceleratorManager::AcceleratorManager()
 	MFunctionManager::SetFunction(ACCEL_PARTY_CHAT, Function_ACCEL_PARTY_CHAT);
 	MFunctionManager::SetFunction(ACCEL_QUEST, Function_ACCEL_QUEST);
 	MFunctionManager::SetFunction(ACCEL_MAILBOX, Function_ACCEL_MAILBOX);
-	// 2004, 5, 17 sobeit add start
+	// 2004, 5, 17 sobeit 추가 시작
 	MFunctionManager::SetFunction(ACCEL_PETINFO, Function_ACCEL_PETINFO);
 	MFunctionManager::SetFunction(ACCEL_SUMMON_PET, Function_ACCEL_SUMMON_PET);
-	// 2004, 5, 17 sobeit add end
+	// 2004, 5, 17 sobeit 추가 끝
 
 	MFunctionManager::SetFunction(ACCEL_UNION_CHAT, Function_ACCEL_UNION_CHAT);
 }
@@ -369,7 +369,7 @@ AcceleratorManager::Function_ACCEL_PETINFO(void* pVoid)
 	gC_vs_ui.HotKey_PetInfo();
 }
 //////
-//// 2004, 5, 17 sobeit add start
+//// 2004, 5, 17 sobeit 추가 시작
 ////-----------------------------------------------------------------------------
 //// ACCEL_MAILBOX
 ////-----------------------------------------------------------------------------
@@ -378,4 +378,4 @@ AcceleratorManager::Function_ACCEL_SUMMON_PET(void* pVoid)
 {
 	gC_vs_ui.HotKey_SummonPet();
 }
- //2004, 5, 17 sobeit add start
+ //2004, 5, 17 sobeit 추가 시작

@@ -1,4 +1,4 @@
-#ifndef __CWEBPAGE_H_INCLUDED
+﻿#ifndef __CWEBPAGE_H_INCLUDED
 #define __CWEBPAGE_H_INCLUDED
 
 long WINAPI EmbedBrowserObject(HWND);

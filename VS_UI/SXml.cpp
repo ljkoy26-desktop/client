@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////////////////////
+﻿//////////////////////////////////////////////////////////////////////////////
 /// \file XML.cpp
 /// \author excel96
 /// \date 2003.7.25
@@ -28,7 +28,7 @@ using namespace std;
 static const char chXMLTagOpen		= '<';
 static const char chXMLTagClose	= '>';
 static const char chXMLTagPre	= '/';
-static const char chXMLEscape = '\\';	// for value field escape
+static const char chXMLEscape = '\\';	// 값 필드 이스케이프용
 static const char chXMLTrimToken[] = " </>\r\t\n=\"\'";
 static const char chXMLAttrToken[] = "\"\'";
 
@@ -48,32 +48,32 @@ string XMLUtil::WideCharToString(const wchar_t * wstr, int wstrlen)
 		wstrlen = (int)wcslen(wstr);
 	}
 
-	// test korean with WideCharToMultiByte
+	// WideCharToMultiByte로 한글 테스트
 	//	int WideCharToMultiByte(
-	//		UINT CodePage,            // code page
-	//		DWORD dwFlags,            // performance and mapping flags
-	//		LPCWSTR lpWideCharStr,    // wide-character string
-	//		int cchWideChar,          // number of chars in string
-	//		LPSTR lpMultiByteStr,     // buffer for new string
-	//		int cbMultiByte,          // size of buffer
-	//		LPCSTR lpDefaultChar,     // default for unmappable chars
-	//		LPBOOL lpUsedDefaultChar  // set when default char used
+	//		UINT CodePage,            // 코드 페이지
+	//		DWORD dwFlags,            // 성능 및 매핑 플래그
+	//		LPCWSTR lpWideCharStr,    // 와이드 문자열
+	//		int cchWideChar,          // 문자열 내 문자 수
+	//		LPSTR lpMultiByteStr,     // 새 문자열을 담을 버퍼
+	//		int cbMultiByte,          // 버퍼 크기
+	//		LPCSTR lpDefaultChar,     // 매핑 불가능한 문자에 대한 기본값
+	//		LPBOOL lpUsedDefaultChar  // 기본 문자가 사용됐는지 여부
 	//	);
 	//
-	//lpDefaultChar 
-	//	[in] Points to the character used if a wide character cannot be represented in the specified code page. 
-	//  If this parameter is NULL, a system default value is used. 
-	//  The function is faster when both lpDefaultChar and lpUsedDefaultChar are NULL. 
-	//	For the code pages mentioned in dwFlags, lpDefaultChar must be NULL, 
-	//  otherwise the function fails with ERROR_INVALID_PARAMETER. 
+	//lpDefaultChar
+	//	[in] 와이드 문자가 지정된 코드 페이지로 표현될 수 없을 때 사용할 문자를 가리킨다.
+	//  이 매개변수가 NULL이면 시스템 기본값이 사용된다.
+	//  lpDefaultChar와 lpUsedDefaultChar가 둘 다 NULL이면 함수가 더 빠르게 동작한다.
+	//	dwFlags에 언급된 코드 페이지의 경우 lpDefaultChar는 반드시 NULL이어야 하며,
+	//  그렇지 않으면 함수가 ERROR_INVALID_PARAMETER로 실패한다.
 
-	//	lpUsedDefaultChar 
-	//	[in] Points to a flag that indicates whether a default character was used. 
-	//  The flag is set to TRUE if one or more wide characters in the source string 
-	//  cannot be represented in the specified code page. Otherwise, the flag is set to FALSE. 
-	//  This parameter may be NULL. The function is faster when both lpDefaultChar and lpUsedDefaultChar are NULL. 
-	//	For the code pages mentioned in dwFlags, lpUsedDefaultChar must be NULL, 
-	//  otherwise the function fails with ERROR_INVALID_PARAMETER. 
+	//	lpUsedDefaultChar
+	//	[in] 기본 문자가 사용됐는지를 나타내는 플래그를 가리킨다.
+	//  원본 문자열의 와이드 문자 중 하나 이상이 지정된 코드 페이지로 표현될 수 없으면
+	//  플래그가 TRUE로 설정된다. 그렇지 않으면 FALSE로 설정된다.
+	//  이 매개변수는 NULL일 수 있다. lpDefaultChar와 lpUsedDefaultChar가 둘 다 NULL이면 함수가 더 빠르게 동작한다.
+	//	dwFlags에 언급된 코드 페이지의 경우 lpUsedDefaultChar는 반드시 NULL이어야 하며,
+	//  그렇지 않으면 함수가 ERROR_INVALID_PARAMETER로 실패한다.
 
 
 	char szTemp[5120];
@@ -83,10 +83,10 @@ string XMLUtil::WideCharToString(const wchar_t * wstr, int wstrlen)
 	int nCopied = WideCharToMultiByte(
 		CP_OEMCP,
 		WC_COMPOSITECHECK,
-		wstr,									// wide string
-		wstrlen,								// length of wide string
-		szTemp, //const_cast<LPSTR>(strBuffer.data()),	// mbcs string (unicode)
-		5120,//(int)strBuffer.capacity(),					// length of mbcs string
+		wstr,									// 와이드 문자열
+		wstrlen,								// 와이드 문자열 길이
+		szTemp, //const_cast<LPSTR>(strBuffer.data()),	// mbcs 문자열(유니코드)
+		5120,//(int)strBuffer.capacity(),					// mbcs 문자열 길이
 		NULL,
 		NULL );
 	szTemp[nCopied] = NULL;
@@ -321,7 +321,7 @@ XMLTree::AddChild( IN XMLTree *pChild )
 	
 	return NULL;
 }
-// 2004, 7, 10 sobeit add start - 
+// 2004, 7, 10 sobeit 추가 시작 -
 OUT XMLTree*
 XMLTree::AddChildOnlyVector( IN XMLTree *pChild )
 {
@@ -339,7 +339,7 @@ XMLTree::AddChildOnlyVector( IN XMLTree *pChild )
 	}
 	return pChild;
 }
-// 2004, 7, 10 sobeit add end
+// 2004, 7, 10 sobeit 추가 끝
 
 OUT const XMLTree*
 XMLTree::GetChild( IN const string& name ) const
@@ -357,7 +357,7 @@ XMLTree::GetChild( IN size_t index ) const
 {
 	return ( ( index < m_ChildrenVector.size() ) ? m_ChildrenVector[index] : NULL );
 }
-// 2004, 7, 13 sobeit add start
+// 2004, 7, 13 sobeit 추가 시작
 OUT const XMLTree*
 XMLTree::GetChildByAttr( IN size_t index , IN const string& name) const
 {
@@ -374,7 +374,7 @@ XMLTree::GetChildByAttr( IN size_t index , IN const string& name) const
 	}
 	return NULL;
 }
-// 2004, 7, 13 sobeit add end
+// 2004, 7, 13 sobeit 추가 끝
 OUT const size_t
 XMLTree::GetChildCount() const
 {
@@ -609,7 +609,7 @@ XMLTree::Save(std::ofstream& file, size_t indent )
 //////////////////////////////////////////////////////////////////////////////
 XMLParser::XMLParser()
 {
-//	try // Initialize the XML4C2 system
+//	try // XML4C2 시스템 초기화
 //	{
 //		XMLPlatformUtils::Initialize();
 //	}
@@ -630,7 +630,7 @@ XMLParser::~XMLParser()
 {
 //	if (m_pHandler != NULL) delete m_pHandler;
 
-	// And call the termination method
+	// 그리고 종료 메서드를 호출한다
 //	XMLPlatformUtils::Terminate();
 }
 
@@ -647,19 +647,19 @@ XMLParser::~XMLParser()
 
 
 //	//
-//	// validation (default: true) 
-//	// namespaces (default: true) 
-//	// namespace-prefixes (default: false) 
-//	// validation/dynamic (default: false) 
-//	// reuse-grammar (default: false) 
-//	// schema (default: true) 
-//	// schema-full-checking (default: false) 
-//	// load-external-dtd (default: true) 
-//	// continue-after-fatal-error (default: false) 
-//	// validation-error-as-fatal (default: false) 
+//	// validation (기본값: true)
+//	// namespaces (기본값: true)
+//	// namespace-prefixes (기본값: false)
+//	// validation/dynamic (기본값: false)
+//	// reuse-grammar (기본값: false)
+//	// schema (기본값: true)
+//	// schema-full-checking (기본값: false)
+//	// load-external-dtd (기본값: true)
+//	// continue-after-fatal-error (기본값: false)
+//	// validation-error-as-fatal (기본값: false)
 //	//
 
-//	// http://xml.apache.org/xerces-c/program-sax2.html#SAX2Features 
+//	// http://xml.apache.org/xerces-c/program-sax2.html#SAX2Features
 //	SAX2XMLReader* pParser = XMLReaderFactory::createXMLReader();
 //	pParser->setFeature(XMLUni::fgSAX2CoreNameSpaces, true);
 //	pParser->setFeature(XMLUni::fgXercesSchema, true);
@@ -708,11 +708,11 @@ char* XMLParser::parse(char* buffer, XMLTree *pTree, bool IsUseOnlyVector)
 	if( memcmp( pXml, "<?xml", 5 ) == 0 )
 		pXml = strchr( pXml+1, chXMLTagOpen );
 		
-//	// Close Tag
-//	if( *(pXml+1) == chXMLTagPre ) // </Close
+//	// 닫는 태그
+//	if( *(pXml+1) == chXMLTagPre ) // </닫음
 //		return;
 
-	// XML Node Tag Name Open
+	// XML 노드 태그 이름 여는 부분
 	pXml = pXml + strspn( pXml, chXMLTrimToken );
 	size_t nameLen = strcspn( pXml, chXMLTrimToken );
 	memcpy( name, pXml, nameLen );
@@ -720,7 +720,7 @@ char* XMLParser::parse(char* buffer, XMLTree *pTree, bool IsUseOnlyVector)
 	pTree->SetName( name );
 	pXml += nameLen;
 
-	// attr load
+	// 속성 로드
 	char *pCloseTag = strchr( pXml, chXMLTagClose );
 	while( 1 )
 	{
@@ -774,19 +774,19 @@ char* XMLParser::parse(char* buffer, XMLTree *pTree, bool IsUseOnlyVector)
 	
 	pXml = pChildTag;	
 	
-	// child load
+	// 자식 노드 로드
 	while(*(pChildTag+1) != chXMLTagPre)
 	{
 		XMLTree *pChildTree = new XMLTree;
 		pXml = parse( pChildTag, pChildTree, IsUseOnlyVector );
-		// 2004, 7, 9, sobeit add start
+		// 2004, 7, 9, sobeit 추가 시작
 		if(IsUseOnlyVector)
 		{
 			pTree->AddChildOnlyVector( pChildTree );
 		}
 		else
 		{
-		// 2004, 7, 9, sobeit add end
+		// 2004, 7, 9, sobeit 추가 끝
 			pTree->AddChild( pChildTree );
 		}
 		pChildTag = strchr( pXml, chXMLTagOpen );

@@ -1,4 +1,4 @@
-//--------------------------------------------------------------------------
+﻿//--------------------------------------------------------------------------
 //
 // date 2003-09-19
 // by sonee
@@ -28,7 +28,7 @@ public :
 private :
 	std::vector< POINT >		m_PointList;
 	std::vector< RECT >			m_RectList;
-	int							m_ID;					// Interface ID
+	int							m_ID;					// 인터페이스 ID
 };
 
 class SkinManager : public CTypeTable< InterfaceInformation >

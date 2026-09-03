@@ -8,7 +8,7 @@
 #include "DXLib/CDirectInput.h"
 #include <cstdio>
 //----------------------------------------------------------------------
-// define functions
+// 매크로 함수 정의
 //----------------------------------------------------------------------
 #define READ_CHECK_EOF( value, temp, bytes )		\
 		{											\
@@ -24,7 +24,7 @@
 			}										\
 		}
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 KeyAccelerator*		g_pKeyAccelerator = NULL;
 
@@ -50,7 +50,7 @@ KeyAccelerator::Init( int max )
 	m_Keys.clear();
 	m_Accelerators.clear();
 
-	// Use resize() instead of reserve() to actually allocate elements
+	// 실제로 원소를 할당하기 위해 reserve() 대신 resize() 사용
 	m_Accelerators.resize( max, 0 );
 }
 
@@ -63,7 +63,7 @@ KeyAccelerator::Init( int max )
 void
 KeyAccelerator::SetAcceleratorKey(BYTE accel, WORD key)
 {
-	// Check against size() not capacity(), and resize if needed
+	// capacity()가 아닌 size()로 비교하고, 필요하면 resize
 	if (accel >= m_Accelerators.size())
 	{
 		m_Accelerators.resize(accel + 1, 0);
@@ -224,9 +224,9 @@ KeyAccelerator::SaveToFile(FILE *file)
 
 	fwrite((const void*)&num, 1, 4, file);
 
-	// Only the key-accelerator relationship needs to be saved.
-	// Because accel is in order, so there is no need to save.
-	// So we only need to store the key.
+	// key-accelerator 관계만 저장하면 된다.
+	// accel은 순서대로이므로 따로 저장할 필요가 없다.
+	// 그래서 key만 저장하면 된다.
 	for (int accel=1; accel<num; accel++)
 	{
 		WORD key = m_Accelerators[accel];

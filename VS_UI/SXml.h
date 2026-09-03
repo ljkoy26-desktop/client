@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////////////////////
+﻿//////////////////////////////////////////////////////////////////////////////
 /// \file XML.h
 /// \author excel96
 /// \date 2003.7.25
@@ -166,14 +166,14 @@ private:
 //
 //
 //public:
-//	// Handlers for the SAX ContentHandler interface
+//	// SAX ContentHandler 인터페이스용 핸들러
 //	void startElement( IN const XMLCh* const uri, IN const XMLCh* const localname, IN const XMLCh* const qname, IN const Attributes& attrs );
 //	void endElement( IN const XMLCh* const uri, IN const XMLCh* const localname, IN const XMLCh* const qname );
 //	void characters( IN const XMLCh* const chars, IN const unsigned int length );
 //	void ignorableWhitespace( IN const XMLCh* const, IN const unsigned int ) {}
 //	void resetDocument();
 //
-//	// Handlers for the SAX ErrorHandler interface
+//	// SAX ErrorHandler 인터페이스용 핸들러
 //	void warning( IN const SAXParseException& e );
 //	void error( IN const SAXParseException& e );
 //	void fatalError( IN const SAXParseException& e );

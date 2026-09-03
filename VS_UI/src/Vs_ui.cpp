@@ -32,20 +32,20 @@
 
 CImm *gpC_Imm = NULL;
 #else
-// On non-Windows platforms, undefine the macro and use a proper variable
+// 비-Windows 플랫폼에서는 매크로 정의를 해제하고 실제 변수를 사용한다
 #undef gpC_Imm
 CImm *gpC_Imm = NULL;
 #endif
 
 //----------------------------------------------------------------------------
-// Local defines
+// 로컬 정의
 //----------------------------------------------------------------------------
 #define INTERFACE_BLINK_MILLISEC		150
 #define PREV_KEYSTATE					0x40000000
 
 
 //----------------------------------------------------------------------------
-// Function prototype
+// 함수 프로토타입
 //----------------------------------------------------------------------------
 void _AcquireMouseFocusHandler();
 void _UnacquireMouseFocusHandler();
@@ -58,7 +58,7 @@ void ShowItem_KeyboardControl(UINT message, UINT key, long extra);
 void ShowItem();
 
 int g_ui_item_max = 0;
-// for sound..
+// 사운드용..
 void InitSound();
 void UnInitSound();
 #endif
@@ -66,11 +66,11 @@ void UnInitSound();
 extern HWND	g_hWnd;
 
 //----------------------------------------------------------------------------
-// Globals data
+// 전역 데이터
 //----------------------------------------------------------------------------
 C_VS_UI	gC_vs_ui;
 
-// Exchange UI
+// 교환 UI
 C_VS_UI_POINT_EXCHANGE*	g_pC_point_exchange = NULL;
 
 bool gbl_global_empty_move = false;
@@ -91,7 +91,7 @@ bool	gbl_game_mode;
 #endif
 
 //----------------------------------------------------------------------------
-// Operations
+// 동작
 //----------------------------------------------------------------------------
 void _Timer_InterfaceBlink()
 {
@@ -1294,7 +1294,7 @@ void C_VS_UI::KeyboardControl(UINT message, UINT key, long extra)
 	}
 
 	//
-	// ignore hot-key & all ctrl push
+	// 단축키와 모든 ctrl 눌림을 무시
 	//
 	// WM_KEYDOWN/WM_KEYUP
 	//
@@ -1434,7 +1434,7 @@ void C_VS_UI::Process()
 
 	gpC_window_manager->Process();
 
-	// UI only process
+	// UI 전용 처리
 	if (gbl_global_empty_move)
 	{
 		MouseControl(M_MOVING, gpC_mouse_pointer->GetX(), gpC_mouse_pointer->GetY());
@@ -1464,9 +1464,9 @@ void C_VS_UI::SelectSkill(int id)
 //-----------------------------------------------------------------------------
 // ShowItem
 //
-// Item pickup/drop test funtions.
-// 
-// -> ONLY TEST <-
+// 아이템 집기/떨어뜨리기 테스트 함수.
+//
+// -> 테스트 전용 <-
 //-----------------------------------------------------------------------------
 #ifndef _LIB
 #include "VS_UI_Mouse_pointer.h"
@@ -1487,8 +1487,8 @@ extern bool				gbl_show_item;
 
 void ShowItem()
 {
-	///// -- Test
-	// Show all Item.
+	///// -- 테스트
+	// 모든 아이템을 표시.
 
 	if(gbl_show_item == false)return;
 
@@ -1874,7 +1874,7 @@ void C_VS_UI::DrawMousePointer()
 	gpC_mouse_pointer->Show();
 }
 
-// 2004, 10, 28, sobeit add start
+// 2004, 10, 28, sobeit 추가 시작
 void C_VS_UI::DrawTargetArrow(int TargetX, int TargetY)
 {
 	gpC_mouse_pointer->DrawTargetArrow(TargetX, TargetY);
@@ -3734,15 +3734,15 @@ void C_VS_UI::Init(CSpriteSurface *surface, void (*fp)(DWORD, int, int, void *))
 	}
 
 #ifndef _LIB
-	// Safety check: g_pMoneyManager should be initialized before this call
-	// This is called when compiling the game executable (not the static library)
+	// 안전 확인: g_pMoneyManager는 이 호출 이전에 초기화되어 있어야 한다
+	// 이 코드는 게임 실행 파일을 컴파일할 때 호출된다(정적 라이브러리가 아님)
 	if (g_pMoneyManager != NULL)
 	{
 		g_pMoneyManager->SetMoney(2000000000);
 	}
 	else
 	{
-		// This should never happen if InitGame() follows correct initialization order
+		// InitGame()이 올바른 초기화 순서를 따른다면 이 상황은 절대 발생하지 않아야 한다
 		assert(false && "g_pMoneyManager is NULL! InitGameObject() must be called before InitSurface()");
 	}
 #endif	
@@ -3751,16 +3751,16 @@ void C_VS_UI::Init(CSpriteSurface *surface, void (*fp)(DWORD, int, int, void *))
 	gpC_base->Init(surface, fp);
 
 	//-----------------------------------------------
-	// global object allocation
+	// 전역 오브젝트 할당
 	//-----------------------------------------------
 
 	//
-	// Process runner
+	// 프로세스 러너
 	//
 	gpC_process_runner = new PI_ProcessRunner;
 
 	//
-	// Window manager
+	// 윈도우 매니저
 	//
 	gpC_window_manager = new WindowManager;
 	gpC_window_manager->SetAcquireMouseFocusHandler(_AcquireMouseFocusHandler);
@@ -4725,7 +4725,7 @@ void	C_VS_UI::CloseRemoveOptionFromRareItem()
 
 ///////////////////////////////////////////////////////
 //
-// Ousters Skill Info
+// 오스터즈 스킬 정보
 //
 ///////////////////////////////////////////////////////
 void	C_VS_UI::RunOustersSkillInfo(int skillID, int window_x, int window_y, bool flag)
@@ -5019,7 +5019,7 @@ int 	C_VS_UI::GetPetStorageFocusSlot()
 	return -1;
 }
 
-// 2004, 5, 27 sobeit add start - sms message
+// 2004, 5, 27 sobeit 추가 시작 - sms message
 void C_VS_UI::RunSMSMessage()
 {
 	if (m_pC_game)
@@ -5111,10 +5111,10 @@ void	C_VS_UI::SetSMSCharage(int i)
 	if (m_pC_game)
 		m_pC_game->SetSMSCharage(i);
 }
-// 2004, 5, 27 sobeit add end
+// 2004, 5, 27 sobeit 추가 끝
 
 
-// 2004, 6, 14 sobeit add start- naming
+// 2004, 6, 14 sobeit 추가 시작- naming
 void C_VS_UI::RunNaming()
 {
 	if (m_pC_game)
@@ -5145,9 +5145,9 @@ void C_VS_UI::CloseAskUseItemDialog()
 	if (m_pC_game)
 		m_pC_game->CloseAskUseItemDialog();
 }
-// 2004, 6, 14 sobeit end
+// 2004, 6, 14 sobeit 끝
 
-// 2004, 6, 15 sobeit add start
+// 2004, 6, 15 sobeit 추가 시작
 bool	C_VS_UI::IsRunningGearWindow() const
 {
 	if (m_pC_game)
@@ -5159,9 +5159,9 @@ void C_VS_UI::Change_Custom_Naming(int nID, char* szName)
 	if (m_pC_game)
 		m_pC_game->Change_Custom_Naming(nID, szName);
 }
-// 2004, 6, 15 sobeit end
+// 2004, 6, 15 sobeit 끝
 
-// 2004, 6, 16 sobeit add start
+// 2004, 6, 16 sobeit 추가 시작
 void C_VS_UI::SetNickNameList(void* pData)
 {
 	if(m_pC_game)
@@ -5172,9 +5172,9 @@ void C_VS_UI::AddNickNameList(void* pData)
 	if(m_pC_game)
 		m_pC_game->AddNickNameList(pData);
 }
-// 2004, 6, 16 sobeit add end
+// 2004, 6, 16 sobeit 추가 끝
 
-// 2004, 6, 18 sobeit add start
+// 2004, 6, 18 sobeit 추가 시작
 //bool	C_VS_UI::GetChangeableNickName() 
 //{
 //	if(m_pC_game)
@@ -5197,9 +5197,9 @@ void C_VS_UI::AddNickNameList(void* pData)
 //	if(m_pC_game)
 //		m_pC_game->SetChangeablePetNickName(Is);
 //}
-// 2004, 6, 18 sobeit add end
+// 2004, 6, 18 sobeit 추가 끝
 
-// 2004, 6, 21 sobiet add start
+// 2004, 6, 21 sobiet 추가 시작
 void	C_VS_UI::RunNamingChange(MItem* pItem, char* szCustom)
 {
 	if(m_pC_game)
@@ -5218,9 +5218,9 @@ void	C_VS_UI::CloseNamingChange()
 	if(m_pC_game)
 		m_pC_game->CloseNamingChange();
 }
-// 2004, 6, 21 sobeit add end
+// 2004, 6, 21 sobeit 추가 끝
 
-// 2004, 6, 30 sobiet add start
+// 2004, 6, 30 sobiet 추가 시작
 void	C_VS_UI::RunQuestManager()
 {
 	if(m_pC_game)
@@ -5268,9 +5268,9 @@ void	C_VS_UI::SendQuestIntention(bool bIntention)
 	if(m_pC_game)
 		m_pC_game->SendQuestIntention(bIntention);
 }
-// 2004, 6, 30 sobeit add end
+// 2004, 6, 30 sobeit 추가 끝
 
-// 2004, 7, 5, sobeit add start
+// 2004, 7, 5, sobeit 추가 시작
 
 void	C_VS_UI::RunQuestList()
 {
@@ -5372,7 +5372,7 @@ void	C_VS_UI::RunNextGQuestExcuteElement()
 		m_pC_game->RunNextGQuestExcuteElement();
 
 }
-// 2004, 7, 5, sobeit add end
+// 2004, 7, 5, sobeit 추가 끝
 void	C_VS_UI::DeleteQuestItem(int nSlot)
 {
 	if (m_pC_game)
@@ -5380,7 +5380,7 @@ void	C_VS_UI::DeleteQuestItem(int nSlot)
 
 }
 
-// 2004, 10, 25, sobeit add start - 세율 변경
+// 2004, 10, 25, sobeit 추가 시작 - 세율 변경
 void	C_VS_UI::RunModifyTax()
 {
 	if (m_pC_game)
@@ -5410,7 +5410,7 @@ void	C_VS_UI::SetRangerChatString(char* str)
 	if (m_pC_game)
 		m_pC_game->SetRangerChatString(str);
 }
-// 2004, 10, 25, sobeit add end
+// 2004, 10, 25, sobeit 추가 끝
 
 
 bool	C_VS_UI::IsRunningPersnalShopMessage() const
@@ -5464,7 +5464,7 @@ void C_VS_UI::SetPersnalShop(MStorage *pStorage)
 }
 
 
-// 2004, 11, 30, sobeit add start
+// 2004, 11, 30, sobeit 추가 시작
 void	C_VS_UI::RunPowerjjang()
 {
 	if (m_pC_game)
@@ -5487,9 +5487,9 @@ void	C_VS_UI::PowerjjangGambleResult(BYTE bItemCode)
 	if (m_pC_game)
 		m_pC_game->PowerjjangGambleResult(bItemCode);
 }
-// 2004, 11, 30, sobeit add end
+// 2004, 11, 30, sobeit 추가 끝
 
-// 2005, 1, 3, sobeit add start
+// 2005, 1, 3, sobeit 추가 시작
 void C_VS_UI::OpenInventoryToSwapAdvanceItem()
 {
 	if (m_pC_game)
@@ -5507,36 +5507,36 @@ bool C_VS_UI::IsRunningSwapAdvancementItem()
 
 	return false;
 }
-// 2005, 1, 3, sobeit add end
+// 2005, 1, 3, sobeit 추가 끝
 
-// 2005, 1, 11, sobeit add start - 불우이웃돕기 창
+// 2005, 1, 11, sobeit 추가 시작 - 불우이웃돕기 창
 void	C_VS_UI::Run_Campaign_Help_Unfortunate_Neighbors(int value)
 {
 	if (m_pC_game)
 		m_pC_game->Run_Campaign_Help_Unfortunate_Neighbors(value);
 
 }
-// 2005, 1, 11, sobeit add end
+// 2005, 1, 11, sobeit 추가 끝
 
-// 2005, 1, 17, sobeit add start - 퀘스트 관련
+// 2005, 1, 17, sobeit 추가 시작 - 퀘스트 관련
 void	C_VS_UI::SetQuestNpcDialog(void* pVoid)
 {
 	if(m_pC_game)
 		m_pC_game->SetQuestNpcDialog(pVoid);
 }
-// 2005, 1, 17, sobeit add end - 퀘스트 관련
+// 2005, 1, 17, sobeit 추가 끝 - 퀘스트 관련
 	
-// 2005, 1, 24, sobeit add start - 아이템 받기 이벤트
+// 2005, 1, 24, sobeit 추가 시작 - 아이템 받기 이벤트
 void	C_VS_UI::Run_Confirm_GetItemEvent(int value)
 {
 	if (m_pC_game)
 		m_pC_game->Run_Confirm_GetItemEvent(value);
 
 }
-// 2005, 1, 24, sobeit add end
+// 2005, 1, 24, sobeit 추가 끝
 
 	
-	// 2005, 2, 1, sobeit add start
+	// 2005, 2, 1, sobeit 추가 시작
 
 void	C_VS_UI::RunWebBrowser(HWND hWnd, char* szURL, void* pWebOjbect)
 {
@@ -5567,9 +5567,9 @@ bool C_VS_UI::IsInRectPointWebBrowser(int X, int Y)
 		return m_pC_game->IsInRectPointWebBrowser(X, Y);
 	return false;
 }
-// 2005, 2, 1, sobeit add end
+// 2005, 2, 1, sobeit 추가 끝
 #ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
-// 2005, 2, 24, sobeit add start
+// 2005, 2, 24, sobeit 추가 시작
 	void	C_VS_UI::RunSubInventory(MItem* pItem)
 	{
 		if (m_pC_game)
@@ -5604,5 +5604,5 @@ bool C_VS_UI::IsInRectPointWebBrowser(int X, int Y)
 		if (m_pC_game)
 			m_pC_game->CloseSubInventory();
 	}
-	// 2005, 2, 25, sobeit add end
+	// 2005, 2, 25, sobeit 추가 끝
 #endif

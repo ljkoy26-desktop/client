@@ -1,16 +1,16 @@
-#ifndef __INPUT_FOCUS_MANAGER_H__
+﻿#ifndef __INPUT_FOCUS_MANAGER_H__
 #define __INPUT_FOCUS_MANAGER_H__
 
-#include <cstddef>  // for NULL
+#include <cstddef>  // NULL 사용
 
 /**
- * InputFocusManager - Global text input focus management
+ * InputFocusManager - 전역 텍스트 입력 포커스 관리
  *
- * Manages which LineEditorVisual currently has keyboard focus
- * and routes SDL text input events to the focused editor.
+ * 현재 어떤 LineEditorVisual이 키보드 포커스를 가지고 있는지 관리하고
+ * SDL 텍스트 입력 이벤트를 포커스된 에디터로 전달한다.
  *
- * This replaces the single global callback mechanism with a proper
- * focus system that allows all input boxes to work correctly.
+ * 단일 전역 콜백 방식 대신 제대로 된 포커스 시스템으로 대체하여
+ * 모든 입력 박스가 올바르게 동작하도록 한다.
  */
 
 class LineEditorVisual;
@@ -18,46 +18,46 @@ class LineEditorVisual;
 class InputFocusManager
 {
 public:
-	// Get singleton instance
+	// 싱글턴 인스턴스 반환
 	static InputFocusManager& GetInstance();
 
-	// Set the currently focused text editor
-	// Pass NULL to release focus
+	// 현재 포커스된 텍스트 에디터 설정
+	// 포커스를 해제하려면 NULL을 전달
 	void SetFocusedEditor(LineEditorVisual* editor);
 
-	// Get the currently focused text editor
-	// Returns NULL if no editor has focus
+	// 현재 포커스된 텍스트 에디터 반환
+	// 포커스된 에디터가 없으면 NULL 반환
 	LineEditorVisual* GetFocusedEditor() const;
 
-	// Handle SDL text input event
-	// Routes the event to the focused editor if one exists
+	// SDL 텍스트 입력 이벤트 처리
+	// 포커스된 에디터가 있으면 그쪽으로 이벤트를 전달
 	void HandleTextInput(const char* text);
 
-	// Handle SDL text editing event (IME composition)
-	// Routes the event to the focused editor if one exists
+	// SDL 텍스트 편집 이벤트 처리(IME 조합)
+	// 포커스된 에디터가 있으면 그쪽으로 이벤트를 전달
 	void HandleTextEditing(const char* text, int start, int length);
 
-	// Handle SDL key down event (control keys like backspace, arrows, etc.)
-	// Routes the event to the focused editor if one exists
+	// SDL 키 다운 이벤트 처리(백스페이스, 방향키 등의 제어키)
+	// 포커스된 에디터가 있으면 그쪽으로 이벤트를 전달
 	void HandleKeyDown(unsigned int vk_code);
 
-	// Check if any editor currently has focus
+	// 현재 포커스된 에디터가 있는지 확인
 	bool HasFocus() const { return m_focusedEditor != NULL; }
 
 private:
-	// Private constructor for singleton
+	// 싱글턴을 위한 private 생성자
 	InputFocusManager();
 	~InputFocusManager() = default;
 
-	// Prevent copying
+	// 복사 방지
 	InputFocusManager(const InputFocusManager&) = delete;
 	InputFocusManager& operator=(const InputFocusManager&) = delete;
 
-	// Currently focused text editor
+	// 현재 포커스된 텍스트 에디터
 	LineEditorVisual* m_focusedEditor;
 };
 
-// Global accessor for use in DXLibBackendSDL (which cannot include VS_UI headers)
+// DXLibBackendSDL(VS_UI 헤더를 포함할 수 없음)에서 사용하기 위한 전역 접근자
 extern InputFocusManager& g_GetInputFocusManager();
 
 #endif // __INPUT_FOCUS_MANAGER_H__

@@ -1,5 +1,5 @@
-// RarFile.cpp: implementation of the CRarFile class.
-// Modified for cross-platform support without RAR dependency
+﻿// RarFile.cpp: CRarFile 클래스의 구현.
+// RAR 의존성 없이 크로스 플랫폼 지원을 위해 수정됨
 //////////////////////////////////////////////////////////////////////
 
 #include "RarFile.h"
@@ -7,7 +7,7 @@
 #include <algorithm>
 
 //////////////////////////////////////////////////////////////////////
-// Error Reporting Macro (cross-platform)
+// 오류 보고 매크로 (크로스 플랫폼)
 //////////////////////////////////////////////////////////////////////
 #ifdef PLATFORM_WINDOWS
 	#define RARFILE_ERROR(msg) { \
@@ -23,7 +23,7 @@
 #endif
 
 //////////////////////////////////////////////////////////////////////
-// Construction
+// 생성자
 //////////////////////////////////////////////////////////////////////
 CRarFile::CRarFile()
 {
@@ -33,7 +33,7 @@ CRarFile::CRarFile()
 }
 
 //////////////////////////////////////////////////////////////////////
-// Construction
+// 생성자
 //////////////////////////////////////////////////////////////////////
 CRarFile::CRarFile(const char *rar_filename, const char *pass)
 {
@@ -44,7 +44,7 @@ CRarFile::CRarFile(const char *rar_filename, const char *pass)
 }
 
 //////////////////////////////////////////////////////////////////////
-// Destruction
+// 소멸자
 //////////////////////////////////////////////////////////////////////
 CRarFile::~CRarFile()
 {
@@ -52,7 +52,7 @@ CRarFile::~CRarFile()
 }
 
 //////////////////////////////////////////////////////////////////////
-// Release
+// 해제
 //////////////////////////////////////////////////////////////////////
 void CRarFile::Release()
 {
@@ -66,7 +66,7 @@ void CRarFile::Release()
 
 //////////////////////////////////////////////////////////////////////
 // SetRAR
-// Convert RAR file path to directory path
+// RAR 파일 경로를 디렉터리 경로로 변환
 //////////////////////////////////////////////////////////////////////
 void CRarFile::SetRAR(const char *rar_filename, const char *pass)
 {
@@ -79,12 +79,12 @@ void CRarFile::SetRAR(const char *rar_filename, const char *pass)
 	}
 
 	m_rar_filename = rar_filename;
-	m_password = pass;  // Store password but don't use it (not needed for extracted files)
+	m_password = pass;  // 비밀번호를 저장하지만 사용하지는 않음(압축 해제된 파일에는 필요 없음)
 
-	// Use the directory containing the .rpk/.rar file as the base directory,
-	// since the game data ships with archive contents extracted flat next to
-	// the archive itself, not into a subfolder named after the archive.
-	// Example: "Data/Info/infodata.rpk" -> "Data/Info/"
+	// .rpk/.rar 파일이 들어있는 디렉터리를 기준 디렉터리로 사용한다.
+	// 게임 데이터는 아카이브 이름을 딴 하위 폴더가 아니라 아카이브 자체
+	// 옆에 압축 해제된 내용물을 그대로 배치하기 때문이다.
+	// 예: "Data/Info/infodata.rpk" -> "Data/Info/"
 	std::string path = rar_filename;
 	size_t lastSlash = path.find_last_of("/\\");
 	if (lastSlash != std::string::npos) {
@@ -96,7 +96,7 @@ void CRarFile::SetRAR(const char *rar_filename, const char *pass)
 
 //////////////////////////////////////////////////////////////////////
 // Open
-// Open a file from the extracted directory
+// 압축 해제된 디렉터리에서 파일 열기
 //////////////////////////////////////////////////////////////////////
 bool CRarFile::Open(const char *in_filename)
 {
@@ -108,14 +108,14 @@ bool CRarFile::Open(const char *in_filename)
 
 	Release();
 
-	// Build full path by combining base directory with filename
+	// 기준 디렉터리와 파일명을 합쳐서 전체 경로를 만든다
 	std::string fullPath = m_base_dir + in_filename;
 
-	// Open the file
+	// 파일 열기
 	FILE* file = fopen(fullPath.c_str(), "rb");
 	if (file == NULL)
 	{
-		// Log detailed error information
+		// 상세 오류 정보 기록
 		char errorMsg[512];
 		snprintf(errorMsg, sizeof(errorMsg),
 				"Failed to open file: %s (base_dir=%s, filename=%s)",
@@ -124,7 +124,7 @@ bool CRarFile::Open(const char *in_filename)
 		return false;
 	}
 
-	// Get file size
+	// 파일 크기 얻기
 	fseek(file, 0, SEEK_END);
 	long fileSize = ftell(file);
 	fseek(file, 0, SEEK_SET);
@@ -139,7 +139,7 @@ bool CRarFile::Open(const char *in_filename)
 		return false;
 	}
 
-	// Allocate buffer and read entire file
+	// 버퍼를 할당하고 파일 전체를 읽는다
 	m_data = (char*)malloc(fileSize + 1);
 	if (m_data == NULL)
 	{
@@ -163,7 +163,7 @@ bool CRarFile::Open(const char *in_filename)
 	}
 
 	m_size = (int)bytesRead;
-	m_data[m_size] = '\0';  // Null-terminate for string operations
+	m_data[m_size] = '\0';  // 문자열 연산을 위해 null 종료 처리
 	m_file_pointer = m_data;
 
 	return true;
@@ -171,7 +171,7 @@ bool CRarFile::Open(const char *in_filename)
 
 //////////////////////////////////////////////////////////////////////
 // Read
-// Copy data to buffer
+// 버퍼로 데이터 복사
 //////////////////////////////////////////////////////////////////////
 char* CRarFile::Read(char *buf, int size)
 {
@@ -186,7 +186,7 @@ char* CRarFile::Read(char *buf, int size)
 
 //////////////////////////////////////////////////////////////////////
 // Read
-// Advance file pointer by size
+// size만큼 파일 포인터 이동
 //////////////////////////////////////////////////////////////////////
 char* CRarFile::Read(int size)
 {
@@ -200,7 +200,7 @@ char* CRarFile::Read(int size)
 
 //////////////////////////////////////////////////////////////////////
 // GetString
-// Read one line from the current file pointer position
+// 현재 파일 포인터 위치에서 한 줄을 읽는다
 //////////////////////////////////////////////////////////////////////
 bool CRarFile::GetString(char* buf, int size)
 {
@@ -213,7 +213,7 @@ bool CRarFile::GetString(char* buf, int size)
 		return false;
 	}
 
-	// Find current position in data
+	// 데이터 내 현재 위치 확인
 	long currentPos = m_file_pointer - m_data;
 	if (currentPos >= m_size)
 	{
@@ -221,27 +221,27 @@ bool CRarFile::GetString(char* buf, int size)
 		return false;
 	}
 
-	// Find newline character
+	// 줄바꿈 문자 찾기
 	char* lineStart = m_file_pointer;
 	char* newline = (char*)memchr(lineStart, '\n', m_size - currentPos);
 
 	int lineLength;
 	if (newline != NULL)
 	{
-		// Found newline - calculate line length
+		// 줄바꿈을 찾음 - 줄 길이 계산
 		lineLength = (int)(newline - lineStart);
 
-		// Skip the newline for next call
+		// 다음 호출을 위해 줄바꿈 문자는 건너뜀
 		m_file_pointer = newline + 1;
 	}
 	else
 	{
-		// No newline found - read to end
+		// 줄바꿈을 찾지 못함 - 끝까지 읽음
 		lineLength = (int)(m_size - currentPos);
 		m_file_pointer = m_data + m_size;
 	}
 
-	// Copy line to buffer (respect buffer size)
+	// 줄을 버퍼로 복사(버퍼 크기 준수)
 	int copyLength = lineLength;
 	if (copyLength >= size)
 		copyLength = size - 1;
@@ -249,7 +249,7 @@ bool CRarFile::GetString(char* buf, int size)
 	memcpy(buf, lineStart, copyLength);
 	buf[copyLength] = '\0';
 
-	// Remove trailing \r if present (Windows CRLF files)
+	// 뒤에 붙은 \r 제거(Windows CRLF 파일인 경우)
 	if (copyLength > 0 && buf[copyLength - 1] == '\r')
 	{
 		buf[copyLength - 1] = '\0';
@@ -272,11 +272,11 @@ bool CRarFile::IsEOF(int plus)
 
 //////////////////////////////////////////////////////////////////////
 // GetList
-// Stub implementation for compatibility
+// 호환성을 위한 스텁 구현
 //////////////////////////////////////////////////////////////////////
 std::vector<std::string> *CRarFile::GetList(char *filter)
 {
-	// Stub: Return empty list
+	// 스텁: 빈 목록 반환
 	static std::vector<std::string> emptyList;
 	return &emptyList;
 }

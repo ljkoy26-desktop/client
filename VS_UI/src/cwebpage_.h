@@ -1,6 +1,6 @@
-/*
- * This include file is meant to be included with any C source you
- * write which uses the cwebpage DLL.
+﻿/*
+ * 이 include 파일은 cwebpage DLL을 사용하는 모든 C 소스 코드에
+ * 포함되도록 만들어졌다.
  */
 
 #ifndef __CWEBPAGE_H_INCLUDED
