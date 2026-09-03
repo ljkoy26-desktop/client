@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // ZoneFileHeader.cpp
 //----------------------------------------------------------------------
 #include "Client_PCH.h"
@@ -29,8 +29,8 @@ FILEINFO_ZONE_HEADER::LoadFromFile(std::ifstream& file)//뗍혤뒈暠
 	file.read((char*)&ZoneGroupID, 2);
 	ZoneName.LoadFromFile(file);
 
-	// Some legacy map files store ZoneType/ZoneLevel as WORDs instead of BYTEs.
-	// Detect layout by peeking the description length with both interpretations.
+	// 일부 레거시 맵 파일은 ZoneType/ZoneLevel을 BYTE가 아닌 WORD로 저장한다.
+	// 두 가지 해석 모두로 설명(Description) 길이를 미리 읽어봐서 레이아웃을 판별한다.
 	const std::streampos afterName = file.tellg();
 
 	auto peekDescLen = [&](int typeSizeBytes, uint32_t& outLen) {

@@ -1,4 +1,4 @@
-#ifndef __TILE_RENDERER_H__
+﻿#ifndef __TILE_RENDERER_H__
 #define __TILE_RENDERER_H__
 
 // 플랫폼별 타입 정의 (POINT, RECT, WORD 등 포함)

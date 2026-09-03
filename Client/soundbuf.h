@@ -1,4 +1,4 @@
-#ifndef _SOUNDBUF_H_
+﻿#ifndef _SOUNDBUF_H_
 #define _SOUNDBUF_H_
 
 #ifdef PLATFORM_WINDOWS

@@ -1,4 +1,4 @@
-#include "DirectXlib_PCH.h"
+﻿#include "DirectXlib_PCH.h"
 #define STRICT
 #define WIN32_LEAN_AND_MEAN
 #define NOMCX

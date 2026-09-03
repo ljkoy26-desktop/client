@@ -1,4 +1,4 @@
-#ifndef __CSPRITE_PAL__
+﻿#ifndef __CSPRITE_PAL__
 #define __CSPRITE_PAL__
 
 #ifdef PLATFORM_WINDOWS

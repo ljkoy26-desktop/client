@@ -1,4 +1,4 @@
-#ifndef __QUEST_STATUS_INFO_H__
+﻿#ifndef __QUEST_STATUS_INFO_H__
 #define __QUEST_STATUS_INFO_H__
 
 #include "Types.h"

@@ -1,4 +1,4 @@
-#ifndef __ITEMCLASSDEF_H__
+﻿#ifndef __ITEMCLASSDEF_H__
 #define __ITEMCLASSDEF_H__
 
 //------------------------------------------------------

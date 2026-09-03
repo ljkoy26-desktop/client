@@ -1,4 +1,4 @@
-//#define __3D_IMAGE_OBJECT__					// by sonee
+﻿//#define __3D_IMAGE_OBJECT__					// by sonee
 
 //----------------------------------------------------------------------
 // MTopViewDraw.cpp

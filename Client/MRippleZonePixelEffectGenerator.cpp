@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // MRippleZonePixelEffectGenerator.cpp
 //----------------------------------------------------------------------
 #include "Client_PCH.h"
@@ -16,12 +16,12 @@
 //#define	delete		DEBUG_DELETE
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MRippleZonePixelEffectGenerator	g_RippleZoneEffectGenerator;
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MRippleZonePixelEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )
@@ -57,7 +57,7 @@ MRippleZonePixelEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )
 	int startMoveStep = 0;
 
 	//------------------------------------------------------------
-	// Power of Land
+	// 대지의 힘
 	//------------------------------------------------------------
 	if (est==EFFECTSPRITETYPE_POWER_OF_LAND_STONE_1)
 	{
@@ -70,7 +70,7 @@ MRippleZonePixelEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )
 		bResetTarget = false;
 	}
 	//------------------------------------------------------------
-	// Earthquake
+	// 지진
 	//------------------------------------------------------------
 	else if (est==EFFECTSPRITETYPE_EARTHQUAKE_1)
 	{
@@ -82,7 +82,7 @@ MRippleZonePixelEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )
 		startMoveStep = 3;
 	}
 	//------------------------------------------------------------
-	// Transfusion
+	// 수혈
 	//------------------------------------------------------------
 	else if (est==EFFECTSPRITETYPE_TRANSFUSION_1 || est==EFFECTSPRITETYPE_GREEN_TRANSFUSION_1)
 	{

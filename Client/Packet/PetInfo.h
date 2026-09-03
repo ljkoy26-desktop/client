@@ -1,4 +1,4 @@
-#ifndef __PET_INFO_H__
+﻿#ifndef __PET_INFO_H__
 #define __PET_INFO_H__
 
 #include "Types.h"

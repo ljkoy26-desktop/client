@@ -1,4 +1,4 @@
-// APICheck.cpp: implementation of the APICheck class.
+﻿// APICheck.cpp: implementation of the APICheck class.
 //
 //////////////////////////////////////////////////////////////////////
 

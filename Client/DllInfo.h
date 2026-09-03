@@ -1,4 +1,4 @@
-#ifndef __DLL_INFO__
+﻿#ifndef __DLL_INFO__
 #define __DLL_INFO__
 
 #ifndef WIN32_LEAN_AND_MEAN

@@ -1,4 +1,4 @@
-#ifndef _MP3_HEADER_H_
+﻿#ifndef _MP3_HEADER_H_
 #define _MP3_HEADER_H_
 
 #include "common.h"

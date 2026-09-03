@@ -1,4 +1,4 @@
-#include "MZoneTileProvider.h"
+﻿#include "MZoneTileProvider.h"
 
 MZoneTileProvider::MZoneTileProvider()
 	: m_pZone(nullptr)
@@ -7,5 +7,5 @@ MZoneTileProvider::MZoneTileProvider()
 
 MZoneTileProvider::~MZoneTileProvider()
 {
-	// Note: We don't own the MZone, so don't delete it
+	// 참고: MZone을 소유하지 않으므로 삭제하지 않는다
 }

@@ -1,4 +1,4 @@
-#ifndef __CTYPEPACKVECTOR_H__
+﻿#ifndef __CTYPEPACKVECTOR_H__
 #define __CTYPEPACKVECTOR_H__
 
 #ifdef PLATFORM_WINDOWS

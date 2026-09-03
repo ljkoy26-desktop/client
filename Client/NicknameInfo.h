@@ -1,4 +1,4 @@
-#ifndef __NICKNAME_INFO_H__
+﻿#ifndef __NICKNAME_INFO_H__
 #define __NICKNAME_INFO_H__
 
 #include "Packet/Types.h"

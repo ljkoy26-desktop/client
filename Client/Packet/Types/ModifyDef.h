@@ -1,4 +1,4 @@
-#ifndef	__MODIFYDEF_H__
+﻿#ifndef	__MODIFYDEF_H__
 #define	__MODIFYDEF_H__
 
 

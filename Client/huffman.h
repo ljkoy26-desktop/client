@@ -1,4 +1,4 @@
-#ifndef HUFFMAN_H
+﻿#ifndef HUFFMAN_H
 #define HUFFMAN_H
 
 #ifdef PLATFORM_WINDOWS

@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // MStopZoneRandomEffectGenerator.cpp
 //----------------------------------------------------------------------
 #include "Client_PCH.h"
@@ -41,7 +41,7 @@ MStopZoneRandomEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )
 
 	MEffect*	pEffect;
 	//---------------------------------------------
-	// Effect 생성 - Left Up
+	// Effect 생성 - 좌상
 	//---------------------------------------------
 	x = sX - (rand()%3 + 1);
 	y = sY - (rand()%3 + 1);
@@ -74,7 +74,7 @@ MStopZoneRandomEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )
 
 	MEffectTarget*	pEffectTarget2;
 	//---------------------------------------------
-	// Effect 생성 - Right Up
+	// Effect 생성 - 우상
 	//---------------------------------------------
 	x = sX + (rand()%3 + 1);
 	y = sY - (rand()%3 + 1);
@@ -115,7 +115,7 @@ MStopZoneRandomEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )
 
 
 	//---------------------------------------------
-	// Effect 생성 - Right Down
+	// Effect 생성 - 우하
 	//---------------------------------------------
 	x = sX + (rand()%3 + 1);
 	y = sY + (rand()%3 + 1);
@@ -155,7 +155,7 @@ MStopZoneRandomEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )
 	}
 
 	//---------------------------------------------
-	// Effect 생성 - Left Down
+	// Effect 생성 - 좌하
 	//---------------------------------------------
 	x = sX - (rand()%3 + 1);
 	y = sY + (rand()%3 + 1);

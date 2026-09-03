@@ -1,4 +1,4 @@
-// 
+﻿// 
 // Filename    : BloodBibleBonusInfo.cpp 
 // 작성자:
 // 설명:

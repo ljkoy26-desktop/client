@@ -468,6 +468,94 @@
 
 ---
 
+## 18차 번역 완료 (2026-09-03)
+
+vcxproj 순서상 Client 폴더 헤더(.h) 파일들 위주로 진행 (커밋 c1c1eb2, c0c59e8 — 당시 이 문서에는 기록되지 않았던 내역을 소급 기록):
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/MItemFinder.h` | 영어 주석 → 한글 |
+| `Client/MItemTable.h` | 영어 주석 → 한글 |
+| `Client/MSector.h` | 영어 주석 → 한글 |
+| `Client/MWorkThread.h` | 영어 주석 → 한글 |
+| `Client/MZoneSound.h` | 영어 주석 → 한글 |
+| `Client/PCConfigTable.h` | 영어 주석 → 한글 |
+| `Client/PacketDef.h` | 영어 주석 → 한글 |
+| `Client/ProfileManager.h` | 영어 주석 → 한글 |
+| `Client/SkillDef.h` | 영어 주석 → 한글 |
+| `Client/TileRenderer.h` | 영어 주석 → 한글 |
+| `Client/UtilityFunction.h` | 영어 주석 → 한글 |
+| `Client/ClientDef.h` | 영어 주석 → 한글 |
+| `Client/MTopView.h` | 영어 주석 → 한글 |
+| `Client/Netmarble.cpp` | 영어 주석 → 한글 (16차 작업분이나 당시 표에 누락되어 여기 소급 기록) |
+
+---
+
+## 19차 번역 완료 (2026-09-03)
+
+check_encoding_result.md 기준 DarkEden.vcxproj에 실제 등록된 파일만 대상으로 재검증 후, 18차까지 누락 없이 반영해 남은 .cpp 파일 전체(대형 파일 1개 제외)를 처리:
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/MItemOptionTable.cpp` | 전역 변수, 생성자/소멸자, 멤버 함수, 파일에 저장/불러오기 섹션 헤더 |
+| `Client/MJusticeAttackManager.cpp` | 전역 변수, 생성자/소멸자, 멤버 함수, 해제, 크리처 추가/제거/보유 여부 확인 섹션 헤더 |
+| `Client/MMonsterKillQuestInfo.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MQuestInfo.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MQuickSlot.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MRequestMode.cpp` | 생성자/소멸자 섹션 헤더 |
+| `Client/MRippleZonePixelEffectGenerator.cpp` | 전역 변수, 이펙트 생성, 대지의 힘/지진/수혈 섹션 헤더 |
+| `Client/MRippleZoneWideEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MShadowAnimationObject.cpp` | 생성자/소멸자, 멤버 함수 섹션 헤더 |
+| `Client/MShadowObject.cpp` | 생성자/소멸자, 멤버 함수 섹션 헤더 |
+| `Client/MSkipEffect.cpp` | 생성자/소멸자, 멤버 함수, 업데이트 섹션 헤더 |
+| `Client/MStopZoneCrossEffectGenerator.cpp` | (번역 불필요 - 이미 한글) |
+| `Client/MStopZoneEffectGenerator.cpp` | ASAN 디버그 로그/검증 관련 영어 주석 → 한글 |
+| `Client/MStopZoneEmptyCrossEffectGenerator.cpp` | (번역 불필요 - 이미 한글) |
+| `Client/MStopZoneEmptyHorizontalEffectGenerator.cpp` | 방향값 테이블 인라인 주석(left/right/up/down 등) → 한글 |
+| `Client/MStopZoneEmptyRectEffectGenerator.cpp` | (번역 불필요 - 이미 한글) |
+| `Client/MStopZoneEmptyVerticalWallEffectGenerator.cpp` | 방향값 테이블 인라인 주석 → 한글 |
+| `Client/MStopZoneMultipleEffectGenerator.cpp` | (번역 불필요 - 이미 한글) |
+| `Client/MStopZoneRandomEffectGenerator.cpp` | Left Up/Right Up/Right Down/Left Down 섹션 헤더 → 한글 |
+| `Client/MStopZoneRectEffectGenerator.cpp` | (번역 불필요 - 이미 한글) |
+| `Client/MStopZoneRhombusEffectGenerator.cpp` | (번역 불필요 - 이미 한글) |
+| `Client/MStopZoneSelectableEffectGenerator.cpp` | (번역 불필요 - 이미 한글) |
+| `Client/MStopZoneWallEffectGenerator.cpp` | 방향값 테이블 인라인 주석 → 한글 |
+| `Client/MStringArray.cpp` | 생성자/소멸자 섹션 헤더 |
+| `Client/MTestDef.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MTimeItemManager.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MTopviewExceptionProc.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MWarManager.CPP` | (번역 불필요 - 영어 주석 없음) |
+| `Client/MWorkNode.cpp` | 생성자/소멸자 섹션 헤더 |
+| `Client/MZLib_PCH.cpp` | (번역 불필요 - 빈 파일) |
+| `Client/MZoneTileProvider.cpp` | 소유권 관련 주석 → 한글 |
+| `Client/NicknameInfo.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/Profiler.cpp` | 전역 변수, 초기화, 시작/종료, 파일에 저장, 해제, 프로파일 정보 보유 여부/실행 횟수/총 시간/평균 시간 반환 섹션 헤더 |
+| `Client/SXml/SXml.cpp` | WideCharToMultiByte 매개변수 설명 블록, 인라인 주석 영어 → 한글 |
+| `Client/SectorSoundInfo.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/ServerInfoFileParser.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/ShrineInfoManager.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/SizeOfObjects.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/SkillDef.cpp` | domain name string 섹션 헤더 → 한글 |
+| `Client/StdAfx.cpp` | 파일 헤더 설명 전체 → 한글 |
+| `Client/StoreInfo.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/SystemAvailabilities.cpp` | (번역 불필요 - 영어 주석 없음) |
+| `Client/TalkBox.cpp` | 전역 변수 섹션 헤더 |
+| `Client/UIUtilityFunctions.cpp` | 문자열 축소 함수 내 영어 인라인 주석(Truncate/Count characters/Double-byte 등) → 한글 |
+| `Client/ZoneFileHeader.cpp` | 레거시 맵 파일 WORD/BYTE 레이아웃 판별 설명 주석 → 한글 |
+
+**보류**: `Client/MitemTableInit.cpp` (538.1 KB, 300KB 초과) — 별도 세션에서 진행 여부를 사용자에게 확인 후 진행 필요.
+
+---
+
+## 20차 번역 완료 (2026-09-03)
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/MitemTableInit.cpp` | (번역 불필요 - 아이템 테이블 초기화 데이터만 존재, 주석(`//`, `/* */`) 자체가 파일 전체에 하나도 없음. 8488줄 전수 확인) |
+
+---
+
 ## 다음 번역 대상
 
-Client 폴더 .h 파일들 중 영어 주석 많은 파일들 계속 처리 중.
+DarkEden.vcxproj(Client 폴더, Client/Packet, Client/SXml, Client/WinLib 포함) 등록 파일 전체 번역 완료.
+그 외 vcxproj에 등록되지 않은 Client 하위 폴더(DXLib, SpriteLib, framelib, TextSystem, JpegLib, OtherClass, Updater, tools)는 별도 프로젝트(각자의 번역 완료파일 md로 관리)이므로 이 문서의 대상이 아님.

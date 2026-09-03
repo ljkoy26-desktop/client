@@ -1,4 +1,4 @@
-
+﻿
 #ifndef	__MSKIPEFFECT_H__
 #define	__MSKIPEFFECT_H__
 

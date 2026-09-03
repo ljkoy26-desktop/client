@@ -1,4 +1,4 @@
-/* inffixed.h -- 고정 코드 디코딩 테이블
+﻿/* inffixed.h -- 고정 코드 디코딩 테이블
  * maketree.c 프로그램에 의해 자동 생성됨
  */
 

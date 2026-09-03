@@ -1,4 +1,4 @@
-#include "CSpritePal.h"
+﻿#include "CSpritePal.h"
 
 #include <vector>
 #include <fstream>

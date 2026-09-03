@@ -1,4 +1,4 @@
-#include "DirectXlib_PCH.h"
+﻿#include "DirectXlib_PCH.h"
 #include "header.h"
 #include "reader.h"
 

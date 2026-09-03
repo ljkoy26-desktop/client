@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // UIUtilityFunctions.cpp - macOS UI 유틸리티 함수
 //----------------------------------------------------------------------
 #include "../Client_PCH.h"
@@ -21,7 +21,7 @@ void ReduceString(char* pStr, int maxWidth)
     if (len <= maxWidth)
         return;
 
-    // Truncate and add "..."
+    // 잘라내고 "..."을 추가한다
     pStr[maxWidth - 3] = '.';
     pStr[maxWidth - 2] = '.';
     pStr[maxWidth - 1] = '.';
@@ -37,12 +37,12 @@ void ReduceString2(char* pStr, int maxWidth)
     int len = 0;
     char* p = pStr;
 
-    // Count characters (considering DBCS)
+    // 문자 개수를 센다 (DBCS 고려)
     while (*p && len < maxWidth)
     {
         if ((*p & 0x80) != 0)
         {
-            // Double-byte character
+            // 2바이트 문자
             p += 2;
             len += 2;
         }
@@ -72,7 +72,7 @@ void ReduceString3(char* pStr, int maxWidth)
     if (len <= maxWidth)
         return;
 
-    // Truncate from end and add "..."
+    // 끝부분을 잘라내고 "..."을 추가한다
     int cutLen = maxWidth - 3;
     if (cutLen > 0)
     {
@@ -97,7 +97,7 @@ void ReduceString3(char* pStr, int maxWidth)
 /*
 void UpdateInput()
 {
-    // Update DirectInput state (mouse buttons, keyboard, etc.)
+    // DirectInput 상태(마우스 버튼, 키보드 등)를 갱신한다
     if (g_pSDLInput) {
         g_pSDLInput->UpdateInput();
     }
@@ -105,7 +105,7 @@ void UpdateInput()
 
 void UpdateMouse()
 {
-    // Stub: SDL input system handles this
+    // 스텁: SDL 입력 시스템이 이를 처리한다
 }
 */
 

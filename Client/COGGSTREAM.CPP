@@ -1,4 +1,4 @@
-#include "COGGSTREAM.h"
+﻿#include "COGGSTREAM.h"
 #include "DXLib/CDirectSound.h"
 #include "basic/Platform.h"
 

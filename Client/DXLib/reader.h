@@ -1,4 +1,4 @@
-#ifndef _MP3_READER_H_
+﻿#ifndef _MP3_READER_H_
 #define _MP3_READER_H_
 
 #ifdef PLATFORM_WINDOWS

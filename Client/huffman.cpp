@@ -1,4 +1,4 @@
-#include "DirectXlib_PCH.h"
+﻿#include "DirectXlib_PCH.h"
 #ifdef PLATFORM_WINDOWS
 #include <strstream>
 #else

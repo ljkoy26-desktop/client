@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // MStopZoneEffectGenerator.cpp
 //----------------------------------------------------------------------
 #include "Client_PCH.h"
@@ -212,14 +212,14 @@ MStopZoneEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )
 			//---------------------------------------------
 			pEffect = new MEffect(bltType);
 
-			// Debug: Log effect creation
+			// 디버그: 이펙트 생성 로그
 			DEBUG_ADD_FORMAT("StopZoneEffect: Created pEffect=%p, bltType=%d", pEffect, bltType);
 
 			pEffect->SetFrameID( frameID, maxFrame );
 
-			// Debug: Verify effect state before AddEffect
+			// 디버그: AddEffect 호출 전 이펙트 상태 검증
 			#ifdef __SANITIZE_ADDRESS__
-			// With ASAN, add extra validation
+			// ASAN 사용 시 추가 검증 수행
 			if (pEffect) {
 				TYPE_FRAMEID testFrameID = pEffect->GetFrameID();
 				DEBUG_ADD_FORMAT("StopZoneEffect: pEffect=%p FrameID=%d before AddEffect", pEffect, testFrameID);

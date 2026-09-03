@@ -1,4 +1,4 @@
-#ifndef __QUEST_INFO_HEADER__
+﻿#ifndef __QUEST_INFO_HEADER__
 #define __QUEST_INFO_HEADER__
 
 #include <fstream>

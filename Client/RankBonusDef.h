@@ -1,4 +1,4 @@
-#ifndef	__RANKBONUSDEF_H__
+﻿#ifndef	__RANKBONUSDEF_H__
 #define	__RANKBONUSDEF_H__
 
 	enum RankBonusType
