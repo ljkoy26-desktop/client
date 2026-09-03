@@ -51,9 +51,30 @@ vcxproj 순서 기준 첫 배치(`Client_PCH.cpp` ~ `VS_UI_Base.cpp`, MitemTable
 
 ---
 
+## 2차 번역 완료 (2026-09-04)
+
+사용자 승인으로 보류 중이던 대형 파일 2개를 진행:
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `VS_UI/MitemTableInit.cpp` (801.5KB, 12876줄) | `Client/MitemTableInit.cpp`와 동일하게 아이템 초기화 데이터 파일이라 주석이 거의 없음. `#ifdef __TEST_SUB_INVENTORY__` 앞의 `// add by Coffee 2007-8-9` 1건만 한글로 번역(`// Coffee 추가, 2007-8-9`). 그 외 영어 주석 없음 확인 완료 |
+| `VS_UI/src/vs_ui_gamecommon2.cpp` (572.3KB, 19233줄) | 실제 영어 주석 약 30건 번역: frame id → sprite id(7건, 일괄), else // default setting(4건, 일괄), search grid(2건), left/right up/down 케이스 라벨(각 2건), Sonic 삼속성 장비 표시 기능 add/end 주석(4건), Sonic 2006.9.26 추가 주석(3건, 일괄), critical hit/Heal point/Mana point/Attack range/Pocket·Pile·Charge size/Add option/hp bar/check setting/show My trade Item/draw blocks/draw smile/Ousters SkillInfo/Skill icon back/SDL backend 캐스팅 설명 등 단발성 라벨, larosel/Csm/coffee/seok min/bezz/viva/lupeng 등 작성자 표기(`by X` → `X 작성`/`X 추가`) 다수. 순수 클래스명 반복 헤더(`// FINDING MINE`, `// C_VS_UI_xxx::Method`)와 주석처리된 죽은 코드(파라미터 목록, 옛 case문, RECT/Point 계산식 등)는 원문 유지 |
+
+두 파일 모두 UTF-8 BOM이 이미 있었음을 확인(추가 조치 불필요).
+
+이번 회차는 보류돼 있던 대형 파일 2개만 처리한 것이며, 1차 배치 이후 남아있던 일반 크기 파일들
+(`VS_UI/src/VS_UI_BBS.cpp`부터 이어지는 나머지 목록, 약 2670KB)은 이번에 다루지 않았다.
+
+---
+
 ## 다음 번역 대상
 
-1차 배치(약 1026KB) 완료. vcxproj 등장 순서 기준 다음은 `VS_UI/src/VS_UI_BBS.cpp`부터 이어가면 됨.
-남은 파일 총량은 약 2670KB(3697KB 전체 - 1026KB 완료 - 대형 보류 2건 합계는 포함 안 됨) 정도이며,
-`MitemTableInit.cpp`(801.5KB)와 `vs_ui_gamecommon2.cpp`(572.3KB) 두 대형 파일은 300KB 기준 초과로
-매 배치마다 건너뛰고 마지막에 별도 확인 후 처리 권장.
+`VS_UI/src/VS_UI_BBS.cpp`부터 vcxproj 등장 순서대로 나머지 약 2670KB 분량(VS_UI_DESC.cpp, VS_UI_Description.cpp,
+VS_UI_Descriptor.cpp, VS_UI_Dialog.cpp, VS_UI_ELEVATOR.cpp, VS_UI_Exception.cpp, VS_UI_Exchange.cpp,
+VS_UI_ExtraDialog.cpp, VS_UI_Game.cpp, VS_UI_GameCommon.cpp, VS_UI_GameOusters.cpp, VS_UI_GameSlayer.cpp,
+VS_UI_GameVampire.cpp, VS_UI_GlobalResource.cpp, VS_UI_Helper.cpp, VS_UI_Item.cpp, VS_UI_Message.cpp,
+VS_UI_PetStorage.cpp, VS_UI_PointExchange.cpp, VS_UI_SKILL_VIEW.cpp, VS_UI_Shop.cpp, VS_UI_Storage.cpp,
+VS_UI_TITLE_SHOWCHAR.CPP, VS_UI_Title.cpp, VS_UI_Tutorial.cpp, VS_UI_WebBrowser.cpp, VS_UI_mouse_pointer.cpp,
+VS_UI_progress.cpp, VS_UI_skill_tree.cpp, VS_UI_ui_result_receiver.cpp, VS_UI_util.cpp, VS_UI_widget.cpp,
+Ci_macOS.cpp, U_edit.cpp, mother.cpp, pi_core.cpp, u_button.cpp, u_scrollbar.cpp, u_window.cpp 및 각 참조 헤더)를
+1MB 단위로 계속 진행하면 됨. MitemTableInit.cpp, vs_ui_gamecommon2.cpp는 이번에 완료되어 더 이상 보류 대상 아님.

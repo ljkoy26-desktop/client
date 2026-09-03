@@ -48,7 +48,7 @@
 extern DWORD g_CurrentFrame;
 extern BOOL g_MyFull;
 extern RECT g_GameRect;
-#define WHISPER_MAX 10	// by larosel
+#define WHISPER_MAX 10	// larosel 작성
 
 #define MAX_SLAYER_ATTR_OLD				200
 #define MAX_SLAYER_ATTR_SUM_OLD			300
@@ -380,7 +380,7 @@ void	C_VS_UI_ITEM_LIST::Show()
 				
 				if (pCurrentFocusItem->IsAffectStatus() || pCurrentFocusItem->IsQuestItem())
 				{
-					// frame id -> sprite id
+					// 프레임 ID → 스프라이트 ID
 					gpC_item->BltLocked(item_x, item_y, FrameID);
 				}
 				else
@@ -449,13 +449,13 @@ void	C_VS_UI_ITEM_LIST::Show()
 			TitleColor = g_pClientConfig->COLOR_NAME_ITEM_RARE_OPTION;
 			ShadowColor = 0;//RGB(0,0,31<<3);
 		}
-		// add by Sonic 2006.10.28 增加显示三属性装备为红色
+		// Sonic 추가, 2006.10.28 (삼속성 장비 빨간색 표시 기능 추가)
 		else if(pItem->GetItemOptionListCount() > 2)
 		{
 			TitleColor = g_pClientConfig->COLOR_NAME_VAMPIRE; //Red
 			ShadowColor = g_pClientConfig->COLOR_NAME_VAMPIRE; //Red
 		}
-		// end by Sonic 2006.10.28 增加显示三属性装备为红色
+		// Sonic 종료, 2006.10.28 (삼속성 장비 빨간색 표시 기능 추가)
 		else
 		if ( pItem->IsEmptyItemOptionList() )
 		{
@@ -520,13 +520,13 @@ void	C_VS_UI_ITEM_LIST::Show()
 			TitleColor = g_pClientConfig->COLOR_NAME_ITEM_RARE_OPTION;
 			ShadowColor = 0;//RGB(0,0,31<<3);
 		}
-		// add by Sonic 2006.10.28 增加显示三属性装备为红色
+		// Sonic 추가, 2006.10.28 (삼속성 장비 빨간색 표시 기능 추가)
 		else if(pCurrentFocusItem->GetItemOptionListCount() > 2)
 		{
 			TitleColor = g_pClientConfig->COLOR_NAME_VAMPIRE; //Red
 			ShadowColor = g_pClientConfig->COLOR_NAME_VAMPIRE; //Red
 		}
-		// end by Sonic 2006.10.28 增加显示三属性装备为红色
+		// Sonic 종료, 2006.10.28 (삼속성 장비 빨간색 표시 기능 추가)
 		else
 		if ( pCurrentFocusItem->IsEmptyItemOptionList() )
 		{
@@ -604,7 +604,7 @@ void	C_VS_UI_ITEM_LIST::Show()
 			g_PrintColorStr(vx, strY, sz_buf, gpC_base->m_item_desc_pi, RGB_RED);
 			strY += line_gap;
 		}			
-		// critical hit
+		// 크리티컬 히트
 		if (pCurrentFocusItem->GetCriticalHit() != -1)//크리트컬 히트가 있는가?
 		{
 			vx = g_PrintColorStr(strX, strY, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_CRITICALHIT].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -636,7 +636,7 @@ void	C_VS_UI_ITEM_LIST::Show()
 			g_PrintColorStr(vx, strY, sz_buf, gpC_base->m_item_desc_pi, RGB_GREEN);				
 			strY += line_gap;
 		}			
-		// Heal point
+		// 힐 포인트
 		if (pCurrentFocusItem->GetHealPoint() != -1)
 		{
 			vx = g_PrintColorStr(strX, strY, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_HP].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -644,7 +644,7 @@ void	C_VS_UI_ITEM_LIST::Show()
 			g_PrintColorStr(vx, strY, sz_buf, gpC_base->m_item_desc_pi, RGB_WHITE);				
 			strY += line_gap;
 		}			
-		// Mana point
+		// 마나 포인트
 		if (pCurrentFocusItem->GetManaPoint() != -1)
 		{
 			vx = g_PrintColorStr(strX, strY, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_MP].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -653,7 +653,7 @@ void	C_VS_UI_ITEM_LIST::Show()
 			strY += line_gap;
 		}
 		
-		// Attack range
+		// 공격 범위
 		if (pCurrentFocusItem->GetReach() != -1 && pCurrentFocusItem->GetReach() != 1)
 		{
 			vx = g_PrintColorStr(strX, strY, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_RANGE].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -669,7 +669,7 @@ void	C_VS_UI_ITEM_LIST::Show()
 			g_PrintColorStr(vx, strY, sz_buf, gpC_base->m_item_desc_pi, RGB_WHITE);
 			strY += line_gap;
 		}
-		// Pocket size
+		// 포켓 크기
 		if (pCurrentFocusItem->GetPocketNumber() != -1)
 		{
 			vx = g_PrintColorStr(strX, strY, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_POCKET_NUM].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -677,7 +677,7 @@ void	C_VS_UI_ITEM_LIST::Show()
 			g_PrintColorStr(vx, strY, sz_buf, gpC_base->m_item_desc_pi, RGB_WHITE);				
 			strY += line_gap;
 		}			
-		// Pile size
+		// 더미 크기
 		if (pCurrentFocusItem->IsPileItem() == true)
 		{
 			vx = g_PrintColorStr(strX, strY, (*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_ITEM_NUM].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -686,7 +686,7 @@ void	C_VS_UI_ITEM_LIST::Show()
 			strY += line_gap;
 		}
 		
-		// Charge size
+		// 충전 크기
 		if (pCurrentFocusItem->IsChargeItem() == true)
 		{
 			vx = g_PrintColorStr(strX, strY,(*g_pGameStringTable)[UI_STRING_MESSAGE_DESC_LEFT_NUM].GetString(), gpC_base->m_item_desc_pi, ITEM_DESC_RGB);
@@ -727,7 +727,7 @@ void	C_VS_UI_ITEM_LIST::Show()
 		}
 		// 2004, 5, 18 sobeit add end - Item Grade 
 
-		// Add option
+		// 옵션 추가
 		if(pCurrentFocusItem->IsIdentified())
 		{			
 			BOOL fOptionCheck=FALSE;
@@ -2294,7 +2294,7 @@ bool	C_VS_UI_MIXING_FORGE::MouseControl(UINT message, int _x, int _y)
 				py = _y+y;
 			}
 
-			// search grid
+			// 그리드 검색
 			int distance_x = px - m_my_grid_rect.x;
 			int distance_y = py - m_my_grid_rect.y;
 
@@ -2313,7 +2313,7 @@ bool	C_VS_UI_MIXING_FORGE::MouseControl(UINT message, int _x, int _y)
 					int a, b;
 					switch (i)
 					{
-						case 0: // left up - first!
+						case 0: // 왼쪽 위 - 첫 번째!
 							a = m_focus_grid_x+p_pickup_item->GetGridWidth()-C_VS_UI_INVENTORY::GRID_X;
 							b = m_focus_grid_y+p_pickup_item->GetGridHeight()-C_VS_UI_INVENTORY::GRID_Y;
 							if (a > 0)
@@ -2322,21 +2322,21 @@ bool	C_VS_UI_MIXING_FORGE::MouseControl(UINT message, int _x, int _y)
 								m_focus_grid_y -= b;
 							break;
 
-						case 1: // right up
+						case 1: // 오른쪽 위
 							m_focus_grid_x = 0;
 							b = m_focus_grid_y+p_pickup_item->GetGridHeight()-C_VS_UI_INVENTORY::GRID_Y;
 							if (b > 0)
 								m_focus_grid_y -= b;
 							break;
 
-						case 2: // left down
+						case 2: // 왼쪽 아래
 							m_focus_grid_y = 0;
 							a = m_focus_grid_x+p_pickup_item->GetGridWidth()-C_VS_UI_INVENTORY::GRID_X;
 							if (a > 0)
 								m_focus_grid_x -= a;
 							break;
 
-						case 3: // right down
+						case 3: // 오른쪽 아래
 							m_focus_grid_y = 0;
 							if (m_focus_grid_x+1 <= p_pickup_item->GetGridHeight())
 								m_focus_grid_x = 0;
@@ -2427,7 +2427,7 @@ void	C_VS_UI_MIXING_FORGE::Show()
 		}
 		
 		//----------------------------------------------------------------		
-		// show My trade Item		
+		// 내 거래 아이템 표시
 		//----------------------------------------------------------------
 		g_pInventory->SetBegin();
 
@@ -2441,7 +2441,7 @@ void	C_VS_UI_MIXING_FORGE::Show()
 			// p_item은 NULL이 반드시 아니다. 왜냐하면 존재하는 것만 Get()하기 때문이다.
 			assert(p_item);
 
-			// frame id -> sprite id
+			// 프레임 ID → 스프라이트 ID
 			TYPE_FRAMEID frame_id = p_item->GetInventoryFrameID();
 
 			int item_x = GetFocusedItemGridX(p_item);
@@ -2497,7 +2497,7 @@ void	C_VS_UI_MIXING_FORGE::Show()
 				{
 					if (p_item->IsAffectStatus())
 					{
-						// frame id -> sprite id
+						// 프레임 ID → 스프라이트 ID
 						gpC_item->BltLocked(item_x, item_y, frame_id);
 					}
 					else
@@ -2589,7 +2589,7 @@ void	C_VS_UI_MIXING_FORGE::Start()
 	AttrPin(true);
 	gpC_window_manager->AppearWindow(this);
 
-	// check setting
+	// 설정 확인
 //	g_pInventory->SetBegin();
 //	while (g_pInventory->IsNotEnd())
 //	{			
@@ -3797,7 +3797,7 @@ C_VS_UI_REMOVE_OPTION::IsCanRemoveOption_Puritas(const MItem* pItem, const MItem
 
 ///////////////////////////////////////////////////////////////////
 //
-// Ousters SkillInfo
+// 오스터즈 스킬 정보
 //
 ///////////////////////////////////////////////////////////////////
 C_VS_UI_OUSTERS_SKILL_INFO::C_VS_UI_OUSTERS_SKILL_INFO(int skillID, int window_x, int window_y, bool DownSkill)
@@ -3964,7 +3964,7 @@ void	C_VS_UI_OUSTERS_SKILL_INFO::Show()
 			}
 			break;
 		}
-		//Skill icon back
+		// 스킬 아이콘 배경
 		p.x-=7;p.y-=7;
 		//gpC_base->m_p_DDSurface_back->BltSprite(&p, &gpC_global_resource->m_pC_info_spk->GetSprite(C_GLOBAL_RESOURCE::OUSTERS_SKILL_BACK));
 
@@ -4526,7 +4526,7 @@ C_VS_UI_HORN::C_VS_UI_HORN(int currentZoneID)
 
 	m_SPK.Open(SPK_HORN);
 	m_MapSPK.Open(SPK_HORN_MAP);
-// add by Sonic 2006.9.26
+// Sonic 추가, 2006.9.26
 	if(g_MyFull)
 	{
 		Set(1024/2-m_SPK.GetWidth(MAIN_WINDOW)/2, 768/2-m_SPK.GetHeight(MAIN_WINDOW)/2, m_SPK.GetWidth(MAIN_WINDOW), m_SPK.GetHeight(MAIN_WINDOW));
@@ -4626,7 +4626,7 @@ void	C_VS_UI_HORN::Finish()
 
 void	C_VS_UI_HORN::Show()
 {
-	// by Csm  isthai
+	// Csm 작성, isthai
 	RECT rect[4] = 
 	{
 		{ x+43, y+90, x+143, y+140 },
@@ -5736,7 +5736,7 @@ void	C_VS_UI_MAILBOX::ReadMail(TAB_ID tabID, DWORD id)
 	MAILVECTOR_TYPE::iterator itr = m_mail[tabID].begin();
 	MAILVECTOR_TYPE::iterator endItr = m_mail[tabID].end();
 
-	//by csm 현제 읽어드린 id 가 외부에서 필요해서 
+	// csm 작성, 현제 읽어드린 id 가 외부에서 필요해서
 	SetCurId(id);
 	DIALOG_MENU d_menu[] = {	{(*g_pGameStringTable)[UI_STRING_MESSAGE_TEAM_INFO_JOIN_ACCEPT].GetString(), 0},
 								{(*g_pGameStringTable)[UI_STRING_MESSAGE_TEAM_INFO_JOIN_DENY].GetString(), 1},
@@ -6027,7 +6027,7 @@ void	C_VS_UI_FINDING_MINE::NewGame(GAMELEVEL level)
 	m_status = GAMESTATUS_READY;
 
 	int window_w = m_boardSize.cx*BLOCK_WIDTH+BLOCK_START_X*2, window_h = m_boardSize.cy*BLOCK_HEIGHT+BLOCK_START_X+BLOCK_START_Y;
-	// add by Sonic 2006.9.26
+	// Sonic 추가, 2006.9.26
 	if(g_MyFull)
 	{
 		Set(1024/2-window_w/2, 768/2-window_h/2, window_w, window_h);
@@ -6142,7 +6142,7 @@ void	C_VS_UI_FINDING_MINE::Show()
 		DrawNumbers(rect.left+1, rect.top+1, 0);
 	}
 	
-	// draw blocks
+	// 블록 그리기
 	for(int i = 0; i < m_boardSize.cy; i++)
 	{
 		for(int j = 0; j < m_boardSize.cx; j++)
@@ -6361,7 +6361,7 @@ void	C_VS_UI_FINDING_MINE::ShowButtonWidget(C_VS_UI_EVENT_BUTTON * p_button)
 
 	if(p_button->GetID() == START_ID)
 	{
-		// draw smile
+		// 웃는 얼굴 그리기
 		gpC_base->m_p_DDSurface_back->HLine(smile_x+11, smile_y+5, 5, BLACK);
 		gpC_base->m_p_DDSurface_back->HLine(smile_x+9, smile_y+6, 2, BLACK);
 		gpC_base->m_p_DDSurface_back->HLine(smile_x+16, smile_y+6, 2, BLACK);
@@ -9683,14 +9683,14 @@ C_VS_UI_PET_INFO::C_VS_UI_PET_INFO(PETINFO *petInfo)
 		m_IsWolverine = true;
 	else
 		m_IsWolverine = false;
-	// add by coffee 2006-12-21  增加圣诞宠物名称
+	// coffee 추가, 2006-12-21 (크리스마스 펫 이름 추가)
 	//if (m_PetInfo.ITEM_TYPE==6)
 	//{
 	//	m_PetInfo.NAME="¹";
 	//}
 	switch(m_PetInfo.ITEM_TYPE)
 	{
-	// WOLF DOG
+	// 늑대개
 	case 1:
 	case 2:
 		m_pC_spk.Open(SPK_PET_INFO_WOLFDOG);
@@ -9716,7 +9716,7 @@ C_VS_UI_PET_INFO::C_VS_UI_PET_INFO(PETINFO *petInfo)
 		m_MainWindowPosition.y = -24;
 		break;
 
-		// lupeng	add by viva
+		// lupeng, viva 추가
 	case 6:
 		m_pC_spk.Open(SPK_PET_INFO_LUPENG);
 		m_MainWindowPosition.x = 0;
@@ -10068,7 +10068,7 @@ void	C_VS_UI_PET_INFO::Show()
 		int item_x = x+73-gpC_item->GetWidth(frame_id)/2, item_y = y+173-gpC_item->GetHeight(frame_id)/2;
 		gpC_item->BltLocked(item_x, item_y, frame_id);
 		
-		// hp bar
+		// HP 바
 		m_pC_spk.BltLocked(hp_x, hpday_y, HP_DAY_BACK);
 		m_pC_spk.BltLocked(hp_x, hptime_y, HP_TIME_BACK);
 
@@ -10282,7 +10282,7 @@ bool	C_VS_UI_PET_INFO::IsPixel(int _x, int _y)
 }
 //-----------------------------------------------------------------------------
 // MHelpMessageManager
-// by seok min
+// seok min 작성
 // 
 //-----------------------------------------------------------------------------
 
@@ -10719,9 +10719,9 @@ void  C_VS_UI_HELPDESC::DrawImg(int m_width, int m_height ,const char * filename
 		RECT re = {x ,  y+30 , x+ 500, y +400};
 		gpC_base->m_p_DDSurface_back->SetClip(&re);
 
-		// SDL backend: cast CDirectDrawSurface* to CSpriteSurface*
+		// SDL 백엔드: CDirectDrawSurface*를 CSpriteSurface*로 캐스팅
 		gpC_base->m_p_DDSurface_back->BltNoColorkey( &p, reinterpret_cast<CSpriteSurface*>(pSurface), &r );
-		// add by Sonic 2006.9.26
+		// Sonic 추가, 2006.9.26
 		RECT clientrect = {0,0,800,600};
 		if(g_MyFull)
 		{
@@ -13060,7 +13060,7 @@ C_VS_UI_NAMING::C_VS_UI_NAMING(std::vector<C_VS_UI_NicknameInfo*> &_NamingList)
 //	m_CustomIndex = -1;
 	
 	Set(g_GameRect.right/2-window_w/2, g_GameRect.bottom/2 - window_h/2, window_w, window_h);
-//add by viva
+// viva 추가
 //	AttrAlpha(gpC_vs_ui_window_manager->IsAlpha(C_VS_UI_WINDOW_MANAGER::NAMING_WINDOW));
 //	AttrAutoHide(gpC_vs_ui_window_manager->GetAutoHide(C_VS_UI_WINDOW_MANAGER::NAMING_WINDOW));
 //	Rect &rect = gpC_vs_ui_window_manager->GetRect(C_VS_UI_WINDOW_MANAGER::NAMING_WINDOW);
@@ -13135,7 +13135,7 @@ C_VS_UI_NAMING::~C_VS_UI_NAMING()
 }
 
 void	C_VS_UI_NAMING::Start()
-{//add by viva
+{// viva 추가
 //	AttrAlpha(gpC_vs_ui_window_manager->IsAlpha(C_VS_UI_WINDOW_MANAGER::NAMING_WINDOW));
 //	AttrAutoHide(gpC_vs_ui_window_manager->GetAutoHide(C_VS_UI_WINDOW_MANAGER::NAMING_WINDOW));
 //	Rect &rect = gpC_vs_ui_window_manager->GetRect(C_VS_UI_WINDOW_MANAGER::NAMING_WINDOW);
@@ -14932,7 +14932,7 @@ void	C_VS_UI_QUEST_LIST::Start()
 		x = rect.x;
 		y = rect.y;
 	}
-	else // default setting
+	else // 기본 설정
 	{
 		x = 0;
 		y = 37;
@@ -15407,7 +15407,7 @@ void	C_VS_UI_QUEST_DETAIL::Start()
 		x = rect.x;
 		y = rect.y;
 	}
-	else // default setting
+	else // 기본 설정
 	{
 		x = 0;
 		y = 197;
@@ -15827,7 +15827,7 @@ void	C_VS_UI_QUEST_MISSION::Start()
 		x = rect.x;
 		y = rect.y;
 	}
-	else // default setting
+	else // 기본 설정
 	{
 		x = 0;
 		y = 357;
@@ -16319,7 +16319,7 @@ void	C_VS_UI_QUEST_ITEM::Start(std::vector<MItem*>& Info)
 		x = rect.x;
 		y = rect.y;
 	}
-	else // default setting
+	else // 기본 설정
 	{
 		x = 290;
 		y = 221;
@@ -16373,7 +16373,7 @@ void	C_VS_UI_QUEST_ITEM::Show()
 			
 			if (p_item != NULL)
 			{
-				// frame id -> sprite id
+				// 프레임 ID → 스프라이트 ID
 				TYPE_FRAMEID frame_id = p_item->GetInventoryFrameID();
 				
 				int item_x = x+5 + ((i-ScrPos*2)/2)*SLOT_WIDTH;
@@ -16420,7 +16420,7 @@ void	C_VS_UI_QUEST_ITEM::Show()
 				{
 					if (p_item->IsAffectStatus())
 					{
-						// frame id -> sprite id
+						// 프레임 ID → 스프라이트 ID
 						gpC_item->BltLocked(item_x, item_y, frame_id);
 						if(p_item->GetItemClass() == ITEM_CLASS_OUSTERS_WRISTLET && g_eRaceInterface == RACE_OUSTERS)
 						{
@@ -18026,7 +18026,7 @@ void	C_VS_UI_POWER_JJANG::PowerjjangGambleResult(BYTE bItemCode)
 	}
 }
 
-#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9 (가방 속 가방 기능 추가)
 //-----------------------------------------------------------------------------
 // C_VS_UI_INVENTORY_SUB::C_VS_UI_INVENTORY_SUB
 //
@@ -18537,7 +18537,7 @@ void C_VS_UI_INVENTORY_SUB::Show()
 			// p_item은 NULL이 반드시 아니다. 왜냐하면 존재하는 것만 Get()하기 때문이다.
 			assert(p_item);
 
-			// frame id -> sprite id
+			// 프레임 ID → 스프라이트 ID
 			if(p_item)
 			{
 				TYPE_FRAMEID frame_id = p_item->GetInventoryFrameID();
@@ -18640,7 +18640,7 @@ void C_VS_UI_INVENTORY_SUB::Show()
 					
 					if (p_item->IsAffectStatus() || p_item->IsQuestItem() )
 					{
-						// frame id -> sprite id
+						// 프레임 ID → 스프라이트 ID
 						gpC_item->BltLocked(item_x, item_y, frame_id);
 						if(p_item->GetItemClass() == ITEM_CLASS_OUSTERS_WRISTLET && g_eRaceInterface == RACE_OUSTERS)
 						{
@@ -18876,7 +18876,7 @@ bool C_VS_UI_INVENTORY_SUB::MouseControl(UINT message, int _x, int _y)
 				py = _y;
 			}
 			
-			// search grid
+			// 그리드 검색
 			int distance_x = px - m_grid_rect.x;
 			int distance_y = py - m_grid_rect.y;
 			
@@ -18895,7 +18895,7 @@ bool C_VS_UI_INVENTORY_SUB::MouseControl(UINT message, int _x, int _y)
 					int a, b;
 					switch (i)
 					{
-					case 0: // left up - first!
+					case 0: // 왼쪽 위 - 첫 번째!
 						a = m_focus_grid_x+p_pickup_item->GetGridWidth()-m_GridX;
 						b = m_focus_grid_y+p_pickup_item->GetGridHeight()-m_GridY;
 						if (a > 0)
@@ -18904,21 +18904,21 @@ bool C_VS_UI_INVENTORY_SUB::MouseControl(UINT message, int _x, int _y)
 							m_focus_grid_y -= b;
 						break;
 						
-					case 1: // right up
+					case 1: // 오른쪽 위
 						m_focus_grid_x = 0;
 						b = m_focus_grid_y+p_pickup_item->GetGridHeight()-m_GridY;
 						if (b > 0)
 							m_focus_grid_y -= b;
 						break;
 						
-					case 2: // left down
+					case 2: // 왼쪽 아래
 						m_focus_grid_y = 0;
 						a = m_focus_grid_x+p_pickup_item->GetGridWidth()-m_GridX;
 						if (a > 0)
 							m_focus_grid_x -= a;
 						break;
 						
-					case 3: // right down
+					case 3: // 오른쪽 아래
 						m_focus_grid_y = 0;
 						if (m_focus_grid_x+1 <= p_pickup_item->GetGridHeight())
 							m_focus_grid_x = 0;
@@ -19105,7 +19105,7 @@ bool C_VS_UI_INVENTORY_SUB::Click(int grid_start_x, int grid_start_y)
 		{
 			return false;
 		}
-		// by bezz
+		// bezz 작성
 
 		const MItem* p_cur_item = m_MultiPackItem->GetItem(m_focus_grid_x, m_focus_grid_y);
 
