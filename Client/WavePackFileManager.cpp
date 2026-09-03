@@ -17,7 +17,7 @@
 #include "Profiler.h"
 
 //--------------------------------------------------------------------------
-// Global
+// 전역 변수
 //--------------------------------------------------------------------------
 WavePackFileManager*	g_pWavePackFileManager = NULL;
 
@@ -91,7 +91,7 @@ WavePackFileInfo::SaveToFileData(std::ofstream& file)
 }
 
 //--------------------------------------------------------------------------
-// Load From File Data
+// 파일에서 데이터 불러오기
 //--------------------------------------------------------------------------
 /* CSDLAudio::GetDS() (Client/DXLib/CDirectSound.cpp) always returns the
    stub's m_pDS, which is initialized to NULL and never reassigned - actual
@@ -124,7 +124,7 @@ WavePackFileManager::~WavePackFileManager()
 }
 
 //--------------------------------------------------------------------------
-// Load From File Data
+// 파일에서 데이터 불러오기
 //--------------------------------------------------------------------------
 LPDIRECTSOUNDBUFFER		
 WavePackFileManager::LoadFromFileData(TYPE_SOUNDID id)

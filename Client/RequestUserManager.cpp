@@ -5,7 +5,7 @@
 #include "RequestUserManager.h"
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 RequestUserManager*		g_pRequestUserManager = NULL;
 
@@ -27,7 +27,7 @@ RequestUserManager::~RequestUserManager()
 }
 
 //----------------------------------------------------------------------
-// Release
+// 해제
 //----------------------------------------------------------------------
 void
 RequestUserManager::Release()
@@ -49,7 +49,7 @@ RequestUserManager::Release()
 }
 
 //----------------------------------------------------------------------
-// Has RequestUser
+// 요청 사용자 존재 여부
 //----------------------------------------------------------------------
 bool
 RequestUserManager::HasRequestUser(const char* pName) const
@@ -65,7 +65,7 @@ RequestUserManager::HasRequestUser(const char* pName) const
 }
 
 //----------------------------------------------------------------------
-// Add RequestUser
+// 요청 사용자 추가
 //----------------------------------------------------------------------
 // 이미 있다면.. ip를 바꿔준다.. 
 // 이미 접속중이라면 접속해제..
@@ -107,7 +107,7 @@ RequestUserManager::AddRequestUser(const char* pName, const char* pIP, int UDPPo
 }
 
 //----------------------------------------------------------------------
-// Remove RequestUser
+// 요청 사용자 제거
 //----------------------------------------------------------------------
 bool
 RequestUserManager::RemoveRequestUser(const char* pName)
@@ -129,7 +129,7 @@ RequestUserManager::RemoveRequestUser(const char* pName)
 }
 
 //----------------------------------------------------------------------
-// Get UserInfo
+// 사용자 정보 반환
 //----------------------------------------------------------------------
 RequestUserInfo*
 RequestUserManager::GetUserInfo(const char* pName) const
@@ -146,7 +146,7 @@ RequestUserManager::GetUserInfo(const char* pName) const
 
 
 //----------------------------------------------------------------------
-// Has RequestingUser
+// 요청 중인 사용자 존재 여부
 //----------------------------------------------------------------------
 bool
 RequestUserManager::HasRequestingUser(const char* pName) const
@@ -162,7 +162,7 @@ RequestUserManager::HasRequestingUser(const char* pName) const
 }
 
 //----------------------------------------------------------------------
-// Add RequestingUser
+// 요청 중인 사용자 추가
 //----------------------------------------------------------------------
 void
 RequestUserManager::AddRequestingUser(const char* pName, REQUESTING_FOR rf)
@@ -173,7 +173,7 @@ RequestUserManager::AddRequestingUser(const char* pName, REQUESTING_FOR rf)
 }
 
 //----------------------------------------------------------------------
-// Remove RequestUser
+// 요청 사용자 제거
 //----------------------------------------------------------------------
 bool
 RequestUserManager::RemoveRequestingUser(const char* pName)
@@ -191,7 +191,7 @@ RequestUserManager::RemoveRequestingUser(const char* pName)
 }
 
 //----------------------------------------------------------------------
-// Get RequestingFor
+// 요청 대상 반환
 //----------------------------------------------------------------------
 RequestUserManager::REQUESTING_FOR			
 RequestUserManager::GetRequestingFor(const char* pName) const
@@ -207,7 +207,7 @@ RequestUserManager::GetRequestingFor(const char* pName) const
 }
 
 //----------------------------------------------------------------------
-// RemoveRequestUserLater 
+// 나중에 요청 사용자 제거
 //----------------------------------------------------------------------
 void				
 RequestUserManager::RemoveRequestUserLater(const char* pName)
@@ -220,7 +220,7 @@ RequestUserManager::RemoveRequestUserLater(const char* pName)
 }
 
 //----------------------------------------------------------------------
-// Update
+// 업데이트
 //----------------------------------------------------------------------
 void
 RequestUserManager::Update()

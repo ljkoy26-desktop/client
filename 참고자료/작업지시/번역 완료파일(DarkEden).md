@@ -403,6 +403,28 @@
 
 ---
 
+## 15차 번역 완료 (2026-09-03)
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/RequestFunction.cpp` | 접속 요청, 접속 해제 요청 섹션 헤더 |
+| `Client/RequestUserManager.cpp` | 전역 변수, 해제, 요청 사용자 존재/추가/제거, 사용자 정보 반환, 요청 중인 사용자 관련, 업데이트 섹션 헤더 |
+| `Client/SDLMain.cpp` | Client.h 포함 주석, VS_UI/게임 헤더, 언어 감지, 클라이언트 모드/UI, SDL 전역변수, 비-Windows 스텁 주석 |
+| `Client/ShowTimeChecker.cpp` | 출력 시간 여부, 출력 시간대 여부, 다음 출력 시간 설정, 파일 저장/불러오기 섹션 헤더 |
+| `Client/SoundNode.cpp` | 설정 섹션 헤더 |
+| `Client/TempInformation.cpp` | 전역 변수 섹션 헤더 |
+| `Client/TileRenderer.cpp` | TileRenderer 구현, 디버그 카운터 주석 |
+| `Client/UIDialog.cpp` | 초기화, 해제, PCTalk/FreeMessage/도움말 대화창 닫기/숨기기/표시, 팝업 대화창 관련 섹션 헤더 |
+| `Client/UIMessageManager.cpp` | 전역 변수, 로그아웃 실행, 음악 재생, 초기화, 실행, 신규 등록, 로그인/아웃, 미니맵 토글, 돈 버리기 등 섹션 헤더 |
+| `Client/UserInformation.cpp` | 전역 변수 섹션 헤더 |
+| `Client/UserOption.cpp` | 전역 변수, 파일 저장/불러오기 섹션 헤더 |
+| `Client/UtilityFunction.cpp` | 문자열 공백 제거, 유효한 ID/비밀번호 여부, 이미지 로드/저장, 디스크 여유 공간, SDL 백엔드 구현 주석 |
+| `Client/WavePackFileManager.cpp` | 전역 변수, 파일에서 데이터 불러오기(×2) 섹션 헤더 |
+| `Client/WhisperManager.cpp` | 전역 변수, 게임 서버 전송, 해제, 메시지 전송/추가/반환/제거, 업데이트 섹션 헤더 |
+| `Client/WinLib/CWinUpdate.cpp` | 정적 멤버, 업데이트 섹션 헤더 |
+
+---
+
 ## 다음 번역 대상 (vcxproj 기준 이후 파일들)
 
-Packet/Gpackets 이후 파일들 (CGpackets, CGHandlers 등) 은 미번역 상태.
+Client 폴더 주요 .cpp 파일 번역 완료. VS_UI 폴더 및 기타 서브폴더 파일들 미번역 상태.

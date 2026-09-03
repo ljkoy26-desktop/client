@@ -40,14 +40,14 @@
 #include <string.h>
 #include <stdio.h>
 
-// Client.h - must be included to access g_pUpdate declaration
+// Client.h - g_pUpdate 선언에 접근하려면 포함해야 함
 #include "Client.h"
 
-// VS_UI headers
+// VS_UI 헤더
 #include "../VS_UI/src/hangul/Ci.h"
 #include "../VS_UI/src/header/VS_UI.h"
 
-// Game headers
+// 게임 헤더
 #include "UserInformation.h"
 #include "SpriteLib/SpriteLibBackend.h"
 #include "CGameUpdate.h"
@@ -59,7 +59,7 @@
 #include "Packet/Exception.h"  // For NoSuchElementException, Throwable
 #include "DXLib/DXLibBackend.h"  // For dxlib_input_update
 
-// Language detection
+// 언어 감지
 enum DARKEDEN_LANGUAGE
 {
 	DARKEDEN_KOREAN = 0,
@@ -71,22 +71,22 @@ enum DARKEDEN_LANGUAGE
 };
 extern DARKEDEN_LANGUAGE CheckDarkEdenLanguage();
 
-// Client mode and UI
+// 클라이언트 모드 및 UI
 extern enum CLIENT_MODE g_Mode;
 extern C_VS_UI gC_vs_ui;
 
 //-----------------------------------------------------------------------------
-// SDL-specific globals
+// SDL 전용 전역 변수
 //-----------------------------------------------------------------------------
 SDL_Window* g_pSDLWindow = NULL;
 SDL_Renderer* g_pSDLRenderer = NULL;
 bool g_bRunning = true;
 
 //-----------------------------------------------------------------------------
-// Stub implementations for functions not available on non-Windows platforms
+// 비-Windows 플랫폼에서 사용 불가한 함수들의 스텁 구현
 //-----------------------------------------------------------------------------
 
-// Stub for ExecuteActionInfoFromMainNode
+// ExecuteActionInfoFromMainNode 스텁
 void ExecuteActionInfoFromMainNode(
 	unsigned short, unsigned short, unsigned short, int, int, unsigned int,
 	unsigned short, unsigned short, int, unsigned long,

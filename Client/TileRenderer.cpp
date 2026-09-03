@@ -2,10 +2,10 @@
 #include "TileRenderer.h"
 
 //----------------------------------------------------------------------
-// TileRenderer Implementation
+// TileRenderer 구현
 //----------------------------------------------------------------------
 
-// Debug counter to limit debug output
+// 디버그 출력 제한용 카운터
 static int g_DebugDrawCount = 0;
 static const int DEBUG_DRAW_LIMIT = 10;
 

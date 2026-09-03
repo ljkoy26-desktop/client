@@ -15,7 +15,7 @@
 #include "UserInformation.h"
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 WhisperManager*		g_pWhisperManager = NULL;
 
@@ -32,7 +32,7 @@ extern void		UI_AddChatToHistory(char* str, char* sz_id, int cond, DWORD color);
 //						WhisperInfo
 //
 //----------------------------------------------------------------------
-// Send to GameServer
+// 게임 서버로 전송
 //----------------------------------------------------------------------
 void
 WhisperInfo::SendToGameServer() const
@@ -73,7 +73,7 @@ WhisperManager::~WhisperManager()
 }
 
 //----------------------------------------------------------------------
-// Release
+// 해제
 //----------------------------------------------------------------------
 void		
 WhisperManager::Release()
@@ -97,7 +97,7 @@ WhisperManager::Release()
 }
 
 //----------------------------------------------------------------------
-// Send / Remove Message
+// 메시지 전송/제거
 //----------------------------------------------------------------------
 bool		
 WhisperManager::HasWhisperMessage(const char* pName) const
@@ -113,7 +113,7 @@ WhisperManager::HasWhisperMessage(const char* pName) const
 }
 
 //----------------------------------------------------------------------
-// Send Message
+// 메시지 전송
 //----------------------------------------------------------------------
 //
 // if (has toUser's IP in RequestUserManager)
@@ -217,7 +217,7 @@ WhisperManager::SendWhisperMessage(const char* pName, const char* pMessage, DWOR
 }
 
 //----------------------------------------------------------------------
-// Add Message
+// 메시지 추가
 //----------------------------------------------------------------------
 void		
 WhisperManager::AddWhisperMessage(const char* pName, const char* pMessage, DWORD color)
@@ -257,7 +257,7 @@ WhisperManager::AddWhisperMessage(const char* pName, const char* pMessage, DWORD
 }
 
 //----------------------------------------------------------------------
-// Get Message
+// 메시지 반환
 //----------------------------------------------------------------------
 const std::list<WHISPER_MESSAGE>*
 WhisperManager::GetWhisperMessages(const char* pName) const
@@ -273,7 +273,7 @@ WhisperManager::GetWhisperMessages(const char* pName) const
 }
 
 //----------------------------------------------------------------------
-// Remove Message
+// 메시지 제거
 //----------------------------------------------------------------------
 void		
 WhisperManager::TryToSendWhisperMessage(const char* pName)
@@ -297,7 +297,7 @@ WhisperManager::TryToSendWhisperMessage(const char* pName)
 }
 
 //----------------------------------------------------------------------
-// Remove Message
+// 메시지 제거
 //----------------------------------------------------------------------
 bool
 WhisperManager::RemoveWhisperMessage(const char* pName)
@@ -322,7 +322,7 @@ WhisperManager::RemoveWhisperMessage(const char* pName)
 
 
 //----------------------------------------------------------------------
-// Update
+// 업데이트
 //----------------------------------------------------------------------
 // 쌓여 있는 message들을 처리한다.
 //----------------------------------------------------------------------
