@@ -113,8 +113,8 @@ class ProfileManager {
 		CRITICAL_SECTION		m_Lock;
 };
 
-// Compile-time check to ensure CRITICAL_SECTION is fully defined
-// Windows: the real <windows.h> struct is 24 bytes on x86, 40 bytes on x64
+// CRITICAL_SECTION이 완전히 정의되어 있는지 컴파일 타임 체크
+// Windows: 실제 <windows.h> 구조체는 x86에서 24바이트, x64에서 40바이트
 // (never 68 - an incomplete/forward-declared type would fail to compile
 // sizeof() at all, not silently return a small value)
 // POSIX/Emscripten: sizeof(CRITICAL_SECTION) = sizeof(pthread_mutex_t) + sizeof(int)

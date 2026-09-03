@@ -53,21 +53,21 @@
 
 #include "../basic/Platform.h"
 
-// Type definitions for thread function pointer (Windows API compatibility)
+// 스레드 함수 포인터 타입 정의 (Windows API 호환)
 typedef DWORD (*LPTHREAD_START_ROUTINE)(void* lpParameter);
 
-// Thread priority constants (Windows API compatibility)
+// 스레드 우선순위 상수 (Windows API 호환)
 #define THREAD_PRIORITY_NORMAL          0
 #define THREAD_PRIORITY_ABOVE_NORMAL    1
 #define THREAD_PRIORITY_BELOW_NORMAL   -1
 #define THREAD_PRIORITY_HIGHEST          2
 #define THREAD_PRIORITY_LOWEST          -2
 
-// Wait constants (Windows API compatibility)
+// 대기 상수 (Windows API 호환)
 #define WAIT_OBJECT_0                   0
 #define WAIT_TIMEOUT                    258
 
-// Stub for WaitForSingleObject - maps to event wait
+// WaitForSingleObject 스텁 - 이벤트 대기로 매핑
 static inline DWORD WaitForSingleObject(HANDLE event, DWORD timeout) {
     platform_event_t evt = (platform_event_t)event;
     if (platform_event_wait(evt, timeout) == 0) {
@@ -76,7 +76,7 @@ static inline DWORD WaitForSingleObject(HANDLE event, DWORD timeout) {
     return WAIT_TIMEOUT;
 }
 
-// Stub for SetThreadPriority (not implemented on mingw/macOS)
+// SetThreadPriority 스텁 (mingw/macOS에서 미구현)
 static inline BOOL SetThreadPriority(HANDLE thread, int priority) {
     (void)thread; (void)priority;
     return TRUE;
@@ -86,7 +86,7 @@ static inline BOOL SetThreadPriority(HANDLE thread, int priority) {
 #include "MWorkNode.h"
 
 //----------------------------------------------------------------------
-// WorkThread
+// 작업 스레드
 //----------------------------------------------------------------------
 class MWorkThread {
 	public :

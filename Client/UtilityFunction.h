@@ -24,28 +24,28 @@ int		IsValidSSN(const char* strSSN1, const char* strSSN2);
 int		IsValidID(const char* strID, const char* strPermit);
 
 //-----------------------------------------------------------------------------
-// Is Valid Password
+// 유효한 비밀번호 여부
 //-----------------------------------------------------------------------------
 int		IsValidPassword(const char* str);
 
 //-----------------------------------------------------------------------------
-// LoadImageToSurface
+// 이미지를 서피스에 불러오기
 //-----------------------------------------------------------------------------
 bool	LoadImageToSurface(const char* pFilename, CDirectDrawSurface& surface);
 
 //-----------------------------------------------------------------------------
-// SaveSurfaceToImage
+// 서피스를 이미지에 저장
 //-----------------------------------------------------------------------------
 bool	SaveSurfaceToImage(const char* pFilename, CDirectDrawSurface& surface);
 
 //-----------------------------------------------------------------------------
-// Get DiskFreeSpace
+// 디스크 여유 공간 반환
 //-----------------------------------------------------------------------------
 // Drive가 NULL이면 지정을 안하면 현재 드라이브다.
 //-----------------------------------------------------------------------------
 unsigned long	GetDiskFreeSpace(const char* pDrive=NULL);
 
-// SDL backend overload (USE_SDL_BACKEND is mandatory on all platforms,
+// SDL 백엔드 오버로드 (USE_SDL_BACKEND는 모든 플랫폼에서 필수,
 // including PLATFORM_WINDOWS, so this is not restricted to non-Windows)
 bool	LoadImageToSurface(const char* pFilename, CSpriteSurface& surface);
 

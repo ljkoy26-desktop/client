@@ -7,7 +7,7 @@
 #define	__PACKETDEF_H__
 
 //-----------------------------------------------------------------------------
-// Login
+// 로그인
 //-----------------------------------------------------------------------------
 #include "Packet/Cpackets/CLVersionCheck.h"
 #include "Packet/Cpackets/CLLogout.h"
@@ -37,7 +37,7 @@
 #include "Packet/Cpackets/CGLogout.h"
 
 //-----------------------------------------------------------------------------
-// Phone / Whisper
+// 전화 / 귓속말
 //-----------------------------------------------------------------------------
 #include "Packet/Cpackets/CGDialUp.h"
 #include "Packet/Cpackets/CGPhoneDisconnect.h"
@@ -78,7 +78,7 @@
 
 
 //-----------------------------------------------------------------------------
-// Item 
+// 아이템
 //-----------------------------------------------------------------------------
 #include "Packet/Cpackets/CGAddGearToMouse.h"
 #include "Packet/Cpackets/CGAddInventoryToMouse.h"

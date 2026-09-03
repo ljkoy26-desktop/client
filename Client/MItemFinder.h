@@ -164,7 +164,7 @@ class MItemClassRangeTypeFinder : public MItemClassFinder {
 };
 
 //----------------------------------------------------------------------
-// MOustersSummonGemItemFinder 
+// MOustersSummonGemItemFinder
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 class MOustersSummonGemItemFinder : public MItemFinder {
@@ -179,7 +179,7 @@ class MOustersSummonGemItemFinder : public MItemFinder {
 };
 
 //----------------------------------------------------------------------
-// MEventGiftBoxItemFinder 
+// MEventGiftBoxItemFinder
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
 class MEventGiftBoxItemFinder : public MItemFinder {

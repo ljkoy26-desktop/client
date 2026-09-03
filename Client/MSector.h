@@ -77,7 +77,7 @@ class MImageObject;
 class MEffect;
 
 //----------------------------------------------------------------------
-// Flag
+// 플래그
 //----------------------------------------------------------------------
 #define	FLAG_SECTOR_BLOCK_UNDERGROUND		0x01	// 지하로 지나갈 수 없는 Sector인가?
 #define	FLAG_SECTOR_BLOCK_GROUND			0x02	// 지상으로 지나갈 수 없는 Sector인가?
@@ -90,7 +90,7 @@ class MEffect;
 #define	FLAG_SECTOR_PORTAL					0x80	// Zone 이동이 되는 곳이다.
 
 //----------------------------------------------------------------------
-// Flag2
+// 플래그2
 //----------------------------------------------------------------------
 #define	FLAG_SECTOR_SAFE_COMMON				0x01	// 전부 다 안전한 곳
 #define	FLAG_SECTOR_SAFE_SLAYER				0x02	// slayer만 안전한 곳
@@ -104,10 +104,10 @@ class MEffect;
 #define FLAG_SECTOR_BLOCK_SERVER_FLYING			0x40
 
 
-// MObject Map
+// MObject 맵
 typedef std::map<BYTE, MObject*>		OBJECT_MAP;
 
-// MEffect List
+// MEffect 목록
 typedef std::list<MEffect*>		EFFECT_LIST;
 
 
@@ -136,7 +136,7 @@ class PORTAL_INFO
 		}
 };
 
-// ZoneID List
+// 존ID 목록
 typedef std::list<PORTAL_INFO>			PORTAL_LIST;
 
 //----------------------------------------------------------------------

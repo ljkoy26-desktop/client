@@ -1,20 +1,20 @@
 #ifndef __TILE_RENDERER_H__
 #define __TILE_RENDERER_H__
 
-// Platform-specific type definitions (includes POINT, RECT, WORD, etc.)
+// 플랫폼별 타입 정의 (POINT, RECT, WORD 등 포함)
 #include "Client_PCH.h"
 
-// SpriteLib includes - needed for full type definitions
+// SpriteLib 포함 - 전체 타입 정의 필요
 #include "SpriteLib/CSpriteSurface.h"
 #include "SpriteLib/CSpritePack.h"
 
-// Forward declarations
+// 전방 선언
 class CSprite;
 
 //----------------------------------------------------------------------
-// ITileDataProvider - Abstract interface for providing tile data
+// ITileDataProvider - 타일 데이터 제공용 추상 인터페이스
 //----------------------------------------------------------------------
-// This allows the TileRenderer to work with different data sources
+// TileRenderer가 다양한 데이터 소스와 동작할 수 있게 함
 // without depending on MZone, MPlayer, or other game classes
 //----------------------------------------------------------------------
 class ITileDataProvider
@@ -34,10 +34,10 @@ public:
 };
 
 //----------------------------------------------------------------------
-// TileRenderer - Minimal tile rendering component
+// TileRenderer - 최소 타일 렌더링 컴포넌트
 //----------------------------------------------------------------------
-// Extracted from MTopView::DrawTileSurface() to reduce dependencies
-// Only depends on CSpriteSurface and CSpritePack
+// 의존성 감소를 위해 MTopView::DrawTileSurface()에서 추출
+// CSpriteSurface와 CSpritePack에만 의존
 //----------------------------------------------------------------------
 class TileRenderer
 {
