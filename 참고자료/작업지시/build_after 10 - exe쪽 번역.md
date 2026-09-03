@@ -11,27 +11,32 @@ dk_client\build\vs2019\DarkEden.vcxproj
 1. 한번에 다하기는 많을거 같으니 이정도만 먼저 진행해줘
 2. .cpp , .h 파일 외에는 따로 건드리지마.
 
-| UTF-8 | 44.0 KB | `.\Client\GamePacketFunctions.cpp` |
-| UTF-8 | 138.7 KB | `.\Client\GameUI.cpp` |
-| UTF-8 | 1.5 KB | `.\Client\GCNotifyWin.cpp` |
-| UTF-8 | 2.3 KB | `.\Client\GCNotifyWin.h` |
-| UTF-8 | 890 B | `.\Client\GCNotifyWinHandler.cpp` |
-| UTF-8 | 2.5 KB | `.\Client\GetWinVer.cpp` |
-| UTF-8 | 1.6 KB | `.\Client\GetWinVer.h` |
-| UTF-8 | 2.2 KB | `.\Client\Globals.cpp` |
-| UTF-8 | 9.0 KB | `.\Client\GlobalVariables.cpp` |
-| UTF-8 | 4.4 KB | `.\Client\GuildInfo.cpp` |
-| UTF-8 | 2.7 KB | `.\Client\GuildInfo.h` |
-| UTF-8 | 3.2 KB | `.\Client\GuildMemberInfo.cpp` |
-| UTF-8 | 2.3 KB | `.\Client\GuildMemberInfo.h` |
-
-
-3. 번역완료된 파일들은 아래 md 파일에 기록하고 진행상황을 다음에도 이어갈수 있게 클로드 메모리에도 기록해줘 
-4. 아래 기록된 파일들은 이미 번역이 진행된거니까 패스해도돼
-
+3. 아래 기록된 파일들은 이미 번역이 진행된거니까 패스해도돼
 dk_client\참고자료\작업지시\번역 완료파일(DarkEden).md
 
-5. 혹시나 파일크기가 너무 크다면 별도 세션에서 따로 진행할테니까 진행여부를 물어봐줘  (300KB 이상)
+4. 아래 파일을 읽고 파일크기를 합산한뒤, 1mb 단위 아래로 작업해줘 (한꺼번에 다하지마) 
+ 3번 내용에 진행내역이 기록되어 있으니, 번역이 완료된 파일은 다시 안건드려도돼
+
+check_encoding_result.md
+
+# 예시) check_encoding_result.md 에서 아래 파일 목록을 모두 합치면 전체 용량 (KB): 전체 용량 (KB): 약 121.38 KB
+
+| UTF-8 | 15.8 KB | `.\Client\MActionInfoTable.cpp` |
+| UTF-8 | 31.2 KB | `.\Client\MActionInfoTable.h` |
+| UTF-8 | 30.2 KB | `.\Client\MActionResult.cpp` |
+| UTF-8 | 27.9 KB | `.\Client\MActionResult.h` |
+| UTF-8 | 2.1 KB | `.\Client\MActionResultDef.h` |
+| UTF-8 | 3.7 KB | `.\Client\MAnimationObject.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\MAnimationObject.h` |
+| UTF-8 | 6.8 KB | `.\Client\MAroundZoneEffectGenerator.cpp` |
+| UTF-8 | 800 B | `.\Client\MAroundZoneEffectGenerator.h` |
+
+
+# 예상 아래부터 진행하면 될듯함
+| UTF-8 BOM | 8.8 KB | `.\Client\md5.cpp` |
+
+5. 번역완료된 파일들은 아래 md 파일에 기록하고 진행상황을 다음에도 이어갈수 있게 클로드 메모리에도 기록해줘 
+
 
 
 
