@@ -40,7 +40,7 @@ extern void		UI_RunFriendDelete(GCFriendChatting* pPakcet);
 
 
 //-----------------------------------------------------------------------------
-// Mode
+// 모드
 //-----------------------------------------------------------------------------
 extern void		UI_StartCharacterManager();
 extern void		UI_DeleteCharacterOK();
@@ -58,7 +58,7 @@ extern void		UI_SetCharacter(int slot, PCOustersInfo* pInfo);
 extern void		UI_CloseAllDialog();
 
 //-----------------------------------------------------------------------------
-// Server List
+// 서버 목록
 //-----------------------------------------------------------------------------
 extern void		UI_SetServerList();
 extern void		UI_SetWorldList();
@@ -119,7 +119,7 @@ extern POINT	UI_GetInventoryGridPosition(int x, int y);
 extern POINT	UI_GetInventoryPosition();
 
 //-----------------------------------------------------------------------------
-// Progress
+// 진행
 //-----------------------------------------------------------------------------
 extern void		UI_StartProgress(int zoneID=ZONEID_NULL);
 extern void		UI_DrawProgress(int percent);
@@ -136,12 +136,12 @@ extern void		UI_LockGear();
 extern void		UI_UnlockGear();
 
 //-----------------------------------------------------------------------------
-// Chat
+// 채팅
 //-----------------------------------------------------------------------------
 extern void		UI_AddChatToHistory(char* str, char* sz_id, int cond, DWORD color);
 
 //-----------------------------------------------------------------------------
-// Tutorial
+// 튜토리얼
 //-----------------------------------------------------------------------------
 extern BOOL		UI_IsRunningTutorialExit();
 extern BOOL		UI_IsRunningBookcase();
@@ -227,7 +227,7 @@ extern void		UI_NoAlreadyExistIDMessage();
 
 
 //-----------------------------------------------------------------------------
-// Skill
+// 스킬
 //-----------------------------------------------------------------------------
 extern void		UI_RunSkillTree(int domain, int maxLevel);
 extern BOOL		UI_IsRunningSelectExplosive();
@@ -237,7 +237,7 @@ extern void		UI_RunSelectMine();
 extern void		UI_CloseSelectExplosive();
 
 //-----------------------------------------------------------------------------
-// Skill Hot Key
+// 스킬 단축키
 //-----------------------------------------------------------------------------
 extern void		UI_SaveHotKeyToServer();
 extern void		UI_SetHotKey(int hotkey, int id);
@@ -254,7 +254,7 @@ extern void		UI_BackupLoginID(char *);
 extern MItem*	UI_GetMouseItem();
 
 //-----------------------------------------------------------------------------
-// RemoveDescriptor
+// 디스크립터 제거
 //-----------------------------------------------------------------------------
 extern void		UI_RemoveDescriptor(void* pPtr=NULL);
 
@@ -279,7 +279,7 @@ class GCQuestStatus;
 class GCShowUnionInfo;
 
 //-----------------------------------------------------------------------------
-// Guild
+// 길드
 //-----------------------------------------------------------------------------
 extern void		UI_ShowWaitGuildList( GCWaitGuildList *pPacket);
 extern void		UI_ShowUnionGuildMemberInfo(GCShowUnionInfo *pPacket);

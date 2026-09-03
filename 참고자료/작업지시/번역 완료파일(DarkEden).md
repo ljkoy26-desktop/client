@@ -444,6 +444,30 @@
 
 ---
 
-## 다음 번역 대상 (vcxproj 기준 이후 파일들)
+## 17차 번역 완료 (2026-09-03)
 
-Client 폴더 주요 .cpp 파일 및 Packet 서브폴더 번역 완료. 나머지 미처리 파일들 확인 필요.
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/BloodBibleSignInfo.h` | Filename/Written By/Description 메타데이터 번역 |
+| `Client/CDataTable.h` | 초기화, 해제, 파일 저장/불러오기 섹션 헤더 |
+| `Client/COrderedList.h` | 해제, 추가(x,y), 제거 섹션 헤더 |
+| `Client/CPartManager.h` | 초기화, 해제, 데이터 설정/반환(×2), LRU 반환 섹션 헤더 |
+| `Client/CPositionList.h` | 정적 멤버 초기화, 해제, 추가, 제거, 파일 저장/불러오기 섹션 헤더 |
+| `Client/CTypeMap.h` | 해제, 데이터 추가/반환, NPC 정보 제거, 파일 저장/불러오기 섹션 헤더 |
+| `Client/CTypeMap2.h` | 해제, 데이터 추가/반환(×2), NPC 정보 제거 섹션 헤더 |
+| `Client/CTypeTable.h` | 초기화, 해제, 파일에 저장 섹션 헤더 |
+| `Client/Client.h` | 전방 선언, 정의, 전역 데이터, 사운드 파트 매니저, 존, 이펙트 매니저, 함수 프로토타입, 초기화 등 섹션 헤더 |
+| `Client/GCNotifyWin.h` | Filename/Written By 메타데이터 번역 |
+| `Client/GuildInfo.h` | Filename/Written By 메타데이터 번역 |
+| `Client/GuildMemberInfo.h` | Filename/Written By 메타데이터 번역 |
+| `Client/MZone.h` | 온라인 업데이트 섹션 헤더 |
+| `Client/PackFileManager.h` | 해제(×2), 정보 존재/반환/제거(×2), 파일 추가, 파일 저장/불러오기, 병합 섹션 헤더 |
+| `Client/PacketFunction.h` | 서버 그룹명/서버명 설정, 고어 레벨, 초기화/해제, ActionInfo 반환, 방향 반환 섹션 헤더 |
+| `Client/RequestFileManager.h` | 전역 변수, 수신/송신 관련, 업데이트, 해제 섹션 헤더 |
+| `Client/UIFunction.h` | 모드, 서버 목록, 진행, 채팅, 튜토리얼, PCS, 스킬, 단축키, 디스크립터 제거, 길드 섹션 헤더 |
+
+---
+
+## 다음 번역 대상
+
+Client 폴더 .h 파일들 중 영어 주석 많은 파일들 계속 처리 중.

@@ -197,7 +197,7 @@ CPartManager<IndexType, PartIndexType, DataType>::~CPartManager()
 //----------------------------------------------------------------------
 
 //----------------------------------------------------------------------
-// Init(maxIndex, maxPart)
+// 초기화 (maxIndex, maxPart)
 //----------------------------------------------------------------------
 template <class IndexType, class PartIndexType, class DataType>
 void		
@@ -252,7 +252,7 @@ CPartManager<IndexType, PartIndexType, DataType>::Init(IndexType maxIndex, PartI
 }
 
 //----------------------------------------------------------------------
-// Release
+// 해제
 //----------------------------------------------------------------------
 template <class IndexType, class PartIndexType, class DataType>
 void		
@@ -295,7 +295,7 @@ CPartManager<IndexType, PartIndexType, DataType>::Release()
 }
 
 //----------------------------------------------------------------------
-// Set Data
+// 데이터 설정
 //----------------------------------------------------------------------
 // index번째 data를 추가시킨다.
 // 이미 사용중인게 있더라도 덮어버린다.
@@ -345,7 +345,7 @@ CPartManager<IndexType, PartIndexType, DataType>::SetData(IndexType index, const
 }
 
 //----------------------------------------------------------------------
-// Set Data
+// 데이터 설정
 //----------------------------------------------------------------------
 // index번째 data를 추가시킨다.
 // 이미 사용중인게 있으면 넘겨준다.
@@ -431,7 +431,7 @@ CPartManager<IndexType, PartIndexType, DataType>::SetData(IndexType index, const
 
 
 //----------------------------------------------------------------------
-// Get Data
+// 데이터 반환
 //----------------------------------------------------------------------
 // 외부에서 index번째 data를 얻는다.
 // 만약 없으면? LRU를 제거한다.
@@ -526,7 +526,7 @@ CPartManager<IndexType, PartIndexType, DataType>::GetData(IndexType index, DataT
 }
 
 //----------------------------------------------------------------------
-// Get LRU
+// LRU 반환
 //----------------------------------------------------------------------
 // 가장 오래전에 사용된 것의 PartIndex를 return한다.
 //----------------------------------------------------------------------

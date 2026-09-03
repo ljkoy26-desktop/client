@@ -206,7 +206,7 @@ class RequestFileManager {
 		~RequestFileManager();
 
 		//--------------------------------------------------------------
-		// Release
+		// 해제
 		//--------------------------------------------------------------
 		void			Release();
 
@@ -227,7 +227,7 @@ class RequestFileManager {
 		bool			SendOtherRequest(const std::string& name, RequestServerPlayer* pRequestServerPlayer);
 
 		//--------------------------------------------------------------
-		// Update
+		// 업데이트
 		//--------------------------------------------------------------
 		void			Update();
 

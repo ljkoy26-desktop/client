@@ -52,19 +52,19 @@ extern MItem*		g_pPacketItemOustersCoat[OUSTERS_COAT_MAX];
 extern MItem*		g_pPacketItemOustersArm[OUSTERS_ARM_MAX];
 
 //-----------------------------------------------------------------------------
-// Set Server GroupName/Name
+// 서버 그룹명/서버명 설정
 //-----------------------------------------------------------------------------
 void			SetServerGroupName( const char* pName );
 void			SetServerGroupStatus( int status );
 void			SetServerName( const char* pName );
 
 //-----------------------------------------------------------------------------
-// Set GoreLevel
+// 고어 레벨 설정
 //-----------------------------------------------------------------------------
 void			SetGoreLevel(bool bGoreLevel);
 
 //-----------------------------------------------------------------------------
-// Init / Release PacketItemTable
+// PacketItemTable 초기화/해제
 //-----------------------------------------------------------------------------
 extern void		InitPacketItemTable();
 extern void		ReleasePacketItemTable();
@@ -77,7 +77,7 @@ bool			UseItemOK();
 bool			UseSkillCardOK(BYTE CardType);
 
 //-----------------------------------------------------------------------------
-// Get Mine/Bomb ActionInfo
+// 지뢰/폭탄 ActionInfo 반환
 //-----------------------------------------------------------------------------
 int				GetMineActionInfo(int itemType);
 int				GetBombActionInfo(int itemType);
@@ -114,7 +114,7 @@ extern MFakeCreature*	NewFakeCreature(int creatureType, int x, int y, int dir);
 extern MItem*	AddItemToZone(GCAddItemToZone* pPacket, BOOL bDropping);
 
 //-----------------------------------------------------------------------------
-// Get Direction to Position
+// 위치 방향 반환
 //-----------------------------------------------------------------------------
 extern BYTE		GetDirectionToPosition(int originX, int originY, int destX, int destY);
 

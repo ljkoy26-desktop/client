@@ -96,7 +96,7 @@ class PackFileManager {
 		bool				GetInputFileStream(DWORD id, std::ifstream& file) const;
 
 		//---------------------------------------------------------------
-		// Merge
+		// 병합
 		//---------------------------------------------------------------
 		//static bool			Merge(const char* pInfoFilenameOrg,
 		//								const char* pDataFilenameOrg,
@@ -137,7 +137,7 @@ PackFileManager<FileInfoType>::~PackFileManager()
 }
 
 //--------------------------------------------------------------------------
-// Release
+// 해제
 //--------------------------------------------------------------------------
 template <class FileInfoType>
 void
@@ -166,7 +166,7 @@ PackFileManager<FileInfoType>::Release()
 }
 
 //--------------------------------------------------------------------------
-// Release
+// 해제
 //--------------------------------------------------------------------------
 template <class FileInfoType>
 bool
@@ -190,7 +190,7 @@ PackFileManager<FileInfoType>::AddInfo(DWORD id, FileInfoType* pInfo)
 }
 
 //--------------------------------------------------------------------------
-// HasInfo
+// 정보 존재 여부
 //--------------------------------------------------------------------------
 template <class FileInfoType>
 bool		
@@ -207,7 +207,7 @@ PackFileManager<FileInfoType>::HasInfo(DWORD id)
 }
 
 //--------------------------------------------------------------------------
-// HasInfo
+// 정보 존재 여부
 //--------------------------------------------------------------------------
 template <class FileInfoType>
 bool		
@@ -224,7 +224,7 @@ PackFileManager<FileInfoType>::HasInfo(const char* pFilename)
 }
 
 //--------------------------------------------------------------------------
-// Get Info
+// 정보 반환
 //--------------------------------------------------------------------------
 template <class FileInfoType>
 FileInfoType*	
@@ -241,7 +241,7 @@ PackFileManager<FileInfoType>::GetInfo(DWORD id) const
 }
 
 //--------------------------------------------------------------------------
-// Get Info
+// 정보 반환
 //--------------------------------------------------------------------------
 template <class FileInfoType>
 FileInfoType*	
@@ -258,7 +258,7 @@ PackFileManager<FileInfoType>::GetInfo(const char* pFilename) const
 }
 
 //--------------------------------------------------------------------------
-// Remove Info
+// 정보 제거
 //--------------------------------------------------------------------------
 template <class FileInfoType>
 bool					
@@ -291,7 +291,7 @@ PackFileManager<FileInfoType>::RemoveInfo(DWORD id)
 }
 
 //--------------------------------------------------------------------------
-// Remove Info
+// 정보 제거
 //--------------------------------------------------------------------------
 template <class FileInfoType>
 bool					
@@ -329,7 +329,7 @@ PackFileManager<FileInfoType>::RemoveInfo(const char* pFilename)
 }
 
 //--------------------------------------------------------------------------
-// Add File
+// 파일 추가
 //--------------------------------------------------------------------------
 template <class FileInfoType>
 bool					
@@ -346,7 +346,7 @@ PackFileManager<FileInfoType>::AddFile( DWORD id, const char* pFilename )
 }
 
 //--------------------------------------------------------------------------
-// Save To File Info
+// 파일에 정보 저장
 //--------------------------------------------------------------------------
 template <class FileInfoType>
 bool					
@@ -376,7 +376,7 @@ PackFileManager<FileInfoType>::SaveToFileInfo(const char* pFilename)
 }
 
 //--------------------------------------------------------------------------
-// Load From File Info
+// 파일에서 정보 불러오기
 //--------------------------------------------------------------------------
 template <class FileInfoType>
 bool					
@@ -411,7 +411,7 @@ PackFileManager<FileInfoType>::LoadFromFileInfo(const char* pFilename)
 }
 
 //--------------------------------------------------------------------------
-// Save To File Data
+// 파일에 데이터 저장
 //--------------------------------------------------------------------------
 template <class FileInfoType>
 bool					
@@ -446,7 +446,7 @@ PackFileManager<FileInfoType>::SaveToFileData(const char* pFilename)
 }
 
 //--------------------------------------------------------------------------
-// Get InputFileStream
+// 입력 파일 스트림 반환
 //--------------------------------------------------------------------------
 template <class FileInfoType>
 bool
@@ -475,7 +475,7 @@ PackFileManager<FileInfoType>::GetInputFileStream(const char* pFilename, std::if
 }
 
 //--------------------------------------------------------------------------
-// Get InputFileStream
+// 입력 파일 스트림 반환
 //--------------------------------------------------------------------------
 template <class FileInfoType>
 bool
@@ -503,7 +503,7 @@ PackFileManager<FileInfoType>::GetInputFileStream(DWORD id, std::ifstream& file)
 }
 
 //--------------------------------------------------------------------------
-// Merge
+// 병합
 //--------------------------------------------------------------------------
 /*
 template <class FileInfoType>

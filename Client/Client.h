@@ -36,7 +36,7 @@ using namespace std;
 #ifdef PLATFORM_WINDOWS
 #include "WinLib.h"
 #else
-// Forward declaration for non-Windows platforms
+// 비-Windows 플랫폼용 전방 선언
 class CWinUpdate;
 #endif
 
@@ -59,7 +59,7 @@ class Player;
 
 
 //-----------------------------------------------------------------------------
-// Definitions
+// 정의
 //-----------------------------------------------------------------------------
 #ifdef __YHDK2__
 #define PROGRAM_NAME                "YHDK2"
@@ -80,7 +80,7 @@ class Player;
 #define	MAX_ITEM					0
 
 
-// DebugMessage
+// 디버그 메시지
 #define	MAX_DEBUGMESSAGE	25
 #define	MAX_SYSTEMMESSAGE	5
 #define MAX_PLAYERMESSAGE	5
@@ -89,7 +89,7 @@ class Player;
 
 
 //------------------------------------------------------------
-// Update delay 
+// 업데이트 지연
 //------------------------------------------------------------
 // 20 --> 50 Frame
 // 33 --> 30 Frame
@@ -113,7 +113,7 @@ const LONG SOUND_RANGE	= DSBVOLUME_MAX - SOUND_MIN;
 const LONG SOUND_DEGREE = SOUND_RANGE / 15;
 
 //-----------------------------------------------------------------------------
-// Global data
+// 전역 데이터
 //-----------------------------------------------------------------------------
 extern HWND				g_hWnd;
 extern HINSTANCE		g_hInstance;
@@ -128,7 +128,7 @@ extern int					g_y;
 // Avi
 extern CAVI					*g_pAvi;
 
-// Sound PartManager
+// 사운드 파트 매니저
 extern CSoundPartManager*	g_pSoundManager;
 
 // Cursor 관리
@@ -142,7 +142,7 @@ extern BOOL					g_bUIInput;
 
 extern int					g_UpdateDelay;
 
-// Zone
+// 존
 extern int					g_nZoneLarge;
 extern int					g_nZoneSmall;
 extern bool					g_bZoneLargeLoadImage;
@@ -152,7 +152,7 @@ extern MZone*				g_pZoneSmall;
 extern bool					g_bZonePlayerInLarge;
 extern DWORD				g_ZoneRandomSoundTime;
 
-// EffectManager
+// 이펙트 매니저
 extern MScreenEffectManager*	g_pInventoryEffectManager;
 
 // DirectDraw
@@ -160,7 +160,7 @@ extern CSpriteSurface*		g_pBack;
 extern CSpriteSurface*		g_pLast;
 extern int					g_ScreenShotNumber;
 
-// Execute Program --> bActiveApp
+// 프로그램 실행 --> bActiveApp
 // minimize | anotherWnd click--> !ActiveGame
 extern BOOL					g_bActiveApp; // Is application active?
 extern BOOL					g_bActiveGame; // Is Game Active?
@@ -178,7 +178,7 @@ extern DWORD				g_EndTime;
 extern int					g_FrameRate;
 extern bool				g_bGoodFPS;
 
-// Chat string
+// 채팅 문자열
 #ifdef	OUTPUT_DEBUG
 	extern CMessageArray*		g_pDebugMessage;
 #endif
@@ -199,7 +199,7 @@ extern CMessageArray*		g_pNoticeMessage;
 
 extern CSDLStream*	g_pSDLStream;
 
-// Thread
+// 스레드
 extern MWorkThread*			g_pLoadingThread;
 //extern HANDLE				g_hFileThread;
 //extern HANDLE				g_hFileEvent;
@@ -213,7 +213,7 @@ extern MWorkThread*			g_pLoadingThread;
 //};
 	
 
-// Server IP
+// 서버 IP
 //extern char				g_ServerIP[80];
 extern bool				g_bFullScreen;
 extern int				g_MaxNPC;
@@ -225,7 +225,7 @@ extern CWinUpdate*				g_pUpdate;
 
 
 //-----------------------------------------------------------------------------
-// Global Function Prototypes
+// 전역 함수 프로토타입
 //-----------------------------------------------------------------------------
 
 HRESULT		InitFail(LPCTSTR szError,...);
@@ -242,13 +242,13 @@ BOOL		InitGame();
 // ALT + TAB 처리
 void		CheckActivate(BOOL bActiveGame);
 
-// Init DX..
+// DX 초기화
 BOOL		InitInput();
 BOOL		InitSound();
 BOOL		InitMusic();
 BOOL		InitDraw();
 
-// Init Other
+// 기타 초기화
 BOOL		InitClientConfig();
 BOOL		InitUserOption();
 BOOL		InitVolume();
@@ -261,7 +261,7 @@ BOOL		InitGameUpdate();
 BOOL		InitPlayer(int x, int y, int dir);
 BOOL		InitSocket();
 
-// Utility Func
+// 유틸리티 함수
 BOOL		LoadZone(int n);
 BOOL		LoadZoneInfo(int n);
 void		MoveZone(int n);
@@ -289,7 +289,7 @@ bool		GetMakeItemFitPosition(MItem* pItem, ITEM_CLASS itemClass, int itemType, P
 //LONG		FileThreadProc(LPVOID lpParameter);
 //void		StopFileThread();
 
-// Etc
+// 기타
 void		MakeScreenShot();
 
 // UI
