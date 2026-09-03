@@ -425,6 +425,25 @@
 
 ---
 
+## 16차 번역 완료 (2026-09-03)
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/PCConfigTable.cpp` | 전역 변수, 플레이어 설정 정렬, 마지막 슬롯 설정, 파일 저장/불러오기(×2), 해제(×2), 플레이어 설정 테이블 추가/반환(×2) 섹션 헤더 |
+| `Client/PackFileManager.cpp` | 파일에 저장(×2), 파일에서 불러오기, 파일에 데이터 저장 섹션 헤더 |
+| `Client/PacketFunction.cpp` | 전역 패킷 HairID/아이템 테이블, 초기화(×2), ActionInfo 반환, 고어 레벨, 좌표 변환, 크리처 타입 설정, 아이템 추가, 포탈 관련, 패킷 카운터, Windows 네트워킹 주석 등 36개 |
+| `Client/Packet/ClientCommunicationManager.cpp` | 전역 변수, 업데이트 섹션 헤더 |
+| `Client/Packet/Cpackets/*.cpp/*.h` (361개 파일) | `// Filename` → `// 파일명:` 추가 번역 |
+| `Client/Packet/Lpackets/*.cpp/*.h` | `// Filename`, `// Written By`, `// Description` 번역 |
+| `Client/Packet/Upackets/*.cpp/*.h` | `// Filename`, `// Written By`, `// Description` 번역 |
+| `Client/Packet/*.cpp/*.h` (172개 파일) | `// Filename`, `// Written By`, `// Description` 번역 |
+| `Client/ProfileManager.cpp` | 전역 변수, 해제, 요청 해제, 프로파일 존재/추가/제거/요청/초기화/삭제, 사용자 정보 반환, 업데이트 등 섹션 헤더 |
+| `Client/RankBonusTable.cpp` | 전역 변수, 슬레이어/뱀파이어 랭크 보너스 스킬 섹션 헤더 |
+| `Client/RenderingFunctions.cpp` | macOS 렌더링 함수 설명, 서피스/DC 관리, OpenGL 초기화, 사각형 그리기, 텍스트 렌더링, 문자열 출력/측정/조작 섹션 헤더 |
+| `Client/RequestFileManager.cpp` | 전역 변수, 수신 시작/수신/수신 완료, 패킷 생성, 송신 시작/송신(×2) 섹션 헤더 |
+
+---
+
 ## 다음 번역 대상 (vcxproj 기준 이후 파일들)
 
-Client 폴더 주요 .cpp 파일 번역 완료. VS_UI 폴더 및 기타 서브폴더 파일들 미번역 상태.
+Client 폴더 주요 .cpp 파일 및 Packet 서브폴더 번역 완료. 나머지 미처리 파일들 확인 필요.

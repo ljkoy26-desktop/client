@@ -156,9 +156,9 @@ int HexStringToDec(char *str)
 
 // 넷마블용
 //-----------------------------------------------------------------------
-// ParsingNetmarble
+// Netmarble 파싱
 //-----------------------------------------------------------------------
-// DarkEden.exe ID&PASS&WORLDID&SERVERID
+// DarkEden.exe ID & 비밀번호 & 월드ID & 서버ID
 //-----------------------------------------------------------------------
 bool
 ParsingNetmarble(const char* pCommandLine, NETMARBLE_INFO &info)
