@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////
-// Filename    : RideMotorcycleInfo.h 
-// Written By  : elca@ewestsoft.com
-// Description : 
+// 파일명: RideMotorcycleInfo.h 
+// 작성자: elca@ewestsoft.com
+// 설명: 
 // 타고 있는 모터사이클에 대한 정보를 가지고 있는 패킷이다.
 // 모터 사이클 자체에 관한 정보 외에도, 모터 사이클 내부에 있는
 // 인벤토리에 대한 정보도 같이 가지고 있다. 인벤토리 정보에 대한 것은

@@ -13,8 +13,8 @@
 #include <wsnwlink.h>
 #else
 #include <netinet/in.h>
-// Windows networking headers not available on macOS/Linux
-// NetBIOS, IPX/SPX are Windows-specific protocols
+// macOS/Linux에서 Windows 네트워킹 헤더 사용 불가
+// NetBIOS, IPX/SPX는 Windows 전용 프로토콜
 #endif
 #include "MGameDef.h"
 #include "MTopView.h"
@@ -120,7 +120,7 @@ void	CheckItemForSkillIcon(const MItem* pItem);
 extern BYTE g_macAddress[6];
 
 //-----------------------------------------------------------------------------
-// Global Packet HairID
+// 전역 패킷 HairID
 //-----------------------------------------------------------------------------
 int g_PacketHairMaleID[3] = 
 {
@@ -137,7 +137,7 @@ int g_PacketHairFemaleID[3] =
 };
 
 //-----------------------------------------------------------------------------
-// Global Packet Item Table
+// 전역 패킷 아이템 테이블
 //-----------------------------------------------------------------------------
 MItem*		g_pPacketItemHelm[HELMET_MAX] = { NULL, };
 
@@ -152,7 +152,7 @@ MItem*		g_pPacketItemOustersCoat[OUSTERS_COAT_MAX] = { NULL, };
 MItem*		g_pPacketItemOustersArm[OUSTERS_ARM_MAX] = { NULL, };
 
 //-----------------------------------------------------------------------------
-// Init PacketItemTable
+// PacketItemTable 초기화
 //-----------------------------------------------------------------------------
 void
 InitPacketItemTable()
@@ -327,7 +327,7 @@ InitPacketItemTable()
 }
 
 //-----------------------------------------------------------------------------
-// Init PacketItemTable
+// PacketItemTable 초기화
 //-----------------------------------------------------------------------------
 void
 ReleasePacketItemTable()
@@ -444,7 +444,7 @@ ReleasePacketItemTable()
 }
 
 //-----------------------------------------------------------------------------
-// Get Mine ActionInfo
+// 내 ActionInfo 반환
 //-----------------------------------------------------------------------------
 // 지뢰(item type)랑 관련된 actioninfo를 알아낸다.
 // 없으면 -1을 return한다.
@@ -471,7 +471,7 @@ GetMineActionInfo(int itemType)
 }
 
 //-----------------------------------------------------------------------------
-// Get Bomb ActionInfo
+// 폭탄 ActionInfo 반환
 //-----------------------------------------------------------------------------
 // 폭탄(item type)랑 관련된 actioninfo를 알아낸다.
 // 없으면 -1을 return한다.
@@ -498,7 +498,7 @@ GetBombActionInfo(int itemType)
 }
 
 //-----------------------------------------------------------------------------
-// Set Gore Level
+// 고어 레벨 설정
 //-----------------------------------------------------------------------------
 void
 SetGoreLevel(bool bGoreLevel)
@@ -580,7 +580,7 @@ SetGoreLevel(bool bGoreLevel)
 }
 
 //-----------------------------------------------------------------------------
-// Get Direction To Position
+// 위치 방향 반환
 //-----------------------------------------------------------------------------
 BYTE		
 GetDirectionToPosition(int originX, int originY, int destX, int destY)
@@ -589,7 +589,7 @@ GetDirectionToPosition(int originX, int originY, int destX, int destY)
 }
 
 //-----------------------------------------------------------------------------
-// Convert Alignment
+// 진영 변환
 //-----------------------------------------------------------------------------
 int
 ConvertAlignment(int alignment2)
@@ -626,7 +626,7 @@ ConvertAlignment(int alignment2)
 }
 
 //-----------------------------------------------------------------------------
-// Convert Duration To Frame
+// 지속시간을 프레임으로 변환
 //-----------------------------------------------------------------------------
 DWORD
 ConvertDurationToFrame(int duration)
@@ -639,7 +639,7 @@ ConvertDurationToFrame(int duration)
 }
 
 //-----------------------------------------------------------------------------
-// Convert Millisecond To Frame
+// 밀리초를 프레임으로 변환
 //-----------------------------------------------------------------------------
 DWORD
 ConvertMillisecondToFrame(DWORD ms)
@@ -651,7 +651,7 @@ ConvertMillisecondToFrame(DWORD ms)
 }
 
 //-----------------------------------------------------------------------------
-// Convert Duration To Millisecond
+// 지속시간을 밀리초로 변환
 //-----------------------------------------------------------------------------
 DWORD
 ConvertDurationToMillisecond(int duration)
@@ -662,7 +662,7 @@ ConvertDurationToMillisecond(int duration)
 }
 
 //-----------------------------------------------------------------------------
-// Set VampireCreatureType
+// 뱀파이어 크리처 타입 설정
 //-----------------------------------------------------------------------------
 // 사람(남, 여), 늑대, 박쥐..
 //-----------------------------------------------------------------------------
@@ -702,7 +702,7 @@ GetVampireCreatureType(int shape, bool bMale, int coatType)
 
 
 //-----------------------------------------------------------------------------
-// Set OustersCreatureType
+// 아우스터즈 크리처 타입 설정
 //-----------------------------------------------------------------------------
 // 사람(남, 여), 늑대, 박쥐..
 //-----------------------------------------------------------------------------
@@ -717,7 +717,7 @@ GetOustersCreatureType(int coatType)
 }
 
 //-----------------------------------------------------------------------------
-// Set Addon To Slayer
+// 슬레이어에 애드온 설정
 //-----------------------------------------------------------------------------
 // NPC 복장을 입힌다.
 //-----------------------------------------------------------------------------
@@ -844,7 +844,7 @@ SetAddonToSlayer(MCreatureWear* pCreature, int npcID )
 }
 
 //-----------------------------------------------------------------------------
-// Set Addon To Slayer
+// 슬레이어에 애드온 설정
 //-----------------------------------------------------------------------------
 // 머리
 //-----------------------------------------------------------------------------
@@ -874,7 +874,7 @@ SetAddonToSlayer(MCreatureWear* pCreature, const PCSlayerInfo2* pInfo)
 }
 
 //-----------------------------------------------------------------------------
-// Set Addon To Slayer
+// 슬레이어에 애드온 설정
 //-----------------------------------------------------------------------------
 // 복장
 //-----------------------------------------------------------------------------
@@ -1023,7 +1023,7 @@ SetAddonToSlayer(MCreatureWear* pCreature, const PCSlayerInfo3* pInfo)
 }
 
 //-----------------------------------------------------------------------------
-// Add Item To Zone
+// 존에 아이템 추가
 //-----------------------------------------------------------------------------
 // bDropping은 방금 떨어지기 시작하는건지...(true)
 // 떨어져 있던건지(false)를 결정하는 것이다.
@@ -1401,7 +1401,7 @@ AddItemToZone(GCAddItemToZone* pPacket, BOOL bDropping)
 }
 
 //-----------------------------------------------------------------------------
-// SkillToSector
+// 스킬을 섹터에 적용
 //-----------------------------------------------------------------------------
 void
 SkillToSector(TYPE_ACTIONINFO nActionInfo, TYPE_SECTORPOSITION sX, TYPE_SECTORPOSITION sY, int dir, DWORD delayFrame, MActionResult* pResult)
@@ -1451,7 +1451,7 @@ SkillToSector(TYPE_ACTIONINFO nActionInfo, TYPE_SECTORPOSITION sX, TYPE_SECTORPO
 }
 
 //-----------------------------------------------------------------------------
-// Add Vampire Portal
+// 뱀파이어 포탈 추가
 //-----------------------------------------------------------------------------
 void		
 AddVampirePortal(
@@ -1537,7 +1537,7 @@ AddVampirePortal(
 }
 
 //-----------------------------------------------------------------------------
-// Execute ActionInfo From MainNode
+// MainNode에서 ActionInfo 실행
 //-----------------------------------------------------------------------------
 // MainNode부터 기술을 실행한다.
 //-----------------------------------------------------------------------------
@@ -1696,7 +1696,7 @@ ExecuteActionInfoFromMainNode(
 }
 
 //-----------------------------------------------------------------------------
-// Get Position  Map  To  Screen
+// 맵에서 화면 위치 반환
 //-----------------------------------------------------------------------------
 // map좌표 (sX,sY)를 화면 상의 좌표로 바꾼다.
 //-----------------------------------------------------------------------------
@@ -1711,7 +1711,7 @@ ConvertPositionMapToScreen(int sX, int sY)
 
 
 //-----------------------------------------------------------------------------
-// Set Inventory Info
+// 인벤토리 정보 설정
 //-----------------------------------------------------------------------------
 // Player의 Inventory 정보를 설정한다.
 //-----------------------------------------------------------------------------
@@ -3509,7 +3509,7 @@ SetPCOustersInfo(PCOustersInfo2* pInfo)
 }
 
 //-----------------------------------------------------------------------------
-// Popup Error Message
+// 오류 메시지 팝업
 //-----------------------------------------------------------------------------
 void
 PopupErrorMessage(ErrorID errorID)
@@ -3610,7 +3610,7 @@ PopupErrorMessage(ErrorID errorID)
 }
 
 //-----------------------------------------------------------------------------
-// Set ServerGroupName
+// 서버 그룹명 설정
 //-----------------------------------------------------------------------------
 void
 SetServerGroupName( const char* pName )
@@ -3619,7 +3619,7 @@ SetServerGroupName( const char* pName )
 }
 
 //-----------------------------------------------------------------------------
-// Set ServerGroupName
+// 서버 그룹명 설정
 //-----------------------------------------------------------------------------
 void
 SetServerGroupStatus( int status )
@@ -3628,7 +3628,7 @@ SetServerGroupStatus( int status )
 }
 
 //-----------------------------------------------------------------------------
-// Set ServerName
+// 서버명 설정
 //-----------------------------------------------------------------------------
 void
 SetServerName( const char* pName )
@@ -3637,7 +3637,7 @@ SetServerName( const char* pName )
 }
 
 //-----------------------------------------------------------------------------
-// Use Item OK
+// 아이템 사용 완료
 //-----------------------------------------------------------------------------
 // Potion사용
 //-----------------------------------------------------------------------------
@@ -4086,7 +4086,7 @@ UseItemOK()
 }
 
 //------------------------------------------------------------------
-// Affect ModifyInfo ( MStatus*, ModifyInfo* )
+// ModifyInfo 적용 ( MStatus*, ModifyInfo* )
 //------------------------------------------------------------------
 void
 AffectModifyInfo(MStatus* pStatus, ModifyInfo* pInfo)
@@ -4125,7 +4125,7 @@ AffectModifyInfo(MStatus* pStatus, ModifyInfo* pInfo)
 }
 
 //------------------------------------------------------------------
-// New FakeCreature
+// 가짜 크리처 생성
 //------------------------------------------------------------------
 // (x,y)에 pCreature의 FakeCreature를 생성한다.
 //------------------------------------------------------------------
@@ -4165,7 +4165,7 @@ NewFakeCreature(int creatureType, int x, int y, int dir)
 }
 
 //------------------------------------------------------------------
-// New FakeCreature
+// 가짜 크리처 생성
 //------------------------------------------------------------------
 // (x,y)에 pCreature의 FakeCreature를 생성한다.
 //------------------------------------------------------------------
@@ -4212,7 +4212,7 @@ NewFakeCreature(MCreature* pCreature, int x, int y)
 }
 
 //------------------------------------------------------------------
-// Come From Portal
+// 포탈에서 등장
 //------------------------------------------------------------------
 // 포탈 안에서 나오는 모습 표현.. 
 // 뱀파만 .. 뭐 관계는 없겠지..
@@ -4318,7 +4318,7 @@ ComeFromPortal(MCreature* pCreature)
 }
 
 //------------------------------------------------------------------
-// Move Into Portal
+// 포탈로 이동
 //------------------------------------------------------------------
 // 포탈 안으로 사라지는 모습 표현.. 
 // 뱀파만 .. 뭐 관계는 없겠지..
@@ -4360,7 +4360,7 @@ MoveIntoPortal(MCreature* pCreature)
 }
 
 //------------------------------------------------------------------
-// Packet CrossCounter
+// 패킷 교차 카운터
 //------------------------------------------------------------------
 // user --> target 
 //------------------------------------------------------------------
@@ -4562,7 +4562,7 @@ SkillShadowDancing(MCreature* pUserCreature, MCreature* pTargetCreature, int ski
 }
 
 //-----------------------------------------------------------------------------
-// Create ActionResultNode
+// ActionResultNode 생성
 //-----------------------------------------------------------------------------
 // Creature에 skillID에 붙는 ActionResultNode를 생성한다.
 //-----------------------------------------------------------------------------
@@ -4667,7 +4667,7 @@ CreateActionResultNode(MCreature* pCreature, int skillID, BYTE grade)
 }
 
 //-----------------------------------------------------------------------------
-// Check Item For SkillIcon
+// 스킬 아이콘용 아이템 확인
 //-----------------------------------------------------------------------------
 // 이 부분은 MItem에 각 item마다의 skill icon을 체크하는
 // virtual member function을 만들어야 한다.
@@ -5471,7 +5471,7 @@ BOOL GetMacAddressFromNetBIOS(LPBYTE lpMacAddress)
     return(FALSE) ;
 }
 #else
-// NetBIOS is Windows-specific
+// NetBIOS는 Windows 전용
 BOOL GetMacAddressFromNetBIOS(LPBYTE lpMacAddress)
 {
 	(void)lpMacAddress;
@@ -5480,7 +5480,7 @@ BOOL GetMacAddressFromNetBIOS(LPBYTE lpMacAddress)
 #endif
 
 #ifdef PLATFORM_WINDOWS
-// IPX/SPX is Windows-specific (legacy NetWare protocol)
+// IPX/SPX는 Windows 전용 (구형 NetWare 프로토콜)
 BOOL GetMacAddressFromSock()
 {
     int          iAdapters ;
@@ -5551,7 +5551,7 @@ BOOL GetMacAddressFromSock()
     return(bRet) ;
 }
 #else
-// IPX/SPX not available on non-Windows platforms
+// 비-Windows 플랫폼에서 IPX/SPX 미지원
 BOOL GetMacAddressFromSock()
 {
     return(FALSE) ;

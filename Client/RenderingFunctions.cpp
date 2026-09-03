@@ -1,5 +1,5 @@
 ﻿//----------------------------------------------------------------------
-// RenderingFunctions.cpp - macOS rendering functions
+// RenderingFunctions.cpp - macOS 렌더링 함수
 //----------------------------------------------------------------------
 #include "../Client_PCH.h"
 #include "../basic/BasicException.h"
@@ -22,7 +22,7 @@ extern CSpriteSurface* g_pLast;
 extern CSpriteSurface* g_pBack;
 
 //----------------------------------------------------------------------
-// Surface/DC Management
+// 서피스/DC 관리
 //----------------------------------------------------------------------
 static void* g_pFL2Surface = NULL;
 static void* g_pFL2DC = NULL;
@@ -61,7 +61,7 @@ void g_SetFL2Surface(void* pSurface)
 }
 
 //----------------------------------------------------------------------
-// OpenGL Initialization
+// OpenGL 초기화
 //----------------------------------------------------------------------
 bool InitializeGL(int width, int height, int bpp, int fullscreen)
 {
@@ -70,7 +70,7 @@ bool InitializeGL(int width, int height, int bpp, int fullscreen)
 }
 
 //----------------------------------------------------------------------
-// Rectangle Drawing
+// 사각형 그리기
 //----------------------------------------------------------------------
 void rectangle(S_SURFACEINFO* pSurfaceInfo, Rect* pRect, int color)
 {
@@ -83,7 +83,7 @@ void FillRect(S_SURFACEINFO* pSurfaceInfo, Rect* pRect, int color)
 }
 
 //----------------------------------------------------------------------
-// Text Rendering
+// 텍스트 렌더링
 //----------------------------------------------------------------------
 
 static CSpriteSurface* ResolveTextSurface()
@@ -165,7 +165,7 @@ static int AdjustXForAlignment(int x, const char* text, const TextSystem::TextSt
 	return x;
 }
 
-// Basic print function (PrintInfo version)
+// 기본 출력 함수 (PrintInfo 버전)
 void g_Print(int x, int y, const char* pStr, PrintInfo* pInfo)
 {
 	if (pStr == NULL || *pStr == '\0')
@@ -184,13 +184,13 @@ void g_Print(int x, int y, const char* pStr, PrintInfo* pInfo)
 	TextSystem::TextService::Get().DrawLine(target, pStr, drawX, y, 0, style);
 }
 
-// Basic print function (void* version for legacy callers)
+// 기본 출력 함수 (레거시 호출자용 void* 버전)
 void g_Print(int x, int y, const char* pStr, void* pInfo)
 {
 	g_Print(x, y, pStr, reinterpret_cast<PrintInfo*>(pInfo));
 }
 
-// Colored string print (PrintInfo version)
+// 색상 문자열 출력 (PrintInfo 버전)
 int g_PrintColorStr(int x, int y, const char* pStr, PrintInfo& info, DWORD color)
 {
 	PrintInfo useInfo = info;
@@ -199,7 +199,7 @@ int g_PrintColorStr(int x, int y, const char* pStr, PrintInfo& info, DWORD color
 	return x + g_GetStringWidth(pStr, useInfo.hfont);
 }
 
-// Colored string print (void* version)
+// 색상 문자열 출력 (void* 버전)
 void g_PrintColorStr(int x, int y, const char* pStr, void* info, unsigned long color)
 {
 	if (info == NULL)
@@ -208,7 +208,7 @@ void g_PrintColorStr(int x, int y, const char* pStr, void* info, unsigned long c
 	g_PrintColorStr(x, y, pStr, *pi, static_cast<DWORD>(color));
 }
 
-// Colored string with shadow
+// 그림자 있는 색상 문자열
 int g_PrintColorStrShadow(int x, int y, const char* pStr, PrintInfo& info,
 						  DWORD color, DWORD shadowColor)
 {
@@ -240,7 +240,7 @@ void g_PrintColorStrShadow(int x, int y, const char* pStr, void* info,
 	g_PrintColorStrShadow(x, y, pStr, *pi, static_cast<DWORD>(color), static_cast<DWORD>(shadowColor));
 }
 
-// Colored string with outline
+// 외곽선 있는 색상 문자열
 int g_PrintColorStrOut(int x, int y, const char* pStr, PrintInfo& info,
 					   DWORD color, DWORD outColor)
 {
@@ -268,7 +268,7 @@ void g_PrintColorStrOut(int x, int y, const char* pStr, void* info,
 }
 
 //----------------------------------------------------------------------
-// String Measurements
+// 문자열 측정
 //----------------------------------------------------------------------
 int g_GetStringWidth(const char* pStr, void* pFont)
 {
@@ -306,10 +306,10 @@ int g_GetStringHeight(const char* pStr, void* pFont)
 }
 
 //----------------------------------------------------------------------
-// String Manipulation
+// 문자열 조작
 //----------------------------------------------------------------------
 
-// Check if string can be cut at width
+// 너비에서 문자열 자를 수 있는지 확인
 bool g_PossibleStringCut(const char* pStr, int maxWidth)
 {
     int width = g_GetStringWidth(pStr, NULL);
@@ -328,7 +328,7 @@ int g_DBCSLen(const char_t* p_dbcs)
 	return len;
 }
 
-// Get byte length (note: "Lenth" is intentional spelling from original code)
+// 바이트 길이 반환 (참고: "Lenth"는 원본 코드의 의도적 오타)
 int g_GetByteLenth(const char_t* p_dbcs, int dbcs_len)
 {
     if (p_dbcs == NULL || dbcs_len <= 0)

@@ -1,8 +1,8 @@
 //--------------------------------------------------------------------------------
 //
-// Filename    : UCRequestLoginModeHandler.cpp
-// Written By  : Reiot
-// Description : 
+// 파일명: UCRequestLoginModeHandler.cpp
+// 작성자: Reiot
+// 설명: 
 //
 //--------------------------------------------------------------------------------
 

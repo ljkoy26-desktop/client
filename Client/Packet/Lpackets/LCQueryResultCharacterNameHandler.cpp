@@ -1,8 +1,8 @@
 //--------------------------------------------------------------------------------
 //
-// Filename    : LCQueryResultCharacterNameHandler.cpp
-// Written By  : Reiot
-// Description : 
+// 파일명: LCQueryResultCharacterNameHandler.cpp
+// 작성자: Reiot
+// 설명: 
 //
 //--------------------------------------------------------------------------------
 

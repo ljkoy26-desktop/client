@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////
-// Filename    : CGExchangeList.cpp
-// Written By  : Exchange System
-// Description : Client requests listing list from server
+// 파일명: CGExchangeList.cpp
+// 작성자: Exchange System
+// 설명: Client requests listing list from server
 //////////////////////////////////////////////////////////////////////////////
 
 #include "CGExchangeList.h"

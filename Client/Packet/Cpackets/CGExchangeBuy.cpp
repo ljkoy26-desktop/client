@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////
-// Filename    : CGExchangeBuy.cpp
-// Written By  : Exchange System
-// Description : Client buys an item from the exchange
+// 파일명: CGExchangeBuy.cpp
+// 작성자: Exchange System
+// 설명: Client buys an item from the exchange
 //////////////////////////////////////////////////////////////////////////////
 
 #include "CGExchangeBuy.h"

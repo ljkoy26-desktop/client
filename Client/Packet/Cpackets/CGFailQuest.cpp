@@ -1,6 +1,6 @@
-// Filename    : CGFailQuest.cpp 
-// Written By  : 
-// Description : 
+// 파일명: CGFailQuest.cpp 
+// 작성자: 
+// 설명: 
 //////////////////////////////////////////////////////////////////////////////
 #include "Client_PCH.h"
 #include "CGFailQuest.h"

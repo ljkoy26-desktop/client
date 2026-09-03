@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////
-// Filename    : CGExchangeList.h
-// Written By  : Exchange System
-// Description : Client requests listing list from server
+// 파일명: CGExchangeList.h
+// 작성자: Exchange System
+// 설명: Client requests listing list from server
 //////////////////////////////////////////////////////////////////////////////
 
 #ifndef __CG_EXCHANGE_LIST_H__

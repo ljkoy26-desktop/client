@@ -1,8 +1,8 @@
 //----------------------------------------------------------------------
 //
-// Filename    : LGIncomingConnectionHandler.cpp
-// Written By  : Reiot
-// Description :
+// 파일명: LGIncomingConnectionHandler.cpp
+// 작성자: Reiot
+// 설명:
 //
 //----------------------------------------------------------------------
 

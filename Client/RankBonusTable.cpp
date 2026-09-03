@@ -7,7 +7,7 @@
 #include "RankBonusDef.h"
 
 //---------------------------------------------------------------------------------
-// Global
+// 전역 변수
 //---------------------------------------------------------------------------------
 RankBonusTable* g_pRankBonusTable = NULL;
 
@@ -55,7 +55,7 @@ RankBonusTable::RankBonusTable()
 	Init(RANK_BONUS_MAX);
 
 /////////////////////////////////////////////
-// Slayer Rank Bonus Skill
+// 슬레이어 랭크 보너스 스킬
 /////////////////////////////////////////////
 
 	// 0 Deadly Spear Level : 5 race : Slayer
@@ -111,7 +111,7 @@ RankBonusTable::RankBonusTable()
 
 
 /////////////////////////////////////////////
-// Vampire Rank Bonus Skill
+// 뱀파이어 랭크 보너스 스킬
 /////////////////////////////////////////////
 
 	// 17 Immortal Blood Level : 5 race : Vampire

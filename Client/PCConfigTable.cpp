@@ -11,12 +11,12 @@ const int PLAYER_CONFIG_VERSION	= 2;
 #define LIMIT_PLAYER_CONFIG		20
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 WorldPlayerConfigTable*		g_pWorldPlayerConfigTable = NULL;
 
 //----------------------------------------------------------------------
-// PlayerConfigSort
+// 플레이어 설정 정렬
 //----------------------------------------------------------------------
 class PlayerConfigSort {
 	public :
@@ -42,7 +42,7 @@ PlayerConfig::~PlayerConfig()
 }
 
 //----------------------------------------------------------------------
-// Set LastSlot
+// 마지막 슬롯 설정
 //----------------------------------------------------------------------
 void		
 PlayerConfig::SetLastSlot(int slot)
@@ -57,7 +57,7 @@ PlayerConfig::SetLastSlot(int slot)
 }
 
 //----------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //----------------------------------------------------------------------
 void		
 PlayerConfig::SaveToFile(std::ofstream& file)
@@ -72,7 +72,7 @@ PlayerConfig::SaveToFile(std::ofstream& file)
 }
 
 //----------------------------------------------------------------------
-// Load From File
+// 파일에서 불러오기
 //----------------------------------------------------------------------
 void		
 PlayerConfig::LoadFromFile(std::ifstream& file)
@@ -97,7 +97,7 @@ PlayerConfigTable::~PlayerConfigTable()
 }
 
 //----------------------------------------------------------------------
-// Release
+// 해제
 //----------------------------------------------------------------------
 void				
 PlayerConfigTable::Release()
@@ -120,7 +120,7 @@ PlayerConfigTable::Release()
 }
 
 //----------------------------------------------------------------------
-// Add PlayerConfigTable
+// 플레이어 설정 테이블 추가
 //----------------------------------------------------------------------
 void				
 PlayerConfigTable::AddPlayerConfig(PlayerConfig* pConfig)
@@ -150,7 +150,7 @@ PlayerConfigTable::AddPlayerConfig(PlayerConfig* pConfig)
 }
 
 //----------------------------------------------------------------------
-// Get PlayerConfigTable
+// 플레이어 설정 테이블 반환
 //----------------------------------------------------------------------
 PlayerConfig*		
 PlayerConfigTable::GetPlayerConfig(const char* pPlayerID) const
@@ -171,7 +171,7 @@ PlayerConfigTable::GetPlayerConfig(const char* pPlayerID) const
 }
 
 //----------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //----------------------------------------------------------------------
 void		
 PlayerConfigTable::SaveToFile(std::ofstream& file)
@@ -276,7 +276,7 @@ PlayerConfigTable::SaveToFile(std::ofstream& file)
 }
 
 //----------------------------------------------------------------------
-// Load From File
+// 파일에서 불러오기
 //----------------------------------------------------------------------
 void		
 PlayerConfigTable::LoadFromFile(std::ifstream& file)
@@ -325,7 +325,7 @@ WorldPlayerConfigTable::~WorldPlayerConfigTable()
 }
 
 //----------------------------------------------------------------------
-// Release
+// 해제
 //----------------------------------------------------------------------
 void				
 WorldPlayerConfigTable::Release()
@@ -348,7 +348,7 @@ WorldPlayerConfigTable::Release()
 }
 
 //----------------------------------------------------------------------
-// Add PlayerConfigTable
+// 플레이어 설정 테이블 추가
 //----------------------------------------------------------------------
 void				
 WorldPlayerConfigTable::AddPlayerConfigTable(int worldID, PlayerConfigTable* pTable)
@@ -375,7 +375,7 @@ WorldPlayerConfigTable::AddPlayerConfigTable(int worldID, PlayerConfigTable* pTa
 }
 
 //----------------------------------------------------------------------
-// Get PlayerConfigTable
+// 플레이어 설정 테이블 반환
 //----------------------------------------------------------------------
 PlayerConfigTable*	
 WorldPlayerConfigTable::GetPlayerConfigTable(int worldID) const
@@ -391,7 +391,7 @@ WorldPlayerConfigTable::GetPlayerConfigTable(int worldID) const
 }
 
 //----------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //----------------------------------------------------------------------
 void		
 WorldPlayerConfigTable::SaveToFile(const char* pFilename)
@@ -435,7 +435,7 @@ WorldPlayerConfigTable::SaveToFile(const char* pFilename)
 }
 
 //----------------------------------------------------------------------
-// Load From File
+// 파일에서 불러오기
 //----------------------------------------------------------------------
 void		
 WorldPlayerConfigTable::LoadFromFile(const char* pFilename)

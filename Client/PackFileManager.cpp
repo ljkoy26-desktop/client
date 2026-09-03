@@ -27,7 +27,7 @@ PackFileInfo::~PackFileInfo()
 }
 
 //--------------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //--------------------------------------------------------------------------
 void				
 PackFileInfo::SaveToFile(std::ofstream& file)
@@ -45,7 +45,7 @@ PackFileInfo::SaveToFile(std::ofstream& file)
 }
 
 //--------------------------------------------------------------------------
-// Load From File
+// 파일에서 불러오기
 //--------------------------------------------------------------------------
 void				
 PackFileInfo::LoadFromFile(std::ifstream& file)
@@ -66,7 +66,7 @@ PackFileInfo::LoadFromFile(std::ifstream& file)
 }
 
 //--------------------------------------------------------------------------
-// Save To File Data
+// 파일에 데이터 저장
 //--------------------------------------------------------------------------
 bool		
 PackFileInfo::SaveToFileData(std::ofstream& file)

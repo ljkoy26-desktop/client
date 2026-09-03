@@ -1,8 +1,8 @@
 //----------------------------------------------------------------------
 //
-// Filename    : LCVersionCheckErrorHandler.cpp
-// Written By  : Reiot
-// Description : 
+// 파일명: LCVersionCheckErrorHandler.cpp
+// 작성자: Reiot
+// 설명: 
 //
 //----------------------------------------------------------------------
 

@@ -1,6 +1,6 @@
-// Filename    : CGSelectQuest.cpp 
-// Written By  : 
-// Description : 
+// 파일명: CGSelectQuest.cpp 
+// 작성자: 
+// 설명: 
 //////////////////////////////////////////////////////////////////////////////
 #include "Client_PCH.h"
 #include "CGSelectQuest.h"

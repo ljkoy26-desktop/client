@@ -1,8 +1,8 @@
 
 //////////////////////////////////////////////////////////////////////////////
-// Filename    : CGUseItemFromInventoryHandler.cpp
-// Written By  : elca@ewestsoft.com
-// Description : 
+// 파일명: CGUseItemFromInventoryHandler.cpp
+// 작성자: elca@ewestsoft.com
+// 설명: 
 //////////////////////////////////////////////////////////////////////////////
 #include "Client_PCH.h"
 #include "CGUseItemFromInventory.h"

@@ -1,8 +1,8 @@
 //----------------------------------------------------------------------
 //
-// Filename    : LCDeletePCErrorHandler.cpp
-// Written By  : Reiot
-// Description : 
+// 파일명: LCDeletePCErrorHandler.cpp
+// 작성자: Reiot
+// 설명: 
 //
 //----------------------------------------------------------------------
 

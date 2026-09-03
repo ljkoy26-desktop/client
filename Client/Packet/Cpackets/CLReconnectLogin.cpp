@@ -1,8 +1,8 @@
 //----------------------------------------------------------------------
 // 
-// Filename    : CLReconnectLogin.cpp 
-// Written By  : reiot@ewestsoft.com
-// Description : 
+// 파일명: CLReconnectLogin.cpp 
+// 작성자: reiot@ewestsoft.com
+// 설명: 
 // 
 //----------------------------------------------------------------------
 

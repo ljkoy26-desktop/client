@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////
-// Filename    : CGUsePotionFromInventory.cpp 
-// Written By  : elca@ewestsoft.com
-// Description : 
+// 파일명: CGUsePotionFromInventory.cpp 
+// 작성자: elca@ewestsoft.com
+// 설명: 
 //////////////////////////////////////////////////////////////////////////////
 #include "Client_PCH.h"
 #include "CGUsePotionFromInventory.h"

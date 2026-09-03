@@ -1,8 +1,8 @@
 //--------------------------------------------------------------------------------
 //
-// Filename    : LCQueryResultPlayerIDHandler.cpp
-// Written By  : Reiot
-// Description : 
+// 파일명: LCQueryResultPlayerIDHandler.cpp
+// 작성자: Reiot
+// 설명: 
 //
 //--------------------------------------------------------------------------------
 

@@ -1,8 +1,8 @@
 //--------------------------------------------------------------------------------
 // 
-// Filename    : LCQueryResultCharacterName.cpp 
-// Written By  : Reiot
-// Description : 
+// 파일명: LCQueryResultCharacterName.cpp 
+// 작성자: Reiot
+// 설명: 
 // 
 //--------------------------------------------------------------------------------
 

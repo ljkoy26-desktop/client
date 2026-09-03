@@ -1,8 +1,8 @@
 //--------------------------------------------------------------------------------
 //
-// Filename    : Properties.cpp
-// Written By  : Reiot
-// Description : Cross-platform properties file handling with path conversion
+// 파일명: Properties.cpp
+// 작성자: Reiot
+// 설명: Cross-platform properties file handling with path conversion
 //
 //--------------------------------------------------------------------------------
 

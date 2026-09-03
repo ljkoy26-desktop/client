@@ -13,7 +13,7 @@
 #include "MTestDef.h"
 
 //--------------------------------------------------------------------------------
-// Global
+// 전역 변수
 //--------------------------------------------------------------------------------
 ClientCommunicationManager*	g_pClientCommunicationManager = NULL;
 
@@ -136,7 +136,7 @@ void ClientCommunicationManager::sendPacket ( const std::string& host , uint por
 }
 
 //--------------------------------------------------------------------------------
-// Update
+// 업데이트
 //--------------------------------------------------------------------------------
 void
 ClientCommunicationManager::Update()

@@ -1,8 +1,8 @@
 //----------------------------------------------------------------------
 //
-// Filename    : LCCreatePCErrorHandler.cpp
-// Written By  : Reiot
-// Description : 
+// 파일명: LCCreatePCErrorHandler.cpp
+// 작성자: Reiot
+// 설명: 
 //
 //----------------------------------------------------------------------
 
