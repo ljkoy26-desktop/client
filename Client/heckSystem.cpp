@@ -1,4 +1,4 @@
-// heckSystem.cpp: implementation of the CheckSystem class.
+// heckSystem.cpp: CheckSystem 클래스의 구현부.
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -8,7 +8,7 @@
 
 
 //////////////////////////////////////////////////////////////////////
-// Construction/Destruction
+// 생성자/소멸자
 //////////////////////////////////////////////////////////////////////
 
 CheckSystem::CheckSystem()
@@ -27,7 +27,7 @@ BOOL CheckSystem::GetSystem()
 	OsInfo.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
 	if (GetVersionEx(&OsInfo))
 	{
-		// platform
+		// 플랫폼
 		switch (OsInfo.dwPlatformId)
 		{
 		case VER_PLATFORM_WIN32_WINDOWS:
@@ -57,7 +57,7 @@ BOOL CheckSystem::GetSystem()
 			//strcpy(sys.chSystem,"灌列溝固!!");
 			break;
 		}
-		// version and language
+		// 버전 및 언어
 	}
 	return FALSE;
 }

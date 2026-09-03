@@ -3,56 +3,55 @@
  * For conditions of distribution and use, see copyright notice in zlib.h 
  */
 
-/* WARNING: this file should *not* be used by applications. It is
-   part of the implementation of the compression library and is
-   subject to change. Applications should only use zlib.h.
+/* 경고: 이 파일은 응용 프로그램에서 직접 사용해서는 *안 됩니다*. 이 파일은
+   압축 라이브러리 구현의 일부이며 변경될 수 있습니다.
+   응용 프로그램은 zlib.h만 사용해야 합니다.
  */
 
-/* Huffman code lookup table entry--this entry is four bytes for machines
-   that have 16-bit pointers (e.g. PC's in the small or medium model). */
+/* 허프만 코드 조회 테이블 항목 -- 16비트 포인터를 사용하는 머신
+   (예: 소형 또는 중형 모델의 PC)에서는 이 항목이 4바이트이다. */
 
 typedef struct inflate_huft_s FAR inflate_huft;
 
 struct inflate_huft_s {
   union {
     struct {
-      Byte Exop;        /* number of extra bits or operation */
-      Byte Bits;        /* number of bits in this code or subcode */
+      Byte Exop;        /* 추가 비트 수 또는 연산 */
+      Byte Bits;        /* 이 코드 또는 서브코드의 비트 수 */
     } what;
-    uInt pad;           /* pad structure to a power of 2 (4 bytes for */
-  } word;               /*  16-bit, 8 bytes for 32-bit int's) */
-  uInt base;            /* literal, length base, distance base,
-                           or table offset */
+    uInt pad;           /* 구조체를 2의 제곱으로 패딩 (16비트의 경우 4바이트, */
+  } word;               /*  32비트 int의 경우 8바이트) */
+  uInt base;            /* 리터럴, 길이 기준값, 거리 기준값,
+                           또는 테이블 오프셋 */
 };
 
-/* Maximum size of dynamic tree.  The maximum found in a long but non-
-   exhaustive search was 1004 huft structures (850 for length/literals
-   and 154 for distances, the latter actually the result of an
-   exhaustive search).  The actual maximum is not known, but the
-   value below is more than safe. */
+/* 동적 트리의 최대 크기. 장시간이지만 완전하지 않은 탐색에서 발견된 최대값은
+   1004개의 huft 구조체였다 (길이/리터럴 850개, 거리 154개이며,
+   후자는 완전 탐색의 결과이다). 실제 최대값은 알 수 없지만,
+   아래 값은 충분히 안전하다. */
 #define MANY 1440
 
 extern int inflate_trees_bits OF((
-    uIntf *,                    /* 19 code lengths */
-    uIntf *,                    /* bits tree desired/actual depth */
-    inflate_huft * FAR *,       /* bits tree result */
-    inflate_huft *,             /* space for trees */
-    z_streamp));                /* for messages */
+    uIntf *,                    /* 19개 코드 길이 */
+    uIntf *,                    /* 비트 트리 원하는/실제 깊이 */
+    inflate_huft * FAR *,       /* 비트 트리 결과 */
+    inflate_huft *,             /* 트리를 위한 공간 */
+    z_streamp));                /* 메시지용 */
 
 extern int inflate_trees_dynamic OF((
-    uInt,                       /* number of literal/length codes */
-    uInt,                       /* number of distance codes */
-    uIntf *,                    /* that many (total) code lengths */
-    uIntf *,                    /* literal desired/actual bit depth */
-    uIntf *,                    /* distance desired/actual bit depth */
-    inflate_huft * FAR *,       /* literal/length tree result */
-    inflate_huft * FAR *,       /* distance tree result */
-    inflate_huft *,             /* space for trees */
-    z_streamp));                /* for messages */
+    uInt,                       /* 리터럴/길이 코드 수 */
+    uInt,                       /* 거리 코드 수 */
+    uIntf *,                    /* 총 코드 길이 */
+    uIntf *,                    /* 리터럴 원하는/실제 비트 깊이 */
+    uIntf *,                    /* 거리 원하는/실제 비트 깊이 */
+    inflate_huft * FAR *,       /* 리터럴/길이 트리 결과 */
+    inflate_huft * FAR *,       /* 거리 트리 결과 */
+    inflate_huft *,             /* 트리를 위한 공간 */
+    z_streamp));                /* 메시지용 */
 
 extern int inflate_trees_fixed OF((
-    uIntf *,                    /* literal desired/actual bit depth */
-    uIntf *,                    /* distance desired/actual bit depth */
-    inflate_huft * FAR *,       /* literal/length tree result */
-    inflate_huft * FAR *,       /* distance tree result */
-    z_streamp));                /* for memory allocation */
+    uIntf *,                    /* 리터럴 원하는/실제 비트 깊이 */
+    uIntf *,                    /* 거리 원하는/실제 비트 깊이 */
+    inflate_huft * FAR *,       /* 리터럴/길이 트리 결과 */
+    inflate_huft * FAR *,       /* 거리 트리 결과 */
+    z_streamp));                /* 메모리 할당용 */

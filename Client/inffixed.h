@@ -1,10 +1,10 @@
-/* inffixed.h -- table for decoding fixed codes
- * Generated automatically by the maketree.c program
+/* inffixed.h -- 고정 코드 디코딩 테이블
+ * maketree.c 프로그램에 의해 자동 생성됨
  */
 
-/* WARNING: this file should *not* be used by applications. It is
-   part of the implementation of the compression library and is
-   subject to change. Applications should only use zlib.h.
+/* 경고: 이 파일은 응용 프로그램에서 직접 사용해서는 *안 됩니다*. 이 파일은
+   압축 라이브러리 구현의 일부이며 변경될 수 있습니다.
+   응용 프로그램은 zlib.h만 사용해야 합니다.
  */
 
 local uInt fixed_bl = 9;

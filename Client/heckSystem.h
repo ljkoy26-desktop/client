@@ -1,4 +1,4 @@
-// heckSystem.h: interface for the CheckSystem class.
+// heckSystem.h: CheckSystem 클래스의 인터페이스.
 //
 //////////////////////////////////////////////////////////////////////
 #ifndef __HECKSYSTEM_H__

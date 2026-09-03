@@ -15,16 +15,16 @@
 
 struct huffcodetab
 {
-  char tablename[3];			/* string, containing table_description   */
-  UINT xlen; 				/* max. x-index+			      	         */
-  UINT ylen;	            /* max. y-index+				               */
-  UINT linbits; 			/* number of linbits			               */
-  UINT linmax;				/* max number to be stored in linbits	   */
-  int ref;					/* a positive value indicates a reference */
-  HUFFBITS *table;			/* pointer to array[xlen][ylen]		      */
-  unsigned char *hlen;		/* pointer to array[xlen][ylen]		      */
-  unsigned char(*val)[2];	/* decoder tree				               */
-  UINT treelen;				/* length of decoder tree		            */
+  char tablename[3];			/* 테이블 설명을 담는 문자열 */
+  UINT xlen; 				/* x 인덱스 최대값 */
+  UINT ylen;	            /* y 인덱스 최대값 */
+  UINT linbits; 			/* linbits의 개수 */
+  UINT linmax;				/* linbits에 저장할 최대 수 */
+  int ref;					/* 양수이면 참조를 나타냄 */
+  HUFFBITS *table;			/* array[xlen][ylen] 포인터 */
+  unsigned char *hlen;		/* array[xlen][ylen] 포인터 */
+  unsigned char(*val)[2];	/* 디코더 트리 */
+  UINT treelen;				/* 디코더 트리의 길이 */
 };
 
 extern struct huffcodetab ht[HTN];

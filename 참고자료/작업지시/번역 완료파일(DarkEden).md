@@ -125,6 +125,32 @@
 
 ---
 
+---
+
+## 7차 번역 완료 (2026-09-03)
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/header.cpp` | 함수 주석 블록 레이블 (Func/Desc/Params/Return → 함수/설명/매개변수/반환값) |
+| `Client/header.h` | (번역 불필요 - 영어 주석 없음) |
+| `Client/heckSystem.cpp` | 파일 헤더, 생성자/소멸자 섹션 헤더, platform/version and language 인라인 주석 |
+| `Client/heckSystem.h` | 파일 헤더 |
+| `Client/huffman.cpp` | dummy 주석 3개, 허프만 코드 테이블 헤더 배열 주석, huffman_decoder 함수 전체 주석 (테이블 탐색/오류확인/부호인코딩/이스케이프인코딩) |
+| `Client/huffman.h` | 구조체 멤버 변수 주석 전체 (tablename/xlen/ylen/linbits/linmax/ref/table/hlen/val/treelen) |
+| `Client/infblock.h` | 경고 블록, 함수 매개변수 주석 (check function/window size/initial return code/check value on output/dictionary/dictionary length) |
+| `Client/infcodes.h` | 경고 블록 |
+| `Client/inffast.h` | 경고 블록 |
+| `Client/inffixed.h` | 파일 설명 주석, 경고 블록 |
+| `Client/inftrees.h` | 경고 블록, 허프만 조회 테이블 설명, 구조체 멤버 주석, MANY 상수 설명, 함수 매개변수 주석 전체 |
+| `Client/infutil.h` | 경고 블록, 열거형 값 주석 전체, 구조체 멤버 주석 전체 (모드/모드의존/모드독립 섹션), 매크로 주석 전체 |
+| `Client/InputService.h` | 파일 헤더 블록, 인라인 주석 전체 (키코드 정의/전방선언/전역 인스턴스) |
+| `Client/ItemClassDef.h` | `//add by zdj` → `// zdj 추가` |
+| `Client/l3types.h` | (번역 불필요 - 기술 표기 주석만 존재) |
+| `Client/LeakMemoryDumper.cpp` | AddTrack() 함수 내 malloc() 사용 이유 설명 주석 (7줄) |
+| `Client/LeakMemoryDumper.h` | (번역 불필요 - 파일 헤더 메타데이터만 존재) |
+
+---
+
 ## 다음 번역 대상 (vcxproj 기준 이후 파일들)
 
-vcxproj 줄 481 이후 파일들(`LeakMemoryDumper.cpp`부터)은 미번역 상태.
+vcxproj 줄 481 이후 파일들 (LeakMemoryDumper.h 다음부터) 은 미번역 상태.

@@ -15,7 +15,7 @@ HUFFBITS dmask = 1 << ((sizeof(HUFFBITS) * 8) - 1);
 UINT   hs    = sizeof(HUFFBITS) * 8;
 
 unsigned char ValTab0[1][2] = {
-	{0,0}	// dummy
+	{0,0}	// 더미
 };
 
 unsigned char ValTab1[7][2] = {
@@ -30,7 +30,7 @@ unsigned char ValTab3[17][2] = {
 	{0,32},{0,33},{2,1},{0,18},{2,1},{0,2},{0,34},
 };
 
-unsigned char ValTab4[1][2] = {{0,0}};	// dummy
+unsigned char ValTab4[1][2] = {{0,0}};	// 더미
 
 unsigned char ValTab5[31][2] = {
 	{2,1},{0,0},{4,1},{2,1},{0,16},{0,1},{2,1},{0,17},{8,1},{4,1},
@@ -174,7 +174,7 @@ unsigned char ValTab13[511][2] = {
 	{0,254},
 };
 unsigned char ValTab14[1][2] = {
-	{0,0}  // dummy
+	{0,0}  // 더미
 };
 unsigned char ValTab15[511][2] = {
 	{16,1},{6,1},{2,1},{0,0},{2,1},{0,16},{0,1},{2,1},{0,17},{4,1},
@@ -351,9 +351,9 @@ unsigned char ValTab33[31][2] = {
 	{0,15},
 };
 
-// array of all huffcodtable headers
-// 0..31 Huffman code table 0..31
-// 32,33 count1-tables
+// 모든 허프만 코드 테이블 헤더 배열
+// 0..31 허프만 코드 테이블 0..31
+// 32,33 count1 테이블
 extern struct huffcodetab ht[HTN] = {
 	{"0",0,0,0,0,-1,NULL,NULL,ValTab0,0},
 	{"1",2,2,0,0,-1,NULL,NULL,ValTab1,7},
@@ -391,9 +391,9 @@ extern struct huffcodetab ht[HTN] = {
 	{"33",1,16,0,0,-1,NULL,NULL,ValTab33,31},
 };
 
-// do the huffman-decoding
-// note! for counta,countb -the 4 bit value is returned in y,
-// discard x
+// 허프만 디코딩 수행
+// 참고! counta,countb의 경우 4비트 값이 y에 반환되며,
+// x는 무시한다
 int huffman_decoder(struct huffcodetab *h, int *x, int *y, int *v,
 							 int *w, Bit_Reserve *br)
 {
@@ -404,16 +404,16 @@ int huffman_decoder(struct huffcodetab *h, int *x, int *y, int *v,
 
   if (h->val == NULL) return(2);
 
-  /* table 0 needs no bits */
+  /* 테이블 0은 비트가 필요없음 */
   if ( h->treelen == 0)
   {  *x = *y = 0;
 	  return(0);
   }
 
-  /* Lookup in Huffman table. */
+  /* 허프만 테이블에서 탐색. */
 
   do {
-	 if (h->val[point][0]==0) {   /*end of tree*/
+	 if (h->val[point][0]==0) {   /*트리의 끝*/
 		*x = h->val[point][1] >> 4;
 		*y = h->val[point][1] & 0xf;
 
@@ -431,7 +431,7 @@ int huffman_decoder(struct huffcodetab *h, int *x, int *y, int *v,
 	 level >>= 1;
   } while (level  || ((unsigned int)point < ht->treelen) );
 
-  // Check for error.
+  // 오류 확인.
 
 /*  if (error) { // set x and y to a medium value as a simple concealment
 	 printf("Illegal Huffman code in data.\n");
@@ -439,7 +439,7 @@ int huffman_decoder(struct huffcodetab *h, int *x, int *y, int *v,
 	 *y = (h->ylen-1 << 1);
   } */
 
-  /* Process sign encodings for quadruples tables. */
+  /* 쿼드러플 테이블의 부호 인코딩 처리. */
 
   if (h->tablename[0] == '3'
 		&& (h->tablename[1] == '2' || h->tablename[1] == '3')) {
@@ -448,8 +448,8 @@ int huffman_decoder(struct huffcodetab *h, int *x, int *y, int *v,
 	  *x = (*y>>1) & 1;
 	  *y = *y & 1;
 
-	  /* v, w, x and y are reversed in the bitstream.
-		  switch them around to make test bistream work. */
+	  /* v, w, x, y는 비트스트림에서 역순으로 저장된다.
+		  테스트 비트스트림이 올바르게 동작하도록 순서를 바꾼다. */
 
 	  if (*v)
   		  if (br->hgetbits(1)) *v = -*v;
@@ -461,12 +461,12 @@ int huffman_decoder(struct huffcodetab *h, int *x, int *y, int *v,
 		  if (br->hgetbits(1)) *y = -*y;
 	  }
 
-  /* Process sign and escape encodings for dual tables. */
+  /* 이중 테이블의 부호 및 이스케이프 인코딩 처리. */
 
   else {
 
-		/* x and y are reversed in the test bitstream.
-			Reverse x and y here to make test bitstream work. */
+		/* x와 y는 테스트 비트스트림에서 역순으로 저장된다.
+			테스트 비트스트림이 올바르게 동작하도록 x와 y를 뒤집는다. */
 
 	  if (h->linbits)
 		 if ((h->xlen-1) == (unsigned int)(*x))

@@ -132,7 +132,7 @@ enum ITEM_CLASS
 	ITEM_CLASS_PERSONA,             // 87
 	ITEM_CLASS_FASCIA,              // 88
 	ITEM_CLASS_MITTEN,              // 89
-	//add by zdj
+	// zdj 추가
 	// ITEM_CLASS_SUB_INVENTORY,
 	MAX_ITEM_CLASS,
 
