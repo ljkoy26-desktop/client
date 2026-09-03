@@ -8,7 +8,7 @@
 //----------------------------------------------------------------------
 #pragma warning(disable:4786)
 #include "Client_PCH.h"
-// DX3D.h removed (SDL2) - Direct3D has been replaced with SDL2
+// DX3D.h 제거 (SDL2) - Direct3D가 SDL2로 교체됨
 #include <math.h>
 #include <list>
 #include <stdio.h>

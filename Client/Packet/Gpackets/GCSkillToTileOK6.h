@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////////////////
 // 
 // Filename    : GCSkillToTileOK6.h 
-// Written By  : elca@ewestsoft.com
-// Description : 기술에 당했는데 사용자는 볼 수 없는 자가 받는 packet 
+// 작성자: elca@ewestsoft.com
+// 설명: 기술에 당했는데 사용자는 볼 수 없는 자가 받는 packet 
 //////////////////////////////////////////////////////////////////////
 
 #ifndef __GC_SKILL_TO_TILE_OK_6_H__

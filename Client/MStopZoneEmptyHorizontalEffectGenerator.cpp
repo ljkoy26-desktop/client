@@ -14,7 +14,7 @@
 //#define	delete		DEBUG_DELETE
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MStopZoneEmptyHorizontalWallEffectGenerator	g_StopZoneWallEffectGenerator;
 //---------------------------------------------
@@ -32,7 +32,7 @@ const int g_WallHorizontalDirValue[8][4] = {
 };
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MStopZoneEmptyHorizontalWallEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )

@@ -1,8 +1,8 @@
 ﻿//////////////////////////////////////////////////////////////////////
 // 
 // Filename    :  GCLearnSkillOK.h 
-// Written By  :  elca@ewestsoft.com
-// Description :  Å
+// 작성자:  elca@ewestsoft.com
+// 설명:  Å
 
 //                
 // 

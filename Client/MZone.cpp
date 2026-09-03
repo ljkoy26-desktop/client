@@ -19,7 +19,7 @@
 #include "MItem.h"
 #include "MEffect.h"
 #include "MZone.h"
-// Note: MTopView.h removed - MZone doesn't actually use MTopView (decoupled for demo/game flexibility)
+// 참고: MTopView.h 제거 - MZone은 실제로 MTopView를 사용하지 않음 (데모/게임 유연성을 위해 분리)
 #include "UserOption.h"
 #include "MEffectGeneratorTable.h"
 #include "MZoneTable.h"
@@ -40,13 +40,13 @@
 #include "MGuildType.h"
 #include "MEffectStatusDef.h"
 
-// Note: VS_UI.h removed - MZone doesn't actually use VS_UI classes (decoupled for demo/game flexibility)
+// 참고: VS_UI.h 제거 - MZone은 실제로 VS_UI 클래스를 사용하지 않음 (데모/게임 유연성을 위해 분리)
 #include "MHelpDef.h"
 //#define	new			DEBUG_NEW
 //#define	delete		DEBUG_DELETE
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 MZone*				g_pZone				= NULL;
 
@@ -254,7 +254,7 @@ MZone::~MZone()
 //----------------------------------------------------------------------
 
 //----------------------------------------------------------------------
-// Init
+// 초기화
 //----------------------------------------------------------------------
 void
 MZone::Init(TYPE_SECTORPOSITION width, TYPE_SECTORPOSITION height)
@@ -287,7 +287,7 @@ MZone::Init(TYPE_SECTORPOSITION width, TYPE_SECTORPOSITION height)
 }
 
 //----------------------------------------------------------------------
-// Release
+// 해제
 //----------------------------------------------------------------------
 void
 MZone::Release()
@@ -367,7 +367,7 @@ MZone::Release()
 }
 
 //----------------------------------------------------------------------
-// Release Object
+// 오브젝트 해제
 //----------------------------------------------------------------------
 // instance object들을 제거한다.
 //----------------------------------------------------------------------
@@ -615,7 +615,7 @@ MZone::ReleaseObject()
 }
 
 //----------------------------------------------------------------------
-// Save To File SectorSound
+// 파일에 섹터 사운드 저장
 //----------------------------------------------------------------------
 // Width*Height
 // SectorSoundInfo
@@ -684,7 +684,7 @@ MZone::SaveToFileSectorSound(std::ofstream& file)
 }
 
 //----------------------------------------------------------------------
-// Load From File SectorSound
+// 파일에서 섹터 사운드 불러오기
 //----------------------------------------------------------------------
 // Width*Height로 크기 체크하고.
 // SectorSoundInfo를 Loading하고
@@ -896,7 +896,7 @@ MZone::LoadFromFileSectorSound(std::ifstream& file)
 }
 
 //----------------------------------------------------------------------
-// Load From File
+// 파일에서 불러오기
 //----------------------------------------------------------------------
 //   가로 size, 세로 size
 //   Zone ID
@@ -1183,7 +1183,7 @@ MZone::LoadFromFile(std::ifstream& file)
 }
 
 //----------------------------------------------------------------------
-// Set Player 
+// 플레이어 설정
 //
 // Player는 Zone의 중심에서 출력된다.
 // Player를 Zone의 Sector에 위치시킨다.
@@ -1211,7 +1211,7 @@ MZone::SetPlayer()//MPlayer* pPlayer)
 }
 
 //----------------------------------------------------------------------
-// Set Player 
+// 플레이어 설정
 //
 // Player는 Zone의 중심에서 출력된다.
 // Player를 Zone의 Sector에 위치시킨다.
@@ -1293,7 +1293,7 @@ MZone::CanMove(BYTE creatureType, TYPE_SECTORPOSITION x, TYPE_SECTORPOSITION y)
 }
 
 //----------------------------------------------------------------------
-// Set ServerBlock
+// 서버 블록 설정
 //----------------------------------------------------------------------
 void		
 MZone::SetServerBlock(BYTE creatureType, TYPE_SECTORPOSITION x, TYPE_SECTORPOSITION y)
@@ -1327,7 +1327,7 @@ MZone::SetServerBlock(BYTE creatureType, TYPE_SECTORPOSITION x, TYPE_SECTORPOSIT
 }
 
 //----------------------------------------------------------------------
-// UnSet ServerBlock
+// 서버 블록 해제
 //----------------------------------------------------------------------
 void		
 MZone::UnSetServerBlock(BYTE creatureType, TYPE_SECTORPOSITION x, TYPE_SECTORPOSITION y)
@@ -1371,7 +1371,7 @@ MZone::UnSetServerBlock(BYTE creatureType, TYPE_SECTORPOSITION x, TYPE_SECTORPOS
 
 
 //----------------------------------------------------------------------
-// Move Ground Creature
+// 지상 크리처 이동
 //----------------------------------------------------------------------
 // (xo,yo)에 있던 Creature를 (xn,yn)으로 옮긴다.
 //----------------------------------------------------------------------
@@ -1535,7 +1535,7 @@ MZone::MoveGroundCreature(MCreature* pCreature, TYPE_SECTORPOSITION xo, TYPE_SEC
 }
 
 //----------------------------------------------------------------------
-// Move Flying Creature
+// 비행 크리처 이동
 //----------------------------------------------------------------------
 // (xo,yo)에 있던 FlyingCreature를 (xn,yn)으로 옮긴다.
 //----------------------------------------------------------------------
@@ -1688,7 +1688,7 @@ MZone::MoveFlyingCreature(MCreature* pCreature, TYPE_SECTORPOSITION xo, TYPE_SEC
 }
 
 //----------------------------------------------------------------------
-// Move Ungerground Creature
+// 지하 크리처 이동
 //----------------------------------------------------------------------
 // (xo,yo)에 있던 UndergroundCreature를 (xn,yn)으로 옮긴다.
 //----------------------------------------------------------------------
@@ -1842,7 +1842,7 @@ MZone::MoveUndergroundCreature(MCreature* pCreature, TYPE_SECTORPOSITION xo, TYP
 }
 
 //----------------------------------------------------------------------
-// Get CreatureID
+// 크리처 ID 반환
 //----------------------------------------------------------------------
 // 이름으로 ID를 찾는다.
 // flag : 1 npc뺴고
@@ -1979,7 +1979,7 @@ MZone::GetUndergroundCreatureID(TYPE_SECTORPOSITION x, TYPE_SECTORPOSITION y)
 
 
 //----------------------------------------------------------------------
-// Update
+// 업데이트
 //----------------------------------------------------------------------
 void
 MZone::Update()
@@ -2025,7 +2025,7 @@ MZone::Update()
 }
 
 //----------------------------------------------------------------------
-// Move All Creature
+// 모든 크리처 이동
 //----------------------------------------------------------------------
 // Zone에 속한 모든 Creature를 행동하게 한다.
 // Player는 제외
@@ -2246,7 +2246,7 @@ MZone::UpdateAllCreature()
 }
 
 //----------------------------------------------------------------------
-// Create Corpse  From Creature
+// 크리처로부터 시체 생성
 //----------------------------------------------------------------------
 // 시체(MCorpse)를 생성하는데.. Creature를 참조한다..
 //----------------------------------------------------------------------
@@ -2378,7 +2378,7 @@ MZone::AddCorpseFromCreature(MCreature* pCreature)
 */
 
 //----------------------------------------------------------------------
-// Create Corpse  From Creature
+// 크리처로부터 시체 생성
 //----------------------------------------------------------------------
 // 시체(MCorpse)를 생성하는데.. Creature를 참조한다..
 //----------------------------------------------------------------------

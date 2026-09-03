@@ -13,12 +13,12 @@
 //#define	delete		DEBUG_DELETE
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MStopZoneRhombusEffectGenerator	g_StopZoneRhombusEffectGenerator;
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MStopZoneRhombusEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )

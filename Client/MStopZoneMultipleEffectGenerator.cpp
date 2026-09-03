@@ -15,12 +15,12 @@
 //#define	delete		DEBUG_DELETE
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MMultipleFallingEffectGenerator	g_StopZoneCrossEffectGenerator;
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MStopZoneMultipleEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )

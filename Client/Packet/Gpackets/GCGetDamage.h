@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////////////////
 // 
 // Filename    :  GCGetDamage.h 
-// Written By  :  elca@ewestsoft.com
-// Description :  클라이언트로 부터 CGMove 패킷이 날라 왔을때 
+// 작성자:  elca@ewestsoft.com
+// 설명:  클라이언트로 부터 CGMove 패킷이 날라 왔을때 
 //                날린 클라이언트에게 무브해도 좋다는 허가를 낼때
 //                보내주는 패킷 클래스이다.
 // 

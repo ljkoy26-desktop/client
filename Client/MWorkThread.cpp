@@ -5,10 +5,10 @@
 #include "MWorkThread.h"
 
 #ifdef PLATFORM_WINDOWS
-// Windows implementation (original code)
+// Windows 구현 (원본 코드)
 
 //----------------------------------------------------------------------
-// Platform-specific wrappers for Windows API compatibility
+// Windows API 호환용 플랫폼별 래퍼
 static inline BOOL SetEvent(HANDLE event) {
     return platform_event_signal((platform_event_t)event) == 0 ? TRUE : FALSE;
 }
@@ -39,7 +39,7 @@ MWorkThread::~MWorkThread()
 }
 
 //----------------------------------------------------------------------
-// Init
+// 초기화
 //----------------------------------------------------------------------
 void MWorkThread::Init(LPTHREAD_START_ROUTINE FileThreadProc, int priority)
 {
@@ -74,7 +74,7 @@ void MWorkThread::Init(LPTHREAD_START_ROUTINE FileThreadProc, int priority)
 }
 
 //----------------------------------------------------------------------
-// Release
+// 해제
 //----------------------------------------------------------------------
 void MWorkThread::Release()
 {
@@ -120,7 +120,7 @@ void MWorkThread::Release()
 }
 
 //----------------------------------------------------------------------
-// ReleaseWork
+// 작업 해제
 //----------------------------------------------------------------------
 void MWorkThread::ReleaseWork()
 {
@@ -179,7 +179,7 @@ void MWorkThread::ReleaseWork()
 }
 
 //----------------------------------------------------------------------
-// Execute
+// 실행
 //----------------------------------------------------------------------
 void MWorkThread::Execute()
 {
@@ -311,7 +311,7 @@ void MWorkThread::Execute()
 }
 
 //----------------------------------------------------------------------
-// Remove
+// 제거
 //----------------------------------------------------------------------
 // type과 같은게 있는 작업들을 중단한다.
 //----------------------------------------------------------------------
@@ -386,7 +386,7 @@ void MWorkThread::Remove(int type)
 }
 
 //----------------------------------------------------------------------
-// Add First
+// 맨 앞에 추가
 //----------------------------------------------------------------------
 // 가장 우선 순위가 높은 work로서 추가시킨다.
 // 외부에서 new해야 한다.
@@ -443,7 +443,7 @@ void MWorkThread::AddFirst(MWorkNode* pNode)
 }
 
 //----------------------------------------------------------------------
-// Add Last
+// 맨 뒤에 추가
 //----------------------------------------------------------------------
 // 맨끝에 추가..
 // 외부에서 new해야 한다.
@@ -479,7 +479,7 @@ void MWorkThread::AddLast(MWorkNode* pNode)
 }
 
 #else
-// Non-Windows platforms (macOS/Linux) - Stub implementations
+// 비-Windows 플랫폼 (macOS/Linux) - 스텁 구현
 
 #include "MWorkThread.h"
 
@@ -503,7 +503,7 @@ MWorkThread::~MWorkThread()
 }
 
 //----------------------------------------------------------------------
-// Init
+// 초기화
 //----------------------------------------------------------------------
 void MWorkThread::Init(LPTHREAD_START_ROUTINE FileThreadProc, int priority)
 {
@@ -513,7 +513,7 @@ void MWorkThread::Init(LPTHREAD_START_ROUTINE FileThreadProc, int priority)
 }
 
 //----------------------------------------------------------------------
-// Release
+// 해제
 //----------------------------------------------------------------------
 void MWorkThread::Release()
 {
@@ -521,7 +521,7 @@ void MWorkThread::Release()
 }
 
 //----------------------------------------------------------------------
-// ReleaseWork
+// 작업 해제
 //----------------------------------------------------------------------
 void MWorkThread::ReleaseWork()
 {
@@ -529,7 +529,7 @@ void MWorkThread::ReleaseWork()
 }
 
 //----------------------------------------------------------------------
-// Execute
+// 실행
 //----------------------------------------------------------------------
 void MWorkThread::Execute()
 {
@@ -537,7 +537,7 @@ void MWorkThread::Execute()
 }
 
 //----------------------------------------------------------------------
-// Remove
+// 제거
 //----------------------------------------------------------------------
 void MWorkThread::Remove(int type)
 {
@@ -545,7 +545,7 @@ void MWorkThread::Remove(int type)
 }
 
 //----------------------------------------------------------------------
-// AddFirst
+// 맨 앞에 추가
 //----------------------------------------------------------------------
 void MWorkThread::AddFirst(MWorkNode* pNode)
 {
@@ -553,7 +553,7 @@ void MWorkThread::AddFirst(MWorkNode* pNode)
 }
 
 //----------------------------------------------------------------------
-// AddLast
+// 맨 뒤에 추가
 //----------------------------------------------------------------------
 void MWorkThread::AddLast(MWorkNode* pNode)
 {

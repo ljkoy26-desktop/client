@@ -371,6 +371,38 @@
 
 ---
 
+## 14차 번역 완료 (2026-09-03)
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/MSlayerGear.cpp` | 전역 변수, 초기화, 상태 이상 확인, 아이템 추가/교환 가능/추가(n)/제거/제거(id)/교환 섹션 헤더 |
+| `Client/MSlotItemManager.cpp` | 초기화, 해제, 아이템 추가/반환/제거(n)/제거(id)/교환 섹션 헤더 |
+| `Client/MSortedItemManager.cpp` | 해제, 2x2 개수 설정, 아이템 추가, 키 반환, 병합 섹션 헤더 |
+| `Client/MSoundTable.cpp` | 전역 변수, 저장, 불러오기 섹션 헤더 |
+| `Client/MSpreadOutEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MStatus.cpp` | 상태 초기화, 상태 적용 섹션 헤더 |
+| `Client/MStatusManager.cpp` | 명중률/방어력/보호력 반환, 공격 속도 섹션 헤더 |
+| `Client/MStopInventoryEffectGenerator.cpp` ~ `Client/MStopZoneXEffectGenerator.cpp` (11개) | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MStorage.cpp` | 전역 변수, 초기화, 해제, 아이템 설정/제거/반환, 현재 설정 섹션 헤더 |
+| `Client/MString.cpp` | 전방 선언, 초기화, 해제, 대입 연산자, 포맷, 파일 저장/불러오기, GBK→UTF-8 변환, 주석 번역 |
+| `Client/MStringList.cpp` | 해제, 문자열 추가, 반복자 반환 섹션 헤더 |
+| `Client/MStringMap.cpp` | 해제, 추가, 제거, 반환, 파일 저장/불러오기 섹션 헤더 |
+| `Client/MTopView.cpp` | DX3D.h 제거 주석, SDL2 통합 주석, 전역 변수, 초기화(×3), 해제, ShadowManager/색상/프레임/미니맵/SPK 관련, 좌표 변환, 방향 설정 등 41개 |
+| `Client/MTopViewDraw.cpp` | DX3D.h 제거 주석 |
+| `Client/MTradeManager.cpp` | 전역 변수, 초기화, 해제, 수락시간, 거래 수락/거절/가능/실행/취소 섹션 헤더 |
+| `Client/MVampireGear.cpp` | 전역 변수, 초기화, 상태 이상 확인, 아이템 추가/교환 가능/추가(n)/제거/제거(id)/교환 섹션 헤더 |
+| `Client/MWeather.cpp` | 전역 변수, 초기화, 해제, 비/눈/스팟 생성, 액션 섹션 헤더 |
+| `Client/MWorkThread.cpp` | Windows 구현, 플랫폼 래퍼, 초기화, 해제, 작업 해제, 실행, 제거, 앞/뒤 추가, 비-Windows 스텁 섹션 헤더 |
+| `Client/MZone.cpp` | 참고 주석(MTopView.h/VS_UI.h 제거), 전역 변수, 초기화, 해제, 오브젝트 해제, 섹터 사운드 저장/불러오기, 파일 불러오기, 플레이어 설정, 서버블록 설정/해제, 크리처 이동(지상/비행/지하), 크리처 ID 반환, 업데이트, 시체 생성 등 |
+| `Client/MZoneSound.cpp` | 파일 저장/불러오기 섹션 헤더 |
+| `Client/MZoneSoundManager.cpp` | 파일 저장/불러오기, 재생, 정지(×2), 사운드 업데이트 섹션 헤더 |
+| `Client/MZoneTable.cpp` | 전역 변수, 랜덤 사운드 ID 반환, 저장/불러오기, 해제, 존 정보 추가/반환, 파일 저장/불러오기 섹션 헤더 |
+| `Client/ModifyStatusManager.cpp` | 전역 변수, 새 도메인 스킬 습득 가능 여부, 도메인 레벨 설정 섹션 헤더 |
+| `Client/MonsterNameTable.cpp` | 전역 변수 섹션 헤더 |
+| `Client/Packet/Gpackets/*.cpp/*.h` (763개 파일) | `// Written By` → `// 작성자:`, `// Description` → `// 설명:` 메타데이터 주석 번역 |
+
+---
+
 ## 다음 번역 대상 (vcxproj 기준 이후 파일들)
 
-MSkipEffectGenerator.cpp 이후 파일들 (MSkipEffect.h 부터) 은 미번역 상태.
+Packet/Gpackets 이후 파일들 (CGpackets, CGHandlers 등) 은 미번역 상태.

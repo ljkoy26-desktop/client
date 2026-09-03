@@ -19,12 +19,12 @@
 extern MScreenEffectManager*	g_pInventoryEffectManager;
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MStopInventoryEffectGenerator	g_StopInventoryEffectGenerator;
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MStopInventoryEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )

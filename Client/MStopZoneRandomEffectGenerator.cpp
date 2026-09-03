@@ -13,12 +13,12 @@
 //#define	delete		DEBUG_DELETE
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MStopZoneRandomEffectGenerator	g_StopZoneRandomEffectGenerator;
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MStopZoneRandomEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )

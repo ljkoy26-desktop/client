@@ -1,8 +1,8 @@
 ﻿//--------------------------------------------------------------------------------
 //
 // Filename    : GCAddItemToItemVerifyHandler.cpp
-// Written By  : elca, Reiot
-// Description :
+// 작성자: elca, Reiot
+// 설명:
 //
 //--------------------------------------------------------------------------------
 #include "Client_PCH.h"

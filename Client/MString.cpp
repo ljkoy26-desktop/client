@@ -16,7 +16,7 @@
 #include <iconv.h>
 #endif
 
-// Forward declaration
+// 전방 선언
 static char* ConvertGBKToUTF8(const char* gbkStr, size_t gbkLen, size_t& outLen);
 
 //#include "DebugInfo.h"
@@ -67,7 +67,7 @@ MString::~MString()
 //
 //--------------------------------------------------------------------------
 //--------------------------------------------------------------------------
-// Init( len )
+// 초기화 ( len )
 //--------------------------------------------------------------------------
 // size만큼 memory확보
 //--------------------------------------------------------------------------
@@ -82,7 +82,7 @@ MString::Init(int len)
 }
 
 //--------------------------------------------------------------------------
-// Relase
+// 해제
 //--------------------------------------------------------------------------
 // memory에서 제거
 //--------------------------------------------------------------------------
@@ -98,7 +98,7 @@ MString::Release()
 }
 
 //--------------------------------------------------------------------------
-// Assign operator =
+// 대입 연산자 =
 //--------------------------------------------------------------------------
 void	
 MString::operator = (const char* str)
@@ -126,7 +126,7 @@ MString::operator = (const char* str)
 }
 
 //--------------------------------------------------------------------------
-// Assign operator =
+// 대입 연산자 =
 //--------------------------------------------------------------------------
 void
 MString::operator = (const MString& str)
@@ -161,7 +161,7 @@ MString::operator = (const MString& str)
 }
 
 //--------------------------------------------------------------------------
-// Format
+// 포맷
 //--------------------------------------------------------------------------
 // 적절한 형식으로 string을 만든다.
 //--------------------------------------------------------------------------
@@ -178,7 +178,7 @@ MString::Format(const char* format, ...)
 }
 
 //--------------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //--------------------------------------------------------------------------
 void		
 MString::SaveToFile(std::ofstream& file)
@@ -193,7 +193,7 @@ MString::SaveToFile(std::ofstream& file)
 }
 
 //--------------------------------------------------------------------------
-// Load From File
+// 파일에서 불러오기
 //--------------------------------------------------------------------------
 void
 MString::LoadFromFile(std::ifstream& file)
@@ -245,8 +245,8 @@ MString::LoadFromFile(std::ifstream& file)
 }
 
 //--------------------------------------------------------------------------
-// Convert to UTF-8 if needed (internal helper)
-// NOTE: Auto-conversion disabled - resource files should be pre-converted to UTF-8
+// 필요 시 UTF-8로 변환 (내부 헬퍼)
+// 참고: 자동 변환 비활성화 - 리소스 파일은 미리 UTF-8로 변환되어야 함
 //       The conversion functions are kept here for reference/future use if needed.
 //--------------------------------------------------------------------------
 namespace {
@@ -294,7 +294,7 @@ namespace {
 	}
 }
 
-// Convert GBK to UTF-8 - used by LoadFromFile for runtime conversion
+// GBK를 UTF-8로 변환 - LoadFromFile에서 런타임 변환에 사용
 static char* ConvertGBKToUTF8(const char* gbkStr, size_t gbkLen, size_t& outLen)
 {
 #ifdef PLATFORM_MACOS

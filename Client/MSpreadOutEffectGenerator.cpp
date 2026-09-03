@@ -17,12 +17,12 @@
 //#define	delete		DEBUG_DELETE
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 //MSpreadOutEffectGenerator	g_SpreadOutEffectGenerator;
 
 //----------------------------------------------------------------------
-// Generate
+// 이펙트 생성
 //----------------------------------------------------------------------
 bool
 MSpreadOutEffectGenerator::Generate( const EFFECTGENERATOR_INFO& egInfo )
