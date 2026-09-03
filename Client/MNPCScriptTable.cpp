@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------
+﻿//---------------------------------------------------------------------------
 // MNPCScriptTable.cpp
 //---------------------------------------------------------------------------
 
@@ -28,7 +28,7 @@ MNPCScriptTable*		g_pNPCScriptTable = NULL;
 //
 //---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //---------------------------------------------------------------------------
 void				
 NPC_SCRIPT::SaveToFile(std::ofstream& file)
@@ -41,7 +41,7 @@ NPC_SCRIPT::SaveToFile(std::ofstream& file)
 }
 
 //---------------------------------------------------------------------------
-// Load From File
+// 파일에서 불러오기
 //---------------------------------------------------------------------------
 void				
 NPC_SCRIPT::LoadFromFile(std::ifstream& file)
@@ -60,7 +60,7 @@ NPC_SCRIPT::LoadFromFile(std::ifstream& file)
 //
 //---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
-// Get Subject Size
+// 제목 크기 반환
 //---------------------------------------------------------------------------
 int			
 MNPCScriptTable::GetSubjectSize(int scriptID) const
@@ -76,7 +76,7 @@ MNPCScriptTable::GetSubjectSize(int scriptID) const
 }
 
 //---------------------------------------------------------------------------
-// Get Content Size
+// 내용 크기 반환
 //---------------------------------------------------------------------------
 int			
 MNPCScriptTable::GetContentSize(int scriptID) const
@@ -92,7 +92,7 @@ MNPCScriptTable::GetContentSize(int scriptID) const
 }
 
 //---------------------------------------------------------------------------
-// Get Subject
+// 제목 반환
 //---------------------------------------------------------------------------
 const char*	
 MNPCScriptTable::GetSubject(int scriptID, int subjectID) const
@@ -113,7 +113,7 @@ MNPCScriptTable::GetSubject(int scriptID, int subjectID) const
 }
 
 //---------------------------------------------------------------------------
-// Get Content
+// 내용 반환
 //---------------------------------------------------------------------------
 const char*	
 MNPCScriptTable::GetContent(int scriptID, int contentID) const
@@ -135,7 +135,7 @@ MNPCScriptTable::GetContent(int scriptID, int contentID) const
 
 
 //----------------------------------------------------------------------
-// Save To File
+// 파일에 저장
 //----------------------------------------------------------------------
 void		
 MNPCScriptTable::SaveToFile(std::ofstream& file)
@@ -164,7 +164,7 @@ MNPCScriptTable::SaveToFile(std::ofstream& file)
 }
 		
 //----------------------------------------------------------------------
-// Load From File
+// 파일에서 불러오기
 //----------------------------------------------------------------------
 void		
 MNPCScriptTable::LoadFromFile(std::ifstream& file)

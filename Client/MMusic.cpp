@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // MMusic.cpp
 //----------------------------------------------------------------------
 #include "Client_PCH.h"
@@ -15,11 +15,11 @@
    platforms, including Windows. */
 #if defined(PLATFORM_WINDOWS) && defined(__USE_REAL_MIDI__)
 
-// Windows implementation (original code)
+// Windows 구현 (원본 코드)
 
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 MMusic		g_Music;
 
@@ -109,7 +109,7 @@ void MMusic::UnInit()
 
 
 //////////////////////////////////////////////////////////
-// Play
+// 재생
 bool MMusic::Play(LPCSTR	filename)
 {
 	/*
@@ -190,7 +190,7 @@ bool MMusic::Play(LPCSTR	filename)
 
 
 //////////////////////////////////////////////////////////
-// Stop
+// 정지
 bool
 MMusic::Stop()
 {
@@ -215,7 +215,7 @@ MMusic::Stop()
 }
 
 //////////////////////////////////////////////////////////
-// Pause
+// 일시정지
 bool MMusic::Pause()
 {
 	if (m_bInit)
@@ -239,7 +239,7 @@ bool MMusic::Pause()
 }
 
 //////////////////////////////////////////////////////////
-// Resume
+// 재개
 bool MMusic::Resume()
 {	
 	if (m_bInit)
@@ -264,7 +264,7 @@ bool MMusic::Resume()
 
 
 //////////////////////////////////////////////////////////
-// RePlay
+// 재생 (다시 처음부터)
 bool MMusic::RePlay()
 {
 	if (m_bInit)
@@ -288,7 +288,7 @@ bool MMusic::RePlay()
 }
 
 #else
-// Non-Windows platforms (macOS/Linux) - Stub implementations
+// 비-Windows 플랫폼 (macOS/Linux) - 스텁 구현
 
 #include "MMusic.h"
 

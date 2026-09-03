@@ -23,7 +23,7 @@
 #endif
 
 //----------------------------------------------------------------------
-// Global
+// 전역 변수
 //----------------------------------------------------------------------
 ITEMCLASS_TABLE	*	g_pItemTable = NULL;
 COLORREF g_ELEMENTAL_COLOR[5] = { RGB(255, 100, 100), RGB(100, 100, 255), RGB(255, 180, 100), RGB(100, 100, 255), RGB(192, 192, 255) };
@@ -102,11 +102,11 @@ ITEMTABLE_INFO::~ITEMTABLE_INFO()
 
 //----------------------------------------------------------------------
 //
-// member functions
+// 멤버 함수
 //
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
-// Set SoundID
+// 사운드 ID 설정
 //----------------------------------------------------------------------
 void	
 ITEMTABLE_INFO::SetSoundID(TYPE_SOUNDID tile, TYPE_SOUNDID inventory, TYPE_SOUNDID gear, TYPE_SOUNDID use)
@@ -118,7 +118,7 @@ ITEMTABLE_INFO::SetSoundID(TYPE_SOUNDID tile, TYPE_SOUNDID inventory, TYPE_SOUND
 }
 
 //----------------------------------------------------------------------
-// Set FrameID
+// FrameID 설정
 //----------------------------------------------------------------------
 void	
 ITEMTABLE_INFO::SetFrameID(TYPE_FRAMEID tile, TYPE_FRAMEID inventory, TYPE_FRAMEID gear)
@@ -129,7 +129,7 @@ ITEMTABLE_INFO::SetFrameID(TYPE_FRAMEID tile, TYPE_FRAMEID inventory, TYPE_FRAME
 }
 
 //----------------------------------------------------------------------
-// Set DropFrameID
+// 드롭 FrameID 설정
 //----------------------------------------------------------------------
 void	
 ITEMTABLE_INFO::SetDropFrameID(TYPE_FRAMEID drop)
@@ -138,7 +138,7 @@ ITEMTABLE_INFO::SetDropFrameID(TYPE_FRAMEID drop)
 }
 
 //----------------------------------------------------------------------
-// Set Addon FrameID
+// 부가 FrameID 설정
 //----------------------------------------------------------------------
 void
 ITEMTABLE_INFO::SetAddonFrameID(TYPE_FRAMEID male, TYPE_FRAMEID female)
@@ -148,7 +148,7 @@ ITEMTABLE_INFO::SetAddonFrameID(TYPE_FRAMEID male, TYPE_FRAMEID female)
 }
 
 //----------------------------------------------------------------------
-// Set Grid
+// 그리드 설정
 //----------------------------------------------------------------------
 void	
 ITEMTABLE_INFO::SetGrid(BYTE width, BYTE height)
@@ -158,7 +158,7 @@ ITEMTABLE_INFO::SetGrid(BYTE width, BYTE height)
 }
 
 //----------------------------------------------------------------------
-// Set Values
+// 값 설정
 //----------------------------------------------------------------------
 void	
 ITEMTABLE_INFO::SetValue(int v1, int v2, int v3, int v4, int v5, int v6, int v7)
@@ -173,7 +173,7 @@ ITEMTABLE_INFO::SetValue(int v1, int v2, int v3, int v4, int v5, int v6, int v7)
 }
 
 //----------------------------------------------------------------------
-// Save
+// 파일에 저장
 //----------------------------------------------------------------------
 void			
 ITEMTABLE_INFO::SaveToFile(std::ofstream& file)
@@ -264,7 +264,7 @@ ITEMTABLE_INFO::SaveToFile(std::ofstream& file)
 }
 
 //----------------------------------------------------------------------
-// Load
+// 파일에서 불러오기
 //----------------------------------------------------------------------
 void			
 ITEMTABLE_INFO::LoadFromFile(std::ifstream& file)

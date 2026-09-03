@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // MItemTable.h
 //----------------------------------------------------------------------
 // Item의 종류에 따른 정보를 저장하는 class
@@ -147,7 +147,7 @@ class ITEMTABLE_INFO {
 		~ITEMTABLE_INFO();
 
 		//-------------------------------------------------------
-		// Set
+		// 설정
 		//-------------------------------------------------------
 		void	SetSoundID(TYPE_SOUNDID tile, TYPE_SOUNDID inventory, TYPE_SOUNDID gear, TYPE_SOUNDID use);
 		void	SetFrameID(TYPE_FRAMEID tile, TYPE_FRAMEID inventory, TYPE_FRAMEID gear);
@@ -168,7 +168,7 @@ class ITEMTABLE_INFO {
 		void	SetRequireAdvancementLevel(BYTE level=0)		{ RequireAdvancementLevel = level; }		
 
 		//-------------------------------------------------------
-		// Get
+		// 반환
 		//-------------------------------------------------------
 		BYTE		GetRequireSTR()	const				{ return RequireSTR; }
 		BYTE		GetRequireDEX()	const				{ return RequireDEX; }
@@ -186,7 +186,7 @@ class ITEMTABLE_INFO {
 		
 
 		//-------------------------------------------------------
-		// File I/O
+		// 파일 입출력
 		//-------------------------------------------------------
 		void			SaveToFile(std::ofstream& file);		
 		void			LoadFromFile(std::ifstream& file);		

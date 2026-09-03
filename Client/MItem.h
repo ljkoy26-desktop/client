@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // MItem.h
 //----------------------------------------------------------------------
 // 아이템..
@@ -479,7 +479,7 @@ class MItem : public MObject, public CAnimationFrame {
 		bool		GetPersnal() { return m_persnal; }
 
 		//-------------------------------------------------------
-		// File I/O
+		// 파일 입출력
 		//-------------------------------------------------------
 		//void	SaveToFile(std::ofstream& file);
 		//void	LoadFromFile(std::ifstream& file);
@@ -698,7 +698,7 @@ class MBelt : public MArmorItem2, public MSlotItemManager {
 		//				SlotItemManager
 		//
 		//------------------------------------------------
-		// AddItem : slot(n)에 pItem을 추가한다.
+		// 아이템 추가: slot(n)에 pItem을 추가한다.
 		//------------------------------------------------
 		bool			AddItem(MItem* pItem);
 		bool			AddItem(MItem* pItem, BYTE n);
@@ -715,7 +715,7 @@ class MBelt : public MArmorItem2, public MSlotItemManager {
 		bool			CanReplaceItem(MItem* pItem, BYTE n, MItem*& pOldItem);
 
 		//------------------------------------------------
-		// Find Slot To Add Item
+		// 아이템 추가 슬롯 검색
 		//------------------------------------------------
 		bool			FindSlotToAddItem(MItem* pItem, int &slot) const;
 
@@ -1971,7 +1971,7 @@ public :
 	//				SlotItemManager
 	//
 	//------------------------------------------------
-	// AddItem : slot(n)에 pItem을 추가한다.
+	// 아이템 추가: slot(n)에 pItem을 추가한다.
 	//------------------------------------------------
 	bool			AddItem(MItem* pItem);
 	bool			AddItem(MItem* pItem, BYTE n);
@@ -1987,7 +1987,7 @@ public :
 	bool			CanReplaceItem(MItem* pItem, BYTE n, MItem*& pOldItem);
 	
 	//------------------------------------------------
-	// Find Slot To Add Item
+	// 아이템 추가 슬롯 검색
 	//------------------------------------------------
 	bool			FindSlotToAddItem(MItem* pItem, int &slot) const;	
 	// 값
@@ -2627,7 +2627,7 @@ class MSubInventory : public MItem , public MGridItemManager {
 		//				SlotItemManager
 		//
 		//------------------------------------------------
-		// AddItem : slot(n)에 pItem을 추가한다.
+		// 아이템 추가: slot(n)에 pItem을 추가한다.
 		//------------------------------------------------
 		bool			AddItem(MItem* pItem);
 		bool			AddItem(MItem* pItem, BYTE X, BYTE Y);

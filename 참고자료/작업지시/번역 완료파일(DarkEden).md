@@ -313,6 +313,46 @@
 
 ---
 
+---
+
+## 12차 번역 완료 (2026-09-03)
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/MItem.cpp` | 생성자/소멸자, 멤버 함수, 이름/설명/무게/FrameID/사운드 반환, 아이템 옵션 반환, 요구 능력치/레벨 반환, 파일 입출력, 드롭/타입 설정, 아이템 추가/검색, 인챈트/존/실버/내구도 설정 등 |
+| `Client/MItem.h` | 파일 입출력, 아이템 추가, 아이템 추가 슬롯 검색 섹션 헤더 |
+| `Client/MItemManager.cpp` | 생성자/소멸자, 멤버 함수, 해제, 아이템 추가/반환(×2)/제거, 상태 이상 확인(×2), 모든 수정 대상 아이템 반환 섹션 헤더 |
+| `Client/MItemManager.h` | 해제, 추가/반환/제거 섹션 헤더 |
+| `Client/MItemTable.cpp` | 전역 변수, 멤버 함수, 사운드/FrameID/드롭FrameID/부가FrameID/그리드/값 설정, 파일 입출력 섹션 헤더 |
+| `Client/MItemTable.h` | 설정, 반환, 파일 입출력 섹션 헤더 |
+| `Client/MLevelNameTable.cpp` | 전역 변수 섹션 헤더 |
+| `Client/MLinearEffect.cpp` | 생성자/소멸자, 멤버 함수, 목표 설정, 업데이트 섹션 헤더 |
+| `Client/MLoadingSPKWorkNode.cpp` | 실행(×4) 섹션 헤더 |
+| `Client/MMeteorDropEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MMoneyManager.cpp` | 전역 변수, 돈 설정/추가/제거/가능여부 확인 섹션 헤더 |
+| `Client/MMoneyManager.h` | 돈, 돈 한도 섹션 헤더 |
+| `Client/MMovingEffect.cpp` | 업데이트 섹션 헤더 |
+| `Client/MMultipleFallingEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MMusic.cpp` | Windows 구현, 전역 변수, 재생/정지/일시정지/재개/다시재생, 비-Windows 스텁 섹션 헤더 |
+| `Client/MMusicTable.cpp/h` | 전역 변수, 파일 입출력 섹션 헤더 |
+| `Client/MNPC.cpp` | NPC 정보 반환, 상점 설정, 상점 템플릿 아이템 생성, 액션 섹션 헤더 |
+| `Client/MNPC.h` | 액션 섹션 헤더 |
+| `Client/MNPCScriptTable.cpp` | 파일 입출력, 제목/내용 크기/반환 섹션 헤더 |
+| `Client/MNPCTable.cpp` | 전역 변수, 해제(×2), 파일 입출력(×2) 섹션 헤더 |
+| `Client/MNPCTable.h` | 해제, 파일 입출력 섹션 헤더 |
+| `Client/MObject.cpp` | 화면 사각형 추가, 파일 입출력 섹션 헤더 |
+| `Client/MObjectSelector.cpp` | 전역 변수, 선택/공격 가능 여부 확인 섹션 헤더 |
+| `Client/MOustersGear.cpp` | 전역 변수, 초기화, 상태 이상 확인, 아이템 추가/교환 가능/추가 섹션 헤더 |
+| `Client/MParabolaEffect.cpp` | 이동 섹션 헤더 |
+| `Client/MParty.cpp` | 전역 변수, 해제, 파티 해제, 파티원 추가/제거 섹션 헤더 |
+| `Client/MPortal.cpp` | 파일 입출력 섹션 헤더 |
+| `Client/MPriceManager.cpp` | 전역 변수, 아이템 가격 반환(×2) 섹션 헤더 |
+| `Client/MPlayer.cpp` | 파티 상태 전송, 전방향 차단 확인, 목적지 설정/반환, 이동 위치 설정, 크리처/섹터 추적, 이동, 캐스팅 이펙트, 사용 액션 적용 등 섹션 헤더 |
+| `Client/MPlayerGear.cpp` | 초기화, 해제, 아이템 추가/반환/제거/교환/상태 설정 섹션 헤더 |
+| `Client/MPlayingWithFireEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+
+---
+
 ## 다음 번역 대상 (vcxproj 기준 이후 파일들)
 
-MissingGlobals.cpp 이후 파일들 (MItem.cpp 부터) 은 미번역 상태.
+MPlayingWithFireEffectGenerator.cpp 이후 파일들 (MPlayer.h 부터) 은 미번역 상태.

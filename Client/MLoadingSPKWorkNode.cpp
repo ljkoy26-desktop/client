@@ -1,4 +1,4 @@
-//----------------------------------------------------------------------
+﻿//----------------------------------------------------------------------
 // MLoadingSPKWorkNode.cpp
 //----------------------------------------------------------------------
 #include "Client_PCH.h"
@@ -7,7 +7,7 @@
 extern bool		FileOpenBinary(const char* filename, std::ifstream& file);
 
 //----------------------------------------------------------------------
-// MLoadingSPKWorkNode1 :: Execute
+// MLoadingSPKWorkNode1 :: 실행
 //----------------------------------------------------------------------
 //		= FilePosition에서 SFPArray를 읽어서 SPK에 load한다.
 //		CSpritePack*	SPK
@@ -119,7 +119,7 @@ MLoadingSPKWorkNode1::Execute(MWorkNode*& pRemainNode)
 
 
 //----------------------------------------------------------------------
-// MLoadingSPKWorkNode2 :: Execute
+// MLoadingSPKWorkNode2 :: 실행
 //----------------------------------------------------------------------
 //		= SFPArray를 이용해서 SPK에다 load한다.
 //
@@ -209,7 +209,7 @@ MLoadingSPKWorkNode2::Execute(MWorkNode*& pRemainNode)
 }
 
 //----------------------------------------------------------------------
-// MLoadingSPKWorkNode3 :: Execute
+// MLoadingSPKWorkNode3 :: 실행
 //----------------------------------------------------------------------
 //		TYPE_SPRITEID	SpriteID
 //		long			FilePosition
@@ -263,7 +263,7 @@ MLoadingSPKWorkNode3::Execute(MWorkNode*& pRemainNode)
 
 
 //----------------------------------------------------------------------
-// MLoadingSPKWorkNode4 :: Execute
+// MLoadingSPKWorkNode4 :: 실행
 //----------------------------------------------------------------------
 //		TYPE_SPRITEID	FirstSpriteID
 //		TYPE_SPRITEID	LastSpriteID
