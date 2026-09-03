@@ -3,6 +3,27 @@
 # 목표
 
 
+[
+   
+](<번역 완료파일(basic).md>) [
+   
+](<번역 완료파일(DarkEden).md>) [
+   
+](<번역 완료파일(DXLib).md>) [
+   
+](<번역 완료파일(framelib).md>) [
+   
+](<번역 완료파일(sprite).md>) [
+   
+](<번역 완료파일(SpriteLib).md>) [
+   
+](<번역 완료파일(TextSystem).md>)
+
+
+위에 번역 완료파일을 모두 정리해뒀는데. 
+혹시 아직 번역하지 못한 파일이 있는지 확인하고
+번역안된 파일이 있으면 아래 요구사항대로 번역해줘 
+
 위 프로젝트에 속한 .cpp , .h 파일에 존재하는 
 영어주석 -> 한글 주석으로 번역해줘 
 
@@ -19,6 +40,15 @@ check_encoding_result.md
 
 # 예시) check_encoding_result.md 에서 아래 파일 목록을 모두 합치면 전체 용량 (KB): 전체 용량 (KB): 약 121.38 KB
 
+| UTF-8 | 15.8 KB | `.\Client\MActionInfoTable.cpp` |
+| UTF-8 | 31.2 KB | `.\Client\MActionInfoTable.h` |
+| UTF-8 | 30.2 KB | `.\Client\MActionResult.cpp` |
+| UTF-8 | 27.9 KB | `.\Client\MActionResult.h` |
+| UTF-8 | 2.1 KB | `.\Client\MActionResultDef.h` |
+| UTF-8 | 3.7 KB | `.\Client\MAnimationObject.cpp` |
+| UTF-8 | 2.9 KB | `.\Client\MAnimationObject.h` |
+| UTF-8 | 6.8 KB | `.\Client\MAroundZoneEffectGenerator.cpp` |
+| UTF-8 | 800 B | `.\Client\MAroundZoneEffectGenerator.h` |
 
 
 # 예상 아래부터 진행하면 될듯함
