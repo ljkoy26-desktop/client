@@ -353,6 +353,24 @@
 
 ---
 
+## 13차 번역 완료 (2026-09-03)
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `Client/MRippleZoneEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MRisingEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+| `Client/MScreenEffect.cpp` | 화면 기준 설정, 화면 위치 설정, 업데이트 섹션 헤더 |
+| `Client/MScreenEffectManager.cpp` | 업데이트 섹션 헤더 |
+| `Client/MSector.cpp` | 모든 오브젝트 제거, 파일 입출력 섹션 헤더 |
+| `Client/MShop.cpp` | 초기화, 해제, 선반 설정/반환, 현재 설정 섹션 헤더 |
+| `Client/MShopShelf.cpp` | 정적 멤버, 새 선반 생성, 해제 섹션 헤더 |
+| `Client/MShopTemplate.cpp` | 파일 입출력 섹션 헤더 |
+| `Client/MSkillInfoTable.cpp` | 초기화, 파일에서 불러오기(×2) 섹션 헤더 |
+| `Client/MSkillManager.cpp` | 전역 변수, 파일에서 불러오기 섹션 헤더 |
+| `Client/MSkipEffectGenerator.cpp` | 전역 변수, 이펙트 생성 섹션 헤더 |
+
+---
+
 ## 다음 번역 대상 (vcxproj 기준 이후 파일들)
 
-MPlayingWithFireEffectGenerator.cpp 이후 파일들 (MPlayer.h 부터) 은 미번역 상태.
+MSkipEffectGenerator.cpp 이후 파일들 (MSkipEffect.h 부터) 은 미번역 상태.

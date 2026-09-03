@@ -2363,7 +2363,7 @@ MSkillInfoTable::~MSkillInfoTable()
 //
 //----------------------------------------------------------------------
 //----------------------------------------------------------------------
-// Init
+// 초기화
 //----------------------------------------------------------------------
 void
 MSkillInfoTable::Init()
@@ -2388,7 +2388,7 @@ MSkillInfoTable::Init()
 //	m_pTypeInfo[MAGIC_BLOODY_MARK].SetDelayTime( 3000 );
 }
 //----------------------------------------------------------------------
-// Save From File  ServerSkillInfo
+// 파일에서 불러오기 - ServerSkillInfo
 //----------------------------------------------------------------------
 void			
 MSkillInfoTable::SaveFromFileServerSkillInfo(std::ofstream& file)
@@ -2402,7 +2402,7 @@ MSkillInfoTable::SaveFromFileServerSkillInfo(std::ofstream& file)
 	}
 }
 //----------------------------------------------------------------------
-// Load From File  ServerSkillInfo
+// 파일에서 불러오기 - ServerSkillInfo
 //----------------------------------------------------------------------
 void			
 MSkillInfoTable::LoadFromFileServerSkillInfo(std::ifstream& file)
