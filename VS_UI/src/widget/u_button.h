@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	u_button.h
 
@@ -15,9 +15,9 @@
 #include "Basics.h"
 
 //----------------------------------------------------------------------------
-// Widget Button
+// 위젯 버튼
 //
-// Design:
+// 설계:
 
 //
 
@@ -28,7 +28,7 @@
 //----------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------
-// Class ButtonBase
+// ButtonBase 클래스
 //
 
 //----------------------------------------------------------------------------
@@ -36,17 +36,17 @@ class ButtonBase : public Rect
 {
 private:
 	//---------------------------------------
-	// Private data
+	// 비공개 데이터
 	//---------------------------------------
-	bool		m_bl_focused; // button focus state
-	bool		m_bl_pressed; // button press state
+	bool		m_bl_focused; // 버튼 포커스 상태
+	bool		m_bl_pressed; // 버튼 눌림 상태
 
 public:
 	ButtonBase();
 	virtual ~ButtonBase();
 
 	//---------------------------------------
-	// Set
+	// 설정
 	//---------------------------------------
 	void	FocusOn();
 	void	FocusOff();
@@ -55,16 +55,16 @@ public:
 	virtual void	InitState();
 
 	//---------------------------------------
-	// Get
+	// 반환
 	//---------------------------------------
 	bool	GetFocusState() const;
 	bool	GetPressState() const;
 };
 
 //----------------------------------------------------------------------------
-// Exec (abstract class)
+// Exec (추상 클래스)
 //
-// Button execution interface.
+// 버튼 실행 인터페이스.
 //
 
 
@@ -76,9 +76,9 @@ public:
 };
 
 //----------------------------------------------------------------------------
-// Class Button (abstract class)
+// Button 클래스 (추상 클래스)
 //
-// Button condition change & execution.
+// 버튼 상태 변경 및 실행.
 //
 
 
@@ -102,8 +102,8 @@ public:
 	};
 
 private:
-	Exec *						m_pC_exec_handler;	// exec handler
-	id_t							m_id;						// own exec id
+	Exec *						m_pC_exec_handler;	// 실행 핸들러
+	id_t							m_id;						// 자신의 실행 id
 	ClickOption					m_click_option;
 
 	void	Run();
@@ -141,7 +141,7 @@ public:
 };
 
 //-----------------------------------------------------------------------------
-// EventButton (abstract class)
+// EventButton (추상 클래스)
 //
 
 

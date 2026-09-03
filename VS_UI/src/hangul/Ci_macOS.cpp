@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	Ci_macOS.cpp
 
@@ -12,9 +12,9 @@
 #include "Client_PCH.h"
 #include "CI.h"
 #include "Timer2.h"
-#include "Vs_ui.h"  // For C_VS_UI class
-#include "Fl2.h"    // For g_GetStringByMoney declaration
-#include <string>   // For std::string
+#include "Vs_ui.h"  // C_VS_UI 클래스를 위해
+#include "Fl2.h"    // g_GetStringByMoney 선언을 위해
+#include <string>   // std::string을 위해
 
 CI *gC_ci = NULL;
 
@@ -22,7 +22,7 @@ static timer_id_t	g_tid_cursor_blink = INVALID_TID;
 static bool	gbl_draw_cursor = false;
 
 //----------------------------------------------------------------------------
-// Timer callback
+// 타이머 콜백
 //----------------------------------------------------------------------------
 void Timer_BlinkCursor()
 {
@@ -30,7 +30,7 @@ void Timer_BlinkCursor()
 }
 
 //----------------------------------------------------------------------------
-// CI base class implementations
+// CI 기반 클래스 구현
 //----------------------------------------------------------------------------
 void CI::RunCursorBlinker()
 {
@@ -86,29 +86,29 @@ void CI::FinishImeRunning()
 
 bool CI::IsEngInput() const
 {
-	/* Stub: Assume English input on macOS */
+	/* 스텁: macOS에서는 영문 입력으로 간주 */
 	return true;
 }
 
 void CI::SetEngInput(bool bHangul)
 {
-	/* Stub: No-op on macOS */
+	/* 스텁: macOS에서는 아무 동작 안 함 */
 	(void)bHangul;
 }
 
 //----------------------------------------------------------------------------
-// CI_KOREAN implementations
+// CI_KOREAN 구현
 //----------------------------------------------------------------------------
 void CI_KOREAN::IME_MessageProcessor(UINT message, WPARAM wParam, LPARAM lParam)
 {
-	// On macOS/SDL2, we bypass the Windows IME system entirely.
-	// Keyboard events are already routed through the normal event flow:
+	// macOS/SDL2에서는 Windows IME 시스템을 완전히 우회한다.
+	// 키보드 이벤트는 이미 일반 이벤트 흐름을 통해 전달된다:
 	// DXKeyboardEvent → gC_vs_ui.KeyboardControl → WindowManager → Window
 	//
-	// We should NOT forward messages here as it would cause infinite loops:
+	// 여기서 메시지를 다시 전달하면 무한 루프가 발생하므로 해서는 안 된다:
 	// KeyboardControl → IME_MessageProcessor → KeyboardControl → ...
 	//
-	// This function is kept as a stub for compatibility.
+	// 이 함수는 호환성을 위해 스텁으로 남겨둔다.
 	(void)message;
 	(void)wParam;
 	(void)lParam;
@@ -116,27 +116,27 @@ void CI_KOREAN::IME_MessageProcessor(UINT message, WPARAM wParam, LPARAM lParam)
 
 void CI_KOREAN::IME_NextComposition()
 {
-	/* Stub: Korean IME not implemented on macOS */
+	/* 스텁: macOS에서는 한글 IME 미구현 */
 }
 
 void CI_KOREAN::IME_Composition()
 {
-	/* Stub: Korean IME not implemented on macOS */
+	/* 스텁: macOS에서는 한글 IME 미구현 */
 }
 
 //----------------------------------------------------------------------------
-// CI_CHINESE implementations
+// CI_CHINESE 구현
 //----------------------------------------------------------------------------
 void CI_CHINESE::IME_MessageProcessor(UINT message, WPARAM wParam, LPARAM lParam)
 {
-	// On macOS/SDL2, we bypass the Windows IME system entirely.
-	// Keyboard events are already routed through the normal event flow:
+	// macOS/SDL2에서는 Windows IME 시스템을 완전히 우회한다.
+	// 키보드 이벤트는 이미 일반 이벤트 흐름을 통해 전달된다:
 	// DXKeyboardEvent → gC_vs_ui.KeyboardControl → WindowManager → Window
 	//
-	// We should NOT forward messages here as it would cause infinite loops:
+	// 여기서 메시지를 다시 전달하면 무한 루프가 발생하므로 해서는 안 된다:
 	// KeyboardControl → IME_MessageProcessor → KeyboardControl → ...
 	//
-	// This function is kept as a stub for compatibility.
+	// 이 함수는 호환성을 위해 스텁으로 남겨둔다.
 	(void)message;
 	(void)wParam;
 	(void)lParam;
@@ -144,12 +144,12 @@ void CI_CHINESE::IME_MessageProcessor(UINT message, WPARAM wParam, LPARAM lParam
 
 void CI_CHINESE::IME_NextComposition()
 {
-	/* Stub: Chinese IME not implemented on macOS */
+	/* 스텁: macOS에서는 중국어 IME 미구현 */
 }
 
 void CI_CHINESE::IME_Composition()
 {
-	/* Stub: Chinese IME not implemented on macOS */
+	/* 스텁: macOS에서는 중국어 IME 미구현 */
 }
 
-// g_GetStringByMoney is provided by RenderingFunctions.cpp for SDL builds.
+// g_GetStringByMoney는 SDL 빌드에서 RenderingFunctions.cpp가 제공한다.

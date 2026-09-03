@@ -207,7 +207,7 @@ void	C_VS_UI_NEWCHAR::_ShowCharacterSlayer( int _x, int _y, S_SLOT* p_slot, int 
 	else
 		info = &p_slot->man_info;
 	
-	// 그냥 편하게 둘다 바지색으로 설정.. - -; by sigi
+	// 그냥 편하게 둘다 바지색으로 설정.. - -; sigi 작성
 	int item_color = p_slot->trouser_color;
 	if(item_color == QUEST_ITEM_COLOR )
 		item_color = MItem::GetQuestItemColorset();
@@ -620,7 +620,7 @@ void	C_VS_UI_NEWCHAR::_ShowCharacterACSlayer( int _x, int _y, S_SLOT* p_slot, in
 	else
 		info = &p_slot->man_info;
 	
-	// 그냥 편하게 둘다 바지색으로 설정.. - -; by sigi
+	// 그냥 편하게 둘다 바지색으로 설정.. - -; sigi 작성
 	int item_color = p_slot->trouser_color;
 	if(item_color == QUEST_ITEM_COLOR )
 		item_color = MItem::GetQuestItemColorset();
@@ -716,7 +716,7 @@ void	C_VS_UI_NEWCHAR::_ShowCharacterACSlayer( int _x, int _y, S_SLOT* p_slot, in
 			break;
 		}
 		try{
-		//by viva
+		// viva 작성
 		if(clothes>slayerFPK.GetSize()-1) continue;
 		if(action>slayerFPK[clothes].GetSize()-1) continue;
 
@@ -730,6 +730,6 @@ void	C_VS_UI_NEWCHAR::_ShowCharacterACSlayer( int _x, int _y, S_SLOT* p_slot, in
 			gpC_base->m_p_DDSurface_back->BltIndexSpriteDarkness( &point, &addonISPK[ sprite_id ], DARK_BIT );
 		else
 			gpC_base->m_p_DDSurface_back->BltIndexSprite( &point, &addonISPK[ sprite_id ] );
-		}catch(...){}//by viva
+		}catch(...){}// viva 작성
 	}
 }

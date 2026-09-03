@@ -1,4 +1,4 @@
-#include "client_PCH.h"
+﻿#include "client_PCH.h"
 
 #include "VS_UI_progress.h"
 #include "VS_UI_filepath.h"
@@ -71,7 +71,7 @@ C_VS_UI_PROGRESS::C_VS_UI_PROGRESS()
 	m_pC_progress = NULL;
 	m_pC_event_progress = NULL;
 	m_pC_character = NULL;
-	// add by coffee 2006-12-21
+	// coffee 추가, 2006-12-21
 	//num=PROGRESS_MAX;
 	// end 2006-12-21
 	if(num >= PROGRESS_MAX)
@@ -361,7 +361,7 @@ void C_VS_UI_PROGRESS::SetProgress(WORD cur_val, WORD max_val)
 }
 
 //-----------------------------------------------------------------------------
-// DrawBar (Based on Vampire Energy interface)
+// DrawBar (뱀파이어 에너지 인터페이스 기반)
 //
 //
 //-----------------------------------------------------------------------------
@@ -430,7 +430,7 @@ void C_VS_UI_PROGRESS::Show()
 			rect.Set(0, 0, (*m_pC_character)[0].GetWidth(), (*m_pC_character)[0].GetHeight()*(100-m_percent)/100);
 			rt.left = max(-p.x, rect.x);
 			rt.top = max(-p.y, rect.y);
-			// add by Sonic 2006.9.26
+			// Sonic 추가, 2006.9.26
 			if(g_MyFull)
 			{
 				rt.right = min(rect.x+rect.w, 1024-p.x);
@@ -453,7 +453,7 @@ void C_VS_UI_PROGRESS::Show()
 			SetRect((RECT *)&rect, 0, (*m_pC_character)[0].GetHeight()*(100-m_percent)/100, (*m_pC_character)[0].GetWidth(), (*m_pC_character)[0].GetHeight() - (*m_pC_character)[0].GetHeight()*(100-m_percent)/100);
 			rt.left = max(-p.x, rect.x);
 			rt.top = max(-p.y, rect.y);
-			// add by Sonic 2006.9.26
+			// Sonic 추가, 2006.9.26
 			if(g_MyFull)
 			{
 				rt.right = min(rect.x+rect.w, 1024-p.x);
@@ -482,7 +482,7 @@ void C_VS_UI_PROGRESS::Show()
 			
 			
 
-			// add by Sonic 2006.9.26
+			// Sonic 추가, 2006.9.26
 			if(g_MyFull)
 			{
 				p.x = 1024 - (*m_pC_progress)[CHAR_NAME_BACK].GetWidth()-10;
@@ -552,7 +552,7 @@ void C_VS_UI_PROGRESS::Show()
 	}
 	name += ")";
 
-	g_PrintColorStr(400 - g_GetStringWidth(name.c_str(), gpC_base->m_dialog_menu_pi.hfont)/2, 520, name.c_str(), gpC_base->m_desc_menu_pi, focus_color);//by larosel
+	g_PrintColorStr(400 - g_GetStringWidth(name.c_str(), gpC_base->m_dialog_menu_pi.hfont)/2, 520, name.c_str(), gpC_base->m_desc_menu_pi, focus_color);// larosel 작성
 
 	if(m_pC_event_progress == NULL)
 	{

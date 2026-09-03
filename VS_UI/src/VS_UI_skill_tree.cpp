@@ -1,4 +1,4 @@
-// VS_UI_skill_tree.cpp
+﻿// VS_UI_skill_tree.cpp
 
 #include "client_PCH.h"
 
@@ -6,7 +6,7 @@
 //#include "VS_UI_filepath.h"
 //#include "VS_UI_Description.h"
 /*
-// close button
+// 닫기 버튼
 #define ADD_CLOSE_BUTTON	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(Right()-94, Down()-66, gpC_global_resource->m_pC_assemble_box_button_spk->GetWidth(C_GLOBAL_RESOURCE::AB_BUTTON_CLOSE), gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_CLOSE), SKILLTREE_CLOSE_ID, this, C_GLOBAL_RESOURCE::AB_BUTTON_CLOSE));
 
 //
@@ -279,7 +279,7 @@ void	C_VS_UI_SKILL_TREE::ShowButtonWidget(C_VS_UI_EVENT_BUTTON * p_button)
 		}
 		//*/
 
-		// test ----------------------------------------------------
+		// 테스트 ----------------------------------------------------
 		/*
 		if (p_button->GetPressState())
 		{
@@ -287,7 +287,7 @@ void	C_VS_UI_SKILL_TREE::ShowButtonWidget(C_VS_UI_EVENT_BUTTON * p_button)
 		m_skill_icon_bright_image_spk.Blt(p_button->x+4, p_button->y+4, p_button->m_image_index);
 		}
 		*/
-		// end of test ---------------------------------------------
+		// 테스트 끝 ---------------------------------------------
 
 		/*
 		MSkillDomain& domain = (*g_pSkillManager)[m_skill_domain];
@@ -316,7 +316,7 @@ void	C_VS_UI_SKILL_TREE::ShowButtonWidget(C_VS_UI_EVENT_BUTTON * p_button)
 			{
 			m_skill_icon_bright_image_spk.Blt(p_button->x+4, p_button->y+4, p_button->m_image_index);
 
-			// guard
+			// 가드
 			m_p_etc_image_spk->Blt(p_button->x, p_button->y, ICON_GUARD);
 			}
 
@@ -409,7 +409,7 @@ C_VS_UI_SKILL_TREE_ENCHANT::C_VS_UI_SKILL_TREE_ENCHANT()
 
 	ADD_CLOSE_BUTTON;
 
-	// add skill icon button!
+	// 스킬 아이콘 버튼 추가!
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+120, y+33, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[0].id, this, 0));
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+120, y+89, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[1].id, this, 1));
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+120, y+140, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[2].id, this, 2));
@@ -498,7 +498,7 @@ C_VS_UI_SKILL_TREE_SWORD::C_VS_UI_SKILL_TREE_SWORD()
 
 	ADD_CLOSE_BUTTON;
 
-	// add skill icon button!
+	// 스킬 아이콘 버튼 추가!
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+120, y+33, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[0].id, this, 0));
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+120, y+78, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[1].id, this, 1));
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+66, y+124, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[2].id, this, 2));
@@ -584,7 +584,7 @@ C_VS_UI_SKILL_TREE_VAMPIRE::C_VS_UI_SKILL_TREE_VAMPIRE()
 
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+305, y+454, gpC_global_resource->m_pC_assemble_box_button_spk->GetWidth(C_GLOBAL_RESOURCE::AB_BUTTON_CLOSE), gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_CLOSE), SKILLTREE_CLOSE_ID, this, C_GLOBAL_RESOURCE::AB_BUTTON_CLOSE));
 
-	// add skill icon button!
+	// 스킬 아이콘 버튼 추가!
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+104, y+96, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[0].id, this, 0));
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+163, y+96, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[1].id, this, 1));
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+223, y+96, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[2].id, this, 2));
@@ -667,7 +667,7 @@ C_VS_UI_SKILL_TREE_BLADE::C_VS_UI_SKILL_TREE_BLADE()
 
 	ADD_CLOSE_BUTTON;
 
-	// add skill icon button!
+	// 스킬 아이콘 버튼 추가!
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+120, y+33, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[0].id, this, 0));
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+120, y+78, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[1].id, this, 1));
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+66, y+124, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[2].id, this, 2));
@@ -753,7 +753,7 @@ C_VS_UI_SKILL_TREE_HEAL::C_VS_UI_SKILL_TREE_HEAL()
 
 	ADD_CLOSE_BUTTON;
 
-	// add skill icon button!
+	// 스킬 아이콘 버튼 추가!
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+120, y+33, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[0].id, this, 0));
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+120, y+89, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[1].id, this, 1));
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+120, y+140, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[2].id, this, 2));
@@ -843,7 +843,7 @@ C_VS_UI_SKILL_TREE_GUN::C_VS_UI_SKILL_TREE_GUN()
 
 	ADD_CLOSE_BUTTON;
 
-	// add skill icon button!
+	// 스킬 아이콘 버튼 추가!
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+120, y+33, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[0].id, this, 0));
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+120, y+78, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[1].id, this, 1));
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+120, y+124, SKILL_GUARD_X, SKILL_GUARD_Y, m_skill_icon_tab[2].id, this, 2));

@@ -12,7 +12,7 @@ extern	BOOL g_MyFull;
 //#define TEMP_FILE			"_000_TEMP"
 
 //----------------------------------------------------------------------------
-// Operations
+// 연산
 //----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
@@ -302,7 +302,7 @@ void C_ANIMATION::Timer()
 
 	if (m_dw_prev_tickcount+m_dw_millisec <= GetTickCount())
 	{
-		// next frame!
+		// 다음 프레임!
 
 		m_dw_prev_tickcount = GetTickCount();
 
@@ -444,7 +444,7 @@ void C_ANIMATION::SetPlayPosition(int x, int y)
 -----------------------------------------------------------------------------*/
 void C_ANIMATION::PlayLoop()
 {
-	// refresh timer
+	// 타이머 갱신
 	m_dw_prev_tickcount = GetTickCount();
 
 	m_play_order = PLAY_LOOP;
@@ -454,11 +454,11 @@ void C_ANIMATION::PlayLoop()
 //-----------------------------------------------------------------------------
 // PlayLoopBack
 //
-// play -> back -> play (반복)
+// 재생 -> 되감기 -> 재생 (반복)
 //-----------------------------------------------------------------------------
 void C_ANIMATION::PlayLoopBack()
 {
-	// refresh timer
+	// 타이머 갱신
 	m_dw_prev_tickcount = GetTickCount();
 
 	m_play_order = PLAY_LOOPBACK;
@@ -472,7 +472,7 @@ void C_ANIMATION::PlayLoopBack()
 -----------------------------------------------------------------------------*/
 void C_ANIMATION::Play()
 {
-	// refresh timer
+	// 타이머 갱신
 	m_dw_prev_tickcount = GetTickCount();
 	
 	m_current_frame = 0;
@@ -486,7 +486,7 @@ void C_ANIMATION::Play()
 //-----------------------------------------------------------------------------
 void C_ANIMATION::Stop()
 {
-	// refresh timer
+	// 타이머 갱신
 	m_dw_prev_tickcount = GetTickCount();
 
 	m_play_order = STOP;
@@ -530,7 +530,7 @@ void C_ANIMATION::Refresh()
 -----------------------------------------------------------------------------*/
 void C_ANIMATION::PlayBack()
 {
-	// refresh timer
+	// 타이머 갱신
 	m_dw_prev_tickcount = GetTickCount();
 
 	m_play_order = PLAY_BACK;
@@ -646,7 +646,7 @@ void C_SPRITE_PACK::Open(const char *sz_filename)
 //	if (!sz_filename)// || !m_pC_spk_list)		// by sigi
 //		_ErrorStr((char *)sz_filename);//(FAILED_JOB);
 
-	// by sigi
+	// sigi 작성
 	// 이전에 load했다면 release한다.
 	//if (m_pC_spk_list->GetSize() > 0)
 	//	m_pC_spk_list->Release();
@@ -660,9 +660,9 @@ void C_SPRITE_PACK::Open(const char *sz_filename)
 
 	//m_pC_spk_list->LoadFromFile(file);
 
-	// Convert path separators for cross-platform compatibility
-	// On Windows: no conversion (keeps backslashes)
-	// On Unix/macOS: converts backslashes to forward slashes
+	// 크로스 플랫폼 호환을 위해 경로 구분자 변환
+	// Windows: 변환 없음(백슬래시 유지)
+	// Unix/macOS: 백슬래시를 슬래시로 변환
 	std::string convertedPath = ConvertGamePath(sz_filename);
 	m_SPK.LoadFromFileRunning( convertedPath.c_str() );
 }
@@ -676,7 +676,7 @@ C_SPRITE_PACK::C_SPRITE_PACK(const char *sz_filename)
 	// Sprite를 저장할 때 565인지 555인지 알아야되니까...
 	// 그런데 이 검사를 외부에서 하게 했다는군...
 	
-	// by sigi
+	// sigi 작성
 	//if (CSDLGraphics::Is565())
 	//	m_pC_spk_list = new CSpritePackList565;
 	//else
@@ -815,7 +815,7 @@ void C_SPRITE_PACK::BltClip(int x, int y, Rect &rect, SPRITE_ID sprite_id)
 		RECT rt;
 		rt.left = max(-x, rect.x);
 		rt.top = max(-y, rect.y);
-		// add by Sonic 2006.9.26
+		// Sonic 추가, 2006.9.26
 		if(g_MyFull)
 		{
 			rt.right = min(rect.x+rect.w, 1024-x);
@@ -1146,7 +1146,7 @@ void C_SPRITE_PACK::BltLockedClip(int x, int y, Rect &rect, SPRITE_ID sprite_id)
 	RECT rt;
 	rt.left = max(-x, rect.x);
 	rt.top = max(-y, rect.y);
-	// add by Sonic 2006.9.26
+	// Sonic 추가, 2006.9.26
 	if(g_MyFull)
 	{
 		rt.right = min(rect.x+rect.w, 1024-x);

@@ -1,4 +1,4 @@
-
+﻿
 
 
 #include "client_PCH.h"
@@ -118,7 +118,7 @@ bool C_VS_UI_WEBBROWSER::Start(HWND hwndApp,  char* pURL, void* pWebOjbect)
     
 
 
-	m_pWebBrowser->put_Visible( TRUE );  // Works fine...
+	m_pWebBrowser->put_Visible( TRUE );  // 정상 작동...
 
 	//SetWebBrowserSize(0, 50, 800, 550);
 	SetWebBrowserSize(0, 50, 600, 400);
@@ -167,8 +167,8 @@ DWORD C_VS_UI_WEBBROWSER::GetWebBrowserStyle()
 //-----------------------------------------------------------------------------
 // GetMouseCursorInfo
 
-// 	return value == 1 : ShowCursor(TRUE)
-//	return value == -1 : ShowCursor(FALSE)
+// 	반환값 == 1 : ShowCursor(TRUE)
+//	반환값 == -1 : ShowCursor(FALSE)
 //-----------------------------------------------------------------------------
 int C_VS_UI_WEBBROWSER::GetMouseCursorInfo()
 {

@@ -129,7 +129,7 @@ public:
 	C_VS_UI_BOOKCASE();
 	~C_VS_UI_BOOKCASE();
 
-	bool	IsReadingBook()			{ return m_pC_book!=NULL; }	// by sigi
+	bool	IsReadingBook()			{ return m_pC_book!=NULL; }	// sigi 작성
 	void	CloseBook();
 
 	void	Process();
@@ -181,7 +181,7 @@ private:
 	
 	CRarFile					m_briefing_file;
 
-	//timer
+	// 타이머
 	DWORD						m_dw_prev_tickcount;
 	DWORD						m_dw_millisec;
 
@@ -253,7 +253,7 @@ private:
 	int							m_tree_limit_h;
 	int							m_tree_scroll, m_tree_scroll_x;
 
-// TIMER
+// 타이머
 	bool						m_timer;
 	DWORD						m_dw_prev_tickcount;
 	DWORD						m_dw_millisec;

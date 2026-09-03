@@ -1,14 +1,14 @@
-#ifndef __LINE_EDITOR_H__
+﻿#ifndef __LINE_EDITOR_H__
 #define __LINE_EDITOR_H__
 
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
 
-// Get PrintInfo definition from Fl2.h
+// Fl2.h에서 PrintInfo 정의 가져오기
 #include "../hangul/Fl2.h"
 
-// Get Point class definition
+// Point 클래스 정의 가져오기
 #include "../../../basic/BasicData.h"
 
 /**
@@ -21,30 +21,30 @@ class LineEditor
 public:
     static const int MAX_TEXT = 1024;
 
-    // UTF-32 text buffer for proper multilingual support
+    // 다국어를 제대로 지원하기 위한 UTF-32 텍스트 버퍼
     uint32_t m_Text[MAX_TEXT];
-    int m_CursorPos;                // Cursor position (in characters)
-    int m_TextLen;                 // Text length (in characters)
-    int m_Limit;                   // Maximum character count
+    int m_CursorPos;                // 커서 위치 (문자 단위)
+    int m_TextLen;                 // 텍스트 길이 (문자 단위)
+    int m_Limit;                   // 최대 문자 수
     bool m_bAcquired;
 
-    // IME composition buffer (text being composed)
+    // IME 조합 버퍼 (조합 중인 텍스트)
     uint32_t m_Composing[MAX_TEXT];
     int m_ComposingLen;
 
     LineEditor();
     ~LineEditor() = default;
 
-    // Basic methods
+    // 기본 메서드
     void Acquire();
     void Unacquire();
     bool IsAcquire() const;
 
-    // New SDL text input methods
+    // 새로운 SDL 텍스트 입력 메서드
     void HandleTextInput(const char* text);
     void HandleTextEditing(const char* text, int start, int length);
 
-    // Text manipulation methods
+    // 텍스트 조작 메서드
     void InsertText(const uint32_t* text, int len);
     void InsertChar(uint32_t c);
     void DeleteChar(int offset);
@@ -54,13 +54,13 @@ public:
     int GetCursorPos() const { return m_CursorPos; }
     int GetTextLen() const { return m_TextLen; }
 
-    // IME composition
+    // IME 조합
     void StartComposition(const char* text, int start, int length);
     void UpdateComposition(const char* text, int start, int length);
     void EndComposition();
     bool IsComposing() const { return m_ComposingLen > 0; }
 
-    // Legacy compatibility methods (operate on UTF-8)
+    // 레거시 호환 메서드 (UTF-8 기반 동작)
     void AddString(const char* pStr);
     void EraseAll();
     void EraseCharacterBegin();
@@ -70,11 +70,11 @@ public:
     void InsertMark(unsigned short mark);
     void KeyboardControl(unsigned int message, unsigned int key, long extra);
 
-    // Get text as UTF-8 string (for compatibility)
-    const char* GetBuffer() const;  // Returns temporary UTF-8 buffer
-    const char* GetString() const { return GetBuffer(); }  // Alias for GetBuffer()
-    int Size() const { return m_TextLen; }  // Character count
-    int GetCursor() const { return m_CursorPos; }  // Cursor position
+    // 텍스트를 UTF-8 문자열로 반환 (호환성용)
+    const char* GetBuffer() const;  // 임시 UTF-8 버퍼 반환
+    const char* GetString() const { return GetBuffer(); }  // GetBuffer()의 별칭
+    int Size() const { return m_TextLen; }  // 문자 수
+    int GetCursor() const { return m_CursorPos; }  // 커서 위치
 };
 
 class LineEditorVisual
@@ -91,10 +91,10 @@ public:
     unsigned long m_CursorColor;
 
 #ifdef PLATFORM_MACOS
-    // Font Atlas rendering system
-    void* m_GlyphCache;      // CGlyphCache* (void* to avoid header dependency)
-    void* m_Layout;          // CTextLayout* (void* to avoid header dependency)
-    bool m_LayoutDirty;      // Flag to rebuild layout
+    // Font Atlas 렌더링 시스템
+    void* m_GlyphCache;      // CGlyphCache* (헤더 의존성을 피하기 위해 void*)
+    void* m_Layout;          // CTextLayout* (헤더 의존성을 피하기 위해 void*)
+    bool m_LayoutDirty;      // 레이아웃 재구성 플래그
 #endif
 
     LineEditorVisual();
@@ -104,7 +104,7 @@ public:
     void Unacquire();
     bool IsAcquire() const { return m_bAcquired; }
 
-    // Forwarding methods to m_Editor for compatibility
+    // 호환성을 위해 m_Editor로 전달하는 메서드
     void AddString(const char* pStr) { m_Editor.AddString(pStr); }
     void EraseAll() { m_Editor.EraseAll(); }
     void EraseCharacterBegin() { m_Editor.EraseCharacterBegin(); }
@@ -114,23 +114,23 @@ public:
     }
     const char* GetString() const { return m_Editor.GetString(); }
 
-    // Compatibility method: return const char_t* (wide string) for old code
+    // 호환성 메서드: 기존 코드를 위해 const char_t*(wide string) 반환
     const char_t* GetStringWide() const;
 
     int Size() const { return m_Editor.Size(); }
     int GetCursor() const { return m_Editor.GetCursor(); }
     void InsertMark(char_t ch) { m_Editor.InsertMark((unsigned short)ch); }
 
-    // Cursor movement
+    // 커서 이동
     void HomeCursor() { m_Editor.HomeCursor(); }
     void EndCursor() { m_Editor.EndCursor(); }
 
-    // Set text color
-    void SetInputStringColor(unsigned long rgb) { m_CursorColor = rgb; }  // Use cursor color for text color
+    // 텍스트 색상 설정
+    void SetInputStringColor(unsigned long rgb) { m_CursorColor = rgb; }  // 텍스트 색상으로 커서 색상 사용
 
-    // Editor mode (stub for compatibility)
-    void SetEditorMode(int gap, int height = 0) { /* Stub: not needed for SDL implementation */ }
-    void SetDigitOnlyMode(bool enable) { /* Stub: not needed for SDL implementation */ }
+    // 에디터 모드 (호환성을 위한 스텁)
+    void SetEditorMode(int gap, int height = 0) { /* 스텁: SDL 구현에서는 불필요 */ }
+    void SetDigitOnlyMode(bool enable) { /* 스텁: SDL 구현에서는 불필요 */ }
 
     void SetPosition(int x, int y);
     void SetAbsWidth(int width);
@@ -141,8 +141,8 @@ public:
     bool ReachSizeOfBox() const;
     void Show() const;
 
-    // GetPosition method - returns BasicData::Point
-    Point GetPosition() const;  // Implementation in cpp file
+    // GetPosition 메서드 - BasicData::Point 반환
+    Point GetPosition() const;  // cpp 파일에 구현됨
 };
 
 #endif // __LINE_EDITOR_H__

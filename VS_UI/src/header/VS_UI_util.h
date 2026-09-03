@@ -59,13 +59,13 @@ class C_SPRITE_PACK
 {
 private:
 	//CSpritePackList *	m_pC_spk_list; // 565, 555를 결정해야하기 때문에 pointer로.
-	CSpritePack			m_SPK;	// by sigi
+	CSpritePack			m_SPK;	// sigi 작성
 
-	// Disable copy constructor and copy assignment to prevent issues with m_file pointer
+	// m_file 포인터 관련 문제를 방지하기 위해 복사 생성자와 복사 대입 연산자를 비활성화
 	C_SPRITE_PACK(const C_SPRITE_PACK&) = delete;
 	C_SPRITE_PACK& operator=(const C_SPRITE_PACK&) = delete;
 
-	// Disable move constructor and move assignment to prevent m_file pointer from being moved
+	// m_file 포인터가 이동되는 것을 방지하기 위해 이동 생성자와 이동 대입 연산자를 비활성화
 	C_SPRITE_PACK(C_SPRITE_PACK&&) = delete;
 	C_SPRITE_PACK& operator=(C_SPRITE_PACK&&) = delete;
 
@@ -203,7 +203,7 @@ private:
 public:
 	enum PLAY_ORDER
 	{
-		STOP,					// stop
+		STOP,					// 정지
 		PLAY,					// 0번 frame부터 끝까지 한 번만.
 		PLAY_LOOP,			// play를 계속 반복.
 		PLAY_BACK,			// 끝 frame부터 0번까지 한 번만.
@@ -237,7 +237,7 @@ public:
 };
 
 //----------------------------------------------------------------------------
-// Class SpriteFrame
+// SpriteFrame 클래스
 //----------------------------------------------------------------------------
 class C_SPRITE_FRAME
 {
@@ -250,7 +250,7 @@ public:
 	~C_SPRITE_FRAME();
 
 //----------------------------------------------------------------------------
-// Open/Save
+// 열기/저장
 //----------------------------------------------------------------------------
 	bool	Open(const char * pathfile);
 	bool	Save(const char * pathfile);
@@ -269,7 +269,7 @@ public:
 };
 
 //----------------------------------------------------------------------------
-// Class SpriteFrame Array
+// SpriteFrame 배열 클래스
 //----------------------------------------------------------------------------
 class C_SPRITE_FRAME_ARRAY
 {
@@ -287,7 +287,7 @@ public:
 };
 
 //----------------------------------------------------------------------------
-// Public
+// 공개
 //----------------------------------------------------------------------------
 //void Read_rbt(const char * rbt_file, CSpritePackList * p_spk_list, C_CONVERT_TABLE * p_ct);
 //void Read_rbt(const char * rbt_file, C_SPRITE_FRAME_ARRAY * p_sf_array, C_CONVERT_TABLE * p_ct);

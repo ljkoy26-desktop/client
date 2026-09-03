@@ -1,4 +1,4 @@
-// u_button.cpp
+﻿// u_button.cpp
 
 #include "client_PCH.h"
 
@@ -47,7 +47,7 @@ bool EventButton::MouseControl(UINT message, int _x, int _y)
 		//
 		// M_MOVING
 		//
-		// focus of/off
+		// 포커스 켜짐/꺼짐
 		//
 		case M_MOVING:
 			if (IsInRect(_x, _y))
@@ -68,7 +68,7 @@ bool EventButton::MouseControl(UINT message, int _x, int _y)
 		//
 		// M_LEFTBUTTON_DOWN, M_LB_DOUBLECLICK
 		//
-		// button press down.
+		// 버튼 눌림.
 		//
 		case M_LEFTBUTTON_DOWN:
 		case M_LB_DOUBLECLICK:
@@ -82,12 +82,12 @@ bool EventButton::MouseControl(UINT message, int _x, int _y)
 		//
 		// M_LEFTBUTTON_UP
 		//
-		// button press up.
+		// 버튼 뗌.
 		//
 		case M_LEFTBUTTON_UP:
-			if (GetFocusState()) // focus: yes
+			if (GetFocusState()) // 포커스: 있음
 			{
-				if (GetPressState()) // press: yes
+				if (GetPressState()) // 눌림: 있음
 				{
 					EventPressUp();
 				}
@@ -96,7 +96,7 @@ bool EventButton::MouseControl(UINT message, int _x, int _y)
 
 #ifndef _LIB
 		case M_RIGHTBUTTON_UP:
-			if (GetFocusState()) // focus: yes
+			if (GetFocusState()) // 포커스: 있음
 				g_EventButton = this;
 			break;
 #endif
@@ -189,7 +189,7 @@ Button::~Button()
 //-----------------------------------------------------------------------------
 void Button::Run()
 {
-	if (m_pC_exec_handler) // set handler?
+	if (m_pC_exec_handler) // 핸들러 설정됨?
 		m_pC_exec_handler->Run(m_id);
 }
 
@@ -206,12 +206,12 @@ void Button::SetID(id_t id)
 //-----------------------------------------------------------------------------
 // MouseControl
 //
-// Button input interface.
+// 버튼 입력 인터페이스.
 // 
 
 
 //
-// Example:
+// 예제:
 
 //					if (button->MouseControl())
 //						...
@@ -219,7 +219,7 @@ void Button::SetID(id_t id)
 //
 
 //
-// History:
+// 이력:
 //				[2000.8.5. 3:15pm]
 //
 
@@ -256,7 +256,7 @@ bool Button::MouseControl(UINT message, int _x, int _y)
 		//
 		// M_MOVING
 		//
-		// focus of/off
+		// 포커스 켜짐/꺼짐
 		//
 		case M_MOVING:
 			if (IsInRect(_x, _y))
@@ -272,7 +272,7 @@ bool Button::MouseControl(UINT message, int _x, int _y)
 		//
 		// M_LEFTBUTTON_DOWN, M_LB_DOUBLECLICK
 		//
-		// button press down.
+		// 버튼 눌림.
 		//
 		case M_LEFTBUTTON_DOWN:
 		case M_LB_DOUBLECLICK:
@@ -290,32 +290,32 @@ bool Button::MouseControl(UINT message, int _x, int _y)
 		//
 		// M_LEFTBUTTON_UP
 		//
-		// button press up -> execution!
+		// 버튼 뗌 -> 실행!
 		//
 		case M_LEFTBUTTON_UP:
-			if (GetFocusState()) // focus: yes
+			if (GetFocusState()) // 포커스: 있음
 			{
-				if (GetPressState()) // press: yes
+				if (GetPressState()) // 눌림: 있음
 				{
 					PressUp();
 
 					if (m_click_option == RUN_WHEN_PUSHUP)
 						Run();
 				}
-				else // press: no
+				else // 눌림: 없음
 				{
-					// no code!
+					// 코드 없음!
 				}
 			}
-			else // focus: no
+			else // 포커스: 없음
 			{
-				if (GetPressState()) // press: yes
+				if (GetPressState()) // 눌림: 있음
 				{
 					PressUp();
 				}
-				else // press: no
+				else // 눌림: 없음
 				{
-					// no code!
+					// 코드 없음!
 				}
 			}
 	}

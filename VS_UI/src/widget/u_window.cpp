@@ -18,7 +18,7 @@
 extern RECT g_GameRect;
 
 //----------------------------------------------------------------------------
-// Globals
+// 전역 변수
 //----------------------------------------------------------------------------
 WindowManager *	gpC_window_manager; // App에서 할당한다.
 
@@ -517,8 +517,8 @@ void Window::KeyboardControl(UINT message, UINT key, long extra)
 #ifdef PLATFORM_WINDOWS
 	gC_ci->IME_MessageProcessor(message, key, extra);
 #else
-	// On macOS/SDL2, the CI::IME_MessageProcessor is a stub
-	// Windows that need keyboard input should override this method
+	// macOS/SDL2에서는 CI::IME_MessageProcessor가 스텁이다
+	// 키보드 입력이 필요한 Window는 이 메서드를 오버라이드해야 한다
 	(void)message;
 	(void)key;
 	(void)extra;

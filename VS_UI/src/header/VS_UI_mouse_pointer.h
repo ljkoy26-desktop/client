@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	VS_UI_mouse_pointer.h
 
@@ -16,19 +16,19 @@
 #include "MItem.h"
 #include <limits.h>
 
-// Forward declaration for Window class (defined in u_window.h)
+// Window 클래스 전방 선언 (u_window.h에 정의됨)
 class Window;
 
 /*-----------------------------------------------------------------------------
-  Class Mouse Pointer
-  `Pointer animation, Item pick up...
+  마우스 포인터 클래스
+  `포인터 애니메이션, 아이템 집기...
 -----------------------------------------------------------------------------*/
 class C_VS_UI_MOUSE_POINTER
 {
 private:
 	C_SPRITE_PACK *			m_pC_mouse_pointer_spk;
 	bool							m_bl_pickup_item;
-	int							m_half_x; // of Mouse pointer object.
+	int							m_half_x; // 마우스 포인터 오브젝트의 절반 크기.
 	int							m_half_y;
 	int							m_mouse_x;
 	int							m_mouse_y;
@@ -38,7 +38,7 @@ private:
 	bool						m_bl_description;
 	bool						m_bl_coin;
 
-	//timer
+	// 타이머
 	DWORD						m_dw_prev_tickcount;
 	DWORD						m_dw_millisec;
 

@@ -1,4 +1,4 @@
-#include "U_edit.h"
+﻿#include "U_edit.h"
 #include "../hangul/CI.h"
 #include "../InputFocusManager.h"
 #include <stdint.h>
@@ -12,24 +12,24 @@
 #include "../../../Client/SpriteLib/CSpriteSurface.h"
 #endif
 
-// Forward declare FL2 functions (defined in hangul/FL2.cpp)
+// FL2 함수 전방 선언 (hangul/FL2.cpp에 정의됨)
 extern void g_Print(int x, int y, const char* sz_str, void* p_print_info);
 extern int g_GetStringWidth(const char* sz_str, void* hfont);
 extern int g_GetStringHeight(const char* sz_str, void* hfont);
 
-// External reference to global CI (for cursor blink state)
+// 전역 CI에 대한 외부 참조 (커서 깜빡임 상태용)
 extern CI* gC_ci;
 
-// External reference to back buffer surface (for spritectl blt)
+// 백 버퍼 서피스에 대한 외부 참조 (spritectl blt용)
 #ifdef PLATFORM_MACOS
-// External reference to SDL renderer
+// SDL 렌더러에 대한 외부 참조
 extern SDL_Renderer* g_pSDLRenderer;
 extern CSpriteSurface* g_pBack;
-extern CSpriteSurface* g_pLast;  // UI renders to g_pLast, not g_pBack!
+extern CSpriteSurface* g_pLast;  // UI는 g_pBack이 아닌 g_pLast에 렌더링한다!
 #endif
 
 // ============================================================================
-// UTF-8 <-> UTF-32 Conversion (from textbox_demo.c)
+// UTF-8 <-> UTF-32 변환 (textbox_demo.c에서 가져옴)
 // ============================================================================
 
 static int utf8_to_utf32(const char* s, uint32_t* out, int cap) {
@@ -52,7 +52,7 @@ static int utf8_to_utf32(const char* s, uint32_t* out, int cap) {
 			    ((*s++ & 0x3F) << 6) |
 			    (*s++ & 0x3F);
 		} else {
-			continue;  // Invalid UTF-8
+			continue;  // 잘못된 UTF-8
 		}
 		out[n++] = c;
 	}
@@ -86,7 +86,7 @@ static int utf32_to_utf8(uint32_t c, char out[5]) {
 }
 
 // ============================================================================
-// LineEditor implementation
+// LineEditor 구현
 // ============================================================================
 
 LineEditor::LineEditor()
@@ -115,31 +115,31 @@ bool LineEditor::IsAcquire() const
 	return m_bAcquired;
 }
 
-// Insert UTF-32 text at cursor position
+// 커서 위치에 UTF-32 텍스트 삽입
 void LineEditor::InsertText(const uint32_t* text, int len)
 {
 	if (len <= 0) return;
 	if (m_TextLen + len > m_Limit) return;
 
-	// Move existing text to make room
+	// 공간 확보를 위해 기존 텍스트 이동
 	memmove(&m_Text[m_CursorPos + len],
 	        &m_Text[m_CursorPos],
 	        (m_TextLen - m_CursorPos) * sizeof(uint32_t));
 
-	// Insert new text
+	// 새 텍스트 삽입
 	memcpy(&m_Text[m_CursorPos], text, len * sizeof(uint32_t));
 
 	m_CursorPos += len;
 	m_TextLen += len;
 }
 
-// Insert single UTF-32 character
+// 단일 UTF-32 문자 삽입
 void LineEditor::InsertChar(uint32_t c)
 {
 	InsertText(&c, 1);
 }
 
-// Delete character at offset
+// 오프셋 위치의 문자 삭제
 void LineEditor::DeleteChar(int offset)
 {
 	if (offset < 0 || offset >= m_TextLen) return;
@@ -150,26 +150,26 @@ void LineEditor::DeleteChar(int offset)
 
 	m_TextLen--;
 
-	// Adjust cursor position if it was after the deleted character
+	// 삭제된 문자 뒤에 있었다면 커서 위치 조정
 	if (m_CursorPos > offset) {
 		m_CursorPos--;
 	}
-	// Also ensure cursor doesn't go beyond text length
+	// 커서가 텍스트 길이를 넘어가지 않도록 보장
 	if (m_CursorPos > m_TextLen) {
 		m_CursorPos = m_TextLen;
 	}
 }
 
-// Delete character before cursor (backspace)
+// 커서 앞 문자 삭제 (백스페이스)
 void LineEditor::Backspace()
 {
 	if (m_CursorPos > 0) {
-		// DeleteChar will handle cursor adjustment
+		// DeleteChar가 커서 조정을 처리함
 		DeleteChar(m_CursorPos - 1);
 	}
 }
 
-// Move cursor by delta characters
+// delta 문자만큼 커서 이동
 void LineEditor::MoveCursor(int delta)
 {
 	int newPos = m_CursorPos + delta;
@@ -178,7 +178,7 @@ void LineEditor::MoveCursor(int delta)
 	m_CursorPos = newPos;
 }
 
-// Set cursor to absolute position
+// 커서를 절대 위치로 설정
 void LineEditor::SetCursor(int pos)
 {
 	if (pos < 0) pos = 0;
@@ -186,7 +186,7 @@ void LineEditor::SetCursor(int pos)
 	m_CursorPos = pos;
 }
 
-// Handle SDL_TEXTINPUT event (committed text)
+// SDL_TEXTINPUT 이벤트 처리 (확정된 텍스트)
 void LineEditor::HandleTextInput(const char* text)
 {
 	if (text == NULL || text[0] == '\0') return;
@@ -201,31 +201,31 @@ void LineEditor::HandleTextInput(const char* text)
 	InsertText(utf32, len);
 }
 
-// Handle SDL_TEXTEDITING event (IME composition in progress)
+// SDL_TEXTEDITING 이벤트 처리 (IME 조합 중)
 void LineEditor::HandleTextEditing(const char* text, int start, int length)
 {
 	if (length > 0) {
-		// Currently composing - store composition text
+		// 현재 조합 중 - 조합 텍스트 저장
 		m_ComposingLen = utf8_to_utf32(text, m_Composing, MAX_TEXT);
 	} else {
-		// Composition ended
+		// 조합 종료
 		EndComposition();
 	}
 }
 
-// Start IME composition
+// IME 조합 시작
 void LineEditor::StartComposition(const char* text, int start, int length)
 {
 	HandleTextEditing(text, start, length);
 }
 
-// Update IME composition
+// IME 조합 갱신
 void LineEditor::UpdateComposition(const char* text, int start, int length)
 {
 	HandleTextEditing(text, start, length);
 }
 
-// End IME composition (commit composed text)
+// IME 조합 종료 (조합된 텍스트 확정)
 void LineEditor::EndComposition()
 {
 	if (m_ComposingLen > 0) {
@@ -234,10 +234,10 @@ void LineEditor::EndComposition()
 	}
 }
 
-// Get text as UTF-8 string (for compatibility)
+// 텍스트를 UTF-8 문자열로 반환 (호환성용)
 const char* LineEditor::GetBuffer() const
 {
-	static char utf8_buffer[MAX_TEXT * 4 + 1];  // Worst case: 4 bytes per UTF-32 char
+	static char utf8_buffer[MAX_TEXT * 4 + 1];  // 최악의 경우: UTF-32 문자당 4바이트
 	int offset = 0;
 
 	for (int i = 0; i < m_TextLen && offset < (int)sizeof(utf8_buffer) - 4; i++) {
@@ -251,7 +251,7 @@ const char* LineEditor::GetBuffer() const
 	return utf8_buffer;
 }
 
-// Legacy: Add UTF-8 string (converts to UTF-32 internally)
+// 레거시: UTF-8 문자열 추가 (내부적으로 UTF-32로 변환)
 void LineEditor::AddString(const char* pStr)
 {
 	if (pStr == NULL) return;
@@ -264,7 +264,7 @@ void LineEditor::AddString(const char* pStr)
 	}
 }
 
-// Legacy: Clear all text
+// 레거시: 모든 텍스트 지우기
 void LineEditor::EraseAll()
 {
 	m_TextLen = 0;
@@ -273,30 +273,30 @@ void LineEditor::EraseAll()
 	m_ComposingLen = 0;
 }
 
-// Legacy: Delete character before cursor
+// 레거시: 커서 앞 문자 삭제
 void LineEditor::EraseCharacterBegin()
 {
 	Backspace();
 }
 
-// Legacy: Insert special mark
+// 레거시: 특수 마크 삽입
 void LineEditor::InsertMark(unsigned short mark)
 {
 	InsertChar((uint32_t)mark);
 }
 
-// KeyboardControl - main entry point for keyboard messages
+// KeyboardControl - 키보드 메시지의 메인 진입점
 void LineEditor::KeyboardControl(unsigned int message, unsigned int key, long extra)
 {
 	switch (message)
 	{
 	case WM_CHAR:
-		// Legacy: Single character input
+		// 레거시: 단일 문자 입력
 		InsertChar((uint32_t)key);
 		break;
 
 	case WM_TEXTINPUT:
-		// SDL_TEXTINPUT event (extra is text pointer)
+		// SDL_TEXTINPUT 이벤트 (extra는 텍스트 포인터)
 		{
 			const char* text = (const char*)extra;
 			HandleTextInput(text);
@@ -304,14 +304,14 @@ void LineEditor::KeyboardControl(unsigned int message, unsigned int key, long ex
 		break;
 
 	case WM_TEXTEDITING:
-		// SDL_TEXTEDITING event (composition)
-		// Note: This is a simplified handling - actual implementation would need the text
-		// For now, we just clear composition state when we get this message
+		// SDL_TEXTEDITING 이벤트 (조합)
+		// 참고: 단순화된 처리 - 실제 구현에는 텍스트가 필요함
+		// 지금은 이 메시지를 받으면 조합 상태만 초기화한다
 		m_ComposingLen = 0;
 		break;
 
 	case WM_KEYDOWN:
-		// Control keys
+		// 제어 키
 		switch (key)
 		{
 		case VK_BACK:
@@ -338,12 +338,12 @@ void LineEditor::KeyboardControl(unsigned int message, unsigned int key, long ex
 }
 
 // ============================================================================
-// LineEditorVisual implementation
+// LineEditorVisual 구현
 // ============================================================================
 
 LineEditorVisual::LineEditorVisual()
 {
-	// Debug: print offset
+	// 디버그: 오프셋 출력
 //	printf("DEBUG LineEditorVisual::LineEditorVisual: this=%p, &m_Editor=%p, &m_Editor.m_CursorPos=%p\n",
 //	       this, &m_Editor, &m_Editor.m_CursorPos);
 
@@ -365,15 +365,15 @@ LineEditorVisual::LineEditorVisual()
 	m_Layout = NULL;
 	m_LayoutDirty = true;
 
-	// Try to initialize Font Atlas rendering system
-	// Note: We'll create the actual objects when needed (lazy initialization)
-	// For now, we'll use g_Print() as fallback
+	// Font Atlas 렌더링 시스템 초기화 시도
+	// 참고: 실제 객체는 필요할 때 생성한다 (지연 초기화)
+	// 지금은 폴백으로 g_Print()를 사용한다
 #endif
 }
 
 LineEditorVisual::~LineEditorVisual()
 {
-	// Clear focus from InputFocusManager if this editor was focused
+	// 이 에디터가 포커스 상태였다면 InputFocusManager의 포커스 해제
 	if (InputFocusManager::GetInstance().GetFocusedEditor() == this) {
 		InputFocusManager::GetInstance().SetFocusedEditor(NULL);
 	}
@@ -381,21 +381,21 @@ LineEditorVisual::~LineEditorVisual()
 
 void LineEditorVisual::Acquire()
 {
-	// Register this editor as the focused editor
+	// 이 에디터를 포커스 에디터로 등록
 	InputFocusManager::GetInstance().SetFocusedEditor(this);
 
 	m_Editor.Acquire();
 	m_bAcquired = true;
 
 #ifdef PLATFORM_MACOS
-	// Enable SDL text input on macOS
+	// macOS에서 SDL 텍스트 입력 활성화
 	SDL_StartTextInput();
 #endif
 }
 
 void LineEditorVisual::Unacquire()
 {
-	// Release focus if this editor was focused
+	// 이 에디터가 포커스 상태였다면 포커스 해제
 	if (InputFocusManager::GetInstance().GetFocusedEditor() == this) {
 		InputFocusManager::GetInstance().SetFocusedEditor(NULL);
 	}
@@ -404,7 +404,7 @@ void LineEditorVisual::Unacquire()
 	m_bAcquired = false;
 
 #ifdef PLATFORM_MACOS
-	// Disable SDL text input on macOS
+	// macOS에서 SDL 텍스트 입력 비활성화
 	SDL_StopTextInput();
 #endif
 }
@@ -442,35 +442,35 @@ int LineEditorVisual::GetLineCount() const
 
 bool LineEditorVisual::ReachSizeOfBox() const
 {
-	// Use a default font size since PrintInfo doesn't have a size field
+	// PrintInfo에 크기 필드가 없으므로 기본 폰트 크기 사용
 	const int DEFAULT_FONT_SIZE = 12;
 	int len = m_Editor.GetTextLen();
 	return (len * DEFAULT_FONT_SIZE) >= m_MaxWidth;
 }
 
-// Compatibility method: convert UTF-32 to wide string (char_t/UTF-16LE)
+// 호환성 메서드: UTF-32를 wide string(char_t/UTF-16LE)으로 변환
 const char_t* LineEditorVisual::GetStringWide() const
 {
 	static char_t wide_buffer[LineEditor::MAX_TEXT];
 	int wide_len = 0;
 
-	// Convert directly from UTF-32 (m_Text) to UTF-16 (char_t)
+	// UTF-32(m_Text)에서 UTF-16(char_t)으로 직접 변환
 	for (int i = 0; i < m_Editor.m_TextLen && wide_len < LineEditor::MAX_TEXT - 1; i++) {
 		uint32_t c = m_Editor.m_Text[i];
 
-		// UTF-32 to UTF-16 conversion
+		// UTF-32에서 UTF-16으로 변환
 		if (c < 0x10000) {
-			// BMP character - single UTF-16 code unit
+			// BMP 문자 - 단일 UTF-16 코드 유닛
 			wide_buffer[wide_len++] = (char_t)c;
 		} else if (c < 0x10FFFF) {
-			// Supplementary plane - surrogate pair
+			// 보조 평면 - 서로게이트 쌍
 			if (wide_len + 1 >= LineEditor::MAX_TEXT - 1) break;
 
 			c -= 0x10000;
-			wide_buffer[wide_len++] = (char_t)(0xD800 + (c >> 10));      // High surrogate
-			wide_buffer[wide_len++] = (char_t)(0xDC00 + (c & 0x3FF));    // Low surrogate
+			wide_buffer[wide_len++] = (char_t)(0xD800 + (c >> 10));      // 상위 서로게이트
+			wide_buffer[wide_len++] = (char_t)(0xDC00 + (c & 0x3FF));    // 하위 서로게이트
 		} else {
-			// Invalid Unicode - use replacement character
+			// 잘못된 유니코드 - 대체 문자 사용
 			wide_buffer[wide_len++] = (char_t)0xFFFD;
 		}
 	}
@@ -482,10 +482,10 @@ const char_t* LineEditorVisual::GetStringWide() const
 
 void LineEditorVisual::Show() const
 {
-	// Get the text to display (as UTF-8)
+	// 표시할 텍스트 가져오기 (UTF-8)
 	const char* textToDisplay = m_Editor.GetBuffer();
 
-	// Handle password mode (show asterisks instead of actual text)
+	// 비밀번호 모드 처리 (실제 텍스트 대신 별표 표시)
 	char displayBuffer[1024];
 	if (m_bPasswordMode) {
 		int len = strlen(textToDisplay);
@@ -497,39 +497,39 @@ void LineEditorVisual::Show() const
 	}
 
 #ifdef PLATFORM_MACOS
-	// Use TextService for unified rendering
+	// 통합 렌더링을 위해 TextService 사용
 	extern CSpriteSurface* g_pLast;
 
-	// Build text style from PrintInfo
+	// PrintInfo로부터 텍스트 스타일 구성
 	TextSystem::TextStyle style;
-	style.font = TextSystem::TextService::Get().GetFont(14);  // Default font size
+	style.font = TextSystem::TextService::Get().GetFont(14);  // 기본 폰트 크기
 	style.align = TextSystem::TextAlign::Left;
 	style.lineSpacing = 0;
 	style.color = TextSystem::ColorFromRGB(m_PrintInfo.text_color);
 	style.color.a = 255;
 
-	// Create render target
+	// 렌더 타겟 생성
 	TextSystem::SpriteSurfaceRenderTarget target(g_pLast);
 
-	// Render text
-	// Note: TextService::DrawLine expects baseline position, but it adds GetFontAscent() internally
-	// So we pass m_Y directly as the baseline position
+	// 텍스트 렌더링
+	// 참고: TextService::DrawLine은 baseline 위치를 기대하지만 내부적으로 GetFontAscent()를 더한다
+	// 그래서 m_Y를 baseline 위치로 그대로 전달한다
 	TextSystem::TextService::Get().DrawLine(target, textToDisplay, m_X, m_Y, m_MaxWidth, style);
 
-	// Draw cursor if editor is acquired and cursor blink is on
+	// 에디터가 활성화되고 커서 깜빡임이 켜져 있으면 커서 그리기
 	if (m_Editor.m_bAcquired && gC_ci != NULL && gC_ci->GetCursorBlink()) {
-		// Calculate cursor X position using TextService
+		// TextService를 사용해 커서 X 위치 계산
 		int cursorX = m_X;
 		if (m_Editor.m_CursorPos > 0) {
-			// Get text before cursor
+			// 커서 앞의 텍스트 가져오기
 			char cursorBuffer[1024];
 			const char* fullText = textToDisplay;
 
-			// Convert cursor position (characters) to byte position
+			// 커서 위치(문자)를 바이트 위치로 변환
 			int bytePos = 0;
 			int charPos = 0;
 			while (charPos < m_Editor.m_CursorPos && fullText[bytePos] != '\0') {
-				if ((fullText[bytePos] & 0xC0) != 0x80) {  // Not a continuation byte
+				if ((fullText[bytePos] & 0xC0) != 0x80) {  // 연속 바이트가 아님
 					charPos++;
 				}
 				bytePos++;
@@ -538,40 +538,40 @@ void LineEditorVisual::Show() const
 			strncpy(cursorBuffer, fullText, bytePos);
 			cursorBuffer[bytePos] = '\0';
 
-			// Measure text width using TextService
+			// TextService를 사용해 텍스트 너비 측정
 			TextSystem::Metrics metrics = TextSystem::TextService::Get().MeasureText(cursorBuffer, style, 0);
 			cursorX = m_X + metrics.width;
 		}
 
-		// Draw cursor
+		// 커서 그리기
 		PrintInfo cursorPI = m_PrintInfo;
 		cursorPI.text_color = m_CursorColor;
 
 		if (m_Editor.m_ComposingLen > 0) {
-			// During IME composition, show underline-style cursor
+			// IME 조합 중에는 밑줄 스타일 커서 표시
 			g_Print(cursorX, m_Y + 2, "_", &cursorPI);
 		} else {
-			// Normal block cursor
+			// 일반 블록 커서
 			g_Print(cursorX, m_Y - 1, "▊", &cursorPI);
 		}
 	}
 #else
-	// Windows: Use legacy g_Print() for now
+	// Windows: 지금은 레거시 g_Print() 사용
 	g_Print(m_X, m_Y, textToDisplay, (void*)NULL);
 
-	// Draw cursor
+	// 커서 그리기
 	if (m_Editor.m_bAcquired && gC_ci != NULL && gC_ci->GetCursorBlink()) {
-		// Calculate cursor position
+		// 커서 위치 계산
 		int cursorX = m_X;
 		if (m_Editor.m_CursorPos > 0) {
 			char cursorBuffer[1024];
 			const char* fullText = m_Editor.GetBuffer();
 
-			// Convert cursor position to bytes (UTF-8 aware)
+			// 커서 위치를 바이트로 변환 (UTF-8 인식)
 			int bytePos = 0;
 			int charPos = 0;
 			while (charPos < m_Editor.m_CursorPos && fullText[bytePos] != '\0') {
-				if ((fullText[bytePos] & 0xC0) != 0x80) {  // Not a continuation byte
+				if ((fullText[bytePos] & 0xC0) != 0x80) {  // 연속 바이트가 아님
 					charPos++;
 				}
 				bytePos++;
@@ -582,7 +582,7 @@ void LineEditorVisual::Show() const
 			cursorX = m_X + g_GetStringWidth(cursorBuffer, NULL);
 		}
 
-		// Draw cursor using text rendering
+		// 텍스트 렌더링을 이용해 커서 그리기
 		PrintInfo cursorPI = m_PrintInfo;
 		cursorPI.text_color = m_CursorColor;
 		g_Print(cursorX, m_Y - 2, "|", &cursorPI);

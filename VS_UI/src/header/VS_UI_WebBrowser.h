@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	WEBBROWSER.h
 
@@ -13,9 +13,8 @@
 
 #ifdef PLATFORM_WINDOWS
 //#include <ddraw.h>
-/* ATLBASE.H must come first: it pulls in the COM/OLE prerequisites
-   (IUnknown, IDispatch, the interface macro, ...) that EXDISP.H's
-   COM automation interface declarations need. */
+/* ATLBASE.H가 먼저 와야 한다: EXDISP.H의 COM 자동화 인터페이스 선언에 필요한
+   COM/OLE 전제 조건(IUnknown, IDispatch, 인터페이스 매크로 등)을 끌어오기 때문이다. */
 #include "ATLBASE.H"
 #include "EXDISP.H"
 
@@ -50,14 +49,14 @@ public:
 };
 
 #else
-// WebBrowser not available on non-Windows platforms
+// WebBrowser는 비-Windows 플랫폼에서 사용 불가
 class C_VS_UI_WEBBROWSER
 {
 public:
     C_VS_UI_WEBBROWSER() {}
     ~C_VS_UI_WEBBROWSER() {}
 
-    // Stub implementation - web browser features not available on non-Windows platforms
+    // 스텁 구현 - 웹 브라우저 기능은 비-Windows 플랫폼에서 사용 불가
     bool Start(void* hwndApp, char* pURL, void* pWebOjbect) { return false; }
     void Finish() {}
     void SetWebBrowserSize(int StartX, int StartY, int Width, int Height) {}

@@ -1,4 +1,4 @@
-#include "client_PCH.h"
+﻿#include "client_PCH.h"
 #include <assert.h>
 #include "VS_UI_widget.h"
 #include "VS_UI_filepath.h"
@@ -10,7 +10,7 @@ Button *	gpC_press_button;
 //bool ButtonGroup::press;
 
 //----------------------------------------------------------------------------
-// Operations
+// 연산
 //----------------------------------------------------------------------------
 /*
 //-----------------------------------------------------------------------------
@@ -93,7 +93,7 @@ void C_VS_UI_BUTTON::Show()
 //-----------------------------------------------------------------------------
 void C_VS_UI_BUTTON::EventFocusOn()
 {
-	// animation play
+	// 애니메이션 재생
 	switch (m_pC_ani_button->GetAnimationState())
 	{
 		case C_ANIMATION::PLAY_BACK:
@@ -117,7 +117,7 @@ void C_VS_UI_BUTTON::EventFocusOn()
 //-----------------------------------------------------------------------------
 void C_VS_UI_BUTTON::EventFocusOff()
 {
-	// animation play back
+	// 애니메이션 역재생
 	switch (m_pC_ani_button->GetAnimationState())
 	{
 		case C_ANIMATION::PLAY:

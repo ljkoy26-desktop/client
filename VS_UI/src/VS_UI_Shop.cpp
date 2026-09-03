@@ -1,4 +1,4 @@
-// VS_UI_Shop.cpp
+﻿// VS_UI_Shop.cpp
 
 #include "client_PCH.h"
 
@@ -22,14 +22,14 @@ static MShop *		m_pShop;
 static int			m_focused_slot;
 static UINT			m_select_item_slot;
 static C_VS_UI_EDIT_DIALOG *	m_pC_dialog_multi_buy_confirm = NULL;
-static UINT			m_what_tab; // tab sprite id
+static UINT			m_what_tab; // 탭 스프라이트 ID
 
 
 bool					C_VS_UI_SHOP::m_bl_mysterious_tab;
 MShop::SHOP_TYPE		C_VS_UI_SHOP::m_shop_type;
 
 //-----------------------------------------------------------------------------
-// Exec functions
+// 실행 함수
 //-----------------------------------------------------------------------------
 void ExecF_BuyConfirm(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 {
@@ -53,7 +53,7 @@ void ExecF_BuyConfirm(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 
 	m_select_item_slot = NOT_SELECTED;
 
-	// re-acquire chatting
+	// 채팅 재획득
 	gC_vs_ui.AcquireChatting();
 }
 
@@ -136,7 +136,7 @@ C_VS_UI_SHOP::C_VS_UI_SHOP()
 		help_button_y += 10;
 	}
 
-	// set button
+	// 버튼 설정
 	m_pC_button_group = new ButtonGroup(this);
 
 	C_VS_UI_EVENT_BUTTON * p_tab = new C_VS_UI_EVENT_BUTTON(normal_tab_x_offset, tab_y_offset, TAB_WIDTH, TAB_HEIGHT, NORMAL_TAB_ID, this, NORMAL_TAB);
@@ -158,7 +158,7 @@ C_VS_UI_SHOP::C_VS_UI_SHOP()
 	m_pC_dialog_multi_buy_confirm = NULL;
 
 #ifndef _LIB
-	// -- Test only
+	// -- 테스트 전용
 	MShop*		pShop;
 	MShopShelf*	pShelf;
 	MItem*		pItem;
@@ -173,7 +173,7 @@ C_VS_UI_SHOP::C_VS_UI_SHOP()
 //	m_shop_type = pShop->GetShopType();
 	//----------------------------------------------------
 	//
-	// [0] Fixed Shelf
+	// [0] 고정 선반
 	//
 	//----------------------------------------------------
 	pShelf = new MShopFixedShelf;
@@ -248,7 +248,7 @@ C_VS_UI_SHOP::C_VS_UI_SHOP()
 
 	//----------------------------------------------------
 	//
-	// [1] Special Shelf
+	// [1] 특수 선반
 	//
 	//----------------------------------------------------
 	pShelf = new MShopSpecialShelf;
@@ -330,7 +330,7 @@ C_VS_UI_SHOP::C_VS_UI_SHOP()
 
 
 	//----------------------------------------------------
-	// [2] Unknown Shelf
+	// [2] 알 수 없는 선반
 	//----------------------------------------------------
 	pShelf = new MShopUnknownShelf;
 	
@@ -561,7 +561,7 @@ void C_VS_UI_SHOP::StartBuyConfirmDialog(int _x, int _y, int num)
 	if (selected_item != NULL)
 	{
 
-		g_descriptor_manager.Unset();	// by sigi
+		g_descriptor_manager.Unset();	// sigi 작성
 
 		if (selected_item->IsPileItem())
 		{
@@ -659,7 +659,7 @@ void C_VS_UI_SHOP::Show()
 						!g_pSystemAvailableManager->IsAvailableEnchantSystem() )
 						continue;
 
-					// frame id -> sprite id
+					// frame id → sprite id
 					TYPE_FRAMEID frame_id = p_item->GetInventoryFrameID();
 					
 					int item_x = x+GetSlotX(i);
@@ -724,7 +724,7 @@ void C_VS_UI_SHOP::Show()
 						{
 							if (p_item->IsAffectStatus())
 							{
-								// frame id -> sprite id
+								// frame id → sprite id
 								gpC_item->BltLocked(item_x, item_y, frame_id);
 								if(p_item->GetItemClass() == ITEM_CLASS_OUSTERS_WRISTLET && g_eRaceInterface == RACE_OUSTERS)
 								{
@@ -772,7 +772,7 @@ void C_VS_UI_SHOP::Show()
 		S_SURFACEINFO	surfaceinfo;
 		SetSurfaceInfo(&surfaceinfo, gpC_base->m_p_DDSurface_back->GetDDSD());
 /*
-		for (i=0; i<SHOP_SHELF_SLOT; i++) // draw every slot rect
+		for (i=0; i<SHOP_SHELF_SLOT; i++) // 모든 슬롯 사각형 그리기
 		{
 			Rect rect(GetSlotX(i), GetSlotY(i),
 						SLOT_WIDTH, SLOT_HEIGHT);
@@ -964,7 +964,7 @@ bool C_VS_UI_SHOP::MouseControl(UINT message, int _x, int _y)
 	{
 		case M_MOVING:
 			//
-			// search shelf slot...
+			// 선반 슬롯 검색...
 			//
 			for (i=0; i < SHOP_SHELF_SLOT; i++)
 			{

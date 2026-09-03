@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	VS_UI_Title.h
 
@@ -45,7 +45,7 @@ enum
 	TOTAL_ENERGY_LINE = 109,
 };
 
-// character ani
+// 캐릭터 애니메이션
 enum
 {
 	ANI_MILLISEC = 100, 
@@ -152,7 +152,7 @@ enum ALIGNMENT
 	UI_GOOD_PLUS,
 };
 
-// character creation slot
+// 캐릭터 생성 슬롯
 struct S_SLOT
 {
 	S_SLOT() { m_AdvancementLevel = 0; }
@@ -175,28 +175,28 @@ struct S_SLOT
 	std::string							sz_guild_name;
 	ALIGNMENT							alignment;
 	int									alignment_num;
-	int									level;		// vampire only
-	int									STR_PURE;	// by larosel
-	int									STR_CUR;	// by larosel
-	int									STR_MAX;	// by larosel
-	int									DEX_PURE;	// by larosel
-	int									DEX_CUR;	// by larosel
-	int									DEX_MAX;	// by larosel
-	int									INT_PURE;	// by larosel
-	int									INT_CUR;	// by larosel
+	int									level;		// 뱀파이어 전용
+	int									STR_PURE;	// larosel 작성
+	int									STR_CUR;	// larosel 작성
+	int									STR_MAX;	// larosel 작성
+	int									DEX_PURE;	// larosel 작성
+	int									DEX_CUR;	// larosel 작성
+	int									DEX_MAX;	// larosel 작성
+	int									INT_PURE;	// larosel 작성
+	int									INT_CUR;	// larosel 작성
 	int									INT_MAXX;
 	int									STR_EXP_REMAIN;
 	int									DEX_EXP_REMAIN;
 	int									INT_EXP_REMAIN;
-	int									EXP_REMAIN;		// vampire only
+	int									EXP_REMAIN;		// 뱀파이어 전용
 	int									DAM;			// max
 	int									DAM2;			// min
 	int									SILVER_DAM;		//max
 	int									SILVER_DAM2;	//min
 	int									CHANGE_VAMPIRE;
 //	int									AC;
-	int									DEFENSE;	// by larosel
-	int									PROTECTION;	// by larosel
+	int									DEFENSE;	// larosel 작성
+	int									PROTECTION;	// larosel 작성
 	int									TOHIT;
 	int									HP;
 	int									MP;
@@ -211,10 +211,10 @@ struct S_SLOT
 	int									DOMAIN_ENCHANT;
 
 //	int									CC;
-	int									FAME;		// slayer only
+	int									FAME;		// 슬레이어 전용
 //	int									NOTERITY;
-	int									bonus_point; // vampire only
-	int									skill_point; // ousters only
+	int									bonus_point; // 뱀파이어 전용
+	int									skill_point; // 오스터즈 전용
 
 	struct UI_EFFECTSTATUS_STRUCT
 	{
@@ -226,9 +226,9 @@ struct S_SLOT
 	UI_EFFECTSTATUS_TYPE				STATUS;	
 	
 //	WORD									hp_cur_line;
-//	WORD									mp_cur_line;	// slayer only
+//	WORD									mp_cur_line;	// 슬레이어 전용
 //	WORD									hp_percent;
-//	WORD									mp_percent;		// slayer only
+//	WORD									mp_percent;		// 슬레이어 전용
 
 	WORD								GUILD_ID;
 	BYTE								GUILD_GRADE;
@@ -285,7 +285,7 @@ private:
 	ButtonGroup *				m_pC_button_group;
 
 	//
-	// string line buffer (ID / PASSWORD)
+	// 문자열 라인 버퍼 (ID / PASSWORD)
 	//
 	//STRING						m_string_line_ID;
 	//STRING						m_string_line_PASSWORD;
@@ -294,7 +294,7 @@ private:
 	LineEditorVisual			m_lev_password;
 	std::string					m_lev_id_backup;
 
-	//INPUT_POSITION	m_e_ip; // input position
+	//INPUT_POSITION	m_e_ip; // 입력 위치
 
 	void	SendLoginToClient();
 	//bool	NextFocus();
@@ -375,7 +375,7 @@ private:
 		CHECK_IMAGE,
 	};
 
-	// input item
+	// 입력 항목
 	LineEditorVisual			m_lev_id;
 	LineEditorVisual			m_lev_password;
 	LineEditorVisual			m_lev_repassword;
@@ -392,7 +392,7 @@ private:
 	bool							m_bl_announce_my_info;
 
 	int							m_current_focus;
-	bool							m_bl_ssn_ip_part1; // input position
+	bool							m_bl_ssn_ip_part1; // 입력 위치
 
 	void	SendNewUserInfoToClient();
 	void	ChangeFocus(ITEM_SEARCH_SEQUENCE n);
@@ -443,7 +443,7 @@ private:
 
 	LineEditorVisual			m_lev_ssn_part1;
 	LineEditorVisual			m_lev_ssn_part2;
-	bool							m_bl_ssn_ip_part1; // input position
+	bool							m_bl_ssn_ip_part1; // 입력 위치
 
 	void	SendCharacterDeleteToClient();
 
@@ -501,19 +501,19 @@ private:
 
 	enum 
 	{ 
-		// 0 ~ 35 (color set range)
+		// 0 ~ 35 (색상 세트 범위)
 		COLORSET_X = 9, 
 		COLORSET_Y = 4,
 
-		// appearance Window position
+		// 외형 창 위치
 		APPEARANCE_X = 342,
 		APPEARANCE_Y = 182,
 
-		// color set offset
+		// 색상 세트 오프셋
 		COLORSET_OFFSET_X = 45,
 		COLORSET_OFFSET_Y = 170,
 
-		// color unit rect width, height
+		// 색상 단위 사각형 너비, 높이
 		COLOR_UNIT_W = 20,
 		COLOR_UNIT_H = 20,
 	};
@@ -640,14 +640,14 @@ private:
 		NAME_BOARD_X = 421,
 		NAME_BOARD_Y = 183,
 
-		// hair/skin 24 color
+		// 머리/피부 24색
 		COLOR_LIST_X = 8,
 		COLOR_LIST_Y = 3,
 
 		COLOR_UNIT_X = 15,
 		COLOR_UNIT_Y = 9,
 
-		TABLE_X = 289, // color table
+		TABLE_X = 289, // 색상 테이블
 		TABLE_Y = 371,
 		TABLE_Y2 = 431,
 	}; 
@@ -756,7 +756,7 @@ private:
 
 	LineEditorVisual			m_lev_name;
 
-	// for color change
+	// 색상 변경용
 	static int					m_hair_color_array[COLOR_LIST_X][COLOR_LIST_Y];
 	static int					m_skin_color_array[COLOR_LIST_X][COLOR_LIST_Y];
 	Point							m_hair_point;
@@ -895,9 +895,9 @@ private :
 
 	C_SPRITE_PACK				m_common_spk;
 	C_SPRITE_PACK				m_image_spk;
-	//add by sonic 2006.9.29
+	// sonic 추가, 2006.9.29
 	C_SPRITE_PACK				m_title1_spk;
-	// end by sonic
+	// sonic 추가 끝
 	C_SPRITE_PACK*				m_pC_use_grade;
 
 //	C_SPRITE_PACK				m_pC_menu_default;
@@ -1097,19 +1097,19 @@ public :
 		SOUND_ID,
 		GAME_ID,
 
-		//CONTROL TAB
+		// 조작 탭
 		LIST_ID,
 	};
 
 	enum EXEC_CHECK_ID
 	{
-		//CONTROL
+		// 조작
 		CHECK_CONTROL_TAB,
 		CHECK_NORMAL_CHAT = CHECK_CONTROL_TAB,
 		CHECK_ENTER_CHAT,
 		CHECK_IFEEL,
 
-		//GRAPHIC
+		// 그래픽
 		CHECK_GRAPHIC_TAB,
 		CHECK_3D = CHECK_GRAPHIC_TAB,
 		CHECK_ALPHA_HPBAR,
@@ -1122,14 +1122,14 @@ public :
 		CHECK_ALPHA_DEPTH,
 		CHECK_DO_NOT_SHOW_PERSNALSHOP_MSG,
 
-		//SOUND
+		// 사운드
 		CHECK_SOUND_TAB,
 		CHECK_SOUND = CHECK_SOUND_TAB,
 		CHECK_MUSIC,
 		CHECK_WAV,
 		CHECK_MIDI,
 
-		//GAME
+		// 게임
 		CHECK_GAME_TAB,
 		CHECK_HELP = CHECK_GAME_TAB,
 		CHECK_FILTERING,
@@ -1143,7 +1143,7 @@ public :
 		CHECK_SHOW_GAMEMONEY_WITH_HANGUL,
 
 
-		//VALUE
+		// 값
 		CHECK_VALUE_MOUSE_SPEED,
 		CHECK_VALUE_GAMMA,
 		CHECK_VALUE_SOUND_VOLUME,
@@ -1314,7 +1314,7 @@ class C_VS_UI_TITLE : public Window, public Exec, public ButtonVisual
 {
 private:
 	//---------------------------------------
-	// Components
+	// 구성 요소
 	//---------------------------------------
 	C_VS_UI_LOGIN *			m_pC_login;
 //	C_VS_UI_NEWUSER *			m_pC_newuser;
@@ -1416,10 +1416,10 @@ public:
 
 
 	//
-	// gamemenu option
+	// 게임 메뉴 옵션
 //	void	RunOption();
 //	void	CloseOption();
-//	bool	IsRunningOption(){ return (m_pC_option != NULL); }	// by larosel
+//	bool	IsRunningOption(){ return (m_pC_option != NULL); }	// larosel 작성
 
 };
 

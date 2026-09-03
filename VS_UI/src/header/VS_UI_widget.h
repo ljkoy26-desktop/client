@@ -17,13 +17,13 @@
 #include "CImm.h"
 #endif
 #include "VS_UI_MOUSE_POINTER.h"
-#include "../widget/u_button.h"  // For EventButton, Exec, Button classes
+#include "../widget/u_button.h"  // EventButton, Exec, Button 클래스를 위해
 
-// Stub definitions for non-Windows platforms (without Immersion library)
+// 비-Windows 플랫폼용 스텁 정의(Immersion 라이브러리 없이)
 #ifndef PLATFORM_WINDOWS
 #include <sys/time.h>
 
-// Stub for CImm class (from Immersion library)
+// CImm 클래스(Immersion 라이브러리) 스텁
 class CImm {
 public:
     enum FORCE_UI_ID {
@@ -34,16 +34,16 @@ public:
         FORCE_UI_MAX,
     };
     void ForceUI(unsigned int ID) {}
-    bool IsDevice() { return false; }  // Stub: no device on non-Windows platforms
-    void Enable(bool enable) {}  // Stub: enable/disable device
-    void Disable() {}  // Stub: disable device
+    bool IsDevice() { return false; }  // 스텁: 비-Windows 플랫폼에는 디바이스 없음
+    void Enable(bool enable) {}  // 스텁: 디바이스 활성화/비활성화
+    void Disable() {}  // 스텁: 디바이스 비활성화
 };
 
-// Stub for global Immersion device pointer
+// 전역 Immersion 디바이스 포인터 스텁
 static CImm gpC_Imm_instance;
 #define gpC_Imm (&gpC_Imm_instance)
 
-// GetTickCount stub
+// GetTickCount 스텁
 inline DWORD GetTickCount() {
     struct timeval tv;
     gettimeofday(&tv, NULL);
@@ -53,7 +53,7 @@ inline DWORD GetTickCount() {
 #endif // !PLATFORM_WINDOWS
 /*
 //----------------------------------------------------------------------------
-// Button Class
+// 버튼 클래스
 //----------------------------------------------------------------------------
 class C_VS_UI_BUTTON : public EventButton
 {
@@ -100,7 +100,7 @@ public:
 		Init();
 		m_dw_millisec = millisec;
 
-		if (m_image_index == -1) // default
+		if (m_image_index == -1) // 기본값
 			m_image_index = id;
 		else
 			m_image_index = image_index;
@@ -118,7 +118,7 @@ public:
 		{
 			if (m_dw_prev_tickcount+m_dw_millisec <= GetTickCount())
 			{
-				// next frame!
+				// 다음 프레임!
 
 				if (GetFocusState())
 				{

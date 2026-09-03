@@ -1,4 +1,4 @@
-// VS_UI_Tutorial.cpp by larosel
+﻿// VS_UI_Tutorial.cpp - larosel 작성
 
 #include "client_PCH.h"
 #include "VS_UI_Filepath.h"
@@ -94,7 +94,7 @@ C_VS_UI_BOOKCASE::C_VS_UI_BOOKCASE()
 	m_books_image_index[0] = 2; m_books_image_index[1] = 70; m_books_image_index[2] = 125; m_books_image_index[3] = 192;
 
 	m_pC_book = NULL;
-	// set button
+	// 버튼 설정
 	m_pC_button_group = new ButtonGroup(this);
 
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+close_button_x, y+close_button_y, m_pC_bookcase_spk->GetWidth(CLOSE_BUTTON), m_pC_bookcase_spk->GetHeight(CLOSE_BUTTON), BOOKCASE_CLOSE_ID, this, CLOSE_BUTTON));
@@ -166,7 +166,7 @@ void	C_VS_UI_BOOKCASE::Finish()
 {
 	//if(m_pC_book){m_pC_book->Finish();m_pC_book = NULL; return;}
 
-	CloseBook();	// by sigi	
+	CloseBook();	// sigi 작성	
 
 	PI_Processor::Finish();
 
@@ -175,7 +175,7 @@ void	C_VS_UI_BOOKCASE::Finish()
 
 //-----------------------------------------------------------------------------
 //
-// Close Book  - by sigi
+// 책 닫기 - sigi 작성
 //
 //-----------------------------------------------------------------------------
 void	C_VS_UI_BOOKCASE::CloseBook()
@@ -287,7 +287,7 @@ void	C_VS_UI_BOOKCASE::ShowButtonWidget(C_VS_UI_EVENT_BUTTON * p_button)
 
 //-----------------------------------------------------------------------------
 //
-// keyboard
+// 키보드
 //
 //-----------------------------------------------------------------------------
 void	C_VS_UI_BOOKCASE::KeyboardControl(UINT message, UINT key, long extra)
@@ -435,7 +435,7 @@ C_VS_UI_BOOK::C_VS_UI_BOOK(const char *szFilename, int row, int col):C_VS_UI_DES
 	m_page_max = GetDescPage();
 
 
-	// set button
+	// 버튼 설정
 	m_pC_button_group = new ButtonGroup(this);
 
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+m_close_x, y+m_close_y, m_pC_book_spk->GetWidth(CLOSE_BUTTON), m_pC_book_spk->GetHeight(CLOSE_BUTTON), BOOK_CLOSE_ID, this, CLOSE_BUTTON));
@@ -815,12 +815,12 @@ C_VS_UI_BRIEFING::C_VS_UI_BRIEFING()
 	int close_button_x = 248, close_button_y = 411;
 	Set(w_x, w_y, m_pC_screen_spk->GetWidth(SCREEN_WINDOW), m_pC_screen_spk->GetHeight(SCREEN_WINDOW));
 
-	// set button
+	// 버튼 설정
 	m_pC_button_group = new ButtonGroup(this);
 
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x + close_button_x, y+close_button_y, m_pC_screen_spk->GetWidth(CLOSE_BUTTON), m_pC_screen_spk->GetHeight(CLOSE_BUTTON), SCREEN_CLOSE_ID, this, CLOSE_BUTTON));
 
-	// TIMER
+	// 타이머
 	m_dw_prev_tickcount = GetTickCount();
 	m_dw_millisec = 50;
 	m_scroll_max = 0;
@@ -948,7 +948,7 @@ void	C_VS_UI_BRIEFING::ShowButtonWidget(C_VS_UI_EVENT_BUTTON * p_button)
 
 //-----------------------------------------------------------------------------
 //
-// keyboard
+// 키보드
 //
 //-----------------------------------------------------------------------------
 void	C_VS_UI_BRIEFING::KeyboardControl(UINT message, UINT key, long extra)
@@ -1119,7 +1119,7 @@ C_VS_UI_COMPUTER::C_VS_UI_COMPUTER():C_VS_UI_DESC()
 	m_tree_scroll = 0;
 	m_tree_scroll_x = 173;
 
-	// set button
+	// 버튼 설정
 	m_pC_button_group = new ButtonGroup(this);
 
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+close_button_x, y+close_button_y, m_pC_monitor_spk->GetWidth(CLOSE_BUTTON), m_pC_monitor_spk->GetHeight(CLOSE_BUTTON), MONITOR_CLOSE_ID, this, CLOSE_BUTTON));
@@ -1147,7 +1147,7 @@ C_VS_UI_COMPUTER::C_VS_UI_COMPUTER():C_VS_UI_DESC()
 	m_computer_tree_file.SetRAR(RPK_TUTORIAL_ETC, RPK_PASSWORD);
 	if(LoadTree(TXT_TUTORIAL_COMPUTER) == false)return;
 
-	// TIMER
+	// 타이머
 
 	DWORD currentTime = GetTickCount();
 
@@ -1301,7 +1301,7 @@ void	C_VS_UI_COMPUTER::ShowButtonWidget(C_VS_UI_EVENT_BUTTON * p_button)
 
 //-----------------------------------------------------------------------------
 //
-// keyboard
+// 키보드
 //
 //-----------------------------------------------------------------------------
 void	C_VS_UI_COMPUTER::KeyboardControl(UINT message, UINT key, long extra)
@@ -1795,7 +1795,7 @@ C_VS_UI_TUTORIAL_EXIT::C_VS_UI_TUTORIAL_EXIT()
 
 	Set(w_x, w_y, m_pC_exit_spk->GetWidth(EXIT_WINDOW), m_pC_exit_spk->GetHeight(EXIT_WINDOW));
 
-	// set button
+	// 버튼 설정
 	m_pC_button_group = new ButtonGroup(this);
 
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(x + ok_button_x, y + ok_button_y, m_pC_exit_spk->GetWidth(OK_BUTTON), m_pC_exit_spk->GetHeight(OK_BUTTON), OK_ID, this, OK_BUTTON));
@@ -1907,7 +1907,7 @@ void	C_VS_UI_TUTORIAL_EXIT::ShowButtonWidget(C_VS_UI_EVENT_BUTTON * p_button)
 
 //-----------------------------------------------------------------------------
 //
-// keyboard
+// 키보드
 //
 //-----------------------------------------------------------------------------
 void	C_VS_UI_TUTORIAL_EXIT::KeyboardControl(UINT message, UINT key, long extra)

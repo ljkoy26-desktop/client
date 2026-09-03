@@ -22,9 +22,9 @@ static int			m_focused_slot;
 //static UINT			m_what_tab; // tab sprite id
 
 
-static C_VS_UI_MONEY_DIALOG *	m_pC_dialog_withdraw_money;		// by sigi
+static C_VS_UI_MONEY_DIALOG *	m_pC_dialog_withdraw_money;		// sigi 작성
 
-// by sigi
+// sigi 작성
 void ExecF_WithdrawMoney(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 {
 	switch (id)
@@ -57,11 +57,11 @@ void C_VS_UI_STORAGE::UnacquireMouseFocus()
 //-----------------------------------------------------------------------------
 C_VS_UI_STORAGE::C_VS_UI_STORAGE()
 {
-	m_pStorage = NULL; // 확인용... by sigi
+	m_pStorage = NULL; // 확인용... sigi 작성
 
 	g_RegisterWindow(this);
 
-	m_pC_dialog_withdraw_money = NULL;	// by sigi
+	m_pC_dialog_withdraw_money = NULL;	// sigi 작성
 
 	int normal_tab_x_offset, special_tab_x_offset, mysterious_tab_x_offset;
 	int close_button_x, close_button_y;
@@ -121,7 +121,7 @@ C_VS_UI_STORAGE::C_VS_UI_STORAGE()
 		m_money_button_offset_y += 8;
 	}
 
-	// set button
+	// 버튼 설정
 	m_pC_button_group = new ButtonGroup(this);
 
 	C_VS_UI_EVENT_BUTTON * p_tab = new C_VS_UI_EVENT_BUTTON(normal_tab_x_offset, tab_y_offset, TAB_WIDTH, TAB_HEIGHT, STORAGE_TAB1_ID, this, STORAGE_TAB1);
@@ -143,7 +143,7 @@ C_VS_UI_STORAGE::C_VS_UI_STORAGE()
 	
 
 #ifndef _LIB
-	// -- Test only
+	// -- 테스트 전용
 	MStorage*	pStorage;
 	MItem*		pItem;
 
@@ -225,7 +225,7 @@ C_VS_UI_STORAGE::C_VS_UI_STORAGE()
 
 	//----------------------------------------------------
 	//
-	// [1] Special Shelf
+	// [1] 특수 선반
 	//
 	//----------------------------------------------------
 	if (pStorage->GetSize()>=2)
@@ -261,7 +261,7 @@ C_VS_UI_STORAGE::C_VS_UI_STORAGE()
 
 
 	//----------------------------------------------------
-	// [2] Unknown Shelf
+	// [2] 알 수 없는 선반
 	//----------------------------------------------------
 	if (pStorage->GetSize()>=3)
 	{
@@ -325,12 +325,12 @@ C_VS_UI_STORAGE::~C_VS_UI_STORAGE()
 
 #ifndef _LIB
 	DeleteNew(m_pStorage);
-	g_pStorage = NULL;	// by sigi
+	g_pStorage = NULL;	// sigi 작성
 #endif
 
 	m_pStorage = NULL; // 다음 check를 위해서..
 
-	DeleteNew(m_pC_dialog_withdraw_money);// by sigi
+	DeleteNew(m_pC_dialog_withdraw_money);// sigi 작성
 
 	DeleteNew(m_pC_button_group);
 }
@@ -353,7 +353,7 @@ void	C_VS_UI_STORAGE::CancelPushState()
 //-----------------------------------------------------------------------------
 MItem * C_VS_UI_STORAGE::GetSlotItem(int slot) const
 {
-	if (m_pStorage!=NULL)	// 확인용... by sigi
+	if (m_pStorage!=NULL)	// 확인용... sigi 작성
 	{
 		return (MItem *)m_pStorage->GetItem( slot );
 	}
@@ -438,7 +438,7 @@ void C_VS_UI_STORAGE::SetStorage(MStorage * pStorage)
 
 	m_pStorage = pStorage;
 
-	// normal을 default로 설정.. by sigi
+	// normal을 default로 설정.. sigi 작성
 //	m_what_tab = STORAGE_TAB1;
 	
 	m_pStorage->SetCurrent(0);	
@@ -473,7 +473,7 @@ void C_VS_UI_STORAGE::Show()
 			
 			if (p_item != NULL)
 			{
-				// frame id -> sprite id
+				// frame id → sprite id
 				TYPE_FRAMEID frame_id = p_item->GetInventoryFrameID();
 				
 				int item_x = x+GetSlotX(i);
@@ -484,7 +484,7 @@ void C_VS_UI_STORAGE::Show()
 				// item을 center에 맞춘다.
 				item_x += SLOT_WIDTH/2-gpC_item->GetWidth(frame_id)/2;
 				
-				// identify된 아이템인 경우.. by sigi
+				// identify된 아이템인 경우.. sigi 작성
 				if (p_item->IsIdentified())
 				{
 					if(p_item->IsQuestItem())
@@ -521,7 +521,7 @@ void C_VS_UI_STORAGE::Show()
 				{
 					if (p_item->IsAffectStatus())
 					{
-						// frame id -> sprite id
+						// frame id → sprite id
 						gpC_item->BltLocked(item_x, item_y, frame_id);
 						if(p_item->GetItemClass() == ITEM_CLASS_OUSTERS_WRISTLET && g_eRaceInterface == RACE_OUSTERS)
 						{
@@ -582,7 +582,7 @@ void C_VS_UI_STORAGE::Show()
 
 					if (p_mouse_item != NULL)
 					{
-						// frame id -> sprite id
+						// frame id → sprite id
 						TYPE_FRAMEID frame_id = p_mouse_item->GetInventoryFrameID();
 
 						int item_x = x+GetSlotX(i);
@@ -613,7 +613,7 @@ void C_VS_UI_STORAGE::Show()
 	}
 
 	// 보관된 액수를 출력한다.
-	// 2004, 12, 14, sobeit modify start
+	// 2004, 12, 14, sobeit 수정 시작
 	if(NULL != m_pStorage && NULL != m_pStorage->GetMoneyManager())
 	{
 		if(gC_ci->IsKorean() && g_pUserOption->ShowGameMoneyWithHANGUL)
@@ -633,7 +633,7 @@ void C_VS_UI_STORAGE::Show()
 		}
 	}
 	
-	// 2004, 12, 14, sobeit modify end
+	// 2004, 12, 14, sobeit 수정 끝
 		
 	m_pC_button_group->ShowDescription();
 
@@ -645,7 +645,7 @@ void C_VS_UI_STORAGE::Show()
 		S_SURFACEINFO	surfaceinfo;
 		SetSurfaceInfo(&surfaceinfo, gpC_base->m_p_DDSurface_back->GetDDSD());
 /*
-		for (i=0; i<STORAGE_SLOT; i++) // draw every slot rect
+		for (i=0; i<STORAGE_SLOT; i++) // 모든 슬롯 사각형 그리기
 		{
 			Rect rect(GetSlotX(i), GetSlotY(i),
 						SLOT_WIDTH, SLOT_HEIGHT);
@@ -701,7 +701,7 @@ void C_VS_UI_STORAGE::Run(id_t id)
 		case STORAGE_TAB1_ID:
 // 			m_what_tab = STORAGE_TAB1_ID;
 
-			if (m_pStorage!=NULL)	// 확인용 by sigi
+			if (m_pStorage!=NULL)	// 확인용 sigi 작성
 			{
 				m_pStorage->SetCurrent(0);
 			}
@@ -710,7 +710,7 @@ void C_VS_UI_STORAGE::Run(id_t id)
 		case STORAGE_TAB2_ID:
 // 			m_what_tab = STORAGE_TAB2_ID;
 
-			if (m_pStorage!=NULL && m_pStorage->GetSize()>=2)	// 확인용 by sigi
+			if (m_pStorage!=NULL && m_pStorage->GetSize()>=2)	// 확인용 sigi 작성
 			{
 				m_pStorage->SetCurrent(1);
 			}
@@ -719,7 +719,7 @@ void C_VS_UI_STORAGE::Run(id_t id)
 		case STORAGE_TAB3_ID:
 // 			m_what_tab = STORAGE_TAB3_ID; 
 
-			if (m_pStorage!=NULL && m_pStorage->GetSize()>=3)	// 확인용 by sigi
+			if (m_pStorage!=NULL && m_pStorage->GetSize()>=3)	// 확인용 sigi 작성
 			{
 				m_pStorage->SetCurrent(2);
 			}
@@ -738,7 +738,7 @@ void C_VS_UI_STORAGE::Run(id_t id)
 			if (m_pStorage->GetMoneyManager()->GetMoney() > 0)
 			{
 				m_pC_dialog_withdraw_money = new C_VS_UI_MONEY_DIALOG(x+m_money_button_offset_x, y+m_money_button_offset_y-gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_MONEY_BAR), 1, 0, ExecF_WithdrawMoney, DIALOG_OK|DIALOG_CANCEL, 10,
-					C_VS_UI_MONEY_DIALOG::MONEY_WITHDRAW);	// by sigi
+					C_VS_UI_MONEY_DIALOG::MONEY_WITHDRAW);	// sigi 작성
 				m_pC_dialog_withdraw_money->Start();
 			}
 			break;
@@ -818,7 +818,7 @@ bool C_VS_UI_STORAGE::MouseControl(UINT message, int _x, int _y)
 	{
 		case M_MOVING:
 			//
-			// search shelf slot...
+			// 선반 슬롯 검색...
 			//
 //			m_bl_money_button_focused = false;
 

@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	u_window.h
 
@@ -168,7 +168,7 @@ private:
 
 public:
 	//
-	// Local attributes flags
+	// 로컬 속성 플래그
 	//
 	enum ATTRIBUTES_HIDE
 	{
@@ -234,7 +234,7 @@ public:
 	MOUSE_STATE	GetMouseInputState();
 
 	//
-	// Local attributes 
+	// 로컬 속성
 	//
 	void	InitAttributes();
 	void	AttrTopmost(bool state);
@@ -249,7 +249,7 @@ public:
 	const Window::ATTRIBUTES *	GetAttributes() const { return &m_attributes; }
 
 	//
-	// Window moving
+	// 윈도우 이동
 	//
 	bool	Moving() const { return m_bl_window_move_ready; }
 	void	MoveReady();
@@ -264,7 +264,7 @@ public:
 	void	ClearInputState();
 
 	//
-	// Place other Widget.
+	// 다른 위젯 배치.
 	//
 private:
 	SimpleDataList<LineEditorVisual *>		m_sdl_lev;
@@ -286,13 +286,13 @@ public:
 
 //
 //------------------------------------------------------------------------------
-// < Focused Window >
+// < 포커스된 윈도우 >
 //
 
 
 
 //
-// Focused Window:
+// 포커스된 윈도우:
 //
 
 
@@ -313,10 +313,10 @@ public:
 
 
 
-//		  * Mouse pointer Move
+//		  * 마우스 포인터 이동
 //
 //
-// Acquired Window:
+// 획득된 윈도우:
 //
 
 
@@ -426,7 +426,7 @@ private:
 
 	int							m_old_origin_x;
 	int							m_old_origin_y;
-	int							m_res_x, m_res_y; // resolution
+	int							m_res_x, m_res_y; // 해상도
 
 	enum DIR
 	{
@@ -450,7 +450,7 @@ public:
 	~WindowManager();
 
 	//
-	// Window register/Unregister
+	// 윈도우 등록/해제
 	//
 	Window*	GetTopmostWindow()	{ return m_pC_topmost_window; }
 	void	Register(Window * p_window);
@@ -462,7 +462,7 @@ public:
 	void	Show();
 
 	//
-	// Window input control
+	// 윈도우 입력 제어
 
 	//
 	bool	MouseControl(UINT message, int x, int y);
@@ -472,7 +472,7 @@ public:
 
 public:
 	//
-	// set handler
+	// 핸들러 설정
 	//
 	void	SetAcquireMouseFocusHandler(void (*fp)(void)) { m_fp_handler_acquire_mousefocus = fp; }
 	void	SetUnacquireMouseFocusHandler(void (*fp)(void)) { m_fp_handler_unacquire_mousefocus = fp; }
@@ -480,7 +480,7 @@ public:
 
 	Window *GetFocusedWindow(int x, int y);
 	//
-	// Window priority
+	// 윈도우 우선순위
 	//
 private: 
 
@@ -490,7 +490,7 @@ public:
 	void	SetMouseMoveFocusedWindow();
 
 	//
-	// Window interface
+	// 윈도우 인터페이스
 	//
 	void	FirstPriority(Window * p_this_window);
 	void	AppearWindow(Window * p_this_window);
@@ -503,7 +503,7 @@ public:
 
 	int	ShowedWindowSize() const;
 	int	ShowedPinnedWindowSize() const { return m_show_list_pinned_window.size(); }
-	//int	RegisteredWindowSize() const { return m_window_buf_size; } // -> use 'Size()'
+	//int	RegisteredWindowSize() const { return m_window_buf_size; } // -> 'Size()' 사용
 	bool	GetShowState(Window * p_window) const;
 };
 

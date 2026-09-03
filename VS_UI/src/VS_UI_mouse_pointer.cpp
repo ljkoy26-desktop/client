@@ -1,4 +1,4 @@
-// VS_UI_Mouse_pointer.cpp
+﻿// VS_UI_Mouse_pointer.cpp
 
 #include "client_PCH.h"
 #include "VS_UI_mouse_pointer.h"
@@ -36,35 +36,35 @@ C_VS_UI_MOUSE_POINTER *	gpC_mouse_pointer;
 //#define MOUSE_CURSOR_BAT					14
 static const POINT g_mouse_point_fix[C_VS_UI_MOUSE_POINTER::CURSOR_MAX] = 
 {
-	{0, 0},		// slayer default
-	{-9, -36},	// slayer item
-	{-2, -35},	// slayer item push
-	{0, 0},		// slayer attack
+	{0, 0},		// 슬레이어 기본
+	{-9, -36},	// 슬레이어 아이템
+	{-2, -35},	// 슬레이어 아이템 눌림
+	{0, 0},		// 슬레이어 공격
 
-	{0, 0},		// vampire default
-	{-9, -36},	// vampire item
-	{-2, -35},	// vampire item push
-	{0, 0},		// vampire attack
+	{0, 0},		// 뱀파이어 기본
+	{-9, -36},	// 뱀파이어 아이템
+	{-2, -35},	// 뱀파이어 아이템 눌림
+	{0, 0},		// 뱀파이어 공격
 
-	{0, 0},		// ousters default
-	{-8, -38},	// ousters item
-	{-6, -35},	// ousters item push
-	{0, 0},		// ousters attack
+	{0, 0},		// 오스터즈 기본
+	{-8, -38},	// 오스터즈 아이템
+	{-6, -35},	// 오스터즈 아이템 눌림
+	{0, 0},		// 오스터즈 공격
 	
-	{-5, -5},	// description
+	{-5, -5},	// 설명
 
-	{-10, -10},	// not move
+	{-10, -10},	// 이동 불가
 
-	{-14, -22},	// portal
+	{-14, -22},	// 포탈
 };
 
 
 //----------------------------------------------------------------------------
-// Operations
+// 연산
 //----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-// GetPointer Width/Height
+// 포인터 너비/높이 반환
 //
 // 
 //-----------------------------------------------------------------------------
@@ -95,7 +95,7 @@ int C_VS_UI_MOUSE_POINTER::GetPointerH()
 }
 
 //-----------------------------------------------------------------------------
-// Get Mouse Pointer (x, y)
+// 마우스 포인터 (x, y) 반환
 //
 // 
 //-----------------------------------------------------------------------------
@@ -139,7 +139,7 @@ void C_VS_UI_MOUSE_POINTER::PickUpItem(MItem * p_item, int item_x, int item_y)
 //-----------------------------------------------------------------------------
 void C_VS_UI_MOUSE_POINTER::PickUpItem(int item_x, int item_y)
 {
-	m_bl_pickup_item = true;	// get item width/height
+	m_bl_pickup_item = true;	// 아이템 너비/높이 획득
 
 	assert(m_p_current_pickup_item);
 	TYPE_FRAMEID frame_id = m_p_current_pickup_item->GetInventoryFrameID();
@@ -386,7 +386,7 @@ C_VS_UI_MOUSE_POINTER::C_VS_UI_MOUSE_POINTER()
 
 	m_color = RGB_WHITE;
 
-	// TIMER
+	// 타이머
 	m_dw_prev_tickcount = GetTickCount();
 	m_dw_millisec = 300;
 
@@ -569,7 +569,7 @@ void	C_VS_UI_MOUSE_POINTER::SetCursorAttack()
 		break;
 	}
 }
-/////add by viva for SetCurAddFriend
+///// viva 추가, SetCurAddFriend용
 void	C_VS_UI_MOUSE_POINTER::SetCursorAddFriend()
 {
 	SetCursor(CURSOR_ADDFRIEND);

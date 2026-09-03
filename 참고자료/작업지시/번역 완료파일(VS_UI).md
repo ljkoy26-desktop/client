@@ -104,12 +104,38 @@ vcxproj 순서 기준 첫 배치(`Client_PCH.cpp` ~ `VS_UI_Base.cpp`, MitemTable
 
 ---
 
+## 4차 번역 완료 (2026-09-04)
+
+`VS_UI/src/VS_UI_Shop.cpp`부터 vcxproj 등장 순서대로 나머지 전체(대형 보류 파일 제외) 완료:
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `VS_UI/src/VS_UI_Shop.cpp` (.h는 1건) | 탭 스프라이트 id/실행 함수/채팅 재획득/버튼 설정/테스트 전용/고정·특수·알 수 없는 선반/sigi 작성/frame id→sprite id(2건)/모든 슬롯 사각형 그리기/선반 슬롯 검색, 헤더는 2x3 그리드 크기/대화창/타이머 |
+| `VS_UI/src/VS_UI_Storage.cpp` | sigi 작성(다수)/버튼 설정/테스트 전용/특수·알 수 없는 선반/frame id→sprite id(3건)/선반 슬롯 검색 (이미 한글 위주 파일이라 잔여 영어 조각만 번역) |
+| `VS_UI/src/VS_UI_TITLE_SHOWCHAR.CPP` | 바지색 설정 주석 tail의 by sigi(2건), viva 작성(2건) |
+| `VS_UI/src/VS_UI_Title.cpp` (7557줄) (.h는 86줄분) | process.h 설명/char_t·wchar_t 비교 헬퍼/전역 변수·프로토타입/heart rect/아이템 깜빡임 색상 테이블/by sigi·by sonee·add by Sonic 2006.9.26·end by sonic(중국어 혼용 포함) 등 작성자 표기 다수 일괄 치환/색상 관련 다수/LineEditorVisual 설정/CRITICAL 포커스 전환 주석/SDL 텍스트 입력 IME 우회 설명/HOTKEY_WINDOW 렌더 순서 설명 블록/CONTROL·GRAPHIC·SOUND·GAME TAB 등. 헤더는 character ani/vampire·slayer·ousters only/by larosel(다수)/color 관련/add by sonic 2006.9.29 등 |
+| `VS_UI/src/VS_UI_Tutorial.cpp` (.h는 3건) | by larosel 저자 표기, 버튼 설정(5건), CloseBook by sigi, 키보드(4건), 타이머(2건) |
+| `VS_UI/src/VS_UI_WebBrowser.cpp/.h` | 반환값 설명, 정상 작동 주석, ATLBASE.H 포함 순서 설명, 비-Windows 스텁 설명 |
+| `VS_UI/src/VS_UI_mouse_pointer.cpp/.h` | 마우스 커서 오프셋 배열 라벨(슬레이어·뱀파이어·오스터즈·설명·이동불가·포탈), 연산/포인터 너비높이/마우스 포인터 좌표 반환 섹션 헤더, viva 작성 |
+| `VS_UI/src/VS_UI_progress.cpp/.h` | coffee 추가/DrawBar 설명/Sonic 추가(3건)/larosel 작성/진행률 클래스 헤더 |
+| `VS_UI/src/VS_UI_skill_tree.cpp/.h` | 닫기 버튼/테스트 구분선/가드/스킬 아이콘 버튼 추가(6건)/각 스킬트리(인챈트·블레이드·소드·건·힐) 클래스 헤더 |
+| `VS_UI/src/VS_UI_ui_result_receiver.h` | 클래스 설명 헤더, Set. |
+| `VS_UI/src/VS_UI_util.cpp/.h` | 연산/Read_rbt 헤더/refresh timer(5건)/PlayLoopBack 설명/sigi 작성/경로 구분자 변환 설명(크로스플랫폼)/복사·이동 생성자 비활성화 설명/SpriteFrame 클래스 헤더 |
+| `VS_UI/src/VS_UI_widget.cpp/.h` | 연산/애니메이션 재생·역재생/EventButton, Exec, Button/Immersion 라이브러리 스텁 다수/버튼 클래스/기본값/다음 프레임 |
+| `VS_UI/src/hangul/Ci_macOS.cpp` | 헤더 include 설명 3건/타이머 콜백/CI 기반 클래스 구현/스텁 설명 다수/CI_KOREAN·CI_CHINESE Windows IME 우회 설명 블록(2건, 동일)/g_GetStringByMoney 제공처 설명 |
+| `VS_UI/src/widget/U_edit.cpp/.h` | SDL 텍스트 입력·UTF-8/UTF-32 변환·IME 조합·커서 이동·TextService 렌더링 관련 설명 주석 약 70건 전체 번역(LineEditor/LineEditorVisual 구현) |
+| `VS_UI/src/widget/mother.h` | Mother 클래스 파일 설명 헤더 |
+| `VS_UI/src/widget/pi_core.h` | 오브젝트 시작/종료/처리 설명, 순수 가상 아님 |
+| `VS_UI/src/widget/u_button.cpp/.h` | 포커스·눌림 상태 주석 다수, 버튼 입력 인터페이스 설명, ButtonBase/Exec/Button 클래스 헤더 |
+| `VS_UI/src/widget/u_scrollbar.h` | 위젯 스크롤바/설계 헤더 |
+| `VS_UI/src/widget/u_window.cpp/.h` | 전역 변수/macOS IME 스텁 설명(cpp), 로컬 속성 플래그/윈도우 이동/위젯 배치/포커스된 윈도우/윈도우 등록·해제·입력제어·우선순위·인터페이스 등 섹션 헤더(h, 이미 대부분 한글이라 잔여 영어 조각만 번역) |
+
+번역한 모든 파일은 BOM 유무를 확인해 없으면 파일 앞에 EF BB BF 3바이트를 추가함(28개 파일에 추가, 3개는 이미 BOM 보유).
+코드 서식/로직은 전혀 변경하지 않았으며, 순수 함수명·클래스명만 반복하는 헤더와 주석처리된 죽은 코드는 원문 유지.
+
+---
+
 ## 다음 번역 대상
 
-`VS_UI/src/VS_UI_Shop.cpp`부터 vcxproj 등장 순서대로 이어서 진행하면 됨: VS_UI_Shop.cpp, VS_UI_Storage.cpp,
-VS_UI_TITLE_SHOWCHAR.CPP, VS_UI_Title.cpp, VS_UI_Tutorial.cpp, VS_UI_WebBrowser.cpp, VS_UI_mouse_pointer.cpp,
-VS_UI_progress.cpp, VS_UI_skill_tree.cpp, VS_UI_ui_result_receiver.cpp, VS_UI_util.cpp, VS_UI_widget.cpp,
-Ci_macOS.cpp, U_edit.cpp, mother.cpp, pi_core.cpp, u_button.cpp, u_scrollbar.cpp, u_window.cpp 및 각 참조 헤더
-(약 1700KB 분량으로 추정, 1MB 단위로 나눠서 진행).
-`VS_UI_GameCommon.cpp`(1.15MB)와 `VS_UI_GameCommon.h`(113.2KB)는 300KB 기준 초과로 보류 중이며,
-사용자 확인 후 별도로 진행 필요.
+VS_UI.vcxproj 기준 남은 것은 `VS_UI/src/VS_UI_GameCommon.cpp`(1.15MB)와 `VS_UI_GameCommon.h`(113.2KB) 대형 파일
+2개뿐 (300KB 기준 초과로 보류 중, 사용자 확인 후 별도 세션에서 진행 필요). 이것만 끝나면 VS_UI.vcxproj 전체 번역 완료.

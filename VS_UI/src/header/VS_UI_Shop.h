@@ -1,8 +1,8 @@
-/*-----------------------------------------------------------------------------
+﻿/*-----------------------------------------------------------------------------
 
 	VS_UI_Shop.h
 
-	Shop interface.
+	상점 인터페이스.
 
 	2000.11.9. KJTINC
 
@@ -70,7 +70,7 @@ private:
 		SLOT_X_COUNT = 5,
 		SLOT_Y_COUNT = 4,
 
-		// 2x3 grid size
+		// 2x3 그리드 크기
 		SLOT_WIDTH = 60,
 		SLOT_HEIGHT = 90,
 	};
@@ -80,7 +80,7 @@ private:
 	int							m_shelf_start_x_offset;
 	int							m_shelf_start_y_offset[SLOT_Y_COUNT];
 
-	// dialog
+	// 대화창
 	C_VS_UI_DIALOG	*			m_pC_dialog_buy_confirm;
 
 	int	GetSlotX(int slot) const;
@@ -90,7 +90,7 @@ private:
 	void	StartBuyConfirmDialog(int _x, int _y, int num);
 	MItem * GetSlotItem(int slot) const;
 
-//timer
+// 타이머
 	DWORD						m_dw_prev_tickcount;
 	DWORD						m_dw_millisec;
 

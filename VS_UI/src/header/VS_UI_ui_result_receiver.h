@@ -1,4 +1,4 @@
-#ifndef __VS_UI_UI_RESULT_RECEIVER_H__
+﻿#ifndef __VS_UI_UI_RESULT_RECEIVER_H__
 #define __VS_UI_UI_RESULT_RECEIVER_H__
 
 #include "typedef.h"
@@ -27,7 +27,7 @@ public:
 };
 
 /*-----------------------------------------------------------------------------
-  Class VS UI - UI Result Receiver
+  VS UI 클래스 - UI 결과 수신기
 
   `  message   .   process 
     message     process kill   .
@@ -48,7 +48,7 @@ public:
 	void	_DispatchMessage();
 
 /*-----------------------------------------------------------------------------
-  Set.
+  설정.
 -----------------------------------------------------------------------------*/
 	void SetResultReceiver(void (*fp)(DWORD, int, int, void *));
 
