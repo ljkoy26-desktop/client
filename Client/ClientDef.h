@@ -30,7 +30,7 @@ class ClientPlayer;
 #include "COrderedList.h"
 
 //-----------------------------------------------------------------------------
-// Global data
+// 전역 데이터
 //-----------------------------------------------------------------------------
 extern HWND							g_hWnd;
 
@@ -38,7 +38,7 @@ extern HWND							g_hWnd;
 extern CSpriteSurface*			g_pBack;
 extern CSpriteSurface*			g_pLast;
 
-// Chat string
+// 채팅 문자열
 #define	MAX_RECEIVE	20
 #ifdef	OUTPUT_DEBUG
 	extern CMessageArray*			g_pDebugMessage;
@@ -137,7 +137,7 @@ extern BOOL		LoadCreatureType(int creatureType);
 extern void		ReleaseUselessCreatureSPKExcept(const COrderedList<int>& listUse);
 
 //-----------------------------------------------------------------------------
-// Convert 
+// 변환
 //-----------------------------------------------------------------------------
 extern DWORD	ConvertDurationToFrame(int duration);
 extern DWORD	ConvertMillisecondToFrame(DWORD ms);

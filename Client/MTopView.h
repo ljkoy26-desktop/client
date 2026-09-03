@@ -45,7 +45,7 @@
 //
 //---------------------------------------------------------------------- 
 //
-// ImageObject Map...
+// ImageObject 맵...
 //
 // 최초에... 모두 Tile Scan
 // 그리고.. 이전 Tile과의 변화값 만큼만 Tile Scan
@@ -91,7 +91,7 @@ class MEffect;
 #include "SpriteLib/CFilterPack.h"
 #include "SpriteLib/CSpriteOutlineManager.h"
 
-// TileRenderer for unified tile rendering
+// 통합 타일 렌더링용 TileRenderer
 #include "TileRenderer.h"
 #include "MZoneTileProvider.h"
 #include "EffectResourceContainer.h"
