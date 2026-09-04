@@ -41,11 +41,11 @@
 #include "VS_UI_ExtraDialog.h"
 #include "DebugInfo.h"
 
-#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9 (가방 속 가방)
 	#include "MItemFinder.h"
 #endif
 
-#define WHISPER_MAX 10	// by larosel
+#define WHISPER_MAX 10	// larosel 작성
 
 #define MAX_SLAYER_ATTR_OLD				200
 #define MAX_SLAYER_ATTR_SUM_OLD			300
@@ -67,10 +67,10 @@ extern MStorage*				g_pStorageTemp;
 extern BOOL g_bActiveGame;
 extern DWORD g_CurrentFrame;
 extern BOOL g_MyFull;
-CSpritePack	C_VS_UI_SKILL::m_C_spk; // Skill icon Sprite list
-CSpritePack	C_VS_UI_SKILL::m_C_spk_mini; // Skill icon Sprite list
+CSpritePack	C_VS_UI_SKILL::m_C_spk; // 스킬 아이콘 스프라이트 목록
+CSpritePack	C_VS_UI_SKILL::m_C_spk_mini; // 스킬 아이콘 스프라이트 목록
 
-//add by viva
+// viva 추가
 C_VS_UI_FRIEND_INFO* gpC_vs_ui_friend_info = NULL;
 
 
@@ -163,7 +163,7 @@ COLORREF g_color[4][4] =
 // 게임중에 계속 update시키는 char-slot이다.
 // 이것이 실시간으로 update되어야 info Window에 옳바로 표시된다.
 //
-S_SLOT	g_char_slot_ingame; // any character info slot in game.
+S_SLOT	g_char_slot_ingame; // 게임 내 캐릭터 정보 슬롯.
 
 static MItem *	m_p_sell_item;
 static MItem *	m_p_repair_item;
@@ -174,7 +174,7 @@ static C_VS_UI_MONEY_DIALOG *	m_pC_dialog_bring_fee;
 
 
 
-// Item blink color table
+// 아이템 깜빡임 색상 테이블
 int ga_item_blink_color_table[INTERFACE_BLINK_VALUE_MAX] = {
 	LIGHT_BLUE, SKY_BLUE, WHITE, BLUE
 };
@@ -218,7 +218,7 @@ void g_SetItemRefPoint(int item_rect_w, int item_rect_h)
 }
 
 //-----------------------------------------------------------------------------
-// Exec functions
+// 실행 함수
 //-----------------------------------------------------------------------------
 void ExecF_SellConfirm2(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 {
@@ -266,7 +266,7 @@ void ExecF_SellConfirm2(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 	}
 
 	//m_select_item_slot = NOT_SELECTED;
-	// re-acquire chatting
+	// 채팅 재획득
 //	gC_vs_ui.AcquireChatting();
 }
 
@@ -443,7 +443,7 @@ void ExecF_DropMoney(C_VS_UI_DIALOG * p_this_dialog, id_t id)
 		//}
 		else
 		{
-			// by sigi
+			// sigi 작성
 			gpC_base->SendMessage(UI_DROP_MONEY, m_pC_dialog_drop_money->GetValue());
 		}
 		break;
@@ -714,7 +714,7 @@ void g_StartSilveringFinishDialog(int _x, int _y)
 
 
 //----------------------------------------------------------------------------
-// Operations
+// 연산
 //----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
@@ -737,15 +737,15 @@ C_VS_UI_TRIBE::C_VS_UI_TRIBE()
 	m_pC_effect_status = new C_VS_UI_EFFECT_STATUS;
 	m_pC_minimap = new C_VS_UI_MINIMAP;
 
-	//add by viva : friend system
+	// viva 추가: 친구 시스템
 	m_pC_friend = new C_VS_UI_FRIEND_INFO;
 	//SetThis(m_pC_friend);
 	//This_FRIEND_INFO = m_pC_friend;
 	gpC_vs_ui_friend_info = m_pC_friend;
 	//C_VS_UI_FRIEND_INFO::This_FRIEND_INFO = m_pC_friend;
-	//end
+	// 끝
 
-	//  add by Coffee 添加世界地图
+	// Coffee 추가: 세계지도 추가
 //	m_pC_worldmap = new C_VS_UI_WORLDMAP;
 	//  end 
 	m_pC_chatting = NULL;
@@ -758,7 +758,7 @@ C_VS_UI_TRIBE::C_VS_UI_TRIBE()
 	m_pC_help_button_group = new ButtonGroup(this);
 	m_pC_level_up = NULL;
 	
-	// TIMER
+	// 타이머
 	m_dw_prev_tickcount = GetTickCount();
 	m_dw_millisec = 100;
 	
@@ -785,15 +785,15 @@ C_VS_UI_TRIBE::~C_VS_UI_TRIBE()
 	DeleteNew(m_pC_quest_status);	
 	DeleteNew(m_pC_effect_status);
 	DeleteNew(m_pC_minimap);
-	// add by Coffee 2007-3-6 添加世界地图
+	// Coffee 추가, 2007-3-6 세계지도 추가
 //	DeleteNew(m_pC_worldmap);
-	// end 
+	// 끝
 	DeleteNew(m_pC_inventory);
 	DeleteNew(m_pC_skill);
 	
-	//add by viva
+	// viva 추가
 	DeleteNew(m_pC_friend);
-	//end
+	// 끝
 
 	DeleteNew(m_pC_main_spk);
 	DeleteNew(m_pC_sys_button_spk);
@@ -810,8 +810,8 @@ C_VS_UI_TRIBE::~C_VS_UI_TRIBE()
 	DeleteNew(gpC_dialog_all_stage_clear);
 	
 	FinishItemSelling();
-	FinishItemRepairing(); // to release dialog mem
-	FinishItemSilvering(); // to release dialog mem
+	FinishItemRepairing(); // 다이얼로그 메모리 해제
+	FinishItemSilvering(); // 다이얼로그 메모리 해제
 }
 
 void	C_VS_UI_TRIBE::Process()
@@ -844,7 +844,7 @@ void	C_VS_UI_TRIBE::WindowEventReceiver(id_t event)
 {
 	switch (event)
 	{
-	case EVENT_WINDOW_MOVE://modify by viva : skill button point
+	case EVENT_WINDOW_MOVE:// viva 수정: 스킬 버튼 위치
 		switch(g_eRaceInterface)
 		{
 		case RACE_SLAYER:
@@ -905,7 +905,7 @@ void	C_VS_UI_TRIBE::ShowButtonDescription(C_VS_UI_EVENT_BUTTON * p_button)
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_UTIL].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_HELP].GetString(),
 
-		// Menu TAB
+		// 메뉴 탭
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_INVENTORY].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_GEAR_WINDOW].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_INFO_WINDOW].GetString(),
@@ -915,27 +915,27 @@ void	C_VS_UI_TRIBE::ShowButtonDescription(C_VS_UI_EVENT_BUTTON * p_button)
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_SMS_WINDOW].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_NAMING_WINDOW].GetString(),
 
-		// Guild Tab
+		// 길드 탭
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_TEAM_INFO].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_TEAM_MEMBER_LIST].GetString(),
-		"", // Placeholder for TEAM_COMMAND_WINDOW (commented out in enum)
+		"", // TEAM_COMMAND_WINDOW 플레이스홀더 (열거형에서 주석 처리됨)
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_TEAM_LIST_WINDOW].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_TEAM_WAIT_LIST_WINDOW].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_TEAM_UNION_WINDOW].GetString(),
 
-		// util tab
+		// 유틸 탭
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_PERSONAL_STORE].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_POWER_JJANG].GetString(),
 
-		// HELP TAB
+		// 도움말 탭
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_BASIC_HELP].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_CHATTING_HELP].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_WAR_HELP].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_SKILL_HELP].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_TEAM_HELP].GetString(),
-		//add by viva : friend button description
+		// viva 추가: 친구 버튼 설명
 //		(*g_pGameStringTable)[UI_STRING_MESSAGE_FRIEND].GetString(),
-		//end
+		// 끝
 		// MAX+
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_AUTO_HIDE_OFF].GetString(),
 	};
@@ -952,7 +952,7 @@ void	C_VS_UI_TRIBE::ShowButtonDescription(C_VS_UI_EVENT_BUTTON * p_button)
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_UTIL].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_HELP].GetString(),
 
-		// Menu TAB
+		// 메뉴 탭
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_INVENTORY].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_GEAR_WINDOW].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_INFO_WINDOW].GetString(),
@@ -962,27 +962,27 @@ void	C_VS_UI_TRIBE::ShowButtonDescription(C_VS_UI_EVENT_BUTTON * p_button)
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_SMS_WINDOW].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_NAMING_WINDOW].GetString(),
 
-		// Guild Tab
+		// 길드 탭
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_CLAN_INFO].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_CLAN_MEMBER_LIST].GetString(),
-		"", // Placeholder for CLAN_COMMAND_WINDOW (commented out in enum)
+		"", // CLAN_COMMAND_WINDOW 플레이스홀더 (열거형에서 주석 처리됨)
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_CLAN_LIST_WINDOW].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_CLAN_WAIT_LIST_WINDOW].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_CLAN_UNION_WINDOW].GetString(),
 
-		// util tab
+		// 유틸 탭
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_PERSONAL_STORE].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_POWER_JJANG].GetString(),
 
-		// HELP TAB
+		// 도움말 탭
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_BASIC_HELP].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_CHATTING_HELP].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_WAR_HELP].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_MAGIC_HELP].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_CLAN_HELP].GetString(),
-		//add by viva : friend button description
+		// viva 추가: 친구 버튼 설명
 //		(*g_pGameStringTable)[UI_STRING_MESSAGE_FRIEND].GetString(),
-		//end
+		// 끝
 		// MAX+
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_AUTO_HIDE_OFF].GetString(),
 	};
@@ -999,7 +999,7 @@ void	C_VS_UI_TRIBE::ShowButtonDescription(C_VS_UI_EVENT_BUTTON * p_button)
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_UTIL].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_HELP].GetString(),
 
-		// Menu TAB
+		// 메뉴 탭
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_INVENTORY].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_GEAR_WINDOW].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_INFO_WINDOW].GetString(),
@@ -1009,27 +1009,27 @@ void	C_VS_UI_TRIBE::ShowButtonDescription(C_VS_UI_EVENT_BUTTON * p_button)
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_SMS_WINDOW].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_NAMING_WINDOW].GetString(),
 
-		// Guild Tab
+		// 길드 탭
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_GUILD_INFO].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_GUILD_MEMBER_LIST].GetString(),
-		"", // Placeholder for GUILD_COMMAND_WINDOW (commented out in enum)
+		"", // GUILD_COMMAND_WINDOW 플레이스홀더 (열거형에서 주석 처리됨)
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_GUILD_LIST_WINDOW].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_GUILD_WAIT_LIST_WINDOW].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_GUILD_UNION_WINDOW].GetString(),
 
-		// util tab
+		// 유틸 탭
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_PERSONAL_STORE].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_POWER_JJANG].GetString(),
 
-		// HELP TAB
+		// 도움말 탭
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_BASIC_HELP].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_CHATTING_HELP].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_WAR_HELP].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_MAGIC_HELP].GetString(),
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_GUILD_HELP].GetString(),
-		//add by viva : friend button description
+		// viva 추가: 친구 버튼 설명
 //		(*g_pGameStringTable)[UI_STRING_MESSAGE_FRIEND].GetString(),
-		//end
+		// 끝
 		// MAX+
 		(*g_pGameStringTable)[UI_STRING_MESSAGE_AUTO_HIDE_OFF].GetString(),
 	};
@@ -1159,7 +1159,7 @@ void	C_VS_UI_TRIBE::Run(id_t id)
 		m_selected_tab = id;
 		break;
 		
-		// MENU TAB
+		// 메뉴 탭
 	case INVENTORY_ID:
 		HotKey_Inventory();
 		break;
@@ -1193,7 +1193,7 @@ void	C_VS_UI_TRIBE::Run(id_t id)
 	case NAMING_ID:
 		HotKey_NamingWindow();
 		break;
-		// TEAM TAB
+		// 팀 탭
 	case TEAM_INFO_ID:
 		if(g_pUserInformation->GuildGrade != 4)
 			gpC_base->SendMessage(UI_REQUEST_GUILD_INFO, 0, 0, NULL);
@@ -1218,7 +1218,7 @@ void	C_VS_UI_TRIBE::Run(id_t id)
 		gpC_base->SendMessage(UI_REQUEST_UNION_REQUEST_INFO,0,0,NULL);
 		break;
 
-		// HELP TAB
+		// 도움말 탭
 	case HELP_ID:
 		HotKey_Help();
 		break;
@@ -1442,7 +1442,7 @@ void C_VS_UI_TRIBE::SetChattingInterface(C_VS_UI_CHATTING * p_chatting)
 }
 
 //-----------------------------------------------------------------------------
-// Shop RunningAnnounced
+// 샵 실행 알림
 //-----------------------------------------------------------------------------
 void	
 C_VS_UI_TRIBE::ShopRunningAnnounced() // Shop을 위한 필요한 Window를 띄운다.
@@ -1465,7 +1465,7 @@ C_VS_UI_TRIBE::ShopRunningAnnounced() // Shop을 위한 필요한 Window를 띄�
 }
 
 //-----------------------------------------------------------------------------
-// Storage RunningAnnounced
+// 창고 실행 알림
 //-----------------------------------------------------------------------------
 void	
 C_VS_UI_TRIBE::StorageRunningAnnounced()
@@ -1496,7 +1496,7 @@ C_VS_UI_TRIBE::GetItemBoxRunningAnnounced()
 }
 
 //-----------------------------------------------------------------------------
-// Exchange RunningAnnounced
+// 교환 실행 알림
 //-----------------------------------------------------------------------------
 void	
 C_VS_UI_TRIBE::ExchangeRunningAnnounced()
@@ -1556,7 +1556,7 @@ bool C_VS_UI_TRIBE::GetInventoryOpenState() const
 //-----------------------------------------------------------------------------
 //C_VS_UI_TRIBE::GetFriendOpenState
 //
-//add by viva
+// viva 추가
 //-----------------------------------------------------------------------------
 bool C_VS_UI_TRIBE::GetFriendOpenState() const
 {
@@ -1577,7 +1577,7 @@ bool C_VS_UI_TRIBE::GetGearOpenState() const
 //-----------------------------------------------------------------------------
 //C_VS_UI_TRIBE::HotKey_Friend()
 //
-//add by viva
+// viva 추가
 //-----------------------------------------------------------------------------
 void C_VS_UI_TRIBE::HotKey_Friend()
 {
@@ -1593,7 +1593,7 @@ void C_VS_UI_TRIBE::HotKey_Friend()
 //
 // 
 //-----------------------------------------------------------------------------
-#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9 (가방 속 가방)
 	void C_VS_UI_TRIBE::HotKey_Inventory(bool IsCheckSubInventory)
 #else
 	void C_VS_UI_TRIBE::HotKey_Inventory()
@@ -1602,7 +1602,7 @@ void C_VS_UI_TRIBE::HotKey_Friend()
 {
 	if (gpC_base == NULL || gpC_base->EventOccured() == true)
 		return;
-	#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+	#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9 (가방 속 가방)
 		if (!GetInventoryOpenState())
 			OpenInventory();
 		else
@@ -2130,7 +2130,7 @@ void C_VS_UI_TRIBE::HotKey_SummonPet()
 	if(	gbl_item_lock || gbl_gear_lock )
 		return;
 
-	#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+	#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9 (가방 속 가방)
 		MItem* pSubInventory = NULL;
 		MItem* pItem = ((MItemManager*)g_pInventory)->FindItemAll( MItemClassFinder(ITEM_CLASS_PET_ITEM) , pSubInventory);
 		
@@ -2172,11 +2172,11 @@ void	C_VS_UI_TRIBE::DoCommonActionBeforeEventOccured()
 	CloseGear();
 	GetSkillWindow()->CloseInterface();
 	
-	// stop all Window move
+	// 모든 창 이동 중지
 	GetInventoryWindow()->AttrWindowMove(false);
 	GetGearWindow()->AttrWindowMove(false);
 	
-	// backup xy
+	// xy 좌표 백업
 	m_backup_inventory_xy.x = GetInventoryWindow()->x;
 	m_backup_inventory_xy.y = GetInventoryWindow()->y;
 	m_backup_gear_xy.x = GetGearWindow()->x;
@@ -2186,7 +2186,7 @@ void	C_VS_UI_TRIBE::DoCommonActionBeforeEventOccured()
 }
 
 //-----------------------------------------------------------------------------
-// Timer
+// 타이머
 //
 //-----------------------------------------------------------------------------
 bool C_VS_UI_TRIBE::Timer()
@@ -2321,7 +2321,7 @@ bool C_VS_UI_TRIBE::MouseControl(UINT message, int _x, int _y)
 					}
 					break;
 					
-				case 3:	// skill1
+				case 3:	// 스킬 1
 					if(g_pSkillManager)
 					{
 						int domainIndex = domain[0];
@@ -2345,7 +2345,7 @@ bool C_VS_UI_TRIBE::MouseControl(UINT message, int _x, int _y)
 					}
 					break;
 					
-				case 4:	// skill2
+				case 4:	// 스킬 2
 					if(g_pSkillManager)
 					{
 						int domainIndex = domain[1];
@@ -2369,7 +2369,7 @@ bool C_VS_UI_TRIBE::MouseControl(UINT message, int _x, int _y)
 					}
 					break;
 					
-				case 5:	// skill3
+				case 5:	// 스킬 3
 					if(g_pSkillManager)
 					{
 						int domainIndex = domain[2];
@@ -2544,7 +2544,7 @@ C_VS_UI_GEAR::C_VS_UI_GEAR()
 	switch(g_eRaceInterface)
 	{
 	case RACE_SLAYER:
-		// by csm 2004.12.31
+		// csm 수정, 2004.12.31
 //		if(g_char_slot_ingame.m_AdvancementLevel> 0) // 2차 전직 용 기어 인터페이스 
 //		{
 			m_bl_Abvencement = true;
@@ -3183,7 +3183,7 @@ void C_VS_UI_GEAR::Show()
 			{
 				if (m_pC_gear_slot_spk != NULL && m_p_slot_image[i] != -1)
 				{
-					// 2004, 10, 20, sobeit add & modify start
+					// 2004.10.20 sobeit 추가 & 수정 시작
 					bool IsBloodBibleSlotClose = gC_vs_ui.IsCloseBloodBibleSlot(i);
 
 					if(!IsBloodBibleSlotClose)
@@ -3199,7 +3199,7 @@ void C_VS_UI_GEAR::Show()
 						m_pC_gear_spk->BltLocked(slotX, slotY, GEAR_BLOOD_BIBLE_BLOCK);
 					}
 
-					// 2004, 10, 20, sobeit add & modify end
+					// 2004.10.20 sobeit 추가 & 수정 끝
 				}
 			}
 			else
@@ -3253,7 +3253,7 @@ void C_VS_UI_GEAR::Show()
 
 					if (p_item->IsAffectStatus() || p_item->IsQuestItem() )
 					{
-						// frame id -> sprite id
+						// 프레임 ID -> 스프라이트 ID
 						gpC_item->BltLocked(item_x, item_y, frame_id);
 						if(p_item->GetItemClass() == ITEM_CLASS_OUSTERS_WRISTLET && g_eRaceInterface == RACE_OUSTERS)
 						{
@@ -3327,7 +3327,7 @@ void C_VS_UI_GEAR::Show()
 	/*
 	#ifndef _LIB
 	//
-	// focus slot rect -- Test
+	// 포켓스 슬롯 사각형 -- 테스트
 	//
 	if (gpC_base->m_p_DDSurface_back->Lock())
 	{
@@ -3475,7 +3475,7 @@ bool C_VS_UI_GEAR::Click(int window_x, int window_y, Rect * slot_rect)
 				}
 				else
 				{
-					// not replace, just drop at empty grid.
+					// 교체하지 않고 빈 그리드에 놓음.
 					
 					gpC_base->SendMessage(UI_ITEM_DROP_TO_GEAR, 
 						m_focus_slot, 
@@ -3508,23 +3508,23 @@ bool C_VS_UI_GEAR::Click(int window_x, int window_y, Rect * slot_rect)
 		{
 			if(gpC_mouse_pointer->IsCursorDescription())
 			{
-				// 2004, 7, 6 sobeit add start
+				// 2004.7.6 sobeit 추가 시작
 				const MItem * p_OriginItem = NULL;
 				if(p_item->GetItemClass() == ITEM_CLASS_CORE_ZAP)
 				{
 					p_OriginItem = gC_vs_ui.GetGearCoreZapedItem(m_focus_slot);
 					gC_vs_ui.RunDescDialog(DID_ITEM, (void *)p_OriginItem, (void*)p_item);
 				}
-				// 2004, 7, 6 sobeit add end
+				// 2004.7.6 sobeit 추가 끝
 				else
 					gC_vs_ui.RunDescDialog(DID_ITEM, (void *)p_item);
 			}
-			// 2004, 10, 21, sobeit add start
+			// 2004.10.21 sobeit 추가 시작
 			else if(p_item->GetItemClass() == ITEM_CLASS_BLOOD_BIBLE_SIGN )
 			{
 				return false; // 기어창에서 블러드 바이블은 처리 하지 않는다.
 			}
-			// 2004, 10, 21, sobeit add end
+			// 2004.10.21 sobeit 추가 끝
 			else if (gbl_repair_running == true)
 			{
 				if (gbl_item_trade_lock == false && 
@@ -3536,7 +3536,7 @@ bool C_VS_UI_GEAR::Click(int window_x, int window_y, Rect * slot_rect)
 					!p_item->IsUniqueItem() &&
 					!p_item->IsQuestItem())
 				{
-					// repair 가격이 0보다 클 때... by sigi
+					// repair 가격이 0보다 클 때...
 					if (g_pPriceManager->GetItemPrice((MItem*)p_item, MPriceManager::REPAIR) > 0)
 					{
 						m_p_repair_item = (MItem *)p_item;
@@ -3554,7 +3554,7 @@ bool C_VS_UI_GEAR::Click(int window_x, int window_y, Rect * slot_rect)
 			{
 				if (gbl_item_trade_lock == false)
 				{
-					// silvering 가격이 0보다 클 때... by larosel
+					// silvering 가격이 0보다 클 때...
 					if (g_pPriceManager->GetItemPrice((MItem*)p_item, MPriceManager::SILVERING) > 0)
 					{
 						m_p_silvering_item = (MItem *)p_item;
@@ -3931,7 +3931,7 @@ void C_VS_UI_CHATTING::AddChatToHistory(const char * str, const char * sz_id, en
 			}
 			
 			
-			// by larosel
+			// larosel 작성
 			//		if ( (condition == CLD_PARTY) && m_pC_history_temp_list.Size() == HISTORY_SIZE_TEMP)
 			//			delete m_pC_history_guild_temp_list.PopBack();
 			//		if ( (condition == CLD_GUILD) && m_pC_history_temp_list.Size() == HISTORY_SIZE_TEMP)
@@ -4024,7 +4024,7 @@ void	C_VS_UI_CHATTING::AddToChatHistory(const char * sz_str, const char * sz_id,
 	//		if (sz_str)
 	//			strcat(p_temp, sz_str);
 	//
-	m_pC_history_list.Add(sz_id, sz_str, condition, color);	// by larosel
+	m_pC_history_list.Add(sz_id, sz_str, condition, color);	// larosel 작성
 	//	}
 	
 	//	DeleteNewArray(p_temp);
@@ -4221,7 +4221,7 @@ bool C_VS_UI_CHATTING::MouseControl(UINT message, int _x, int _y)
 	if(scroll > 0 && m_pC_scroll_bar->GetScrollPos() == 0)
 		RestoreHistoryTemp();
 		/*
-		// Mouse Control Extra
+		// 마우스 추가 제어
 		RECT rect;
 		if(!m_bl_spreadID)
 		{
@@ -4257,12 +4257,12 @@ bool C_VS_UI_CHATTING::MouseControl(UINT message, int _x, int _y)
 			if (x > rect.left && x < rect.left + 120)
 			{
 			//------------------------------------------------------------
-			// 채팅창에서 이름 선택하기 - by sigi
+			// 채팅창에서 이름 선택하기
 			//------------------------------------------------------------				
 			// FONT_GAP으로 몇번째 줄인지 판단한다.
 			int yLine = -((y - (CHAT_HISTORY_START_Y+FONT_GAP)) / FONT_GAP);				
 			
-			  //	by larosel
+			  //	larosel 작성
 			  C_VS_UI_CHAT_LINE * p_line = NULL;	
 			  switch(CHAT)//gC_vs_ui.GetChatMode())
 			  {
@@ -4334,7 +4334,7 @@ bool C_VS_UI_CHATTING::MouseControl(UINT message, int _x, int _y)
 								case M_LB_DOUBLECLICK:	
 								{
 								//------------------------------------------------------------
-								// 스프레드된 아이디 창에서 아이디 선택하기 by larosel
+								// 스프레드된 아이디 창에서 아이디 선택하기
 								//------------------------------------------------------------				
 								// FONT_GAP으로 몇번째 줄인지 판단한다.
 								int yLine = (y - rect.top)/FONT_GAP;
@@ -4444,8 +4444,8 @@ void C_VS_UI_CHATTING::KeyboardControl(UINT message, UINT key, long extra)
 				//
 
 				char * sz_chat_str = NULL;
-				// Use UTF-8 directly instead of converting through UTF-16
-				// GetString() returns UTF-8 encoded string
+				// UTF-16 변환 없이 UTF-8 직접 사용
+				// GetString()은 UTF-8 인�˔딩 문자열을 나환함
 				const char* utf8_str = m_lev_chatting.GetString();
 				if (utf8_str) {
 					int len = static_cast<int>(strlen(utf8_str));
@@ -4562,9 +4562,9 @@ void C_VS_UI_CHATTING::KeyboardControl(UINT message, UINT key, long extra)
 				
 				
 				if(g_pUserOption->ChatWhite)
-					gpC_base->SendMessage(UI_CHAT_RETURN, condition, gpC_base->m_chatting_pi.text_color, pTempstr);	// by larosel
+					gpC_base->SendMessage(UI_CHAT_RETURN, condition, gpC_base->m_chatting_pi.text_color, pTempstr);	// larosel 작성
 				else
-					gpC_base->SendMessage(UI_CHAT_RETURN, condition, g_pUserOption->ChattingColor, pTempstr);	// by larosel
+					gpC_base->SendMessage(UI_CHAT_RETURN, condition, g_pUserOption->ChattingColor, pTempstr);	// larosel 작성
 				
 				if(pTempstr[0] == '/')AddWhisperID(pTempstr + 1);
 				
@@ -4577,7 +4577,7 @@ void C_VS_UI_CHATTING::KeyboardControl(UINT message, UINT key, long extra)
 				// message를 보내고 곧바로 확인한다. 왜냐하면 lack에 의해 늦어질 수 있기 때문이다.
 				// 이것은 바로 반응해야 하는 것이다.
 				RestoreHistoryTemp();
-				ResetScroll();	// by larosel
+				ResetScroll();	// larosel 작성
 				
 				if(!g_pUserOption->UseEnterChat)
 					TimerHide(true);
@@ -4721,7 +4721,7 @@ void C_VS_UI_CHATTING::KeyboardControl(UINT message, UINT key, long extra)
 }
 
 //-----------------------------------------------------------------------------
-// 입력중인 string을 바로 설정한다. by sigi
+// 입력중인 string을 바로 설정한다.
 //-----------------------------------------------------------------------------
 void	
 C_VS_UI_CHATTING::SetInputString(const char* pString)
@@ -4735,7 +4735,7 @@ C_VS_UI_CHATTING::SetInputString(const char* pString)
 }
 
 //-----------------------------------------------------------------------------
-// 입력중인 string을 바로 설정한다. by sigi
+// 입력중인 string을 바로 설정한다.
 //-----------------------------------------------------------------------------
 void	
 C_VS_UI_CHATTING::AddInputString(const char* pString)
@@ -4943,7 +4943,7 @@ void C_VS_UI_CHATTING::Show()
 	g_FL2_GetDC();	
 	for (int i=0, line = 0, scroll = 0; line < g_HISTORY_LINE; line++, i++)
 	{
-		// by larosel
+		// larosel 작성
 		C_VS_UI_CHAT_LINE * p_line;	
 		p_line = m_pC_history_list.GetLine(i);
 		
@@ -4956,7 +4956,7 @@ void C_VS_UI_CHATTING::Show()
 				line--;
 				continue;
 			}
-			int vx = CHAT_LINE_START_X + 22;  //modify by viva : hostory_line
+			int vx = CHAT_LINE_START_X + 22;  // viva 수정: 기록 줄
 			
 			int bl_backup = 0;
 			if (p_line->GetMsgString())
@@ -5042,7 +5042,7 @@ void C_VS_UI_CHATTING::Show()
 							tabvalue=CLD_MASTER;
 						else
 							tabvalue=p_line->GetCondition();
-						//modify by viva : +22 hostory_line
+						// viva 수정: +22 채팅 기록 줄
 						vx = g_PrintColorStr(CHAT_LINE_START_X + 22, CHAT_HISTORY_START_Y-(FONT_GAP*line), p_line->GetIdString(), gpC_base->m_user_id_pi, m_color_tab[tabvalue]);
 						vx = g_PrintColorStr(vx, CHAT_HISTORY_START_Y-(FONT_GAP*line), g_sz_chat_id_divisor[p_line->GetCondition()], gpC_base->m_chatting_pi, m_color_tab[tabvalue]);
 						vx += _ID_GAP;
@@ -5096,7 +5096,7 @@ void C_VS_UI_CHATTING::Show()
 			if(!m_sz_whisper_backup.empty())
 			{
 
-				// GDI removed (SDL2) - All platforms use SDL backend
+				// GDI 제거 (SDL2) - 모든 플래폼이 SDL 백엔드 사용
 				g_PrintColorStr(CHAT_LINE_START_X +100, CHAT_LINE_START_Y, m_sz_whisper_backup.c_str(), gpC_base->m_chatting_pi, m_color_tab[CLD_NORMAL]);
 			}
 		}
@@ -5901,13 +5901,13 @@ void C_VS_UI_CHATTING::WindowEventReceiver(id_t event)
 			}
 		}
 		
-		CHAT_LINE_START_X = x+40+8;//modify by viva : chat_line + 8
+		CHAT_LINE_START_X = x+40+8;// viva 수정: 채팅 줄 +8
 		CHAT_LINE_START_Y = y+h-FONT_GAP-3;
-		CHAT_WINDOW_WIDTH = w-70-30;//modify by viva : hostory_width - 30
+		CHAT_WINDOW_WIDTH = w-70-30;// viva 수정: 기록 너비 -30
 		CHAT_INPUT_WIDTH = w-110;
 		CHAT_HISTORY_START_Y = y+h-FONT_GAP-4-20;
 
-		switch(g_eRaceInterface) // chatting history line
+		switch(g_eRaceInterface) // 채팅 기록 줄
 		{
 		case RACE_SLAYER:
 			g_HISTORY_LINE = (h-14-20)/FONT_GAP;
@@ -6017,7 +6017,7 @@ void C_VS_UI_CHATTING::Run(id_t id)
 }
 
 //-----------------------------------------------------------------------------
-// Process
+// 처리
 //
 // 
 //-----------------------------------------------------------------------------
@@ -6173,7 +6173,7 @@ C_VS_UI_CHATTING::C_VS_UI_CHATTING()
 	m_sub_rect.Set(0, 0, 160, 100);
 	m_sub_selected.x = -1;
 	
-	// alpha & pushpin button
+	// 알파 & 핀 버튼
 	int alpha_button_offset_x, alpha_button_offset_y;
 	int pushpin_button_offset_x, pushpin_button_offset_y;
 	
@@ -6194,12 +6194,12 @@ C_VS_UI_CHATTING::C_VS_UI_CHATTING()
 		pushpin_button_offset_x = 24; pushpin_button_offset_y = 6;
 		break;
 	}	
-	//modify by viva :2 button
+	// viva 수정: 버튼 2개
 	m_pC_input_right_button_group->Add(new C_VS_UI_EVENT_BUTTON(alpha_button_offset_x-3, alpha_button_offset_y-2, gpC_global_resource->m_pC_assemble_box_button_spk->GetWidth(C_GLOBAL_RESOURCE::AB_BUTTON_ALPHA), gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_ALPHA), ALPHA_ID, this, C_GLOBAL_RESOURCE::AB_BUTTON_ALPHA));
 	m_pC_input_right_button_group->Add(new C_VS_UI_EVENT_BUTTON(pushpin_button_offset_x-3, pushpin_button_offset_y-2, gpC_global_resource->m_pC_assemble_box_button_spk->GetWidth(C_GLOBAL_RESOURCE::AB_BUTTON_PUSHPIN), gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_PUSHPIN), PUSHPIN_ID, this, C_GLOBAL_RESOURCE::AB_BUTTON_PUSHPIN));
 	
-	// chat buttons
-	//modify by viva :  + 1 on per lines
+	// 채팅 버튼
+	// viva 수정: 줄마다 +1
 	int chat_button_offset_x = 7, chat_button_offset_y = 30, chat_button_gap = 12;
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(chat_button_offset_x, chat_button_offset_y, m_pC_chatting_spk->GetWidth(BUTTON_UNION), m_pC_chatting_spk->GetHeight(BUTTON_UNION), CHAT_UNION_ID, this, BUTTON_UNION));
 	chat_button_offset_y += chat_button_gap + 1;
@@ -6213,8 +6213,8 @@ C_VS_UI_CHATTING::C_VS_UI_CHATTING()
 	chat_button_offset_y += chat_button_gap + 1;
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(chat_button_offset_x, chat_button_offset_y, m_pC_chatting_spk->GetWidth(BUTTON_NORMAL), m_pC_chatting_spk->GetHeight(BUTTON_NORMAL), CHAT_NORMAL_ID, this, BUTTON_NORMAL));
 	
-	// filter buttons
-	//modify by viva : filter buttons + 38 and + 1 on per lines
+	// 필터 버튼
+	// viva 수정: 필터 버튼 +38, 줄마다 +1
 	chat_button_offset_x += 38; chat_button_offset_y = 31;
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(chat_button_offset_x, chat_button_offset_y, m_pC_chatting_spk->GetWidth(BUTTON_FILTER), m_pC_chatting_spk->GetHeight(BUTTON_FILTER), FILTER_UNION_ID, this, BUTTON_FILTER));
 	chat_button_offset_y += chat_button_gap + 1;
@@ -6228,15 +6228,15 @@ C_VS_UI_CHATTING::C_VS_UI_CHATTING()
 	chat_button_offset_y += chat_button_gap + 1;
 	m_pC_button_group->Add(new C_VS_UI_EVENT_BUTTON(chat_button_offset_x, chat_button_offset_y, m_pC_chatting_spk->GetWidth(BUTTON_FILTER), m_pC_chatting_spk->GetHeight(BUTTON_FILTER), FILTER_NORMAL_ID, this, BUTTON_FILTER));
 	
-	// input buttons
-	//modify  : 3 button
+	// 입력 버튼
+	// 수정: 버튼 3개
 	int input_button_offset_x = 5, input_button_offset_y = 4, input_button_gap = 15;
 	m_pC_input_button_group->Add(new C_VS_UI_EVENT_BUTTON(input_button_offset_x, input_button_offset_y, m_pC_chatting_spk->GetWidth(BUTTON_MARK), m_pC_chatting_spk->GetHeight(BUTTON_MARK), MARK_ID, this, BUTTON_MARK));
 	input_button_offset_x += input_button_gap;
 	m_pC_input_button_group->Add(new C_VS_UI_EVENT_BUTTON(input_button_offset_x, input_button_offset_y, m_pC_chatting_spk->GetWidth(BUTTON_COLOR), m_pC_chatting_spk->GetHeight(BUTTON_COLOR), COLOR_ID, this, BUTTON_COLOR));
 	input_button_offset_x += input_button_gap;
 	m_pC_input_button_group->Add(new C_VS_UI_EVENT_BUTTON(input_button_offset_x, input_button_offset_y, m_pC_chatting_spk->GetWidth(BUTTON_ENG), m_pC_chatting_spk->GetHeight(BUTTON_ENG), LANGUAGE_ID, this, BUTTON_HAN));
-	// Spread button
+	// 펼침 버튼
 	m_pC_input_button_group->Add(new C_VS_UI_EVENT_BUTTON(x+131, 4, m_pC_chatting_spk->GetWidth(BUTTON_SPREAD), m_pC_chatting_spk->GetHeight(BUTTON_SPREAD), SPREAD_ID, this, BUTTON_SPREAD));
 	
 	CancelPushState();
@@ -6255,11 +6255,11 @@ C_VS_UI_CHATTING::C_VS_UI_CHATTING()
 	else
 		m_lev_chatting.SetInputStringColor(g_pUserOption->ChattingColor);
 	
-	m_bl_focus_whisper = false;	// by larosel
-	m_bl_whisper_mode = false;	// by larosel
-	m_whisper_index = -1;		// by larosel
+	m_bl_focus_whisper = false;	// larosel 작성
+	m_bl_whisper_mode = false;	// larosel 작성
+	m_whisper_index = -1;		// larosel 작성
 	
-	//	m_bl_guild = false;		// 길드 채팅 by larosel
+	//	m_bl_guild = false;		// 길드 채팅
 	m_bl_spreadID = false;
 	
 	m_history_line = 0;
@@ -6378,12 +6378,12 @@ void	C_VS_UI_CHATTING::TribeChanged()
 	switch(g_eRaceInterface)
 	{
 	case RACE_SLAYER:
-		// add by sonic 2006.9.26
+		// Sonic 추가, 2006.9.26
 		if (g_MyFull)
 			m_pC_chatting_spk = new C_SPRITE_PACK(SPK_CHATTING_SLAYER_1024);
 		else
 			m_pC_chatting_spk = new C_SPRITE_PACK(SPK_CHATTING_SLAYER);
-		// End by Snic
+		// Snic 종료
 		Set(0, g_GameRect.bottom - 119, 623, 119);
 		m_backup_rect.Set(0, g_GameRect.bottom - 119-100, 623, 119+100);				
 		gpC_base->m_user_id_pi.text_color = SLAYER_FONT_COLOR;
@@ -6393,7 +6393,7 @@ void	C_VS_UI_CHATTING::TribeChanged()
 		m_color_tab[CLD_UNION] = RGB(180, 230, 180);
 		m_color_tab[CLD_PARTY] = RGB(230, 180, 230);
 		m_color_tab[CLD_ZONECHAT] = SLAYER_FONT_COLOR;
-		m_color_tab[CLD_WHISPER] = RGB(65, 206, 81);//RGB_BLUE;	// by larosel
+		m_color_tab[CLD_WHISPER] = RGB(65, 206, 81);//RGB_BLUE;	// larosel 작성
 		m_color_tab[CLD_INFO] = RGB(130, 230, 230);
 		m_color_tab[CLD_MASTER] = RGB(255,180, 180);
 		m_sub_window = 0;
@@ -6404,7 +6404,7 @@ void	C_VS_UI_CHATTING::TribeChanged()
 		break;
 
 	case RACE_VAMPIRE:
-		// add by Sonic 2006.9.26
+		// Sonic 추가, 2006.9.26
 		if(g_MyFull)
 			m_pC_chatting_spk = new C_SPRITE_PACK(SPK_CHATTING_VAMPIRE_1024);
 		else
@@ -6605,7 +6605,7 @@ void C_VS_UI_CHATTING::ChangeWhisperFocus()
 	else
 	{
 		//		if(m_sz_whisper_backup == "")m_sz_whisper_backup = GetWhisperID();
-		m_lev_chatting.SetPosition(CHAT_LINE_START_X +105, CHAT_LINE_START_Y);  //modify by viva : whisper mode
+		m_lev_chatting.SetPosition(CHAT_LINE_START_X +105, CHAT_LINE_START_Y);  // viva 수정: 귓속말 모드
 		m_lev_chatting.SetByteLimit(100);
 		m_lev_chatting.HomeCursor();
 		m_lev_chatting.EndCursor();
@@ -6635,10 +6635,10 @@ bool C_VS_UI_CHATTING::AddWhisperID(const char *sz_ID)
 	strncpy(szTemp, sz_ID, 511);
 	szTemp[511] = '\0';
 
-	// Find first space or null terminator, but limit to 11 characters
+	// 첫 번째 공방 또는 널 종결자를 찾되, 11자로 제한
 	for(i = 0; i < 11 && szTemp[i] != '\0' && szTemp[i] != ' '; i++);
 
-	// Only terminate if i is within bounds
+	// i가 범위 내에 있을 때만 종결
 	if (i < 512) {
 		szTemp[i] = '\0';
 	}
@@ -6726,7 +6726,7 @@ DWORD	C_VS_UI_INVENTORY::m_dw_millisec;
 //-----------------------------------------------------------------------------
 // C_VS_UI_INVENTORY::C_VS_UI_INVENTORY
 //
-// Ref by viva for friend system
+// viva 참조, 친구 시스템용
 //-----------------------------------------------------------------------------
 C_VS_UI_INVENTORY::C_VS_UI_INVENTORY()
 {
@@ -7178,7 +7178,7 @@ void C_VS_UI_INVENTORY::AutoMove( int grid_x, int grid_y )
 			return;
 		}
 	}
-	#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+	#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9 (가방 속 가방)
 	// sub inventory 로 이동 
 	else if( //p_item->GetItemClass() != ITEM_CLASS_PET_ITEM && // 요건 담에 삭제
 		!gC_vs_ui.IsRunningExchange() &&
@@ -7195,10 +7195,10 @@ void C_VS_UI_INVENTORY::AutoMove( int grid_x, int grid_y )
 			|| ( ItemClass == ITEM_CLASS_WAR_ITEM )							// 전쟁 아이템/ 드래곤 아이
 			|| ( ItemClass == ITEM_CLASS_EVENT_ITEM && ItemType == 27 )		// 깃발
 
-			// sjheon 2004.04.28 add
+			// sjheon 추가, 2004.04.28
 			|| ( ItemClass == ITEM_CLASS_EVENT_ETC && ItemType == 18 )		// 패밀리 코인
 			|| ( ItemClass == ITEM_CLASS_EVENT_ITEM && (ItemType >= 32 && ItemType <= 36) )		// 풍선 머리띠 
-			// sjheon 2004.04.28 add
+			// sjheon 추가, 2004.04.28
 							
 			|| ( ItemClass == ITEM_CLASS_SWEEPER ) )						// 스위퍼
 		{
@@ -7460,7 +7460,7 @@ void C_VS_UI_INVENTORY::Run(id_t id)
 			if (gC_vs_ui.IsRunningStorage())
 			{
 				m_pC_dialog_drop_money = new C_VS_UI_MONEY_DIALOG(x+m_money_button_offset_x, y+m_money_button_offset_y+gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_MONEY), 2, 0, ExecF_DropMoney, DIALOG_OK|DIALOG_CANCEL, 10, 
-					C_VS_UI_MONEY_DIALOG::MONEY_DEPOSIT);	// by sigi
+					C_VS_UI_MONEY_DIALOG::MONEY_DEPOSIT);	// sigi 작성
 				m_pC_dialog_drop_money->Start();
 			}
 			//else if (gC_vs_ui.IsRunningExchange())
@@ -7471,7 +7471,7 @@ void C_VS_UI_INVENTORY::Run(id_t id)
 //			else
 //			{
 //				m_pC_dialog_drop_money = new C_VS_UI_MONEY_DIALOG(x+m_money_button_offset_x, y+m_money_button_offset_y+gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_MONEY), 1, 0, ExecF_DropMoney, DIALOG_OK|DIALOG_CANCEL, 10, 
-//					C_VS_UI_MONEY_DIALOG::MONEY_DROP);	// by sigi
+//					C_VS_UI_MONEY_DIALOG::MONEY_DROP);	// sigi 작성
 //			}
 		}
 		break;
@@ -7804,7 +7804,7 @@ void C_VS_UI_INVENTORY::Show()
 			// p_item은 NULL이 반드시 아니다. 왜냐하면 존재하는 것만 Get()하기 때문이다.
 			assert(p_item);
 
-			// frame id -> sprite id
+			// 프레임 ID -> 스프라이트 ID
 			if(p_item)
 			{
 				TYPE_FRAMEID frame_id = p_item->GetInventoryFrameID();
@@ -7988,7 +7988,7 @@ void C_VS_UI_INVENTORY::Show()
 					
 					if (p_item->IsAffectStatus() || p_item->IsQuestItem() )
 					{
-						// frame id -> sprite id
+						// 프레임 ID -> 스프라이트 ID
 						gpC_item->BltLocked(item_x, item_y, frame_id);
 						if(p_item->GetItemClass() == ITEM_CLASS_OUSTERS_WRISTLET && g_eRaceInterface == RACE_OUSTERS)
 						{
@@ -8360,7 +8360,7 @@ bool C_VS_UI_INVENTORY::MouseControl(UINT message, int _x, int _y)
 					int a, b;
 					switch (i)
 					{
-					case 0: // left up - first!
+					case 0: // 좌상 - 첫 번째!
 						a = m_focus_grid_x+p_pickup_item->GetGridWidth()-GRID_X;
 						b = m_focus_grid_y+p_pickup_item->GetGridHeight()-GRID_Y;
 						if (a > 0)
@@ -8369,21 +8369,21 @@ bool C_VS_UI_INVENTORY::MouseControl(UINT message, int _x, int _y)
 							m_focus_grid_y -= b;
 						break;
 						
-					case 1: // right up
+					case 1: // 우상
 						m_focus_grid_x = 0;
 						b = m_focus_grid_y+p_pickup_item->GetGridHeight()-GRID_Y;
 						if (b > 0)
 							m_focus_grid_y -= b;
 						break;
 						
-					case 2: // left down
+					case 2: // 좌하
 						m_focus_grid_y = 0;
 						a = m_focus_grid_x+p_pickup_item->GetGridWidth()-GRID_X;
 						if (a > 0)
 							m_focus_grid_x -= a;
 						break;
 						
-					case 3: // right down
+					case 3: // 우하
 						m_focus_grid_y = 0;
 						if (m_focus_grid_x+1 <= p_pickup_item->GetGridHeight())
 							m_focus_grid_x = 0;
@@ -8492,7 +8492,7 @@ bool C_VS_UI_INVENTORY::MouseControl(UINT message, int _x, int _y)
 					
 					m_pC_dialog_drop_money = new C_VS_UI_MONEY_DIALOG(x+m_money_button_offset_x, y+m_money_button_offset_y+gpC_global_resource->m_pC_assemble_box_button_spk->GetHeight(C_GLOBAL_RESOURCE::AB_BUTTON_MONEY), 2, 0, 
 						ExecF_SellConfirm2, DIALOG_OK|DIALOG_CANCEL, 10, 
-					C_VS_UI_MONEY_DIALOG::MONEY_SELL_ITEM);	// by sigi
+					C_VS_UI_MONEY_DIALOG::MONEY_SELL_ITEM);	// sigi 작성
 					m_pC_dialog_drop_money->Start();
 
 				}
@@ -8581,7 +8581,7 @@ void C_VS_UI_INVENTORY::Use()
 				{
 					TYPE_ITEMTYPE itemType = pPetInfo->ITEM_TYPE;
 					TYPE_ITEMTYPE foodType = p_item->GetItemType();
-					// add by svi 2009-6-3
+					// svi 추가, 2009-6-3
 					if( ( foodType >=0 && foodType <= 5 && (itemType == 1 || itemType == 2 || itemType ==6 || itemType ==7 || itemType ==8) ) ||
 						(foodType >= 6 && foodType <= 9 && itemType == 3) ||
 						(foodType >= 10 && foodType <= 13 && itemType == 4)||
@@ -8881,7 +8881,7 @@ bool C_VS_UI_INVENTORY::Click(int grid_start_x, int grid_start_y)
 				else
 					bCanUpgrade = false;
 			}else
-			// end
+			// 끝
 
 			if( pMouseItem->GetItemType() == 23) // 远古水滴
 			{
@@ -8889,7 +8889,7 @@ bool C_VS_UI_INVENTORY::Click(int grid_start_x, int grid_start_y)
 				if(p_cur_item->GetGrade() >= 0 &&  p_cur_item->GetGrade() <= 10)
 					bCanUpgrade = true;
 			}else 
-			// end
+			// 끝
 			if(pMouseItem->GetItemType() > 7 && pMouseItem->GetItemType() != 15)
 			{
 				if(p_cur_item->GetItemOptionListCount() == 0)
@@ -9019,7 +9019,7 @@ bool C_VS_UI_INVENTORY::Click(int grid_start_x, int grid_start_y)
 					!p_item->IsUniqueItem() &&
 					!p_item->IsQuestItem() )
 				{					
-					// repair 가격이 0보다 클 때... by sigi
+					// repair 가격이 0보다 클 때...
 					if (g_pPriceManager->GetItemPrice((MItem*)p_item, MPriceManager::REPAIR) > 0)
 					{
 						m_p_repair_item = (MItem *)p_item;
@@ -9042,7 +9042,7 @@ bool C_VS_UI_INVENTORY::Click(int grid_start_x, int grid_start_y)
 					&& p_item->GetItemClass() != ITEM_CLASS_EVENT_GIFT_BOX
 					&& p_item->GetItemClass() != ITEM_CLASS_EVENT_STAR)
 				{
-					// silvering 가격이 0보다 클 때... by larosel
+					// silvering 가격이 0보다 클 때...
 					if (g_pPriceManager->GetItemPrice((MItem*)p_item, MPriceManager::SILVERING) > 0)
 					{
 						m_p_silvering_item = (MItem *)p_item;
@@ -9077,7 +9077,7 @@ bool C_VS_UI_INVENTORY::Click(int grid_start_x, int grid_start_y)
 				else
 				{
 					//#endif
-				#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+				#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9 (가방 속 가방)
 					if(gC_vs_ui.IsRunningSubInventory() && p_item->GetItemClass() == ITEM_CLASS_SUB_INVENTORY )
 						gpC_base->SendMessage(UI_CLOSE_INVENTORY_SUB);
 				#endif
@@ -9230,7 +9230,7 @@ C_VS_UI_SKILL::C_VS_UI_SKILL()
 		}
 	}
 	
-	// TIMER
+	// 타이머
 	m_dw_prev_tickcount = GetTickCount();
 	m_dw_millisec = 2000;
 	
@@ -9763,7 +9763,7 @@ void C_VS_UI_SKILL::Start()
 }
 
 //-----------------------------------------------------------------------------
-// Process
+// 처리
 //
 // 
 //-----------------------------------------------------------------------------
@@ -10105,7 +10105,7 @@ void C_VS_UI_SKILL::Show2()
 					m_etc_spk.Blt(point.x-2, point.y-1, SKILL_GUARD);
 				
 				// print hotkey mark
-				// 글자색이 많이 튄다는 이유로 고치랍니다.. by sigi
+				// 글자색이 많이 튄다는 이유로 고치랍니다..
 				const char hotkey_mark[8][4][10] = 
 				{
 					{"F9:1", "F9:2", "F9:3", "F9:4"},
@@ -11092,7 +11092,7 @@ bool	C_VS_UI_PARTY_MANAGER::Timer(bool reset)
 }
 
 //-----------------------------------------------------------------------------
-// Process
+// 처리
 //
 // 
 //-----------------------------------------------------------------------------
@@ -12097,7 +12097,7 @@ C_VS_UI_INFO::C_VS_UI_INFO()
 	// gradeskillinfo 버튼
 	m_pC_grade1_button_group = new ButtonGroup(this);
 	m_pC_grade2_button_group = new ButtonGroup(this);
-	// by csm 2004.12.31 전직인포 버튼 
+	// csm 수정, 2004.12.31 전직인포 버튼 
 	m_pC_grade3_button_group = new ButtonGroup(this);
 	
 	switch(g_eRaceInterface)
@@ -17000,7 +17000,7 @@ const char * C_VS_UI_INFO::GetChinhoLevel(int level)
 	last_num = level%10;
 	static char strtemp[256];
 	memset(strtemp,0,256);
-	// edit by Coffee 2007-5-20 修正转职业显示问题
+	// Coffee 수정, 2007-5-20 직업 전환 표시 문제 수정
 	//wsprintf(strtemp, chingho_name[cur_ching_num],  last_num);
 	wsprintf(strtemp, chingho_name[0],  level);
 	return strtemp;
@@ -19266,7 +19266,7 @@ void	C_VS_UI_INFO::_Show5()
 					// eidt by coffee 2007-2-25 start  修正显示技能位置
 					//MSkillDomain::SKILL_STEP_LIST::iterator ss = list.begin();//+max(0,m_pC_skill_scroll_bar->GetScrollPos());
 					MSkillDomain::SKILL_STEP_LIST::iterator ss = list.begin() + max(0,m_pC_grade3_scroll_bar->GetScrollPos());
-					// end
+					// 끝
 					
 					int aa = list.size();
 					const int level_plus = 127;
@@ -20200,7 +20200,7 @@ void C_VS_UI_INFO::Finish()
 }
 
 //-----------------------------------------------------------------------------
-// Process
+// 처리
 //
 // 
 //-----------------------------------------------------------------------------
@@ -20854,7 +20854,7 @@ void C_VS_UI_HPBAR::Show()
 					
 					int hpbar_x = 19, hpbar_y = 3, mpbar_x = 19, mpbar_y = 16;
 					if(!m_small_mode)
-					{//modify by viva : hpbar, mpbar point
+					{// viva 수정: HP바, MP바 위치
 						hpbar_x = 28; hpbar_y = 4; mpbar_x = 28; mpbar_y = 22;
 					}
 					
@@ -21032,7 +21032,7 @@ void C_VS_UI_HPBAR::Show()
 					//hpbar
 					int hpbar_x = 8, hpbar_y = 3, mpbar_x = 8, mpbar_y = 15, expbar_x = 8, expbar_y = 22;
 					if(!m_small_mode)
-					{//modify by viva : hpbar,mpbar,expbar point
+					{// viva 수정: HP바,MP바,EXP바 위치
 						hpbar_x = 9; hpbar_y = 4; mpbar_x = 9; mpbar_y = 22; expbar_x = 9; expbar_y = 32;
 					}
 
@@ -21223,7 +21223,7 @@ void C_VS_UI_HPBAR::Finish()
 }
 
 //-----------------------------------------------------------------------------
-// Process
+// 처리
 //
 //
 //-----------------------------------------------------------------------------
@@ -22106,7 +22106,7 @@ void C_VS_UI_EFFECT_STATUS::Finish()
 }
 
 //-----------------------------------------------------------------------------
-// Process
+// 처리
 //
 // 
 //-----------------------------------------------------------------------------
@@ -22282,19 +22282,19 @@ C_VS_UI_MINIMAP::C_VS_UI_MINIMAP()
 	switch( g_eRaceInterface )
 	{
 	case RACE_SLAYER:
-		m_map_start_point.x = 4;//add by viva : map_start_x
+		m_map_start_point.x = 4;// viva 추가: map_start_x
 		m_map_start_point.y = 29;
 		m_pC_minimap_spk = new C_SPRITE_PACK(SPK_MINIMAP_SLAYER);
 		break;
 
 	case RACE_VAMPIRE:
-		m_map_start_point.x = 4;//add by viva : map_start_x
+		m_map_start_point.x = 4;// viva 추가: map_start_x
 		m_map_start_point.y = 29;
 		m_pC_minimap_spk = new C_SPRITE_PACK(SPK_MINIMAP_VAMPIRE);
 		break;
 
 	case RACE_OUSTERS:
-		m_map_start_point.x = 4+7; //add by viva : map_start_x
+		m_map_start_point.x = 4+7; // viva 추가: map_start_x
 		m_map_start_point.y = 29+2;
 		m_pC_minimap_spk = new C_SPRITE_PACK(SPK_MINIMAP_OUSTERS);
 	}
@@ -22315,11 +22315,11 @@ C_VS_UI_MINIMAP::C_VS_UI_MINIMAP()
 	m_zone_id = -1;
 	m_map_x = 0; m_map_y = 0;
 	m_map_w = 0; m_map_h = 0;
-	//m_map_start_point.x = 4;   //modify by viva : notice,,the code on above
+	//m_map_start_point.x = 4;   // viva 수정: 위의 코드 참고
 	//m_map_start_point.y = 29;
 	m_bl_refresh = false;
 	
-	// TIMER
+	// 타이머
 	m_dw_minimap_prev_tickcount = GetTickCount();
 	m_dw_minimap_millisec = 100;
 	
@@ -22787,7 +22787,7 @@ void C_VS_UI_MINIMAP::Show()
 		
 		WORD *mem = (WORD *)gpC_base->m_p_DDSurface_back->GetSurfacePointer();
 		long pitch = gpC_base->m_p_DDSurface_back->GetSurfacePitch();
-		long pitch_div_2 = pitch>>1;	// by sigi
+		long pitch_div_2 = pitch>>1;	// sigi 작성
 		
 		//		RECT rect = {m_map_start_point.x, m_map_start_point.y, m_map_start_point.x+m_surface_w, m_map_start_point.y+m_surface_h};
 		
@@ -23080,7 +23080,7 @@ void C_VS_UI_MINIMAP::Finish()
 }
 
 //-----------------------------------------------------------------------------
-// Process
+// 처리
 //
 // 
 //-----------------------------------------------------------------------------
@@ -23131,7 +23131,7 @@ void C_VS_UI_MINIMAP::SetZone(int zone_id)
 	// 필요한 minimap sprite를 하나 읽어오기 위해서.
 	//
 	//-------------------------------------------------------------------
-	// by sigi 2001.9.5
+	// sigi 작성, 2001.9.5
 	CSpritePack	minimapSPK;
 	minimapSPK.Init( 1 );		// 임시로 1개만 loading.. - -;;
 	
@@ -23423,7 +23423,7 @@ void C_VS_UI_MINIMAP::SetPortal(RECT rect, int id)
 
 
 //-----------------------------------------------------------------------------
-// Timer
+// 타이머
 //
 //-----------------------------------------------------------------------------
 bool C_VS_UI_MINIMAP::TimerMinimap()
@@ -25402,7 +25402,7 @@ void	C_VS_UI_TEAM_LIST::AddRegistTeamList(const C_VS_UI_TEAM_LIST::REGIST_TEAM_L
 
 
 ///----------------------------------------------------------------------------
-//add by viva : Friend System ,C_VS_UI_FRIEDN
+// viva 추가: 친구 시스템, C_VS_UI_FRIEDN
 C_VS_UI_FRIEND_INFO::C_VS_UI_FRIEND_INFO()
 {
 	g_RegisterWindow(this);
@@ -25901,7 +25901,7 @@ void* C_VS_UI_FRIEND_INFO::GetBlackList(const string Name)
 //{
 //
 //}
-//add by viva
+// viva 추가
 class CFriendListIsOnLine
 {
 public:
@@ -25924,7 +25924,7 @@ public:
 			return false;
 	}
 };
-//end
+// 끝
 
 void C_VS_UI_FRIEND_INFO::SortOrder()
 {
@@ -25942,7 +25942,7 @@ void C_VS_UI_FRIEND_INFO::SortOrder()
 ///---------------------------------------------------------------------------
 /// class C_VS_UI_FRIEND_CHATTING_INFO
 ///
-/// add by viva
+/// viva 추가
 /// friend show
 ///---------------------------------------------------------------------------
 
@@ -27658,7 +27658,7 @@ void	C_VS_UI_TEAM_MEMBER_INFO::Run(id_t id)
 //----------------------------------------------------------------------------
 // C_VS_UI_TEAM_REGIST::C_VS_UI_TEAM_REGIST
 //
-//add by viva : friend show
+// viva 추가: 친구 표시
 //----------------------------------------------------------------------------
 C_VS_UI_TEAM_REGIST::C_VS_UI_TEAM_REGIST(bool member, int reg_fee, int rank, char *date, char *team_name, int guild_id)
 {
@@ -29808,7 +29808,7 @@ void	C_VS_UI_OTHER_INFO::Finish()
 }
 
 //-----------------------------------------------------------------------------
-// Process
+// 처리
 //
 // 
 //-----------------------------------------------------------------------------
@@ -30241,7 +30241,7 @@ void	C_VS_UI_TRACE::Finish()
 }
 
 //-----------------------------------------------------------------------------
-// Process
+// 처리
 //
 // 
 //-----------------------------------------------------------------------------
@@ -30696,7 +30696,7 @@ void	C_VS_UI_XMAS_CARD::Finish()
 }
 
 //-----------------------------------------------------------------------------
-// Process
+// 처리
 //
 // 
 //-----------------------------------------------------------------------------
@@ -31972,7 +31972,7 @@ void	C_VS_UI_BLOOD_BIBLE_STATUS::Finish()
 }
 
 //-----------------------------------------------------------------------------
-// Process
+// 처리
 //
 // 
 //-----------------------------------------------------------------------------
@@ -34724,7 +34724,7 @@ C_VS_UI_WORLDMAP::C_VS_UI_WORLDMAP()
 	m_map_start_point.y = 29;
 	m_bl_refresh = false;
 	
-	// TIMER
+	// 타이머
 	m_dw_minimap_prev_tickcount = GetTickCount();
 	m_dw_minimap_millisec = 100;
 	
@@ -35192,7 +35192,7 @@ void C_VS_UI_WORLDMAP::Show()
 		
 		WORD *mem = (WORD *)gpC_base->m_p_DDSurface_back->GetSurfacePointer();
 		long pitch = gpC_base->m_p_DDSurface_back->GetSurfacePitch();
-		long pitch_div_2 = pitch>>1;	// by sigi
+		long pitch_div_2 = pitch>>1;	// sigi 작성
 		
 		//		RECT rect = {m_map_start_point.x, m_map_start_point.y, m_map_start_point.x+m_surface_w, m_map_start_point.y+m_surface_h};
 		
@@ -35485,7 +35485,7 @@ void C_VS_UI_WORLDMAP::Finish()
 }
 
 //-----------------------------------------------------------------------------
-// Process
+// 처리
 //
 // 
 //-----------------------------------------------------------------------------
@@ -35536,7 +35536,7 @@ void C_VS_UI_WORLDMAP::SetZone(int zone_id)
 	// 필요한 minimap sprite를 하나 읽어오기 위해서.
 	//
 	//-------------------------------------------------------------------
-	// by sigi 2001.9.5
+	// sigi 작성, 2001.9.5
 	CSpritePack	minimapSPK;
 	minimapSPK.Init( 1 );		// 임시로 1개만 loading.. - -;;
 	
@@ -35827,7 +35827,7 @@ void C_VS_UI_WORLDMAP::SetPortal(RECT rect, int id)
 
 
 //-----------------------------------------------------------------------------
-// Timer
+// 타이머
 //
 //-----------------------------------------------------------------------------
 bool C_VS_UI_WORLDMAP::TimerMinimap()

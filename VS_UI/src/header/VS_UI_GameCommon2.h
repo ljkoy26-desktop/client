@@ -2,9 +2,9 @@
 
 	VS_UI_GameCommon2.h
 
-	Game common interface.
+	게임 공통 인터페이스.
 
-	Common: MiniGame
+	공통: 미니게임
 
 	2003.6.26. sonee
 
@@ -229,7 +229,7 @@ public:
 
 	void	SetScore(std::string& name, WORD& score, WORD& myscore){m_bCanStart = true;	m_topName = name; m_topScore = score; m_MyBestScore = myscore;	}
 	//-----------------------------------------------------------------------
-	// Init
+	// 초기화
 	//-----------------------------------------------------------------------
 	void	InitGame();
 	void	InitMonster();
@@ -243,7 +243,7 @@ public:
 	void	SetDie();
 
 	//-----------------------------------------------------------------------
-	// Move
+	// 이동
 	//-----------------------------------------------------------------------
 	void	MoveMonster();
 	bool	MoveRIGHT(S_CHARACTER *Character);
@@ -252,13 +252,13 @@ public:
 	bool	MoveDOWN(S_CHARACTER *Character);
 	
 	//-----------------------------------------------------------------------
-	// Action
+	// 동작
 	//-----------------------------------------------------------------------
 	void	ActionMove();
 	void	ActionRotation(BYTE Direction);					// 0은 왼쪽 1은 오른쪽
 
 	//-----------------------------------------------------------------------
-	// Process
+	// 처리
 	//-----------------------------------------------------------------------	
 	void	ProcessGameMain();
 	void	ProcessTile();
@@ -267,7 +267,7 @@ public:
 	void	ProcessCharacter();
 
 	//-----------------------------------------------------------------------
-	// Timer
+	// 타이머
 	//-----------------------------------------------------------------------	
 	bool	TimerMonsterMove(DWORD len);
 };
@@ -617,7 +617,7 @@ private:
 	bool						m_bl_focused;
 	int							m_selected;
 
-// TIMER
+// 타이머
 	DWORD						m_dw_prev_tickcount;
 	DWORD						m_dw_timer_tickcount;
 
@@ -760,7 +760,7 @@ public:
 	void	AddMail(TAB_ID tab_id, DWORD id, SIZE windowSize, const char * sender, const char * title, DWORD date, bool open, int guildid=0,int guildtype = 0);
 	void	AddMailContents(TAB_ID tab_id, DWORD id, const char * contents);
 	void	DeleteMail(TAB_ID tab_id, DWORD id);
-	// Help Message 
+	// 도움말 메시지
 	void	AddHelpMail(DWORD id,  bool open);
 
 	void	Show();
@@ -1474,7 +1474,7 @@ public:
 	
 	bool	m_Show_Quest_Modify;
 
-	bool	SetQuestManagerInfo(void* pVoid); // AddForce
+	bool	SetQuestManagerInfo(void* pVoid); // 강제 추가
 	bool	ModifyQuestManagerInfo(void* pVoid, int nType = 0);
 
 	bool	LoadQuestXML();
@@ -1934,13 +1934,13 @@ public :
 	void	PowerjjangGambleResult(BYTE bItemCode);
 };
 
-#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9 (가방 속 가방)
 
 
 //-----------------------------------------------------------------------------
 // class C_VS_UI_INVENTORY
 //
-// slayer/vampire inventory base class.
+// 슬레이어/뱀파이어 인벤토리 기본 클래스.
 //
 // - slayer/vampire inventory 공통의 interface를 정의한다. 
 // - slayer에서 vampire로 바뀌거나 또는 그 반대일 때, 객체를 재생성하여
@@ -1950,7 +1950,7 @@ public :
 class C_VS_UI_INVENTORY_SUB : public Window, public Exec, public ButtonVisual
 {
 	//-----------
-	// Data
+	// 데이터
 	//-----------
 public:
 	enum 
@@ -1968,7 +1968,7 @@ protected:
 		INVENTORY_ITEMBACK_ALPHA,
 		INVENTORY_WINDOW_2X4,
 		INVENTORY_WINDOW_2X4_ALPHA,
-	#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+	#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9 (가방 속 가방)
 		INVENTORY_WINDOW_4X6,
 		INVENTORY_WINDOW_4X6_ALPHA,
 	#endif
@@ -1984,7 +1984,7 @@ protected:
 	enum 
 	{ 
 		TYPE_2X4 = 0,
-	#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+	#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9 (가방 속 가방)
 		TYPE_4X6 = 1,
 	#endif
 		
@@ -2008,7 +2008,7 @@ protected:
 	int						n_nType;
 
 
-	#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+	#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9 (가방 속 가방)
 		MSubInventory*			m_MultiPackItem;
 	#endif
 
@@ -2016,7 +2016,7 @@ protected:
 	int						m_GridX, m_GridY;
 	BYTE**					m_bl_Alpha;
 	//------------
-	// Method
+	// 멤버 함수
 	//------------
 private:
 	void	WindowEventReceiver(id_t event);
@@ -2034,7 +2034,7 @@ public:
 	C_VS_UI_INVENTORY_SUB(MItem* pItem);
 	virtual ~C_VS_UI_INVENTORY_SUB();
 
-	#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+	#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9 (가방 속 가방)
 		MItem*	GetSubInventoryItem() { return m_MultiPackItem; }
 	#endif
 

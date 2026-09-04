@@ -2,12 +2,12 @@
 
 	VS_UI_GameCommon.h
 
-	Game common interface.
+	게임 공통 인터페이스.
 
-	Common:
-				Chatting interface
+	공통:
+				채팅 인터페이스
 				NPC
-				Exchange
+				교환
 
 	2000.8.11. KJTINC
 
@@ -35,9 +35,9 @@ extern bool gbl_mine_progress;
 #include "ClientFunction.h"
 #include "MZone.h"
 
-#include <vector>	//by larosel
+#include <vector>	// larosel 작성
 
-#define SLAYER_FONT_COLOR				RGB(186, 189, 191)//RGB(20, 70, 0)	// by larosel
+#define SLAYER_FONT_COLOR				RGB(186, 189, 191)//RGB(20, 70, 0)	// larosel 작성
 #define VAMPIRE_FONT_COLOR				RGB(186, 189, 191)//RGB(255, 255, 255)
 
 #define ITEM_DISABLE_COLOR_SET			40
@@ -285,7 +285,7 @@ public:
 };
 
 //-----------------------------------------------------------------------------
-// HotKey (abstract base class)
+// HotKey (추상 기본 클래스)
 //
 // 
 //-----------------------------------------------------------------------------
@@ -293,54 +293,54 @@ class HotKey
 {
 public:
 
-	virtual void HotKey_PetInfo() = 0;		// ctrl+CapsLock
-	virtual void HotKey_MailBox() = 0;		// ctrl+b
-	virtual void HotKey_Party() = 0;		// ctrl+p
+	virtual void HotKey_PetInfo() = 0;		// Ctrl+CapsLock
+	virtual void HotKey_MailBox() = 0;		// Ctrl+B
+	virtual void HotKey_Party() = 0;		// Ctrl+P
 	virtual void HotKey_Mark() = 0;			// '한자'키
-//	virtual void HotKey_WindowToggle()=0;	// ctrl + space
+//	virtual void HotKey_WindowToggle()=0;	// Ctrl + Space
 
-	#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
-		virtual void HotKey_Inventory(bool IsCheckSubInventory = false)=0;		// tab
+	#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9 (가방 속 가방)
+		virtual void HotKey_Inventory(bool IsCheckSubInventory = false)=0;		// Tab
 	#else
-		virtual void HotKey_Inventory()=0;		// tab
+		virtual void HotKey_Inventory()=0;		// Tab
 	#endif
-	virtual void HotKey_Friend()=0;			//add by viva
-	virtual void HotKey_Gear()=0;			// ctrl + tab
+	virtual void HotKey_Friend()=0;			// viva 추가
+	virtual void HotKey_Gear()=0;			// Ctrl + Tab
 	virtual void HotKey_QuickItemSlot() {}	// ctrl + ~
-	virtual void HotKey_Skill()=0;			// ctrl + s
-	virtual void HotKey_CharInfo()=0;		// ctrl + i
-	virtual void HotKey_SkillInfo()=0;		// ctrl + k
-	virtual void HotKey_Grade2Info()=0;		// ctrl + k
-	virtual void HotKey_Grade1Info()=0;		// ctrl + k
-	virtual void HotKey_Help()=0;			// ctrl + h
-	virtual void HotKey_Minimap()=0;		// ctrl + m
-	virtual void HotKey_Chat()=0;			// ctrl + c
+	virtual void HotKey_Skill()=0;			// Ctrl + S
+	virtual void HotKey_CharInfo()=0;		// Ctrl + I
+	virtual void HotKey_SkillInfo()=0;		// Ctrl + K
+	virtual void HotKey_Grade2Info()=0;		// Ctrl + K
+	virtual void HotKey_Grade1Info()=0;		// Ctrl + K
+	virtual void HotKey_Help()=0;			// Ctrl + H
+	virtual void HotKey_Minimap()=0;		// Ctrl + M
+	virtual void HotKey_Chat()=0;			// Ctrl + C
 	virtual void HotKey_ZoneChat()=0	;	// ctrl + z
-	virtual void HotKey_GuildChat()=0;		// ctrl + g
-	virtual void HotKey_UnionChat()=0;		// ctrl + d
-	virtual void HotKey_Whisper()=0;		// ctrl + w
-	virtual void HotKey_ExtendChat()=0;		// ctrl + e
+	virtual void HotKey_GuildChat()=0;		// Ctrl + G
+	virtual void HotKey_UnionChat()=0;		// Ctrl + D
+	virtual void HotKey_Whisper()=0;		// Ctrl + W
+	virtual void HotKey_ExtendChat()=0;		// Ctrl + E
 
-	virtual void HotKey_ESC() {}			// esc
+	virtual void HotKey_ESC() {}			// Esc
 
-	virtual void HotKey_F1() {}				// f1
-	virtual void HotKey_F2() {}				// f2
-	virtual void HotKey_F3() {}				// f3
-	virtual void HotKey_F4() {}				// f4
-	virtual void HotKey_F5() {}				// f5
-	virtual void HotKey_F6() {}				// f6
-	virtual void HotKey_F7() {}				// f7
-	virtual void HotKey_F8() {}				// f8
-	virtual void HotKey_F9()=0;				// f9
-	virtual void HotKey_F10()=0;			// f10
-	virtual void HotKey_F11()=0;			// f11
-	virtual void HotKey_F12()=0;			// f12
+	virtual void HotKey_F1() {}				// F1
+	virtual void HotKey_F2() {}				// F2
+	virtual void HotKey_F3() {}				// F3
+	virtual void HotKey_F4() {}				// F4
+	virtual void HotKey_F5() {}				// F5
+	virtual void HotKey_F6() {}				// F6
+	virtual void HotKey_F7() {}				// F7
+	virtual void HotKey_F8() {}				// F8
+	virtual void HotKey_F9()=0;				// F9
+	virtual void HotKey_F10()=0;			// F10
+	virtual void HotKey_F11()=0;			// F11
+	virtual void HotKey_F12()=0;			// F12
 
-	virtual void HotKey_PartyChat() = 0;	// ctrl + a
-	virtual void HotKey_Quest() = 0;		// ctrl + q
+	virtual void HotKey_PartyChat() = 0;	// Ctrl + A
+	virtual void HotKey_Quest() = 0;		// Ctrl + Q
 
 	// 2004, 5, 17 sobeit add start
-	virtual void HotKey_SummonPet()=0;	// ctrl + space
+	virtual void HotKey_SummonPet()=0;	// Ctrl + Space
 	// 2004, 5, 17 sobeit add end
 };
 
@@ -361,7 +361,7 @@ enum CHAT_LINE_CONDITION
 //-----------------------------------------------------------------------------
 // class StringCell
 //
-// Single string class.
+// 단일 문자열 클래스.
 //-----------------------------------------------------------------------------
 class StringCell
 {
@@ -670,12 +670,12 @@ private:
 	std::vector<bool>			m_v_help_check;
 
 	//
-	// Chat history buffer.
+	// 채팅 기록 버퍼.
 	//
 	C_VS_CHAT_LIST				m_pC_history_list;
 	C_VS_CHAT_LIST				m_pC_history_temp_list;
 
-	int scroll_up_x, scroll_up_y, scroll_down_x, scroll_down_y, scrolltag_x, scrolltag_y, scrolltrack_x, scrolltrack_y;	// by larosel
+	int scroll_up_x, scroll_up_y, scroll_down_x, scroll_down_y, scrolltag_x, scrolltag_y, scrolltrack_x, scrolltrack_y;	// larosel 작성
 
 	bool							m_chat_stacked[CLD_TOTAL];
 
@@ -685,11 +685,11 @@ private:
 
 	bool							m_bl_spreadID;
 
-	std::vector<std::string>		m_sz_whisper_id;	// by larosel
-	std::string						m_sz_whisper_backup;	// by larosel
-	bool							m_bl_whisper_mode;	// by larosel
-	bool							m_bl_focus_whisper;	// by larosel
-	int								m_whisper_index;	// by larosel
+	std::vector<std::string>		m_sz_whisper_id;	// larosel 작성
+	std::string						m_sz_whisper_backup;	// larosel 작성
+	bool							m_bl_whisper_mode;	// larosel 작성
+	bool							m_bl_focus_whisper;	// larosel 작성
+	int								m_whisper_index;	// larosel 작성
 
 	//
 	// Vampire/Slayer 둘 다 나타날 수 있는 Window의 수는 2개(Inventory, Gear)이다.
@@ -708,7 +708,7 @@ private:
 		TIMER_HIDE,
 	};
 
-// TIMER
+// 타이머
 	std::vector<DWORD>			m_dw_rep_tickcount;
 	std::vector<DWORD>			m_dw_papering_tickcount;
 	DWORD						m_dw_prev_tickcount;
@@ -730,14 +730,14 @@ public:
 
 	void	SetSubWindow(int type)		{ m_sub_window = type; }
 	//-------------------------
-	// WHISPER	// by larosel
+	// 귓속말	// larosel 작성
 	//-------------------------
-	std::string	GetWhisperID(int num = -1);	// by larosel
-	int		GetWhisperSize(){ return m_sz_whisper_id.size();}	// by larosel
-	bool	AddWhisperID(const char *sz_ID);	// by larosel
-	void	ChangeWhisperFocus();	// by larosel
-	bool	GetWhisperFocus(){ return m_bl_focus_whisper; }	// by larosel
-	bool	SlayerWhisperMode(bool mode);	// by larosel
+	std::string	GetWhisperID(int num = -1);	// larosel 작성
+	int		GetWhisperSize(){ return m_sz_whisper_id.size();}	// larosel 작성
+	bool	AddWhisperID(const char *sz_ID);	// larosel 작성
+	void	ChangeWhisperFocus();	// larosel 작성
+	bool	GetWhisperFocus(){ return m_bl_focus_whisper; }	// larosel 작성
+	bool	SlayerWhisperMode(bool mode);	// larosel 작성
 	void	TribeChanged();
 	bool	IsSpreadID(){ return m_bl_spreadID; }
 	bool	IsPixel(int _x, int _y);
@@ -745,11 +745,11 @@ public:
 	bool	IsInputMode()	{ return m_bl_input_mode; }
 
 	//---------------------------
-	// GUILDCHAT // by larosel
+	// 길드 채팅 // larosel 작성
 	//---------------------------
 	void	SetGuildChat( bool guild );
 
-	void	ResetScroll();	// by larosel
+	void	ResetScroll();	// larosel 작성
 
 	C_VS_UI_CHATTING();
 	~C_VS_UI_CHATTING();
@@ -762,13 +762,13 @@ public:
 	void	RestoreHistoryTemp();
 	void	Show();
 	bool	MouseControl(UINT message, int _x, int _y);
-//	bool	MouseControlExtra(UINT message, int x, int y);	// by sigi
+//	bool	MouseControlExtra(UINT message, int x, int y);	// sigi 작성
 	void	KeyboardControl(UINT message, UINT key, long extra);
 	void	AddChatToHistory(const char * str, const char * sz_id, CHAT_LINE_CONDITION condition, DWORD color);
 	void	AddToChatHistory(const char * sz_str, const char * sz_id, CHAT_LINE_CONDITION condition, DWORD color);
-	void	SetInputString(const char* pString);	// by sigi
-	void	AddInputString(const char* pString);	// by sigi
-	void	SetInputStringColor(COLORREF rgb)	{ m_lev_chatting.SetInputStringColor(rgb); } // by sigi
+	void	SetInputString(const char* pString);	// sigi 작성
+	void	AddInputString(const char* pString);	// sigi 작성
+	void	SetInputStringColor(COLORREF rgb)	{ m_lev_chatting.SetInputStringColor(rgb); } // sigi 작성
 	const char* GetInputString() const			{ return (const char*)m_lev_chatting.GetString(); }
 	void	InsertMark(char_t ch)				{ m_lev_chatting.InsertMark(ch); }
 
@@ -779,7 +779,7 @@ public:
 	bool	IsPartyChatStacked()						{ return m_chat_stacked[CLD_PARTY]; }
 	bool	IsInfoStacked()								{ return m_chat_stacked[CLD_INFO]; }
 
-	// common
+	// 공통
 	void	UnacquireMouseFocus() 
 	{
 		m_pC_button_group->UnacquireMouseFocus();
@@ -802,7 +802,7 @@ public:
 
 };
 //class C_VS_UI_FRIEND_INFO;
-//add by viva : friend system
+// viva 추가 : friend system
 
 class C_VS_UI_FRIEND_INFO : public Window, public Exec, public ButtonVisual
 {
@@ -987,7 +987,7 @@ public:
 //-----------------------------------------------------------------------------
 // class C_VS_UI_INVENTORY
 //
-// slayer/vampire inventory base class.
+// 슬레이어/뱀파이어 인벤토리 기본 클래스.
 //
 // - slayer/vampire inventory 공통의 interface를 정의한다. 
 // - slayer에서 vampire로 바뀌거나 또는 그 반대일 때, 객체를 재생성하여
@@ -997,7 +997,7 @@ public:
 class C_VS_UI_INVENTORY : public Window, public Exec, public ButtonVisual
 {
 	//-----------
-	// Data
+	// 데이터
 	//-----------
 public:
 	enum 
@@ -1046,7 +1046,7 @@ protected:
 	int							m_money_button_offset_x, m_money_button_offset_y;
 
 	//------------
-	// Method
+	// 멤버 함수
 	//------------
 private:
 	void	SetDebugStart();
@@ -1067,7 +1067,7 @@ protected:
 
 
 public:
-// TIMER
+// 타이머
 	static bool		Timer(bool reset = false);
 	static DWORD						m_dw_millisec;
 
@@ -1126,12 +1126,12 @@ public:
 //-----------------------------------------------------------------------------
 // class C_VS_UI_GEAR
 //
-// vampire/slayer gear base class.
+// 뱀파이어/슬레이어 장비 기본 클래스.
 //-----------------------------------------------------------------------------
 class C_VS_UI_GEAR : public Window, public Exec, public ButtonVisual
 {
 	//-----------
-	// Data
+	// 데이터
 	//-----------
 protected:
 	enum GEAR_SPK_INDEX
@@ -1162,10 +1162,10 @@ protected:
 
 	ButtonGroup *				m_pC_button_group;
 
-	C_SPRITE_PACK *			m_pC_gear_spk; // gear Window image
-	C_SPRITE_PACK *			m_pC_gear_slot_spk; // gear slot image
+	C_SPRITE_PACK *			m_pC_gear_spk; // 장비 창 이미지
+	C_SPRITE_PACK *			m_pC_gear_slot_spk; // 장비 슬롯 이미지
 	//by csm 2004.12.30  
-	C_SPRITE_PACK *			m_pC_advance_gear_spk; // Advencegear Window image
+	C_SPRITE_PACK *			m_pC_advance_gear_spk; // 고급 장비 창 이미지
 	
 
 	int							m_focus_slot;
@@ -1186,7 +1186,7 @@ protected:
 
 	void	Use();
 	//------------
-	// Method
+	// 멤버 함수
 	//------------
 private:
 //	void	CancelPushState();
@@ -1219,13 +1219,13 @@ public:
 //-----------------------------------------------------------------------------
 // class C_VS_UI_SKILL
 //
-// vampire/slayer skill base class.
+// 뱀파이어/슬레이어 스킬 기본 클래스.
 //-----------------------------------------------------------------------------
 class C_VS_UI_SKILL : public Window
 {
 public:
-	static CSpritePack				m_C_spk; // Skill icon Sprite list
-	static CSpritePack				m_C_spk_mini; // Skill icon Sprite list
+	static CSpritePack				m_C_spk; // 스킬 아이콘 스프라이트 목록
+	static CSpritePack				m_C_spk_mini; // 스킬 아이콘 스프라이트 목록
 
 	enum HOTKEY
 	{
@@ -1337,7 +1337,7 @@ public:
 //-----------------------------------------------------------------------------
 // class C_VS_UI_HPBAR
 //
-// vampire/slayer HPBar class
+// 뱀파이어/슬레이어 HP바 클래스
 //-----------------------------------------------------------------------------
 class C_VS_UI_HPBAR : public Window, public Exec, public ButtonVisual
 {
@@ -1458,7 +1458,7 @@ public:
 //-----------------------------------------------------------------------------
 // class C_VS_UI_EFFECT_STATUS
 //
-// vampire/slayer EFFECT_STATUS class
+// 뱀파이어/슬레이어 효과 상태 클래스
 //-----------------------------------------------------------------------------
 class C_VS_UI_EFFECT_STATUS : public Window, public Exec, public ButtonVisual
 {
@@ -1554,7 +1554,7 @@ struct MINIMAP_SHRINE
 //-----------------------------------------------------------------------------
 // class C_VS_UI_MINIMAP
 //
-// vampire/slayer MINIMAP class
+// 뱀파이어/슬레이어 미니맵 클래스
 //-----------------------------------------------------------------------------
 class C_VS_UI_MINIMAP : public Window, public Exec, public ButtonVisual
 {
@@ -1828,7 +1828,7 @@ public :
 };
 
 
-//class C_VS_UI_FRIEND_INFO;	//add by viva : friend system
+//class C_VS_UI_FRIEND_INFO;	// viva 추가 : friend system
 class C_VS_UI_TRIBE : public Window, public HotKey, public Exec, public ButtonVisual
 {
 protected:
@@ -1846,7 +1846,7 @@ protected:
 	C_VS_UI_HPBAR *				m_pC_hpbar;
 	C_VS_UI_EFFECT_STATUS *		m_pC_effect_status;
 	C_VS_UI_MINIMAP *			m_pC_minimap;
-	// add by Coffee 添加世界地图
+	// Coffee 추가, 세계지도 추가
 	C_VS_UI_WORLDMAP *          m_pC_worldmap;
 	// end 
 	C_VS_UI_CHATTING *			m_pC_chatting;
@@ -1856,7 +1856,7 @@ protected:
 	C_VS_UI_QUEST_STATUS *		m_pC_quest_status;
 
 	C_VS_UI_INVENTORY *			m_pC_inventory;
-	//add by viva : friend system
+	// viva 추가 : friend system
 	C_VS_UI_FRIEND_INFO*		m_pC_friend;
 	//end
 	//C_VS_UI_QUEST_STATUS *		m_pC_quest;
@@ -1864,7 +1864,7 @@ protected:
 	C_SPRITE_PACK *				m_pC_main_spk;
 	C_SPRITE_PACK * 			m_pC_sys_button_spk;
 
-	enum MAIN_SPK_INDEX	// by larosel
+	enum MAIN_SPK_INDEX	// larosel 작성
 	{
 		MAIN_WINDOW,
 		ICON_SUN,
@@ -1899,7 +1899,7 @@ protected:
 		TAB_HELP_NEW,
 		TAB_HELP_HILIGHTED,
 
-		// menu tab
+		// 메뉴 탭
 		BUTTON_INVENTORY,
 		BUTTON_INVENTORY_HILIGHTED,
 		BUTTON_INVENTORY_HILIGHTED_PUSHED,
@@ -1916,7 +1916,7 @@ protected:
 		BUTTON_QUEST_HILIGHTED,
 		BUTTON_QUEST_HILIGHTED_PUSHED,
 		
-		// help tab
+		// 도움말 탭
 		BUTTON_HELP,
 		BUTTON_HELP_HILIGHTED,
 		BUTTON_HELP_HILIGHTED_PUSHED,
@@ -1930,7 +1930,7 @@ protected:
 		BUTTON_SKILL_HELP_HILIGHTED,
 		BUTTON_SKILL_HELP_HILIGHTED_PUSHED,
 
-		// guild tab
+		// 길드 탭
 		BUTTON_TEAM_INFO,
 		BUTTON_TEAM_INFO_HILIGHTED,
 		BUTTON_TEAM_INFO_HILIGHTED_PUSHED,
@@ -1938,7 +1938,7 @@ protected:
 		BUTTON_TEAM_MEMBER_LIST_HILIGHTED,
 		BUTTON_TEAM_MEMBER_LIST_HILIGHTED_PUSHED,
 
-		// etc-_- 히승미워 by 쑥갓
+		// 기타-_- 히승미워 by 쑥갓
 		BUTTON_MAIL,					// 메뉴탭에 넣쟈
 		BUTTON_MAIL_HILIGHTED,
 		BUTTON_MAIL_HILIGHTED_PUSHED,
@@ -1976,7 +1976,7 @@ protected:
 		BUTTON_POWER_JJANG_HILIGHTED_PUSHED,
 
 
-//modify by viva : canncel notice
+// viva 수정: 공지 취소
 		BUTTON_TEAM_COMMAND,
 		BUTTON_TEAM_COMMAND_HILIGHTED,
 		BUTTON_TEAM_COMMAND_HILIGHTED_PUSHED,
@@ -1990,7 +1990,7 @@ protected:
 		BUTTON_TEAM_UNION_HILIGHTED,
 		BUTTON_TEAM_UNION_HILIGHTED_PUSHED,
 //end
-		//add by viva : friend system
+		// viva 추가 : friend system
 		BUTTON_FRIEND,
 		BUTTON_FRIEND_HILIGHTED,
 		BUTTON_FRIEND_HILIGHTED_PUSHED,
@@ -1998,9 +1998,9 @@ protected:
 		
 	};
 
-	enum EXEC_INDEX	// by larosel
+	enum EXEC_INDEX	// larosel 작성
 	{
-		// COMMON
+		// 공통
 		PUSHPIN_ID,
 		SYSTEM_ID,
 		TAB_MENU_ID,
@@ -2010,7 +2010,7 @@ protected:
 		TAB_UTIL_ID,
 		TAB_HELP_ID,
 
-		// MENU TAB
+		// 메뉴 탭
 		INVENTORY_ID,
 		GEAR_ID,
 		INFO_ID,
@@ -2020,7 +2020,7 @@ protected:
 		SMS_ID,
 		NAMING_ID,
 		
-		// TEAM TAB
+		// 팀 탭
 		TEAM_INFO_ID,
 		TEAM_MEMBER_LIST_ID,
 //		TEAM_COMMAND_ID, // 길드 명령
@@ -2028,19 +2028,19 @@ protected:
 		TEAM_WAIT_LIST_ID, // 대기 길드 리스트
 		TEAM_UNION_ID,		// 연합 명령
 
-		// UTIL TAB
+		// 유틸 탭
 		UTIL_STORE_ID,
 		UTIL_POWER_JJANG_ID,
 
 		
-		// HELP TAB
+		// 도움말 탭
 		HELP_ID,
 		CHAT_HELP_ID,
 		BATTLE_HELP_ID,
 		SKILL_HELP_ID,
 		GUILD_HELP_ID,
 
-		//add by viva : friend system
+		// viva 추가 : friend system
 		FRIEND_ID,
 		//end
 		EXEC_MAX
@@ -2171,7 +2171,7 @@ public:
 		GetInventoryWindow()->AttrWindowMove(true);
 		GetGearWindow()->AttrWindowMove(true);
 
-		// restore xy
+		// xy 좌표 복원
 		InventoryXY(m_backup_inventory_xy.x, m_backup_inventory_xy.y);
 		GearXY(m_backup_gear_xy.x, m_backup_gear_xy.y);
 
@@ -2280,8 +2280,8 @@ public:
 	void	CloseInventory() { m_pC_inventory->Finish(); }
 	void	OpenInventory(bool bl_set_load = true) { if( m_pC_inventory != NULL ) m_pC_inventory->Start(bl_set_load); }
 
-	void	CloseFriend()	{ m_pC_friend->Finish(); }			//add by viva
-	void	OpenFriend(bool bl_set_load = true)	{ if(m_pC_friend != NULL) m_pC_friend->Start(bl_set_load); }	//add by viva
+	void	CloseFriend()	{ m_pC_friend->Finish(); }			// viva 추가
+	void	OpenFriend(bool bl_set_load = true)	{ if(m_pC_friend != NULL) m_pC_friend->Start(bl_set_load); }	// viva 추가
 
 	void	WindowEventReceiver(id_t event);
 	bool	MouseControl(UINT message, int _x, int _y);
@@ -2303,7 +2303,7 @@ public:
 	bool	GetGearOpenState() const;
 	bool	GetInventoryOpenState() const;
 	
-	bool	GetFriendOpenState() const;	//add by viva
+	bool	GetFriendOpenState() const;	// viva 추가
 
 	void	UnselectSkill() { GetSkillWindow()->UnselectSkill(); }
 	void	ChangeSkillWheel(bool direct) { GetSkillWindow()->ChangeSkillWheel(direct); }
@@ -2318,30 +2318,30 @@ public:
 	void	HotKey_Minimap();
 	void	HotKey_CharInfo();
 //	void	HotKey_WindowToggle();
-	#ifdef __TEST_SUB_INVENTORY__   // add by Coffee 2007-8-9 增加包中包
+	#ifdef __TEST_SUB_INVENTORY__   // Coffee 추가, 2007-8-9 (가방 속 가방)
 		void	HotKey_Inventory(bool IsCheckSubInventory = false);
 	#else
 		void	HotKey_Inventory();	
 	#endif
 	
-	void	HotKey_Friend();		//add by viva
+	void	HotKey_Friend();		// viva 추가
 	void	HotKey_Gear();
 	void	HotKey_Skill();
-	void	HotKey_ExtendChat();		// ctrl + e
-	void	HotKey_Chat();			// ctrl + c
+	void	HotKey_ExtendChat();		// Ctrl + E
+	void	HotKey_Chat();			// Ctrl + C
 	void	HotKey_ZoneChat();		// ctrl + z
-	void	HotKey_GuildChat();		// ctrl + g
-	void	HotKey_UnionChat();		// ctrl + d
-	void	HotKey_Whisper();		// ctrl + w
+	void	HotKey_GuildChat();		// Ctrl + G
+	void	HotKey_UnionChat();		// Ctrl + D
+	void	HotKey_Whisper();		// Ctrl + W
 	void	HotKey_F9();	
 	void	HotKey_F10();
 	void	HotKey_F11();
 	void	HotKey_F12();
-	void	HotKey_PartyChat();	// ctrl + a
-	void	HotKey_Quest();		// ctrl + q
-	void	HotKey_MailBox();		// ctrl + b
-	void	HotKey_PetInfo();		// ctrl + CapsLock
-	void    HotKey_SummonPet();		// ctrl + space
+	void	HotKey_PartyChat();	// Ctrl + A
+	void	HotKey_Quest();		// Ctrl + Q
+	void	HotKey_MailBox();		// Ctrl + B
+	void	HotKey_PetInfo();		// Ctrl + CapsLock
+	void    HotKey_SummonPet();		// Ctrl + Space
 	void	HotKey_SMSWindow();
 	void	HotKey_NamingWindow();
 
@@ -2418,7 +2418,7 @@ private:
 		CLOSE_ID,
 		HELP_ID,
 
-		// SLAYER SKILL INFO
+		// 슬레이어 스킬 정보
 		BLADE_ID,
 		SWORD_ID,
 		GUN_ID,
@@ -2426,7 +2426,7 @@ private:
 		ENCHANT_ID,
 		TOTAL_ID,
 
-		// VAMPIRE SKILL INFO
+		// 뱀파이어 스킬 정보
 		POISON_ID,
 		ACID_ID,
 		CURSE_ID,
@@ -2434,11 +2434,11 @@ private:
 		BLOOD_ID,
 		INNATE_ID,
 
-		// OUSTERS SKILL INFO
+		// 오스터즈 스킬 정보
 		COMBAT_ID,
 		ELEMENTAL_ID,
 
-		// VAMPIRE CHARACTER INFO
+		// 뱀파이어 캐릭터 정보
 		STR_PLUS_ID,
 		DEX_PLUS_ID,
 		INT_PLUS_ID,
@@ -2476,7 +2476,7 @@ private:
 		CHOKMA_ID,
 		KEATHER_ID,
 		ADVENCEMENT_ID,
-		// GRADE1 BUTTON
+		// 1단계 버튼
 		GRADE1_BUTTON1_ID,
 		GRADE1_BUTTON2_ID,
 		GRADE1_BUTTON3_ID,
@@ -2512,7 +2512,7 @@ private:
 		CHANGE_IMAGE_ID,		// 이미지 변경 버튼
 		PET_INFO_ID,
 		
-		// grade 2
+		// 2단계
 			
 		
 		
@@ -2572,12 +2572,12 @@ public:
 	void	CheckGradeSkillIDList();
 	
 	void	Show();
-	void	_Show1();	// Skill Info
-	void	_Show2();	// Character Info
-	void	_Show3();	// Grade1
-	void	_Show4();	// Grade2
+	void	_Show1();	// 스킬 정보
+	void	_Show2();	// 캐릭터 정보
+	void	_Show3();	// 1단계
+	void	_Show4();	// 2단계
 	//by csm 2004.12.30 전직 관련 인터페이스 추가 
-	void	_Show5();	// Grade2
+	void	_Show5();	// 2단계
 	void	Process();
 //	void	Start(bool skill_mode);
 	void	Start(INFO_MODE	Info_Mode);
@@ -2625,7 +2625,7 @@ public:
 		QUEST_MANAGER_MISSION, // 임무
 		QUEST_MANAGER_ITEM, // 인벤토리
 		INVENTORY_SUB,
-		FRIEND_WINDOW,//add by viva
+		FRIEND_WINDOW,// viva 추가
 		WINDOW_TOTAL,
 	};
 

@@ -135,7 +135,20 @@ vcxproj 순서 기준 첫 배치(`Client_PCH.cpp` ~ `VS_UI_Base.cpp`, MitemTable
 
 ---
 
+## 5차 번역 완료 (2026-09-04)
+
+보류 중이던 대형 파일 3개 완료:
+
+| 파일명 | 번역 내용 |
+|--------|-----------|
+| `VS_UI/src/header/VS_UI_GameCommon.h` (113.2KB) | 파일 헤더(게임 공통 인터페이스), 채팅/NPC/교환 설명, HotKey 추상 기본 클래스, 인벤토리 기본 클래스, TIMER/데이터/멤버 함수 섹션 헤더, WHISPER/귓속말/길드 채팅 섹션, EXEC_INDEX 열거형 인라인 주석(공통/메뉴 탭/길드 탭/유틸 탭/도움말 탭/팀 탭), 스킬 정보 섹션 헤더, _Show 함수 설명 주석, Coffee 추가 2007-8-9 (가방 속 가방), larosel/sigi/viva 작성자 표기 전체, Ctrl+E/C/Z/G/D/W 단축키 정규화 |
+| `VS_UI/src/header/VS_UI_GameCommon2.h` (48.4KB) | 파일 헤더(게임 공통 인터페이스, 미니게임), Init/Move/Action/Process/Timer 섹션 헤더, 도움말 메시지 주석, Coffee 추가 2007-8-9 (가방 속 가방), AddForce/인벤토리 기본 클래스/데이터/멤버 함수 |
+| `VS_UI/src/VS_UI_GameCommon.cpp` (1.15MB) | 스킬 아이콘 스프라이트 목록, 아이템 깜빡임 색상 테이블, 실행 함수/채팅 재획득/연산/타이머/초기화 섹션 헤더, 메뉴·길드·유틸·도움말·팀 탭 헤더(LF/CRLF 양쪽), TEAM/CLAN/GUILD_COMMAND_WINDOW 플레이스홀더, Ctrl+E/C/Z/G/D/W 단축키, 창 이동 중지/XY 좌표 백업, 프레임→스프라이트 ID, 교체 없이 빈 그리드에 놓음, 실패, UTF-8 직접 사용/GetString 반환값/GDI 제거 주석, 채팅 기록 줄, 알파&핀·채팅·필터·입력·펼침 버튼 섹션 헤더, Sonic 추가 2006.9.26/Snic 종료, 공백·널 탐색 제한/범위 내 종결, viva 참조 친구 시스템, sjheon 추가, 아이템 표시/그리드 검색, 방향 케이스 라벨(좌상·우상·좌하·우하), svi 추가/csm 수정, larosel·sigi 작성자 표기(LF/CRLF 양쪽, standalone·inline 모두), use→사용, Coffee 추가(2007-8-9 가방 속 가방, 2007-3-6 세계지도 추가, 2007-5-20 직업 전환 표시 문제 수정), viva 추가/수정 inline 전체(map_start_x/Friend System/friend show/skill button point/기록 줄/채팅 줄/기록 너비/귓속말 모드/HP·MP·EXP바 위치/위의 코드 참고), sobeit 추가 2004.7.6/10.20/10.21, 포커스 슬롯 사각형 테스트, 마우스 추가 제어, 스킬 1·2·3 케이스 라벨, 샵·창고·교환 실행 알림, 처리(Process) 섹션 헤더 |
+
+**VS_UI.vcxproj 전체 번역 완료** (보류 대상 없음)
+
+---
+
 ## 다음 번역 대상
 
-VS_UI.vcxproj 기준 남은 것은 `VS_UI/src/VS_UI_GameCommon.cpp`(1.15MB)와 `VS_UI_GameCommon.h`(113.2KB) 대형 파일
-2개뿐 (300KB 기준 초과로 보류 중, 사용자 확인 후 별도 세션에서 진행 필요). 이것만 끝나면 VS_UI.vcxproj 전체 번역 완료.
+없음. VS_UI.vcxproj 기준 전체 완료.
