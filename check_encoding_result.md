@@ -1,8 +1,8 @@
 # C++ File Encoding Scan Results
 
-- **Target Directory:** `H:\Source\GithubDesktop\dk_client`
+- **Target Directory:** `C:\Users\USER\Desktop\Github_clone\dk_client`
 - **Target Extensions:** `.cpp, .h`
-- **Total Files Checked:** 2313
+- **Total Files Checked:** 2314
 
 | ENCODING | FILE SIZE | FILE PATH |
 | :--- | :--- | :--- |
@@ -33,7 +33,8 @@
 | UTF-8 BOM | 6.1 KB | `.\basic\Timer2.cpp` |
 | UTF-8 BOM | 1.4 KB | `.\basic\timer2.h` |
 | UTF-8 BOM | 523 B | `.\basic\Typedef.h` |
-| UTF-8 BOM | 29.9 KB | `.\build\vs2019\CMakeFiles\4.4.2\CompilerIdCXX\CMakeCXXCompilerId.cpp` |
+| UTF-8 | 29.9 KB | `.\build\CMakeFiles\4.4.0-rc3\CompilerIdCXX\CMakeCXXCompilerId.cpp` |
+| UTF-8 | 29.9 KB | `.\build\vs2019\CMakeFiles\4.4.0-rc3\CompilerIdCXX\CMakeCXXCompilerId.cpp` |
 | UTF-8 | 1.2 KB | `.\Client\ActionFunctions.cpp` |
 | UTF-8 BOM | 4.8 KB | `.\Client\AddonDef.h` |
 | UTF-8 BOM | 3.4 KB | `.\Client\APICheck.cpp` |
@@ -82,7 +83,7 @@
 | UTF-8 BOM | 9.5 KB | `.\Client\CPositionList.h` |
 | UTF-8 BOM | 10.8 KB | `.\Client\CrashReport.cpp` |
 | UTF-8 BOM | 1.0 KB | `.\Client\CrashReport.h` |
-| UTF-8 BOM | 1.5 KB | `.\Client\CSDLGraphicsFlip.cpp` |
+| UTF-8 BOM | 1.6 KB | `.\Client\CSDLGraphicsFlip.cpp` |
 | UTF-8 BOM | 2.8 KB | `.\Client\CServerInformation.cpp` |
 | UTF-8 BOM | 4.1 KB | `.\Client\CServerInformation.h` |
 | UTF-8 BOM | 17.9 KB | `.\Client\CShadowPartManager.cpp` |
@@ -144,7 +145,7 @@
 | UTF-8 BOM | 36.7 KB | `.\Client\GameInitInfo.cpp` |
 | UTF-8 BOM | 159.8 KB | `.\Client\GameMain.cpp` |
 | UTF-8 BOM | 1.9 KB | `.\Client\GameObject.h` |
-| UTF-8 BOM | 43.2 KB | `.\Client\GamePacketFunctions.cpp` |
+| UTF-8 BOM | 44.4 KB | `.\Client\GamePacketFunctions.cpp` |
 | UTF-8 BOM | 139.4 KB | `.\Client\GameUI.cpp` |
 | UTF-8 BOM | 1.5 KB | `.\Client\GCNotifyWin.cpp` |
 | UTF-8 BOM | 2.3 KB | `.\Client\GCNotifyWin.h` |
@@ -586,7 +587,7 @@
 | UTF-8 BOM | 5.4 KB | `.\Client\WhisperManager.h` |
 | UTF-8 | 8.0 KB | `.\Client\zconf.h` |
 | UTF-8 | 40.8 KB | `.\Client\zlib.h` |
-| UTF-8 BOM | 2.1 KB | `.\Client\ZoneFileHeader.cpp` |
+| UTF-8 BOM | 2.2 KB | `.\Client\ZoneFileHeader.cpp` |
 | UTF-8 BOM | 1.3 KB | `.\Client\ZoneFileHeader.h` |
 | UTF-8 | 5.7 KB | `.\Client\zutil.h` |
 | UTF-8 | 2.5 KB | `.\Client\DXLib\BIT_RES.CPP` |
@@ -2102,9 +2103,9 @@
 | UTF-8 BOM | 1.4 KB | `.\Client\SpriteLib\CSpriteSetManager.h` |
 | UTF-8 BOM | 401.3 KB | `.\Client\SpriteLib\CSpriteSurface.cpp` |
 | UTF-8 BOM | 27.0 KB | `.\Client\SpriteLib\CSpriteSurface.h` |
-| UTF-8 BOM | 26.4 KB | `.\Client\SpriteLib\CSpriteSurface_Adapter.cpp` |
+| UTF-8 BOM | 27.2 KB | `.\Client\SpriteLib\CSpriteSurface_Adapter.cpp` |
 | UTF-8 BOM | 15.0 KB | `.\Client\SpriteLib\CSpriteSurface_Effects.cpp` |
-| UTF-8 BOM | 24.9 KB | `.\Client\SpriteLib\CSpriteSurface_SDL.cpp` |
+| UTF-8 BOM | 25.7 KB | `.\Client\SpriteLib\CSpriteSurface_SDL.cpp` |
 | UTF-8 BOM | 594 B | `.\Client\SpriteLib\CSprite_SDL.cpp` |
 | UTF-8 BOM | 4.7 KB | `.\Client\SpriteLib\CStorageSurface.cpp` |
 | UTF-8 BOM | 1.6 KB | `.\Client\SpriteLib\CStorageSurface.h` |
@@ -2142,26 +2143,26 @@
 | UTF-8 BOM | 1.3 KB | `.\Client\WinLib\CWinUpdate.cpp` |
 | UTF-8 BOM | 2.1 KB | `.\Client\WinLib\CWinUpdate.h` |
 | UTF-8 | 406 B | `.\Client\WinLib\WinLib.h` |
-| UTF-8 BOM | 7.2 KB | `.\tools\engine\sprite\include\animation.h` |
-| UTF-8 BOM | 1.2 KB | `.\tools\engine\sprite\include\color.h` |
-| UTF-8 BOM | 5.0 KB | `.\tools\engine\sprite\include\colorset.h` |
-| UTF-8 BOM | 2.2 KB | `.\tools\engine\sprite\include\error.h` |
-| UTF-8 BOM | 6.8 KB | `.\tools\engine\sprite\include\frame.h` |
-| UTF-8 BOM | 8.7 KB | `.\tools\engine\sprite\include\framepack.h` |
-| UTF-8 BOM | 6.0 KB | `.\tools\engine\sprite\include\index_sprite.h` |
-| UTF-8 BOM | 4.1 KB | `.\tools\engine\sprite\include\index_spritepack.h` |
-| UTF-8 BOM | 3.3 KB | `.\tools\engine\sprite\include\map.h` |
+| UTF-8 BOM | 7.4 KB | `.\tools\engine\sprite\include\animation.h` |
+| UTF-8 BOM | 1.3 KB | `.\tools\engine\sprite\include\color.h` |
+| UTF-8 BOM | 5.2 KB | `.\tools\engine\sprite\include\colorset.h` |
+| UTF-8 BOM | 2.3 KB | `.\tools\engine\sprite\include\error.h` |
+| UTF-8 BOM | 7.1 KB | `.\tools\engine\sprite\include\frame.h` |
+| UTF-8 BOM | 9.0 KB | `.\tools\engine\sprite\include\framepack.h` |
+| UTF-8 BOM | 6.2 KB | `.\tools\engine\sprite\include\index_sprite.h` |
+| UTF-8 BOM | 4.2 KB | `.\tools\engine\sprite\include\index_spritepack.h` |
+| UTF-8 BOM | 3.4 KB | `.\tools\engine\sprite\include\map.h` |
 | UTF-8 BOM | 2.2 KB | `.\tools\engine\sprite\include\sdl_framework.h` |
-| UTF-8 BOM | 5.7 KB | `.\tools\engine\sprite\include\shadow_sprite.h` |
-| UTF-8 BOM | 4.1 KB | `.\tools\engine\sprite\include\shadow_spritepack.h` |
+| UTF-8 BOM | 5.9 KB | `.\tools\engine\sprite\include\shadow_sprite.h` |
+| UTF-8 BOM | 4.2 KB | `.\tools\engine\sprite\include\shadow_spritepack.h` |
 | UTF-8 BOM | 163 B | `.\tools\engine\sprite\include\SP.h` |
-| UTF-8 BOM | 2.4 KB | `.\tools\engine\sprite\include\sprite.h` |
-| UTF-8 BOM | 1.8 KB | `.\tools\engine\sprite\include\spritepack.h` |
-| UTF-8 BOM | 4.7 KB | `.\tools\engine\sprite\include\str.h` |
-| UTF-8 BOM | 2.8 KB | `.\tools\engine\sprite\include\types.h` |
-| UTF-8 BOM | 6.6 KB | `.\tools\engine\sprite\include\ui_surface.h` |
-| UTF-8 BOM | 2.8 KB | `.\tools\engine\sprite\include\vector.h` |
-| UTF-8 BOM | 7.9 KB | `.\tools\engine\sprite\include\zone.h` |
+| UTF-8 BOM | 2.5 KB | `.\tools\engine\sprite\include\sprite.h` |
+| UTF-8 BOM | 1.9 KB | `.\tools\engine\sprite\include\spritepack.h` |
+| UTF-8 BOM | 5.0 KB | `.\tools\engine\sprite\include\str.h` |
+| UTF-8 BOM | 2.9 KB | `.\tools\engine\sprite\include\types.h` |
+| UTF-8 BOM | 6.8 KB | `.\tools\engine\sprite\include\ui_surface.h` |
+| UTF-8 BOM | 2.9 KB | `.\tools\engine\sprite\include\vector.h` |
+| UTF-8 BOM | 8.2 KB | `.\tools\engine\sprite\include\zone.h` |
 | UTF-8 | 13.3 KB | `.\tools\viewers\creature_viewer\main.cpp` |
 | UTF-8 | 7.9 KB | `.\tools\viewers\effect_viewer\EffectSpriteTypeTable.cpp` |
 | UTF-8 | 2.5 KB | `.\tools\viewers\effect_viewer\EffectSpriteTypeTable.h` |
@@ -2194,7 +2195,7 @@
 | UTF-8 BOM | 2.1 KB | `.\VS_UI\src\InputFocusManager.h` |
 | UTF-8 BOM | 7.5 KB | `.\VS_UI\src\KeyAccelerator.cpp` |
 | UTF-8 BOM | 2.9 KB | `.\VS_UI\src\SkinManager.cpp` |
-| UTF-8 BOM | 127.5 KB | `.\VS_UI\src\Vs_ui.cpp` |
+| UTF-8 BOM | 133.0 KB | `.\VS_UI\src\Vs_ui.cpp` |
 | UTF-8 BOM | 13.7 KB | `.\VS_UI\src\VS_UI_Base.cpp` |
 | UTF-8 | 25 B | `.\VS_UI\src\VS_UI_BBS.cpp` |
 | UTF-8 BOM | 18.0 KB | `.\VS_UI\src\VS_UI_DESC.cpp` |
@@ -2206,7 +2207,7 @@
 | UTF-8 BOM | 55.0 KB | `.\VS_UI\src\VS_UI_Exchange.cpp` |
 | UTF-8 BOM | 109.3 KB | `.\VS_UI\src\VS_UI_ExtraDialog.cpp` |
 | UTF-8 BOM | 180.5 KB | `.\VS_UI\src\VS_UI_Game.cpp` |
-| UTF-8 BOM | 1.15 MB | `.\VS_UI\src\VS_UI_GameCommon.cpp` |
+| UTF-8 BOM | 1.16 MB | `.\VS_UI\src\VS_UI_GameCommon.cpp` |
 | UTF-8 BOM | 572.7 KB | `.\VS_UI\src\vs_ui_gamecommon2.cpp` |
 | UTF-8 BOM | 60.8 KB | `.\VS_UI\src\VS_UI_GameOusters.cpp` |
 | UTF-8 BOM | 82.8 KB | `.\VS_UI\src\VS_UI_GameSlayer.cpp` |
@@ -2215,24 +2216,24 @@
 | UTF-8 | 25 B | `.\VS_UI\src\VS_UI_Helper.cpp` |
 | UTF-8 BOM | 15.8 KB | `.\VS_UI\src\VS_UI_Item.cpp` |
 | UTF-8 BOM | 8.0 KB | `.\VS_UI\src\VS_UI_Message.cpp` |
-| UTF-8 | 16.7 KB | `.\VS_UI\src\VS_UI_mouse_pointer.cpp` |
+| UTF-8 BOM | 16.9 KB | `.\VS_UI\src\VS_UI_mouse_pointer.cpp` |
 | UTF-8 BOM | 48.1 KB | `.\VS_UI\src\VS_UI_PetStorage.cpp` |
 | UTF-8 BOM | 15.1 KB | `.\VS_UI\src\VS_UI_PointExchange.cpp` |
-| UTF-8 | 18.5 KB | `.\VS_UI\src\VS_UI_progress.cpp` |
-| UTF-8 | 31.5 KB | `.\VS_UI\src\VS_UI_Shop.cpp` |
-| UTF-8 | 35.5 KB | `.\VS_UI\src\VS_UI_skill_tree.cpp` |
+| UTF-8 BOM | 18.5 KB | `.\VS_UI\src\VS_UI_progress.cpp` |
+| UTF-8 BOM | 31.6 KB | `.\VS_UI\src\VS_UI_Shop.cpp` |
+| UTF-8 BOM | 35.5 KB | `.\VS_UI\src\VS_UI_skill_tree.cpp` |
 | UTF-8 BOM | 32.1 KB | `.\VS_UI\src\VS_UI_SKILL_VIEW.cpp` |
-| UTF-8 BOM | 28.6 KB | `.\VS_UI\src\VS_UI_Storage.cpp` |
-| UTF-8 BOM | 228.9 KB | `.\VS_UI\src\VS_UI_Title.cpp` |
+| UTF-8 BOM | 28.7 KB | `.\VS_UI\src\VS_UI_Storage.cpp` |
+| UTF-8 BOM | 229.5 KB | `.\VS_UI\src\VS_UI_Title.cpp` |
 | UTF-8 BOM | 22.0 KB | `.\VS_UI\src\VS_UI_TITLE_SHOWCHAR.CPP` |
-| UTF-8 | 54.8 KB | `.\VS_UI\src\VS_UI_Tutorial.cpp` |
+| UTF-8 BOM | 54.8 KB | `.\VS_UI\src\VS_UI_Tutorial.cpp` |
 | UTF-8 | 2.7 KB | `.\VS_UI\src\VS_UI_ui_result_receiver.cpp` |
 | UTF-8 BOM | 35.4 KB | `.\VS_UI\src\VS_UI_util.cpp` |
-| UTF-8 | 5.4 KB | `.\VS_UI\src\VS_UI_WebBrowser.cpp` |
-| UTF-8 | 3.9 KB | `.\VS_UI\src\VS_UI_widget.cpp` |
+| UTF-8 BOM | 5.4 KB | `.\VS_UI\src\VS_UI_WebBrowser.cpp` |
+| UTF-8 BOM | 3.9 KB | `.\VS_UI\src\VS_UI_widget.cpp` |
 | UTF-8 BOM | 8.1 KB | `.\VS_UI\src\hangul\Ci.cpp` |
 | UTF-8 BOM | 2.6 KB | `.\VS_UI\src\hangul\Ci.h` |
-| UTF-8 | 4.0 KB | `.\VS_UI\src\hangul\Ci_macOS.cpp` |
+| UTF-8 BOM | 4.2 KB | `.\VS_UI\src\hangul\Ci_macOS.cpp` |
 | UTF-8 BOM | 11.6 KB | `.\VS_UI\src\hangul\FL2.cpp` |
 | UTF-8 | 2.4 KB | `.\VS_UI\src\hangul\Fl2.h` |
 | UTF-8 BOM | 1.0 KB | `.\VS_UI\src\header\AcceleratorDef.h` |
@@ -2252,8 +2253,8 @@
 | UTF-8 BOM | 10.1 KB | `.\VS_UI\src\header\VS_UI_ExtraDialog.h` |
 | UTF-8 BOM | 23.6 KB | `.\VS_UI\src\header\VS_UI_filepath.h` |
 | UTF-8 BOM | 33.4 KB | `.\VS_UI\src\header\VS_UI_Game.h` |
-| UTF-8 BOM | 113.2 KB | `.\VS_UI\src\header\VS_UI_GameCommon.h` |
-| UTF-8 BOM | 48.4 KB | `.\VS_UI\src\header\VS_UI_GameCommon2.h` |
+| UTF-8 BOM | 113.6 KB | `.\VS_UI\src\header\VS_UI_GameCommon.h` |
+| UTF-8 BOM | 48.5 KB | `.\VS_UI\src\header\VS_UI_GameCommon2.h` |
 | UTF-8 | 4.3 KB | `.\VS_UI\src\header\VS_UI_GameOusters.h` |
 | UTF-8 | 12.7 KB | `.\VS_UI\src\header\VS_UI_GameSlayer.h` |
 | UTF-8 | 2.4 KB | `.\VS_UI\src\header\VS_UI_GameVampire.h` |
@@ -2261,22 +2262,22 @@
 | UTF-8 | 23 B | `.\VS_UI\src\header\VS_UI_Helper.h` |
 | UTF-8 BOM | 2.0 KB | `.\VS_UI\src\header\VS_UI_item.h` |
 | UTF-8 BOM | 1.6 KB | `.\VS_UI\src\header\VS_UI_Message.h` |
-| UTF-8 | 3.5 KB | `.\VS_UI\src\header\VS_UI_mouse_pointer.h` |
+| UTF-8 BOM | 3.6 KB | `.\VS_UI\src\header\VS_UI_mouse_pointer.h` |
 | UTF-8 | 3.8 KB | `.\VS_UI\src\header\VS_UI_PetStorage.h` |
 | UTF-8 BOM | 4.2 KB | `.\VS_UI\src\header\VS_UI_PointExchange.h` |
-| UTF-8 | 2.3 KB | `.\VS_UI\src\header\VS_UI_progress.h` |
-| UTF-8 | 2.6 KB | `.\VS_UI\src\header\VS_UI_Shop.h` |
-| UTF-8 | 4.3 KB | `.\VS_UI\src\header\VS_UI_skill_tree.h` |
+| UTF-8 BOM | 2.3 KB | `.\VS_UI\src\header\VS_UI_progress.h` |
+| UTF-8 BOM | 2.7 KB | `.\VS_UI\src\header\VS_UI_Shop.h` |
+| UTF-8 BOM | 4.3 KB | `.\VS_UI\src\header\VS_UI_skill_tree.h` |
 | UTF-8 | 2.8 KB | `.\VS_UI\src\header\VS_UI_SKILL_VIEW.h` |
-| UTF-8 | 2.5 KB | `.\VS_UI\src\header\VS_UI_Storage.h` |
-| UTF-8 | 31.6 KB | `.\VS_UI\src\header\VS_UI_title.h` |
+| UTF-8 BOM | 2.5 KB | `.\VS_UI\src\header\VS_UI_Storage.h` |
+| UTF-8 BOM | 31.7 KB | `.\VS_UI\src\header\VS_UI_title.h` |
 | UTF-8 BOM | 8.4 KB | `.\VS_UI\src\header\VS_UI_Tutorial.h` |
 | UTF-8 | 7.5 KB | `.\VS_UI\src\header\VS_UI_UIMessage.h` |
-| UTF-8 | 1.5 KB | `.\VS_UI\src\header\VS_UI_ui_result_receiver.h` |
-| UTF-8 BOM | 9.7 KB | `.\VS_UI\src\header\VS_UI_util.h` |
-| UTF-8 | 2.0 KB | `.\VS_UI\src\header\VS_UI_WebBrowser.h` |
+| UTF-8 BOM | 1.5 KB | `.\VS_UI\src\header\VS_UI_ui_result_receiver.h` |
+| UTF-8 BOM | 9.8 KB | `.\VS_UI\src\header\VS_UI_util.h` |
+| UTF-8 BOM | 2.0 KB | `.\VS_UI\src\header\VS_UI_WebBrowser.h` |
 | UTF-8 BOM | 20.4 KB | `.\VS_UI\src\header\VS_UI_widget.h` |
-| UTF-8 | 2.7 KB | `.\VS_UI\src\Imm\CImm.cpp` |
+| UTF-8 | 2.8 KB | `.\VS_UI\src\Imm\CImm.cpp` |
 | UTF-8 | 1.5 KB | `.\VS_UI\src\Imm\CImm.h` |
 | UTF-8 | 55.1 KB | `.\VS_UI\src\Imm\FeelitAPI.h` |
 | UTF-8 | 1.9 KB | `.\VS_UI\src\Imm\IFC.h` |
@@ -2305,17 +2306,17 @@
 | UTF-8 | 4.4 KB | `.\VS_UI\src\Imm\ImmSpring.h` |
 | UTF-8 | 12.1 KB | `.\VS_UI\src\Imm\ImmTexture.h` |
 | UTF-8 | 826 B | `.\VS_UI\src\widget\mother.cpp` |
-| UTF-8 | 517 B | `.\VS_UI\src\widget\mother.h` |
+| UTF-8 BOM | 528 B | `.\VS_UI\src\widget\mother.h` |
 | UTF-8 | 312 B | `.\VS_UI\src\widget\PI.H` |
 | UTF-8 | 1.1 KB | `.\VS_UI\src\widget\pi_core.cpp` |
-| UTF-8 | 1.5 KB | `.\VS_UI\src\widget\pi_core.h` |
+| UTF-8 BOM | 1.5 KB | `.\VS_UI\src\widget\pi_core.h` |
 | UTF-8 | 3.5 KB | `.\VS_UI\src\widget\SimpleDataList.h` |
 | UTF-8 | 391 B | `.\VS_UI\src\widget\unicorn.h` |
-| UTF-8 | 5.3 KB | `.\VS_UI\src\widget\u_button.cpp` |
-| UTF-8 | 3.5 KB | `.\VS_UI\src\widget\u_button.h` |
-| UTF-8 | 14.9 KB | `.\VS_UI\src\widget\U_edit.cpp` |
-| UTF-8 | 5.0 KB | `.\VS_UI\src\widget\U_edit.h` |
+| UTF-8 BOM | 5.4 KB | `.\VS_UI\src\widget\u_button.cpp` |
+| UTF-8 BOM | 3.5 KB | `.\VS_UI\src\widget\u_button.h` |
+| UTF-8 BOM | 15.3 KB | `.\VS_UI\src\widget\U_edit.cpp` |
+| UTF-8 BOM | 5.1 KB | `.\VS_UI\src\widget\U_edit.h` |
 | UTF-8 | 3.4 KB | `.\VS_UI\src\widget\u_scrollbar.cpp` |
-| UTF-8 | 1.3 KB | `.\VS_UI\src\widget\u_scrollbar.h` |
+| UTF-8 BOM | 1.3 KB | `.\VS_UI\src\widget\u_scrollbar.h` |
 | UTF-8 BOM | 44.0 KB | `.\VS_UI\src\widget\u_window.cpp` |
-| UTF-8 | 7.7 KB | `.\VS_UI\src\widget\u_window.h` |
+| UTF-8 BOM | 7.8 KB | `.\VS_UI\src\widget\u_window.h` |
