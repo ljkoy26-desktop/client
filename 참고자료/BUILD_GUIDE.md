@@ -99,8 +99,17 @@ cmake -S . -B build\vs2019 `
 cmake -S . -B build\vs2019 `
   -G "Visual Studio 16 2019" `
   -A x64 `
-  "-DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake"
+  "-DCMAKE_TOOLCHAIN_FILE=C:\Users\USER\Desktop\sourceTree_root\vcpkg download\vcpkg\scripts\buildsystems\vcpkg.cmake"
 ```
+
+# 고양집 ( 경로 변경해두기 )
+cmake -S . -B build\vs2019 `
+  -G "Visual Studio 16 2019" `
+  -A x64 `
+  "-DCMAKE_TOOLCHAIN_FILE=C:\Users\USER\Desktop\sourceTree_root\vcpkg download\vcpkg\scripts\buildsystems\vcpkg.cmake"
+
+
+
 
 > **주의**: `TOOLCHAIN_FILE` 경로에 공백이 포함된 경우 전체 `-D...` 인수를 큰따옴표로 감쌀 것.
 
