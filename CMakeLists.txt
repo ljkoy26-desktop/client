@@ -9,6 +9,10 @@ endif()
 
 project(DarkEdenClient VERSION 1.0.0)
 
+# Visual Studio 솔루션 폴더 분류 설정
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "CMakeDefault")
+
 # C++ standard
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -118,11 +122,17 @@ endif()
 
 # Subdirectories
 add_subdirectory(basic)
+set_target_properties(basic PROPERTIES FOLDER "Core")
+
 add_subdirectory(Client/DXLib)
+set_target_properties(dxlib PROPERTIES FOLDER "Core")
+
 add_subdirectory(Client/SpriteLib)
+set_target_properties(SpriteLib PROPERTIES FOLDER "Core")
 
 # Additional libraries from VC6 project
 add_subdirectory(Client/framelib)
+set_target_properties(framelib PROPERTIES FOLDER "Core")
 
 # ============================================================
 # TextSystem - New SDL-based Text System (Abstracted)
@@ -156,11 +166,13 @@ if(USE_SDL_BACKEND OR NOT WIN32)
 		target_compile_definitions(TextSystem PRIVATE PLATFORM_MACOS)
 	endif()
 
+	set_target_properties(TextSystem PROPERTIES FOLDER "Core")
 	message(STATUS "TextSystem library will be built from ${TEXTSYSTEM_SOURCES}")
 endif()
 
 if(BUILD_ENGINE)
 	add_subdirectory(tools/engine/sprite)
+	set_target_properties(sprite PROPERTIES FOLDER "Core")
 endif()
 
 # ============================================================
@@ -370,6 +382,7 @@ if(USE_SDL_BACKEND OR NOT WIN32)
 	# This excludes test/debug code wrapped in #ifndef _LIB from library builds
 	target_compile_definitions(VS_UI PRIVATE _LIB)
 
+	set_target_properties(VS_UI PROPERTIES FOLDER "Core")
 	message(STATUS "VS_UI library will be built from ${VS_UI_SRC_SOURCES} VS_UI files + ${VS_UI_CLIENT_SOURCES} Client files")
 endif()
 
@@ -388,6 +401,7 @@ target_include_directories(resource_validator PRIVATE
 
 set_target_properties(resource_validator PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	FOLDER "exe"
 )
 
 # ============================================================
@@ -423,6 +437,7 @@ endif()
 
 set_target_properties(sprite_viewer PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	FOLDER "exe"
 )
 
 
@@ -435,6 +450,7 @@ target_link_libraries(zone_parser PRIVATE)
 
 set_target_properties(zone_parser PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	FOLDER "exe"
 )
 
 # Item Viewer - view .ispk indexed sprite pack files (C++ version using Client/SpriteLib)
@@ -462,6 +478,7 @@ endif()
 
 set_target_properties(item_viewer PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	FOLDER "exe"
 )
 
 # Creature Viewer - view creature animations (C++ version using Client/SpriteLib + Client/framelib)
@@ -491,6 +508,7 @@ endif()
 
 set_target_properties(creature_viewer PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	FOLDER "exe"
 )
 
 # Map Viewer - browse zone maps with pan/zoom (C++ version using Client/SpriteLib)
@@ -523,6 +541,7 @@ endif()
 
 set_target_properties(map_viewer PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+	FOLDER "exe"
 )
 
 # Effect Viewer - test and debug effect system
@@ -569,6 +588,8 @@ else()
 		RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
 	)
 endif()
+
+set_target_properties(effect_viewer PROPERTIES FOLDER "exe")
 
 
 # Examples (always built if backend is enabled)
@@ -735,6 +756,7 @@ if(USE_SDL_BACKEND OR NOT WIN32)
 		# so "Data/" only needs to exist in one place regardless of how
 		# the exe is launched.
 		VS_DEBUGGER_WORKING_DIRECTORY "$<TARGET_FILE_DIR:DarkEden>"
+		FOLDER "exe"
 	)
 
 	# atls.lib for VS_UI_WebBrowser.h's ATL usage - see the
