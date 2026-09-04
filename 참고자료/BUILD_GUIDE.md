@@ -95,6 +95,8 @@ cmake -S . -B build\vs2019 `
 
 **예시** (vcpkg가 `C:\vcpkg`에 설치된 경우):
 
+# 노트북 
+
 ```powershell
 cmake -S . -B build\vs2019 `
   -G "Visual Studio 16 2019" `
@@ -106,7 +108,7 @@ cmake -S . -B build\vs2019 `
 cmake -S . -B build\vs2019 `
   -G "Visual Studio 16 2019" `
   -A x64 `
-  "-DCMAKE_TOOLCHAIN_FILE=C:\Users\USER\Desktop\sourceTree_root\vcpkg download\vcpkg\scripts\buildsystems\vcpkg.cmake"
+  "-DCMAKE_TOOLCHAIN_FILE=H:\Source\GithubDesktop\vcpkg_download\vcpkg\scripts\buildsystems\vcpkg.cmake"
 
 
 
